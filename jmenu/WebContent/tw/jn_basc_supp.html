@@ -1,0 +1,333 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_basc_cust.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_basc_empl.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Suppliers</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>BASC_SUPP</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">處理供應商資料的維護作業。</font></li>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">
+         【Product】標籤頁顯示該公司供應之商品，商品庫存量大於0則顯示黑色，小於等於0則顯示紅色。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="18" colspan="2" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Suppliers： </font></b></td>
+       <td width="661" height="18" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">供應商資料檔<br>
+       【SQL】：<font face="Courier New">Select * from Suppliers</font><br>
+       【事件】【讀取後】選擇 <font color="#666699">trig_prod</font>，表示Suppliers之記錄一經移動，
+       就會執行<font color="#666699">trig_prod </font>
+       觸發資料來源事件。這是常見的將所謂的主檔與副檔的資料同步化的設計方法。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Product：</font></b></td>
+       <td width="661" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+         該公司供應之商品<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; Select ProductID,ProductName,QuantityPerUnit,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UnitPrice,UnitsInStock
+       <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; products</font><br>
+       【自動開啟】：取消，由供應商資料來觸發。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2"></td>
+       <td width="661" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tab_supp】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">索引標籤元件 (Tab)。<br>
+       【動作事件】選擇 <font color="#666699">
+       trig_prod </font>事件(觸發資料來源)。意即當切換標籤頁時，則執行 trigger products 事件。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_product】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">Suppliers </font>，不允許新增、編輯、刪除紀錄。<br>
+       【欄位】<br>
+&nbsp;&nbsp;&nbsp; 【資料表元件欄位】選擇Product Name、Quantity PerUnit、Unit Price、Stock。
+        
+       <br>
+       &nbsp;&nbsp;&nbsp; 【資料表元件欄位屬性】【字型】【進階】【動態顏色】<font color="#666699">動態前景顏色</font>運<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 算式填入<font color="#666699" face="Courier New">Condition(({products:UnitsInStock}=0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RGB(255,0,0) ,RGB( 0 ,0 , 0) )</font>，表示若Stock=0，則前景<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 為紅色，否則為黑色。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【nav_supp】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">導覽元件 (Navigator)。 <br>
+       【資料來源】連接 <font color="#666699">Suppliers </font>，反應客戶端(Client) 新增、修改、刪除等等對資料的操作。<br>
+       【事件】【存檔】選擇 <font color="#666699">
+       msg_chk_compname</font>，表示當客戶端(Client)按存檔按鈕時，不執行內定的存檔動作，而執行<font color="#666699">msg_chk_compname
+       </font>事件。<br>
+       【查詢】選擇 <font color="#666699">
+       query_suppli</font>，則表示以<font color="#666699">query_suppli </font>
+       事件，取代導覽元件預設的查詢功能。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_link】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">HyperLink </font>事件。
+       客戶端(client)按下此button時，會hyperlink 到該供應商之網站。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_chk_compname】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">LRTrim({CompanyName})=&quot;&quot;</font>，意即Company 
+       Name為空值時才會執行此事件。<br>
+       【否則】選 <font color="#666699">post_suppl </font>，意即Company Name不是空值就執行post_suppl 
+       事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Message</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Please input Company Name !!&quot;</font>，執行期</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 此字串會出現在訊息方塊中間</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。<br>
+       【後續事件】選 <font color="#666699">focus_compname </font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【post_suppl】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699">Suppliers</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">存檔</font>，執行<font color="#666699">Suppliers</font>的存檔動作。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【focus_compname】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件focus事件。<br>
+       【執行】【設定focus】勾選<font color="#666699"> CompanyName</font>，會將 focus 移到<font color="#666699"> CompanyName </font>元件上。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【trig_prod】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【條件】運算式為<font color="#666699"> <font face="Courier New">{tab}=2 and LocalHashGet(&quot;supid&quot; )&lt;&gt;{Suppliers:SupplierID}</font></font>。這個事件是否執行
+       的條件有二，一為<font color="#666699">{tab}=2</font>，即當時索引標籤元件<font color="#666699">tab_supp</font>正停留在第二頁(Product)，或是click第二頁的標籤，背後的意義在於，客戶端(client)若是看不到Product標籤頁，就沒必要觸發資料來源Product；另一個條件是當時資料來源<font color="#666699">Suppliers</font>的<font color="#666699">SupplierID</font>內含值不等於區域變數&quot;supid&quot;，&quot;supid&quot;是一個控制指標，&quot;supid&quot;是一個控制指標，
+       其內含值是最後一次執行觸發資料來源事件時，資料來源 Suppliers 的 SupplierID，因此假如 &quot;supid&quot;等於 
+       SupplierID，代表 Products 已被觸發過，客戶端 (client) 只是在一二頁間切換而已，不需重新觸發資料來源。<br>
+       【執行】【資料來源】選<font color="#666699">Products</font>。<br>
+       【SQL】為：<font face="Courier New"><br>
+&nbsp;&nbsp; Select ProductID,ProductName,QuantityPerUnit,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UnitPrice,UnitsInStock&nbsp;&nbsp; 
+       <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; products&nbsp; <br>
+&nbsp;&nbsp; Where&nbsp; SupplierID = ?&nbsp; 
+       <br>
+&nbsp;&nbsp; Order by ProductName</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2"><font color="#666699"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       參數類別 &quot;INTEGER&quot;</font>，<font color="#666699">運算式為 
+        
+       <font face="Courier New">{Suppliers:SupplierID}</font></font>，這個</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQL會把Products資料來源的SupplierID欄位內含值，等於資料來源Suppliers</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 當筆記錄的SupplierID的所有資料括出來。<br>
+       【後續事件】選<font color="#666699"> set_hash</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_hash】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式內容為<font color="#666699"> </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">LocalHashPut(&quot;supid&quot; , {Suppliers:SupplierID})</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">動作
+       是將{Suppliers:SupplierID}存到區域變數&quot;supid&quot;裡面。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【query_suppli】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">查詢資料來源事件。<br>
+       【資料來源】選<font color="#666699"> Suppliers</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font>
+       <font size="2">【查詢資料欄位】與【排序資料欄位】勾選SupplierID、City、ContactName、</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone，
+       執行期只會出現這四個欄位供查詢與排序。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【HyperLink】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行超連結事件。<br>
+       【超連結】<font color="#666699">Ref </font>運算式內容為<font color="#666699">
+       <font face="Courier New">{Suppliers:HomePage}</font></font>，
+       連結到供應商網站。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2"></td>
+       <td width="906" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=172 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_basc_cust.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=577 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=138 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_basc_empl.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

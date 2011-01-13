@@ -1,0 +1,454 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder Installation</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html"><img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+　</td>
+<td width=184 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>Installation</b></TD>      
+<td width=216 align=right valign=top>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<p><font size="4" color="#9966FF"><b>Section 1. Installation    
+Notes</b></font><font color="#0000FF"><br>   
+</font><br>   
+jLIVE Builder&trade; support for the latest Java&trade; standards including Java&trade; 2 
+(JDK 1.4.1). Before you install jLIVE Builder&trade;, you        
+must install the Java&trade; 2 SDK, Standard Edition first. Java&trade; 2 SDK, Standard Edition is a product        
+of Sun Microsystems(TM), Inc. Installation instructions are maintained on the web site: 
+http://java.sun.com/j2se/1.4.1/download-windows.html Refer to the copyright and license for legal terms of use.&nbsp;<br>       
+<br>       
+Installing into a directory path which contains spaces is not recommended. For example, installing into C:\Program Files\ may        
+cause problems for environment variables used by the various tools that come with the JDK.<br>        
+<br>        
+After the following setup guide to install jLIVE Builder&trade;, the directories you have should like below :</p>        
+<blockquote>        
+  <p style="text-indent: 0">[] -- The directory you chose while setup.&nbsp;</p>       
+  <blockquote>       
+    <p style="text-indent: 0">[jLIVE]</p>      
+    <blockquote>      
+      <p style="text-indent: 0">[doc]<br>      
+      [images]<br>      
+      [jar]<br>      
+      [james]<br>      
+      [mysql]<br>      
+      [preloadimage]<br>      
+      [programs]<br>      
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+      [jNorth]<br>      
+      [tomcat]<br>      
+      [xml]</p>     
+    </blockquote>     
+  </blockquote>      
+</blockquote>      
+      
+<p style="text-indent: 0">　</p>     
+<p style="text-indent: 0"><b><font size="4" color="#9966FF">Section 2. Before 
+Start The jLIVE Builder&trade;</font></b></p>      
+<p style="text-indent: 0">There are some third party softwares collaborated with 
+The jLIVE Builder&trade;, before you start jLIVE Builder&trade; you can evaluate 
+your application requirements and download the third party softwares from their 
+download site. The demo program came with jLIVE Builder&trade; need the mySQL&trade; 
+database for testing. you can follow the below instructions to download and 
+setup the mySQL&trade; database just for demo program testing.&nbsp;&nbsp;</p>      
+      <p><b>Apache Tomcat</b> : jLIVE&trade;&nbsp; middle ware (jslive)    
+      container.&nbsp;<br>   
+      The copyright notice come with the jLIVE Builder&trade; disk and located    
+      in<span lang="EN-US">  </span> <font size="2"> <span lang="EN-US" style="font-size: 10.0pt"> <font face="Courier New">c:\jLIVE\tomcat\LICENSE</font></span>.</font></p> 
+      <p><b>Apache James</b>&nbsp; SMTP   
+      (optional): for smtp mail testing only.<br>  
+      The copyright notice come with the jLIVE Builder&trade; disk and located    
+      in <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt"> c:\jLIVE\james\LICENSE</span></font>.</font></p> 
+      <p><b>mySQL&trade;</b> database (optional) : for demo program testing    
+      only.<br>   
+      download site --<span lang="EN-US">  </span><span lang="EN-US" style="font-size: 10.0pt"> <font face="Courier New"> <a href="http://www.mysql.com/downloads/index.html">http://www.mysql.com/downloads/index.html</a></font></span></p>  
+      <p>mySQL&trade; <b>Connector/J </b>(optional) : JDBC driver   
+      for demo program testing    
+      only.<br>   
+      download site -- <font size="2"> <a href="http://www.mysql.com/downloads/api-jdbc-stable.html"><font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">http://www.mysql.com/downloads/api-jdbc-stable.html</span></font></a></font></p> 
+      <p><b>IDAutomationLinear Java Barcode Package </b>(optional) : for testing    
+      and evaluation (trial version).<br>   
+      download site --<span lang="EN-US">  </span><span lang="EN-US" style="font-size: 10.0pt"> <font face="Courier New"> <a href="http://www.idautomation.com/java/">http://www.idautomation.com/java/</a></font></span></p>  
+      <p><b>i-net</b> JDBC driver (optional) :  
+      MSSQL&trade; database driver (trial version).<br>   
+      download site -- <font size="2"> <a href="http://www.inetsoftware.de/English/produkte/JDBC2/Default.htm"><font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">http://www.inetsoftware.de/English/produkte/JDBC2/Default.htm</span></font></a></font></p>  
+      <p><font size="2"><br>  
+      </font><b>Install mySQL&trade; database</b>   
+      </p>   
+      <ol>   
+        <li>Download <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">mysql-3.23.53-win.zip</span></font>  
+          </font>  
+          (setup zip file) from mySQL&trade; download site.</li>  
+        <li>Unzip<font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">mysql-3.23.53-win.zip</span></font>   
+          </font>  
+          and setup mySQL&trade; database to the directory <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">c:\mysql\</span></font></li>  
+        <li>Copy the <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">c:\jLIVE\mysql\data\northwind</span></font>  
+          </font>  
+          directory and include the following files to the<font size="2"> <span lang="EN-US" style="font-size: 10.0pt"> <font face="Courier New">c:\mysql\data\ 
+          </font></span></font><span lang="EN-US" style="font-size: 10.0pt">  
+          directory.</span></li> 
+        <li>Copy the <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">c:\jLIVE\mysql\data\mysql</span></font>  
+          </font>  
+          directory and include the following files to the <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">c:\mysql\data\  
+          </span></font></font>directory and overwrite it.</li>  
+      </ol>  
+      <p><font size="2"><br>  
+      </font>  
+      <b>Setup Connector/J mySQL&trade; JDBC driver</b>  
+      </p>  
+      <ol>  
+        <li>Download <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">mysql-connector-java-2.0.14.zip</span></font>  
+          </font>  
+          (driver zip file) from mySQL&trade; download site.</li>  
+        <li>Unzip<font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">mysql-connector-java-2.0.14.zip.</span></font></font></li>  
+        <li>Copy<font size="2"> the <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">mysql-connector-java-2.0.14-bin.jar</span></font>   
+          </font>  
+          to the directory <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">c:\jLIVE\tomcat\lib\</span></font></li>  
+      </ol>  
+      <p><b>Setup IDAutomationLinear Java Barcode Package&nbsp;</b>  
+      </p>  
+      <ol>  
+        <li>Download<font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">JavaBarCodeDemo.zip</span></font>   
+          </font>  
+          (package zip file) from IDAutomation download site.</li>  
+        <li>Unzip<font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">JavaBarCodeDemo.zip</span></font>.</font></li>  
+        <li>Copy the <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">LinearBarCode.jar</span></font>  
+          </font>  
+          to the directory <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">c:\jLIVE\jar\</span></font></li>  
+      </ol>  
+      <p><b>Setup i-net MSSQL&trade; JDBC driver</b></p>   
+      <ol>   
+        <li>Download<font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">Sprinta2000_Trial.zip</span></font>   
+          </font>  
+          (driver zip file) from inetsoftware.de download site.</li>  
+        <li>Unzip<font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">Sprinta2000_Trial.zip.</span></font></font></li>  
+        <li>Copy the <font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">Sprinta2000.jar</span></font>  
+          </font>  
+          to the directory<font size="2"> <font face="Courier New"><span lang="EN-US" style="font-size: 10.0pt">c:\jLIVE\tomcat\lib\</span></font></font></li>  
+      </ol>  
+<p style="text-indent: 0">　</p>       
+       
+<p style="text-indent: 0"><br>     
+    Before you start jLIVE Builder&trade;, make sure the environment meets the following requirements :</p>      
+<ol>      
+  <li>      
+    <p style="text-indent: 0">Java&trade; 1.4.X SDK had been installed.</li>       
+  <li>       
+    <p style="text-indent: 0">Start the database you want to manipulate.&nbsp;</li>       
+  <li>       
+    <p style="text-indent: 0">If you want to test the sample program, start the       
+    mySQL database first.</li>      
+  <li>      
+    <p style="text-indent: 0">Start the jLIVE&trade; middleware, which is serviced by Tomcat 4.0       
+    and resided in the [jLIVE][tomcat][bin] path. make sure you     
+    specified the JAVA_HOME and CATALINA_HOME environment variables.</li>      
+  <li>      
+    <p style="text-indent: 0">During the jLIVE Builder&trade; first time running, system will relocate the      
+    path which sample program resident.<br>       
+  </li>      
+</ol>      
+<p style="text-indent: 0">　</p>
+<p style="text-indent: 0"><b><font size="4" color="#9966FF">Section 3. Sample Program</font></b></p>       
+<p style="text-indent: 0"><br>       
+    A demo directory had been included in this software bundle with a simple database example for you to try       
+out. After installed&nbsp;jLIVE Builder&trade; and Java&trade; 2 SDK, you must start up mySQL&trade;.</p>     
+<ol>     
+  <li>     
+    <p style="text-indent: 0">Start up mySQL&trade; : [jLIVE][mysql][bin]winmysqladmin.exe</li>      
+  <li>      
+    <p style="text-indent: 0">Boot the localhost application server : Run [jLIVE][tomcat]startup.bat</li>      
+  <li>      
+    <p style="text-indent: 0">Now you can run the sample program, just click the jarfile       
+    (jnorth.jar) to run the program as a standalone executable&nbsp;application, or click the html   
+    file (jnorth.html) to use the&nbsp;browser launch the sample program.</li>       
+  <li>       
+    <p style="text-indent: 0">Next you can use jLIVE Builder&trade; to modify the sample program.&nbsp;What you can do and how to do, refer to   
+    jLIVE Builder&trade; manual.<br>      
+    <br>      
+  </li>     
+</ol>     
+<p style="text-indent: 0">　</p>
+<p style="text-indent: 0"><font size="4" color="#9966FF"><b>Section 4. Tomcat 4.0.x Quick Start</b></font></p>       
+<p style="text-indent: 0"><br>       
+Tomcat Release Builders : jakarta-tomcat-4.0.1 , <a href="http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v4.0.1/bin/">http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v4.0.1/bin/</a></p>      
+<p style="text-indent: 0">The same version you can find in [jLIVE][tomcat].</p>      
+<p style="text-indent: 0">Before start up Tomcat, must set the <font color="#800080"><b> JAVA_HOME</b>       
+</font> and <font color="#800080"><b> CATALINA_HOME</b></font> environment variables       
+for Tomcat.</p>      
+<ul>      
+  <li>      
+    <p style="text-indent: 0">Set environment variable&nbsp;</li>      
+</ul>      
+<blockquote>      
+  <ul>      
+    <li>      
+      <p style="text-indent: 0">Window NT/2000/XP<br>       
+      <ol>      
+        <li>      
+          <p style="text-indent: 0">Go to Control Panel -> System -> Advanced Tab -> Environment Variables</li>       
+        <li>       
+          <p style="text-indent: 0">Add a new System Variable named <b><font color="#800080">JAVA_HOME</font></b> with       
+          the value <font color="#800080"> c:\jdk1.4.1</font></li>     
+        <li>     
+          <p style="text-indent: 0">Add a new System Variable named <font color="#800080"><b> CATALINA_HOME</b></font> with       
+          the value <font color="#800080">c:\jLIVE\tomcat</font><a href="file:///c:/jLIVE/tomcat"><br>       
+          </a></li>      
+      </ol>      
+    </li>      
+    <li>      
+      <p style="text-indent: 0">Window 95/98/me      
+      <ol>      
+        <li>      
+          <p style="text-indent: 0">edit C:\autoexec.bat&nbsp;</li>       
+        <li>       
+          <p style="text-indent: 0">      
+           Add &quot;<font color="#800080"><b>SET CATALINA_HOME=C:\jLIVE\tomcat</b></font>&quot; and       
+          &quot;<font color="#800080"><b>SET JAVA_HOME=C:\jdk1.4.1</b></font>&quot;</li>     
+        <li>     
+          <p style="text-indent: 0">Reboot Windows<br>      
+        </li>     
+      </ol>     
+    </li>     
+  </ul>     
+</blockquote>     
+<ul>     
+  <li>     
+    <p style="text-indent: 0">Start up and shut down the Tomcat     
+    <ol>     
+      <li>     
+        <p style="text-indent: 0">c:\jLIVE\tomcat\bin\startup.bat</li>     
+      <li>     
+        <p style="text-indent: 0">c:\jLIVE\tomcat\bin\shutdown.bat</li>    
+    </ol>    
+    <p style="text-indent: 0">     
+    　 
+    <p style="text-indent: 0">  
+    Tomcat Troubleshooting:<br>    
+    <br>    
+    There are only really 3 things that can go wrong during the stand-alone Tomcat 4.0 install:<br>     
+    <br>     
+    1) The most common hiccup is when another web server (or any process for that     
+    matter) has laid claim to port 8080.  This is the default HTTP port that Tomcat attempts to bind to at startup.  To     
+    change this, open the file:<br>     
+    <br>     
+       $CATALINA_HOME/conf/server.xml<br>     
+    <br>     
+   ...and search for '8080'.  Change it to a port that isn't in use, and is greater than 1024, as ports less than or equal to 1024 require superuser     
+    access to bind to.<br>     
+    <br>     
+   Restart Tomcat and you're in business.  Be sure that you replace the "8080" in the URL you're using to access Tomcat.  For example, if you change the     
+    port to 1977, you would request the URL http://localhost:1977/.<br>     
+    <br>     
+    2) An &quot;<font color="#800000"><b>out of environment space</b></font>&quot; error when running the batch files in     
+    Win9X/ME-based operating systems.<br>     
+    <br>     
+   Right-click on the STARTUP.BAT and SHUTDOWN.BAT files.  Click on "Properties" then on the "Memory" tab.  For the "Initial environment" field,     
+    enter in something like 4096.<br>     
+    <br>     
+   After you click apply, Windows will create shortcuts in the directory with which you can use to start and stop the container.<br>     
+    <br>     
+    3) The 'localhost' machine isn't found.  This could happen if you're behing a     
+    proxy.  If that's the case, make sure the proxy configuration for your browser knows that you shouldn't be going through the proxy to access the     
+    &quot;localhost&quot; machine.<br>     
+    <br>     
+   In Netscape, this is under Edit/preferences -> Advanced/proxies, and in Internet Explorer, Tools -> Internet Options -> Connections -> LAN Settings.<br>     
+    <br>      
+  </li>     
+</ul>     
+<p style="text-indent: 0"><font size="4" color="#9966FF"><b>Section 5 JDBC      
+Drivers</b></font></p>     
+<p style="text-indent: 0">      
+    jLIVE Builder&trade; support JDBC version 2.0 API. The driver vendor list, refer to web site       
+http://industry.java.sun.com/products/jdbc/drivers. There are 160 kinds of drivers currently available.&nbsp;   
+    jLIVE Builder&trade; support TYPE 1, 2, 3, 4 driver, so you can use the JDBC-ODBC&nbsp;bridge to connect your database. if you   
+    chose the JDBC-ODBC bridge for your       
+connection to database, the performance maybe not good enough for you.&nbsp;You can visit the web site : http://www.merant.com and download a trial version&nbsp;Merant ODBC Driver Pack(Connect ODBC 3.6), that will significantly improve&nbsp;the database performance.&nbsp;</p>       
+<p style="text-indent: 0"><br>      
+    MSSQL Server user can visit the web site : http://www.inetsoftware.de/&nbsp;(i-NET Software company) to       
+download a trial version of JDBC driver for MSSQL. that is a pretty good driver for MSSQL       
+to adopt.&nbsp;</p>      
+<p style="text-indent: 0"> All the&nbsp;drivers you chose to use in jLIVE Builder&trade;, you must refer the vendor installation       
+notes to get to know how to install, how to rewrite the java <font color="#800080"> classpath</font> in order to&nbsp;make       
+the system can launch the driver, and how to specify the <font color="#800080"> database URL</font>&nbsp;format String.<br>        
+    <br>        
+    Driver Setting Example : '*' is for notes only, do not key in the character<br>        
+</p>       
+<ul>       
+  <li>       
+    <p style="text-indent: 0">JDBC-ODBC bridge for MS ACCESS connection      
+    <p style="text-indent: 0">　  
+    <ol>  
+      <li>  
+        <p style="text-indent: 0">Run ODBCAD32.EXE (%SystemRoot%\system32\odbcad32.exe) to create a ODBC DSN.       
+        e.g. "MYODBC"&nbsp;</li>       
+      <li>       
+        <p style="text-indent: 0">Boot Application Server (run [jLIVE][tomcat]startup.bat).</li>       
+      <li>       
+        <p style="text-indent: 0">Run jLIVE Builder&trade;, after created a new application and a new database       
+        for application, set the database setting page specifics :<br>        
+           DB Alias : <font color="#800080"> MYODBCALIAS</font> **<br>        
+           Driver   : <font color="#800080"> sun.jdbc.odbc.JdbcOdbcDriver</font><br>       
+           Url      : j<font color="#800080">dbc:odbc:MYODBC</font><br>       
+    <br>       
+           *All of above settings are case sensitive.&nbsp;<br>       
+           **You can type any name you prefer as the DB Alias, that will be used in&nbsp;application to      
+        refer to this database.</li>       
+      <li>       
+        <p style="text-indent: 0">Press Save Update button then press Test Connection button.       
+        System will report connection status.<br>       
+      </li>      
+    </ol>      
+  </li>      
+</ul>      
+<p style="text-indent: 0">　</p> 
+<ul> 
+  <li> 
+    <p style="text-indent: 0">JDBC for mySQL connection</li>     
+</ul>     
+<blockquote>     
+  <ol>     
+    <li>     
+      <p style="text-indent: 0">Start up mySQL : [jLIVE][mysql][bin]winmysqladmin.exe</li>      
+    <li>      
+      <p style="text-indent: 0">Boot Application Server (run [jLIVE][tomcat]startup.bat).</li>       
+    <li>       
+      <p style="text-indent: 0">Run jLIVE Builder&trade;, after created a new application and a new database       
+      for application, set teh database setting page specifics :<br>        
+           DB Alias : <font color="#800080"> MySQL_DB </font> **<br>       
+           Driver   : <font color="#800080"> org.gjt.mm.mysql.Driver</font><br>       
+           Url      : <font color="#800080"> jdbc:mysql://HostName:3306/DatabaseName</font><br>       
+    <br>       
+           *    All of above settings are case sensitive<br>        
+           **   DB Alias can type any name you prefer, that will be used in application to      
+      refer to&nbsp; this       
+      database.<br>       
+           ***  HostName : the database host name.<br>       
+           **** DatabaseName  : the database name.<br>       
+    </li>      
+    <li>      
+      <p style="text-indent: 0">Press Save Update button then press Test Connection button.       
+      System will report connection status.<br>       
+    </li>      
+  </ol>      
+</blockquote>      
+<p style="text-indent: 0">　</p> 
+<ul> 
+  <li> 
+    <p style="text-indent: 0">JDBC for ORACLE connection</li>      
+</ul>      
+<blockquote>      
+  <ol>      
+    <li>      
+      <p style="text-indent: 0">Boot Application Server(run [jLIVE][tomcat]startup.bat).</li>       
+    <li>       
+      <p style="text-indent: 0">Run jLIVE Builder&trade;, after created a new application and a new database       
+      for application, Set database setting page specifics :<br>        
+           DB Alias : <font color="#800080"> ORACLE_DB</font> **<br>        
+           Driver   : <font color="#800080"> oracle.jdbc.driver.OracleDriver</font><br>       
+           Url      : j<font color="#800080">dbc:oracle:thin:@HostName:1521:DatabaseName</font><br>       
+    <br>       
+           *    All of above settings are case sensitive<br>        
+           **   DB Alias can type any name you prefer, that will be used in&nbsp;application to      
+      refer to this database.<br>        
+           ***  HostName : the database host name.<br>       
+           **** DatabaseName : the database name<br>        
+    </li>       
+    <li>       
+      <p style="text-indent: 0">Press Save Update button then press Test Connection button.       
+      System will report connect status.<br>        
+    </li>       
+  </ol>       
+</blockquote>       
+<p style="text-indent: 0">　</p> 
+<ul> 
+  <li> 
+    <p style="text-indent: 0">iNet MSSQL Driver&nbsp;</li>      
+</ul>      
+<blockquote>      
+  <ol>      
+    <li>      
+      <p style="text-indent: 0">Install i-netSPRINTA, follow user guide to make Java&trade; can launch       
+      the inet driver.</li>       
+    <li>       
+      <p style="text-indent: 0">Boot Application Server (run [jLIVE][tomcat]startup.bat).</li>       
+    <li>       
+      <p style="text-indent: 0">Run jLIVE Builder&trade;, after created a new application and a new database       
+      for application, set teh database setting page specifics :<br>        
+           DB Alias : <font color="#800080"> MSINET</font> **<br>        
+           Driver   : <font color="#800080"> com.inet.tds.TdsDriver</font><br>       
+           Url      : <font color="#800080"> jdbc:inetdae7:HostName:1433?database=DatabaseName&amp;charset=Cp950</font><br>       
+    <br>       
+           *     All of above settings are case sensitive<br>        
+           **    DB Alias can type any name you prefer, that will be used in&nbsp;application to      
+      refer to&nbsp; this database.<br>        
+           ***   HostName : the database host name.<br>       
+           ****  DatabaseName : the database name<br>        
+           ***** Cp950 : the charset (Optional), for Chinese -- Cp950&nbsp;or Ms950      
+      (for Japanese -- MS932)</li>     
+    <li>     
+      <p style="text-indent: 0">Press Save Update button then press Test Connection button.     
+      System will report connect status.<br>      
+    <br>      
+    <br>      
+    </li>     
+  </ol>     
+</blockquote>     
+<p style="text-indent: 0"><font size="4" color="#9966FF"><b>Section 6. Minimum System Requirements</b></font></p>      
+<p style="text-indent: 0"><font size="4" color="#9966FF"><b><br>      
+</b></font>      
+    To install and run jLIVE Builder&trade;, you must meet&nbsp;the following minimum system requirements:<br>        
+    <br>        
+    Intel Pentium/166Mhz or Compatible<br>        
+    Microsoft Windows 95/98 or NT 4 (SP3) or 2000/XP<br>        
+    64MB RAM<br>        
+    150MB Hard Disk space for Compact Install<br>        
+    CD-ROM Drive<br>        
+    SVGA or higher resolution (800x600, 256 Color)<br>        
+    Mouse or other pointing device<br>        
+    <br>        
+    <hr align=left color="#000000">      
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">      
+<tr>      
+<td width=200 align=left valign=top>      
+　</td>     
+<td width=197 align=center valign=top><a href="index.html">     
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>     
+<td width=203 align=right valign=top>     
+　</td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1"></font></b></font><font size="2">Copyright &copy;    
+2000~     
+2004 Probe Technology . All Rights Reserved.</font></p>         
+         
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>         
+         
+ 
+</body>        
+        

@@ -1,0 +1,819 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Variables</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_07.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=215 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=185 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_09.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="top"></a><font size="4">
+12.8 變數 (variables)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#LocalHashPut(key,value)"><font size="2">LocalHashPut(key,value)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#LocalHashGet(key)"><font size="2">LocalHashGet(key)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#LocalHashRemove(key)"><font size="2">LocalHashRemove(key)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#LocalHashClear()"><font size="2">LocalHashClear()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#LocalHashCount()"><font size="2">LocalHashCount()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#StackPush(x)">
+<font size="2">StackPush(x)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#StackPop()">
+<font size="2">StackPop()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#StackClear()">
+<font size="2">StackClear()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#StackCount()">
+<font size="2">StackCount()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#HashPut(key,value)"><font size="2">HashPut(key,value)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#HashGet(key)">
+<font size="2">HashGet(key)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#HashRemove(key)"><font size="2">HashRemove(key)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#HashClear()">
+<font size="2">HashClear()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#HashCount()">
+<font size="2">HashCount()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#SysHashPut(key,value)"><font size="2">SysHashPut(key,value)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#SysHashGet(key)"><font size="2">SysHashGet(key)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#AssignSysVar(i,x)"><font size="2">AssignSysVar(i,x)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch12_08_variable.gif" width="351" height="405"></p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LocalHashPut(key,value)">LocalHashPut(key,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="104">
+  <tr>
+    <td width="21" height="56">　</td>
+    <td width="57" align="right" valign="top" height="56" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="56" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <p align="justify"><font size="2">
+Local Hash是jLIVE Builder&trade; 提供的區域變數，只存在於被定義的原始視窗，其內含值無法被別的視窗參用，離開原始視窗後，該視窗定義的所有Local   
+    Hash 都會自動消失。<br> 
+    <br>  
+    定義區域變數的方法很簡單，設計師只要在原始視窗任何一個元件、事件、函數中，使用到 LocalHashPut(key,value) 或是  
+LocalHashGet(key)  
+函數，假如該索引鍵是第一次被使用，系統會自動造出該區域變數。索引鍵(key)名稱由設計師自行定義，型態為字串，必須用引號括起來，鍵值(value)   
+則可以是任何形態。<br> 
+    <br>  
+    LocalHashPut   
+函數會將鍵值(value) 存到索引鍵(key) 裡面。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">key (索引鍵)、value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">LocalHashPut(&quot;test&quot; , 111)，將 111 存到索引鍵名稱為   
+    &quot;test&quot;的區域變數中，傳回111。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20; margin-left:20">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LocalHashGet(key)">LocalHashGet(key)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="74">
+  <tr>
+    <td width="21" height="26">　</td>
+    <td width="57" align="right" valign="top" height="26" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="26" align="left" valign="top" style="border: 1px solid #C0C0C0"><font size="2">
+    獲得區域變數的內含值，作用後該區域變數內含值不會改變。<br>
+    &quot;key&quot;  
+    為區域變數的索引鍵名稱，若該區域變數不存在，傳回空值。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="16"></td> 
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    參數：</font></td> 
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+    <font size="2">key (索引鍵)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">LocalHashGet(&quot;test&quot;)，傳回索引鍵名稱為 &quot;test&quot;的區域變數內含值。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LocalHashRemove(key)">LocalHashRemove(key)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">移除區域變數，此函數作用之後，該區域變數消失。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">key (索引鍵)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">key (索引鍵)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">LocalHashRemove(&quot;test&quot;)，移除索引鍵名稱為 &quot;test&quot;的區域變數。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LocalHashClear()">LocalHashClear()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">清除該視窗所有的區域變數。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&nbsp;1 (執行成功)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">LocalHashClear()。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LocalHashCount()">LocalHashCount()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">計算該視窗所有的區域變數的個數。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&nbsp;區域變數的個數。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">LocalHashCount()。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="StackPush(x)">StackPush(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+       <p align="justify">
+       <font size="2">Stack 是jLIVE Builder&trade; 提供的全域性的&quot;容器&quot;，可以跨視窗存取資料，是設計師很方便且常用的功能。Stack 的特性是 &quot;先入後出&quot; ，把值壓入 Stack 與取出 Stack   
+    的值需特別留意它的 &quot; 順序性 &quot;。<br> 
+       <br>  
+    我們可以把它想像成汽車上常見的一種放硬幣的小盒子，   
+    當我們把硬幣一個一個往裡面塞時，它底下的彈簧會把所有的硬幣緊緊的頂住，使用時就從頂端把硬幣一個一個取出，所以最先塞進去的硬幣會最後才拿出。<br> 
+       <br>  
+    &quot;壓入&quot; 時使用 StackPush(x)，&quot;取出&quot;時使用 StackPop()。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">x (運算式內含值或常數)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">x (運算式內含值或常數)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">StackPush({Customers:CustomerID})，將客戶編號({Customers:CustomerID})壓入Stack。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="StackPop()">StackPop()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+       <font size="2">取出 Stack 最上面的內含值，若 Stack 是空的，則回傳空字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+       <font size="2">Stack 最上面的內含值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">StackPop()。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="StackClear()">StackClear()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0"><font size="2">
+    將 stack 清空。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">1 (執行成功)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">StackClear()。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="StackCount()">StackCount()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">計算 Stack 內含值的個數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&nbsp;Stack 內含值的個數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">StackCount()。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="HashPut(key,value)">HashPut(key,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="104">
+  <tr>
+    <td width="21" height="56">　</td>
+    <td width="57" align="right" valign="top" height="56" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="56" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <p align="justify"><font size="2">
+    Hash是jLIVE Builder&trade; 提供的全域變數，一經定義，則內含值可在任何視窗參用。<br> 
+    <br> 
+    定義 Hash 的方法很簡單，設計師只要在任何視窗任何一個元件、事件、函數中，使用到 HashPut(key,value) 或是 HashGet(key)   
+    函數，假如該索引鍵是第一次被使用，系統會自動造出該全域變數。索引鍵(key)名稱由設計師自行定義，型態為字串，必須用引號括起來，鍵值(value)   
+則可以是任何形態。<br> 
+    <br>  
+    Hash 與 Local Hash 的函數使用方式完全相同，唯一的差異在於前者是全域變數，而後者是區域變數而已。<br> 
+    <br>  
+    HashPut   
+函數會將鍵值(value) 存到索引鍵(key) 裡面。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">key (索引鍵)、value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">HashPut(&quot;userid&quot; , {Employees:EmployeeID})，將 {Employees:EmployeeID}(員工編號)   
+    存到索引鍵名稱為 &quot;userid&quot;的 Hash 全域變數中，傳回{Employees:EmployeeID}。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="HashGet(key)">HashGet(key)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="74">
+  <tr>
+    <td width="21" height="26">　</td>
+    <td width="57" align="right" valign="top" height="26" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="26" align="left" valign="top" style="border: 1px solid #C0C0C0"><font size="2">
+    獲得 Hash 全域變數的內含值，作用後該全域變數內含值不會改變。<br>  
+    &quot;key&quot;  
+    為全域變數的索引鍵名稱，若該全域變數不存在，傳回空值。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="16"></td> 
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    參數：</font></td> 
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+    <font size="2">key (索引鍵)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">HashGet(&quot;userid&quot;)，傳回索引鍵名稱為 &quot;userid&quot; 的全域變數內含值。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="HashRemove(key)">HashRemove(key)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">移除全域變數，此函數作用之後，該全域變數消失。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">key (索引鍵)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">key (索引鍵)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">HashRemove(&quot;userid&quot;)，移除索引鍵名稱為 &quot;userid&quot;的全域變數。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="HashClear()">HashClear()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">清除應用程式中所有的 Hash 全域變數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&nbsp;1 (執行成功)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">HashClear()。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="HashCount()">HashCount()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">計算應用程式中所有的 Hash 全域變數的個數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">所有的 Hash 全域變數的個數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">HashCount()。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SysHashPut(key,value)">SysHashPut(key,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="104">
+  <tr>
+    <td width="21" height="56">　</td>
+    <td width="57" align="right" valign="top" height="56" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="56" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <p align="justify"><font size="2">
+    SysHash是jLIVE Builder&trade; 提供的全域變數，一經定義，則內含值可在任何視窗參用。<br> 
+    <br> 
+    定義 SysHash 的方法很簡單，設計師只要在任何視窗任何一個元件、事件、函數中，使用到 SysHashPut(key,value) 或是   
+    SysHashGet(key) 函數，假如該索引鍵是第一次被使用，系統會自動造出該全域變數。索引鍵(key)名稱由設計師自行定義，型態為字串，必須用引號括起來，鍵值(value)   
+則可以是任何形態。<br> 
+    <br>  
+    SysHash 與 Hash 函數的特性完全相同，唯一需留意的地方是，jLIVE Builder&trade;  
+    提供的登入機制與安全控管中，會將使用者的某些資訊儲存在 SysHash   
+    裡面，假如設計師沿用系統的登入機制與安全控管視窗，需避開預設的索引鍵，以免發生不可預期的錯誤。<br> 
+    <br>  
+    系統預設的 SysHash 索引鍵詳列如下，建議設計師盡量使用 Hash 全域變數。<font color="#666699"><br> 
+    <br> 
+    &quot;compcode&quot;</font>、<font color="#666699">&quot;userid&quot;</font>、<font color="#666699">&quot;username&quot;</font>、<font color="#666699">&quot;userpass&quot;</font>、<font color="#666699">&quot;userduty&quot;</font>、<font color="#666699">&quot;sessionid&quot;<br> 
+    </font><br>  
+    SysHashPut   
+函數會將鍵值(value) 存到索引鍵(key) 裡面。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">key (索引鍵)、value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">SysHashPut(&quot;userid&quot; , {Employees:EmployeeID})，將 {Employees:EmployeeID}(員工編號)   
+    存到索引鍵名稱為 &quot;userid&quot;的 SysHash 全域變數中，傳回{Employees:EmployeeID}。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SysHashGet(key)">SysHashGet(key)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="74">
+  <tr>
+    <td width="21" height="26">　</td>
+    <td width="57" align="right" valign="top" height="26" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="26" align="left" valign="top" style="border: 1px solid #C0C0C0"><font size="2">
+    獲得 SysHash 全域變數的內含值，作用後該全域變數內含值不會改變。<br> 
+    &quot;key&quot; 為 SysHash 全域變數的索引鍵名稱，若該全域變數不存在，系統會自動造出，並傳回空值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">key (索引鍵)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">value (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">SysHashGet(&quot;userid&quot;)，傳回索引鍵名稱為 &quot;userid&quot; 的 SysHash   
+全域變數內含值。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="AssignSysVar(i,x)">AssignSysVar(i,x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="87">
+  <tr>
+    <td width="21" height="39">　</td>
+    <td width="57" align="right" valign="top" height="39" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="39" align="left" valign="top" style="border: 1px solid #C0C0C0"><font size="2">
+    _sysvar&nbsp; 是jLIVE Builder&trade; 提供的全域變數，編號從1到8，不需由設計師定義，其內含值可在任何視窗直接參用。<br> 
+    AssignSysVar   
+函數會將鍵值(x) 存到第 i 個全域變數裡面。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">i (編號)、x (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">x (鍵值)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    AssignSysVar( 3&nbsp; , {Employees:EmployeeID})，將 {Employees:EmployeeID}(員工編號)   
+存到全域變數 {SysVar_3}。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_07.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=184 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=216 align=right valign=top>
+<a href="ch12_09.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

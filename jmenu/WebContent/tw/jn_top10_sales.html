@@ -1,0 +1,294 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_top10_cust.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_top10_prod.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Top 10 Sales</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>TOP10_SALES</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="line-height: 150%"><font size="2">業務人員業績排行。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <font size="2"><b>TOP</b></font><b><font size="2">_10：</font></b></td>
+       <td width="661" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+         SQL資料來源，業務人員業績排行。<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; select sum(A.UnitPrice*A.Quantity*(1-A.Discount)) 
+       </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">
+         <font face="Courier New">as subtot,</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">
+         <font face="Courier New">concat(C.FirstName,' ',C.LastName) as sales<br>
+       &nbsp;&nbsp;
+       from&nbsp;&nbsp; orders B&nbsp;
+       left outer join orderdetails A <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.orderid=B.orderid<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       left outer join employees C <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on B.employeeid=C.employeeid<br>
+       &nbsp;&nbsp;
+       where&nbsp; B.orderdate between ? and ? <br>
+       &nbsp;&nbsp;
+       group&nbsp; by B.employeeid <br>
+&nbsp;&nbsp; order&nbsp; by subtot desc&nbsp; <br>
+&nbsp;&nbsp; limit&nbsp; 10<br>
+       &nbsp;&nbsp;
+       </font>第一個<font color="#666699">參數類別 &quot;DATE&quot;</font>，<font color="#666699">運算式為&nbsp; 
+       <font face="Courier New">Date(Year(NextDate(Today()</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp; </font><font size="2">
+       <font face="Courier New" color="#666699">,0,-1,0)),Month(NextDate(Today(),0,-1,0)),1)</font>，表前一個</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 月的1號，第二個<font color="#666699">參數類別 &quot;DATE&quot;</font>，<font color="#666699">運算式為 
+       <font face="Courier New">Date(Year(NextDate(</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp; </font>
+       <font size="2"> 
+       <font face="Courier New" color="#666699">&nbsp;Today(),0,-1,0)),Month(NextDate(Today(),0,-1,0)),31)</font>，</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 表前一個月最後一天，這個SQL會依使用者的系統時間，將前一個月份的銷</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 售業績 
+       Join 出來。&quot;limit 10&quot; 是 mysql 的命令，只取10筆記錄的意思。&quot;concat&quot; </font>
+       <p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       則把字串連接起來。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2"></td>
+       <td width="661" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【FROM_DATE】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊 (Edit)。<br>
+       【資料來源】核取<font color="#666699"> 使用運算式、只在初始化時作用 </font>，運算式內容為
+       <font face="Courier New"> 
+       <font color="#666699">Date( Year(NextDate(Today(),0,-1,0)),Month(NextDate(Today(),0,-1 ,0)),1)</font></font>，表示視窗開啟時，
+       此元件之預設值為前一個月的1號。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【TO_DATE】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊 (Edit)。<br>
+       【資料來源】核取<font color="#666699"> 使用運算式、只在初始化時作用 </font>，運算式內容為
+       <font face="Courier New"> 
+       <font color="#666699">Date( Year(NextDate(Today(),0,-1,0)),Month(NextDate(Today(),0,-1 ,0)),31)</font></font>，表示視窗開啟時，
+       此元件之預設值為前一個月的最後一天。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_trig】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">trans_hash </font>，按下時觸發 &quot;TOP_10&quot; 資料來源 
+       ，重新排行。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_sales】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">TOP_10</font>。<br>
+       【欄位】【資料表元件欄位】<font color="#666699"> </font>的第一個欄位 &quot;RANK&quot; 為計算欄位，運算式為 
+       <font color="#666699" face="Courier New">{TOP_10:RecordNo()}</font>，即排名的順序。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【trans_hash】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式有兩項：<br>
+       (1.) <font color="#666699">&nbsp;<font face="Courier New">LocalHashPut(&quot;querystring&quot;,&quot;&quot;)</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+       <font size="2">&nbsp;將區域變數 &quot;querystring&quot;<font color="#666699"> </font>清成空字串。<br>
+       (2.) <font color="#666699" face="Courier New">Condition((LRTrim({FROM_DATE})=&quot;&quot; AND LRTrim({TO_DATE} )=&quot;&quot;),&quot;&quot;,Condition((LRTrim({FROM_DATE})&lt;&gt;&quot;&quot; AND LRTrim({TO_DATE})=&quot;&quot;),LocalHashPut('querystring', LocalHashGet(&quot;querystring&quot;)$&quot; AND B.OrderDate &gt;= '&quot;${FROM_DATE}[1 TO 
+       8]$&quot;000000'&quot; ), Condition( (LRTrim({FROM_DATE})=&quot;&quot; AND LRTrim({TO_DATE})=&quot;&quot;), LocalHashPut('querystring',LocalHashGet(&quot;querystring&quot;)$&quot; AND 
+       B.OrderDate &lt;= '&quot;${TO_DATE}[1 TO 8]$&quot;235959'&quot;), LocalHashPut('querystring',LocalHashGet(&quot;querystring&quot;)$&quot; AND 
+       B.OrderDate BETWEEN '&quot;${FROM_DATE}[1 TO 8]$&quot;000000' AND '&quot;${TO_DATE}[1 TO 
+       8]$&quot;235959'&quot;))))</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">這個運算式目的在於依使用者的查詢條件，組成 SQL 命令中 &quot;Where ...&quot; 
+       後面的字串。意義說明如下：如果不設定起訖日期，不做任何動作；如果只設定起始日期，則括出大於等於起始日期的所有資料；如果只設定終止日期，
+       則括出小於等於終止日期的所有資料；如果起訖日期都有設定，則括出介於兩個日期之間的所有資料。<br>
+       【後續事件】選 <font color="#666699">trig_top10 </font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【trig_top10】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【執行】【資料來源】選<font color="#666699"> TOP_10</font>。<br>
+       【SQL】為：<font face="Courier New">@Formula<br>
+       &nbsp;
+       &quot;select sum(A.UnitPrice*A.Quantity*(1-A.Discount)) 
+       </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"><font face="Courier New">as subtot,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; concat(C.FirstName,' ',C.LastName) as sales<br>
+       &nbsp;&nbsp;
+       from&nbsp;&nbsp; orders B left outer join orderdetails A <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.orderid=B.orderid<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       left outer join employees C <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on B.employeeid=C.employeeid<br>
+       &nbsp;&nbsp;
+       where&nbsp; A.orderid&gt;0 &quot;
+       $LocalHashGet(&quot;querystring&quot;)$<br>
+       &nbsp;&quot; group&nbsp; by B.employeeid&nbsp; <br>
+&nbsp;&nbsp; order&nbsp; by subtot desc&nbsp;&nbsp; <br>
+&nbsp;&nbsp; limit&nbsp; 10 &quot;<br>
+       &nbsp;&nbsp;
+       </font>@Formula&quot; 
+       的作用在於把之後的命令字串、jLIVE 運算式等等，先行解譯為字</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 串，再把字串整個送到資料庫去執行。也因為可以使用運算式，設計師便可</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 依此組合出動態的 
+       SQL 命令。在這個 SQL 中，把上一個事件 (trans_hash) 組成</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 的條件字串，接到 
+       &quot;where...&quot; 之後，以這個 SQL 命令重新做出業績排行。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2"></td>
+       <td width="906" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_top10_cust.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=377 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=107 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_top10_prod.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

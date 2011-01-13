@@ -1,0 +1,404 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>SQL Error Handle</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html"> 
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p> 
+ 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</td> 
+<td width=195 align=center valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" size="2">
+<a href="appendix.html" style="text-decoration: none"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=205 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b><font size="4"><a class="TITLE"> SQL Error Handle</a></font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#sqlerrtransmit"> 
+SQL 錯誤訊息傳遞與擷取 (SQL error message transmit and retrieval)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#exceptionhandle"> 
+SQL 錯誤(Exception) 的處理程序位置 (SQL error handle)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#tips">SQL  
+錯誤(Exception) 的處理程序位置 (SQL error handle)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#jlivesqlerror"> 
+jLIVE&#8482; middle ware SQL 錯誤訊息 (SQL error information)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE  
+Builder&#8482; 的應用程式是 n-tiers 的架構，應用程式執行時，由使用者的客戶端 
+(client) 發出請求 (request) 而由 jLIVE&#8482;  
+middle ware 提供服務，其中有關於資料庫伺服器 (database server) 的存取請求 
+(access request) 時，jLIVE&#8482;  
+middle ware 必須再將服務請求轉交由資料庫伺服器服務，當資料庫伺服器發生錯誤 
+(exception) 時，jLIVE&#8482; middle ware  
+會將此錯誤訊息(message) 及代碼 (error code)，回傳至發出請求的客戶端，並啟動客戶端相關的資料來源或事件模組中的 SQL Error  
+Handle 事件，以便設計師在 SQL Error Handle 的事件流程中，根據錯誤訊息及代碼，回應使用者及回復系統程序(error respond  
+and recovery)。設計師如果未設定相關的 SQL Error Handle 事件流程，當資料庫伺服器錯誤發生 
+(exception) 時，jLIVE&#8482;  
+系統會以訊息視窗，顯示錯誤代碼及訊息，但不做任何的後續處理。</font></p>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="sqlerrtransmit"></a><b> 
+SQL 錯誤訊息傳遞與擷取 (SQL error message transmit and retrieval)</b></font></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">
+資料庫伺服器錯誤發生 (exception) 時，JDBC 驅動程式回覆的錯誤資訊 
+(information) 包括：</font></p>  
+<ul>  
+  <li>  
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2"> 
+    SQL 錯誤代碼 (SQL error code)</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">
+    SQL 錯誤狀態 (SQL error state)</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">
+    SQL 錯誤訊息 (SQL error message)</font></li> 
+</ul> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">
+這三個資訊會因為使用的資料庫系統 (database system)、驅動程式 
+(driver) 及發生錯誤的服務位置 (site)，相同的邏輯錯誤，而有不同的代碼、狀態、訊息。例如：新增不允許重覆鍵值的資料記錄，產生的鍵值重覆錯誤資訊 
+(exception)，不同資料庫系統的錯誤代碼都不相同。jLIVE&#8482; middle ware 當無法連結資料伺服器或提供服務產生錯誤時，亦會發出 SQL  
+錯誤訊息，jLIVE&#8482; middle ware 所產生的 SQL 錯誤資訊，參閱 <a href="#jlivesqlerror">jLIVE&#8482; middle  
+ware SQL 錯誤訊息 (SQL error information)</a>。 資料庫系統、驅動程式產生的 SQL  
+錯誤資訊，參閱軟體供應廠商的使用者參考手冊。<br> 
+　</font></p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">jLIVE  
+Builder&#8482; 應用程式在資料庫伺服器 (database server) 發生錯誤時 
+(exception)，SQL 錯誤資訊由資料庫伺服器傳至 jLIVE&#8482;  
+middle ware，再傳至應用程式，儲存於jLIVE&#8482; 系統SQL錯誤變數雜湊集 (SQL error hash) 中 ，並啟動相關連結 
+(link) 的  
+SQL 錯誤處理事件，設計師可以在事件流程中以下列運算式 
+(formula) 取得錯誤代碼、狀態、訊息：</font></p> 
+<ul> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699" face="Courier New"> 
+    GetSqlErrcode(&quot;ds.op&quot;)</font>：SQL 錯誤代碼 (SQL error code)</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699" size="2" face="Courier New">
+    GetSqlState(&quot;ds.op&quot;)</font>：SQL 錯誤狀態 (SQL error state)</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" face="Courier New" color="#666699">
+    GetSqlErrmsg(&quot;ds.op&quot;)</font><font size="2">：SQL 錯誤訊息 (SQL 
+    error message)</font></li> 
+</ul> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">其中  
+<font color="#666699" size="2" face="Courier New">&quot;ds.op&quot;</font> 依發生 <a href="#exceptionhandle">SQL  
+錯誤(exception) 處理的程序位置(SQL error handle)</a>，而需給定不同的值。<br> 
+　</font></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">
+當設計師連結 (link) SQL 錯誤處理事件流程 (SQL error handle) 後，jLIVE&#8482;  
+系統即不再出現預設的錯誤訊息視窗，所有回復作業，將交於設計師的事件流程處理。</font></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="exceptionhandle"></a>
+SQL 錯誤(Exception) 的處理程序位置 (SQL error handle)</b></font></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<ul>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>資料來源 SQL error  
+    handle </b>：資料來源在開啟 (open)、讀取 (fetch)、編輯存檔 
+    (update)、新增存檔(insert)、刪除 (delete)  
+    及以事件觸發資料來源、查詢資料來源時，SQL 錯誤 
+    (exception) 連結的處理事件程序。</font> <br> 
+    　<ul>
+      <li>
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>開啟 
+        (open) 的  
+        SQL Handle</b>：</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+        資料來源開啟(open)、讀取資料記錄欄位屬性 (data source record meta-data)、查詢資料來源事件 
+        (query  
+        data source) ，SQL 錯誤 (exception) 時引發此處理事件程序。</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699" face="Courier New"> 
+        GetSqlErrcode(&quot;ds.op&quot;)  
+        </font>中的 <font color="#666699" size="2" face="Courier New">&quot;ds.op&quot;</font> 值為 <font color="#666699" face="Courier New" size="2"> 
+        &quot;</font><font color="#666699" size="2">資料來源名稱</font><font color="#666699" face="Courier New" size="2">.open&quot;</font>，例如：資料來源名稱為 
+        <font face="Courier New"> Customer</font>，以 <font face="Courier New"> GetSqlErrcode(&quot;Customer.open&quot;)</font>  
+        取得 SQL 錯誤代碼。</font></li> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>讀取 
+        (fetch)  
+        的 SQL Handle</b>：</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">資料來源讀取資料記錄 
+        (record data) ，SQL 錯誤 (exception) 時引發此處理事件程序。</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"> 
+        <font face="Courier New">
+        GetSqlErrcode(&quot;ds.op&quot;)</font>  
+        </font>中的 <font color="#666699" size="2" face="Courier New">&quot;ds.op&quot;</font> 值為<font color="#666699"> 
+        </font><font color="#666699" face="Courier New">
+        &quot;</font><font color="#666699">資料來源名稱</font><font color="#666699" face="Courier New">.fetch&quot;</font>，例如：資料來源名稱為 
+        <font face="Courier New"> Customer</font>，以 <font face="Courier New"> 
+        GetSqlErrcode(&quot;Customer.fetch&quot;)</font>取得 SQL 錯誤代碼。</font></li> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>編輯存檔 
+        (update) 的 SQL Handle</b>：</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+        資料來源資料記錄編輯存檔 (update) ，SQL 錯誤 (exception) 時引發此處理事件程序。</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699" size="2" face="Courier New"> 
+        GetSqlErrcode(&quot;ds.op&quot;)</font>中的<font color="#666699"> </font><font color="#666699" face="Courier New">&quot;ds.op&quot;</font> 值為 <font color="#666699" size="2" face="Courier New"> 
+        &quot;</font><font color="#666699" size="2">資料來源名稱</font><font color="#666699" size="2" face="Courier New">.update&quot;</font>，例如：資料來源名稱為 
+        <font face="Courier New"> Customer</font>，以 <font face="Courier New"> 
+        GetSqlErrcode(&quot;Customer.update&quot;)</font> 取得 SQL 錯誤代碼。</font></li> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b> 
+        新增存檔 (insert) 的 SQL Handle</b>：</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+        資料來源資料記錄新增存檔(insert) ，SQL 錯誤 (exception) 時引發此處理事件程序。</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"> 
+        <font face="Courier New">
+        GetSqlErrcode(&quot;ds.op&quot;)</font>  
+        </font>中的 <font color="#666699" size="2" face="Courier New">&quot;ds.op&quot;</font> 值為 <font color="#666699" face="Courier New" size="2"> 
+        &quot;</font><font color="#666699" size="2">資料來源名稱</font><font color="#666699" face="Courier New" size="2">.insert&quot;</font>，例如：資料來源名稱為 
+        <font face="Courier New"> Customer</font>，以 <font face="Courier New"> 
+        GetSqlErrcode(&quot;Customer.insert&quot;) </font> 取得 SQL 錯誤代碼。</font></li> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>刪除 
+        (delete)&nbsp;  
+        的 SQL Handle</b>：</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+        資料來源刪除 (delete)資料記錄 ，SQL 錯誤 (exception) 時引發此處理事件程序。</font></p> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699" size="2" face="Courier New"> 
+        GetSqlErrcode(&quot;ds.op&quot;)</font>中的 <font color="#666699" face="Courier New" size="2">&quot;ds.op&quot;</font> 值為 <font color="#666699" size="2" face="Courier New"> 
+        &quot;</font><font color="#666699" size="2">資料來源名稱</font><font color="#666699" size="2" face="Courier New">.delete&quot;</font>，例如：資料來源名稱為 
+        <font face="Courier New"> Customer</font>，以 <font face="Courier New"> 
+        GetSqlErrcode(&quot;Customer.delete&quot;)</font> 取得 SQL 錯誤代碼。</font></li> 
+    </ul> 
+  </li> 
+</ul> 
+<ul> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>執行 NON_Select  
+    SQL 指令事件</b>：</font></p> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">執行 SQL  
+    指令中屬於非 Select 的所有指令集，SQL 錯誤 (exception)  
+    時引發此處理事件程序。</font></p> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><font face="Courier New">GetSqlErrcode(&quot;ds.op&quot;)</font>  
+    </font>中的 <font color="#666699" size="2" face="Courier New">&quot;ds.op&quot;</font> 值為 <font color="#666699" face="Courier New" size="2">&quot;</font><font color="#666699" size="2">事件名稱</font><font color="#666699" face="Courier New" size="2">.sql&quot;</font>，例如： 
+    事件名稱為 <font face="Courier New"> 
+    ins_items</font>，以 <font face="Courier New" size="2"> GetSqlErrcode(&quot;ins_items.sql&quot;)</font> 取得 SQL  
+    錯誤代碼。</font><p style="margin-top: 0; margin-bottom: 0">　</li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>執行 預存程序 
+    (stored  
+    procedure) SQL 指令事件</b>：</font></p> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">執行資料庫中的預儲程序 
+    (stored procedure)，SQL 錯誤 (exception) 時引發此處理事件程序。</font></p> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"> 
+    <font face="Courier New">
+    GetSqlErrcode(&quot;ds.op&quot;)</font>  
+    </font>中的 <font face="Courier New" color="#666699">&quot;ds.op&quot; </font> 值為 <font color="#666699" size="2" face="Courier New"> 
+    &quot;</font><font color="#666699" size="2">資料庫別名</font><font color="#666699" size="2" face="Courier New">.</font><font color="#666699" size="2">預儲程序名稱</font><font color="#666699" size="2" face="Courier New">&quot;</font>，例如：資料庫別名 
+    <font face="Courier New"> NorthDB</font>，預儲程序名稱為 <font face="Courier New"> get_autoencode</font> 以 
+    <font face="Courier New"> 
+    GetSqlErrcode(&quot;NorthDB.get_autoencode&quot;)</font>取得 SQL 錯誤代碼。</font></li> 
+</ul> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="tips"></a>
+SQL 錯誤處理程序設計提示 (SQL error handle programming tips)</b></font></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">設計師連結  
+SQL error handle 的處理程序事件後，當錯誤 (exception)  
+發生時，原有的作業流程隨即中斷，轉由處理程序的事件流程服務，設計師必須在整個處理程序的事件流程中包含：</font></p> 
+<ul> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">以錯誤代碼分別錯誤的處理程序 
+    (error code handle procedure)。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">錯誤發生時資料的回復作業 
+    (data  
+    recovery)。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">是否提供或隱含再次作業的流程 
+    (retry procedure)。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+    未處理或未知的錯誤代碼以訊息視窗顯示或特定的流程事件控管 
+    (unknown error handle)。</font></li> 
+</ul> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">例如：資料記錄新增(record  
+insert) ，發生唯一鍵值 (unique key) 重覆 (duplicated) 的 SQL 錯誤 
+(exception) 時：</font></p>  
+<ul> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">資料值是由使用者自行輸入：</font> 
+    <br> 
+　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+        連結一個【顯示訊息視窗事件】，其事件啟動條件為 <font face="Courier New"> GetSqlErrcode(&quot;ds.insert&quot;) = &quot;dup_err_code&quot;</font>  
+        ；顯示鍵值重覆訊息並要求使用者重新輸入；後續連結 
+        (link) 【設定元件 Focus 事件】將 Focus 調至輸入元件。</font></li> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟 1 的否則事件 
+        (otherwise event) ，連結一個【顯示訊息視窗事件】，顯示其他未處理或未知的錯誤代碼資訊。<br> 
+        　</font></li>
+    </ol>
+  </li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">應用系統內部編碼：</font>
+    <br>
+　<ol style="font-size: 10 pt">
+      <li>
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">
+        連結一個【設定資料欄位內含值事件】，其事件啟動條件為 
+        <font face="Courier New"> GetSqlErrcode(&quot;ds.insert&quot;) = &quot;dup_err_code&quot; 
+        </font> 
+        ；重新編碼唯一鍵值 (unique key) 資料，將新值設定至資料欄位中；後續連結 
+        (link) 【資料來源瀏覽的存檔 (post)事件】。</font></li>
+      <li>
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟 1 的否則事件 
+        (otherwise event) ，連結一個【顯示訊息視窗事件】，顯示其他未處理或未知的錯誤代碼資訊。</font></li> 
+    </ol> 
+  </li> 
+</ul> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="jlivesqlerror"></a><b>
+jLIVE&#8482; middle ware SQL 錯誤訊息 (SQL error information)</b></font></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<table border="1" cellspacing="1">
+  <tr>
+    <td bgcolor="#505050"><font size="2" color="#FFFFFF">Site</font></td>
+    <td bgcolor="#505050"><font size="2" color="#FFFFFF">Error Code</font></td>
+    <td bgcolor="#505050"><font size="2" color="#FFFFFF">SQL State</font></td>
+    <td bgcolor="#505050"><font size="2" color="#FFFFFF">Error Message</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Connection</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">db001</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] Connnection Error!\n+db_</font><font SIZE="2">name</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">DBMS</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">db002</font></td>
+    <td><font SIZE="2">&nbsp;</font><font LANG="ZH-TW" SIZE="2">Database DBMS error</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Meta Service</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">db003</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer]Connection Meta Data Service 
+    Unknown!\nService Code : </font><font SIZE="2">+</font><font LANG="ZH-TW" SIZE="2">iCODE</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Record Locate</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">rec001</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] Cannot locate record</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Delete Result</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">del001</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] Delete Effect Rows : &quot;+ieff+&quot;\nSystem 
+    will rollback this operation.\nSelect unique rowid fields correctly</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Update 1</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">upd001</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] The record had been deleted or 
+    \nUnique key had been modified by other user\nSystem will rollback this 
+    operation</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Update 2</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">upd002</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] Update effect rows : +ieff+\nSystem 
+    will rollback this operation.\nSelect unique rowid fields correctly</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">DataSource</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">ds001</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] Datasource NOT opened : &quot;+dsobjname</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Driver</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">drv001</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] Driver NOT support</font></td>
+  </tr>
+  <tr>
+    <td><font SIZE="2">Database</font></td>
+    <td><font SIZE="2">-20000</font></td>
+    <td><font SIZE="2">db001</font></td>
+    <td><font LANG="ZH-TW" SIZE="2">[ProbeServer] Connect Configuration Data 
+    Missing \nOr Database was not opened</font></td>
+  </tr>
+</table>
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+　</td> 
+<td width=200 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=200 align=right valign=top> 
+　</td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+  
+</body>  
+  
+</html>

@@ -1,0 +1,578 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>MaskEdit Component</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111" height="21">
+<tr>
+<td width=200 align=left valign=top height="21">
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_22.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top height="21">
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>   
+<td width=205 align=right valign=top height="21">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch10_24.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p><b>   
+<font size="4"><a name="top"></a>MaskEdit (MaskEdit component)</font></b><span style="background-color: #FFFFFF">     
+    <font size="4">     
+    <img border="0" src="images/dbtmaskedit.gif" width="25" height="25"></font></span></p>     
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">   
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p>      
+<p style="margin-top: 2; margin-bottom: 2"><a href="#datasource">      
+<font size="2">資料來源 (data source)</font></a></p>     
+<p style="margin-top: 2; margin-bottom: 2"><a href="#validation">     
+<font size="2">Mask屬性 (mask)</font></a></p>     
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event">     
+<font size="2">事件 (event)</font></a></p>     
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">運算式屬性存取   
+(formula get/set properties)</a></font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+<font size="2">M</font><font size="2" color="#000000">askedit 元件 (MaskEdit)，使用於連結資料來源    
+(data       
+Source) 資料欄位 (data field) 的顯示 (display)、輸入 (input)、修改    
+(update) 的基本元件，與編輯方塊元件不同的是，提供 Mask 格式字串，方便使用者讀取與輸入。NaskEdit 元件亦可不連結資料欄位 (binding)，而是使用運算式    
+(formula)       
+顯示運算後的結果，當視窗資料來源移動資料記錄、存檔、刪除或其他元件值內含值改變    
+(changed) 時，運算式 (formula) 將會自動重新計算即時同步更新。</font><font size="2">可串接事件以反應各種商業邏輯    
+(business logical) 的運作，例如：當元件內含值修改時、按下       
+Enter 鍵時、元件 Gain Focus 時、元件 Lost Focus 時、雙擊滑鼠的左鍵時、按下滑鼠右鍵時</font><font size="2" color="#000000">，    
+則會</font><font size="2">啟動指定的相關事件程序。</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="datasource"></a>資料來源    
+(data source)</font></b></p>     
+<ul type="square">     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">     
+<font color="#666699">資料來源 (data source)：</font>資料來源。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">      
+<font color="#666699">資料欄位 (data field)：</font>資料來源內的資料欄位。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">      
+<font color="#666699">可編輯 (editable)：</font>是否允許使用者編輯。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">     
+<font color="#666699">選擇全部 (select all)：</font>Focus 移至元件時，編輯</font><font size="2" color="#000000">方塊</font><font size="2">元件內的值，標示    
+(mark) 為全選狀態 (select all)。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font color="#666699" size="2">自動切換輸入法 (enable input method)：</font><font size="2">Focus     
+移至元件時，編輯</font><font size="2" color="#000000">方塊</font><font size="2">元件自動顯示切換為，使用者作業系統目前所使用的輸入法    
+(input method)。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Focus 加速器       
+(accelerator)：</font>按下所要的快速鍵。應用程式執行時，使用者須按住     
+&quot;ALT&quot; 鍵+快速鍵，可以將       
+Focus 移至元件。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1" align="justify">      
+<font color="#666699">     
+<font size="2">使用運算式 (use formula)：</font></font><font size="2" color="#000000">使用運算式    
+(formula) 顯示運算後的結果，當視窗資料來源 (data source)       
+移動資料記錄、存檔、刪除或其他元件值內含值改變 (changed) 時，或以 SetProp() 運算式執行屬性　&quot;revalidate&quot; 時，運算式    
+(formula) 將會自動重新計算即時同步更新。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">      
+<font color="#666699">只有在初始化時作用 (initial only)：</font>運算式    
+(formula) 只在視窗開啟後</font><font size="2" color="#000000">，</font><font size="2">計算運算式並將結果顯示於編輯</font><font size="2" color="#000000">方塊</font><font size="2">元件中</font><font size="2" color="#000000">，之後即不再自動計算更新    
+(compute and refresh)，設計師必須透過【</font><font size="2" color="#505050">設定元件內含值】</font><font size="2" color="#000000">的事件    
+(set component data event)，或重新計算以 SetProp()       
+的運算公式更新。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font color="#666699" size="2">對齊 (alignment)：</font><font size="2">水平靠左中右對齊。</font></p>     
+  </li>     
+</ul>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch10_23_ds.gif" width="476" height="476"></p>     
+</blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b>
+<font size="2"><a name="validation"></a>Mask (mask)</font></b></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+<font size="2">Mask (mask) 是設計師根據資料連結 (data binding) 的欄位型別 (field type) 或運算公式 
+(formula) 的結果值，設定樣版格式 (mask format pattern)，jLIVE&#8482; 系統會根據樣版格式 (mask format pattern)       
+將資料格式化(formatted)，在 MaskEdit 元件讀取時，將資料值格式化的結果顯示於元件中；編輯    
+(edit)       
+狀態時，則除了將格式化的結果顯示外，會要求使用者輸入與樣版格式 (mask format pattern) 相符合的字元，否則無法輸入。</font></p>      
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+　</p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">&nbsp;Mask 
+屬性：</font></p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+　</p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<img border="0" src="images/ch10_23_mask.gif" width="480" height="480"></p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+　</p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">Mask 
+格式字串 (mask format pattern)：</font><font size="2" color="#000000">輸入 Mask 格式化字串</font><font size="2">。</font><font size="2" color="#000000">Mask 
+格式化字串會規範每個輸入位置 (character position) ，使用者可以輸入的字元，輸入不正確或不允許的字元，</font><font size="2">系統不接受且發出 
+Beep 聲。<br>
+<font color="#666699"><br>
+格式字元 (formatter character)</font></font></p>     
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="7%" align="center"><font size="2">字元</font></td>
+    <td width="93%">
+    <p align="center"><font size="2">描述 (description)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">#</font></b></td>
+    <td width="93%"><font size="2">數字字元。<br>
+    Any valid number, uses <code>Character.isDigit</code>.</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">'</font></b></td>
+    <td width="93%"><font size="2">含於格式中的字串，不可編輯。<br>
+    Escape character, used to escape any of the special formatting characters.</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">U</font></b></td>
+    <td width="93%"><font size="2">轉為大寫字元。<br>
+    Any character (<code>Character.isLetter</code>). All lowercase letters are 
+    mapped to upper case.</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">L</font></b></td>
+    <td width="93%"><font size="2">轉為小寫字元。<br>
+    Any character (<code>Character.isLetter</code>). All upper case letters are 
+    mapped to lower case.</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">A</font></b></td>
+    <td width="93%"><font size="2">任意文數字。<br>
+    Any character or number (<code>Character.isLetter</code> or <code>
+    Character.isDigit</code>)</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">?</font></b></td>
+    <td width="93%"><font size="2">任意文字。<br>
+    Any character (<code>Character.isLetter</code>).</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">*</font></b></td>
+    <td width="93%"><font size="2">所有字元。<br>
+    Anything.</font></td>
+  </tr>
+  <tr>
+    <td width="7%" align="center"><b><font size="2">H</font></b></td>
+    <td width="93%"><font size="2">十六進位字元。<br>
+    Any hex character (0-9, a-f or A-F).</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">     
+<br>
+<font size="2">範例：<br>
+<br>
+輸入</font><font size="2" color="#000000">Mask 格式化字串為<code> <b>(##)####-####</b> </code>。執行時 
+MaskEdit 顯示為 <b> <code>(&nbsp; )&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; </code>
+</b>。若設定位置字元為 <b> <code>_</code></b> 則顯示為 <b> <code>(__)____-____</code></b>。
+使用者輸入<b><code>123</code></b> 顯示為 <b> <code>(12)3___-____</code></b>。輸入不是數字時，</font><font size="2">系統不接受且發出 
+Beep 聲。<br>
+<br>
+系統設值 (Set Value) 時，不須含</font><font size="2" color="#000000">Mask 格式化字元。<br>
+<br>
+取值時 (Get Value)</font><font size="2">時：<br>
+<br>
+使用者在MaskEdit 元件輸入</font><font size="2" color="#000000"><b><code>(12)3___-____</code></b>。</font><font size="2">以運算式取值 
+<font color="#666699">{元件名稱}</font> 或 <font color="#666699">GetProp(&quot;元件名稱&quot;, &quot;text&quot;)</font> 
+元件傳回 <b> <code>123</code></b> 不含</font><font size="2" color="#000000">Mask 格式化字元，以 </font><font size="2">
+<font color="#666699">GetProp(&quot;元件名稱&quot;, &quot;masktext&quot;)</font> 取值元件傳回 
+<b> <code>(12)3___-___</code> </b> </font><font size="2" color="#000000">。<br>
+　</font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2">使用者在MaskEdit 元件輸入</font><font size="2" color="#000000"><b><code>(_2)3_4__-____</code></b>。</font><font size="2">以運算式取值 
+<font color="#666699">{元件名稱}</font> 或 <font color="#666699">GetProp(&quot;元件名稱&quot;, &quot;text&quot;)</font> 
+元件傳回 <b> <code>&nbsp;23 4</code></b> 不含</font><font size="2" color="#000000">Mask 格式化字元
+且未輸入字元會填入空白，但不含後空白，以 </font><font size="2">
+<font color="#666699">GetProp(&quot;元件名稱&quot;, &quot;masktext&quot;)</font> 取值元件傳回 </font><font size="2" color="#000000">
+<b> <code>(_2)3_4__-____</code></b>。</font><font size="2"><br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">位</font><font size="2"><font color="#666699">置字元 (place 
+holder)：</font>標示使用者在MaskEdit 元件中可輸入字元的位置。未設定時預設為空白。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">允</font><font size="2"><font color="#666699">許字元    
+(valid characters)：</font>除了</font><font size="2" color="#000000">Mask 格式化字元
+限制輸入外，進一步限制輸入字元</font><font size="2">。例如：</font><font size="2" color="#000000">Mask 格式化字串為<code>
+<b>(##)####-####</b></code> ，允許輸入所有數字字元，若設定允許字元為<code>12345</code>，則不允許輸入 <code>67890</code> 數字。</font><font size="2"><br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2" color="#666699">不</font><font size="2"><font color="#666699">允許字元 
+(invalid characters)：</font>除了</font><font size="2" color="#000000">Mask 格式化字元
+限制輸入外，進一步限制輸入字元</font><font size="2">。例如：</font><font size="2" color="#000000">Mask 格式化字串為<code>
+<b>(##)####-####</b></code> ，允許輸入所有數字字元，若設定不允許字元為<code>09</code>，則不允許輸入 <code>09</code> 數字。</font><font size="2"><br>
+　</font></p>      
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699" size="2">Lost focus 驗正 (lost focus verify)：</font><font size="2">設計師控制使用者輸入 
+MaskEdit 後，能否離開 MaskEdit 元件，focus 移往下一元件。不需額外控制使用者輸入值時無須設定此運算式。Lost focus 
+驗正的原則是每次 MaskEdit Lost foucs 時系統會計算運算式結果值，結果值非 0&nbsp; 且非空字串為真(true) 否則為偽 (fales)。根據結果值的真偽，決定是否 
+MaskEidt 可以 Lost focus 並 Focus 下一元件。Lost focus 驗正運算式中不可含有使 MaskEdit Lost Focus 
+的函式 (例如：以 DoEvent 開啟訊息視窗；或 SetFocus 至其他元件)，否則系統會進入無窮迴路導致 Stack overflow 的系統錯誤。<br>
+<br>
+範
+例：</font><font size="2" color="#000000">格式化字串為<code>
+<b>(##)####-####</b></code> ，</font><font size="2">Lost focus 驗正運算式：<font color="#666699"><code>TrimAll({元件名稱}) 
+= 0 OR TrimAll({元件名稱}) =10 </code></font>；會限制使用者進入 MaksEdit 編輯時須填滿十個數字或清空，否則無法離開 
+MaskEdit 元件。 </font></p>     
+  </li>     
+</ul>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b>
+<font size="2"><a name="event"></a>事件 (event)</font></b></p>     
+<ul>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">動作事件 (action event)：</font>使用者按下 Enter       
+鍵時，即引發事件 (fire event)。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><font color="#666699">值變事件 (changed event)：</font>當每次輸入值改變時，即引發事件    
+(fire event)，每一個按鍵輸入包括刪除鍵 (delete)       
+但不包括方向鍵，都會引發值變事件。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><font color="#666699">Gain Focus 事件：</font>當 Focus       
+移入 MaskEdit 時，即引發事件       
+。<br>
+　</font></p>       
+  </li>       
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Lost Focus 事件：</font>當       
+Focus 移出 MaskEdit 時，即引發事件       
+。<br>
+　</font></p>       
+  </li>       
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1">       
+<font size="2"><font color="#666699">雙擊事件 (double clicked event)：</font>當雙擊滑鼠的左鍵時，即引發事件。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">按右鍵事件 (right clicked event)：</font>當按下滑鼠右鍵時，即引發事件。</font></p>     
+  </li>     
+</ul>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch10_23_event.gif" width="475" height="475"></p>     
+</blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取  
+(formula get/set properties)</b></font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,   
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;,&nbsp;  
+值</font><font color="#666699">1,&nbsp; 值</font><font color="#666699">2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,   
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;)</font>：屬性讀取。</font></p>  
+  
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>  
+&nbsp;(Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>  
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>  
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>  
+&nbsp;(Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1 運算式重新計算</font></td>   
+    <td>　</td>   
+    <td><font size="2">運算式重新計算。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">editable</font></td>   
+    <td><font size="2">1 可編輯，0 唯讀</font></td>   
+    <td>　</td>   
+    <td><font size="2">可編輯與唯讀。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td><font size="2">文字串</font></td>   
+    <td>　</td>   
+    <td><font size="2">設定文字串為其內含值。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">select</font></td>   
+    <td><font size="2">起始位置</font></td>   
+    <td><font size="2">終止位置</font></td>   
+    <td><font size="2">將起始至終止位置的文字標示為選取，位置由    
+      1 起算。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">caretpos</font></td>   
+    <td><font size="2">游標位置</font></td>   
+    <td>　</td>   
+    <td><font size="2">設定游標位置，位置由 1    
+      起算。</font></td>   
+  </tr>   
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">iseditable</font></td>   
+    <td colspan="2"><font size="2">1 可編輯，0 唯讀</font></td>   
+    <td><font size="2">可編輯與唯讀。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">MaskEdit 中內含值文字串。</font></td>   
+  </tr>   
+  <tr>
+    <td><font size="2">masktext</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">MaskEdit 中加上格式樣式的內含值文字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">length</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">內含文字串長度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_22.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=194 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=206 align=right valign=top>  
+<a href="ch10_24.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,       
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>      
+      
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+     
+</body>     
+     
+</html>

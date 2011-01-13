@@ -1,0 +1,450 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Application Technical Document</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch13.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=194 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<font color="#000000">Chapter 1</font><font color="#003366">4</font></font></b><p style="margin-top: 0; margin-bottom: 0">        
+<b><font color="#000000" face="新細明體" size="-1">        
+application technical document</font></b></TD>       
+<td width=206 align=right valign=top>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<a href="ch15.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=left color="#000000">       
+<h1 class="chapter"><font size="4"><a class="TITLE" name="top">14. 應用程式技術文件 
+(Application Technical Document)</a></font></h1>       
+<p class="chapter"><font size="2"><br>
+<a href="#執行技術文件產生系統 (execute jLIVE Document Builder&#8482;)">執行技術文件產生系統 (execute jLIVE 
+Document Builder&#8482;)</a></font><br>
+<font size="2"><a href="#技術文件首頁屬性設定 (technical document home page properties)">技術文件首頁屬性設定 (technical document home page properties)</a></font><br>
+<font size="2"><a href="#技術文件視窗屬性設定 (technical document form properties)">
+技術文件視窗屬性設定 (technical document form properties)</a></font><br>
+<font size="2"><a href="#技術文件選項設定 (technical document options properties)">技術文件選項設定 (technical document options properties)</a><br>
+<a href="#技術文件系統模組 (jLIVE Document Builder&#8482; system module)">技術文件文件格式檔 (jLIVE 
+Document Builder&#8482; document pattern)</a><br>
+　</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE 
+Document 
+Builder&#8482;&nbsp; 應用程式技術文件產生系統，使用時需另購授權，否則只能輸出範例應用程式 Northwind_sample 的技術文件。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE 
+Document 
+Builder&#8482;&nbsp; 應用程式技術文件系統，執行時將以 HTML 產生以下文件</font></p>       
+<ul>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+應用程式首頁</font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">應用規格及執行環境</font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">資料庫系統</font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">資料庫表格檔案結構及索引資訊</font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">參用資料庫表格的程式模組</font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">視窗、選單、資料來源、事件、元件屬性設定</font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">報表模組及所有列印元件屬性設定</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">第一次產生該應用系統文件時，jLIVE Document 
+Builder&#8482;&nbsp; 系統會根據作業系統 (OS) 語系，將該語系文件格式 (document pattern) 
+建立至應用程式系統檔案目錄中。所有產生的文件將會根據文件格式 (document pattern)　輸出，文件格式 (document pattern) 是 
+HTML 檔案格式，設計師在充分了解結構後，可以自行編排輸出格式。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">jLIVE Document 
+Builder&#8482;&nbsp; 文件產生時，系統內部會將每個視窗畫面快照 (snapshot) 存成 jpg 
+檔案，並提供視窗畫面圖片檔超連結 (map) 至元件屬性設定文件。由於系統快速運作及使用資源量大，當系統記憶體資源不足時，系統會出現記憶體不足的訊息視窗，並立即執行資源回收 
+(garbage collection) ，系統在獲得足夠記憶體後，繼續作業。
+在大系統文件產生時，設計師可以按下取消鍵，取消作業，已經產出的文件不會刪除，但上下頁的超連結，由於尚未作業完成所以可能不正確。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b><font size="2">
+<a name="執行技術文件產生系統 (execute jLIVE Document Builder&#8482;)">執行技術文件產生系統 (execute jLIVE 
+Document Builder&#8482;)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">在 jLIVE Builder&#8482; 控制面版上選擇應用程式，並於右側應用程式設定面版上，按下<img border="0" src="images/program.gif" width="24" height="24"> 
+jLIVE document builder 按鍵。設定作業的首頁、視窗、選項屬性後，按下<img border="0" src="images/coreicon.gif" width="24" height="24">開始鍵即開始文件輸出作業。<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch14_doc_use.gif" width="508" height="164"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<b>
+<font size="2"><a name="技術文件首頁屬性設定 (technical document home page properties)">技術文件首頁屬性設定 (technical document home page properties)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">技術文件首頁，提供類似文件的封面。在首頁中貼上客戶、應用系統及開發公司(者)的名稱及圖示 (icon)&nbsp; 
+，並在應用系統名稱及圖示上加入超連結至系統規格技術文件頁 (index2.html)。首頁編排、對齊方式及其他資訊可以自行更改 pattern 檔。<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="center">
+<img border="0" src="images/ch14_doc_home.gif" width="502" height="481"></p>       
+<ul type="square">
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">客戶圖示 (customer icon)：選取代表客戶的圖示。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">客戶名稱 (customer name)：輸入客戶名稱。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">應用系統圖示 (application system icon)：選取代表應用系統的圖示。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">應用系統名稱 (application system name)：輸入應用系統的名稱。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">開發者圖示 (developer icon)：選取代表開發者的圖示。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">開發者名稱 (developer name)：輸入開發者的名稱。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">附註宣告字串 (note &amp; declare 
+string)：輸入附註第一欄字串，例如：版權宣告，可使用 HTML。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">附註聯絡字串 (note &amp; contact 
+string)：輸入附註第二欄字串，例如：聯絡事項，可使用 HTML。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">範例首頁如下：<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<img border="0" src="images/ch14_index_sample.gif" width="601" height="545"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="技術文件視窗屬性設定 (technical document form properties)">
+技術文件視窗屬性設定 (technical document form properties)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">選擇要輸出技術文件的視窗模組。設計師可以只選取部份修改的視窗模組輸出，如果設定<font color="#003366"> 
+[重新編排所有 HTML 上下頁超連結] </font>屬性，系統作業時會按應用程式控制面版的視窗節點次序，連結相關的上下頁。&nbsp; </font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="center">
+<img border="0" src="images/ch14_doc_form.gif" width="502" height="481"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<b>
+<font size="2"><a name="技術文件選項設定 (technical document options properties)">技術文件選項設定 (technical document options properties)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">選項設定包括是否產生資料庫檔案結構，參照資料表格的視窗與事件‧‧‧。由於查詢資料庫及掃瞄設計的 HTML 及重新編排 HTML 
+超連結的作業，皆很耗時且須大量資源，沒有更動的部份可以選擇更新不輸出。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="center">
+<img border="0" src="images/ch14_doc_option.gif" width="502" height="481"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="center">　</p>       
+<ul type="square">
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">產生參照資料表格 (table) 的視窗與事件：</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">核選此選項，系統在建立資料庫資料表格 
+(table) 文件時，會掃瞄所有視窗設計的 XML 檔，記錄參照到此資料表格的視窗與事件 (SQL 
+command)，並建立超連結，讓設計師可以由技術文件，快速查詢相關使用此資料表格的位置及所使用的 SQL 命令。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">例如：</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">
+<img border="0" src="images/ch14_doc_reftable.gif" width="250" height="192"><br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">產生資料表格 (table) 的結構與索引文件：</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">核選此選項，系統在建立資料庫資料表格 (table) 文件時，會連結查詢資料庫系統，如果使用的 JDBC 驅動程式支援資料庫 
+Database meta data 的查詢 API，系統將會列示資料表格的結構與索引資訊。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">例如：資料表格的結構<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch14_doc_dbtable.gif" width="488" height="487"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">例如：資料表格的索引資訊<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch14_doc_dbindex.gif" width="436" height="292"><font size="2"><br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">視窗節點編排方式：</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">jLIVE Builder&#8482; 
+在應用程式控制面版上視窗的節點是以樹狀結構列示，由於樹狀結構可以有無限多層子節點，在技術文件輸出時必須完全展開列示，如果子節點過多，將無法列印在紙張文件上。所以設計師可以選擇視窗節點以<font color="#003366">樹狀結構</font>或<font color="#003366">區塊結構</font>列示。<font color="#003366">樹狀結構</font>列示，與應用程式控制面版上視窗的節點完全相同；<font color="#003366">區塊結構</font>列示，則同一層的節點列示為一區塊，其中屬於子系統的節點，以超連結至另一子系統區塊。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">例如：樹狀結構列示</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2"><img border="0" src="images/ch14_doc_formtree.gif" width="267" height="482"></font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">例如：區塊結構列示</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch14_doc_formsegment.gif" width="230" height="498"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2"><br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">備註敘述內容以 HTML 呈現：</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">jLIVE Builder&#8482; 
+在設計時，各式屬性設定及元件皆包含一備註敘述的記錄。文件產生時皆會輸出至文件中。備註敘述的內容預設以單純文字輸出，核選此選項，系統將以 HTML 
+輸出，亦即備註敘述可以用 HTML tag 加以格式或編排。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">重新編排所有html 的上下頁超連結：</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">jLIVE document Builder&#8482; 從 index.html 
+至視窗的最後一個模組，讀者可以以上下頁的超連結瀏覽所有資料頁。如果在產生文件時，並非產生所有視窗或只產生更動設計視窗時，核選此屬性，系統將會根據應用程式控制面版的次序，及查驗相關文件是否存在的程序，重新編排所有html 
+的上下頁超連結。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">jLIVE document Builder&#8482; 文件次序：</font></p>       
+  <ol>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">index.html</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">index_2.html</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">應用程式 (app_appname.html)</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">可執行模組 (exe_exename.html)</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫資訊 (db_dbname.html)</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料表格資訊 (tbl_tblname.html)</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">視窗模組資訊 (form_formname.html)</font></p>       
+    <ol type="a">
+      <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">視窗屬性 (prop_formname.htm)</font></p>       
+      </li>
+      <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">視窗選單 (menu_formname.html)</font></p>       
+      </li>
+      <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料來源 (ds_formname.html)</font></p>       
+      </li>
+      <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">事件 (evt_formname.html)</font></p>       
+      </li>
+      <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">元件 (comp_formname.html)</font></p>       
+      </li>
+      <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">報表模組資訊 (rpt_rptname.html)</font></p>       
+      <ol type="i">
+        <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">報表屬性 (rprop_rptname.html)</font></p>       
+        </li>
+        <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">報表元件 (rcomp_rptname.html)</font></p>       
+        </li>
+      </ol>
+      </li>
+    </ol>
+    </li>
+</ol>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">重新載入 jLIVE 預設 pattern：</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">第一次產生該應用系統文件時，jLIVE Document Builder&#8482;&nbsp; 系統會根據作業系統 (OS) 
+語系，將該語系文件格式 (document pattern) 建立至應用程式系統檔案目錄中。設計師可以在此應用程式 doc 目錄下，單就此應用程式更改文件格式檔 
+(pattern)。如果有任何問題產生，可以核選此選項，重新載入 jLIVE 預設 pattern。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+<br>
+<br>
+<b><a name="技術文件系統模組 (jLIVE Document Builder&#8482; system module)">技術文件文件格式檔 (jLIVE 
+Document Builder&#8482; document pattern)</a></b></font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">jLIVE Document Builder&#8482;&nbsp; 系統，預設各語系的文件格式檔 (document pattern) 
+，安裝於 jLIVE /doc/jlive_pattern 目錄下。<br>
+　</font></p>       
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="50%" align="center" height="32">
+<font size="2" color="#003366">jLIVE Builder&#8482; 文件格式檔目錄</font></td>
+    <td width="50%" align="center" height="32"><font size="2" color="#003366">
+    應用程式文件格式檔目錄</font></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+    <img border="0" src="images/ch14_doc_jlivedir.gif" width="131" height="221"></td>
+    <td width="50%" align="center">
+    <img border="0" src="images/ch14_doc_appdir.gif" width="134" height="190"></td>
+  </tr>
+</table>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">各語系有其相對文件格式檔 (document pattern)，系統找不到相對文件格式檔時，採用 default 
+目錄。第一次產生該應用系統文件時，LIVE Document Builder&#8482;&nbsp; 系統會根據作業系統 (OS) 語系，將該語系文件格式 
+(document pattern) 建立至應用程式系統檔案目錄中。<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<img border="0" src="images/ch14_doc_patlist.gif" width="233" height="467"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">文件格式檔 (document pattern) 計有四個目錄，24 個 HTML 
+檔。每個輸出的文件皆根據這些文件格式檔的定義，擷取資料及格式化。資料庫以 db_dbname.html 定義，例如：資料庫別名為 jNorthDB，其相對產生的文件為 
+db_jNorthDB.html，而在此資料庫中每個資料表格 (table) 則以 tbl_tblname.html 定義，例如：資料表格名稱為 Prodcut，其相對產生的文件為 
+jNorthDB_Product.html。在產生資料表格 (table) 文件中，表格結構 (table structure) 及索引 (index) 
+資訊如何配置，則根據 tbl_element_pattern.html 中的定義。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">所以設計師可以根據檔案命名，得知每個文件是由那些文件格式檔所產生。其中以 element_pattern 
+結尾的格式檔，都是屬於細部描述及重覆使用的格式，例如：編輯方塊元件 (edit component) 的輸出格式，只有一式位於 
+comp_element_pattern.html。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">以編輯 HTML 的編輯器開啟文件格式檔 (document pattern) ，最上層以 HTML表格 
+將文件定位於瀏覽器中央並限制其寬度為 600 ，設計師可以更改為適合使用的寬度。所有格式檔 HTML 以書籤 (book marker) 
+標記所要填入的資訊，書籤標記的名稱不可更改，但可刪除，設計師可以自行刪除一些認為不需輸出的資訊，以得到較簡潔的文件。除了書籤標記外，圖檔、文字、排列方式與對齊，皆為可更改項目，亦可自行以 
+HTML 加入其他資訊。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">書籤標記命名皆以 p_ 起頭。以 _clone 為結尾的書籤標記，表示在此 HTML 
+區段會因為資料需要，而重覆以相同定義產出，例如：db_dbname.html 中，每個資料表 (table) 列示的書籤標記為 p_tblname_clone。以 
+_annex 為結尾的書籤標記，表示在此 HTML 區段會插入由相對名稱格式檔 _element_pattern 中，以 _pat 
+為結尾的書籤標記所定義的資訊與格式。例如：tabl_tblname.html 中，關於索引的資訊其書籤標記為 p_index_annex ，而其所插入的資訊， 
+以書籤標記 p_index_pat 定義於 tbl_element_pattern.html 中。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><br>
+<a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<hr align=left color="#000000">        
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">        
+<tr>        
+<td width=200 align=left valign=top>        
+<a href="ch13.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=195 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=205 align=right valign=top>        
+<a href="ch15.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.          
+</font></p>          
+          
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,           
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>          
+          
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+          
+</body>          
+          
+</html>

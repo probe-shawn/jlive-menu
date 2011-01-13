@@ -1,0 +1,408 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH09_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH09_01.html"><font color="#000000">Chapter 9</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH09_01.html"><font color="#000000">Event</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH09_03.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<h1 class="chapter"><font size="5">9<a class="TITLE">.2 
+DataSource</a> Event</font></h1>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>Content:</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#921">Common 
+Properties</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#922">DataSource Navigator</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#923">Set DataSource Record 
+Field Data</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#924">Trigger DataSource</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#925">Query DataSource</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#926">Execute NON_SELECT Sql 
+Commands</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#927">Execute StoreProcedure</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#928">Set Database Transaction 
+Isolation Level</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#929">Set Database Transaction 
+AutoCommit</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#9210">Set Database Transaction 
+Commit or Rollback</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">This kind of event is 
+aimed at datasource.</p>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_01_event_ds.gif" width="415" height="416"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="921"></a>9.2.1 Common Properties</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">General properties :</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Event name</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Condition : it have to 
+satisfy the condition before execute event</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Otherwise : you can 
+choose another event if not satisfy the condition</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Document note</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_01_event_event.gif" width="415" height="389"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Next event : After 
+execute the event, you choose next event to enforce</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_01_event_Comm_nextevent.gif" width="416" height="191"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="922"></a>9.2.2 DataSource Navigator</font></b></p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">DataSource : choose one 
+datasource</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">DataSource Navigater 
+Operation :</p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">First</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Prior</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Next</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Last</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Insert</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Delete</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Edit</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Post</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Cancel</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Refresh</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Reopen</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">DeleteAll</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Query</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_DSN_perform.gif" width="417" height="323"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="923"></a>9.2.3 Set DataSource Record Field Data</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">This event is able to 
+set the field value of datasource. The value&nbsp; could be produced by formula.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">DataSource : choose one 
+datasource</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Use formula</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_SDSRF_perform.gif" width="412" height="389"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="924"></a>9.2.4 Trigger DataSource</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Using sql command to 
+trigger datasource.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">DataSource : choose one 
+datasource</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Sql</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Parameters : the 
+parameters that inside Sql command could bring by formula</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_TDS_perform.gif" width="416" height="389"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="925"></a>9.2.5 Query DataSource</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Query event can execute 
+with each field and change display text. </p>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_QDS_perform_fields.gif" width="493" height="450"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+You can also appoint order by which fields.</p>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_QDS_perform_orderby.gif" width="496" height="453"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="926"></a>9.2.6 Execute NON_SELECT Sql 
+Commands</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">This is for non_select 
+sql commands using.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Database : choose one 
+database</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Non_select Sql Command</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Parameters :&nbsp; the 
+parameters that inside Sql command could bring by formula</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_ENS_perform.gif" width="416" height="416"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="927"></a>9.2.7 Execute StoreProcedure</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Using database store 
+procedure :</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Database : choose one 
+database</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Store Procedure : choose 
+one store procedure</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Parameters : the 
+parameters that inside StoreProcedure could bring by formula</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Sql Error Handle :</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_ESP_perform_orderby.gif" width="417" height="415"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="928"></a>9.2.8 Set Database Transaction 
+Isolation Level</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">You can using the event 
+to set database transaction isolation level.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Database : choose one 
+database</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transaction Isolation : </p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transaction none</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transaction read 
+uncommitted</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transaction read 
+committed</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transaction repeatable 
+read</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transaction serializable</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_SDTI_perform.gif" width="418" height="331"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="929"></a>9.2.9 Set Database Transaction 
+AutoCommit</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Set database transaction 
+autocommit</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Database : choose one 
+database</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Set autocommit on</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">set autocommit off</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_SDTA_perform.gif" width="417" height="235"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="9210"></a>9.2.10 Set Database Transaction 
+Commit or Rollback</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Set Database Transaction 
+Commit or Rollback</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Database : choose one 
+database</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Commit transaction</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Rollback transaction</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_02_SDTCR_perform.gif" width="416" height="227"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH09_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH09_03.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

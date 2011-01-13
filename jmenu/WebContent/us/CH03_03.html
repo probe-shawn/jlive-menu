@@ -1,0 +1,272 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Application</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH03_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH03_01.html"><font color="#000000">Chapter 3</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH03_01.html"><font color="#000000">
+Application</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH04_01.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<h1 class="chapter"><font size="5">3<a class="TITLE">.3 </a>Transfer</font></h1>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2"><b><font size="4">
+<a name="top"></a>Content:</font></b></p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2"><a href="#331">Export</a></p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2"><a href="#332">Import</a></p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2"><a href="#333">Online Update</a></p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transfer is made use of 
+application deployment and preserve. Export and import are aimed at the *.jlv 
+file and this kind of file is identify by Probe company. It collect all 
+information of the application into one jlv file. But the online update is in 
+connection with update the application source in AP server. Provided that we 
+update the class files and then all clients who connect to the AP server will be 
+update.</p>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH03_01_transfer.gif" width="139" height="95"></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<b><font size="5"><a name="331"></a>3.3.1 Export</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+The capability of export is to export application resource. You can choose what 
+you need to export.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Save as module name : You have to give a name of export file.</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export path : Give one path and the exported file will locate in the directory.</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Option : </p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export Xml : The Xml files will be export. The location is inside main 
+application directory named &quot; xml &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export java source : The java source files will be export. The location is 
+inside main application directory named &quot; source &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export compiled class : The compiled class files will be export. The location is 
+inside main application directory named &quot; class &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export tech document : The tech document files will be export. The location is 
+inside main application directory named &quot; doc &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export images : The images files will be export. The location is inside main 
+application directory path &quot; \class\images &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export preloadimages : The preloadimages files will be export. The location is 
+inside main application directory path &quot; \class\preloadimage &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export doc : The doc files will be export. The location is inside main 
+application directory path &quot; \class\doc &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export audio : The audio files will be export. The location is inside main 
+application directory path &quot; \class\audio &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export video : The video files will be export. The location is inside main 
+application directory path &quot; \class\video &quot;.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Export runtime module : The runtime module files will be export. The location is 
+inside main application directory. They are *.html and *.jar files. The &quot;*&quot; is 
+the application name.</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH03_01_export.gif" width="417" height="395"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<b><font size="5"><a name="332"></a>3.3.2 Import</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Import application from one jlv file then whole application will be create into 
+system.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Import application : Choose one *.jlv in existence.</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Install path : Choose the install path to deployment the application.</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH03_01_import.gif" width="416" height="236"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<b><font size="5"><a name="333"></a>3.3.3 Online Update</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+When the application has already deployment, it might be modify in testing 
+status. And we can use online update to update all files without take any disk 
+to AP server or shot down AP server. What you need is one connection to AP 
+server and the server needs sharing the directory where the application locate. 
+For example, &quot; ROOT &quot; is the shared path.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Shared path : AP server shares the directory where the application locate.</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Html &amp; Applet : </p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Html : This part will show html file. If you need to update the file, just 
+select the check box. If the application is first time to deployment into AP 
+server, it should be chosen. Or you build the program again and html has been 
+changed, it also needs to update.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+jlive.jar :
+jlive.jar is probe interpreter. It include jLive Builder system class. If you 
+check this one, jlive.jar will be update by the jar file inside the design 
+environment. Only you update jLIVE Builder design mode and re-complier 
+application, it will be necessary.</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+jimage.jar : When your image files have been change, It will be necessary to 
+update. The jimage.jar is to compress the images in the directory of 
+preloadimage and images under &quot; \{application location}\class &quot;. </p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Classes : In this area, classes mean non-form and non-report classes. Usually we 
+can find applet class inside. Or other class could be useless. </p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH03_01_update1.gif" width="556" height="476"></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Forms &amp; Reports : We can see all forms and report classes in this area. In the 
+same way, only select the check box to make sure which forms or reports you want 
+to update. When you click &quot; select all &quot; button or &quot; unselect all &quot; button, it 
+will select all or unselect all forms and reports class.</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH03_01_update2.gif" width="556" height="476"></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Submit : Because online update is design for project leader to deployment 
+application. Therefore submit the update process must have AP server manager ID 
+and password. When the file choose done, you need to click submit button to 
+execute update. It will show one login in message box. Please input ID and 
+password. Then update process will be execute.</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH03_01_submit.gif" width="556" height="475"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH03_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH04_01.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

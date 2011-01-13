@@ -1,0 +1,249 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Logic</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=212 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=188 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_04.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+12.3 邏輯 </font></b><font size="4"><b>(logic)</b></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#x And y">x And y</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<a href="#x Or y">x Or y</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<a href="#Not x">Not x</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<span style="font-family: 新細明體"><font size="2">邏輯運算子。</font></span></p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<font size="2"><span style="font-family: 新細明體">運算公式中，非 0  
+且 非空字串為真 (true)；否則為偽 (false)。</span></font><span style="font-family: 新細明體"><font size="2">邏輯運算的結果值，當邏輯運算為真 
+(true) 時傳回 1，否則傳回 0 。</font></span></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"> 
+　</p> 
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/ch12_03_logic.gif" width="338" height="242"></p> 
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"> 
+<a name="x And y">x And y</a></font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="56" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="523" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="3">
+<font size="2">檢查 x 運算式與 y 運算式是否同時成立。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="523" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="3">  
+<font size="2">  
+    &quot;x&quot;、&quot;y&quot;，可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="523" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="3">  
+<font size="2">  
+    1 表示 x 運算式與 y 運算式都為&quot;真&quot;，0 表示至少其中之一為&quot;偽&quot;。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="192" height="16" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">2 &lt;= 4 and 3 &gt; 2<br>  
+&quot;ABC&quot; = &quot;ABC&quot; and 123 = &quot;ABC&quot;</font></p>  
+    </td>  
+    <td width="48" height="16" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p> 
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></td>  
+    <td width="283" height="16" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">1</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">0</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="x Or y">x Or y</a></font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查 x 運算式與 y 運算式是否至少其中之一成立。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    &quot;x&quot;、&quot;y&quot;，可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    1 表示 x 運算式與 y 運算式至少其中之一為&quot;真&quot;，0 表示二者均為&quot;偽&quot;。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">&quot;A&quot;=&quot;B&quot;&nbsp; Or&nbsp;&nbsp; 10 &lt; 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+傳回&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 1<br>  
+1=&quot;A&quot;&nbsp;&nbsp; Or&nbsp;&nbsp; 2=3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+傳回&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 0</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Not x">Not x</a></font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="606" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="56" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">x 運算式真假值的相反。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+<font size="2">  
+    &quot;x&quot;，可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+<font size="2">  
+    x 運算式為&quot;偽&quot;時傳回 1，為&quot;真&quot;時傳回 1。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="141" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">Not&nbsp; &quot;A&quot;=&quot;B&quot;<br>  
+Not&nbsp;&nbsp; 1&lt;10</font></p>  
+    </td>  
+    <td width="47" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td>  
+    <td width="10" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">1</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">0</font></td>  
+    <td width="307" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=190 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=210 align=right valign=top>
+<a href="ch12_04.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

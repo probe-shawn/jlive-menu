@@ -1,0 +1,173 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Form debug and event interrupt</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=187 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch06_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=231 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch06.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 6</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch06.html" style="text-decoration: none"><font color="#000000">
+Form</font></a></font></b></TD>   
+<td width=182 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch07.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b> 
+<a name="top"><font size="2"> 
+</font></a><font size="4"> 
+6</font><a class="TITLE"><font size="4">.6 元件 Focus 管理</font></a><font size="4">  
+(Component focus management)</font></b></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#manager">Focus 
+管理視窗 (focus manager)</a></font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE     
+Builder&trade; 提供三種 Focus 
+的管理機制，第一種是由左到右由上到下 (left to right, top to 
+bottom) 以位置決定 Focus 順序 (Y-X focus order)。第二種是由上到下由左到右 
+(top to bottom, left to right) 以位置決定 Focus 順序 (X-Y focus order)。第三種是由設計師指定 
+Focus 順序 (developer defined order)。由設計師指定 Focus 順序時，新增元件的順序將會排序在最後，設計師可以進入 
+Focus 管理視窗按需求將其調整至適當順序。</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">預設的 
+Focus 順序是由左到右由上到下 (left to right, top to bottom) 
+以位置決定 Focus 順序 (Y-X focus order)，</font><font size="2">預設標籤元件( Label)、圖片元件 (Image)、導覽元件 (Navigator)、按鈕元件 (Button)、圖片引發器 (Image Invoker)、統計圖元件 (Chart)、計時器 (Timer)、條碼元件 (Barcode) 
+為不可 Focusable，除了</font><font size="2">標籤元件( Label)、導覽元件 (Navigator) 
+外，設計師可以進入 Focus 管理視窗將其設定為 Focusable。視窗在開啟後會將 
+Focus 調整至第一個可以 Focusable 的元件上。</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">Focus 
+traversal 
+運用於檢視元件 Focus 順序，設計師於編列元件 Focus 順序後，</font><font size="2" color="#000000">按下 
+Traversal 按鈕後 Focus 管理視窗會暫時隱藏，設計視窗上的元件會依排定的 Focus 順序閃爍。</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">Focusable 通常運用於需要快速的以鍵盤輸入資料至元件中，所以將有此需求的元件按輸入資料順序予以排序，其餘元件則設定為不可 
+Focusable，按鈕元件則可以設定其</font><font color="#666699" size="2">易記鍵 (mnemonic)</font><font size="2">，讓使用者可以鍵盤啟動按下按鈕的事件。</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a name="manager"></a><b>Focus 
+管理視窗 (focus manager)</b></font></p>    
+<p style="margin-top: 2; margin-bottom: 2">　</p>    
+<p style="margin-left: 20; margin-top: 2; margin-bottom: 2"><font size="2">按下 
+Focus 管理圖示按鈕</font><img border="0" src="images/ch06_05_a_z.gif" width="172" height="38"><font size="2">，進入 
+Focus 管理視窗。</font></p>    
+<p style="margin-left: 20; margin-top: 2; margin-bottom: 2">　</p>    
+<p style="margin-left: 20; margin-top: 2; margin-bottom: 2">
+<img border="0" src="images/ch06_05_focus_manager.gif" width="477" height="484"></p>    
+<ul>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">Y-X 
+    座標 focus 順序(預設) (Y-X focus order (default)) ：<br>
+    </font><font size="2" color="#000000"><br>
+    預設的 Focus 順序，系統以 Y 座標較小的元件優先，Y 
+    座標相等的元件以 X 
+    座標較小的元件優先，按選此類型順序時，系統會以視窗位置座標重新排列。<br>
+    </font></li>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">X-Y 
+    座標 focus 順序 (X-Y focus order)：<br>
+    </font><font size="2" color="#000000"><br>
+    系統以 X 座標較小的元件優先，X 座標相等的元件以 Y 
+    座標較小的元件優先，按選此類型順序時，系統會以視窗位置座標重新排列。<br>
+    </font></li>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">設計師設定 
+    focus 順序 (developer defined focus order)：<br>
+    </font><font size="2" color="#000000"><br>
+    設計師按需求以上下移動樹狀節點的元件，調整 Focus 
+    順序。<br>
+    </font></li>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">Focusable：</font><font size="2" color="#000000"><br>
+    <br>
+    按選是 (Yes) 或 否 (No) 設定元件是否 Focusable ，進入Focus 
+    管理視窗時原設定不可 Focusable 
+    的元件，將會被置放於樹狀結構的最後節點。<br>
+    </font></li>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">閃爍元件 
+    (flash component)：</font><font size="2" color="#000000"><br>
+    <br>
+    標示 (checked) 此選項，按選 (selected) 
+    樹狀節點時，設計視窗上相對的元件會閃爍兩次，利於設計師辨識樹狀節點元件位於設計視窗上的位置。<br>
+    </font></li>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">上移元件 
+    Focus (move up focus)：<br>
+    <br>
+    </font><font size="2" color="#000000">選擇設計師設定 focus 
+    順序時，調整 Focus 順序。<br>
+    </font></li>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">下移元件 
+    Focus (move down focus)：</font><font size="2" color="#000000"><br>
+    <br>
+    選擇設計師設定 focus 順序時，調整 Focus 順序。<br>
+    </font></li>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">Traversal 
+    ：</font><font size="2" color="#000000"><br>
+    <br>
+    測試執行期 Focus 順序，按下按鈕後 Focus 
+    管理視窗會暫時隱藏，設計視窗上的元件會依排定的 Focus 
+    順序閃爍。</font></li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<hr align=left color="#000000">    
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">    
+<tr>    
+<td width=200 align=left valign=top>    
+<a href="ch06_04.html">    
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>    
+<td width=195 align=center valign=top><a href="index.html">    
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>    
+<td width=205 align=right valign=top>    
+<a href="ch07.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+</body>     
+     
+</html>

@@ -1,0 +1,642 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Chapter 10</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Formula</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_06.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+10.5 Date</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>Content:</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1051">Today()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1052">
+Date(yyyy,mm,dd)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1053">
+NextDate(fromdate,#y,#m,#d)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1054">
+DaysRange(formdate,todate)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1055">Year(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1056">Month(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1057">Day(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1058">
+DayofWeek(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1059">
+DayofMonth(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10510">
+DayofYear(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10511">
+IsValidDate(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10512">
+IsValidTime(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10513">
+IsLeapYear(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10514">
+CurrentTime()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10515">
+ElapsedTime(fromtime,totime)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10516">
+ElapsedDateTime(fromdatetime,todatetime)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10517">
+FormatDateTime(pattern,datetime)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10518">
+NextDateTime(datetime,second)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH10_05_date.gif" width="336" height="407"></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1051"></a>10.5.1 Today()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Times New Roman">Today ( )</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if&nbsp; today is </span>
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/09 </span>
+<span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: 新細明體">Outcome</span><span lang="EN-US" style="font-family: Times New Roman"> 
+20001109</span></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1052"></a>10.5.2 Date(yyyy,mm,dd)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="153" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Date (2000,11,09)
+    </span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Outcome</span><span lang="EN-US" style="font-family: Times New Roman">&nbsp; 
+    20001109</span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Date (2000,11,9) &nbsp;</span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Outcome</span><span lang="EN-US" style="font-family: Times New Roman">&nbsp; 
+    20001109</span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Date (2000,02,31)
+    </span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Outcome</span><span lang="EN-US" style="font-family: Times New Roman">&nbsp; 
+    20000229</span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Date (2000,2,31) &nbsp;</span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Outcome</span><span lang="EN-US" style="font-family: Times New Roman">&nbsp; 
+    20000229</span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="17">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Date (1999,02,31)
+    </span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">Outcome</span><span lang="EN-US" style="font-family: Times New Roman"> 
+    19990228</span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1053"></a>10.5.3 NextDate(fromdate,#y,#m,#d)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="88" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">NextDate ( 20001110, 
+    0 , 3 ,20 )</span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Outcome</span><span lang="EN-US" style="font-family: Times New Roman"> 
+    20010302</span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">NextDate ( Today(), 
+    0 , 0 ,1000 )</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">Outcome</span><span lang="EN-US" style="font-family: Times New Roman">&nbsp; 
+    20030807&nbsp;</span></p>
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span style="font-family: Times New Roman">if&nbsp; </span>
+    <span lang="EN-US" style="font-family: Times New Roman">Today </span>
+    <span style="font-family: 新細明體">is </span>
+    <span lang="EN-US" style="font-family: Times New Roman">2000/11/10</span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1054"></a>10.5.4 DaysRange(formdate,todate)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="90" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">DaysRange (20001109 
+    , 20001209)</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span lang="EN-US" style="font-family: Times New Roman">&nbsp;</span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">30</span></span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">DaysRange (20000201 
+    , 20000301) </span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">29</span></span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">DaysRange (20000501 
+    , 20000401)</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">-30</span></span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1055"></a>10.5.5 Year(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="164" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Year (20001109)
+    </span>
+    <span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">2000</span></span></td>
+  </tr>
+  <tr>
+    <td width="522" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Year (Today())&nbsp;
+    </span>
+    <span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">2000&nbsp; </span>&nbsp;if <span lang="EN-US">Today </span>
+    </span><span style="font-family: 新細明體">is </span>
+    <span lang="EN-US" style="font-family: Times New Roman">2000/11/10</span></td>
+  </tr>
+  <tr>
+    <td width="522" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Year (&quot;ABCD&quot;)&nbsp;</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+    <span lang="EN-US" style="font-family: Times New Roman">&nbsp;</span><span style="font-family: 新細明體">Outcome</span><span lang="EN-US" style="font-family: Times New Roman">2000</span></td>
+  </tr>
+  <tr>
+    <td width="522" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Year (1999)&nbsp;&nbsp;</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+    <span lang="EN-US" style="font-family: Times New Roman">&nbsp;
+    </span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">1999</span></span></td>
+  </tr>
+  <tr>
+    <td width="522" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Year (1999.14)
+    </span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">1999</span></span></td>
+  </tr>
+  <tr>
+    <td width="522" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Year (891) &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outcome
+    </span><span lang="EN-US" style="font-family: Times New Roman">891</span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1056"></a>10.5.6 Month(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="57" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Month (20001109)&nbsp;</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span lang="EN-US" style="font-family: Times New Roman">&nbsp;</span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">11</span></span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">Month (Today())&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outcome</span><span style="font-family: Times New Roman"> <span lang="EN-US">
+    11&nbsp; </span>if <span lang="EN-US">&nbsp;Today </span>&nbsp;</span><span style="font-family: 新細明體">is
+    </span><span lang="EN-US" style="font-family: Times New Roman">2000/11/10</span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1057"></a>10.5.7 Day(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="52" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US">Day (20001109)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span lang="EN-US">&nbsp;</span><span style="font-family: 新細明體">Outcome</span>
+    <span lang="EN-US">9<O:P> </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 32px" align="left">
+    <span lang="EN-US">Day (Today())&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span lang="EN-US">&nbsp;</span><span style="font-family: 新細明體">Outcome</span>
+    <span lang="EN-US">10&nbsp; </span>if<span lang="EN-US"> Today </span>&nbsp;<span style="font-family: 新細明體">is
+    </span><span lang="EN-US">2000/11/10</span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1058"></a>10.5.8 </font><font size="5">DayofWeek(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="91" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">DayofWeek (20001109)</span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span lang="EN-US" style="font-family: Times New Roman">&nbsp;</span><span style="font-family: Times New Roman">
+    </span><span style="font-family: 新細明體">Outcome</span><span style="font-family: Times New Roman">
+    <span lang="EN-US">5</span>&nbsp; ( Thursday )</span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofWeek (Today())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span lang="EN-US">&nbsp;</span><span style="font-family: 新細明體">Outcome</span>
+    <span lang="EN-US">6&nbsp; ( </span>if <span lang="EN-US">Today </span>
+    <span style="font-family: 新細明體">is </span><span lang="EN-US">2000/11/10</span> 
+    then Friday <span lang="EN-US">)<O:P> </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofWeek (20001015) </span>
+    <span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outcome</span>
+    <span lang="EN-US">1 (</span> Sunday <span lang="EN-US">)<O:P> </O:P>
+    </span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1059"></a>10.5.9 </font><font size="5">DayofMonth(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="94" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofMonth (20001109) </span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span style="font-family: 新細明體">Outcome</span> <span lang="EN-US">9<O:P>
+    </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofMonth (Today()) </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span style="font-family: 新細明體">Outcome</span> <span lang="EN-US">10&nbsp; (
+    </span>if <span lang="EN-US">Today </span><span style="font-family: 新細明體">is
+    </span><span lang="EN-US">2000/11/10</span> <span lang="EN-US">)<O:P> </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofMonth (&quot;ABCD&quot;) </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span style="font-family: 新細明體">Outcome </span><span lang="EN-US">10<O:P>
+    </O:P>
+    </span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10510"></a>10.5.10 </font><font size="5">DayofYear(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="87" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofYear(19981012) </span>
+    <span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Outcome </span><span lang="EN-US">285<O:P> </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofYear (Today()) </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span style="font-family: 新細明體">Outcome</span> <span lang="EN-US">315&nbsp; (</span> 
+    if<span lang="EN-US"> Today </span><span style="font-family: 新細明體">is </span>
+    <span lang="EN-US">2000/11/10)<O:P> </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">DayofYear (&quot;ABCD&quot;)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span lang="EN-US">&nbsp;</span><span style="font-family: 新細明體">Outcome
+    </span><span lang="EN-US">315<O:P> </O:P>
+    </span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10511"></a>10.5.11 </font><font size="5">IsValidDate(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<table height="123" cellSpacing="0" cellPadding="0" width="524" border="0">
+  <tr>
+    <td width="522" colSpan="2" height="16">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">IsValidDate(19981012) </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span style="font-family: 新細明體">Outcome </span><span lang="EN-US">1</span>
+    <span lang="EN-US">(</span><span style="font-family: 新細明體">True</span><span lang="EN-US">)<O:P>
+    </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US" style="font-family: Times New Roman">IsValidDate(1998931)
+    </span><span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span><span style="font-family: 新細明體">Outcome </span>
+    <span lang="EN-US" style="font-family: Times New Roman">0</span><span style="font-family: Times New Roman">
+    </span><span lang="EN-US" style="font-family: Times New Roman">(</span><span style="font-family: 新細明體">True</span><span lang="EN-US" style="font-family: Times New Roman">)</span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="18">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">IsValidDate(&quot;ABC&quot;) </span>
+    <span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+    Outcome</span> <span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span><span lang="EN-US">)<O:P>
+    </O:P>
+    </span></td>
+  </tr>
+  <tr>
+    <td width="522" colSpan="2" height="1">
+    <p style="MARGIN-TOP: 6px; MARGIN-LEFT: 22px" align="left">
+    <span lang="EN-US">IsValidDate(1999229) </span>
+    <span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+    Outcome </span><span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span><span lang="EN-US">)<O:P>
+    </O:P>
+    </span></td>
+  </tr>
+</table>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10512"></a>10.5.12 </font><font size="5">IsValidTime(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp;&nbsp; IsValidTime(&quot;184725&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-family: 新細明體">Outcome 1 ( True )</span></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp;&nbsp; IsValidTime(&quot;20020328184725&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-family: 新細明體">Outcome 0 ( False )</span></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10513"></a>10.5.13 </font><font size="5">IsLeapYear(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<span style="font-size: 11pt">&nbsp; </span>&nbsp;&nbsp; <span lang="EN-US">
+IsLeapYear(2000) </span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+Outcome</span> <span lang="EN-US">1</span> <span lang="EN-US">(</span><span style="font-family: 新細明體"> 
+True </span><span lang="EN-US">)<O:P> </O:P>
+</span>
+<O:P>&nbsp;</O:P></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10514"></a>10.5.14 </font><font size="5">CurrentTime()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<span style="font-size: 11pt">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US">CurrentTime( ) </span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Outcome </span><span lang="EN-US">173732</span> <span lang="EN-US">&nbsp;(</span> 
+if now is&nbsp; <span lang="EN-US">17:37:32</span> <span lang="EN-US">)<O:P>
+</O:P>
+</span></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10515"></a>10.5.15 </font><font size="5">ElapsedTime(fromtime,totime)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<span style="font-size: 11pt">&nbsp;&nbsp; </span>&nbsp;<span lang="EN-US">ElapsedTime(174141 
+,184141 ) </span>&nbsp;<span style="font-family: 新細明體">Outcome </span>
+<span lang="EN-US">3600 (</span><span style="font-family: 新細明體">sec</span><span lang="EN-US">)<O:P />
+</span></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10516"></a>10.5.16 </font><font size="5">
+ElapsedDateTime(fromdatetime,todatetime)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<span style="font-family: Times New Roman">&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-family: Times New Roman">
+ElapsedDateTime(20001113080000 ,200011140000000 )&nbsp; </span>
+<span style="font-family: 新細明體">Outcome </span>
+<span lang="EN-US" style="font-family: Times New Roman">57600 (</span><span style="font-family: 新細明體">sec</span><span lang="EN-US" style="font-family: Times New Roman">)</span></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10517"></a>10.5.17 </font><font size="5">
+FormatDateTime(pattern,datetime)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p><strong>Time Format Syntax:</strong> </p>
+<p>To specify the time format use a <em style="font-style: normal">time pattern</em> 
+string.</p>
+<blockquote>
+  <pre><font size="3"> Symbol   Meaning                 Presentation        Example
+ ------   -------                 ------------        -------
+ G        era designator          (Text)              AD
+ y        year                    (Number)            1996
+ M        month in year           (Text &amp; Number)     July &amp; 07
+ d        day in month            (Number)            10
+ h        hour in am/pm (1~12)    (Number)            12
+ H        hour in day (0~23)      (Number)            0
+ m        minute in hour          (Number)            30
+ s        second in minute        (Number)            55
+ S        millisecond             (Number)            978
+ E        day in week             (Text)              Tuesday
+ D        day in year             (Number)            189
+ F        day of week in month    (Number)            2 (2nd Wed in July)
+ w        week in year            (Number)            27
+ W        week in month           (Number)            2
+ a        am/pm marker            (Text)              PM
+ k        hour in day (1~24)      (Number)            24
+ K        hour in am/pm (0~11)    (Number)            0
+ z        time zone               (Text)              Pacific Standard Time
+ '        escape for text         (Delimiter)
+ ''       single quote            (Literal)           '
+</font></pre>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">&nbsp; <b>
+FormatDateTime(&quot;yyyy/MM/dd 'at' hh:mm:ss z&quot; , Today() )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Outcome&nbsp;&nbsp; 2002/03/29 at 12:50:33 CST</b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10518"></a>10.5.18 </font><font size="5">NextDateTime(datetime,second</font><font size="5">)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">&nbsp;&nbsp; 
+NextDateTime( Today() ,86400)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-size: 11pt; font-family: 新細明體">Outcome</span>&nbsp;&nbsp; 
+2002/03/29-18:43:36</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">&nbsp;&nbsp; if today is 
+2002/03/28-18:43:36</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH10_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH10_06.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

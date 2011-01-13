@@ -1,0 +1,1938 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Special</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_11.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=215 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=185 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch13.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>12.12 特殊  
+(special)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#FormName()">
+<font size="2">FormName()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#SetTitle(title)"><font size="2">SetTitle(title)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#GetTitle()">GetTitle()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormPos(left,top)">FormPos(left,top)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormSize(width,height)">FormSize(width,height)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormX()">FormX()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormY()">FormY()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormW()">FormW()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormH()">FormH()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormDate()">FormDate()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormDir()">FormDir()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#SnapShot(png_file)">SnapShot(png_file)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#SnapShot(png_file, frame)">SnapShot(png_file, frame)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#IsAdmin()">IsAdmin()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#UserName()">
+<font size="2">UserName()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#UserPasswoed()"><font size="2">UserPasswoed()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#UserGroup()">
+<font size="2">UserGroup()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#HttpCodeBase()">HttpCodeBase()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#UncCodePath()">UncCodePath()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#SetLang(lang)">SetLang(lang)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#SetLang(lang, globe)">SetLang(lang, font)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OsLang()">OsLang()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#IsLang(lang)">IsLang(lang)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#ClientName()">
+<font size="2">ClientName()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#ClinetIp()">
+<font size="2">ClientIp()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#ApserverName()"><font size="2">ApserverName()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#ApserverIp()">
+<font size="2">ApserverIp()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#AddCookie(name,value,comment,maxage)">
+AddCookie(name,value,comment,maxage)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#AddCookie(name,value,comment,maxage,path)">
+AddCookie(name,value,comment,maxage,path)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#GetCookie(name)">GetCookie(name)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#GetServletResp(event.param)">GetServletResp(event.param)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#Beep()" style="text-decoration: none">
+<font size="2">Beep()</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#RGB(red,green,blue)"><font size="2">RGB(red,green,blue)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#BarCode(x)">
+<font size="2">BarCode(x)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#BarCode(x,addchecksum)"><font size="2">BarCode(x,addchecksum)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#IdCheck(x)">
+<font size="2">IdCheck(x)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#CompanyId(x)">
+<font size="2">CompanyId(x)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#ChiNum(x)">
+<font size="2">ChiNum(x)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#LastUsePrinter()">LastUsePrinter()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#MWHTTP()">
+MWHTTP()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#MWHTTP(alias)">MWHTTP(alias)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#IsGrantOpen(formname)">IsGrantOpen(formname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#IsAuthItem(item)">IsAuthItem(item)</a></font></p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch12_12_special_new.gif" width="384" height="530"></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="FormName()">FormName()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得視窗 class 名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+視窗 class 名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormName()。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SetTitle(title)">SetTitle(title)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+動態變更視窗標題。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;title&quot;：視窗標題，常數字串須加上引號。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">設定的名稱 (title)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">將視窗抬頭文字設定為目前資料來源記錄的客戶名稱&nbsp;。<br>
+SetTitle({Customers:CustomerName})</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetTitle()">GetTitle()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">讀取視窗標題。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">設定的標題名稱 (title)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">GetTitle()</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="FormPos(left,top)"><font size="4">FormPos(left,top)</font></a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+動態變更視窗的位置。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;left&quot;：與主視窗左邊界的距離，單位是像素 (pixel)。<br>   
+    &quot;top&quot;：與主視窗上邊界的距離，單位是像素 (pixel)。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+成功執行傳回 1 ，否則傳回 0。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormPos(50,10)</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="FormSize(width,height)"><font size="4">FormSize(width,height)</font></a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+動態變更視窗的大小。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;width&quot;：視窗寬度，單位是像素 (pixel)。<br>   
+    &quot;height&quot;：視窗長度，單位是像素 (pixel)。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">成功執行傳回   
+1 ，否則傳回 0。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormSize(600,400)</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormX()">FormX()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回視窗左邊界的位置。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">數值，單位是像素 (pixel)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormX()</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormY()">FormY()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回視窗上邊界的位置。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">數值，單位是像素 (pixel)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormY()</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormW()">FormW()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回視窗寬度。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">數值，單位是像素 (pixel)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormW()</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormH()">FormH()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回視窗高度。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">數值，單位是像素 (pixel)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormH()</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormDate()">FormDate()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回最後一次更新視窗設計 XML 產生的日期時間。函式應用於執行期版本管理。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">
+日期時間文字串，yyyyMMddHHmmss。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormDate() 傳回 20050101123020</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormDir()">FormDir()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回視窗所隸屬於的系統目錄。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">#應用程式名稱<b>.</b>子系統目錄名稱。按所隸屬於的子系統目錄以<b> . </b>分隔。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormDir() 傳回 <code>#jNorth.Basc</code></font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="SnapShot(png_file)">
+<font size="4"><b>SnapShot</b></font><font size="4"><b>(png_file)</b></font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回視窗快照並存成檔名為 png_file 的 PNG 圖檔。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">png_file：PNG 圖檔名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表成功，0 表有誤。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2"><code>SnapShot(&quot;customer.png&quot;) 將此</code>視窗快照並存成檔名為 
+customer.png 的 PNG 圖檔。</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="SnapShot(png_file, frame)">
+<font size="4"><b>SnapShot(png_file, frame</b></font><font size="4"><b>)</b></font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回視窗快照並存成檔名為 png_file 的 PNG 圖檔。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">png_file：PNG 圖檔名稱。<br>
+    frame： 0&nbsp; 快照不含視窗外框， 1 快照含視窗外框</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表成功，0 表有誤。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;<code>SnapShot(&quot;customer.png&quot;, 0) 將此</code>視窗快照但不要視窗外框，並存成檔名為 
+customer.png 的 PNG 圖檔。</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="IsAdmin()">IsAdmin</a></font><a name="IsAdmin()"><font size="4">()</font></a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+傳回是否以應用程式管理員的身份登入系統。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表是，0 表否。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">&nbsp;IsAdmin()</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="UserName()">UserName()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得目前使用者(user)的登入名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+使用者(user)的名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;UserName()</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="UserPasswoed()">UserPassword()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得目前使用者(user)的登入密碼。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+使用者(user)的密碼。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;UserPassword()</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="UserGroup()">UserGroup()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得目前使用者(user)的群組名稱。version 1.4 停用。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+使用者(user)的群組名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;UserGroup()</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="HttpCodeBase()"><font size="4">HttpCodeBase()</font></a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得應用程式 class 的路徑。<br>   
+請參考 </font>   
+<b>   
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2">   
+<a href="file_down_upload.html">檔案下載與上載</a></font></b><font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2">。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">無。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+應用程式 class 的路徑。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">請參考 </font>   
+<b>   
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2">   
+<a href="file_down_upload.html">檔案下載與上載</a></font></b><font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2">。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b> 
+<a name="UncCodePath()"><font size="4">UncCodePath()</font></a></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得應用程式 class 的路徑，依照 UNC 的格式表示。<br>   
+請參考 </font>   
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2"><b>&nbsp;</b></font><b><font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2"><a href="file_down_upload.html">檔案下載與上載</a></font></b><font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2">。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">無。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+應用程式 class 的路徑。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">請參考 </font>   
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2"><b>&nbsp;</b></font><b><font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2"><a href="file_down_upload.html">檔案下載與上載</a></font></b><font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2">。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SetLang(lang)">SetLang(lang)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="SetLang(lang, globe)"></a>SetLang(lang, 
+font)</font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">jLIVE Builder 多國語系版本，設定視窗語系。請參閱 <a href="ch13.html">國際化</a>。jLIVE 
+Builder 多國語系應用程式執行時，系統會自動切換至使用者端的語系，除非設計師欲提供使用者切換至其他非使用者作業語系，否則不必使用此運算式。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="16"></td> 
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    參數：</font></td> 
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+    <font size="2">&quot;lang&quot;：語系。例如：zh_TW：繁體中文。zH_CN ：簡體中文。ja：日文。<br> 
+    &quot;font&quot;：更換使用的字型名稱。&nbsp;除非使用者環境無法以 Dialog 顯示非使用者作業語系，否則不必輸入。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">1 表執行成功，0 表失敗。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">將視窗語系調整成日文。<br>
+<br>
+Setlang(&quot;ja&quot;)<br>
+<br>
+將視窗語系調整成簡體中文，並以 Arial Unicode MS 字型顯示。<br>
+　</font></p>
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">SetLang(&quot;zh_CN&quot;, &quot;Arial Unicode MS&quot;)</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OsLang()">OsLang()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得目前客戶端 (client) 機器作業系統所使用的語系名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">語系字串，例如 zh_TW。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;OsLang()</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="IsLang(lang)">IsLang(lang)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">目前客戶端(client)機器作業系統所使用的語系名稱，是否為 
+lang。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">語系字串，例如 zh_TW。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">1 表是，0 表否。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;IsLang(&quot;zh_CN&quot;)，</font><font size="2">客戶端(client)是否為簡體中文。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ClientName()">ClientName()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得目前客戶端(client)的機器名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+機器名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;ClientName()<br>
+傳回 PR158</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ClinetIp()">ClinetIp()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得目前客戶端(client)的機器的 IP。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+機器的 IP。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;ClientIp()<br>
+傳回 192.168.1.188</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ApserverName()">ApserverName()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得應用程式伺服器的機器名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+應用程式伺服器的機器名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;ApserverName()<br>
+傳回 Server-1</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ApserverIp()">ApserverIp()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得應用程式伺服器的&nbsp; IP。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+應用程式伺服器的&nbsp; IP。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;ApserverIp()<br>
+傳回 211.22.140.210</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="AddCookie(name,value,comment,maxage)">
+AddCookie(name,value,comment,maxage)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+在客戶端 (client) 加入 Cookie。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;name&quot;：Cookie 名稱。<br>  
+    &quot;value&quot;：Cookie 內含值。<br>  
+    &quot;comment&quot;：Cookie 註解。<br>  
+    &quot;maxage&quot;：Cookie 有效期限，以秒計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">Cookie 值 (value)。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">加入一個名稱為 log_userid 的 cookie，其值為編輯元件 (edit_userid) 的內含值，cookie 
+的有效期限為 5 天。&nbsp;<br>
+AddCookie(&quot;log_userid&quot;, {edit_userid}, &quot;comment for id&quot;, 216000)</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="AddCookie(name,value,comment,maxage,path)">
+AddCookie(name,value,comment,maxage,path)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+在客戶端 (client) 指定的路徑加上 Cookie。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;name&quot;：Cookie 名稱。<br>  
+    &quot;value&quot;：Cookie 內含值。<br>  
+    &quot;comment&quot;：Cookie 註解。<br>  
+    &quot;maxage&quot;：Cookie 有效期限，以秒計算。<br>  
+    &quot;path&quot;：Cookie 的路徑。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">Cookie 值 (value)。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">&nbsp;</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="GetCookie(name)">GetCookie(name)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得記載在客戶端 (client) 的 cookie 的內含值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;name&quot;：Cookie 名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+cookie 的內含值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="GetServletResp(event.param)">GetServletResp(event.param)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+呼叫 Server 端的 servlet ，並取得其輸出參數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">事件名稱.參數名稱，參閱 <a href="ch11_05_07.html">Servlet  
+    Call</a>。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="12"></td> 
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    傳回值：</font></td> 
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<font size="2"> 
+輸出參數的內含值，無此參數或事件傳回空字串。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">參閱 <a href="ch11_05_07.html">Servlet  
+    Call</a>。</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Beep()">Beep()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">發出系統的嗶嗶聲。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+1。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="RGB(red,green,blue)">RGB(red,green,blue)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+動態變更元件前景背景的顏色， 以 RGB 值表示。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;red&quot;：RGB 紅色的值。<br>  
+    &quot;green&quot;：RGB 綠色的值。<br>  
+    &quot;blue&quot;：RGB 藍色的值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">以&quot;red&quot;、&quot;green&quot;、&quot;blue&quot;所組成設定顏色的數值。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">&nbsp;RGB( 0, 0, 0 )</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="BarCode(x)">BarCode(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查 Barcode 的正確性。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;x&quot;：Barcode 的值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+1 表正確，0 表錯誤。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="BarCode(x,addchecksum)">BarCode(x,addchecksum)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查 Barcode 的正確性。傳入 7 或 12 碼 Barcode，傳回加上檢查碼的  
+8 或 13 碼 Barcode。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="16"></td> 
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    參數：</font></td> 
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+    <font size="2">&quot;x&quot;：Barcode 的值。<br>  
+    &quot;addchecksum&quot; 等於 1 時，加入 Barcode 檢查碼。</font> <font size="2"><br> 
+    &quot;addchecksum&quot;等於 0 時，檢查 Barcode 的正確性。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">addchecksum&quot; 等於 1 時  
+，正確給值時傳回加入檢查碼的 Barcode 。否則傳回原值。</font> <font size="2"><br> 
+&quot;addchecksum&quot;等於 0 時，檢查 Barcode  
+的正確性，傳回 1 表正確，0 表錯誤。。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">&nbsp;</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="IdCheck(x)">IdCheck(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查中華民國身分證字號的正確性。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;x&quot;：身分證字號。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+1 表正確，0 表錯誤。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="CompanyId(x)">CompanyId(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查中華民國公司統一編號的正確性。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;x&quot;：公司統一編號。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+1 表正確，0 表錯誤。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ChiNum(x)">ChiNum(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將阿拉伯數字轉換成繁體中文金額表示。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;x&quot;：阿拉伯數字。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">繁體中文數字。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">&nbsp;ChiNum(10625.78) 傳回 &quot;壹萬零陸佰貳拾伍元柒角捌分&quot;</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LastUsePrinter()">LastUsePrinter()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將
+最後一次列印所選用的印表機名稱傳回。適用於連續多個報表列印，第一次列印時，詢問使用者選用印表機後，接續的印表作業，可以呼叫此函式取得使用者選用的印表機。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">印表機名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">取得最後一次印表作業所使用的印表機<br>
+LastUsePrinter()</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="MWHTTP()">
+MWHTTP()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="MWHTTP(alias)">MWHTTP(alias)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">傳回 jLIVE&#8482; middle ware 的 URL。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無或空字串。<br>
+    &quot;alias&quot;：jLIVE&#8482; middle ware 的別名。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">URL 字串。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">MWHTTP() 與 MWHTTP(&quot;&quot;) ，傳回主要 jLIVE&#8482; middle ware 的 URL。<br>
+MWHTTP(&quot;mw_usa&quot;)，傳回別名為 mw_usa 的 jLIVE&#8482; middle ware 的 URL。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="IsGrantOpen(formname)">
+<font size="4"><b>IsGrantOpen</b></font><font size="4"><b>(formname)</b></font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">使用 jLIVE&#8482; 授權管理時， 傳回是否允許開啟 formname&nbsp; 的視窗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;formname&quot;：視窗 class 名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">0 ：未授權。<br>
+1 ：授權允許開啟。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">IsGrantOpen(&quot;CMM_BASC_CREATE&quot;) 傳回 0 ：未授權。1 ：授權允許開啟。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="IsAuthItem(item)">
+<font size="4"><b>IsAuthItem</b></font><font size="4"><b>(item)</b></font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">使用 jLIVE&#8482; 授權管理時，傳回視窗中是否允許操作授權項目item&nbsp; 的作業 。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;item&quot;：授權項目。<br>
+    目前預設支援項目：<br>
+    I：insert 新增<br>
+    U：update 修改<br>
+    D：delete 刪除<br>
+    Q：query 查詢<br>
+    P：print 列印<br>
+    X：customer defined <br>
+    Y：customer defined<br>
+    Z：customer defined</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">0 ：未授權。<br>
+1 ：授權。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">IsAuthItem(&quot;I&quot;) 在此視窗中是否允許新增作業。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_11.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=192 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=208 align=right valign=top>
+<a href="ch13.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

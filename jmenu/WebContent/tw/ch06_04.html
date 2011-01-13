@@ -1,0 +1,160 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Form debug and event interrupt</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=187 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch06_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=231 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch06.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 6</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch06.html" style="text-decoration: none"><font color="#000000">
+Form</font></a></font></b></TD>   
+<td width=182 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch06_05.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b> 
+<a name="top"><font size="2"> 
+</font></a><font size="4"> 
+6</font><a class="TITLE"><font size="4">.5        
+視窗</font></a><font size="4">除錯與事件中斷 (form debug and event    
+interrupt)</font></b></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#debug">除錯資料作業視窗   
+(debug information panel)</a></font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE    
+Builder&trade; 是以物件導向 (OOP) 和事件驅動 (event-driven)   
+作為應用程式設計的核心概念 (core concept)，物件 (object)   
+與事件 (event) 已經過 jLIVE Builder&trade; 的內部除錯處理 (bug free)，應用程式設計的錯誤，會出現在事件的流程   
+(event route)、系統參數 (system variables)、運算與傳遞資料   
+(computed    
+and transferred data)。因此 jLIVE Builder&trade;    
+在視窗設計階段，提供事件中斷 (event interrupt)   
+顯示系統參數、運算與傳遞資料，設計師可以檢視或修改執行的資料，並決定繼續測試執行   
+(continue) 或返回設計模式 (back to design mode)。<br>  
+　</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">設計師可以在<a href="ch11_01.html">事件流程綱要 
+(event flow schema)</a> 中，設定執行事件前後的中斷點 (interrupt)；測試執行期，可以暫時取消該事件或所有的中斷點，以利除錯作業的進行。所有設定的事件中斷，在離開視窗設計返回主控制面版   
+(control panel) 後，系統會消除不作任何存檔記錄。</font></p>     
+<p style="margin-top: 2; margin-bottom: 2">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="debug"></a>除錯資料作業視窗   
+(debug information panel)</b></font></p>   
+<ul>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">取消此中斷   
+    (cancel this interrupt)：</font><font size="2" color="#000000">繼續執行後，遇此中斷點不再中斷。<br>
+　</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">取消全部中斷   
+    (cancel all interrupts)：</font><font size="2" color="#000000">取消所有中斷。<br>
+　</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">返回設計模式   
+    (back to design&nbsp;mode)：</font><font size="2" color="#000000">結束測試執行，返回設計模式。<br>
+　</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">繼續   
+    (continue)：</font><font size="2" color="#000000">繼續執行測試。<br>
+　</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">事件   
+    (event)：</font><font size="2" color="#000000">事件屬性內含值。<br>
+　</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">區域變數    
+    (LocalHash)：</font><font size="2" color="#000000">LocalHash 的鍵 (key)    
+    與值 (value)。<br>
+　</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">全域變數    
+    (Hash)：</font><font size="2" color="#000000">Hash 的鍵 (key) 與值   
+    (value)。<br>
+　</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">Stack：</font><font size="2" color="#000000">Stack    
+    的值 (value)。<br>
+　</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">系統參數    
+    (_sysvar)：</font><font size="2" color="#000000">_sysvar1 至 _sysvar8    
+    的內含值。<br>
+　</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">預存程序回傳變數    
+    (Sp Param)：</font><font size="2" color="#000000">執行過的預存程序   
+    (stored procedure) 回傳參數值。<br>
+　</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">系統變數SysHash：</font><font size="2" color="#000000">SysHash    
+    的鍵 (key) 與值 (value)。<br>
+　</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">Servlet：</font><font size="2" color="#000000">執行過的   
+    Servlet 回傳參數值。</font></li>  
+</ul>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch06_04_debug.gif" width="580" height="464"></p>  
+<p style="margin-top: 2; margin-bottom: 2">　</p>    
+<p style="margin-top: 2; margin-bottom: 2">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch06_03.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=195 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=205 align=right valign=top>   
+<a href="ch06_05.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+</body>    
+    
+</html>

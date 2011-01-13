@@ -1,0 +1,455 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=shift_jis">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="ch04_01.files/filelist.xml">
+<link rel=Edit-Time-Data href="ch04_01.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Programming flowchart</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>FMV-USER</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>FMV-USER</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2003-01-21T09:57:00Z</o:Created>
+  <o:LastSaved>2003-01-21T10:59:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>454</o:Words>
+  <o:Characters>2590</o:Characters>
+  <o:Company>FM-USER</o:Company>
+  <o:Lines>21</o:Lines>
+  <o:Paragraphs>6</o:Paragraphs>
+  <o:CharactersWithSpaces>3038</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 3 0 0 0 0 0 0 0;
+	mso-font-alt:新細明體;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@PMingLiU";
+	panose-1:2 2 3 0 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 137232384 22 0 1048577 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"ＭＳ Ｐゴシック";
+	mso-bidi-font-family:"ＭＳ Ｐゴシック";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"ＭＳ Ｐゴシック";
+	mso-bidi-font-family:"ＭＳ Ｐゴシック";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"ＭＳ Ｐゴシック";
+	mso-bidi-font-family:"ＭＳ Ｐゴシック";}
+p.chapter, li.chapter, div.chapter
+	{mso-style-name:chapter;
+	mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"ＭＳ Ｐゴシック";
+	mso-bidi-font-family:"ＭＳ Ｐゴシック";}
+p.para, li.para, div.para
+	{mso-style-name:para;
+	mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"ＭＳ Ｐゴシック";
+	mso-bidi-font-family:"ＭＳ Ｐゴシック";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:標準の表;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
+	mso-para-margin:0mm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+</style>
+<![endif]-->
+<meta http-equiv=Content-Language content=zh-tw>
+</head>
+
+<body lang=JA link=blue vlink=blue style='tab-interval:42.0pt'>
+
+<div class=Section1 style="width: 732; height: 2427">
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=739
+ style='width:554.25pt;border-collapse:collapse;mso-padding-alt:0mm 0mm 0mm 0mm'
+ id=AutoNumber1>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td width=806 style='width:604.5pt;padding:0mm 0mm 0mm 0mm'>
+  <p align=center style='margin:0mm;margin-bottom:.0001pt;text-align:center'><span
+  lang=EN-US><a href="index.html"><span style='text-decoration:none;text-underline:
+  none'><img border=0 width=369 height=60 id="_x0000_i1025"
+  src="images/jlogo.GIF"></span></a></span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=651
+   style='border-collapse: collapse; mso-padding-alt: 0mm 0mm 0mm 0mm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=200 valign=top style='width:150.0pt;padding:0mm 0mm 0mm 0mm'>
+    <p style='margin:0mm;margin-bottom:.0001pt'><span lang=EN-US><span style="text-decoration: none; text-underline: none">&nbsp; 
+    </span><a
+    href="ch04.html"><span style='text-decoration:none;text-underline:none'><img
+    border=0 width=70 height=18 id="_x0000_i1026"
+    src="images/jlogo_previous.gif"></span></a></span></p>
+    </td>
+    <td width=235 valign=top style='padding: 0mm'>
+    <p align=center style='margin:0mm;margin-bottom:.0001pt;text-align:center'><span
+    lang=EN-US><a href="ch04.html"><b><span style='font-size:10.0pt;font-family:
+    PMingLiU;color:black;text-decoration:none;text-underline:none'>Chapter 4</span></b><span 
+    style='font-family:PMingLiU;color:black;text-decoration:none;text-underline:
+    none'> </span></a></span></p>
+    <p align=center style='margin:0mm;margin-bottom:.0001pt;text-align:center'><b><span
+    lang=EN-US style='font-size:10.0pt;font-family:PMingLiU'><a href="ch04.html"><span
+    style='color:black;text-decoration:none;text-underline:none'>Application&nbsp;</span></a></span></b></p>
+    </td>
+    <td width=216 valign=top style='padding: 0mm'>
+    <p align=right style='margin:0mm;margin-bottom:.0001pt;text-align:right'><span
+    lang=EN-US><a href="ch04_02.html"><span style='text-decoration:none;
+    text-underline:none'><img border=0 width=70 height=18 id="_x0000_i1027"
+    src="images/jlogo_next.gif"></span></a></span></p>
+    </td>
+   </tr>
+  </table>
+  <div>
+  <div>
+  <div>
+  <div class=MsoNormal><span lang=EN-US>
+  <hr size=2 width="86%" noshade color=#000000 align=left>
+  </span></div>
+  </div>
+  </div>
+  </div>
+  <h1 style='margin-top:5.0pt;margin-right:66.0pt;margin-bottom:5.0pt;
+  margin-left:10.1pt;mso-para-margin-top:5.0pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:5.0pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  lang=EN-US style='font-size:13.5pt'>4.2 ワークグループ (Work Group)</span></h1>  
+  <p class=chapter style='margin-top:1.5pt;margin-right:66.0pt;margin-bottom:
+  1.5pt;margin-left:10.1pt;mso-para-margin-top:1.5pt;mso-para-margin-right:
+  5.5gd;mso-para-margin-bottom:1.5pt;mso-para-margin-left:.84gd;text-indent:
+  .05pt'><a name=top></a><b><font size="2">内容</font><span lang=EN-US>:</span></b></p>
+  <p class=chapter style='margin-top:1.5pt;margin-right:66.0pt;margin-bottom:
+  1.5pt;margin-left:10.1pt;mso-para-margin-top:1.5pt;mso-para-margin-right:
+  5.5gd;mso-para-margin-bottom:1.5pt;mso-para-margin-left:.84gd;text-indent:
+  .05pt'>　</p>
+  <p class=chapter style='margin-top:1.5pt;margin-right:66.0pt;margin-bottom:
+  1.5pt;margin-left:10.1pt;mso-para-margin-top:1.5pt;mso-para-margin-right:
+  5.5gd;mso-para-margin-bottom:1.5pt;mso-para-margin-left:.84gd;text-indent:
+  .05pt'><span lang=EN-US><a href="#321"><span style='font-size:10.0pt'>ワークグループのリスキャン  
+  (Rescan Workgroup)</span></a></span></p>  
+  <p class=chapter style='margin-top:1.5pt;margin-right:66.0pt;margin-bottom:
+  1.5pt;margin-left:10.1pt;mso-para-margin-top:1.5pt;mso-para-margin-right:
+  5.5gd;mso-para-margin-bottom:1.5pt;mso-para-margin-left:.84gd;text-indent:
+  .05pt'><span lang=EN-US><a href="#322"><span style='font-size:10.0pt'>ホストへのバッチ複写  
+  (Batch remote to local)</span></a></span></p>  
+  <p class=chapter style='margin-top:1.5pt;margin-right:66.0pt;margin-bottom:
+  1.5pt;margin-left:10.1pt;mso-para-margin-top:1.5pt;mso-para-margin-right:
+  5.5gd;mso-para-margin-bottom:1.5pt;mso-para-margin-left:.84gd;text-indent:
+  .05pt'>　</p>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:20.0pt;
+  mso-char-indent-count:2.0'><span class=spelle><span lang=EN-US
+  style='font-size:10.0pt;font-family:"ＭＳ Ｐゴシック";mso-bidi-font-family:"ＭＳ Ｐゴシック"'>jLIVE</span></span><span
+  lang=EN-US style='font-size:10.0pt'> Builder&#8482; は対等的のワークグループ (Workgroup) でプロジェクト共同開発式となっています。プロジェクト名で開発モジュールを共用しています，アプリケーションの企画(Specification)、設計(Design)、ディバッグ(Debug)、テスト(Testing)  
+  の段階において，各グループの関連最新モジュールを統合できます，即時にディプロイ、実行できます(Deploy and execution)。プロジェクトリーダーはアプリケーションのリクエストに基づき，各グループ作業の詳細分担範囲が分けられます，アクセス(Access  
+  key)キーを与え， 各グループは (Workgroup) 随時に関連グループの最新モジュールをスキャンし(Reference)；管理者は随時に全体の間発プロセスと共同作業状況，テスト(Testing)  
+  を監視(Monitoring)できます 　，開発段階の作業ミスを無くし，効率向上に役に立ちます。</span></p>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  style='font-size:10.0pt'>ワークグループ機能<span lang=EN-US> (Workgroup)のリクエスト<span  
+  class=spelle><span style='font-family:"ＭＳ Ｐゴシック";mso-bidi-font-family:"ＭＳ Ｐゴシック";
+  color:gray'>jLIVE</span></span><span style='color:gray'> Builder&#8482; インストールとアプリケーションのディレクトリー共用;</span>，例として  
+  : アプリケーションのディレクトリーは <span style='color:gray'>&quot; C:\jLIVE\programs\jNorth\  
+  &quot; </span>にある時、 <span class=spelle><span style='font-family:"ＭＳ Ｐゴシック";  
+  mso-bidi-font-family:"ＭＳ Ｐゴシック"'>jNorth</span></span> ディレクトリーと<span  
+  class=spelle><span style='font-family:"ＭＳ Ｐゴシック";mso-bidi-font-family:"ＭＳ Ｐゴシック"'>jLIVE</span></span>
+  インストールディレクトリーを共有します。</span></span></p>  
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'>　</p>
+  <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  lang=EN-US><img border=0 width=439 height=92 id="_x0000_i1029"
+  src="images/CH04_01_workgroup.gif"></span></p>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'>　</p>
+  </blockquote>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><a
+  name=321></a><b><span lang=EN-US>4.2.1 ワークグループのリースキャン (Rescan workgroup)</span></b></p>  
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'>　</p>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:33.25pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:2.77gd;text-indent:.05pt'><span
+  style='font-size:10.0pt'>アプリケーションの節を選択し，右クリックします。２つの選択肢が現れ，ワークグループのリースキャンをクリックします，その前にワークグループメンバーの<span
+  lang=EN-US> IP/hostname とアクセスキーを入れなければ成りません。</span></span></p>  
+  <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  lang=EN-US><img border=0 width=281 height=141 id="_x0000_i1030"
+  src="images/CH04_01_scan.gif" くし></span></p>
+  </blockquote>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt;
+  tab-stops:list 36.0pt'><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+  Wingdings'>§</span><span lang=EN-US style='font-size:7.0pt;font-family:"Times New Roman";
+  mso-fareast-font-family:Wingdings'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='font-size:10.0pt'>スキャン終了後，異常が生じた場合，レポートが出ます<span
+  lang=EN-US>(Scan workgroup report) ，例えば：モジュールがホストに或いは他のワークグループに既に存在しています，或いは指定のワークグループに連結できません。</span></span></p>  
+  <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  lang=EN-US><img border=0 width=456 height=343 id="_x0000_i1031"
+  src="images/CH04_01_scan.gif"></span></p>
+  </blockquote>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:23.3pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:1.94gd;text-indent:.05pt;
+  tab-stops:list 36.0pt'><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+  Wingdings'>§</span><span lang=EN-US style='font-size:7.0pt;font-family:"Times New Roman";
+  mso-fareast-font-family:Wingdings'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='font-size:10.0pt'>スキャン終了後，【フォーム】節がピンク色に変わります，このフォームは他のグループから参照していることを表しています，ローカルホストに同じフォームがありません。  
+  ピンク節のフォームにおいて，開発者は他のフォームからローカルの上にあるように引用できます。デザインモードに入って開発詳細が見ることもできます。修正することもでき，テストすることもできます。ただし、修正部分の保存ができません。永久に修正・保存するなら、ローカルホストに転送が必要になります<span
+  lang=EN-US> (move to local)。</span></span></p>  
+  <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  lang=EN-US><img border=0 width=368 height=473 id="_x0000_i1032"
+  src="images/CH04_01_scan_ok.gif"></span></p>
+  <p class=para style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'>　</p>
+  </blockquote>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt;
+  tab-stops:list 36.0pt'><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+  Wingdings'>§</span><span lang=EN-US style='font-size:7.0pt;font-family:"Times New Roman";
+  mso-fareast-font-family:Wingdings'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='font-size:10.0pt'>他の端末のモジュールをローカルに転送するときに，先にフォーム節を選択し，右クリックし，【ローカルへコピー】を選択します。</span></p>
+  <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  lang=EN-US><img border=0 width=366 height=216 id="_x0000_i1033"
+  src="images/CH04_01_scan_moveto.gif"></span></p>
+  </blockquote>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><a
+  name=322></a><b><span lang=EN-US style='font-size:14.0pt'>4.2.2 バッチー複写</span></b><b><span 
+  style='font-size:18.0pt'> </span></b><b><span lang=EN-US style='font-size:
+  14.0pt'>(Batch remote to local)</span></b></p> 
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt;
+  tab-stops:list 36.0pt'><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+  Wingdings'>§</span><span lang=EN-US style='font-size:7.0pt;font-family:"Times New Roman";
+  mso-fareast-font-family:Wingdings'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='font-size:10.0pt'>バッチー複写機能は指定か全部のモジュールをローカルにコピーすることができます。</span></p>
+  <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+  <p style='margin-top:.75pt;margin-right:66.0pt;margin-bottom:.75pt;
+  margin-left:10.1pt;mso-para-margin-top:.75pt;mso-para-margin-right:5.5gd;
+  mso-para-margin-bottom:.75pt;mso-para-margin-left:.84gd;text-indent:.05pt'><span
+  lang=EN-US><img border=0 width=415 height=345 id="_x0000_i1034"
+  src="images/CH04_01_move_local.gif"></span></p>
+  </blockquote>
+  <div>
+  <div>
+  <div>
+  <div class=MsoNormal><span lang=EN-US>
+  <hr size=2 width="100%" noshade color=black align=left>
+  </span></div>
+  </div>
+  </div>
+  </div>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+   style='width:450.0pt;border-collapse:collapse;mso-padding-alt:0mm 0mm 0mm 0mm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=200 valign=top style='width:150.0pt;padding:0mm 0mm 0mm 0mm'>
+    <p class=MsoNormal><span lang=EN-US><a href="ch04.html"><span
+    style='text-decoration:none;text-underline:none'><img border=0 width=70
+    height=18 id="_x0000_i1036" src="images/jlogo_previous.gif"></span></a></span></p>
+    </td>
+    <td width=207 valign=top style='width:155.25pt;padding:0mm 0mm 0mm 0mm'>
+    <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><a
+    href="index.html"><span style='text-decoration:none;text-underline:none'><img
+    border=0 width=144 height=25 id="_x0000_i1037" src="images/jlogo_small.gif"></span></a></span></p>
+    </td>
+    <td width=193 valign=top style='width:144.75pt;padding:0mm 0mm 0mm 0mm'>
+    <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US><a
+    href="ch04_02.html"><span style='text-decoration:none;text-underline:none'><img
+    border=0 width=70 height=18 id="_x0000_i1038" src="images/jlogo_next.gif"></span></a></span></p>
+    </td>
+   </tr>
+  </table>
+  <div>
+  <div>
+  <div>
+  <div class=MsoNormal><span lang=EN-US>
+  <hr size=2 width="100%" noshade color=black align=left>
+  </span></div>
+  </div>
+  </div>
+  </div>
+  <p style='margin:0mm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:10.0pt'>Copyright &copy; 2001~ 2004 Probe Technology . All Rights 
+  Reserved.</span></p>
+  <p style='margin:0mm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:10.0pt'>Questions, comments, and suggestions to <a
+  href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

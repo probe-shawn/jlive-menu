@@ -1,0 +1,245 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_03_05.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=215 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=185 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_03_07.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>執行預儲程序 
+(execute stored procedure)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#param">預儲程序的參數傳遞 
+(the parameters of stored procedure)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#event_status">事件執行狀態與訊息 (event runtime status and message)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">執行資料庫預儲程序 
+(stored Procedure) 。使用的資料庫系統須支援預儲程序。資料庫連結測試時，jLIVE&trade;  
+middle ware 會回覆該資料庫系統是否支援預儲程序 。</font></p> 
+<ul type="square"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">資料庫 (database) ： </font>選擇資料庫別名。<br>
+　</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">預儲程序 (stored procedure) ：</font> 選擇預儲程序。<br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">參數 (parameters) ：<br>
+　</font></p>  
+<ul type="disc">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">名稱 (name)：</font> 參數名稱。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">IO ：</font>  參數性質為輸入值 (in) 或輸出值 
+(out) 或 輸出入值 (inout)。(承接輸出值請參考運算式   
+<font color="#666699"><font face="Courier New">GetSpOutParam(spname.paramname)</font></font>的說明)。</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">類別 (type)：</font> 參數型態 (INTEGER、VARCHAR...etc)。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">精密度 (precision) ：</font> 精密位數。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">長度 (length) ：</font> 參數長度。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">小數 (scale) ：</font> 小數位數。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">運算式 (formula)： </font>雙擊 (double clicked)  
+儲存格，使用運算式作為參數輸入值，參數 IO 性質為輸出值 
+(out) 時不用也不可輸入參數值。<br>
+　</font></p> 
+  </li> 
+</ul> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">SQL Error Handle ： </font>當發生 SQL 
+錯誤時，可以事件 
+承接這個錯誤訊息，再由設計師控制其後續的處理    
+。參閱 <a href="sql_error_handle.html">SQL Error Handle</a> 的說明)</font></p>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_03_perform_7.gif" width="416" height="417"></p>  
+</blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="param"></a>預儲程序的參數傳遞 
+(the parameters of stored procedure)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">預儲程序的參數  
+IO 型態，會因為所使用的資料庫系統而有所不同，jLIVE Builer&trade;  
+支援 輸入(in)、 輸出 (out) 、輸出入 (inout)  
+的型態。參數的傳入以運算式給值，傳回值則以運算式&nbsp; <font color="#666699" face="Courier New">GetSpOutParam(&quot;</font><font color="#666699">預儲程序名稱</font><font color="#666699" face="Courier New">.</font><font color="#666699">參數名稱</font><font color="#666699" face="Courier New">&quot;)</font>&nbsp;取值。資料庫預儲程序的設計，必須以 SQL Exception  
+或傳回錯誤代碼的方式，讓客戶端 (cient)  
+能夠在取得傳回值前，先行驗證預儲程序的執行是否正確無誤，設計師可先以<font color="#666699"> 
+</font><font color="#666699" face="Courier New">GetSqlErrcode(&quot;</font><font color="#666699">資料庫別名</font><font color="#666699" face="Courier New">.</font><font color="#666699">預存程序名稱</font><font color="#666699" face="Courier New">&quot;)</font> <font color="#666699">
+    </font>取得傳回的錯誤代碼，或以 <a href="sql_error_handle.html">SQL Error  
+Handle</a> 的程序，控制當產生 SQL 錯誤 (exception) 該如何處理  
+。<br> 
+　</font></p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699" size="2" face="Courier New">GetSpOutParam(&quot;</font><font color="#666699" size="2">預儲程序名稱</font><font color="#666699" size="2" face="Courier New">.</font><font color="#666699" size="2">參數名稱</font><font color="#666699" size="2" face="Courier New">&quot;) </font>中，參數名稱是區分大小寫 
+(case sensitive)，且必須完全相同。例如：<font color="#666699" face="Courier New" size="2">GetSpOutParam(&quot;</font><font color="#666699" size="2">預儲程序名稱</font><font color="#666699" face="Courier New" size="2">.@RETCODE&quot;) </font>。<br> 
+　</font></p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE  
+Builder&trade; 目前的版本沒有支援傳回結果集 (result set cursor)。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="event_status"></a><b>事件執行狀態與訊息 (event runtime status and message)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱&quot;) ：</font><font size="2">取得事件執行狀態。<br>
+　</font></p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">狀態</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">空字串</font></td>
+    <td width="84%" height="16"><font size="2">事件未被引發。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">-1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，依條件判斷後執行否則事件。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">0</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行過程有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.error&quot;) ：</font><font size="2">取得事件執行錯誤代碼。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">空字串 或 0</font></td>
+    <td width="84%"><font size="2">沒有錯誤訊息或無法取得錯誤訊息。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">1</font></td>
+    <td width="84%"><font size="2">資料庫 預儲程序 執行有誤。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">2</font></td>
+    <td width="84%"><font size="2">執行錯誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.INFO_STRING&quot;) ：</font><font size="2">取得事件執行 
+INFO_STRING 的訊息。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font size="2">NON_SELECT SQL 的執行結果，統一由 SQL_ERROR Handle 處理。請參閱 <a href="sql_error_handle.html">SQL error handle</a> 
+的說明。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<a href="ch11_03_05.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=195 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=205 align=right valign=top> 
+<a href="ch11_03_07.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+</body>  
+  
+</html>

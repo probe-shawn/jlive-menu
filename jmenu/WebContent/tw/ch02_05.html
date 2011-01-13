@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Browser enabled application mechanism</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=150 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch02_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=295 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch02.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 2</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch02.html" style="text-decoration: none"><font color="#000000">Technical       
+overview</font></a></font></b></TD>      
+<td width=155 align=right valign=top>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<a href="ch03.html">      
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>      
+</tr>      
+</table>      
+      
+<hr align=left color="#000000">      
+<p><b><font size="3">2.5  應用程式執行環境與機制 (Application environment and mechanism)</font></b></p>          
+<p><font size="2"><a href="#runtime">應用程式執行環境 (runtime environment)</a><br>
+<a href="#browser">瀏覽器啟動執行機制 (browser enabled HTML mechanism)</a><br>
+<a href="#appenviron">開發與佈建的應用伺服器環境 (development and deployment application 
+server environment)</a><br>
+j<a href="#j2ee">LIVE&#8482; middle ware 在 J2EE 應用伺服器的運作 (service route in application 
+server (J2EE)) </a><br>
+　</font></p>          
+<p style="text-indent: 20"><font size="2">系統設計師可以透過以下章節，了解 jLIVE Builder&#8482; 
+應用程式的執行環境與系統機制。 <a href="#runtime">應用程式執行環境</a> -- 說明應用程式在網際網路及區域網路所在位置，及適用於客戶端 
+(client) ，應用伺服器 (application server) 及資料庫伺服器 (database server) 的作業環境與軟體。<a href="#browser">瀏覽器啟動執行機制</a> 
+-- 詳細的描述從使用者端透過瀏覽器執行時，jLIVE Builder&#8482; 系統作業的各個程序與流程。<a href="#appenviron">開發與佈建的應用伺服器環境 
+</a>&nbsp;-- 可以了解 jLIVE Builder&#8482; 在應用伺服器上所扮演的角色，以及可與 Java&#8482; Container 上的 HTML、JSP 
+協同處理應用伺服器的服務需求。j<a href="#j2ee">LIVE middle&#8482; ware 在 J2EE 應用伺服器的運作</a> -- jLIVE 
+middle ware 系統名稱為 ProbeServlet，是以 Java Servlet&#8482; 所開發的 servlet class，ProbeServlet 
+除了提供 jLIVE Builder&#8482; 內建服務需求外，可以經由 jLIVE Builder&#8482; Servlet Call event 與 J2EE 
+上其他服務伺服器溝通與運作。</font></p>          
+<p><font size="2"><a name="runtime"></a><b>應用程式執行環境 (runtime environment)</b></font></p>          
+<p style="text-indent: 20"><font size="2">jLIVE Builder&#8482; 
+應用程式可以執行在網際網路及區域網路中。使用者端可以瀏覽器或 Java Web Start&#8482; 或下載可執行 Java&#8482; Jar 
+檔執行，程式執行後會連結應用伺服器 (application server) ，由應用伺服器提供後端資料庫伺服器及其他系統資源存取服務。jLIVE 
+Builder&#8482; 的使用者端可以是任何支援 Java&#8482; 環境的作業系統；jLIVE Builder&#8482; 的中間層 (middle tier) 可以安裝在任何支援 
+Java Servlet&#8482; 的應用伺服器；透過 JDBC jLIVE Builder&#8482; 可以同時處理各種資料庫系統。</font></p>          
+<p align="center"><img border="0" src="images/ch02_05_runtime.gif" width="560" height="409"></p>          
+<p><a href="#top">          
+    <font color="#003366" size="2">▲Top</font></a></p>          
+<p><font size="2"><a name="browser"></a><b>瀏覽器啟動執行機制 (browser enabled HTML 
+mechanism)</b></font></p>          
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&#8482; 
+在開發完成階段，可以產生三種的應用程式</font></p>          
+<ul>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2">
+<a href="ch02.html#html_run">由瀏覽器啟動執行(browser 
+enabled HTML)</a></font></p>          
+  </li>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2">
+<a href="ch02.html#jar_run">Java&#8482; 可執行檔獨立執行 
+(standalone executable JAR)</a></font></p>          
+  </li>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2">
+<a href="ch02.html#jnlp_run">以 Java web start &#8482; 
+啟動執行(web start JNLP)</a></font></p>          
+  </li>
+</ul>
+<p style="text-indent: 20" align="justify"><font size="2">獨立執行的應用程式 (standalone 
+executable JAR) 和一般的視窗 (*.exe) 程式是一模一樣的，只不過檔名是 Java&#8482; 的可執行檔 *.jar 。以 Java web start &#8482; 
+啟動執行(web start JNLP)&nbsp; (Java Network Launching Protocol) 的程式和獨立執行的應用程式 
+(standalone executable JAR) 一樣 ，其分別是受 Java web start&#8482; 的控管且可透過 Java web start &#8482; 
+自動更新版本。三種應用程式在網際網路上啟動執行後，應用程式皆以多層式 的架構 (n-tiers) 運作。</font></p>          
+<p style="text-indent: 20" align="justify"><font size="2">瀏覽器啟動 (browser 
+enabled) 的應用程式，是由客戶端 (client) 的瀏覽器，經由 HTTP 連結到 Web 伺服器 (server) 的HTML 檔，而由 Java&#8482; 
+內嵌在 HTML 的小程式段 (Java&#8482; applet) 啟動應用程式。詳細的流程如下 :&nbsp;</font></p>          
+<p align="center">    
+<img border="0" src="images/ch02_05_browser_enable.gif" width="565" height="392"></p>          
+<p style="text-indent: 20" align="justify"><font size="2">當客戶端 (client) 在瀏覽器，以           
+HTTP 向 Web 伺服器要求網頁時，由 Web 伺服器送出內含 Java&#8482;           
+Applet class 標籤 (tag) 的 HTML 網頁，客戶端 (client) 即啟動 Java&#8482;          
+虛擬機器 (JVM) ，並對 Web 伺服器要求載入 Applet class。當 Applet           
+class 載入實體化 (instantiation) 後，立即載入主畫面，並出現密碼驗證對話視窗，要求客戶端   
+(client) 登入。客戶端 (client) 的密碼驗證是由 jLIVE&trade; middle ware           
+以查驗資料庫的方式處理。當客戶端 (client) 的密碼是合法時，jLIVE&trade;           
+middle ware 會為客戶端 (client) 建立連結的 Session ，並按指示連結資料庫，回覆客戶端   
+(client) 時會將客戶端 (client) 的權限一併傳回。客戶端 (client)           
+的 Java&#8482; class 會根據權限，控管視窗模組 (form)           
+的開啟與否，和對該視窗模組 (form) 中           
+操作資料庫新增、刪除、修改、查詢以及列印的元件   
+(components)，自動將其致能或失效 (enable or disable)。客戶端   
+(client) 在主視窗畫面啟動後，即可像操作任何視窗程式一樣，以系統選單、按鍵、圖示啟動各種作業。當呼叫視窗模組   
+(form) ，Web 伺服器回傳視窗模組 (form) 的 Java&#8482;&nbsp;           
+class；當視窗模組 (form) 中存取資料庫或系統資源時，則由           
+jLIVE&trade; middle ware 負責服務。此即由客戶端 (client) 發出請求，中間層           
+jLIVE&trade; middle ware 負責連結、存取後端資料庫伺服器 (database           
+server)的三層架構。</font></p>          
+<p><font size="2"><b>瀏覽器啟動應用程式特性 (browser enabled           
+features)</b></font></p>          
+<ul>          
+  <li>    
+  <p align="justify"><font size="2">啟動的 HTML 網頁及 Java&#8482; Applet class，由 jLIVE Builder&#8482; 在製作執行程式時，自動產生原始程式碼           
+    (Java&#8482; source)，有經驗的設計師可以按需求進一步的編輯更改。一個應用系統只會存在一個 Java&#8482; Applet ，Applet 
+  的作用只在於初始化瀏覽器的應用程式，應用程式接下來的所有運作，將會在此 Applet 區域，以多視窗模組的型式呈現。<br>
+　</font></li>          
+  <li>    
+  <p align="justify"><font size="2">HTML 載入，瀏覽器啟動虛擬機器 (Java&#8482; VM) 時，會檢查 Java&#8482; 執行期版本 (JRE) 並進行載入   
+  (plug in) 指定的版本，版本載入來源預設為 Sun 網站，jLIVE           
+    Builder&#8482; 在製作執行程式時，提供重導(redirect) 載入來源的機制。<br>
+　</font></li>         
+  <li><font size="2">在應用程式執行時 Java&#8482; Applet           
+    只是扮演啟動程式的機制，所有程式的實際運作，由 Java&#8482;           
+    class 執行。所以整個應用程式，只需也只有一個 Java&#8482;           
+    Applet 參與運作。<br>
+　</font></li>          
+  <li>    
+  <p align="justify"><font size="2">在載入時期會有兩個 jar           
+    檔和語系模組的載入。一個是約250K的 jlive.jar，這是 jLIVE&#8482;           
+    執行期的元件 class 檔；另一個是 jimage.jar，這是應用程式開發者，設定要預先載入的圖形檔   
+  (preload images)，其大小視圖檔而定。此兩個 Jar 檔在客戶端   
+  (client) ，第一次執行程式時載入，往後除非有新版本否則不會再耗時去重載。<br>
+　</font></li>          
+  <li><font size="2">應用程式在執行時，jLIVE&#8482;           
+    系統訊息及輔助提示，皆會以客戶端 (client) 的語系顯示。若是支援多國語系的應用程式，jLIVE&#8482; 系統會自動以客戶端 (client) 
+  的語系呈現。<br>
+　</font></li>          
+  <li>    
+  <p align="justify"><font size="2">jLIVE Builder&#8482; 系統中，所開發的每一個視窗畫面模組   
+  (form) ，都是一個近乎獨立的 Java&trade;&nbsp; class。應用程式啟動時不會載入所有的視窗畫面模組   
+  (form) ，而是在呼叫執行到該視窗畫面模組 (form)           
+    再行載入並儲存 (cache) 在客戶端 (client) ，除非有更新版的視窗畫面模組   
+  (form) ，系統會以客戶端 (client)           
+    的模組直接執行，不再耗時從 Web 伺服器載入。此即 jLIVE           
+    Builder&#8482;           
+    系統所開發的應用程式執行效率高的原因之一。<br>
+　</font></li>          
+  <li>    
+  <p align="justify"><font size="2">jLIVE Builder&#8482;           
+    系統是多執行緒的系統。程式啟動時，系統會載入儲存   
+  (cache) 在客戶端 (client) 的視窗畫面模組 (form)           
+    ，顯現視窗畫面後，再連結 jLIVE&#8482; middle ware           
+    要求操作的資料庫資料。因此客戶端 (client)           
+    執行時可以在最短時間內得到回應，就像瀏覽器網頁一樣，先看到顯示的視窗元件，再看到回應的資料顯示在元件中，最後才是圖形資料。<br>
+　</font></li>          
+  <li><font size="2">jLIVE&#8482; middle ware 是 100% pure java           
+    所開發的 Java&#8482;&nbsp; Servlet，可以適用於各種作業平台和相容於各種應用伺服器   
+    (application server) 。<br>
+　</font></li>          
+  <li>    
+  <p align="justify"><font size="2">jLIVE Builder&#8482;          
+    系統是三層式架構，資料庫 (database) 的存取由 jLIVE&#8482;          
+    middle ware 所負責，所以客戶端 (client)           
+    不須安裝任何驅動程式，也無法直接存取資料庫伺服器，位於防火牆及內部網路中的資料庫伺服器   
+  (database server) 因此能得到最安全的保障。</font></li>          
+</ul>          
+<p><a href="#top">          
+    <font color="#003366" size="2">▲Top</font></a></p>          
+<p>　</p>          
+<p><font size="2"><a name="appenviron"></a><b>開發及佈建的應用伺服器環境 (application server 
+environment) </b></font></p>          
+<p style="text-indent: 20"><font size="2">設計師在使用 jLIVE Builder&#8482; 設計程式時，與一般使用者在執行由 
+jLIVE Builder&#8482; 所開發的應用程式是一模一樣，所以設計師能即時知道應用程式，在真實環境下執行的結果。 jLIVE &#8482; middle ware 的 
+class 名稱為 ProbeServlet，是以 Java Servlet&#8482; 所開發的。在應用伺服器上與 HTML、JSP 提供系統服務，只不過 
+ProbeServlet 所服務的客戶端 (client) 是&nbsp; jLIVE Builder&#8482; 的應用程式。所以&nbsp; jLIVE 
+Builder&#8482; 可以與 HTML 、ASP、JSP 、PHP 協同開發網際網路上的應用與服務。佈建&nbsp; jLIVE Builder&#8482; 應用環境只要將 
+ProbeServlet 安裝到應用伺服器上即可。程式設計、更新、維護 ，可以透過 jLIVE Builder&#8482; 內建的線上更新 (online update) 
+提交 (transmit) 到應用伺服器。</font></p>          
+<p align="center"><img border="0" src="images/ch02_05_appenviron.gif" width="581" height="390"></p>          
+<p><a href="#top">          
+    <font color="#003366" size="2">▲Top</font></a></p>          
+<p><b><font size="2"><a name="j2ee"></a>jLIVE middle&#8482; ware 在 J2EE 應用伺服器的運作 
+(service route in application server (J2EE)) </font></b></p>          
+<p style="text-indent: 20"><font size="2">ProbeServlet&nbsp; 是 jLIVE &#8482; middle 
+ware 的 class 名稱，在應用伺服器以 Java Servlet&#8482; 機制運作，是完全相容與 Java&#8482; J2EE 規格。ProbeServlet&nbsp; 
+在接到資料庫存取請求時，以 JDBC 連結資料庫並調整回應資料量，快速提供使用者端的需求。jLIVE Builder&#8482; 提供內建 Servlet Call 
+event 用與其他 J2EE 應用伺服器上的資源協同運作。例如：Java&#8482; EJB 的開發者可以透過 Servlet 呼叫 EJB 且將 EJB 的結果回傳至 
+jLIVE Builder&#8482; 使用者端 。</font></p>          
+<p align="center"><img border="0" src="images/ch02_05_j2ee.gif" width="579" height="409"></p>          
+<p><a href="#top">          
+    <font color="#003366" size="2">▲Top</font></a></p>          
+<p>　</p>          
+<p align="justify">　</p>
+<p align="justify">　</p>
+<hr align=left color="#000000">           
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">           
+<tr>           
+<td width=200 align=left valign=top>           
+<a href="ch02_04.html">          
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>          
+<td width=208 align=center valign=top><a href="index.html">          
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>          
+<td width=192 align=right valign=top>          
+<a href="ch03.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~          
+2004 Probe Technology . All Rights Reserved.</font></p>         
+         
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,          
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>         
+         
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+         
+</body>         
+         
+</html>

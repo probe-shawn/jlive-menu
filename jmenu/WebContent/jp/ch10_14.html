@@ -1,0 +1,290 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Navigator component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=213 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_10.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=207 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>  
+<td width=218 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_15.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></p></td>  
+</tr>  
+</table>  
+<hr align=left color="#000000">  
+<p><b><font size="4"><a name="top"></a> </font></b>          
+    <font size="4"><b>ナビゲーター</b> </font><b>         
+<font size="4">(Navigator component)</font><font size="5"> </font></b>        
+<img border="0" src="images/ch10_navigator.gif" width="30" height="30"></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>         
+<p style="margin-top: 1; margin-bottom: 1"><a href="#buttonprop">   
+<font size="2">ボタンプロパティ (button properties)</font></a></p>      <!--   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#event"><font size="2">イベント件     
+(event)</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+<font size="2">導覽元件 (Navigator component)     
+提供使用者操作資料來源 (data source)     
+的介面，設計師根據使用流程，核選允許使用者操作資料來源的按鈕，導覽按鈕會隨時以致能    
+(enabled) 或失效 (disabled)反應資料來源的&#29376;態，例如：資料來源資料記&#37636;在第一筆時，首筆按鈕    
+(first) 及上筆 (previous)     
+按鈕會呈現失效 (disabled) 的&#29376;態。如果採用 jLIVE&trade;     
+授權機制，則相關未授權項目 (IUDQP) 的按鈕會完全失效    
+(disabled)，使用者將無法執行未授權的資料來源操作。導覽元件的預設功能可以用    
+<a href="#event">取代事件</a>  
+加入設計師在使用者操作過程的應用系統流程，例如：在刪除前加入確認訊息、存&#27284;前加入資料檢&#26597;事件、新增前先行填入預設&#20540;、以自定的&#26597;詢視窗取代預設&#26597;詢等等。取代事件    
+(replaced event) 是取代 (replace)     
+原預設功能，所以設計師除了加入一系列的事件串流 (event     
+flow)     
+外，如果還須執行原預設功能，則必須在事件串流中，加入<font color="#666699">資料來源導覽事件</font>相關的導覽功能。</font></p>  -->
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a name="buttonprop"></a><b><font size="2">ボタンプロパティ      
+(button properties)</font></b></p>       
+<ul type="square">   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">データソース (data source)：</font>データソース選択。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">&nbsp;(rows)：</font>ボタン列数。</font></p>    
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">水平 (text horizontal position)：</font>文字とアイコン      
+(icon) の相対的な位置。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">垂直 (text vertical position)：</font>文字とアイコン      
+(icon) の水平相対位置はセンター (center) の時，文字とアイコン (icon)  
+の垂直相対的な位置。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">最初 (first)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav0.gif" width="24" height="24">：      
+</font>最初に移ります。データは既に最初にある時，クリックしても使用不可能      
+(disabled)　になっています。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">次 (next)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav2.gif" width="24" height="24">     
+ ：</font>次へ。データは既に最後にある時，</font><font size="2">クリックしても使用不可能      
+(disabled)　になっています。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">新規 (insert)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav4.gif" width="24" height="24">：      
+</font>新規データ。新規モード (insert mode) 或いは編集モード (edit        
+mode)の時，</font><font size="2">クリックしても使用不可能      
+(disabled)　になっています。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">編集</font><font size="2"><font color="#666699">&nbsp; (edit)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav6.gif" width="24" height="24">：</font>データソースを編集モード(edit mode)へ。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">キャンセル</font><font size="2"><font color="#666699"> (cancel)    
+<img border="0" src="images/_nav8.gif" width="24" height="24">：</font>新規モード      
+(insert mode) 或いは編集モード (edit mode)をキャンセル。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">リオープン (reopen)    
+<img border="0" src="images/_nav10.gif" width="24" height="24">：</font>データソースの        
+SQL コマンドを再度実行。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">クエリー (query)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav12.gif" width="24" height="24">：</font>デフォルトクエリーフォームをオープン。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">前の (previous)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav1.gif" width="24" height="24">：</font>データは既に最初にある時，クリックしても使用不可能      
+(disabled)　になっています。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">ラスト (last)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav3.gif" width="24" height="24">：</font>データは既に最後にある時，クリックしても使用不可能      
+(disabled)　になっています。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">削除 (delete)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav5.gif" width="24" height="24">：</font>削除する時に，メッセージボックスが表示されます。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">保存 (post)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav7.gif" width="24" height="24">：</font>新規モード      
+(insert mode) と編集モード (edit mode) の時，クリックしても使用可能になっています。      
+(enabled)。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">更新</font><font size="2"><font color="#666699"> (refresh)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="images/_nav9.gif" width="24" height="24">：</font>バッファー      
+(buffer) のデータ (record)から読み取り，関連コンポーネントを更新します。</font></p>     
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">全部削除 (delete all)    
+<img border="0" src="images/_nav11.gif" width="24" height="24">：</font>データソース全てのデータを削除します。       
+Bufferedデータソースに限ります。</font></p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_14_buttons.gif" width="479" height="422"></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">　</font></p>
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0" align="center">   
+<img border="0" src="images/ch10_14_nav_buttons2.gif" width="558" height="52"></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p><!--
+<p style="margin-top: 0; margin-bottom: 0">
+<a name="event"></a><b><font size="2">取代事件 (event)</font></b></p> 
+<ul type="square"> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0" align="justify"> 
+<font size="2"><font color="#666699">取代預設導覽列的動作事件：</font>導覽元件的按鈕功能可以用其他自定的事件來取代，而原先的按鍵功能將失效。設計師可以在取代的事件串流中，以<font color="#666699">資料來源導&#28768;事件</font>，再加上原本的按鍵功能。例如：設計師希望在使用者按下存&#27284;鍵 
+(post) 時，先行檢&#26597;使用者輸入的資料是否正確  
+，使用者輸入的資料不符合時，以<font color="#666699">顯示對話視窗事件</font>提示錯誤，再以<font color="#666699">設定元件  
+Focus  事件</font>將輸入的 Focus 移至該元件，不作存&#27284; (post) 的事件；如果所有輸入皆合於所求，則執行<font color="#666699">資料來源導覽事件</font>的存&#27284;  
+(Post) 功能。</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font color="#666699" size="2">首筆 (first)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">下筆 (next)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">新增 (insert)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">編輯 (edit)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">取消 (cancel)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">重開 (reopen)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">&#26597;詢 (query)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">上筆 (previous)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">尾筆 (last)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">刪除 (delete)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">存&#27284; (post)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">更新 (refresh)</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">全刪 (delete all)</font></p>  -->
+<blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/ch10_14_events.gif" width="479" height="362"></p>  
+</blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=213 align=left valign=top> 
+<a href="ch10_10.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=207 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=218 align=right valign=top> 
+<a href="ch10_15.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>  
+  
+</html>

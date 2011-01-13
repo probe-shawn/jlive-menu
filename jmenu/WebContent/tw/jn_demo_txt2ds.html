@@ -1,0 +1,452 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_demo_mail.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_stat_chart.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Insert data from text 
+         file into table</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600">
+     <tr>
+       <td width="27" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="573" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>DEMO_TXT2DS</b></font></td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="24">　</td>
+       <td width="573" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="573" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="53">　</td>
+       <td width="573" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">將文字檔 
+         (txt2ds.txt) 的資料載入Buffered 資料來源 (BUFF_TXT)。</font></li>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">將 Buffered 資料來源 
+         (BUFF_TXT)，依序插入 (insert) 實體表格 (orderchart)。這個流程有多種做法，此視窗示範其中兩種，第一種以資料來源之導覽元件事件，第二種以 
+         NON_SELECT_SQL事件。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="573" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">BUFF_TXT：</font></b></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">Buffered 資料來源。<br>
+       【資料欄位】：Sales、Orderdate、Product、Unitprice、Quantity、Discount，分別對應文字檔 
+       (txt2ds.txt) 的資料欄位。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <font size="2"><b>orderchart</b></font><b><font size="2">：</font></b></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">實體表格的資料來源。<br>
+       【SQL】：<font face="Courier New">select * From orderchart</font></font></td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="16"></td>
+       <td width="123" height="16" colspan="2"></td>
+       <td width="450" height="16"></td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="573" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="28"></td>
+       <td width="122" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【edit_path】</font></td>
+       <td width="449" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       【資料來源】核取 <font color="#666699">使用運算式</font>，核取 <font color="#666699">
+       只在初始化時作用</font>。運算式內容為<br>
+       <font color="#666699">&nbsp; </font>
+       <font face="Courier New" color="#666699">&quot;C:\jLIVE\programs\jNorth\class\doc\txt2ds.txt&quot;</font>，
+       這是jLIVE Builder 安裝的預設路徑。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_txt2buff】</font></td>
+       <td width="449" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">txt_2_buff </font>，按下時將文字檔 (txt2ds.txt) 
+       的資料載入Buffered 資料來源 (BUFF_TXT)。 </font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="28"></td>
+       <td width="122" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tab_txt】</font></td>
+       <td width="449" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">索引標籤元件 (Tab)。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_delall_buff】</font></td>
+       <td width="449" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">delall_buff </font>，按下時將 Buffered 資料來源 (BUFF_TXT) 
+       的資料全部刪除。 </font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_dsnav_ins】</font></td>
+       <td width="449" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">buff_top1 </font>，按下時以資料來源之導覽元件事件，將 
+       Buffered 資料來源 (BUFF_TXT)，依序插入 (insert) 實體表格 (orderchart)。 </font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_sql_ins】</font></td>
+       <td width="449" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">buff_top2 </font>，按下時以 NON_SELECT_SQL 事件，將 
+       Buffered 資料來源 (BUFF_TXT)，依序插入 (insert) 實體表格 (orderchart)。 </font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_buff】</font></td>
+       <td width="449" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">BUFF_TXT</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_delall_ds】</font></td>
+       <td width="449" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">delall_ds </font>，按下時將實體表格 (orderchart) 
+       的資料全部刪除。 </font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="28"></td>
+       <td width="122" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tot_rec】</font></td>
+       <td width="449" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       &nbsp;【資料來源】核取 <font color="#666699">使用運算式</font>。運算式內容為<font color="#666699">
+       <font face="Courier New">{orderchart:TotalRecord()}</font></font>，顯示資料來源(orderchart) 
+       的資料筆數。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_table】</font></td>
+       <td width="449" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">orderchart</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="16"></td>
+       <td width="123" height="16">
+       </td>
+       <td width="450" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="573" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【txt_2_buff】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">載入文字檔至 Buffer 資料來源事件。<br>
+       【條件】運算式為<font color="#666699"> <font face="Courier New">1 or 
+       SetProp(&quot;tab_txt&quot;,&quot;selected&quot;,1)</font></font>。目的在於切換標籤頁到第一頁。<br>
+       【文字】<br>
+       核取 <font color="#666699">Tab Delimited </font>，表示文字檔 (txt2ds.txt) 以 &quot;tab&quot; 
+       為分隔符號。<br>
+       運算式為<font color="#666699"> <font face="Courier New">{edit_path}</font></font>，這是文字檔的路徑 
+       (path)。<font color="#666699"><br>
+       定義文字記錄</font> 建立六個欄位，這是文字檔的欄位格式。<br>
+       【Buffer 資料來源】選 <font color="#666699">BUFF_TXT</font>。<br>
+       <font color="#666699">資料欄位轉換對應表 </font>定義文字檔與 Buffer 
+       資料來源再資料轉換時，所對應的欄位關係，例如第一個文字欄位 &quot;fld1&quot; 內含值，將填入 BUFF_TXT 的 Sales 欄位。<br>
+       這個事件是一個&quot;迴圈事件&quot;，執行時會依序把所有的文字檔資料，全部填入 Buffer 資料來源事件。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【delall_buff】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】【資料來源】選<font color="#666699"> BUFF_TXT</font>，【操作】選<font color="#666699">全刪 
+       (delete all)</font>，刪除Buffer 資料來源 BUFF_TXT 的全部記錄。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【delall_ds】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">執行 NON_SELECT_SQL 命令事件。<br>
+       【執行】【資料庫】選<font color="#666699"> Northwind<br>
+       </font>【Non-Select SQL 命令】為 <font color="#666699" face="Courier New">
+       delete from orderchart</font><br>
+       刪除資料來源 orderchart 的全部記錄。<br>
+       【後續事件】選<font color="#666699"> reopen_ds</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【reopen_ds】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】【資料來源】選<font color="#666699"> orderchart</font>，【操作】選<font color="#666699">重開 
+       (reopen)</font>，因為前一個事件雖然已將 orderchart 的資料全部刪除，但是執行Non-Select SQL 
+       命令之後，視窗元件 (grid_table) 並不會即時反應資料表格的異動，因此重開 (reopen) 資料來源，以將 grid 
+       上的資料將全部清空。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【buff_top1】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {BUFF_TXT:IsEmpty()}</font>，意即 
+       BUFF_TXT 有記錄時才會執行此事件。<br>
+       【執行】【資料來源】選<font color="#666699"> BUFF_TXT</font>，【操作】選<font color="#666699">首筆 
+       (First)</font>，將記錄指標調到 BUFF_TXT 的第一筆。<br>
+       【後續事件】選<font color="#666699"> ins_ds</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ins_ds】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】【資料來源】選<font color="#666699"> orderchart</font>，【操作】選<font color="#666699">新增 
+       (insert)</font>，執行後將新增一筆記錄。<br>
+       【後續事件】選<font color="#666699"> set_fld</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_fld】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">設定資料來源記錄之欄位內含值事件。<br>
+       【執行】【資料來源】選<font color="#666699"> orderchart</font>，【資料欄位】依序將 BUFF_TXT 
+       的欄位內含值填入 orderchart。<br>
+       【後續事件】選<font color="#666699"> post_ds</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【post_ds】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】【資料來源】選<font color="#666699"> orderchart</font>，【操作】選<font color="#666699">存檔 
+       (post)</font>。<br>
+       【後續事件】選<font color="#666699"> next_buff1</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【next_buff1】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {BUFF_TXT:Eof()}</font>，意即 
+       BUFF_TXT 的記錄指標尚未到達最後一筆時才會執行此事件。<br>
+       【否則】選<font color="#666699"> msg_done</font>。<br>
+       【執行】【資料來源】選<font color="#666699"> BUFF_TXT</font>，【操作】選<font color="#666699">下筆 
+       (next)</font>，將 BUFF_TXT 的記錄指標下移一筆。<br>
+       【後續事件】選<font color="#666699"> ins_ds</font>。上述4個事件構成一個迴圈，將 BUFF_TXT 
+       的記錄全部轉入資料來源 orderchart。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_done】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">1 or 
+       SetProp(&quot;tab_txt&quot;,&quot;selected&quot;,2)</font>，目的在於自動切換到標籤元件的第二頁，與事件執行的條件無關。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Message</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;The operaton of insertion 
+       completed !\n&quot;$&quot;There were &quot;${BUFF_TXT:TotalRecord()}$&quot; records added to 
+       table.&quot;</font><font face="Courier New">，&quot;\n&quot; 為換行符號</font>。</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【buff_top2】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {BUFF_TXT:IsEmpty()}</font>，意即 
+       BUFF_TXT 有記錄時才會執行此事件。<br>
+       【執行】【資料來源】選<font color="#666699"> BUFF_TXT</font>，【操作】選<font color="#666699">首筆 
+       (First)</font>，將記錄指標調到 BUFF_TXT 的第一筆。<br>
+       【後續事件】選<font color="#666699"> ins_sql</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ins_sql】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">執行 NON_SELECT SQL 命令事件。<br>
+       【執行】【資料庫】選<font color="#666699"> Northwind<br>
+       </font>【Non-Select SQL 命令】為 <font color="#666699" face="Courier New"><br>
+&nbsp;&nbsp; Insert into orderchart (Sales,Orderdate,Product,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       UnitPrice,Quantity,Discount)<br>
+&nbsp;&nbsp; Values (?,?,?,?,?,?)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 這是標準 SQL-92 的Insert 命命，不同的是在 
+       Values 後面以 6 個參數來將內<br>
+       　　含值帶入。<br>
+       　　參數 1<font color="#666699">類別</font>：<font color="#666699">VARCHAR</font>，<font color="#666699">運算式</font>：<font color="#666699" face="Courier New">{BUFF_TXT:Sales}</font>。<br>
+       　　參數 2<font color="#666699">類別</font>：<font color="#666699">TIMESTAMP</font>，<font color="#666699">運算式</font>：<font color="#666699" face="Courier New">{BUFF_TXT:Orderdate}</font>。<br>
+       　　參數 3<font color="#666699">類別</font>：<font color="#666699">VARCHAR</font>，<font color="#666699">運算式</font>：<font color="#666699" face="Courier New">{BUFF_TXT:Product}</font>。<br>
+       　　參數 4<font color="#666699">類別</font>：<font color="#666699">INTEEGER</font>，<font color="#666699">運算式</font>：<font color="#666699" face="Courier New">{BUFF_TXT:Unitprice}</font>。<br>
+       　　參數 5<font color="#666699">類別</font>：<font color="#666699">INTEGER</font>，<font color="#666699">運算式</font>：<font color="#666699" face="Courier New">{BUFF_TXT:Quantity}</font>。<br>
+       　　參數 6<font color="#666699">類別</font>：<font color="#666699">DECIMAL</font>，<font color="#666699">運算式</font>：<font color="#666699" face="Courier New">{BUFF_TXT:Discount}</font>。<br>
+       【後續事件】選<font color="#666699"> reopen_ds</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【next_buff2】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {BUFF_TXT:Eof()}</font>，意即 
+       BUFF_TXT 的記錄指標尚未到達最後一筆時才會執行此事件。<br>
+       【否則】選<font color="#666699"> reopen_ds1</font>。<br>
+       【執行】【資料來源】選<font color="#666699"> BUFF_TXT</font>，【操作】選<font color="#666699">下筆 
+       (next)</font>，將 BUFF_TXT 的記錄指標下移一筆。<br>
+       【後續事件】選<font color="#666699"> ins_sql</font>。上述 2個事件構成一個迴圈，將 BUFF_TXT 
+       的記錄全部轉入資料來源 orderchart。</font></td>
+     </tr>
+     <tr>
+       <td width="26" align="center" height="16"></td>
+       <td width="122" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【reopen_ds1】</font></td>
+       <td width="449" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】【資料來源】選<font color="#666699"> orderchart</font>，【操作】選<font color="#666699">重開 
+       (reopen)</font>，執行Non-Select SQL 命令之後，視窗元件 (grid_table) 
+       並不會即時反應資料表格的異動，因此重開 (reopen) 資料來源。<br>
+       【後續事件】選<font color="#666699"> msg_done</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="27" align="center" height="16"></td>
+       <td width="123" height="16" colspan="2"></td>
+       <td width="450" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_demo_mail.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=382 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=102 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_stat_chart.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

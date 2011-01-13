@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Upload File</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=207 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD>  
+<td width=193 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch11_05_05.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+上傳檔案 (upload file)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">將資料來源的記錄內容 
+(record data) 或執行迴圈 (loop) 內的文字資料 (text data)，寫到 
+(write to) 指定的檔案內 (例如 <font face="Courier New"> .txt</font>、<font face="Courier New">.html</font>...)。檔案可以存在於客戶端 
+(client) 或 jLIVE&trade; middle ware   
+所存在的區域網路內的任何主機。<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2"> 
+此事件實際上是一個&quot;迴圈事件&quot;，先執行初始事件 
+(initial event)，再執行內容 (content)   
+運算式，把資料寫入檔案，接著檢查中斷條件 (break condition) 運算式，運算式為真(非0 且非空字串) ，則迴圈中斷 
+(break) ，為&quot;偽&quot;則執行迴圈接續事件(loop next Event)，再回到內容(content)   
+運算式，重複執行寫入(write to) 、中段判斷 (break condition)   
+、接續事件(loop next event) 的迴圈。<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<img border="0" src="images/ch11_05_upload.gif" width="500" height="198"></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">以下圖為例，將資料寫入<font color="#666699">{FILE_PCI} (路徑檔名)  
+</font>中，不核取<font color="#666699">  
+附加 (append)</font> 則以新資料取代舊資料，迴圈事件執行前先執行 <font color="#666699" face="Courier New">copyto_initial</font>    
+事件，定義文字檔的檔頭，並將記錄指標移到首筆，再開始寫入內容(content)，注意圖中<font color="#666699">  
+<font face="Courier New"> Char(9)</font></font>代表一個    
+Tab 分隔號，然後檢查記錄指標是否已到資料來源 <font color="#666699">SQL_MACHINE</font> 的尾筆，&quot;是&quot; 
+則跳出迴圈，   
+還未到尾筆則執行接續事件(next event)，<font color="#666699" face="Courier New">copyto_next 
+</font>將記錄指標移到資料來源    
+<font color="#666699">SQL_MACHINE</font> 的下一筆，再返回執行寫入內容。</font></p>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">執行</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">檔案 URL&nbsp; (file URL)：</font> 指定匯出檔案路徑及檔名。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">附加 (append)： </font>   
+<font size="2">把資料來源附加在目標檔案原有記錄之後。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">初始事件 (initial event)：</font> 此上傳檔案事件執行之初，先執行的事件(例如：加上檔頭)，   
+初始事件只執行一次。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">內容 (content)：</font>   
+使用運算式，定義並組合寫入檔案的資料，通常執行一次意即寫入一筆記錄。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">中斷條件 (break condition)：</font> 運算式為&quot;真&quot;時，中斷迴圈 
+(break loop)。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">接續事件 (next event)：</font> 中斷條件運算式為&quot;偽&quot;時，執行的事件。</font></p>   
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch11_05_perform_3.gif" width="419" height="419"></p>   
+</blockquote>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch11_05_03.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=194 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=206 align=right valign=top>   
+<a href="ch11_05_05.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+   
+</body>   
+   
+</html>

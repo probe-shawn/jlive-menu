@@ -1,0 +1,1443 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>GetProp</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_07.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a href="US_CH10_01.html" style="text-decoration: none"><font color="#000000">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Chapter 10</font></a></font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Formula</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+　</td>
+</tr>
+</table>
+
+<hr align=left width=515>
+
+<p class="MsoNormal"><span style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight: normal" lang="EN-US"><b style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="5">GetProp 
+&amp; SetProp</font></b></span></p>
+<table border="1" width="98%" height="3456" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr>
+    <td width="16%" align="center" height="16" bgcolor="#808080">
+    <font color="#FFFFFF"><b>Component Name</b></font></td> 
+    <td width="30%" align="center" height="16" bgcolor="#808080">
+    <font color="#FFFFFF"><b>Formula</b></font></td> 
+    <td width="12%" align="center" height="16" bgcolor="#808080">
+    <font color="#FFFFFF"><b>Property</b></font></td> 
+    <td width="44%" align="center" height="16" bgcolor="#808080">
+    <font color="#FFFFFF"><b>Values</b></font></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="176" rowspan="11">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Edit</span></td> 
+    <td width="30%" height="112" rowspan="7">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">no  
+      need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">revalidate&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">recalculate the formula if used</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;editable&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 permitted, 0 not allow</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paint Immediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="64" rowspan="4">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;iseditable&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      , 0<o:p> 
+      </o:p> 
+      </font> 
+      </span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">get text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;masktext&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">get text with mask text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="176" rowspan="11">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">CheckBox</span></td> 
+    <td width="30%" height="112" rowspan="7">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">no  
+      need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">check box text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">revalidate&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">recalculate the formula if used</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paint Immediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="64" rowspan="4">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return checkbox text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return check state (1 check, 0 uncheck )</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="144" rowspan="9">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">RadioGroup</span></td> 
+    <td width="30%" height="96" rowspan="6">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">no  
+      need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">revalidate&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">recalculate the formula if used</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paint Immediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return the selected item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="144" rowspan="9">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">ListBox</span></td> 
+    <td width="30%" height="96" rowspan="6">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">no  
+      need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">revalidate&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">recalculate the formula if used</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paint Immediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return the selected item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="144" rowspan="9">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">ComboBox</span></td> 
+    <td width="30%" height="96" rowspan="6">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">no  
+      need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">revalidate&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">select the combobox item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return the selected item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="480" rowspan="26">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Tree</span></td> 
+    <td width="30%" height="144" rowspan="8">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">recalculate data and reconstruct tree</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection node, parameter -- datasource  
+      record no</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;reload&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">reload tree node under current selection<span style="mso-spacerun: yes">  
+      </span>node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16"><font size="2">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal">repaint, 2  
+      for paint</span><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><span style="mso-bidi-font-weight: normal; font-size: 10.0pt; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">  
+      </span><span style="mso-bidi-font-weight:normal">Immediately</span></span></font></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;leafonly&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">permitted selection the leaf node only(1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="336" rowspan="18">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;leafonly&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">permitted selection leaf only or not(1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;first&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of the first node of tree</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isleaf&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the selection node is leaf node or not</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;childcount&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the child count of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;dotcode&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the dotcode of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;code&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the code of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;level&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the tree level of current selection node(count  
+      from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;firstchild&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the first child record no of current selection  
+      node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;dottext&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the display dottext of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;siblingcount&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the sibling count of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;parent&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the parent record no of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16"><font size="2">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal">&quot;parentdotcode</span><span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA" lang="EN-US">&quot;</span></font></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">dotcode of parent of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;parentcode&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">code of parent of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;prevsibling&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of previous node of current  
+      selection</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;nextsibling&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of next node of current selecion</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="480" rowspan="26">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">ComboTree</span></td> 
+    <td width="30%" height="144" rowspan="8">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">recalculate data and reconstruct tree</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection node, parameter -- datasource  
+      record no</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;reload&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">reload tree node under current selection<span style="mso-spacerun: yes">  
+      </span>node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16"><font size="2">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal">repaint, 2  
+      for paint</span><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><span style="mso-bidi-font-weight: normal; font-size: 10.0pt; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">  
+      </span><span style="mso-bidi-font-weight:normal">Immediately</span></span></font></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;leafonly&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">permitted selection the leaf node only(1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="336" rowspan="18">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;leafonly&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">permitted selection leaf only or not(1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;first&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of the first node of tree</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isleaf&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the selection node is leaf node or not</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;childcount&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the child count of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;dotcode&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the dotcode of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;code&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the code of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;level&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the tree level of current selection node(count  
+      from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;firstchild&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the first child record no of current selection  
+      node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;dottext&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the display dottext of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;siblingcount&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the sibling count of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;parent&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the parent record no of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16"><font size="2">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal">&quot;parentdotcode</span><span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA" lang="EN-US">&quot;</span></font></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">dotcode of parent of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;parentcode&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">code of parent of current selection node</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;prevsibling&quot;</font></span></td>
+    <td width="44%" height="32">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of previous node of current  
+      selection</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;nextsibling&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">the record no of next node of current selecion</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="144" rowspan="9">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Slider</span></td> 
+    <td width="30%" height="96" rowspan="6">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16"><font size="2">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal">repaint, 2  
+      for paint</span><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><span style="mso-bidi-font-weight: normal; font-size: 10.0pt; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">  
+      </span><span style="mso-bidi-font-weight:normal">Immediately</span></span></font></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;value&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set slider value</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;value&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">get slider value</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="340" rowspan="21">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Grid</span></td> 
+    <td width="30%" height="196" rowspan="12">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">enabled</span><span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;stopedit&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">stop edit state</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;allowins&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set allow insert ( 1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;allowupd&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set allow update(1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="20">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;allowdel</font></span></td>
+    <td width="44%" height="20">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set allow delete(1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;promptmsg&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">dispaly change dialog or not (1, 0)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;msgtitle&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set Change Message Text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selrow&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection row (count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">selcol&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection col(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="144" rowspan="9">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;allowins&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return 1, 0</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;allowupd&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return 1, 0</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;allowdel&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return 1, 0</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;ispromptmsg&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return 1, 0</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;msgtitle&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">change dialog text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isediting&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">is grid still in editing state</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selrow&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">current selection row (count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selcol&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">current selection col(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="143" rowspan="9">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Memo</span></td> 
+    <td width="30%" height="95" rowspan="6">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">enabled</span><span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="15">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="15">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paintImmediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;file&quot;</font></span></td>
+    <td width="44%" height="16"><font size="2">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal">set 
+      </span> <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">
+    <span style="mso-bidi-font-weight: normal; font-size: 10.0pt; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">txt</span><span style="mso-bidi-font-weight:normal"> 
+      file (class/</span><span style="mso-bidi-font-weight: normal; font-size: 10.0pt; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">doc</span><span style="mso-bidi-font-weight:normal">/*</span><span style="mso-bidi-font-weight: normal; font-size: 10.0pt; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">txt</span><span style="mso-bidi-font-weight:normal"> 
+      *.</span><span style="mso-bidi-font-weight: normal; font-size: 10.0pt; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">html 
+      *.rtf</span><span style="mso-bidi-font-weight:normal">)</span></span></font></td>
+  </tr>
+  <tr>
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;file&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return current filename</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="129" rowspan="9">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Image</span></td> 
+    <td width="30%" height="95" rowspan="6">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16"><span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font size="2">
+    <span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span><span style="mso-bidi-font-weight:normal">enabled</span><span style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">&quot;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="15">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="15">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paintImmediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;file&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set image file (class/images/*gif 
+      *.jpg)</font></span></td>
+  </tr>
+  <tr>
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;file&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return current filename</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="128" rowspan="8">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-bidi-font-family:&quot;Times New Roman&quot;; mso-bidi-font-weight:normal">Button</span></td> 
+    <td width="30%" height="80" rowspan="5">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">no  
+      need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">face  
+      text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;<span style="mso-spacerun: yes">&nbsp;</span></font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">repaint</font></span></td>
+  </tr>
+  <tr>
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return  
+      current face text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="112" rowspan="7">
+    <span style="mso-bidi-font-weight:normal; font-size:10.0pt; font-family:Arial; mso-fareast-font-family:細明體; mso-bidi-font-family:Times New Roman; mso-ansi-language:EN-US; mso-fareast-language:ZH-TW; mso-bidi-language:AR-SA" lang="EN-US">ImageInvoker</span></td> 
+    <td width="30%" height="80" rowspan="5">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">no  
+      need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-bidi-font-family: Times New Roman; mso-bidi-font-weight:normal"><font size="2">1  
+      visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paintImmediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="32" rowspan="2">GetProp( compname , property )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="176" rowspan="11">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Tab</span></td> 
+    <td width="30%" height="128" rowspan="8">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabledat&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set enabled tab item index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;titleat&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set tab item title text at index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paintImmediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set selection tab index (count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="48" rowspan="3">GetProp( compname , property )</td> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;selected&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return the selected tab index(count from 1)</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="192" rowspan="12">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Chart</span></td> 
+    <td width="30%" height="112" rowspan="7">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no need parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;title&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">chart title</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;type&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">reset chart type and repaint it</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">reread datasource data and repaint chart</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint , 2 repaint immediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="80" rowspan="5">GetProp( compname , property )</td> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;title&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return chart title text</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;type&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return chart type</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="56%" height="16" colspan="2">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">chart type : 1,2,3,21,22,23,24,31,32</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="112" rowspan="7">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Timer</span></td> 
+    <td width="30%" height="80" rowspan="5">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">revalidate</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">repaint, 2 for paintImmediately</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="32" rowspan="2">GetProp( compname , property )</td> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="16%" height="176" rowspan="10">
+    <span lang="EN-US" style="font-size:10.0pt;font-family:Arial;mso-fareast-font-family: 
+細明體;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language: 
+ZH-TW;mso-bidi-language:AR-SA; mso-bidi-font-weight:normal">Barcode</span></td> 
+    <td width="30%" height="112" rowspan="6">SetProp( compname , property, value )</td>  
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;enabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enable, 0 disable</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;setfocus&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">no parameter</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;visible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;revalidate&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">recalculate formula and repaint content</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;repaint&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">reapint</font></span></td>
+  </tr>
+  <tr>
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">set barcode code</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="30%" height="64" rowspan="4">GetProp( compname , property )</td> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isenabled&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 enabled, 0 disabled</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;isvisible&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">1 visible, 0 invisible</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;text&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return barcode code</font></span></td> 
+  </tr> 
+  <tr> 
+    <td width="12%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">&quot;masktext&quot;</font></span></td>
+    <td width="44%" height="16">
+    <span lang="EN-US" style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight:normal"><font size="2">return barcode+supplement</font></span></td> 
+  </tr> 
+</table> 
+ 
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH10_07.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+　</td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body> 
+ 
+</html>

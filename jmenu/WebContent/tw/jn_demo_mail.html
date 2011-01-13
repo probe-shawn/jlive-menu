@@ -1,0 +1,535 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_demo_av.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_demo_txt2ds.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a><br>
+　</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0">&nbsp;<b>Send Mail Demonstration</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="25">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>DEMO_MAIL</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="25"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="71">　</td>
+       <td width="744" colspan="3" height="71">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">電子郵件 (Email) 發送示範。<br>
+         - 純文字內容。<br>
+         - 以 html 檔案作為範本，並帶入 &quot;會員名稱&quot; 等資料的 html 內容。<br>
+         - 以資料庫的資料記錄作為內容。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="26">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="72"></td>
+       <td width="82" height="73" colspan="2" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Products：&nbsp; </font></b></td>
+       <td width="661" height="73" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">產品資料檔<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; Select 
+       ProductID, roductName,</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"><font face="Courier New">QuantityPerUnit, UnitPrice&nbsp; <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; products<br>
+       &nbsp;&nbsp;
+       </font>送回產品編號、名稱、包裝單位、單價等資料。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2"></td>
+       <td width="661" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="26">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="15"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tab_mail】</font></td>
+       <td height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">索引標籤元件 (Tab)。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="31">　</td>
+       <td width="100" height="32" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【FROM_ADDR】</font></td>
+       <td height="32" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       無預設值，代表發信人的 Email address。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="31">　</td>
+       <td width="100" height="32" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【TO_ADDR】</font></td>
+       <td height="32" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       無預設值，代表收信人的 Email address。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="31">　</td>
+       <td width="100" height="32" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【CC_ADDR】</font></td>
+       <td height="32" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       無預設值，代表參照者的 Email address，若參照多人，中間以逗號 &quot;,&quot; 隔開。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【SUBJ_TITLE】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       無預設值，代表電子郵件的主旨。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ATT_FILE】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       無預設值，代表電子郵件的附加檔案，若附加多檔，中間以逗號 &quot;,&quot; 隔開。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【memo_content】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">備忘錄元件 (Memo)。<br>
+       無預設值，代表電子郵件供輸入的文字內容。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_sendmail】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">send_mail </font>，按下時傳送以 memo 元件為內容的電子郵件。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_file】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">set_file </font>，按下時開啟檔案選擇視窗。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【SMTP】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       【資料來源】核取 <font color="#666699">使用運算式、只在初始化時作用</font>，運算式 
+       <font color="#666699" face="Courier New">ApServerName()</font>，預設值抓取 Application Server 
+       的機器名稱，這個元件需要輸入的內容，其實應該是發信人的 Email address 的外寄郵件伺服器 (SMTP)，大部分的情況是 &quot;@&quot; 
+       後面的字串。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【CHAR_SET】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       【資料來源】核取 <font color="#666699">使用運算式、只在初始化時作用</font>，運算式 
+       <font color="#666699" face="Courier New">&quot;MS950&quot;</font>，這個元件需要輸入的內容，是客戶端(Client)的 Character 
+       Set 編碼，在繁體中文系統是 &quot;MS950&quot;。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【HTML_FILE】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       【資料來源】核取 <font color="#666699">使用運算式、只在初始化時作用</font>，運算式 
+       <font color="#666699" face="Courier New">&quot;C:\jLIVE\programs\jNorth\doc\mailtest.html&quot;</font>，
+       代表預設的路徑檔案。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_sendhtml】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">send_html </font>，按下時傳送以 mailtest.html 
+       為內容的電子郵件。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_html】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">set_html </font>，按下時開啟檔案選擇視窗。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_sendhrec】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">to_top </font>，按下時傳送以 Products 
+       的記錄為內容的電子郵件。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28">　</td>
+       <td width="100" height="29" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_prod】</font></td>
+       <td height="29" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">products</font>。<br>
+       【欄位】【資料表元件欄位】選擇 products 所有欄位。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="26">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【send_mail】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">發送電子郵件事件。<br>
+       【執行】<br>
+       【SMTP host】運算式為 <font color="#666699" face="Courier New">{SMTP}</font>，外寄郵件伺服器 (SMTP)。 <br>
+       【FROM 位址】運算式為 <font color="#666699" face="Courier New">{FROM_ADDR}</font>，發信人的 Email 
+       address。<br>
+       【TO 位址】運算式為 <font color="#666699" face="Courier New">{TO_ADDR}</font>，收信人的 Email address。<br>
+       【CC 位址】運算式為 <font color="#666699" face="Courier New">{CC_ADDR}</font>，參照者的 Email address，
+       若參照多人，中間以逗號 &quot;,&quot; 隔開。<br>
+       【編碼】運算式為 <font color="#666699" face="Courier New">{CHAR_SET}</font>，郵件的編碼。<br>
+       【主旨】運算式為 <font color="#666699" face="Courier New">{SUBJ_TITLE}</font>，郵件的主旨。<br>
+       【內容】運算式為 <font color="#666699" face="Courier New">{memo_content}</font>，郵件的內容。<br>
+       【附加檔案】運算式為 <font color="#666699" face="Courier New">{ATT_FILE}</font>，郵件的附加檔案，若附加多檔，中間以逗號 
+       &quot;,&quot; 隔開。</font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_file】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">執行運算式事件。<br>
+       【執行】【運算式】</font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">&nbsp;&nbsp; &nbsp; <font color="#666699" face="Courier New">Condition((LRTrim({ATT_FILE})=&quot;&quot;),</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp; SetData(&quot;ATT_FILE&quot;,</font><font size="2"><font color="#666699" face="Courier New">FileChooser(&quot;Choose Files&quot;,1,0)),</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">SetData(&quot;ATT_FILE&quot;,{ATT_FILE}$&quot;,&quot;$</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">FileChooser(&quot;Choose Files&quot;,1,0)))</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp; </font>
+       <font size="2">如果&quot;附加檔案&quot;的編輯方塊是空的，則將客戶端(Client)選擇的檔案填入，否則在</font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp; 
+       客戶端(Client)選擇的檔案前頭加一個逗號，然後接在&quot;附加檔案&quot;的後面。</font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【send_html】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">發送電子郵件事件。<br>
+       【執行】<br>
+       【SMTP host】運算式為 <font color="#666699" face="Courier New">{SMTP}</font>，外寄郵件伺服器 (SMTP)。 <br>
+       【FROM 位址】運算式為 <font color="#666699" face="Courier New">{FROM_ADDR}</font>，發信人的 Email 
+       address。<br>
+       【TO 位址】運算式為 <font color="#666699" face="Courier New">{TO_ADDR}</font>，收信人的 Email address。<br>
+       【CC 位址】運算式為 <font color="#666699" face="Courier New">{CC_ADDR}</font>，參照者的 Email address，
+       若參照多人，中間以逗號 &quot;,&quot; 隔開。<br>
+       【編碼】運算式為 <font color="#666699" face="Courier New">{CHAR_SET}</font>，郵件的編碼。<br>
+       【主旨】運算式為 <font color="#666699" face="Courier New">{SUBJ_TITLE}</font>，郵件的主旨。<br>
+       【內容】運算式為&nbsp; </font>
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2"> <font color="#666699" face="Courier New">&nbsp;&nbsp; Replace(</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">Replace(</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">Replace(</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">Replace(</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">Replace(Load({HTML_FILE}),</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">&quot;@@@username@@@&quot;,ClientName())</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">,&quot;@@@SMTP@@@&quot;,{SMTP})</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">,&quot;@@@from_addr@@@&quot;,{FROM_ADDR})</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">,&quot;@@@to_addr@@@&quot;,{TO_ADDR})</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">,&quot;@@@subject@@@&quot;,{SUBJ_TITLE})</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Load({HTML_FILE}可以把客戶端(Client)選擇的 
+       &quot;html&quot; 檔讀入 (以內部機制而言</font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ，是把該 html 檔的原始碼當作字串讀進系統)，若使用預設的 mailtest.html，則</font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 把該原始碼中的 
+       &quot;@@@username@@@&quot; 等等字串，以其他的資料取代，再將替</font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 換完成的 html 檔發送出去。這個運算式可以發送圖文並茂的 
+       email，可以加上</font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;親愛的 xxx 您好：&quot;，而姓名則以客戶資料檔的客戶名稱帶入。<br>
+       【附加檔案】運算式為 <font color="#666699" face="Courier New">{ATT_FILE}</font>，郵件的附加檔案，若附加多檔，中間以逗號 
+       &quot;,&quot; 隔開。</font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_html】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">執行運算式事件。<br>
+       【執行】【運算式】<font color="#666699" face="Courier New">SetData(&quot;HTML_FILE&quot;,FileChooser(&quot;Choose 
+       Files&quot;,1,0))</font>，將客戶端(Client)選擇的檔案填入&quot;html file&quot;的編輯方塊。</font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【to_top】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">LocalHashPut(&quot;body&quot;,' &lt;tr&gt;&lt;td 
+       width=&quot;95&quot; bgcolor=&quot;#FFFFFF&quot; bordercolor=&quot;#808080&quot; style=&quot;border: 1 solid 
+       #808080&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;@@id@@&lt;/font&gt;&lt;/td&gt; &lt;td width=&quot;316&quot; bgcolor=&quot;#FFFFFF&quot; 
+       bordercolor=&quot;#808080&quot; style=&quot;border: 1 solid #808080&quot;&gt;&lt;font 
+       color=&quot;#000000&quot;&gt;@@name@@&lt;/font&gt;&lt;/td&gt; &lt;td width=&quot;249&quot; bgcolor=&quot;#FFFFFF&quot; 
+       bordercolor=&quot;#808080&quot; style=&quot;border: 1 solid #808080&quot;&gt;&lt;font 
+       color=&quot;#000000&quot;&gt;@@qty@@&lt;/font&gt;&lt;/td&gt; &lt;td width=&quot;112&quot; align=&quot;right&quot; bgcolor=&quot;#FFFFFF&quot; 
+       bordercolor=&quot;#808080&quot; style=&quot;border: 1 solid #808080&quot;&gt;&lt;font 
+       color=&quot;#000000&quot;&gt;@@price@@&lt;/font&gt;&lt;/td&gt; &lt;/tr&gt; ' )<br>
+       or LocalHashPut(&quot;rec&quot; ,&quot;&quot; )</font></font><p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">此運算式與事件是否執行無關，目的是處理兩個區域變數 &quot;body&quot; 與 &quot;rec&quot;。填入 
+       &quot;body&quot; 的字串是 html 的原始碼，它會造出一列資料，4 個欄位，內含值分別為 &quot;@@id@@&quot; 、 &quot;@@name@@&quot;、 
+       &quot;@@qty@@&quot;、 &quot;@@price@@&quot;。而 &quot;rec&quot; 則填入空字串。<br>
+       【執行】【資料來源】選<font color="#666699"> products</font>，【操作】選<font color="#666699">首筆</font>，移至<font color="#666699"> 
+       products </font>的首筆。<br>
+       【後續事件】選 <font color="#666699">set-rec</font>。</font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_rec】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">執行運算式事件。<br>
+       【執行】【運算式】<font color="#666699" face="Courier New"><br>
+       LocalHashPut(&quot;rec&quot;, <br>
+       LocalHashGet(&quot;rec&quot;)$<br>
+       Replace( <br>
+       Replace(<br>
+       Replace(<br>
+       Replace(LocalHashGet(&quot;body&quot;),<br>
+       &quot;@@id@@&quot;,{products:ProductID}),<br>
+       &quot;@@name@@&quot;,{products:ProductName}),<br>
+       &quot;@@qty@@&quot;,{products:QuantityPerUnit}),<br>
+       &quot;@@price@@&quot;,{products:UnitPrice}))<br>
+       </font>將區域變數 &quot;body&quot; 的4 個欄位內含值(見 to_top 事件)，分別以 products 資料來源的 
+       ProductID、ProductName、QuantityPerUnit、UnitPrice 的內含值取代，再接到 &quot;rec&quot; 
+       字串的後面。目的以 html 表格的方式，顯示 products 資料來源的記錄。<br>
+       【後續事件】選 <font color="#666699">next-rec</font>。</font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【next_rec】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {products:Eof()}</font>，意即 products 
+       不在尾筆記錄時才會執行此事件。<br>
+       【否則】選 <font color="#666699">sent-rec</font>，意即 products 到尾筆記錄時則執行 &quot;sent_rec&quot; 事件。<br>
+       【執行】【資料來源】選<font color="#666699"> products</font>，【操作】選<font color="#666699">下筆</font>，移至<font color="#666699"> 
+       products </font>的下一筆記錄。<br>
+       【後續事件】選 <font color="#666699">set-rec</font>。此事件與上一個事件組成迴圈 (loop)，把 
+       products 資料來源的所有記錄，換成 html 的原始碼。</font></td>
+     </tr>
+     <tr>
+       <td align="center">　</td>
+       <td colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【send_rec】</font></td>
+       <td style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">發送電子郵件事件。<br>
+       【執行】<br>
+       【SMTP host】運算式為 <font color="#666699" face="Courier New">{SMTP}</font>，外寄郵件伺服器 (SMTP)。 <br>
+       【FROM 位址】運算式為 <font color="#666699" face="Courier New">{FROM_ADDR}</font>，發信人的 Email 
+       address。<br>
+       【TO 位址】運算式為 <font color="#666699" face="Courier New">{TO_ADDR}</font>，收信人的 Email address。<br>
+       【CC 位址】運算式為 <font color="#666699" face="Courier New">{CC_ADDR}</font>，參照者的 Email address，
+       若參照多人，中間以逗號 &quot;,&quot; 隔開。<br>
+       【編碼】運算式為 <font color="#666699" face="Courier New">{CHAR_SET}</font>，郵件的編碼。<br>
+       【主旨】運算式為 <font color="#666699" face="Courier New">{SUBJ_TITLE}</font>，郵件的主旨。<br>
+       【內容】運算式為&nbsp; <font color="#666699" face="Courier New">'&lt;html&gt;&nbsp; &lt;body&gt;&nbsp; &lt;table 
+       border=&quot;1&quot; width=&quot;800&quot; bordercolor=&quot;#808080&quot; cellspacing=&quot;1&quot; cellpadding=&quot;1&quot; 
+       style=&quot;border: 1 solid #808080&quot;&gt; &lt;tr&gt;&lt;td width=&quot;95&quot; align=&quot;center&quot; 
+       bgcolor=&quot;#FFFFFF&quot; bordercolor=&quot;#808080&quot; style=&quot;border: 1 solid 
+       #808080&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;Product ID&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;td 
+       width=&quot;316&quot; align=&quot;center&quot; bgcolor=&quot;#FFFFFF&quot; bordercolor=&quot;#808080&quot; 
+       style=&quot;border: 1 solid #808080&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;Product 
+       Name&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;td width=&quot;249&quot; align=&quot;center&quot; bgcolor=&quot;#FFFFFF&quot; 
+       bordercolor=&quot;#808080&quot; style=&quot;border: 1 solid #808080&quot;&gt;&lt;b&gt;&lt;font 
+       color=&quot;#000000&quot;&gt;Quantity per Unit&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;td width=&quot;112&quot; 
+       align=&quot;center&quot; bgcolor=&quot;#FFFFFF&quot; bordercolor=&quot;#808080&quot; style=&quot;border: 1 
+       solid #808080&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;Unit Price&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;'<br>
+       $LocalHashGet(&quot;rec&quot;)$<br>
+       '&lt;/table&gt; &lt;/body&gt; &lt;/html&gt;&nbsp; '</font></font></p>
+       <p style="margin-top: 2; margin-bottom: 2">
+       <font size="2">把區域變數 &quot;rec&quot; 前後加上表格標題列與其他 html 
+       的原始碼，組成一串完整的 html 檔案的程式碼，再發送出去(結果類似底下表格)。這個運算流程，若加上前面提及的方法 (如附加公司 logo 
+       與客戶名稱等等)，再把預定發送郵件的日期時間等規則納入，即成為電子郵件的自動發送系統。由於直接與資料庫連接，可發送的對象與內容也就非常寬廣了。<br>
+       【附加檔案】運算式為 <font color="#666699" face="Courier New">{ATT_FILE}</font>，郵件的附加檔案，若附加多檔，中間以逗號 
+       &quot;,&quot; 隔開。<br>
+　</font></p>
+       <table border="1" cellpadding="2" bordercolor="#000000">
+         <tr>
+           <td width="74" align="center"><b><font size="2">Product ID</font></b></td>
+           <td width="131" align="center"><font size="2"><b>Product Name</b></font></td>
+           <td width="142" align="center"><font size="2"><b>Quantity per Unit</b></font></td>
+           <td width="126" align="center"><font size="2"><b>Unit Price</b></font></td>
+         </tr>
+         <tr>
+           <td width="74"><font size="2">1</font></td>
+           <td width="131"><font size="2">Chai</font></td>
+           <td width="142"><font size="2">10 boxes x 20 bags</font></td>
+           <td width="126" align="right"><font size="2">18.0</font></td>
+         </tr>
+         <tr>
+           <td width="74"><font size="2">2</font></td>
+           <td width="131"><font size="2">chang</font></td>
+           <td width="142"><font size="2">24 - 12 oz bottles</font></td>
+           <td width="126" align="right"><font size="2">19.0</font></td>
+         </tr>
+       </table>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2"></td>
+       <td width="906" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=145 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_demo_av.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=476 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=129 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_demo_txt2ds.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

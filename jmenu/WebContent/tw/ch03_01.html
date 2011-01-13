@@ -1,0 +1,190 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Programming guide</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="1" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=596 border=0 cellspacing=1>
+<tr>
+<td width=195 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=192 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch03.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 3</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch03.html" style="text-decoration: none"><font color="#000000">Project 
+develop procedure</font></a></font></b></TD>            
+<td width=199 align=right valign=top>            
+<p style="margin-top: 0; margin-bottom: 0">            
+<a href="ch03_02.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>          
+          
+<hr align=left color="#000000">          
+<p><font size="4"><b>3.</b></font><b><font size="4">1<a class="TITLE"> </a>jLIVE Builder&trade;             
+程式設計概念 (programming concept)</font></b></p>                 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#oop">物件導向程式設計  
+(object oriental programming)</a></font></p>                  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#eventdriven">事件驅動  
+(event drive)</a></font></p>                  
+<p align="justify">　<font size="2">jLIVE Builder&trade;                 
+ 是100% pure Java&trade; 的網際網路應用程式快速開發系統 (rapid   
+application development)。程式設計師以物件導向 (object             
+oriental programming) 及 事件驅動 (event drive)             
+的概念，在完全視覺化的設計平台 (fully visual design framework)             
+中，以滑鼠拖曳元件 (components)， 設定屬性 (properties)             
+及啟動事件 (event)             
+的方式架構應用程式。所有設計邏輯、流程、元件、資料來源等，皆會記錄在             
+XML 檔中，再由 XML 檔產生 Java&trade; 原始程式碼 (source             
+code)，建立執行檔時再編譯成 Java&trade; class 檔。</font></p>                 
+<p>　</p>                
+<p><font size="2"><b><a name="oop"></a>物件導向程式設計 (object oriental programming)</b></font></p>                
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&trade;      
+以物件導向的理念，讓程式設計師快速的開發應用程式，以物件構築程式不但設計容易   
+(design)，也易於維護 (maintain) 及拓展 (extent) 與重用 (reuse)。在           
+jLIVE Builder&trade; 的設計平台中，從應用程式(application)、視窗畫面(form)       
+到視窗畫面中的元件 (component)、事件 (event)，以至於報表   
+(report)       
+及列印元件 (printable           
+component)，都是以物件的型式存在與使用。每一個物件都有屬性   
+(properties)，屬性包括物件的外觀顯示 (display format)、內部程序   
+(internal process)、資料關連 (data           
+aware) 及系統或回應使用者操作的各種事件 (system and response      
+event)。</font></p>       
+<p style="text-indent: 20" align="justify"><font size="2">應用程式設計時，設計師按系統需求佈建物件(create     
+objects)，設定每個物件的初始屬性 (properties)，且按物件提供給使用者操作的介面 (UI)，連結各種回應的事件流程   
+(response event flow)，如此即可完成使用者操作視窗介面的程式設計。</font></p>       
+<p style="text-indent: 20" align="justify"><font size="2">應用程式執行時，物件的內部系統屬性，會按系統流程自動引發程序，例如：資料連結   
+(data           
+binding) 會自行連結資料欄位 (data field)，且更新資料至目前資料記錄欄位值(record           
+field)；而設計師設定的回應事件流程 (event flow)，則會根據使用者的操作，觸發相關的事件流程   
+(event           
+flow)，而在事件流程中亦可進一步的更改執行期的物件屬性，使物件能反應各種作業需求，動態的改變屬性。</font></p>       
+<p style="text-indent: 20"><font size="2">物件內涵 (object)</font></p>      
+<ul>    
+  <li><font size="2">外觀顯示 (display format)：位置、大小、字型、顏色、隱藏、資料顯示方式。</font></li>     
+  <li><font size="2">內部程序 (internal process)：起始及終止程序   
+    (initial and destroy)、資料流 (data stream)、授權致能 (authorized      
+    enable)、資料邏輯 (data logic)。</font></li>     
+  <li><font size="2">資料關連 (data aware)：資料連結、擷取、更新、驗證。</font></li>     
+  <li><font size="2">系統及回應事件 (system and response event)：系統流程事件、使用者操作回應事件。</font></li>     
+</ul>     
+<p style="text-indent: 20"><font size="2">物件的模型/檢視/控制者(<b>M</b>odel/<b>V</b>iew/<b>C</b>ontroller)      
+架構 (object Model/View/Controller architecture)&nbsp;</font></p>       
+<ul>     
+  <li><font size="2">Model：系統的狀態，潛在的邏輯呈現為何。</font></li>     
+  <li><font size="2">View：Model 視覺上的呈現為何。</font></li>     
+  <li><font size="2">Controller：使用者如何與 Model 互動。</font></li>     
+</ul>     
+<p style="text-indent: 20"><font size="2">物件設計 (object design)</font></p>       
+<ul>     
+  <li><font size="2">佈建物件 (create object )</font>    
+    <ul>    
+      <li><font size="2">新增物件 (create object)</font><font size="2">：新增視窗   
+        (form)、報表 (report)、資料來源 (data source)、元件   
+        (component)、事件 (event)。</font></li>    
+    </ul>    
+  </li>    
+  <li><font size="2">View</font>    
+    <ul>    
+      <li><font size="2">外觀顯示 (display format)：視窗、報表屬性設定   
+        (form and report&nbsp; properties)及元件外觀屬性設定 (format properties)。</font></li>    
+    </ul>    
+  </li>    
+  <li><font size="2">Model</font>    
+    <ul>    
+      <li><font size="2">資料關連 (data aware)：&nbsp;元件資料連結   
+        (data binding)、資料來源 SQL 指令 (SQL command)、上下載檔案資源   
+        (download and upload file)。</font></li>    
+      <li><font size="2">內部程序 (iternal process)：資料來源讀取   
+        (fetch)、編輯 (update)、新增 (insert)、刪除 (delete)程序、SQL     
+        error handle。</font></li>    
+    </ul>    
+  </li>    
+  <li><font size="2">Controller</font>    
+    <ul>    
+      <li><font size="2">系統及回應事件 (system and response event)：視窗開啟前後及關閉事件   
+        (before and after open event) 、元件各類啟動事件 (component     
+        fire event)。</font></li>    
+    </ul>    
+  </li>    
+</ul>    
+<p>　</p>         
+<p>　</p>         
+<p><font size="2"><b><a name="eventdriven"></a>事件驅動 (event drive)</b></font></p>          
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&trade; 的事件物件   
+(event) 是一段作業程序 (process)。一連串的事件物件串接，按啟動條件判斷   
+(fire condition) 是否執行程序 (perform process)          
+或者執行另一事件 (otherwise event)，以及該程序執行完後，是否執行下一事件   
+(next          
+event) ，即是事件流程 (event flow) 。</font></p>        
+<p style="text-indent: 20" align="left">
+<img border="0" src="images/ch11_event_object.gif" width="320" height="198"></p>        
+<p style="text-indent: 20" align="left"><font size="2">事件流程的驅動則可由：</font></p>        
+<ol style="font-size: 10 pt">      
+  <li>      
+    <p align="left"><font size="2">使用者引發 (user fired)：使用者操作視窗元件時所引發之各種相對事件，例如：使用者按下按鍵或更改資料等等。</font></li>      
+  <li>      
+    <p align="left"><font size="2">系統引發 (system fired)：在視窗畫面開啟關閉、資料來源讀取新增刪除更新前後、執行 
+    SQL 錯誤等等。</font></li>     
+  <li>     
+    <p align="left"><font size="2">時間元件引發 (timer     
+    component fired)：時間元件可以在設定的時間或條件下引發事件。</font></li>      
+</ol>      
+<p style="text-indent: 20" align="left"><font size="2">設計者可以按作業流程的需求，建立執行程序   
+(perform)     
+的事件流程 (event flow) ，再在需要此事件流程的物件上聯結   
+(link)          
+此事件。例圖為當使用者按下存檔鍵所引發的事件流程。</font></p>          
+<p style="text-indent: 20" align="left">
+<img border="0" src="images/ch03_01_event_flow.gif" width="363" height="235"></p>         
+<hr align=left color="#000000">              
+<table width=596 border=0 cellspacing=1>              
+<tr>              
+<td width=195 align=left valign=top>              
+<a href="ch03.html">             
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>             
+<td width=191 align=center valign=top><a href="index.html">             
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>             
+<td width=200 align=right valign=top>             
+<a href="ch03_02.html">           
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>           
+</tr>           
+</table>           
+           
+<hr align=left color="#000000">           
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~          
+2004 Probe Technology . All Rights Reserved.</font></p>         
+         
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,          
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>         
+         
+      </td>      
+    </tr>      
+  </table>      
+  </center>      
+</div>      
+                   
+</body>                   
+                   
+</html>

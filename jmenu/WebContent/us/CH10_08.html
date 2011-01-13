@@ -1,0 +1,284 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_07.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Chapter 10</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Formula</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_09.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+10.8 Variables</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>Content:</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1081">
+AssignSysVar(i,x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1082">
+HashPut(key,value)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1083">
+HashGet(key)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1084">
+HashRemove(key)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1085">
+HashClear()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1086">
+HashCount()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1087">
+StackPush(x)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1088">
+StackPop()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1089">
+StackClear()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10810">
+StackCount()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10811">
+LocalHashPut(key,value)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10812">
+LocalHashGet(key)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10813">
+LocalHashRemove(key)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10814">
+LocalHashClear()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10815">
+LocalHashCount()</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10816">
+SysHashPut(key,value)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10817">
+SysHashGet(key)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH10_08_variables.gif" width="232" height="403"></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1081"></a>10.8.1 </font><font size="5">AssignSysVar(i,x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; AssignSysVar( 8, 100)&nbsp;&nbsp; // It is set the 8th system 
+{_sysvar8}&nbsp; value as &quot;100&quot;.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1082"></a>10.8.2 </font><font size="5">HashPut(key,value)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; HashPut(&quot;test&quot; , 111)&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+HashGet(&quot;test&quot;) = 111</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1083"></a>10.8.3 </font><font size="5">HashGet(key)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; HashPut(&quot;test&quot; , 111)&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+HashGet(&quot;test&quot;) = 111</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1084"></a>10.8.4 </font><font size="5">HashRemove(key)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; This formula will remove the hash value base on hash &quot;key&quot;.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1085"></a>10.8.5 </font><font size="5">HashClear()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will clear all hash table.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1086"></a>10.8.6 </font><font size="5">HashCount()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Display hash number now.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1087"></a>10.8.7 </font><font size="5">StackPush(x)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Push value into stack.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1088"></a>10.8.8 </font><font size="5">StackPop</font><font size="5">()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Pop the value from stack.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1089"></a>10.8.9 </font><font size="5">StackClear()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Clear the stack.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10810"></a>10.8.10 </font><font size="5">StackCount()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Display value number in stack now.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10811"></a>10.8.11 </font><font size="5">LocalHashPut(key,value)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; LocalHashPut(&quot;test&quot; , 111)&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+LocalHashGet(&quot;test&quot;) = 111&nbsp; This is region variable. Effective in the form.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10812"></a>10.8.12 </font><font size="5">LocalHashGet(key)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; LocalHashPut(&quot;test&quot; , 111)&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+LocalHashGet(&quot;test&quot;) = 111&nbsp; This is region variable. Effective in the form.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10813"></a>10.8.13 LocalHashRemove(key)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; This formula will remove the local hash value base on local 
+hash &quot;key&quot;.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10814"></a>10.8.14 </font><font size="5">LocalHashClear()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will clear all local hash table.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10815"></a>10.8.15 </font><font size="5">LocalHashCount()</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Display value number in local hash table now.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10816"></a>10.8.16 </font><font size="5">SysHashPut(key,value)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; SysHashPut(&quot;test&quot; , 111)&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+SysHashGet(&quot;test&quot;) = 111&nbsp; This is&nbsp; global variable. Effective in all 
+form.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10817"></a>10.8.17 </font><font size="5">SysHashGet(key)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; SysHashPut(&quot;test&quot; , 111)&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+SysHashGet(&quot;test&quot;) = 111&nbsp; This is&nbsp; global variable. Effective in all 
+form.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH10_07.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH10_09.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

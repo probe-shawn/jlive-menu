@@ -1,0 +1,586 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH06_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a href="CH06_01.html" style="text-decoration: none"><font color="#000000">Chapter 6</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a href="CH06_01.html" style="text-decoration: none"><font color="#000000">
+Report</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH07_01.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<h1 class="chapter"><font size="5"><a name="top"></a>6<a class="TITLE">.4</a> Report Design And 
+Components</font></h1>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><b>Content :</b></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#671">Edit 
+component</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#672">Image 
+component</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#673">Memo 
+component</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#674">Chart 
+component</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#675">Bar 
+code</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#676">Page 
+Break</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">jLIVE 
+Builder報表系統是視窗畫面設計的延伸，列印資料和範圍皆來自視窗畫面的物件。這種設計方法，必須以視窗畫面中的資料來源為思考方向，因為在每一張報表中皆可指定以一個主要的資料來源為記錄移動的參考，並且在視窗畫面中的資料元件也會同時反應資料來源移動的影響，讓列印的資料如同Live般的感覺。 </p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">
+這樣的設計在絕大部分的情況下，都非常有效率；如果設計者以物件的理念來設計應用程式，將會得到最大的效率。以一個 (客戶管理) 
+視窗畫面下的報表設計為例，設計者可以設計出和視窗畫面操作同步的報表，比如說，在客戶管理操作【查詢】某一區域的客戶，在視窗畫面中顯示的資料，也等於是列印到報表的資料(某一區域的客戶資料)。<br>
+<br>
+　</p>
+<blockquote>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH6_04_1.gif" width="423" height="198"><br>
+　</p>
+</blockquote>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">The follow image is 
+report tools bar.</p>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_main.gif" width="304" height="100"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b>System </b></p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Back to Console : 回到jLIVE 
+Builder 主視窗</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Save Modified : 存檔</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">View Java Source : 檢視 
+java 原始碼</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Reload Image : 如果在設計過程中, 
+有再加入新的圖片或者是修改圖片到 preloadimages 或 images的目錄時, 要使用前必須重新 load 圖進來.</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_system.gif" width="162" height="102"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b>Edit</b></p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Copy</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Paste</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Delete</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_edit.gif" width="100" height="75"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b>Alignment</b> : A 
+criterion to components&nbsp; position.</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_alignment.gif" width="493" height="26"></p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b>Area</b></p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Tool Bar : 工具列</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Header : 表頭, 報表的標題區</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Top Borderline : 表頭基準線, 
+用來區分表頭和表身的分界線</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Report Body : 表身, 
+列印資料顯示區, 元件與表頭基準線之距離會決定兩筆記錄之間的距離,系統裡是以元件最上緣的定位點與表頭基準線距離來決定下一筆的相隔距離</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Below Borderline : 
+表尾基準線, 用來區分表身和表尾的分界線</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Footer : 表尾, 報表的結尾</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_04_2.gif" width="731" height="421"></p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b><a name="common"></a>
+Component common Properties</b></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Location</p>
+    <ul>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Location dot : 元件的位置及大小, 
+由像素點來表示</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Location inch : 
+元件的位置及大小, 由英吋來表示</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Clip Bounds : 
+若此選項打勾，則當資料內容的長度超過列印元件的長度時，會自動斷行 </p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Freeze Bounds : 
+若此選項打勾，則當資料內容的長度超過列印元件的長度時，超過的資料會不出現</p>
+      </li>
+    </ul>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_location.gif" width="454" height="416"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Frame</p>
+    <ul>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Left :  左邊界框線</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Top : 上邊界框線</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Right : 右邊界框線</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Bottom : 下邊界框線</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Horz Center : 
+打勾的選項則會列印出框線，水平線</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Vert Center : 
+打勾的選項則會列印出框線，垂直線</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Left Top - Right Bottom 
+: 打勾的選項則會列印出框線，左上右下</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Right Top - Left Bottom 
+: 打勾的選項則會列印出框線，左下右上</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Oval : 橢圓形框線</p>
+      </li>
+    </ul>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_frame.gif" width="455" height="415"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH06_04_LINE.gif" width="488" height="189"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Font</p>
+    <ul>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Font Name : 選擇字型</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Size : 選擇字型大小</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Style</p>
+      <ul>
+        <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Bold : 粗體</p>
+        </li>
+        <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Italic : 斜體</p>
+        </li>
+      </ul>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Color</p>
+      <ul>
+        <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Foreground : 前景顏色</p>
+        </li>
+        <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Background : 背景顏色</p>
+        </li>
+      </ul>
+      </li>
+    </ul>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_font.gif" width="454" height="415"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Printable</p>
+    <ul type="disc">
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Print out constraint : 
+當要使用條件來控制列印與否時, 就選擇此項目</p>
+    <ul type="circle">
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Condition : 
+依運算式的結果來決定是否列印此元件，當運算式結果為&quot;真&quot;，則列印元件內含值，為&quot;偽&quot;，則不列印 </p>
+      </li>
+    </ul>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Force to print while 
+first record in new page : 勾選此項則每一頁的第一筆記錄都會列印，縱使&quot;Print out 
+constraint&quot;有設定，而且Formula結果為&quot;偽&quot; 也會被忽略掉。 </p>
+      </li>
+    </ul>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_printable.gif" width="453" height="415"></p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b><font size="5">
+<a name="671"></a>6.4.1 Generic component </font></b>
+<img border="0" src="images/CH6_07_icon_edit.gif" width="26" height="25"></p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#common">Common 
+properties</a></p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Content</p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Simple Text : <font color="#000000">使用文字敘述當成要列印的內容</font></p>
+    <ul>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Page No : 列印頁碼</p>
+    <ul>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Current : 顯示目前列印第幾頁</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Total ( Estimate ) : 
+總頁數, 預估值, 這樣的定義是考量到在Internet 上執行報表列印時，為了效率而做的折衷方式, 因為今天列印時的資料來源可能經過條件選取而不是完整列印, 
+而且當資料頁數非常龐大時, 不可能將所有資料經網路傳到使用者端後再出現統計頁數, 所以請留心使用</p>
+      </li>
+    </ul>
+      </li>
+    </ul>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Use Formula :
+<font color="#000000">使用運算式的內含值來列印</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Sum Result : 欄位加總功能<font color="#000000">, 
+勾選是否要累計運算式的值。(只對數值有效) 選擇累計歸零的時機。 </font></p>
+    <ul>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Never : 全部加總, 不<font color="#000000">歸零</font></p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">After Print out :
+<font color="#000000">當列印之後歸零</font></p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">New Page :
+<font color="#000000">當換頁之後歸零</font></p>
+      </li>
+    </ul>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_content.gif" width="455" height="415"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Format</p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Format Print out :
+<font color="#000000">設定要列印內含值的資料型態及文字位置, 一種資料可以套用不同類型的外觀表現</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Render Type : 資料描述模式</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_04_3.gif" width="428" height="136"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Format : 顯示格式</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Alignment Print out</p>
+    <ul>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Horizontal : 水平對齊方式</p>
+      </li>
+      <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Vertical : 垂直對齊方式</p>
+      </li>
+    </ul>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Multi Line : </p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_format.gif" width="455" height="413"></p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b><font size="5">
+<a name="672"></a>6.4.2 Image component </font></b>
+<img border="0" src="images/CH6_07_icon_image.gif" width="26" height="24"></p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#common">Common 
+properties</a></p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Image 二選一</p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">DataSource : select one 
+datasource</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">DataField : select one 
+field</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Static Image : select 
+one static image<font color="#000000"> 勾選是否要使用圖檔來列印</font></p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_image.gif" width="454" height="417"></p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b><font size="5">
+<a name="673"></a>6.4.3 Memo component </font></b>
+<img border="0" src="images/CH6_07_icon_memo.gif" width="26" height="24"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#common">Common 
+properties</a></p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">memo : 如果不選擇 datasource 
+的話, 就可以使用 static file,（二選一 ）所要使用的檔案，必須放在相對路徑的..\class\doc 底下，便可使用Static File 
+選擇檔案 </p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">DataSource :
+<font color="#000000">選擇資料來源</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">DataField :
+<font color="#000000">選擇一個欄位連接到印表元件</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Static File : 
+選擇要列印的檔案，目前支援 .txt 、 .rtf 與 .html等資料格式的檔案</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_memo_memo.gif" width="454" height="415"></p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b><font size="5">
+<a name="674"></a>6.4.4 Chart component </font></b>
+<img border="0" src="images/CH6_07_icon_chart.gif" width="27" height="24"></p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#common">Common 
+properties</a></p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Chart :
+<font color="#000000">列印統計圖元件, 選擇一個視窗裡的統計圖元件。Chart元件都需先在視窗畫面擺放同樣的元件，再將視窗產生的結果印出來</font></p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Chart Component : select 
+the component</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_chart_chart.gif" width="452" height="414"></p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b><font size="5">
+<a name="675"></a>6.4.5 Barcode component </font></b>
+<img border="0" src="images/CH6_07_icon_barcode.gif" width="26" height="22"></p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#common">Common 
+properties</a></p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Content : 條碼內容</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_barcode_content.gif" width="454" height="415"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Type : 目前支援十八種種類</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_barcode_type.gif" width="454" height="414"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Option : 當選則某 一類型條碼時, 
+可以依照內定規格選擇列示型態</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_07_barcode_options.gif" width="454" height="416"></p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><b><font size="5">
+<a name="676"></a>6.4.6 Page Break component </font></b>
+<img border="0" src="images/CH6_07_icon_pagebreak.gif" width="22" height="21"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">跳頁時機 : </p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">Print out constraint : 
+跳頁元件是依運算式的結果來判斷是否跳頁列印。此元件與所擺放的位置無關，所以PageBreak元件可擺在報表任何位置，每移動一筆資料時都會判別跳頁時機，在同一張報表可放置多個PageBreak元件</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#common">Common 
+properties</a> </p>
+  </li>
+</ul>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH06_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH07_01.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

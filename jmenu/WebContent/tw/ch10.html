@@ -1,0 +1,341 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Components</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%" height="1160">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch09.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font>       
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">
+Components</font></b></TD>          
+<td width=204 align=right valign=top>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<a href="ch10_00.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>          
+          
+<hr align=left color="#000000">          
+<p><font size="4"><b>10</b></font><b><font size="4"><a class="TITLE">. </a>元件 (Components)</font></b></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#type">元件類別  
+(components)</a></font></p>           
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="ch06_03.html#layout">視窗元件配置  
+(layout components)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#use">元件使用和調整  
+(use and adjust components)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<a href="ch10_00.html">共同屬性設定 (common properties)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2">  
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="-1">  
+<a href="component_event.html">元件觸發事件 (event)</a></font></p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">jLIVE Builder&trade;        
+的元件是以 Java&trade; Swing 為基礎物件 (base object)，內部以 MVC        
+(Model, View,&nbsp;Controller) 運作的資料關聯元件 (data-aware        
+component)。清單方塊 (Listbox)、下拉式清單方塊 (Combobox)、資料表元件        
+(Grid) 提供虛擬 (virtual mode)        
+讀取模式，不論連結的資料量多寡，皆能以最佳的效率呈現資料；統計圖元件  
+(Chart component) 以背景執行緒 (background thread)        
+運算、讀取資料，統計圖形以隨到資料即時繪製方式，呈現隨資料變化的動態統計圖示；計時器元件        
+(Timer)，除了時間的顯示外，亦提供多執行緒 (multi-thread)        
+的事件流程 (event flow)；備忘錄元件 (Memo)、圖片元件        
+(Image)，可以直接連結儲存於資料表的二進位圖檔資料或圖檔路徑名稱；條碼元件        
+(Barcode) 是客製(third party)元件，採用條碼專業公司 Automation        
+所開發的元件為基礎物件，佈建執行 (deployment) 時須向        
+Automation 購買授權。</font></p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p>            
+<p style="margin-top: 1; margin-bottom: 1">　</p>            
+<p style="margin-top: 1; margin-bottom: 1">　</p>            
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="type"></a>元件類別  
+(components)</b></font></p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<div align="right">
+<table border="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="middle"> 
+    <font size="2"> 
+    <img border="0" src="images/dbttext.gif" width="25" height="25"></font></td>  
+    <td valign="middle"> 
+    <font size="2"> 
+    <a href="ch10_01.html">標籤元件( Label)</a></font></td>           
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtedit.gif" width="25" height="25"></font></td>          
+    <td valign="middle">          
+    <a href="ch10_02.html"><font size="2">編輯方塊 (Edit)</font></a></td>          
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/dbtpass.gif" width="25" height="25"></font></td>         
+    <td valign="middle">         
+    <font size="2">         
+    <a href="ch10_03.html">密碼元件 (Password)</a></font></td>         
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/dbtcheck.gif" width="25" height="25"></font></td>         
+    <td valign="middle">         
+    <font size="2">         
+    <a href="ch10_04.html">核取方塊 (Checkbox)</a></font></td>         
+  </tr>         
+  <tr>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtradio.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_05.html"><font size="2">選擇鈕 (Radiogroup)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtlistbox.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_06.html"><font size="2">清單方塊 (Listbox)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtcombo.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_07.html"><font size="2">下拉式清單方塊 (Combobox)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbttree.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_08.html"><font size="2">           
+    樹狀元件 (Tree)</font></a></td>         
+  </tr>         
+  <tr>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtcombotree.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_09.html"><font size="2">下拉式樹狀元件 (Combotree)</font></a></td>        
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/dbtslider.gif" width="25" height="25"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_10.html"><font size="2">計數器元件 (Slider)</font></a></td>        
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/dbtgrid.gif" width="25" height="25"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_11.html"><font size="2">資料表元件 (Grid)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtmemo.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_12.html"><font size="2">備忘錄元件 (Memo)</font></a></td>         
+  </tr>         
+  <tr>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtimage.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_13.html"><font size="2">圖片元件 (Image)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtnav.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_14.html"><font size="2">導覽元件 (Navigator)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtbutton.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_15.html"><font size="2">按鈕元件 (Button)</font></a></td>         
+    <td valign="middle">          
+    <font size="2"><img border="0" src="images/dbtimageinvoker.gif" width="25" height="25"></font></td>          
+    <td valign="middle">          
+    <a href="ch10_16.html"><font size="2">圖片引發器 (Image Invoker)</font></a></td>          
+  </tr>          
+  <tr>          
+    <td valign="middle">           
+    <font size="2">           
+    <img border="0" src="images/dbttab.gif" width="25" height="25"></font></td>         
+    <td valign="middle">           
+    <a href="ch10_17.html"><font size="2">索引標籤元件(Tabbed Pane)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtchart.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_18.html"><font size="2">統計圖元件 (Chart)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbttimer.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_19.html"><font size="2">計時器 (Timer)</font></a></td>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/dbtbarcode.gif" width="25" height="25"></font></td>         
+    <td valign="middle">          
+    <a href="ch10_20.html"><font size="2">條碼元件 (Barcode)</font></a></td>        
+  </tr>        
+  <tr>          
+    <td valign="middle">           
+    <img border="0" src="images/dbtmulti.gif" width="25" height="25"></td>        
+    <td valign="middle">          
+    <font size="2"><a href="ch10_21.html">多行編輯元件(Multi-line 
+    Edit)</a></font></td>        
+    <td valign="middle">         
+    <img border="0" src="images/dbtformcontainer.gif" width="25" height="25"></td>        
+    <td valign="middle">         
+    <font size="2"><a href="ch10_22.html">視窗容器 (Form container)</a></font></td>        
+    <td valign="middle">         
+    <img border="0" src="images/dbtmaskedit.gif" width="25" height="25"></td>        
+    <td valign="middle">         
+    <font size="2"><a href="ch10_23.html">MaskEdit元件</a></font></td>        
+    <td valign="middle">         
+    <img border="0" src="images/dbtspinner.gif" width="25" height="25"></td>        
+    <td valign="middle">         
+    <font size="2"><a href="ch10_24.html">Spinner 元件</a></font></td>       
+  </tr>       
+</table>       
+</div>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">       
+　</p>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="use"></a>元件使用和調整  
+(use and adjust components)</b></font></p>           
+<ul>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">程式設計期  
+    (design time)</font> <br>
+　<ul>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定共同屬性  
+        (common properties)：格式 (format)、 外框 (border) 、字型  
+        (font)。<br>
+　</font></li>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定資料連結  
+        (data binding) ：聯結資料欄位(data Field)、運算公式  
+        (formula) 。<br>
+　</font></li>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定特殊屬性  
+        (extra properties)：元件個別的操作屬性。<br>
+　</font></li>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定啟動事件  
+        (fire event)：依元件類別引發動作事件 (action)、        
+        值變事件 (change)、 GainFocus事件、LostFocus事件、雙擊事件  
+        (double        
+        click)、 右鍵事件 (right click)。<br>
+　</font></li>       
+    </ul>       
+  </li>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">程式執行期  
+    (run time)</font> <br>
+　<ul>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">調整元件位置  
+        (position)、尺寸 (size)、顯示 (visible)、致能 (enable)、字型(font)、前背景顏色(foreground  
+        and background color)</font> <br>
+　<ul>       
+          <li>       
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">以啟動事件  
+            (fire event)方式：引發元件事件 (component event) 中位置(position)、尺寸(Size)、顯示  
+            (visible)、致能 (enable)、字型 (font)、前背景顏色  
+            (foreground and background color) 的事件。</font></li>       
+          <li>       
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">以運算公式  
+            (formula) 方式：SetProp(&quot;<font color="#666699">元件名稱</font>&quot;,        
+            &quot;<font color="#666699">屬性</font>&quot;, &quot;<font color="#666699">值</font>&quot;)        
+            ，參閱元件 <a href="get_set_prop.html">Get-Set Component        
+            Properties</a>。<br>
+　</font></li>       
+        </ul>       
+      </li>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">調整元件Focus</font>
+        <br>
+　<ul>       
+          <li>       
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">以啟動事件  
+            (fire event)方式：引發元件事件 (component event) 中 Focus        
+            事件。</font></li>       
+          <li>       
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">以運算公式  
+            (formula)方式：SetProp(ComponentName, &quot;focus&quot;,        
+            &quot;1&quot;)。<br>
+　</font></li>       
+        </ul>       
+      </li>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">調整元件內含值</font>
+        <br>
+　<ul>       
+          <li>       
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">以啟動事件  
+            (fire event)方式：引發元件事件 (component event)        
+            中內含值事件。</font></li>       
+          <li>       
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">以運算公式  
+            (formula)方式：SetProp(&quot;<font color="#666699">元件名稱</font>&quot;,        
+            &quot;<font color="#666699">屬性</font>&quot;, &quot;<font color="#666699">值</font>&quot;)        
+            ，參閱元件 <a href="get_set_prop.html">GertSet Component        
+            Properties</a>。</font></li>       
+        </ul>       
+      </li>       
+    </ul>       
+  </li>       
+</ul>       
+<p style="margin-top: 0; margin-bottom: 0">            
+　</p>            
+<p style="margin-top: 0; margin-bottom: 0">            
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>            
+<hr align=left color="#000000">      
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">      
+<tr>      
+<td width=200 align=left valign=top>      
+<a href="ch09.html">      
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>      
+<td width=194 align=center valign=top><a href="index.html">      
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>      
+<td width=206 align=right valign=top>      
+<a href="ch10_00.html">      
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>      
+</tr>      
+</table>      
+      
+<hr align=left color="#000000">      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+       
+</body>       
+       
+</html>

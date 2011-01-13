@@ -1,0 +1,342 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Report system</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch06_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=197 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch07.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 7</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch07.html" style="text-decoration: none"><font color="#000000">
+Report system</font></a></font></b></TD>    
+<td width=203 align=right valign=top>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="ch07_01.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p><b><font size="4"><a name="top"></a>7<a class="TITLE">. </a>レポートシステム (report system)</font></b></p>                          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#printflow">印刷フローとメカニズム                      
+(printing flow and                           
+mechanical)</a></font></p>      
+<p style="margin-top: 1; margin-bottom: 1"><a href="#newreport">     
+<font size="2">新規レポート (create new report)</font></a></p>                         
+<p style="margin-top: 1; margin-bottom: 1">     
+<a href="ch07_01.html"><font size="2">レポート管理 (report arrangement)</font></a></p>                         
+<p style="margin-top: 1; margin-bottom: 1">     
+<a href="ch07_02.html"><font size="2">レポートプロパティ (report properties)</font></a></p>                         
+
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&trade; 
+アプリケーションの中で一つフォームに多数のレポートを作成することが可能です。レポート設計環境の中，実際レポート用紙のサイズにより，<font color="#666699">へッダ            
+(header)</font>、<font color="#666699">内容 (content)</font>、<font color="#666699">フッタ  
+(footer) </font><font color="#000000">３つの部分に分けられています</font>。各部分に緑線 (header                      
+line)、赤線　(footer line) に分割し，<font color="#666699"></font>どの部分にもコンポーネントの配置が可能です。<br>                         
+　</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/report_design5.gif" width="580" height="334"></p>
+<ul type="square">
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font color="#666699" size="2">ヘッダとフッタ (header and footer)</font><font size="2"><br>                          
+</font>      
+<br>      
+<font size="2">この二つ部分は静的な部分で，その中のコンポーネントが一回印刷されるのみとなり，次のページも一回のみに印刷されます。ページ数の表示が自動に追加されます。                      
+普通はレポート名、会社 logo、時間表示などに使われます。<br>                         
+　</font></p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0" align="justify">
+<font color="#666699" size="2">内容 (content)</font><font size="2"><br>                         
+</font>     
+<br>     
+<font size="2">この部分は資料印刷リスティングの部分で，レポートシステムは印刷されるコンポーネントのトータル高さを自動的に計算ができます，ページチェンジエリアーと                           
+<font color="#666699">Freeze bounds</font>        
+ プロパティ持ちのコンポネントが除かれます。<!--作為一筆資料記&#37636;列印時的預設高度，並以此高度據以計算預估總頁數，由於                           
+jLIVE Builder&trade;                 
+報表系統提供強迫換頁及基於運算條件才列印的機制，所以實際的總頁數在某些情況下並不相等於預估總頁數。--></font></p>      
+  </li>      
+</ul>      
+<blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/report_design7.gif" width="385" height="231"></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/report_design33.gif" width="433" height="505"></p>      
+</blockquote>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2">      
+<font color="#666699">コンポーネントがヘッダ、内容とフッタのどれに属しているのか？判明の仕方</font><br>      
+<br>      
+コンポーネント下の端がどの部分に属しているかで判明します，目で判断しにくいため，簡単で明確なやり方はマウスをコンポーネント上に動かし，ブルーの八つ端ポイントが表示されると，属している部分は内容部分です，ピンク色になると，ヘッダかフッタです。<br>     
+<br>     
+<br>     
+1. コンポーネント A はヘッダに属し，マウスオーバーで８つのピンクポイントが表示されます。<br>                         
+2. コンポーネント B、D は内容に属し，マウスオーバーで８つのブルーポイントが表示されます。<br>                         
+3. コンポーネント C、E、F はフッタに属し，マウスオーバーで８つのピンクポイントが表示されます。</font></p>                         
+  </li>     
+</ul>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch07_str_2.gif" width="340" height="233"></p>     
+</blockquote>     
+<p style="margin-top: 2; margin-bottom: 2">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<b><font size="2"><a name="printflow"></a>印刷フローメカニズム (printing flow and                           
+mechanical)</font></b></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p><!--
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">jLIVE Builder&trade;                        
+報表列流程，簡單的&#35498;，即是由設計師設定一個資料來源                   
+(data source)，系統依序從第一筆記&#37636; (record) 將資料印出，直到最後一筆記&#37636;。此資料來源                   
+(data source) 是與視窗 (form)                        
+共享，亦即資料來源可能是經由使用者&#26597;詢 (query)                        
+或篩選過，而&#27599;筆記&#37636;是否列印亦會受列印元件的<font color="#666699">列印限制  
+(print       
+constraint)</font><font color="#666699"> </font>屬性所控制。以下是列印作業流程：</font></p>  -->
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">以下は印刷作業フロー： 　</font></p> 
+ 
+<ol style="font-size: 10 pt">    
+  <li>    
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">現在データソース                      
+    (data source) のレコード位置をマークします ( record number )。</font></li>                         
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">データソースを優先にし</font><font size="2">，データソースの  
+    before fetch及び after fetchイベント(Event)を起動します。</font></li>                        
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">内容</font><font size="2"> 
+    ( content )部分中の印刷コンポーネント ( printable components )  
+    のトータル高さを計算します。</font></li>                        
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">印刷コンポーネント(  
+    printable components )  
+    トータルページ数を表示したい場合，データソース検索量によってトータルページ数を予測します。</font></li>      
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">ヘッド ( header  
+    ) を印刷します。</font></li>                         
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">内容( content )  
+    を印刷します。</font>      
+    <ol>      
+      <li>      
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">ページチェンジタイミングをチェックし，フッタ(  
+        footer ) を印刷し</font><font size="2">，</font><font size="2">ページチェンジします。</font></li>                        
+      <li>     
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">データソース検索が最終になったかどうか                          
+        ( EOF )をチェックし</font><font size="2">，</font><font size="2">最終の場合に，フッタ(  
+        footer ) を印刷して作業を終了します。</font></li>                        
+      <li>     
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">  
+        残りの空間には次の検索結果が入るかどうかをチェックします。空間不足の場合，フッタ  
+        ( footer ) ）を印刷してページチェンジします。</font></li>                        
+      <li>     
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">次のデータソース(  
+        data source )検索に移り</font><font size="2">，前後イベント</font><font size="2">  
+        ( event )を起動します。</font></li>                       
+      <li>    
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">内容 (  
+        content )印刷が続きます。</font></li>     
+    </ol>    
+  </li>    
+  <li>    
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">フッタ ( footer  
+    )を印刷します。</font></li>                        
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">データソース検索が最終になったかどうか                          
+        ( EOF )をチェックし</font><font size="2">，最終になっていない場合，ページチェンジしてヘッダ</font><font size="2">  
+    ( header) を印刷します。</font></li>                        
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">データソース  
+    ( data source )が前マークされた位置に戻り ( record number)，</font><font size="2">前後イベント</font><font size="2">  
+    ( event )を起動します。</font></li>     
+  <li>    
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">レポート印刷作業終了。</font></li>    
+</ol>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">jLIVE Builder&trade;  
+一般コンポーネント印刷 (　generic printable component　)機能 ：</font></p>                         
+<ol style="font-size: 10 pt">     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2"><font color="#666699">印刷制限</font><font color="#000000"> (print       
+    constraint) </font><font color="#000000">フォーミュラ</font> (formula)  
+    で印刷是非判別。</font></li>                       
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">類別でコネクション、印刷資料の読み取り。</font></li>     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">外枠印刷。</font></li>     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">フォーミュラプロセス                      
+    (formula)，結果集印刷。</font></li>    
+  <li>    
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">累計                      
+    (sum) 、リセット (reset to zero)需要。</font></li>                       
+</ol>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<a name="newreport"></a><font size="2"><b>7</b></font><b><font size="2"><a class="TITLE">.</a>1  
+新規レポート     
+(create new report)</font></b></p>        
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch07_before.gif" width="223" height="198"></p>     
+</blockquote>     
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2">【レポート】節をクリックし，右下の  
+<i>新規</i> <img border="0" src="images/ch07_create.gif" width="136" height="36">         
+ ( 新規レポート )  
+をクリックします。設定画面が表示されます。Class  
+名はデフォルトで <font color="#808080">MyReport </font>，編集可能になっています。</font></p>        
+<p style="margin-top: 1; margin-bottom: 1">      
+　</p>      
+<blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch07_bef_keyin.gif" width="500" height="199"></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch07_after_keyin.gif" width="460" height="198"></p>      
+</blockquote>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><i>取消&nbsp; </i><img border="0" src="images/CH04_cancle.gif" width="31" height="28">   
+( 新規取り消し )</font></p>         
+  </li>      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><i>新規 </i>&nbsp;<img border="0" src="images/CH04_new.gif" width="30" height="29">        
+( レポート新規 )</font></p>        
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><i>削除</i>&nbsp; <img border="0" src="images/ch06_del.gif" width="31" height="31">  
+( レポート削除 )</font></p>        
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><i>保存 </i>&nbsp;<img border="0" src="images/ch06_save.gif" width="31" height="31">        
+( レポート設定保存 )</font></p>        
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><i>作成</i>&nbsp; <img border="0" src="images/ch06_button3.gif" width="30" height="30">  
+( Java&trade; ソースコードへ&nbsp; Xml --&gt; Java )&nbsp; XMLは Java&trade;&nbsp;ソースコード 
+を作成。</font></p>      
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><i>一覧</i>&nbsp; <img border="0" src="images/ch06_button4.gif" width="30" height="30">  
+( Java&trade; ソースコード一覧 ) Java&trade; ソースコード一覧。</font></p>       
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><i>コンパイル </i>&nbsp;<img border="0" src="images/ch06_button5.gif" width="30" height="30">        
+(&nbsp; Java&trade;&nbsp; Java --&gt; class )&nbsp;</font><font color="#000000" size="2"> 
+compile Java</font><font size="2">&trade;</font><font color="#000000" size="2">  
+ソースコードのコンパイル</font><font size="2">。</font></p>       
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><i>ビルド</i>&nbsp; <img border="0" src="images/ch06_button6.gif" width="30" height="30">  
+( 　class&nbsp; Xml --&gt; Java --&gt; class )&nbsp; XML から Java&trade; 
+ソースコードへ転換し，更に class にコンパイル。</font></p>       
+<p style="margin-top: 1; margin-bottom: 1">      
+　</p>      
+  </li>      
+  <li>      
+<p style="margin-top: 2; margin-bottom: 2">      
+<font size="2" color="#666699">Class 名 (class name)：</font><font size="2">レポート名，名前に空白が含まれないこと<span style="font-weight: 400">。</span>レポート名はコンパイル後のクラス名と同じ。</font></p>       
+  </li>      
+  <li>      
+<p style="margin-top: 2; margin-bottom: 2">      
+<font size="2" color="#666699">作者 (author)：</font><font size="2">作者</font><font size="2">，</font><font size="2">空白可能。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2">    
+<span style="font-weight: 400"><font size="2" color="#666699">    
+バージョン</font></span><font size="2" color="#666699"><span style="font-weight: 400">  
+(version)</span>：</font><font size="2"><span style="font-weight: 400">バージョン別</span></font><font size="2">，</font><font size="2"><span style="font-weight: 400">空白可能。</span></font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2">    
+<span style="font-weight: 400"><font size="2">    
+<a class="TITLE"><font color="#666699">Xml ファイル</font></a></font></span><font size="2" color="#666699">      
+<a class="TITLE"><span style="font-weight: 400"> (XML)</span></a>：</font><span style="font-weight: 400"><font size="2">jLIVE Builder</font></span><font size="2">&trade;</font>       
+<span style="font-weight: 400"><font size="2">レポート設計内容が記録されている XML 
+ファイル。</font></span></p>     
+<p style="margin-top: 2; margin-bottom: 2">　</li>     
+  <li>     
+<p style="margin-top: 2; margin-bottom: 2">     
+<span style="font-weight: 400"><font size="2">Java</font></span><font color="#666699"><font size="2">&trade;</font>    
+<span style="font-weight: 400"><font size="2" color="#666699">        
+程式</font></span><font size="2" color="#666699"><span style="font-weight: 400">  
+ (Java</span>&trade;</font><font size="2" color="#666699"><span style="font-weight: 400"> 
+source)</span>：</font></font><span style="font-weight: 400"><font size="2">Java</font></span><font size="2">&trade;</font><span style="font-weight: 400"><font size="2">  
+アプリが保存されるフォルダーと名前。</font></span></p>     
+<p style="margin-top: 2; margin-bottom: 2">　</li>     
+  <li>     
+<p style="margin-top: 2; margin-bottom: 2">     
+<span style="font-weight: 400"><font size="2" color="#666699">Class パス</font></span><font size="2" color="#666699"><span style="font-weight: 400"> 
+(class path)</span>：</font><font size="2"><span style="font-weight: 400">クラスが保存されるパスと名前。</span></font></p>     
+  </li>     
+</ul>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch06_04.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=194 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=206 align=right valign=top>   
+<a href="ch07_01.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+</body>    
+    
+</html>

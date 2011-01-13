@@ -1,0 +1,239 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Make executable program</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html"> 
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p> 
+ 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch07_02.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=193 align=center valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch08.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 8</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch08.html" style="text-decoration: none"><font color="#000000">
+Make executable program</font></a></font></b></TD>
+<td width=207 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch08_01.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p><b><font size="4"><a name="top"></a>8</font><a class="TITLE"><font size="4">.  
+アプリケーション実行形式</font></a><font size="4">     
+ (make executable program)</font></b></p>      
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#Browser">ブラウザ起動アプレット      
+(browser enabled program -- applet run)</a></font></p>     
+<p style="margin-top: 2; margin-bottom: 2"><a href="ch08_01.html"><font size="2">スタンドアロンー      
+(stand alone program -- jar run)</font></a></p>     
+     
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+jLIVE Builder&trade; はブラウザ起動      
+(browser enabled -- applet run) とスタンドアロンー (stand alone -- jar run)  
+２種のアプリ実行形式を作成できます。</font></p>    
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch08_execute_prog.gif" width="324" height="260"> </p>   
+</blockquote>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0"><a name="Browser"><b>8</b></a><b><a class="TITLE" name="Browser">.</a>1  
+ブラウザ起動アプレット (browser enabled program -- applet run)</b></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">システムは自動的に一つのJava&trade; appletが含まれる HTMLを作成できます  
+。ユーザはブラウザでこれを起動し，実行させます。すべてのフォームとレポートを Web serverに配置し，モジュールが実行される時に Web  
+から送られます，モジュールは更新されない限り，クライアント (client) 
+側は再びモジュールをダンロードしなく，ローカルＰＣ上のモジュールを実行します。この機能によって効率向上に繋がり，メンテナンス・インストールもしやすくなっています。　</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch08_applet.gif" width="560" height="445"></p>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch08_applet_setup.gif" width="501" height="256"></p>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+</blockquote>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">   
+<i>ビルド&nbsp;</i>(build applet_run program )&nbsp; </font><font size="2">     
+<img border="0" src="images/ch08_excute_complie.gif" width="30" height="30"> ( 
+アプリのビルド )&nbsp;</font><font color="#000000" size="2"> Java&trade; applet 
+が組み込まれた（embedded）HTML を統合します。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch08_option.gif" width="364" height="297"></p>   
+<ul> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">フォームのコンパイル   
+    (Java --&gt; class)&nbsp; ：</font><font size="2">更新された Java&trade; source file 
+    をコンパイルします( <font face="Courier New">*.java&nbsp;</font> <font face="Courier New">*.class</font>  
+    )。</font></li> 
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">全てフォームの再コンパイル   
+    (Java --&gt; class) ：</font><font size="2">すべての Java&trade; source fileを再度コンパイルします。</font></li> 
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">フォームビルド 
+    (XML --&gt; Java --&gt; class) ：</font><font size="2" color="#000000">フォームの   
+    XML からJava&trade; source file (<font face="Courier New">*.java</font>)へ転換し   
+    ， 再びそれを Java class (<font face="Courier New">*.class</font>)にコンパイルします。ビルドされるのは更新されたXML 
+    に限ります ( <font face="Courier New">*.xml </font> <font face="Courier New">*.java</font>  
+    )。&nbsp;</font></li> 
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">全てフォームの再度ビルド 
+    (XML --&gt; Java --&gt; class)：</font><font size="2" color="#000000">フォームの   
+    XML から Java&trade; source file (<font face="Courier New">*.java</font>) 
+    に転換し，再びそれを Java&trade; class (<font face="Courier New">*.class</font>)にコンパイルします。&nbsp;</font></li> 
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">HTMLファイル作成 (generate HTML file)：</font><font size="2" color="#000000">&#29986;ブラウザ起動のHTML 
+    ファイルを作成します。</font></li> 
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">&nbsp;MainAppletファイル作成 (generate MainApplet)：</font><font size="2">   
+    HTMLに組み込んでいる Java applet source fileを作成します。</font></li> 
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">MainApplet 
+    ファイルのコンパイル (compile MainApplet)：</font><font size="2" color="#000000">HTML 
+    に組み込んでいるJava applet source   
+    file をコンパイルします。</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">プリロードイメージ</font><font size="2" color="#666699">   
+    (generate pre-load images)：</font><font size="2" color="#000000">アプリの   
+    <font face="Courier New">class/preloadimage</font> 
+    ディレクトリ下のイメージを <font face="Courier New">jimage.jar</font>   
+    に圧縮し</font><font size="2">，</font><font size="2" color="#000000">   
+    class フォルダーの下に置きます。</font></li> 
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">Static   
+    JRE Version ：&nbsp;</font><font size="2"> static JRE version　をチェックします。Applet 
+    はJava&trade; 
+    の特別なバージョンを使用します。もし，まだインストールされなければ，可能であれば，このバージョンが自動にダンロードされます。或いは手動ダンロード画面に誘導されます。 
+    http://java.sun.com/products/plugin を参考してください。</font></li> 
+</ul>
+</blockquote>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">  
+<i><font color="#666699">保存&nbsp; </font></i><font color="#666699">(save   
+modified applet settings)</font>&nbsp;<img border="0" src="images/image008.gif" width="32" height="30">   
+( 修正保存設定 )</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">   
+<i><font color="#666699">セキュリティ</font>&nbsp; </i><font color="#666699">(security    
+control)&nbsp; </font><img border="0" src="images/ch08_excute_security.gif" width="30" height="30">    
+ ( セキュリティコントロール ) </font><font color="#000000" size="2">jLIVE Builder&trade; 
+システムデフォルト登録機能。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2">    
+<font color="#666699" size="2">アプリ名 (app name)：</font><font color="#000000" size="2">一つのアプリに多数の　HTML 
+を作成できます，異なるフォームと権限の設定ができます，ユーザとして異なる HTMLに登録が可能です。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2">    
+<span style="font-weight: 400"><font color="#666699" size="2">Html 名 (html name)</font></span><font color="#666699" size="2">：</font><span style="font-weight: 400"><font color="#000000" size="2">HTML 
+名前，編集可能です。</font></span></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2">    
+<span style="font-weight: 400"><font size="2" color="#666699">    
+Applet 名 (applet name)</font></span><font color="#666699" size="2">：</font><span style="font-weight: 400"><font color="#000000" size="2">システムはデフォルトとしての     
+Java</font></span><font color="#000000" size="2">&trade;</font>   
+<span style="font-weight: 400"><font color="#000000" size="2"> applet 
+ソースコード (source code)を作成し，デザインナーはニーズによって編集ができます。</font></span></p>   
+<p style="margin-top: 2; margin-bottom: 2">　</li>   
+  <li>   
+<p style="margin-top: 2; margin-bottom: 2">   
+<span style="font-weight: 400"><font color="#666699" size="2">メインパネル (main    
+panel)</font></span><font color="#666699" size="2">：</font><span style="font-weight: 400"><font color="#000000" size="2">初めて実行される画面です。メインとして設定されるとブラウザに組み込まれます。メインでない場合</font></span><span style="font-weight: 400"><font color="#000000" size="2">，枠の形で表示されます。</font></span></p>  
+<p style="margin-top: 2; margin-bottom: 2">　</li>  
+  <li>  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<span style="font-weight: 400"><font color="#666699">リダイレクト Plugin</font></span><font color="#666699">    
+(redirect plug in)：</font></font><span style="font-weight: 400"><font color="#000000" size="2">URLが HTML 
+に組み込まれ，クライアント (client)は JRE (Java Runtime      
+Environment) をブラウザにインストールしていない場合，これによってJREがダンロードされます。空白の場合， Sun 
+の Web はデフォルトとして設定されます。</font></span></p>   
+<p style="margin-top: 2; margin-bottom: 2">　</li>   
+  <li>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699"><span style="font-weight: 400">特製</span></font><span style="font-weight: 400"><font color="#666699" size="2">      
+Jar &#27284;</font></span><font color="#666699" size="2"> (custom jar file)：</font><span style="font-weight: 400"><font color="#000000" size="2">jLIVE</font></span><font color="#000000" size="2">&trade;</font><span style="font-weight: 400"><font color="#000000" size="2"> 
+の場合，デザインナーは外部の      
+class　をコールすることが可能です，或いは第３社に開発されたモジュール (third party jar)，参照される class 
+を入力し，この jar をアプリの class 下に置き，アプリ起動される同時にクライアント (client)に一緒に転送されます。</font></span></p>  
+<p style="margin-top: 2; margin-bottom: 2">　</li>  
+  <li>  
+<p style="margin-top: 2; margin-bottom: 2">  
+<font color="#666699" size="2">説明 (description)：</font><font color="#000000" size="2">デザインナーよりアプリに関する説明です。</font></li>  
+</ul>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch07_04.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch08_01.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+</body>   
+   
+</html>

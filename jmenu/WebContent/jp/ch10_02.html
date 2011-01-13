@@ -1,0 +1,406 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Edit Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111" height="21">
+<tr>
+<td width=200 align=left valign=top height="21">
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top height="21">
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>   
+<td width=205 align=right valign=top height="21">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch10_03.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p><b>   
+<font size="4"><a name="top"></a><a name="top">エディットコンポーネント</a> (Edit component)</font></b><span style="background-color: #FFFFFF">        
+    <font size="4">   
+    <img border="0" src="images/ch10_21_edit.gif" width="30" height="30"></font></span></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"> 
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><a href="#datasource">    
+<font size="2">データソース (data source)</font></a></p>        
+<p style="margin-top: 2; margin-bottom: 2"><a href="#validation">   
+<font size="2">認証 (validation)</font></a></p>        
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event">   
+<font size="2">イベント (event)</font></a></p>        
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">フォーミュラ　get/set　プロパティ      
+(formula get/set properties)</a></font></p>       
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+<font size="2" color="#000000">エディット (Edit)コンポーネントは通常にデータソースに連結し       
+(data          
+Source)，データフィールド (data field) の表示 (display)、インプット (input)、アップデート       
+(update)に使用されているもっとも基本的なコンポーネントです。<!--編輯元件亦可不連結資料欄位 (binding)，而是使用運算式     
+(formula)        
+顯示運算後的結果，當視窗資料來源移動資料記&#37636;、存&#27284;、刪除或其他元件&#20540;&#20839;含&#20540;改變     
+(changed) 時，運算式 (formula) 將會自動重新計算即時同&#27493;更新。</font><font size="2">可串接事件以反應各種商業邏輯     
+(business logical) 的運作，例如：當元件&#20839;含&#20540;修改     
+時、按下        
+Enter 鍵時、元件 Gain Focus 時、元件 Lost Focus 時、雙&#25802;滑鼠的左鍵時、按下滑鼠右鍵時</font><font size="2" color="#000000">，     
+則會</font><font size="2">&#21855;動指定的相關事件程序。--></font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="datasource"></a>データソース       
+(data source)</font></b></p>        
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">データソース (data source)：</font>データソース</font></p>        
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データフィールド (data field)：</font>データソース中のデータフィールド。</font></p>        
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">    
+<font color="#666699">編集可能 (editable)：</font>ユーザ編集可能かどうか。</font></p>       
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">全部選択 (select all)：</font>Focus  
+をコンポーネント上に移動する時に，コンポーネント中の値を編集が可能で，マークをつけると       
+(mark) </font><font size="2">，全部選択状態になります</font><font size="2"> (select all)。</font></p>         
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">自動切換えインプットメソッド (enable input method)：</font><font size="2">Focus  
+をコンポーネント上に移動する時に，インプットメソッドは今ユーザが使用しているシステム入力メソッドに切り替えます。</font></p>       
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Focus 
+加速器      
+(accelerator)：</font>必要なホットキーの設定。アプリ－を実行する時に，ユーザは        
+&quot;ALT&quot; キー+ホットキーを押し，Focus を移動できます。</font></p>        
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font color="#666699" size="2">フォーミュラ使用</font><font size="2"><font color="#666699">（use  
+formula）：</font></font><font size="2" color="#000000">フォーミュラ       
+(formula) でプロセスの結果表示</font><font size="2">。</font><font size="2" color="#000000">データソース (data source)  
+の保存・削除・変更 (changed)する時に，フォーミュラ       
+(formula) は自動的に即時に値を更新します。</font></p>        
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">    
+<font color="#666699">初期化のみに機能 (initial only)：</font>フォーミュラ       
+(formula)はフォームオープンした後に</font><font size="2" color="#000000">，結果をエディットボックスに表示し</font><font size="2" color="#000000">，その後に再び計算・変更       
+(compute and refresh)しません。デザインナーは【コンポーネントデータ設定</font><font size="2" color="#505050">】</font><font size="2" color="#000000">的のイベント       
+(set component data event)か，SetProp()  
+のフォーミュラで更新させます。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">整列 (alignment)：</font></p>        
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_02_ds.gif" width="479" height="393"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b>
+<font size="2"><a name="validation"></a>認証 (validation)</font></b></p>        
+<p style="margin-top: 0; margin-bottom: 0">   <!--
+　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+<font size="2">確認 (validation) 是設計師根據資料連結 (data binding)      
+的欄位型別 (field         
+type) 或運算公式 (formula) 的結果&#20540;，設定樣版格式 (format         
+pattern)，jLIVE&trade; 系統會根據樣版格式 (format pattern)         
+將資料格式化(formatted)，在編輯元件讀取(非編輯)&#29376;態時，將格式化的結果顯示於編輯元件中；編輯      
+(edit)         
+&#29376;態時，則除了將格式化的結果顯示外，會要求使用者輸入與編輯樣版格式相符合的字串，除非清空輸入(blank)         
+否則無法離開編輯元件。</font></p>    -->
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">デフォルト認証：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch10_02_validate0.gif" width="479" height="393"></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">値の類別：</font><font size="2" color="#000000">データ連結       
+(data          
+binding) とフィールドタイプ(field type) 或いはフォーミュラ (formula)  
+の結果によって，フォーマット(formatted)の類を決めます</font><font size="2">。</font></p>       
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch10_02_validate1.gif" width="479" height="393"></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">読取りフォーマットパターン (read format pattern)：</font>フォーマットパターン選択       
+(format pattern)  
+或いはユーザ自身はインプットフォーマットを編集することができます。  
+<a href="format_pattern.html">フォーマットパターン編集      
+(format      
+pattern)</a>。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">エディットフォーマットパターン   
+(edit format pattern)：</font><font color="#666699"></font>フォーマットパターン選択       
+(format pattern)  
+或いはユーザ自身はエディットフォーマットを編集することができます。  
+<a href="format_pattern.html">フォーマットパターン編集      
+(format pattern)</a>。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">文字長さの制限：</font>インプット文字の長さが制限されます。</font></p>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_02_validate.gif" width="479" height="390"></p>    
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b>
+<font size="2"><a name="event"></a>イベント (event)</font></b></p>        
+<ul>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">アクションイベント (action event)：</font>ユーザは Enterキーを押すと，イベントを起動します (fire event)。</font></p>         
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">チェンジイベント (changed event)：</font>毎回インプット値が変わると，イベントを起動します       
+(fire event)，どのキー（削除キー(delete)  
+を含め，方向キーを含めない）でインプットすると，</font><font size="2">イベントを起動します</font><font size="2">。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">Gain Focus イベント：</font> Focus  
+をエディットボックス</font><font size="2">に移動するとイベントを起動します         
+。</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Lost Focus 
+イベント：</font> Focus をエディットボックス外に</font><font size="2">移動するとイベントを起動します          
+。</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">ダブルクリックイベント (double clicked event)：</font>マウス左キーをダブルクリックするとイベントを起動します。</font></p>       
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">右クリックイベント (right clicked event)：</font>マウス右クリックするとイベントを起動します。</font></p>       
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_02_event.gif" width="479" height="393"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>フォーミュラ  
+get/set プロパティ    
+(formula get/set properties)</b></font></p>   
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,&nbsp; 値) </font>：プロパティ設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(</font></font><font color="#666699">&quot;</font><font color="#666699" size="2">コンポーネント名&quot;,    
+&quot;プロパティ&quot;</font><font color="#666699">,&nbsp; </font><font color="#666699" size="2">値1</font><font size="2"><font color="#666699">,&nbsp;  
+値2)</font>：プロパティ設定。</font></p> 
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(</font></font><font color="#666699">&quot;コンポーネント名&quot;,    
+&quot;プロパティ&quot;</font><font size="2"><font color="#666699">)</font>：プロパティ読み取り。</font></p> 
+ 
+<table border="1" width="609">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699" width="599"><font size="2" color="#FFFFFF">Set     
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050" width="87"><font color="#FFFFFF" size="2">プロパティ<br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050" width="109"><font color="#FFFFFF" size="2">値1<br> 
+&nbsp;(Value 1)</font></td>    
+    <td align="center" bgcolor="#505050" width="65"><font color="#FFFFFF" size="2">値2<br> 
+&nbsp;(Value 2)</font></td>    
+    <td align="center" bgcolor="#505050" width="320"><font color="#FFFFFF" size="2">説明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">enabled</font></td>  
+    <td width="109"><font size="2">1 有効，0 無効</font></td>   
+    <td width="65">　</td>  
+    <td width="320"><font size="2">有効か無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">setfocus</font></td>  
+    <td width="109"><font size="2">1&nbsp; Focusの設定</font></td>   
+    <td width="65">　</td>
+    <td width="320"><font size="2">Focus設定。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">visible</font></td>  
+    <td width="109"><font size="2">1&nbsp;</font><font size="2"> 表示，0  
+      隠し</font></td>  
+    <td width="65">　</td>  
+    <td width="320"><font size="2">表示か隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">repaint</font></td>  
+    <td width="109"><font size="2">1 再描き，2 即時に再描き</font></td>   
+    <td width="65">　</td>  
+    <td width="320"><font size="2">再度描き。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">revalidate</font></td>  
+    <td width="109"><font size="2">1 フォーミュラで再度計算</font></td>   
+    <td width="65">　</td>  
+    <td width="320"><font size="2">フォーミュラで再度計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">editable</font></td>  
+    <td width="109"><font size="2">1 編集可，0 読み取りのみ</font></td>   
+    <td width="65">　</td>  
+    <td width="320"><font size="2">編集可か読み取りのみ。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">text</font></td>  
+    <td width="109"><font size="2">文字列</font></td>  
+    <td width="65">　</td>  
+    <td width="320"><font size="2">値を含む文字列の設定。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">select</font></td>  
+    <td width="109"><font size="2">スタート位置</font></td>  
+    <td width="65"><font size="2">終わり位置</font></td>  
+    <td width="320"><font size="2">スタートから終了まで位置の文字を選択にし，位置は     
+      1 から。</font></td>   
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">caretpos</font></td>  
+    <td width="109"><font size="2">カーサー位置</font></td>  
+    <td width="65">　</td>  
+    <td width="320"><font size="2">カーサー位置の設定，位置は１から。</font></td>  
+  </tr>  
+  <tr>  
+    <td colspan="4" bgcolor="#666699" width="599"><font size="2" color="#FFFFFF">Get     
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center" width="87"><font color="#FFFFFF" size="2">プロパティ     
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center" width="180"><font color="#FFFFFF" size="2">転送     
+      (Return value)</font></td>    
+    <td bgcolor="#505050" align="center" width="320"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>    
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">isenabled</font></td>  
+    <td colspan="2" width="180"><font size="2">1 有効，0 無効</font></td>   
+    <td width="320"><font size="2">有効か無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">isvisible</font></td>  
+    <td colspan="2" width="180"><font size="2">1 表示，0 隠し</font></td>   
+    <td width="320"><font size="2">表示か隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">iseditable</font></td>  
+    <td colspan="2" width="180"><font size="2">1 編集可，0  
+      読み取りのみ</font></td>  
+    <td width="320"><font size="2">編集可か読み取りのみ。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">text</font></td>  
+    <td colspan="2" width="180"><font size="2">文字列</font></td>  
+    <td width="320"><font size="2">エディットボックス中に値を含む文字列。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="87"><font size="2">masktext</font></td>  
+    <td colspan="2" width="180"><font size="2">文字列</font></td>  
+    <td width="320"><font size="2">エディットボックス中に値を含むフォーマットされた文字列。</font></td>  
+  </tr>  
+</table>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_01.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=194 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=206 align=right valign=top>  
+<a href="ch10_03.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+    
+</body>    
+    
+</html>

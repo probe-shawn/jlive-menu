@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Stand alone (Jar run) program</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=195 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch08.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=206 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch08.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 8</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch08.html" style="text-decoration: none"><font color="#000000">
+Make executable program</font></a></font></b></TD>
+<td width=199 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch09.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p><b>8<a class="TITLE">.</a>2 スタンドアロンアプリケーション (stand alone program -- jar run)</b></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">  
+jLIVE Builder&trade; システムは全てのフォームとレポートclass 
+を独自で実行できる(standalone)&nbsp; Java&trade; jar       
+fileの形に圧縮します 
+。システムは自動的にメインフォームの枠を作成でき，メインフォームがデザインナーに指定されます。ユーザは普通の Windows 
+のようにアプリケーションを実行できます。</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<img border="0" src="images/ch08_01_jar.gif" width="560" height="404"></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2"> Jar 
+ファイルに必要な class ファイルが既に含まれている為，Jar run 
+はユーザ側で独自にアプリを順調に実行できます，サーバーから class 
+ファイルを転送することがありません。ただし，Applet 
+形式と異なって随時に class の更新ができません。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch08_01_execute.gif" width="500" height="269"></p>     
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+</blockquote>    
+<ul type="square">     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2"><i><font color="#666699">ビルド </font></i></font><font size="2" color="#666699">(build     
+jar_run program )</font><font size="2"><i><font color="#666699">&nbsp; </font></i>     
+<img border="0" src="images/ch08_excute_complie.gif" width="30" height="30">      
+( アプリのビルド ) 一つの独自に実行できる Java&trade; jar file 
+をビルドします<font color="#000000">。</font></font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+  </li>     
+</ul>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch08_jar_option.gif" width="364" height="273"></p>     
+<ul> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">コンパイル  
+    (Java --&gt; class)&nbsp; ：</font><font size="2" color="#000000"> 
+    更新されたJava&trade; source file ( <font face="Courier New">*.java</font>  
+    日付 <font face="Courier New">*.class</font>  ファイル)のみをコンパイル(compile)されます。</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">全てフォームのリコンパイル  
+    (Java --&gt; class) ：</font><font size="2" color="#000000">全てのJava&trade; source fileを再度コンパイル</font><font size="2" color="#000000">  
+    (compile) します。</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">フォームビルド 
+    (XML --&gt; Java --&gt; class) ：</font><font color="#000000" size="2">フォームの 
+    XML からJava&trade; source file (*.java)へ転換し ， 再びそれを 
+    Java class (*.class)にコンパイルします。ビルドされるのは更新されたXML 
+    に限ります ( *.xml *.java )。&nbsp;</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">全てフォームの再度ビルド 
+    (XML --&gt; Java --&gt; class)：</font><font color="#000000" size="2">フォームの 
+    XML から Java&trade; source file (<font face="Courier New">*.java</font>) 
+    に転換し，再びそれを Java&trade; class (<font face="Courier New">*.class</font>)にコンパイルします。&nbsp;</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">Jar Main() 
+    ファイル作成 (generate main() file)：</font><font size="2" color="#000000">  
+    Java&trade; 実行するメインファイル main java source fileを作成します。</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">Main() 
+    ファイルのコンパイル(compile main() file)：</font><font size="2" color="#000000">Java&trade; 
+    実行するメイン main java source file をコンパイルします。</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">&nbsp;実行する 
+    Jar ファイルのビルド (build executable jar file)：</font><font size="2" color="#000000">  
+    </font><font size="2">全てのフォームとレポート class 
+    を一つの独自に実行できる (standalone) Java&trade; jar       
+file<font color="#000000"> </font></font><font size="2" color="#000000">の形に圧縮します。</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">統合プリーロードイメージ</font><font size="2" color="#666699">  
+    (generate pre-load images)：</font><font size="2" color="#000000">  
+    <font face="Courier New">class/preloadimage</font> 
+    フォルダ下のイメージを <font face="Courier New">jimage.jar</font>  
+    の形に圧縮し</font><font color="#000000" size="2"> ，</font><font size="2" color="#000000"> 
+    <font face="Courier New">class</font> 
+    フォルダの下に置きます。</font></li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+</blockquote>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<i><font color="#666699" size="2">保存 </font></i>    
+<font color="#666699" size="2">(save modified jar run settings)</font><i><font size="2"><font color="#666699"> </font>&nbsp;</font></i><font size="2"><img border="0" src="images/image008.gif" width="32" height="30">       
+( 修正保存設定 )</font>　</p> 
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<i><font color="#666699" size="2">セキュリティ </font> </i>  
+<font color="#666699" size="2">(security control)</font><i><font size="2">&nbsp; </font></i>     
+<font size="2">    
+<img border="0" src="images/ch08_excute_security.gif" width="30" height="30">     
+( セキュリティコントロール ) </font><font color="#000000" size="2">jLIVE Builder&trade; 
+システムデフォルトデフォルト登録機能</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><font color="#666699">アプリ名 (app name)：</font>独自に実行できる Java Jar file 
+名</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2">    
+<span style="font-weight: 400"><font color="#666699" size="2">MainClass 名稱</font></span><font color="#666699" size="2">     
+(mainclass name)：</font><span style="font-weight: 400"><font size="2">jLIVE    
+Builder</font></span><font color="#000000" size="2">&trade;</font>  
+<span style="font-weight: 400"><font size="2">は自動に作成した Java main() 
+の class 名</font></span></p>    
+<p style="margin-top: 2; margin-bottom: 2">　</li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2"><span style="font-weight: 400"><font color="#666699" size="2">アプリのタイトル</font></span><font color="#666699" size="2">    
+(application title)：</font><span style="font-weight: 400"><font size="2">メインフォームのタイトル</font></span></p>  
+<p style="margin-top: 2; margin-bottom: 2">　</li>  
+  <li>  
+<p style="margin-top: 2; margin-bottom: 2"><span style="font-weight: 400"><font color="#666699" size="2">サイズ可変フレーム</font></span><font color="#666699" size="2">   
+(resizable frame)：</font><span style="font-weight: 400"><font color="#000000" size="2">メインフォームはユーザによって調整できるかどうか</font></span></p>  
+<p style="margin-top: 2; margin-bottom: 2">　</li>  
+  <li>  
+<p style="margin-top: 2; margin-bottom: 2">  
+<span style="font-weight: 400">  
+<font color="#666699" size="2">初期ステート</font></span><font color="#666699" size="2"> (initial    
+state)：</font><span style="font-weight: 400"><font color="#000000" size="2">メインフォーム初期の大きさ</font></span></p>  
+<p style="margin-top: 2; margin-bottom: 2">　<ul type="disc">  
+    <li>  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<font color="#666699">ノーマル (normal)：</font>メインフォームのオリジナル大きさ</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><font color="#666699">アイコン 
+(iconified)：</font>アイコン Iconの形</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">   
+<font color="#666699">最大化 (maximize)：</font>全部スクリーンの大きさ</font></p>  
+    </li>  
+  </ul>  
+  </li>  
+  <li>  
+<p style="margin-top: 2; margin-bottom: 2">  
+<span style="font-weight: 400"><font color="#666699" size="2">メインフォーム (main    
+panel)</font></span><font color="#666699" size="2">：</font><span style="font-weight: 400"><font color="#000000" size="2">アプリ最初のフォーム画面</font></span></p>  
+<p style="margin-top: 2; margin-bottom: 2">　</li>  
+  <li>  
+<p style="margin-top: 2; margin-bottom: 2">  
+<span style="font-weight: 400"><font size="2" color="#666699">特製 Jar &#27284; (custom    
+jar file )</font></span><font color="#666699" size="2">：</font><span style="font-weight: 400"><font color="#000000" size="2">jLIVE</font></span><font color="#000000" size="2">    
+Builder&trade;</font>   
+ <font color="#000000" size="2"><span style="font-weight: 400">は外部 class 
+ へのコールが可能で，或いはここに特製の参照 class　を第３者モジュール    
+(third     
+party class)として入力します。</span></font></p>    
+<p style="margin-top: 2; margin-bottom: 2">　</li>    
+  <li>    
+<p style="margin-top: 2; margin-bottom: 2"><font color="#666699" size="2">説明</font><font color="#666699" size="2"> (description)：</font><font color="#000000" size="2">デザインナーはアプリに関する説明</font></li>  
+</ul>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch08.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=192 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=208 align=right valign=top>  
+<a href="ch09.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+</body>   
+   
+</html>

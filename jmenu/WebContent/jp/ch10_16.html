@@ -1,0 +1,358 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Image invoker component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_15.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=193 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD> 
+<td width=207 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch10_17.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><font size="4"><b>
+<a name="top"></a><a name="top">イメージ引用コンポーネント</a></b> 
+(<b>Image invoker component) </b>      
+<img border="0" src="images/ch10_imageinvoker.gif" width="30" height="30"></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>       
+<p style="margin-top: 1; margin-bottom: 1"><a href="#invokerprop">  
+<font size="2">引用プロパティ (invoker properties)</font></a></p>       
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><a href="#region">引用区域設定 (invoker region        
+setting)</a></font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><a href="#getsetprop">フォーミュラget/setプロパティ (formula get/set      
+properties)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<b><font size="2"><a name="invokerprop"></a>引用機 (Invoker properties)</font></b></p>       
+<ul type="square">  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">背景 (background)：</font>背景イメージの選択。</font></p>    
+  </li> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><font color="#666699">引用機 (invoker)：</font>引用機の設定。</font></p>     
+  <ul type="disc"> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><font color="#666699">新規引用機 (create new invoker map)        
+<img border="0" src="images/New20.gif" width="24" height="24">：</font>新規引用機。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">削除引用機 (delete invoker map)        
+<img border="0" src="images/Delete20.gif" width="24" height="24">：</font>引用機の削除        
+。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">引用機編集 (update invoker map)         
+<img border="0" src="images/update20.gif" width="24" height="24">：</font>引用機の編集        
+。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">上へ移動 (move up)         
+<img border="0" src="images/Up20.gif" width="24" height="24">：</font>順番で前へ移動。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">下へ移動 (move down)        
+<img border="0" src="images/Down20.gif" width="24" height="24">：</font>順番で後へ移動        
+。</font></p>   
+    </li>   
+  </ul>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">範囲 (region) ：</font>引用範囲の設定。(左，上，幅，高)。</font></p>   
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">イベント (event) ：</font>イベントの選択。</font></p>      
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">カラー1 (color 1)：</font>     
+ 引用範囲にマウスを移動する時，引用範囲のすべてのカラー1 (color 1)  
+がカラー2 (color 2)に変更。</font></p>      
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">カラー2 (color 2)：</font>      
+ </font><font size="2">引用範囲にマウスを移動する時，引用範囲のすべてのカラー1 (color 1)  
+がカラー2 (color 2)に変更。</font></p>      
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">ボーダー (border)：</font>       
+ 引用機範囲の外枠ライン。</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+  <ul type="disc">  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">ボーダーなし (no border)：</font>ボーダーなし。</font></p>      
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">カラー付ボーダー    
+(colored border)：</font>引用範囲の外枠ラインはカラー2 (color 2)で描かれる。</font></p>      
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">ボタンボーダー (button border)：</font><font color="#666699"></font>引用範囲の外枠ラインはボタンスタイルで描かれる。</font></p>      
+  </li>  
+  </ul>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">注釈 (tips)：</font>引用範囲でマウスオーバーの時，説明テキストを表示。</font></p>     
+    </li> 
+  </ul> 
+  </li> 
+</ul> 
+<blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_16_invoker1.gif" width="477" height="338"></p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_16_frame.gif" width="479" height="479"></p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+</blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><b><a name="region"></a>引用機区域の設定 (invoker region        
+setting)</b></font>　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">
+<font size="2">　</font></p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">ワーク画面： </font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">機能区域：</font>引用機能できる範囲 (左，上，幅，高)。 </font></p>      
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">マウスの位置：</font>(X，Y)。</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><font color="#666699">マウス位置のカラー：</font>(R，G，B)。</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">ピンク色ポイント</font><font size="2"><font color="#666699">：</font><font color="#000000">機能区域の表示。</font></font></p> 
+  </li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">機能区域サイズの調整：</font><font color="#000000" size="2">マウスでポイント枠を拡大か縮小</font><font size="2">。</font></p> 
+  </li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">機能区域の移動：</font>ポイントを押したままマウスを移動。</font></p> 
+  </li> 
+</ul> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_16_invoker.gif" width="416" height="415"></p> <!--
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+  </li> 
+  <li><p style="margin-top: 0; margin-bottom: 0"><font size="2">範例 (example)     
+    ：<br>  
+    　</font></p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">以滑鼠圈選含蓋 Customers     
+字樣的區域；移動滑鼠到藍色的字；檢視(R, G, B)的&#20540;為(0, 0, 255)；按下     
+確定；回到屬性設定頁。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">在引發器中選擇一個觸發事件 (event )。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">點選顏色1 (color 1) 設定其 RGB &#20540;為 (0, 0, 255) 。<br>    
+　</font></p>
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch10_16_color.gif" width="435" height="403"></p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">點選顏色2 (color 2) 設定當滑鼠移至時的顏色&#20540;為&#21478;一顏色     
+RGB ( 153, 204, 255 ) 。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">應用程式執行時，當滑鼠移至作用區域時，Customers     
+的藍色 RGB(0, 0, 255) 字樣，會變為水藍色 RGB( 153, 204, 255)     
+，滑鼠在作用區按下時 (clicked)，即會引發設定的事件 (event )。</font></p>     
+  </li>   
+</ul>   
+  </li>   
+</ul>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   -->
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>フォーミュラget/setプロパティ     
+(formula get/set properties)</b></font></p>    
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,&nbsp; 値) </font>：プロパティの設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font><font color="#666699">コンポーネント名&quot;,    
+&quot;</font><font color="#666699">プロパティ&quot;,&nbsp; 値1,&nbsp;値2)</font>：プロパティの設定。</font></p>  
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699">コンポーネント名&quot;,    
+&quot;</font><font color="#666699">プロパティ&quot;)</font>：プロパティの読取。</font></p> 
+ 
+<table border="1" width="453"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699" width="443"><font size="2" color="#FFFFFF">Set     
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050" width="88"><font color="#FFFFFF" size="2"><font color="#ffffff" size="2">プロパティ</font> 
+      (Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050" width="118"><font color="#FFFFFF" size="2">値1     
+      (Value 1)</font></td>    
+    <td align="center" bgcolor="#505050" width="71"><font color="#FFFFFF" size="2">値2     
+      (Value 2)</font></td>    
+    <td align="center" bgcolor="#505050" width="148"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>    
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">enabled</font></td>  
+    <td width="118"><font size="2">1 使用可能，0 無効</font></td>   
+    <td width="71">　</td>  
+    <td width="148"><font size="2">使用可能と無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">setfocus</font></td>  
+    <td width="118"><font size="2">1 Focus設定</font></td>   
+    <td width="71">　</td>
+    <td width="148"><font size="2">Focus設定。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">visible</font></td>  
+    <td width="118"><font size="2">1 表示，0 隠し</font></td>   
+    <td width="71">　</td>  
+    <td width="148"><font size="2">表示と隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">repaint</font></td>  
+    <td width="118"><font size="2">1 再描く，2 </font><font size="2">即再度描く</font></td>   
+    <td width="71">　</td>  
+    <td width="148"><font size="2">再描く。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">revalidate</font></td>  
+    <td width="118"><font size="2">1&nbsp;</font></td> 
+    <td width="71">　</td>
+    <td width="148"><font size="2">コンポーネントリロード。</font></td>
+  </tr>
+  <tr>
+    <td colspan="4" bgcolor="#666699" width="443"><font size="2" color="#FFFFFF">Get     
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center" width="88"><font color="#FFFFFF" size="2">プロパティ     
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center" width="195"><font color="#FFFFFF" size="2">値転送     
+      (Return value)</font></td>    
+    <td bgcolor="#505050" align="center" width="148"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>    
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">isenabled</font></td>  
+    <td colspan="2" width="195"><font size="2">1 使用可能，0 無効</font></td>  
+    <td width="148"><font size="2">使用可能と無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">isvisible</font></td>  
+    <td colspan="2" width="195"><font size="2">1 表示，0 隠し</font></td>   
+    <td width="148"><font size="2">表示と隠し。</font></td>  
+  </tr>  
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"></p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_15.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch10_17.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+   
+</body>   
+   
+</html>

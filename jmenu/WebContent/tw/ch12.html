@@ -1,0 +1,1850 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Formula</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="1" width="614" id="AutoNumber1">
+    <tr>
+      <td width="631">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width="600" border=0 cellspacing=1>
+<tr>
+<td width=197 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_09.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=209 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" size="2">Chapter 12</font></b><p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" size="2">Formula</font></b></TD>    
+<td width=184 align=right valign=top>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="ch12_01.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p><b><a name="top"></a><a class="TITLE"><font size="4">12. 運算公式       
+(formula</font></a><font size="4">)</font></b></p>           
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#fmlatype">      
+運算公式類別 (formula type)</a></font></p>           
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#formula">       
+運算子及函式 (operator and function)</a></font></p>           
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#designwindow">       
+運算公式編輯視窗 (formula design window)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#fmladesign">       
+運算公式設計 (formula design)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#datatype">       
+運算公式資料型別 (formula data type)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#computedata">       
+運算資料的取值 (retrieval computed data)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#variable">變數       
+(variable)</a></font></p>        
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#operator">      
+運算子 (operator)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#param">函式的參數       
+(parameters of function)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#returntype">       
+運算公式結果值 (formula result data)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#ifthenelse">       
+IF-THEN-ELSE 流程控制 (IF-THEN-ELSE flow control)</a></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+運算公式是由 jLIVE Builder&#8482; 系統的運算公式直譯器      
+(interpreter) 在執行期，即時 (real time) 解譯並執行 (execute)，在運算公式第一次被執行時，直譯器      
+(interpreter) 除了解析和執行 (parse syntax and execute)        
+外，會連結 (binding) 參數，下一次再執行同一運算公式時，執行的效率將倍增，所以 jLIVE Builder&#8482; 系統的運算公式直譯器      
+(interpreter) 亦具有編譯能力 (compiler)，能在執行期 (runtime) 以高速的效率執行運算。</font></p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">運算公式      
+(formula) 主要是在 jLIVE Builder&#8482; 應用程式設計中，提供一可程式化的運算程序      
+(programmable computing        
+procedure)。運算程序 (computing procedure) 包括有：</font></p>           
+<ul>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    資料值運算 (data compute)：數學、比較、邏輯、字串、日期、功能。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    參數與變數存取 (parameter and variable        
+    access)：<font face="Courier New">System</font>、<font face="Courier New">Hash</font>、<font face="Courier New">Stack</font>、<font face="Courier New">LocalHash</font>、<font face="Courier New">SysHash</font>、<font face="Courier New">SpParam</font>、<font face="Courier New">ServletResp</font>。</font></li>         
+  <li>         
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">      
+    元件操作 (component operate)：屬性、內含值的讀取與設定。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    資料來源操作 (data source operate)： 開啟、查詢資料來源，資料記錄的設值、移動、新增、編輯、存檔、刪除。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    檔案操作 (file operate)：下載檔案資料、複製檔案、檔案及目錄維護。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    啟動事件 (fire event)：啟動事件。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    應用系統流程操作 (application system flow operate)：開啟訊息盒、視窗、印表作業，離開視窗、應用程式。</font></li>          
+</ul>          
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">運算公式      
+(formula) 是由運算資料 (operand) 、運算子 (operator)、函式      
+(function) 組成程式語言中的算式 (expression)，加上流程控制的 IF-THEN-ELSE 所組成。其中運算資料      
+(computed data) 包括有：</font></p>           
+<ul>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    使用者輸入或內含於元件的資料(user input or component data)</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    系統參數與變數 (system parameter and variable)</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    資料來源目前狀態與資料記錄欄位值 (current data source state and record field data)</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    下載的檔案資料 (down load file)</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    資料庫預儲程序回傳資料 (stored procedure return data)</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    Servlet Call 的回傳資料 (Servlet call return data)</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    Cookie</font></li>          
+</ul>          
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+設計師可以運算資料 (computed data) 配合使用各種函式 (function)，執行一運算程序      
+(computing procedure)        
+或單純的資料值運算 (data compute)。每一個函式或運算都會有傳回值      
+(return value)，傳回值 (return value)        
+可以做為其他函式或運算的參數值，意即運算公式的函式參數      
+(function parameter) 或運算資料 (computed data) ，        
+可以是一個函式或運算傳回值。運算公式執行後會有一最終的傳回值      
+(return value) ，即是運算公式的結果值 (result value)，結果值      
+(result value) 通常運用於值的設定 (data setting) 或條件的判斷      
+(condition)        
+，運用於條件判斷時，系統會將結果值以下列規則分辨真      
+(true) 偽 (false)：</font></p>         
+<ul>         
+  <li>         
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">真        
+    (True) ：結果值非 0 且 非空字串。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">偽        
+    (False)：結果值為 0 或 空字串。</font></li>          
+</ul>          
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+例如：使用於事件啟動的條件運算公式、<font face="Courier New">IF condition _formula THEN formula ELSE formula</font> 中的      
+<font face="Courier New">       
+condition_formula</font> 等等。</font></p>          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">&nbsp;</font></p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="fmlatype"></a>
+運算公式類別 (formula type)</b></font></p>           
+<p style="margin-top: 1; margin-bottom: 1"></p>           
+<table border="1" cellspacing="1">          
+  <tr>          
+    <td>           
+<font size="2"><a href="ch12_01.html">數學 (Math)</a></font></td>          
+    <td>           
+<a href="ch12_02.html"><font size="2">比較 (Compare)</font></a></td>          
+    <td>           
+<a href="ch12_03.html"><font size="2">邏輯 (Logic)</font></a></td>          
+    <td>           
+<a href="ch12_04.html"><font size="2">字串(String)</font></a></td>          
+  </tr>          
+  <tr>          
+    <td>           
+<a href="ch12_05.html"><font size="2">日期 (Date)</font></a></td>          
+    <td>           
+<a href="ch12_06.html"><font size="2">功能 (Function)</font></a></td>          
+    <td>           
+<a href="ch12_07.html"><font size="2">元件 (Component)</font></a></td>          
+    <td>           
+<a href="ch12_08.html"><font size="2">變數 (Variable)</font></a></td>          
+  </tr>          
+  <tr>          
+    <td>           
+<a href="ch12_09.html"><font size="2">資料運作 (DS operate)</font></a></td>          
+    <td>           
+<font size="2"><a href="ch12_10.html">檔案 (File)</a></font></td>          
+    <td>           
+<font size="2"><a href="ch12_11.html">流程 (Flow)</a></font></td>          
+    <td>           
+<a href="ch12_12.html"><font size="2">特殊 (Special)</font></a></td>          
+  </tr>          
+</table>          
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<b><a name="formula"></a>運算</b></font><b><font size="2">子與函式      
+(operator and        
+function)</font></b></p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<table border="1" cellspacing="1" id="AutoNumber2" width="613">
+  <tr>
+    <td align="center" bgcolor="#505050" width="26"> 
+<font size="2" color="#FFFFFF"><nobr>數學</nobr></font></td> 
+    <td align="center" width="26" bgcolor="#505050"> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#FFFFFF"><nobr>比較</nobr></font></td> 
+    <td align="center" bgcolor="#505050" width="27"> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#FFFFFF"><nobr>邏輯</nobr></font></td> 
+    <td align="center" bgcolor="#505050" width="70"> 
+    <font size="2" color="#FFFFFF">字串</font></td> 
+    <td align="center" bgcolor="#505050" width="142"> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#FFFFFF"><nobr>日期</nobr></font></td> 
+    <td align="center" bgcolor="#505050" width="114"> 
+    <font size="2" color="#FFFFFF">功能</font></td> 
+    <td align="center" bgcolor="#505050" width="170"> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#FFFFFF"><nobr>元件</nobr></font></td> 
+  </tr>
+  <tr>
+    <td align="left" width="26"> 
+<font style="font-size: 9pt">x+y</font></td> 
+    <td width="26" align="left"> 
+<font style="font-size: 9pt">x=y</font></td> 
+    <td align="left" width="27"> 
+<font style="font-size: 9pt">x And y</font></td> 
+    <td align="left" width="70"> 
+<font style="font-size: 9pt">x $ y</font></td> 
+    <td align="left" width="142"> 
+<font style="font-size: 9pt">Today()</font></td> 
+    <td align="left" width="114"> 
+<font style="font-size: 9pt">Abs(x)&nbsp;</font></td> 
+    <td align="left" width="170"> 
+<font style="font-size: 9pt">GetData(compname)</font></td> 
+  </tr>
+  <tr>
+    <td align="left" width="26"> 
+<font style="font-size: 9pt">x-y</font></td> 
+    <td width="26" align="left"> 
+<font style="font-size: 9pt">x&lt;y</font></td> 
+    <td align="left" width="27"> 
+<font style="font-size: 9pt">x Or y</font></td> 
+    <td align="left" width="70"> 
+<font style="font-size: 9pt">x[y]</font></td> 
+    <td align="left" width="142"> 
+<font style="font-size: 9pt">Date(yyyy,mm,dd)</font></td> 
+    <td align="left" width="114"> 
+<font style="font-size: 9pt">Round(x)</font></td> 
+    <td align="left" width="170"> 
+<font style="font-size: 9pt">SetData(compname,value)</font></td> 
+  </tr>
+  <tr>
+    <td align="left" width="26"> 
+<font style="font-size: 9pt">x*y</font></td> 
+    <td width="26" align="left"> 
+<font style="font-size: 9pt">x&gt;y</font></td> 
+    <td align="left" width="27"> 
+<font style="font-size: 9pt">Not x</font></td> 
+    <td align="left" width="70"> 
+<font style="font-size: 9pt">x[y to z]</font></td> 
+    <td align="left" width="142"> 
+<font style="font-size: 9pt">CurrentTime()</font></td> 
+    <td align="left" width="114"> 
+<font style="font-size: 9pt">Round(x,#place)</font></td> 
+    <td align="left" width="170"> 
+<font style="font-size: 9pt">GetGridData(gridname,row,col)</font></td> 
+  </tr>
+  <tr>
+    <td align="left" width="26"> 
+<font style="font-size: 9pt">x/y</font></td> 
+    <td width="26" align="left"> 
+<font style="font-size: 9pt">x&lt;=y</font></td> 
+    <td align="left" width="27"><font style="font-size: 9pt">&nbsp; </font> </td> 
+    <td align="left" width="70"> 
+<font style="font-size: 9pt">LTrim(x)</font></td> 
+    <td align="left" width="142"> 
+<font style="font-size: 9pt">NextDate(fromdate,#y,#m,#d)</font></td> 
+    <td align="left" width="114"> 
+<font style="font-size: 9pt">Truncate(x)</font></td> 
+    <td align="left" width="170"> 
+<font style="font-size: 9pt">GetProp(compname,property)</font></td> 
+  </tr>
+  <tr>
+    <td align="left" width="26"> 
+<font style="font-size: 9pt">x%y</font></td> 
+    <td width="26" align="left"> 
+<font style="font-size: 9pt">x&gt;=y</font></td> 
+    <td align="left" width="27"><font style="font-size: 9pt">&nbsp; </font> </td> 
+    <td align="left" width="70"> 
+<font style="font-size: 9pt">RTrim(x)</font></td> 
+    <td align="left" width="142"> 
+<font style="font-size: 9pt">DaysRange(formdate,todate)</font></td> 
+    <td align="left" width="114"> 
+<font style="font-size: 9pt">Truncate(x,#place)</font></td> 
+    <td align="left" width="170"> 
+<font style="font-size: 9pt">SetProp(compname,property, value)</font></td> 
+  </tr>
+  <tr>
+    <td align="left" width="26"> 
+<font style="font-size: 9pt">x^y</font></td> 
+    <td width="26" align="left"> 
+<font style="font-size: 9pt">x&lt;&gt;y</font></td> 
+    <td align="left" width="27"><font style="font-size: 9pt">&nbsp; </font> </td> 
+    <td align="left" width="70"> 
+<font style="font-size: 9pt">LRTrim(x)</font></td> 
+    <td align="left" width="142"> 
+<font style="font-size: 9pt">Year(x)</font></td> 
+    <td align="left" width="114"> 
+<font style="font-size: 9pt">Random(seed ) </font></td> 
+    <td align="left" width="170"> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font style="font-size: 9pt">SetProp</font></p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font style="font-size: 9pt">(compname,property,value1, value2)</font></td> 
+  </tr>
+  <tr>
+    <td align="left" width="26"><font style="font-size: 9pt">&nbsp;</font></td> 
+    <td width="26" align="left"><font style="font-size: 9pt">&nbsp;</font></td> 
+    <td align="left" width="27"><font style="font-size: 9pt">&nbsp; </font> </td> 
+    <td align="left" width="70"> 
+<font style="font-size: 9pt">TrimAll(x)</font></td> 
+    <td align="left" width="142"> 
+<font style="font-size: 9pt">Month(x)</font></td> 
+    <td align="left" width="114"><font style="font-size: 9pt">Random( ) </font></td> 
+    <td align="left" width="170"><font style="font-size: 9pt">
+    Grid2File(gridname, filename)</font></td> 
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">Find(x,y)</font></td>
+    <td width="142"> 
+<font style="font-size: 9pt">Day(x)</font></td>
+    <td width="114"><font style="font-size: 9pt">FormatNumber(pattern, value)</font></td>
+    <td width="170"><font style="font-size: 9pt">Grid2File(gridname, filename, 
+    bmasktext)</font></td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">Find(x,y,pos)</font></td>
+    <td width="142"><font style="font-size: 9pt">DayofWeek(x)</font></td>
+    <td width="114">　</td>
+    <td width="170"><font style="font-size: 9pt">Grid2File(gridname, filename, 
+    bmasktext, bheader)</font></td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">FindLast(x,y)</font></td>
+    <td width="142"><font style="font-size: 9pt">DayofMonth(x)</font></td>
+    <td width="114">　</td>
+    <td width="170"><font style="font-size: 9pt">Grid2File(gridname, filename, 
+    bmasktext, bheader, sep1)</font></td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">FindLast(x, y, pos)</font></td>
+    <td width="142"><font style="font-size: 9pt">DayofYear(x)</font></td>
+    <td width="114">　</td>
+    <td width="170"><font style="font-size: 9pt">Grid2File(gridname, filename, 
+    bmasktext, bheader, sep1, sep2)</font></td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">Length(x)</font></td>
+    <td width="142"><font style="font-size: 9pt">IsValidDate(x)</font></td>
+    <td width="114">　</td>
+    <td width="170"><font style="font-size: 9pt">Focus(compname)</font></td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">Length2(x)</font></td>
+    <td width="142"><font style="font-size: 9pt">IsValidTime(x)</font></td>
+    <td width="114">　</td>
+    <td width="170"><font style="font-size: 9pt">Revalidate()</font></td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">Replace(x,y,z)</font></td>
+    <td width="142"><font style="font-size: 9pt">IsLeapYear(x)</font></td>
+    <td width="114">　</td>
+    <td width="170"><font style="font-size: 9pt">Revalidate(globe)</font></td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70"><font style="font-size: 9pt">Upper(x)</font></td>
+    <td width="142">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">ElapsedTime</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">(fromtime,totime)</font></td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">Lower(x)</font></td>
+    <td width="142">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">ElapsedDateTime</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">(fromdatetime,todatetime)</font></td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">Char(ascii)</font></td>
+    <td width="142">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">FormatDateTime</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">(pattern,datetime)</font></td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">ASCII(char)</font></td>
+    <td width="142">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">FormatDateTime</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">(pattern,datetime, 
+    locale)</font></td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <font style="font-size: 9pt">UTF2Str(utf)</font></td>
+    <td width="142">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">NextDateTime</font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">(datetime,second)</font></td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <font style="font-size: 9pt">Str2UTF(str)</font></td>
+    <td width="142">
+    <font style="font-size: 9pt">
+    ApServerDateTime()</font></td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <font size="2">Token(str, sep, nth)</font></td>
+    <td width="142">
+    <font style="font-size: 9pt">ApServerDateTime(refresh)</font></td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <font size="2">TokenCount(str, sep)</font></td>
+    <td width="142">
+    　</td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+  <tr>
+    <td width="26">　</td>
+    <td width="26">　</td>
+    <td width="27">　</td>
+    <td width="70">
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">SepCount(str, sep)</font></td>
+    <td width="142">
+    　</td>
+    <td width="114">　</td>
+    <td width="170">　</td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="1" cellspacing="1" id="AutoNumber3" width="579">
+  <tr>
+    <td align="center" bgcolor="#505050" width="117">
+    <font color="#FFFFFF" style="font-size: 9pt">變數</font></td>
+    <td align="center" bgcolor="#505050" width="108">
+    <font color="#FFFFFF" style="font-size: 9pt">資料運作</font></td>
+    <td align="center" bgcolor="#505050" width="131">
+<font color="#FFFFFF" style="font-size: 9pt">檔案</font></td>
+    <td align="center" bgcolor="#505050" width="125">
+<font color="#FFFFFF" style="font-size: 9pt">流程</font></td>
+    <td align="center" bgcolor="#505050">
+    <font color="#FFFFFF" style="font-size: 9pt">特殊</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">LocalHashPut(key,value)</font></td>
+    <td align="left" width="108">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">DsNavigator(ds,op_str)</font></td>
+    <td align="left" width="131">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">
+    FileChooser(title,isfile,filter)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">Condition(cond,true,false)</font></td>
+    <td align="left">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">FormName()</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">LocalHashGet(key)</font></td>
+    <td align="left" width="108">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">DsMoveto(ds,recno)</font></td>
+    <td align="left" width="131">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">
+    FileChooser(title,isfile,filter, startpath)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">OpenForm(formname)</font></td>
+    <td align="left">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">SetTitle(title)</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">LocalHashRemove(key)</font></td>
+    <td align="left" width="108">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">PrevRecord(ds,fld)</font></td>
+    <td align="left" width="131">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">
+    CopyTo(source,target)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">OpenForm(formname,pos)</font></td>
+    <td align="left">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">FormPos(left,top)</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">LocalHashClear()</font></td>
+    <td align="left" width="108">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">NextRecord(ds,fld)</font></td>
+    <td align="left" width="131">
+    <p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">
+    Load(source)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">OpenForm(formname, 
+type, modal)</font></td>
+    <td align="left">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">FormSize</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">(width,height)</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<p style="margin-top: 1; margin-bottom: 1">
+<font style="font-size: 9pt">LocalHashCount()</font></td>
+    <td align="left" width="108">
+<p style="margin-top: 1; margin-bottom: 1">
+<font style="font-size: 9pt">RecordData</font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font style="font-size: 9pt">(ds,fid,recno)</font></td>
+    <td align="left" width="131">
+    <p style="margin-top: 1; margin-bottom: 1"><font style="font-size: 9pt">Load(source, 
+    charset)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">OpenForm(formname, pos, type, modal)</font></td>
+    <td align="left">
+<p style="margin-top: 1; margin-bottom: 1">
+<font style="font-size: 9pt">UserName()</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<font style="font-size: 9pt">StackPush(x)</font></td>
+    <td align="left" width="108">
+<p style="margin-top: 1; margin-bottom: 1">
+<font style="font-size: 9pt">RecordData</font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font style="font-size: 9pt">(ds,fid,recno, exact)</font></td>
+    <td align="left" width="131"><font style="font-size: 9pt">SaveAs(target, 
+      data)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">OpenReport(rptname)</font></p>
+    </td>
+    <td align="left">
+<font style="font-size: 9pt">UserPasswoed()</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<font style="font-size: 9pt">StackPop()</font></td>
+    <td align="left" width="108">
+<font style="font-size: 9pt">IsDelete(ds,recno)</font></td>
+    <td align="left" width="131"><font style="font-size: 9pt">SaveAs(target, 
+      data, append)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">OpenReport(rptname, 
+preview)</font></p>
+    </td>
+    <td align="left">
+<font style="font-size: 9pt">UserGroup()</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<font style="font-size: 9pt">StackClear()</font></td>
+    <td align="left" width="108">
+<font style="font-size: 9pt">IsUpdate(ds,recno)</font></td>
+    <td align="left" width="131"><font style="font-size: 9pt">
+    File(cmd,target)</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">OpenReport(rptname, 
+preview, setup)</font></p>
+    </td>
+    <td align="left">
+<font style="font-size: 9pt">HttpCodeBase()</font></td>
+  </tr>
+  <tr>
+    <td align="left" width="117">
+<font style="font-size: 9pt">StackCount()</font></td>
+    <td align="left" width="108">
+<font style="font-size: 9pt">IsInsert(ds,recno)</font></td>
+    <td align="left" width="131"><font style="font-size: 9pt">FileSep()</font></td>
+    <td align="left" width="125">
+<p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">OpenReport(rptname,    
+preview, setup, copies)</font></p>   
+    </td>   
+    <td align="left">   
+<font style="font-size: 9pt">UncCodePath()</font></td>   
+  </tr>   
+  <tr>   
+    <td align="left" width="117">   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font style="font-size: 9pt">HashPut(key,value)</font></td>   
+    <td align="left" width="108">   
+<font style="font-size: 9pt">Seek(ds,fld,value)</font></td>   
+    <td align="left" width="131">   
+    <p style="margin-top: 1; margin-bottom: 1"><font style="font-size: 9pt">
+    FTP(host, port(21), id, pass, CMD, eorkdir, remote, local)&nbsp;</font></td>   
+    <td align="left" width="125">   
+<font style="font-size: 9pt">OpenReport(rptname, preview, setup, copies, tray)</font></td>   
+    <td align="left">   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font style="font-size: 9pt">ClientName()</font></td>   
+  </tr>   
+  <tr>   
+    <td width="117">   
+    <p style="margin-top: 0; margin-bottom: 0">   
+<font style="font-size: 9pt">HashGet(key)</font></td>   
+    <td width="108">   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font style="font-size: 9pt">Seek</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font style="font-size: 9pt">(ds,fld,value,seek_ops)</font></td>   
+    <td width="131">   
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+<p style="margin-top: 0; margin-bottom: 0"><font style="font-size: 9pt">
+Report2File(rptname, filename)</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    ClientIp()</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    HashRemove(key)</span></td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">Seek</span></p>   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(ds,fld,value,seek_ops,</span></p>   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">   
+    moveto)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+<font style="font-size: 9pt">Report2File(rptname, filename, printer)</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    ApserverName()</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    HashClear()</span></td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">Seek</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(ds,fld,value,seek_ops,</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    moveto,from)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0">
+<font size="2">Report2Pdf(rptname, filename)</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    ApserverIp()</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    HashCount()</span></td>
+    <td width="108">
+    <span style="font-size: 9pt">SeekNext(ds)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0">
+<font size="2">Report2Pdf(rptname, filename, font, encoding)</font></td>   
+    <td>   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">   
+    AddCookie</span></p>   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(name,value,</span></p>   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">   
+    comment,</span></p>   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">   
+    maxage)</span></td>   
+  </tr>   
+  <tr>   
+    <td width="117">   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">   
+    SysHashPut(key,value)</span></td>   
+    <td width="108">   
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    GetSpOutParam</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(spname.paramname)</span></td>   
+    <td width="131">   
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">PrinterExist()</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    AddCookie</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(name,value,</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    comment,maxage,</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    path)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    SysHashGet(key)</span></td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    ClearSpOutParam</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(spname.paramname)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">PrinterExist(printer)</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    GetCookie(name)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    AssignSysVar(i,x)</span></td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <span style="font-size: 9pt">
+    GetSqlErrcode(ds.op)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+<font style="font-size: 9pt">Formula(fmla)</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    GetServletResp</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(event.param)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="108">
+    <span style="font-size: 9pt">   
+    GetSqlState(ds.op)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0">
+<font style="font-size: 9pt">DoEvent(evname)</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    Beep()</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0">
+    <span style="font-size: 9pt">
+    GetSqlErrmsg(ds.op)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+<font style="font-size: 9pt">DoEvent(evname,retvalue)</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">RGB</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(red,green,blue)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="108">
+    <span style="font-size: 9pt">
+    SumField(ds,fld)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+<font style="font-size: 9pt">Evlnvoker()</font></td>  
+    <td>  
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">  
+    BarCode(x)</span></td>  
+  </tr>  
+  <tr>  
+    <td width="117">  
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    SetFieldData</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(ds,fld,value)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+<font style="font-size: 9pt">EvlnvokerAt()</font></td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    BarCode</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(x,addchecksum)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    SetFieldData</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(ds,fld,value, 
+    notifycomp)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+<font style="font-size: 9pt">EvStatus(evname)</font>　</td>  
+    <td>  
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">  
+    IdCheck(x)</span></td>  
+  </tr>  
+  <tr>  
+    <td width="117">  
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    SwapRecord</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    (ds,recno1,recno2)</span></td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    ProgressShow</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(message,value,min,</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    max,tick)</span><p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    CompanyId(x)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    SwapRecord</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    (ds,recno1,recno2,</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    moveto)</span></td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    ProgressMsg</span></p>
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">(message,value)</span></td>
+    <td>
+    <span style="font-size: 9pt">
+    ChiNum(x)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0"><span style="font-size: 9pt">
+    DbURL(dbalias)</span></td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    <span style="font-size: 9pt">
+    ProgressHide()</span></td>
+    <td>
+    <span style="font-size: 9pt">SetLang(lang, font)</span></td>
+  </tr>
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    <span style="font-size: 9pt">
+    UpdBufdsFld(bufds, field, value)</span></td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    <span style="font-size: 9pt">If x        
+    Then y Else z</span></td>
+    <td>
+    <span style="font-size: 9pt">GetTitle()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    <span style="font-size: 9pt">UpdBufdsFld(bufds, field, value, all)</span></td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    <span style="font-size: 9pt">(x)</span></td>
+    <td>
+    <span style="font-size: 9pt">FormX()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">FormY()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">FormW()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">FormH()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">IsAdmin()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">OsLang()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">IsLang(lang)</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">LastUserPrinter()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">MWHTTP()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">MWHTTP(alias)</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">SnapShot(png_file)</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">SnapShot(png_file ,frame)</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">FormDate()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">FormDir()</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    　</td>
+    <td width="108">
+    　</td>
+    <td width="131">
+    　</td>
+    <td width="125">
+    　</td>
+    <td>
+    <span style="font-size: 9pt">IsGrantOpen(form)</span></td>   
+  </tr>   
+  <tr>
+    <td width="117">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="108">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="131">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td width="125">
+    <p style="margin-top: 0; margin-bottom: 0">　</td>
+    <td>
+    <p><font size="2">IsAuthItem(item)</font></td>   
+  </tr>   
+  </table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"></p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="designwindow"></a>
+運算公式編輯視窗 (formula design window)</b></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE        
+Builde&#8482; 中提供設計師一編輯運算式的環境，設計師只要在節點上雙擊選項      
+(double clicked selected        
+item)，系統會按選項屬性，將正確的語法格式 (syntax) 插入運算式編輯方塊      
+(edit pane) 中。設計師亦可自行於運算式編輯方塊 (edit        
+pane)中輸入運算式，編輯完成後設計師可以按【語法檢查】按鈕，驗證運算公式的正確性。除非運算公式語法正確無誤，否則無法離開編輯視窗。<br>       
+　</font></p>    
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+運算式編輯視窗分為三個區域，左上角為【資料來源 &amp; 元件】列示區      
+(data source &amp;        
+components)，設計師所定義的資料來源、工作視窗上設置的元件及八個系統變數，會以樹狀結構列示。右上角為【運作 &amp; 函式】列示區      
+(operations        
+&amp; functions) ，所有運算與函式，亦會按類別以樹狀結構列示。視窗下方為【運算公式編輯】區域，設計師可以自行加入資料或函式。</font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<img border="0" src="images/ch12_design.gif" width="600" height="541"></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>          
+<ul type="square">          
+  <li>          
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">          
+<font size="2"><font color="#666699">資料來源 &amp; 元件&nbsp; (data source &amp; component)：</font>        
+列示在工作視窗畫面中所有的資料來源、資料元件及全域系統變數三大部份 。</font></p>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+　</p>            
+  <ul type="disc">            
+    <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2"><font color="#666699">資料來源 (data source)：</font>       
+列示八個資料來源狀態函式及所有欄位名稱 (record field)。</font></p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+　</p>           
+    <ul type="circle">           
+      <li>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+<font size="2"><font color="#666699"><font face="Courier New">RecordNo()</font>      
+(record number)：</font>目前資料紀錄 (record) 的編號。</font></p>           
+      </li>           
+      <li>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+<font size="2"><font color="#666699"><font face="Courier New">Eof()</font> (end of file)：</font>目前資料紀錄是否為最後一筆      
+(last)，傳回值 1 真 (true)， 0&nbsp; 偽 (false) 。</font></p>            
+      </li>            
+      <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2"><font color="#666699"><font face="Courier New">Bof()</font>      
+(begin of file)：</font>目前資料紀錄是否為首筆 (first)， 傳回值 1 真      
+(true)， 0&nbsp; 偽 (false) 。</font></p>            
+      </li>            
+      <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2" color="#666699"><font face="Courier New">IsEmpty()</font> (is empty)：</font><font size="2">資料來源沒有任何資料記錄(record)，        
+傳回值 1 真 (true)， 0&nbsp; 偽 (false) 。</font></p>            
+      </li>            
+      <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2"><font color="#666699"><font face="Courier New">InsMode()</font>      
+(insert mode)：</font>資料來源是否在新增狀態 (insert mode) ，傳回值 1 真      
+(true)， 0&nbsp; 偽 (false) 。</font></p>            
+      </li>            
+      <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2"><font color="#666699"><font face="Courier New">UpdMode()</font>      
+(update mode)：</font>資料來源是否在編輯狀態 (update mode) ， 傳回值 1 真      
+(true)， 0&nbsp; 偽 (false) 。</font></p>            
+      </li>            
+      <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2"><font color="#666699"><font face="Courier New">TotalRecord()</font>(total record)：</font>資料來源總筆數。</font></p>           
+      </li>           
+      <li>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">       
+<font face="Courier New">ReadOnly()</font> (read only)：</font>資料來源是否唯讀      
+(read only)， 傳回值 1 真 (true)， 0&nbsp; 偽 (false) 。<br>       
+　</font></p>     
+      </li>     
+    </ul>     
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">     
+<img border="0" src="images/ch12_ds_com_1.gif" width="251" height="299"></p>     
+    </li>     
+  </ul>     
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">     
+　</p>     
+  <ul type="disc">     
+    <li>     
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">元件 (components)：</font> 列示視窗中所存在的元件。</font></p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+　</p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+<img border="0" src="images/ch12_ds_com_2.gif" width="251" height="286"></p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+　</p>           
+    </li>           
+    <li>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+<font size="2"><font color="#666699">系統變數 (system variable)： </font>            
+提供8個全域變數，命名為_sysvar1～_sysvar8，可以在任何一個視窗畫面中共用。</font></p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+　</p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+<img border="0" src="images/ch12_ds_com.gif" width="247" height="251"><br>       
+　</p>           
+    </li>           
+  </ul>           
+  </li>           
+  <li>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">           
+<font size="2"><font color="#666699">運作 &amp; 函式&nbsp; (operation and      
+function)：</font> 列示出所有系統提供的運算式項目。</font></p>            
+  </li>            
+  <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2"><font color="#666699">運算式&nbsp; (formula)：</font>       
+編寫運算式的方框，運算式可以多行編輯，按&quot;ENTER&quot;進行下一列。</font></p>            
+  </li>            
+  <li>            
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+<font size="2"><font color="#666699">語法檢查&nbsp; (syntax check)：</font> 檢查編寫的運算式是否正確。</font></p>            
+  </li>            
+</ul>            
+<p style="margin-top: 1; margin-bottom: 1">　</p>           
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">       
+▲Top</font></a></p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">            
+　</p>   
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="fmladesign"></a>
+運算公式設計 (formula design)</b></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+運算公式中包括運算資料 (computed data)、運算子 (operator)、函式      
+(function) 及流程控制 (flow control)。<br>       
+jLIVE Builder&#8482; 的運算公式的語法和運作與一般的程式語言類似，運算子的優先順序，函式的呼叫使用，也相同。編寫運算公式可以多行編輯，空白及 TAB        
+鍵會被忽略。</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+運算公式範例：</font></p>         
+<ol style="font-size: 10 pt">        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    ({cash:</font><font size="2">單價</font><font size="2" face="Courier New">} * {cash:</font><font size="2">數量</font><font size="2" face="Courier New">}) / 30</font></li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    IF {ctlVIST</font><font size="2">次數</font><font size="2" face="Courier New">} &gt; 3 THEN &quot;GOOD&quot; ELSE &quot;LOW&quot;</font></li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    Condition( ({ctlVIST</font><font size="2">次數</font><font size="2" face="Courier New">} &gt; 3), &quot;GOOD&quot;, &quot;LOW&quot;)</font></li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    IF {ctlVIST</font><font size="2">次數</font><font size="2" face="Courier New">} &gt; 10 THEN &quot;EXCELLENT&quot; ELSE IF {ctlVIST</font><font size="2">次數</font><font size="2" face="Courier New">} &gt; 3 THEN &quot;GOOD&quot;        
+    ELSE &quot;LOW&quot;</font></li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    HashPut(&quot;count&quot;, HashGet(&quot;count&quot;)+1 )</font></li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    Today()</font></li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    Today()[1 to 4]</font></li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">       
+    NextDate(Today(), 0, 1, 0)</font></li>        
+</ol>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">運算資料      
+(computed data)</font>　</p> 
+<blockquote>
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">
+  {cash:</font><font size="2">數量</font><font size="2" face="Courier New">}</font><font size="2">、</font><font size="2" face="Courier New">{cash:</font><font size="2">單價</font><font size="2" face="Courier New">}      
+  </font><font size="2"> 是資料來源 </font><font size="2" face="Courier New"> cash      
+  </font><font size="2"> 的數量及單價欄位內含值。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">{ctlVIST</font><font size="2">次數</font><font size="2" face="Courier New">}      
+  </font><font size="2">       
+  是元件內含值。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">&quot;EXCELLENT&quot;</font><font size="2">、</font><font size="2" face="Courier New">&quot;GOOD&quot;</font><font size="2">、</font><font size="2" face="Courier New">&quot;LOW&quot;      
+  </font><font size="2">       
+  是字串常數 </font><font size="2" face="Courier New"> (Constant)</font><font size="2">。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">      
+  &quot;count&quot; </font><font size="2">      
+ 是 </font><font size="2" face="Courier New">      
+ Hash </font><font size="2">      
+ 中的變數名稱。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">30,        
+  3 </font><font size="2"> 是數值常數。</font></p>        
+</blockquote>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">流程控制      
+(flow control)</font>　</p> 
+<blockquote>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">
+IF-THEN-ELSE</font><font size="2">、</font><font size="2" face="Courier New">Condition()      
+</font><font size="2"> 是流程控制。</font></p>        
+</blockquote>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">運算子      
+(operator)</font>　</p> 
+<blockquote>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">* /      
+</font><font size="2">       
+是數學運算子。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">&nbsp;&gt;      
+</font><font size="2">       
+是邏輯運算子。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">[ to        
+] </font><font size="2"> 是字串運算子。</font></p>        
+</blockquote>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">函式      
+(function)</font>　</p> 
+<blockquote>
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">
+  Today()</font><font size="2">、</font><font size="2" face="Courier New">NextDate()      
+  </font><font size="2"> 是日期函式。</font></p>        
+</blockquote>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">      
+運算式編輯注意事項 ：</font></p>        
+<ol style="font-size: 10 pt">       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">      
+    字串分隔字元 (String separator)</font></p>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+    字串分隔字元 </font><font size="2" face="Courier New">
+ &quot; </font><font size="2">     
+ 或 </font><font size="2" face="Courier New">     
+ ' </font><font size="2">     
+ ，必須成對 </font><font size="2" face="Courier New">     
+    (pair) </font><font size="2">     
+ 前後一致。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">&quot;jLIVE        
+    'Builder' version 1.4&quot;&nbsp; </font><font size="2">結果值 </font><font size="2" face="Courier New"> jLIVE 'Builder' version 1.4</font></p>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">'jLIVE        
+    &quot;Builder&quot; version 1.4'&nbsp; </font><font size="2">結果值 </font><font size="2" face="Courier New"> jLIVE &quot;Builder&quot; version 1.4</font></p>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">&quot;jLIVE        
+    &quot;Builder&quot; version 1.4&quot; </font><font size="2"> 語法錯誤</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</li>       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">      
+    運算公式保留字 (reserved word)</font></p>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">{        
+    } </font><font size="2"> 元件及 </font><font size="2" face="Courier New"> { : }      
+    </font><font size="2"> 資料欄位取值符號。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">&quot;        
+    '&nbsp; </font><font size="2">字串分隔字元。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">      
+    函式名稱 </font><font size="2" face="Courier New">      
+ ()</font><font size="2">。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">+        
+    - * / % ^ </font><font size="2"> 數學運算子。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">=        
+    &lt; &gt; &lt;= &gt;= &lt;&gt; </font><font size="2"> 比較運算子。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">      
+    and or not </font><font size="2">      
+ 邏輯運算子。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">$        
+    [ to ] </font><font size="2"> 字串運算子。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">(        
+    ) </font><font size="2"> 優先程序運算子。</font></p>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">      
+    IF THEN ELSE</font><font size="2">。</font></p>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</li>        
+  <li>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    區分大小寫 (case sensitive)</font></p>        
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+    運算公式中只有函式名稱 (function name)，允許不區分大小寫      
+    (case insensitive)。</font></li>        
+</ol>        
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">       
+▲Top</font></a></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="datatype"></a>
+運算公式資料型別 (formula data type)</b></font></p>          
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+一般程式語言在運算式 (expression) 中，都會檢查資料型別，如字串型別的資料不能直接與數值型別做數學運算，必須先將字串資料轉型      
+(cast)        
+成數值資料，再行運算。jLIVE&#8482; 在運算式中所處理的運算資料(computed        
+data)，來自於使用者輸入、元件、資料來源、預儲程序的傳回、甚至是 Servlet Call        
+的傳回值，當這些資料要一起參與計算時，資料的型別將是非常複雜，甚至有些根本不能確定其型別。所以jLIVE&#8482;採用自動轉換型別      
+(smart        
+Type) 的方式，運算公式中所有資料的型別以字串 (String) 為基礎型別      
+(base type) ，直譯器 (interpreter) 會根據運算子 (operator) 自動轉換資料的型別並將資料轉為原型格式      
+(original format)，再行運算。無法轉換的資料以空字串、0        
+或預設值代替，例如：<font face="Courier New">&quot;32&quot; + 10 </font> 結果為      
+<font face="Courier New"> 42</font>；<font face="Courier New">&quot;32&quot;$ 10</font> 結果為      
+<font face="Courier New">3210</font>；<font face="Courier New">&quot;abc&quot; +      
+10</font> 結果為 <font face="Courier New"> 10</font>；<font face="Courier New">&quot;abc&quot; $ 10      
+</font> 結果為 <font face="Courier New">       
+abc10</font>。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">      
+運算公式的型別轉換，每種型別有一定的資料原型格式      
+(original format)，例如：資料元件 (設若名稱為 comp)，連結      
+(binding)        
+資料來源的一個欄位型態為 Timestamp 的欄位，並將其讀取格式樣版      
+(read format pattern) 設為 <font face="Courier New"> &quot;MM/dd/yyyy-hh:mm:ss&quot;</font>，則資料元件顯示的資料樣式為      
+<font face="Courier New">       
+12/01/2003-09:30:59</font>，以運算公式取結 <font face="Courier New">{comp}</font> 時，系統會自動將其轉換為資料原型格式      
+(original        
+format)，意即不論元件讀取格式樣版為何，其結果值為 <font face="Courier New"> 20031201093059 (yyyyMMddHHmmss)</font>。而對此元件設值時，給定的常數值，其格式也必須為資料原型格式      
+(original        
+format)&nbsp; <font face="Courier New">20031201093059 (yyyyMMddHHmmss)</font>，元件會自動將其轉換至元件內部設定的格式樣版。遵循此一資料原型格式      
+(original        
+format) 的原則，所有運算資料可以有可預期且共同的資料格式在運算公式中運作。</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>         
+<table border="1" cellspacing="1">        
+  <tr>        
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">資料型別</font></td>        
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">原型格式</font></td>        
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">資料實例</font></td>        
+  </tr>        
+  <tr>        
+    <td><font size="2">字串 (String)</font></td>        
+    <td><font size="2">&quot; 或 ' 成對所包含的字元</font></td>        
+    <td><font size="2">&quot;10&quot; 、&quot;abc&quot;、&quot;應用程式&quot;、 &quot;jLIVE&quot;、 'ABC'</font></td>        
+  </tr>        
+  <tr>        
+    <td><font size="2">數值 (numeric)</font></td>        
+    <td><font size="2">數字</font></td>        
+    <td><font size="2">10、120、99.99</font></td>        
+  </tr>        
+  <tr>        
+    <td><font size="2">邏輯 (Bool)</font></td>        
+    <td><font size="2">空字串 或 0 或 &quot;0&quot; 為偽 (false)</font></td>        
+    <td><font size="2">&quot;&quot;、0、1、&quot;0&quot;、&quot;1&quot;、&quot;abc&quot;</font></td>        
+  </tr>        
+  <tr>        
+    <td><font size="2">日期 (Date)</font></td>        
+    <td><font size="2">yyyyMMdd</font></td>        
+    <td><font size="2">&quot;20030501&quot;</font></td>        
+  </tr>        
+  <tr>        
+    <td><font size="2">時間 (Time)</font></td>        
+    <td><font size="2">HHmmss</font></td>        
+    <td><font size="2">&quot;145058&quot;</font></td>        
+  </tr>        
+  <tr>        
+    <td><font size="2">日期時間 (Timestamp)</font></td>        
+    <td><font size="2">yyyyMMddHHmmss</font></td>        
+    <td><font size="2">&quot;20030501145058&quot;</font></td>        
+  </tr>        
+</table>        
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="computedata"></a>
+運算資料的取值 (retrieval computed data)</b></font></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+參與運算的資料來自於以下的來源，每個來源有其取值的語法格式      
+(syntax)，設計師可以雙擊 (double clicked)        
+運算式編輯視窗的節點，系統會將正確的格式填入。運算資料取值時，會根據來源的型別，自動轉換為原型格式，再進行運算。</font></p>         
+<ul>        
+  <li>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">常數資料      
+    (constant)&nbsp;</font></p>       
+    <p style="margin-top: 1; margin-bottom: 1">　</p> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">
+    由字串分隔字元所包含的字串資料、數值資料。日期時間資料(以原型格式給值)。</font></p> 
+    <p style="margin-top: 1; margin-bottom: 1">　</p> 
+  </li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">
+    使用者輸入或內含於元件的資料(user input or component data)</font></p>         
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font face="Courier New">{</font>元件名稱<font face="Courier New">}</font>、<font face="Courier New">GetProp(&quot;</font>元件名稱<font face="Courier New">&quot;, 
+    </font>  
+    屬性<font face="Courier New">)</font>。</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1">　</p>  
+    <p style="margin-top: 1; margin-bottom: 1">　</li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">系統參數與變數      
+    (system        
+    parameter and variable)</font></p>         
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">
+    <font face="Courier New">
+    _sysvar1</font>、<font face="Courier New">HashGet(&quot;</font>變數名稱<font face="Courier New">&quot;)</font>、<font face="Courier New">SysHashGet(&quot;</font>變數名稱<font face="Courier New">&quot;)</font>、<font face="Courier New">LocalHashGet(&quot;</font>變數名稱<font face="Courier New">&quot;)</font>。參閱         
+    <a href="#param">變數 (variable)</a>。</font></p>       
+    <p style="margin-top: 1; margin-bottom: 1">　</p>       
+    <p style="margin-top: 1; margin-bottom: 1">　</li>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料來源目前狀態與資料記錄欄位值      
+    (current data source state and record field data)</font></p>         
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font face="Courier New">{</font>資料來源名稱<font face="Courier New">:TotalRecord()}</font>、<font face="Courier New">{</font>資料來源名稱<font face="Courier New">:</font>欄位名稱<font face="Courier New">}</font>、<font face="Courier New">RecordData(&quot;</font>資料來源名稱<font face="Courier New">&quot;,&quot;</font>欄位名稱<font face="Courier New">&quot;,</font>資料記錄編號<font face="Courier New">)</font>。</font></p>
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1">　</li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">下載的檔案資料      
+    (down load        
+    file)</font></p>         
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font face="Courier New">Load(&quot;</font>檔案路徑名稱<font face="Courier New">&quot;)</font>。</font></p>
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1">　</li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料庫預儲程序回傳資料      
+    (stored procedure return data)</font></p>         
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">GetSpOutParam(&quot;</font><font size="2">預儲程序名稱</font><font size="2" face="Courier New">.</font><font size="2">變數名稱</font><font size="2" face="Courier New">&quot;)</font><font size="2">。</font></p>
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1">　</li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">Servlet Call 的回傳資料        
+    (Servlet call return data)</font></p>         
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">GetServletResp(&quot;</font><font size="2">事件名稱</font><font size="2" face="Courier New">.</font><font size="2">參數名稱</font><font size="2" face="Courier New">&quot;)</font><font size="2">。</font></p>
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1">　</li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">Cookie</font></p>
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" face="Courier New">GetCookie(&quot;Cookie</font><font size="2">名稱</font><font size="2" face="Courier New">&quot;)</font><font size="2">。</font>
+    <p style="margin-top: 1; margin-bottom: 1">　</li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">運算函式傳回值      
+    (function        
+    return data)</font></li>       
+</ul>       
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p> 
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="variable"></a>
+變數 (variable)</b></font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+運算公式中與一般的程式語言不同，運算公式是程式語言中的      
+Expression，加上 IF-THEN-ELSE 。在 Expression 中無法宣告變數      
+(declare variable)，運算公式是以存取 <font face="Courier New"> Hashtable</font>      
+的鍵 (key) 與值(value) 的方式，宣告 (declare)、        
+取用 (get) 、存入 (put) 變數。其中鍵 (key) 為變數名稱，值(value)        
+為變數內含值，第一次存入時即含宣告此變數及初始值，取用不存在的變數名稱，運算式傳回空字串。<br>       
+　</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">變數的      
+<font face="Courier New">       
+Hashtable</font> 分為三類：</font></p>         
+<blockquote>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+<font face="Courier New">      
+Hash</font>：全域的變數存放區，所有視窗模組皆可參用。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">      
+<font face="Courier New">      
+SysHash</font>：系統的變數存放區，所有視窗模組皆可參用。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">      
+<font face="Courier New">      
+LocalHash</font>：區域性變數存放區，僅限該視窗模組參用，視窗關閉後即消失。</font></p>        
+</blockquote>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">變數的      
+<font face="Courier New">       
+Hashtable</font> 操作方式：</font></p>         
+<blockquote>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font face="Courier New" size="2" color="#666699">      
+HashGet(&quot;</font><font size="2" color="#666699">變數名稱</font><font face="Courier New" size="2" color="#666699">&quot;)</font><font size="2">：傳回變數內含值，變數不存在傳回空字串。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699" face="Courier New">      
+HashPut(&quot;</font><font size="2" color="#666699">變數名稱</font><font size="2" color="#666699" face="Courier New">&quot;,      
+</font><font size="2" color="#666699"> 存入值</font><font size="2" color="#666699" face="Courier New">)</font><font size="2">：存入變數及內含值，傳回存入值。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699" face="Courier New">      
+HashRemove(&quot;</font><font size="2" color="#666699">變數名稱</font><font size="2" color="#666699" face="Courier New">&quot;)</font><font size="2">：移除變數，並傳回其內含值。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699" face="Courier New">      
+HashCount()</font><font size="2">：傳回變數存放區的存放總數。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699" face="Courier New">      
+  HashClear()</font><font size="2">：移除變數存放區的所有變數，並傳回 1。</font></p>         
+</blockquote>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+運算公式另外配置八個系統參數 <font face="Courier New"> _sysvar1</font> 至</font>      
+<font size="2"><font face="Courier New">_sysvar8</font>，取用方式：</font></p>        
+<blockquote>       
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699" face="Courier New" size="2">      
+  {_sysvar1}</font>：傳回<font face="Courier New">_sysvar1</font>的內含值。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699" face="Courier New" size="2">      
+  AssignSysvar(</font><font color="#666699" size="2">編號</font><font color="#666699" face="Courier New" size="2">,      
+  </font><font color="#666699" size="2"> 存入值</font><font color="#666699" face="Courier New" size="2">)</font>：存入系統參數      
+  <font face="Courier New"> _sysvar</font> 編號 ( 1- 8)，存入值，並傳回存入值。</font></p>         
+</blockquote>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+運算公式中的 <font face="Courier New"> Stack</font> 是存放不具有變數名稱，而以先進後出的次序存取的資料值，通常使用於視窗模組間的參數傳遞，其操作方式：</font></p>         
+<blockquote>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699" size="2" face="Courier New">       
+  StackPop()</font>：傳回 <font face="Courier New"> Stack</font> 最後存入值。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699" face="Courier New" size="2">      
+  StackPush(</font><font color="#666699" size="2">存入值</font><font color="#666699" face="Courier New" size="2">)</font>：存入      
+  <font face="Courier New"> Stack</font> 存入值，並傳回此存入值。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699" size="2" face="Courier New">      
+  StackCount()</font>：傳回存放總數。</font></p>        
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699" size="2" face="Courier New">      
+  StackClear()</font>：移除 <font face="Courier New"> Stack</font> 所有存入值，並傳回 1。</font></p>         
+</blockquote>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>         
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">       
+▲Top</font></a></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="operator"></a>
+運算子 (operator)</b></font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+運算公式所提供的運算子，除了字串運算以外，其他用法和一般程式語言大致相同，運算結合性由左而右。</font></p>  
+<ul>
+  <li>
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+    優先運算 <font face="Courier New"> ( )</font></font></li>       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+    字串運算 <font face="Courier New"> $ [ ]</font></font></li>       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+    數值運算 <font face="Courier New"> + - * / % ^</font></font></li>       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+    比較運算 <font face="Courier New"> =&nbsp; &lt;&gt; &lt;= &gt;= &lt;&gt;</font></font></li>       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+    邏輯運算 <font face="Courier New"> And Or Not</font></font></li>       
+</ul>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+　運算子運算順序 (由高至低)</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<blockquote>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">( )&nbsp;</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">[ ]</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">-</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">^</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">* / %</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">+ - $</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">= &lt; &gt;        
+&lt;= &gt;= &lt;&gt;</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">Not&nbsp;</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">And        
+Or</font></p>         
+</blockquote>       
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">       
+▲Top</font></a></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="param"></a>
+函式的參數 (parameters of function)</b></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+運算式的函式語法是由函式名稱加括號及參數所構成。每個函式中的參數，皆可以為另一 運算公式。</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+函式的參數注意事項</font></p>  
+<ul>
+  <li>
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+    函式的參數如果是另一運算公式，該運算公式不可含 <font face="Courier New"> IF-THEN-ELSE</font>，但允許用      
+    <font face="Courier New">Condition()</font>。</font></li>      
+  <li>      
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">      
+    <font face="Courier New">      
+    Formula(x)</font> 的參數可以是含有 <font face="Courier New"> IF-THEN-ELSE      
+    </font> 的運算公式。</font></li>      
+  <li>      
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">      
+    <font face="Courier New">      
+    IF x THEN y ELSE z</font> 的流程控制，其中 <font face="Courier New"> x</font>、<font face="Courier New">y</font>、<font face="Courier New">z</font> 可以是另一個      
+    <font face="Courier New"> IF-THEN-ELSE</font> 的運算公式。</font></li>       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">       
+    參數以常數給值時，須以原型格式。</font></li>       
+  <li>       
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">       
+    <font face="Courier New">      
+    Condition(cond, true, false)</font>，<font face="Courier New">cond </font> 參數須加上優先運算的      
+    <font face="Courier New"> ( )</font> 。</font></li>       
+</ul>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">範例：</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">IF        
+NextDate({name:</font><font size="2">生日</font><font size="2" face="Courier New">},20,0,0)&gt;= Today()THEN &quot;</font><font size="2">滿</font><font size="2" face="Courier New">20</font><font size="2">歲</font><font size="2" face="Courier New">&quot; ELSE      
+&quot;</font><font size="2">未滿</font><font size="2" face="Courier New">20</font><font size="2">歲</font><font size="2" face="Courier New">&quot;</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">
+NextDate </font><font size="2">     
+ 的第一個參數以 </font><font size="2" face="Courier New">     
+ {name:</font><font size="2">生日</font><font size="2" face="Courier New">} </font><font size="2"> 資料欄位給值。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">範例：(上一個範例另一種做法)</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">
+Condition((NextDate({name:</font><font size="2">生日</font><font size="2" face="Courier New">},20,0,0)&gt;=      
+Today()),&quot;</font><font size="2">滿</font><font size="2" face="Courier New">20</font><font size="2">歲</font><font size="2" face="Courier New">&quot;,&quot;</font><font size="2">未滿</font><font size="2" face="Courier New">20</font><font size="2">歲</font><font size="2" face="Courier New">&quot;)</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">範例：</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">
+Date(Year(Today()), Month(Today()), 15)</font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">函式 
+</font><font size="2" face="Courier New">  
+Year()</font><font size="2">，</font><font size="2" face="Courier New">Month() </font><font size="2"> 中包含另一函式      
+</font><font size="2" face="Courier New"> Today()</font><font size="2">。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">函式      
+</font><font size="2" face="Courier New">       
+Date() </font><font size="2"> 包含 </font><font size="2" face="Courier New"> Year()</font><font size="2">，</font><font size="2" face="Courier New">Month()      
+</font><font size="2"> 函式。</font></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">      
+▲Top</font></a></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="returntype"></a>
+運算公式結果值 (formula result data)</b></font></p>         
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+運算公式可以運用於操作運算程序以及計算結果值 ( result set )，運算公式的結果值通常使用於給值(assign value) 或作為邏輯真偽的條件判斷      
+(condition) 。將運算公式的結果值，設定為元件內含值、資料欄位值、其他函式參數值時，須注意結果值的型別與設值標的      
+(target) 是否相容，jLIVE&#8482; 對於元件內含值、資料欄位值、函式參數值，皆以一致的原型格式存取。當結果值作為邏輯真偽的條件判斷      
+(condition) 時，系統將依非 0&nbsp;且 非空字串為真的原則，分支真偽的流程。</font></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">       
+▲Top</font></a></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="ifthenelse"></a>
+IF-THEN-ELSE 流程控制 (IF-THEN-ELSE flow control)</b></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">      
+在運算公式中使用 IF-THEN-ELSE 的流程控制，<font face="Courier New">IF x THEN y ELSE&nbsp;z</font> 必須是運算公式的第一個運算式， 當      
+<font face="Courier New"> x</font>        
+運算結果為真時，執行 <font face="Courier New"> y</font> 且傳回 <font face="Courier New"> y      
+</font> 的結果值，否則執行 <font face="Courier New"> z</font> 且傳回      
+<font face="Courier New"> z </font> 的結果值。THEN 和 ELSE 必須同時存在，不可省略其中之一。<font face="Courier New">IF x THEN        
+y ELSE&nbsp;z </font> 的流程控制可以是巢狀 (nest)，在 THEN 及 ELSE 後的      
+<font face="Courier New"> y</font> 和 <font face="Courier New"> z</font> 運算公式，可以是另一個流程控制的<font face="Courier New">IF x        
+THEN y ELSE&nbsp;z</font> 。IF-THEN-ELSE 的流程控制與 <font face="Courier New"> Condition((x), y, z)</font> 的作用是完全一樣的，<font face="Courier New">Condition((x),        
+y, z)</font>所耗的資源較少，IF-THEN-ELSE 在第二次執行時，效率較高，通常當      
+<font face="Courier New"> x</font>、<font face="Courier New">y</font>、<font face="Courier New">z</font>&nbsp; 是比較複雜的運算式時，選用        
+IF-THEN-ELSE 較為明瞭，否則以 <font face="Courier New"> Condition((x), y, z)</font> 較佳。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">範例：</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">IF {student:score}        
+&lt; 60 THEN &quot;60 </font><font size="2"> 以下</font><font size="2" face="Courier New">&quot; ELSE &quot;60      
+</font><font size="2"> 以上</font><font size="2" face="Courier New">&quot;</font></p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">範例：</font></p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">IF {student:score}        
+&lt; 60 </font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">THEN        
+&quot;60 </font><font size="2"> 以下</font><font size="2" face="Courier New">&quot;&nbsp;</font></p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">ELSE&nbsp;        
+IF {student:score &lt; 100} </font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+THEN &quot;60 </font><font size="2"> 以上</font><font size="2" face="Courier New">100 </font><font size="2"> 以下</font><font size="2" face="Courier New">&quot; </font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2" face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+ELSE &quot;100 </font><font size="2"> 以上</font><font size="2" face="Courier New">&quot;</font></p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>       
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">      
+▲Top</font></a></p>       
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">        
+　</p>        
+<hr align=left color="#000000">        
+<table width="600" border=0 cellspacing=1>        
+<tr>        
+<td width=197 align=left valign=top>        
+<a href="ch11_05_09.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=191 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=202 align=right valign=top>        
+<a href="ch12_01.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc. . All Rights Reserved.        
+</font></p>        
+        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>        
+        
+      </td>       
+    </tr>       
+  </table>       
+  </center>       
+</div>       
+           
+</body>           
+           
+</html>

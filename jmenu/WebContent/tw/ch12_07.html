@@ -1,0 +1,432 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_06.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=198 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=202 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_08.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="top"></a><font size="4">
+12.7 元件 (component)</font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#GetData(compname)"><font size="2">GetData(compname)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#SetData(compname,value)"><font size="2">SetData(compname,value)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#GetGridData(gridname,row,col)"><font size="2">GetGridData(gridname,row,col)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#GetProp(compname,property)"><font size="2">GetProp(compname,property)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#SetProp(compname,property,value)"><font size="2">SetProp(compname,property,value)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#SetProp(compname,property,value1,value2)"><font size="2">SetProp(compname,property,value1,value2)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Grid2File(gridname, filename)">Grid2File(gridname, filename)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Grid2File(gridname, filename, bmasktext)">Grid2File(gridname, 
+filename, bmasktext)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Grid2File(gridname, filename, bmasktext, bheader)">Grid2File(gridname, 
+filename, bmasktext, bheader)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Grid2File(gridname, filename, bmasktext, bheader, sep1)">
+Grid2File(gridname, filename, bmasktext, bheader, sep1)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Grid2File(gridname, filename, bmasktext, bheader, sep1, sep2)">
+Grid2File(gridname, filename, bmasktext, bheader, sep1, sep2)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Focus(compname)">Focus(compname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Revalidate()">Revalidate()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Revalidate(globe)">Revalidate(globe)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch12_07_components.gif" width="448" height="304"></p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetData(compname)">GetData(compname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">取得元件的內含值。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">元件名稱，需用引號括起來。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">
+    元件的內含值。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">GetData(&quot;Subtotal&quot;)，傳回元件 &quot;Subtotal&quot; 的內含值。</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SetData(compname,value)">SetData(compname,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+將值填入元件中。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;compname&quot; 為元件名稱，需用引號括起來，&quot;value&quot; 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">  
+    &quot;value&quot;。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">將{SQL_Subtot:Subtotal}   
+(小計) 填入元件 {Subtotal}中，傳回 {SQL_Subtot:Subtotal} 的內含值。<br>
+<br>
+SetData(&quot;Subtotal&quot;,{SQL_Subtot:Subtotal})<br>
+　</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetGridData(gridname,row,col)">GetGridData(gridname,row,col)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得資料表元件(gridname)&nbsp; 中，列數為 &quot;row&quot; ，欄數為 &quot;col&quot; 的&nbsp; cell 的內含值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;gridname&quot; 為資料表元件名稱，需用引號括起來， &quot;row&quot; 為列數，&quot;col&quot; 為欄數，&quot;row&quot; 與 &quot;col&quot;   
+    均可為常數值或運算式。row 和 col 皆由 1 起算。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="16"></td> 
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    傳回值：</font></td> 
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+    <font size="2"> 
+    cell 的內含值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">傳回 &quot;orders&quot;   
+資料表元件中，現在停留的記錄({Orders:RecordNo()})，第5個欄位的內含值。<br>
+<br>
+GetGridData(&quot;orders&quot;,{Orders:RecordNo()},5)<br>
+　</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetProp(compname,property)">GetProp(compname,property)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;&nbsp; 參考 </font> <a href="get_set_prop.html">  
+<font size="2">Intact Reference</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SetProp(compname,property,value)">SetProp(compname,property,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;&nbsp; 參考 </font> <a href="get_set_prop.html">  
+<font size="2">Intact Reference</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SetProp(compname,property,value1,value2)">SetProp(compname,property,value1,value2)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+&nbsp;<font size="2">&nbsp; 參考 </font> <a href="get_set_prop.html">  
+<font size="2">Intact Reference</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Grid2File(gridname, filename)">Grid2File(gridname, filename)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Grid2File(gridname, filename, bmasktext)">Grid2File(gridname, filename, 
+bmasktext)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Grid2File(gridname, filename, bmasktext, bheader)">Grid2File(gridname, 
+filename, bmasktext, bheader)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Grid2File(gridname, filename, bmasktext, bheader, sep1)">
+Grid2File(gridname, filename, bmasktext, bheader, sep1)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Grid2File(gridname, filename, bmasktext, bheader, sep1, sep2)">
+Grid2File(gridname, filename, bmasktext, bheader, sep1, sep2)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+將資料表元件 (grid component) 的內含值輸出至文字檔。未輸入參數為預設值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">gridname：資料表元件名稱。<br>
+    fielname：輸出路徑檔案名稱。<br>
+    bmasktext：0&nbsp; -- 原資料表內含值；1 -- 格式化或下拉式選單 Lookup 顯示值。預設值為 1。<br>
+    bheader：0 -- 不輸出資料表頭文字；1 -- 輸出資料表頭文字。預設值為 1。<br>
+    sep1：輸出文字檔欄 (column) 分隔字元 (串)；預設值為 char(9)。<br>
+    sep2：輸出文字檔列 (row) 分隔字元 (串)；預設值為 char(13)$char(10)。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="16"></td> 
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    傳回值：</font></td> 
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+    <font size="2">空字串或 0 ：失敗。<br>
+    1：成功。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">將資料表 order_grid 內容輸出至文字檔 c:\order.txt，以原資料內容含表頭文字，以char(9) 
+分隔欄位，每筆記錄以 char(13) 加 char(10) 分隔。輸出的文字檔可以以 Excel 開啟。<br>
+<br>
+Grid2File(&quot;order_grid&quot;, &quot;c:\order.txt&quot;, 0, 1, Char(9), Char(13)$Char(10))。<br>
+　</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Focus(compname)">Focus(compname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+將 Focus 移至 compname 的元件，與 <font color="#003366">設定元件 Focus 事件 </font>相同，但 
+compname 可以動態設定。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;compname&quot; 為元件名稱，需用引號括起來。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">  
+    &quot;1&quot;。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">將 Focus 移至 元件名稱為 user_name 的元件 。<br>
+<br>
+Focus(&quot;user_name&quot;)<br>
+　</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Revalidate()">Revalidate()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="4"><b>
+<a name="Revalidate(globe)">Revalidate(globe)</a></b></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+視窗中所有使用運算式的編輯元件重新計算更新，正常狀態下，使用運算式的編輯元件，只有在相關資料庫操作或編輯元件值變時，才會重新計算更新。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">globe<br>
+    0：只作用於運算式所在的視窗。<br>
+    1：作用於所有目前開啟的視窗。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">  
+    &quot;1&quot;。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">視窗中所有使用運算式的編輯元件重新計算更新。<br>
+<br>
+Revalidate()<br>
+　</font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_06.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=189 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=211 align=right valign=top>
+<a href="ch12_08.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

@@ -1,0 +1,1607 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>String</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=189 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=211 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_05.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+12.4 字串 (string)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#x $ y">x $ y</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#x[y]">x[y]</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#x[y to z]">x[y to    
+z]</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#LTrim(x)">LTrim(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#RTrim(x)">RTrim(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#LRTrim(x)">LRTrim(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#TrimAll(x)">TrimAll(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Find(x,y)">Find(x,y)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Find(x,y,pos)">Find(x,y,pos)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#FindLast(x,y)">FindLast(x,y)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#FindLast(x,y,pos)">FindLast(x,y,pos)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Length(x)">Length(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Length2(x)">Length2(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Replace(x,y,z)">Replace(x,y,z)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Upper(x)">Upper(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Lower(x)">Lower(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#Char(ascii)">Char(ascii)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#ASCII(char)">ASCII(char)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><a href="#utf2str(utf)">UTF2Str(utf)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><a href="#str2utf(str)">Str2UTF(str)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><a href="#Token(str, sep, nth)">Token(str, sep, nth)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><a href="#TokenCount(str, sep)">TokenCount(str, sep)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><a href="#SepCount(str, sep)">SepCount(str, sep)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<font size="2">字串的運算式，處理字串資料的各種運算式。運算時直譯器  
+(interpreter)，會將字串運算的參數，轉型 (cast)   
+成字串型別，再行運算。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">  
+　</p>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch12_04_string.gif" width="339" height="430"></p>  
+</blockquote>  
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">  
+<a name="x $ y">x $ y</a></font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table cellspacing="0" style="border-collapse: collapse; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">x 字串加上 y 字串。&quot;$&quot; 兩邊都必需有值，不得空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">   
+    相加後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="210" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2"> <span style="font-family: Times New Roman">   
+    假設系統日期為 &quot;2000/11/10&quot;</span><br>   
+&quot;ABC&quot; $ &quot;DEF&quot;<br>   
+&quot; AB&quot; $ &quot;DE&quot;<br>   
+&quot;ABC &quot; $ 123<br>   
+&quot; ABC &quot; $123<br>   
+&quot;ABC&quot; $ -123<br>   
+&quot; -123 &quot; $ Today()</font></p>   
+    </td>   
+    <td width="35" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 傳回<span style="font-family: 新細明體"> </span></font> 
+    </p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回<span style="font-family: 新細明體"> </span>
+</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 傳回<span style="font-family: 新細明體"> </span></font> 
+    </p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 傳回<span style="font-family: 新細明體"> </span></font> 
+    </p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 傳回<span style="font-family: 新細明體"> </span></font> 
+    </p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 傳回<span style="font-family: 新細明體"> </span></font> 
+    </td> 
+    <td width="112" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1"> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABCDEF&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABDE&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABC123&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot; ABC 123&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABC-123&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot; -123 20001110&quot;</font></td> 
+    <td width="160" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="x[y]">x[y]</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table cellspacing="0" style="border-right:1px solid #C0C0C0; border-collapse: collapse; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" bordercolor="#111111" width="600" height="298" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="56" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="521" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">計算 x 中第 y 個字元的值。不論 x 為中文、英文或數字，計算位數時皆視為一碼。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="19"></td>   
+    <td width="56" align="right" height="20" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="521" height="20" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="19"></td>   
+    <td width="56" align="right" height="20" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="521" height="20" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">x 中第 y 個字元的值。y 值有誤時 (&lt;= 0 或 &gt; x   
+長度) ，傳回空字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="47">　</td>  
+    <td width="56" align="right" height="245" style="border: 1px solid #C0C0C0" valign="top" rowspan="8"><font size="2">  
+    範例：</font></td>  
+    <td width="520" height="48" align="left" valign="top" colspan="4">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2"> <span style="font-family: Times New Roman">  
+    假設系統日期為 &quot;2000/11/10&quot;<br>   
+    　</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 y 值等於或小於 x 的長度時：</font></p>  
+    </td>   
+  </tr>   
+  <tr>  
+    <td width="20" height="197" rowspan="7"></td>  
+    <td width="127" height="109" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">   
+<br>   
+&nbsp;&nbsp; &quot;ABC&quot; [ 1 ]<br>   
+&nbsp;&nbsp; Today() [ 6 ]<br>   
+&nbsp;&nbsp; 123 [ 2 ]<br>   
+&nbsp;&nbsp; -123 [ 1 ]<br>   
+&nbsp;&nbsp; 0.142 [ 2 ]<br>   
+&nbsp;&nbsp; -0.142 [ 4 ]<br>   
+&nbsp;&nbsp; &quot;中華民國&quot; [ 3 ]</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>
+    </td> 
+    <td width="45" height="109" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></td> 
+    <td width="54" height="109" align="right" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&quot;A&quot; </font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">1</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">2</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&quot;–&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&quot;.&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">1</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&quot;民&quot;</font></td> 
+    <td width="292" height="109" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+  <tr>
+    <td width="520" height="1" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" colspan="4">
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 x 等於空字串時，結果為空字串。</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+    </td>   
+  </tr>  
+  <tr>  
+    <td width="127" height="25" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&nbsp; &quot;&quot; [ 1 ]<br>   
+　</font></p>
+    </td> 
+    <td width="45" height="25" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></td> 
+    <td width="54" height="25" align="right" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&quot;&quot;</font></td> 
+    <td width="292" height="25" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+　</td> 
+  </tr>
+  <tr>
+    <td width="518" height="25" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" colspan="4">
+<font size="2">* 當 y 值大於 x 的長度時，結果為空字串。</font></td>   
+  </tr>  
+  <tr>  
+    <td width="127" height="31" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&nbsp; &quot;ABC&quot; [ 4 ]<br>   
+&nbsp;&nbsp; Today() [ 9 ]<br>   
+　</font></p>
+    </td> 
+    <td width="45" height="31" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">傳回</font></td> 
+    <td width="54" height="31" align="right" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&quot;&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&quot;&quot;</font></td> 
+    <td width="292" height="31" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
+　</td> 
+  </tr>
+  <tr>
+    <td width="518" height="30" align="left" valign="top" style="padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" colspan="4">
+<font size="2">* 當 y 值小於1時，結果為空字串。</font></td>   
+  </tr>  
+  <tr>  
+    <td width="127" height="47" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<font size="2">&nbsp;&quot;ABC&quot; [0 ]<br>   
+&nbsp;&nbsp; Today() [ -4 ]<br>   
+&nbsp;&nbsp; 782 [ -1 ]</font></td>   
+    <td width="45" height="47" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></td>   
+    <td width="54" height="47" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;&quot;</font></td>   
+    <td width="292" height="47" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+　</td> 
+  </tr>
+</table> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="x[y to z]">x[y to z]</a></font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="27" height="16"></td>
+    <td width="59" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">計算 x 中第 y 到第 z 個字元的字串。不論 x 為中文、英文或數字，計算位數時皆視為一碼。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="27" height="16"></td>   
+    <td width="59" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;、&quot;z&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="27" height="16"></td>   
+    <td width="59" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="27" height="16" rowspan="12"></td>   
+    <td width="59" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top" rowspan="12"><font size="2">   
+    範例：</font></td>   
+    <td width="511" align="left" valign="top" style="border-right:1px solid #C0C0C0; " colspan="4">   
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2"> <span style="font-family: Times New Roman">   
+    假設系統日期為 &quot;2000/11/10&quot;<br>   
+    　</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 y &lt;= z &lt;= x 的長度時：<br>   
+　</font></p>
+    </td> 
+  </tr> 
+  <tr> 
+    <td width="124" align="left" valign="top"> 
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&nbsp;&quot;ABC&quot; [ 1 to 2 ]<br>   
+&nbsp;&nbsp; Today() [ 5 to 6 ]<br>   
+&nbsp;&nbsp; 123 [ 2&nbsp; to 3]<br>   
+&nbsp;&nbsp; -123 [ 1 to 3]<br>   
+&nbsp;&nbsp; 0.142 [ 1 to 3 ]<br>   
+&nbsp;&nbsp; &quot;中華民國&quot; [ 2 to 3 ]</font></td>   
+    <td width="34" align="left" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></td>   
+    <td width="95" align="right" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;AB&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;11&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;23&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;-12&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;0.1&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;華民&quot;</font></td>   
+    <td width="255" align="left" valign="top" style="border-right:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+  <tr>
+    <td width="511" align="left" valign="top" style="border-right:1px solid #C0C0C0; " colspan="4"> 
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 x 等於空字串時，結果為空字串。<br>   
+　</font></p>
+    </td> 
+  </tr>
+  <tr>
+    <td width="124" align="left" valign="top"> 
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">&nbsp; &quot;&quot; [ 1 to 2 ]</font></p>  
+    </td>   
+    <td width="34" align="left" valign="top">   
+<font size="2">傳回 </font>   
+    </td>   
+    <td width="95" align="right" valign="top">   
+<font size="2">&quot;&quot; </font>   
+    </td>   
+    <td width="255" align="left" valign="top" style="border-right:1px solid #C0C0C0; ">   
+　</td> 
+  </tr>
+  <tr>
+    <td width="511" align="left" valign="top" style="border-right:1px solid #C0C0C0; " colspan="4"> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 y 值大於 x 的長度時，結果為空字串。</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</td>   
+  </tr>  
+  <tr>  
+    <td width="124" align="left" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&nbsp; &quot;ABC&quot; [ 4 to 6 ]<br>   
+&nbsp;&nbsp; Today() [ 9&nbsp; to 11]</font></p>  
+    </td>   
+    <td width="34" align="left" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></td>   
+    <td width="95" align="right" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;&quot;</font></td>   
+    <td width="255" align="left" valign="top" style="border-right:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr>
+  <tr>
+    <td width="511" align="left" valign="top" style="border-right:1px solid #C0C0C0; " colspan="4"> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 y 值大於 z&nbsp; 值時，結果為空字串。</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</td>   
+  </tr>  
+  <tr>  
+    <td width="124" align="left" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&nbsp; &quot;ABC&quot; [ 6 to 3 ]<br>   
+&nbsp;&nbsp; Today() [ 5&nbsp; to 1]</font></p>   
+    </td>   
+    <td width="34" align="left" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></td>   
+    <td width="95" align="right" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;&quot;</font></td>   
+    <td width="255" align="left" valign="top" style="border-right:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr>
+  <tr>
+    <td width="511" align="left" valign="top" style="border-right:1px solid #C0C0C0; " colspan="4"> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 y 值小於1時，自動調整為1。</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</td>   
+  </tr>  
+  <tr>  
+    <td width="124" align="left" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&nbsp; &quot;ABC&quot; [-2 to 5 ]<br>   
+&nbsp;&nbsp; Today() [ -4 to 4]</font></p>   
+    </td>   
+    <td width="34" align="left" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">傳回</font></td>   
+    <td width="95" align="right" valign="top">   
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;ABC&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">&quot;2000&quot; </font>   
+    </td>   
+    <td width="255" align="left" valign="top" style="border-right:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr>
+  <tr>
+    <td width="511" align="left" valign="top" style="border-right:1px solid #C0C0C0; " colspan="4"> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">* 當 z 值大於 x 的長度時，自動調整為 x 的長度值 。</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</td>   
+  </tr>  
+  <tr>  
+    <td width="124" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">&nbsp; &quot;ABCDEF&quot; [ 4 TO 9 ]<br>   
+&nbsp;&nbsp; Today() [ 3 to 10]</font></td>   
+    <td width="34" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">傳回</font></td>   
+    <td width="95" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">&quot;DEF&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">&quot;001110&quot;</font></td>   
+    <td width="255" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr>
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LTrim(x)">LTrim(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去左邊空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">去左空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">LTrim(&quot; ABC&nbsp;&nbsp; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;ABC&nbsp;&nbsp;    
+&quot;&nbsp; <br>   
+LTrim(&quot;A&nbsp; BC&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;A&nbsp;&nbsp; BC&quot;。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="RTrim(x)">RTrim(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去右邊空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">去右空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">RTrim(&quot;&nbsp;&nbsp; ABC&nbsp;&nbsp; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">  
+&nbsp;&quot;&nbsp;&nbsp; ABC&quot;</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LRTrim(x)">LRTrim(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去左右空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">去左右空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">LRTrim(&quot;&nbsp;&nbsp; ABC&nbsp;&nbsp; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span>  
+<span style="font-family: Times New Roman">&nbsp; </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2">&nbsp;&quot;ABC&quot;&nbsp; </font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="TrimAll(x)">TrimAll(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去所有空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">去所有空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">LRTrim(&quot;&nbsp;&nbsp; A&nbsp; B&nbsp; C&nbsp;&nbsp; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;ABC&quot;&nbsp; </font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Find(x,y)">Find(x,y)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="56" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">在 x 中找尋字串 y。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+    <font size="2">數值。y 字串位於 x 中第幾個字元，傳回 0 表示找不到。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="56" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="181" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">Find(&quot;ABCDEF&quot; ,   
+&quot;D&quot;)<br>   
+Find(&quot;ABCDEF&quot; , &quot;BC&quot;)<br>   
+Find(&quot;ABCDEF&quot; , &quot;BD&quot;)<br>   
+Find(&quot; ABCDEF&quot; , &quot;D&quot;)<br>   
+Find(-123 , -1)<br>   
+Find(-123 , 1)<br>   
+Find(0.02 ,&quot;.&quot; )<br>   
+Find( Date(2000 ,11 , 10 ), 11)</font></p>   
+    </td>   
+    <td width="32" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td>   
+    <td width="129" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">4</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">2</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">0</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">(A左邊有2個空格) 6</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">1</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">2</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">2</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">5</font></td>   
+    <td width="153" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-top:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&nbsp;</font></td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Find(x,y,pos)">Find(x,y,pos)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">在 x 中找尋字串 y，從 x 的第 (pos) 位找起。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;、&quot;pos&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">數值，y 字串位於 x 中第幾個字元，傳回 0 表示找不到。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">Find(&quot;abcqqqdeasssa&quot; ,&quot;a&quot; ,2 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp; </font></span><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+9 </font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="FindLast(x,y)">FindLast(x,y)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">在 x 中找尋字串 y，傳回最後一個 y 的位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">數值，最後一個 y 字串位於 x 中第幾個字元，傳回   
+    0 表示找不到。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">FindLast(&quot;abcqqqdeasssa&quot; ,&quot;a&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp; </font></span><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+13</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="FindLast(x,y,pos)">FindLast(x,y,pos)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">在 x 中找尋字串 y，從 x 的第 (pos) 位找起，傳回最後一個 y 的位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;、&quot;pos&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">數值，最後一個y 字串位於 x 中第幾個字元，傳回   
+    0 表示找不到。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">FindLast(&quot;qqaaddwwdd&quot; ,&quot;dd&quot;,    
+2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp; </font></span><font size="2">&nbsp;&nbsp;&nbsp;    
+5 <br>   
+FindLast(&quot;qqaaddwwdd&quot; ,&quot;dd&quot;, 7)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp; </font></span><font size="2">&nbsp;&nbsp;&nbsp;    
+9 </font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Length(x)">Length(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">&nbsp;x 字串長度。以unicode 計算 ，一個two byte code (如中文)之傳回值也是 1。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+    <font size="2">數值，x 字串長度。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="237" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">   
+假設系統日期<span style="font-family: 新細明體">時間為 </span>   
+<span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">2000/11/09</span><span style="font-family: 新細明體">    
+20:15:37&quot;</span><br>   
+Length(&quot;ABCDEF&quot; )<br>   
+Length(&quot; ABCDEF&quot; )<br>   
+Length(-123 )<br>   
+Length(2.548 )<br>   
+Length(-3.8517 )<br>   
+Length(&quot;中華民國&quot; )<br>   
+Length(Today() )<br>   
+Length( CurrentTime())</font></p>   
+    </td>   
+    <td width="38" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></td> 
+    <td width="116" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">6</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+&nbsp;(左邊有2個空格) 8</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">4</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">5</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">7</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">4</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">8</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">6</font></td>   
+    <td width="126" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Length2(x)">Length2(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">&nbsp;x 字串 Byte 長度，一個two byte code (如中文)之傳回值是 2。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+    <font size="2">數值，x 字串長度。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="238" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">   
+假設系統日期<span style="font-family: 新細明體">時間為 </span>   
+<span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">2000/11/09</span><span style="font-family: 新細明體">    
+20:15:37&quot;</span><br>   
+Length2(&quot;ABCDEF&quot; )<br>   
+Length2(&quot;中華民國&quot; )</font></p>   
+    </td>   
+    <td width="32" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></td> 
+    <td width="122" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">6</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">8</font></td> 
+    <td width="125" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Replace(x,y,z)">Replace(x,y,z)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">&nbsp;將 x 中所有的 y 以 z 取代。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+<font size="2">   
+    &quot;x&quot;、&quot;y&quot;、&quot;z&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">   
+    <font size="2">修改過的 x 字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="20" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="237" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">Replace(&quot;ABCDEF&quot;   
+, &quot;BC&quot; , &quot;a&quot; )<br>   
+Replace(&quot;ABCD&quot; , &quot;E&quot; , &quot;F&quot; )<br>   
+Replace(&quot;ABCDA&quot; , &quot;A&quot; , &quot;X&quot; )<br>   
+Replace(&quot; ABCD&quot; , &quot; &quot; , &quot;A&quot; )<br>   
+Replace(0.001 , 0 , 2 )<br>   
+Replace(&quot;中華民國&quot; , &quot;民&quot; , &quot;之&quot; )</font></p>   
+    </td>   
+    <td width="33" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td>   
+    <td width="178" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; ">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;AaDEF&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABCD&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;XBCDX&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&nbsp;(左邊有3個空格) &quot;AAAABCD&quot;</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&nbsp;2.221</font></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;中華之國&quot;</font></td>   
+    <td width="69" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; border-left-width:1; border-top-width:1">   
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Upper(x)">Upper(x)</a></font></b></p>
+  <p style="margin-top: 1; margin-bottom: 1">　<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">&nbsp;將 x 中所有字元，改為大寫。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">修改過的 x 字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">Upper(&quot;abc&quot;    
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;ABC&quot;</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a><p style="margin-top: 1; margin-bottom: 1">
+　<p style="margin-top: 1; margin-bottom: 1">　<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Lower(x)">Lower(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">&nbsp;將 x 中所有字元，改為小寫。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">修改過的 x 字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">Lower(&quot;aBC&quot;    
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;abc&quot;</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Char(ascii)">Char(ascii)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">&nbsp;將 ascii code 轉成對應的字元或符號。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;ascii&quot;，可為數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">對應的字元或符號。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">Char(65 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+傳回&nbsp;&nbsp; &quot;A&quot;<br>   
+Char(9 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp; </font><span style="font-family: 新細明體"><font size="2">&nbsp;tab    
+分隔符號</font></span><font size="2"><br>   
+Char(13 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp; </font><span style="font-family: 新細明體"><font size="2">&nbsp;Character    
+Return</font></span></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ASCII(char)">ASCII(char)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">&nbsp;將字元或符號 &quot;char&quot; 轉成 ascii code。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;char&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    數值，&quot;char&quot;的 ascii code。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">ASCII(&quot;A&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+65</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="utf2str(utf)">UTF2Str(utf)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">&nbsp;將 utf unicode 編碼轉成字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    &quot;utf&quot;，可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">UTF2Str(&quot;\u6b61\u8fce\u5149\u81e8&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+歡迎光臨</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="str2utf(str)">Str2UTF(str)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">&nbsp;將 str&nbsp; 字串轉成 unicode 編碼。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    &quot;str&quot;，可為</font><font size="2">字串或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">unicode 編碼字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">Str2UTF(&quot; 歡迎光臨&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\u6b61\u8fce\u5149\u81e8</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="Token(str, sep, nth)">
+<font size="4"><b>Token</b></font><font size="4"><b>(str, sep, nth)</b></font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">傳回 str&nbsp; 字串中以 sep 分隔的第 nth 個資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    str ：含分隔符號的字串。<br>
+sep：分隔符號。<br>
+nth：第 N 個，以 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">字串。<br>
+前後空白皆屬有效資料。<br>
+sep 為 空字串傳回原字串 str。<br>
+以下情況傳回空字串：<br>
+nth 不為數值。<br>
+nth &lt; 1 或 nth &gt; 最大資料個數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">Token(&quot;abcd; 歡迎光臨; 
+1234&quot;, &quot;;&quot;, 2 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;歡迎光臨&quot;<br>
+Token(&quot;abcd; 歡迎光臨; 1234&quot;, &quot;;&quot;, 4 )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&quot;<br>
+Token(&quot;;;歡迎光臨; 1234&quot;, &quot;;&quot;, 3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;歡迎光臨&quot;<br>
+Token(&quot;;;歡迎光臨; 1234&quot;, &quot;;&quot;, 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&quot;</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="TokenCount(str, sep)">
+<font size="4"><b>TokenCount</b></font><font size="4"><b>(str, sep)</b></font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">傳回 str&nbsp; 字串中以 sep 分隔的資料有幾個。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    str ：含分隔符號的字串。<br>
+sep：分隔符號。 </font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">數值字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">TokenCount(&quot;abcd;歡迎光臨;1234&quot; 
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+TokenCount(&quot;abcd;歡迎光臨;1234;&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+TokenCount(&quot;abcd;歡迎光臨;1234; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 (最後的; 前含一空白)</font></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">TokenCount(&quot;;;abcd;歡迎光臨;1234&quot; 
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 </font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SepCount(str, sep)">SepCount(str, sep)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">傳回 str&nbsp; 字串中 sep 分隔符號有幾個。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    str ：含分隔符號的字串。<br>
+sep：分隔符號。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">數值字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">TokenCount(&quot;abcd;歡迎光臨;1234&quot; 
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+TokenCount(&quot;abcd;歡迎光臨;1234;&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+TokenCount(&quot;abcd;歡迎光臨;1234; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 (最後的; 前含一空白)</font></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">TokenCount(&quot;;;abcd;歡迎光臨;1234&quot; 
+)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 傳回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=193 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=207 align=right valign=top>
+<a href="ch12_05.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+</body>  
+  
+</html>

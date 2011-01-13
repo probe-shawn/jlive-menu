@@ -1,0 +1,891 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Design Framework</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch07_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=194 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch07.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 7</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch07.html" style="text-decoration: none"><font color="#000000">
+Report system</font></a></font></b></TD>  
+<td width=206 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch07_04.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><font size="5"><a name="top"></a></font><font size="4"><b>7</b></font><b><font size="4"><a class="TITLE">.4</a> 
+報表設計平台操作 (design framework)</font></b></p>      
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">       
+<a href="#Design_mode">進入報表設計模式 (design mode)</a></font></p>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<a href="#Exit_to_control_panel">返回主控制面板 (exit to control panel)</a></font></p>          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<a href="#Layout_components">配置元件 (layout components)</a></font></p>          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">       
+<a href="#Select_Move_Edit components">元件選取、移動、屬性編輯 (select、move、edit      
+components)</a></font></p>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">        
+<a href="#Alignment">元件對齊 (alignment)</a></font></p>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">        
+<a href="#Duplicate_Copy_Paste">元件複製、拷貝、貼上 (duplicate、copy、paste)</a></font></p>        
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#prefer">元件偏好設定   
+(component preference)</a></font></p>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">      
+<a href="#Preview_mode">進入預覽列印模式 (preview mode)</a></font></p>          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<a href="#Java_source_code">瀏覽 Java&trade; 程式碼 (Java&trade; source code)</a></font></p>          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<a href="#Reload_Images">重讀圖檔 (reload Images)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2">　</p>    
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE      
+Builder&#8482; 報表系統 (report system) 是視窗畫面 (form design)      
+設計的延伸，列印資料和範圍皆來自視窗畫面的物件。這種設計方法，必須以視窗畫面中的資料來源    
+(data source)      
+為思考方向，因為在每一張報表中皆可指定以一個主要的資料來源為記錄移動的參考，並且在視窗畫面中的元件也會同時反應資料來源移動的影響。這種設計方式，非常有效率；如果設計者以物件的理念來設計應用程式，將會得到最大的效率。以一個 (客戶管理)      
+視窗畫面下的報表設計為例，設計者可以設計出和視窗畫面操作同步的報表，比如說，在客戶管理操作【查詢】某一區域的客戶，在視窗畫面中顯示的資料，也等於是列印到報表的資料(某一區域的客戶資料)。</font></p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<img border="0" src="images/ch07_03_1.gif" width="423" height="198"></p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<br>      
+<b><a name="Design_mode"></a>進入報表設計模式 (design mode)</b></p>      
+<p style="text-indent: 20"><font size="2">進入報表設計畫面，可以在【控制面板】按下 <i>設計&nbsp;            
+<img border="0" src="images/design20.gif" width="20" height="20"> </i>(      
+進入設計模式 )，或是點選該報表，然後按滑鼠右鍵，選擇設計，如下圖所示。　</font></p> 
+<blockquote>
+  <p style="margin-top: 1; margin-bottom: 1">
+  <img border="0" src="images/ch07_01_before.gif" width="185" height="207"></p>
+  </blockquote>
+<ul type="square">
+  <li>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">報表設計平台    
+(report design framework)</font></p>     
+  </li>     
+</ul>     
+<blockquote>     
+  <ul type="disc">     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">功能列 (menu bar)：</font><font size="2">選單功能列。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">元件列 (printable component)：</font><font size="2">列印元件列。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">表頭 (header)：</font><font size="2">報表的標題區。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">表頭基準線 (separator)：</font><font size="2">用來區分表頭和表身的分界線。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">表身 (content)：</font><font size="2">列印資料顯示區，元件與表頭基準線之距離會決定兩筆記錄之間的距離，系統中是以元件最上緣的定位點與表頭基準線距離來決定下一筆的相隔距離     
+。<br>
+　</font></p>      
+    </li>      
+    <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font color="#666699" size="2">表尾基準線 (separator)：</font><font size="2">用來區分表身和表尾的分界線。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">表尾 (footer)：</font><font size="2">報表的結尾。</font></p>     
+    </li>     
+  </ul>     
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch07_rpt_frame.gif" width="580" height="387"></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+  <p style="margin-top: 1; margin-bottom: 1">    
+  　</p>
+  <p style="margin-top: 1; margin-bottom: 1">
+  <b><a name="Exit_to_control_panel"></a>返回主控制面板 (exit to control panel)</b></p>      
+<ul type="square">      
+  <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">系統 (system)：</font></p>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  　</p>    
+  <ul type="disc">    
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">返回    
+  (back to console )：</font><font size="2">離開設計畫面，回到控制面板。<br>
+　</font></p>      
+    </li>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">儲存修訂 (save modified)：</font></p>      
+    <p style="margin-top: 1; margin-bottom: 1" align="justify">         
+<font size="2">     
+在設計模式下，所有的變更都尚未儲存，因此當程式有類似迴圈的邏輯時，建議在測試執行前先行存檔動作，以免進入無窮迴圈後，程式必須強制中止而無法存檔，將會喪失存檔前的所有設計內容。<br>
+　</font></p>        
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <img border="0" src="images/ch07_03_system.gif" width="195" height="220"><br>
+　</p>      
+    </li>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">報表 screen capture：</font><font size="2">在報表設計期，將
+  報表快照 
+(snap shot) 並存成圖檔(*.png)。執行時系統會出現訊息視窗，詢問置放圖檔的位置與檔名。預設存放於【應用程式目錄】【doc】【screen】目錄下以
+  報表名稱為檔名。</font><br>
+　</p>      
+    </li>     
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">列印元件設計提示 (tool tips) ：</font><font size="2">設計時滑鼠移動至元件時，是否出現屬性提示視窗 
+  (tool tips)。</font></p>      
+    </li>     
+  </ul>      
+  </li>      
+</ul>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p> 
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <b><a name="Layout_components"></a>配置元件 (layout components)<br>     
+  　</b></p>  
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+  以滑鼠點選所需元件，然後將滑鼠移至報表上，此時滑鼠游標會顯示十字符號，再將滑鼠移到所要的位置上，點滑鼠左鍵置放即可。</font><ul type="square"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2" color="#666699">列印元件 (printable component) </font></p>      
+    </li>      
+</ul>      
+<blockquote>      
+  <ul>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">      
+  <img border="0" src="images/rptgeneric.gif" width="25" height="25">  通用報表元件    
+  (Generic printable object)</font></p>      
+    </li>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">      
+  <img border="0" src="images/rptimage.gif" width="25" height="25">  圖片報表元件 (Image printable object)</font></p>      
+    </li>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">      
+  <img border="0" src="images/rptmemo.gif" width="25" height="25">  備忘錄報表元件 (Memo printable object)</font></p>      
+    </li>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">      
+  <img border="0" src="images/rptchart.gif" width="25" height="25">  統計圖報表元件 (Chart printable object)</font></p>      
+    </li>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">      
+  <img border="0" src="images/rptbarcode.gif" width="25" height="25">      
+  條碼報表元件 (Barcode printable object)</font></p>      
+    </li>      
+    <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">      
+  <img border="0" src="images/rptbreak.gif" width="24" height="24">      
+  跳頁報表元件 (Pagebreak printable object)</font></p>      
+    </li>      
+  </ul>      
+</blockquote>      
+<p style="margin-top: 1; margin-bottom: 1">      
+  <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p> 
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <b><a name="Select_Move_Edit components"></a>元件選取、移動、屬性編輯 (select、move、edit      
+  components)</b></p>       
+<ul>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">選取    
+    (select)：</font> <br>
+　<ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">    
+        單一元件：</font><font size="2">當滑鼠移至元件且元件顯示八個色框時，該元件即在選取狀態。</font></li>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">    
+        多個元件：</font><font size="2">以滑鼠按住左鍵並拉出涵蓋的範圍，放開滑鼠後，被選取的元件會以綠框標示。</font>      
+        <ul>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1">    
+            <font size="2" color="#666699">加入選取：</font><font size="2">選取多個元件後，可以再以滑鼠點選未標示綠框的其他元件加入選取。</font></li>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">    
+            取消選取：</font><font size="2">可在已選取的元件中，再以滑鼠點選，將其排除於選取範圍外。<br>
+　</font></li>      
+        </ul>      
+      </li>      
+    </ul>      
+  </li>      
+  <li>      
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">移動    
+    (move)：</font> <br>
+　<ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">    
+        單一元件：</font><font size="2">以滑鼠拖拉元件移動元件或按住鍵盤的 Ctrl 加 ←↑↓→ 鍵，微調元件位置。以滑鼠拖拉</font><font size="2" color="#000000">選取元件的色框可改變元件大小尺寸。</font></li>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+        多個元件：</font><font size="2" color="#000000">選取多個元件，以滑鼠拖拉移動元件或按住鍵盤的 Ctrl      
+        加 ←↑↓→ 鍵</font><font size="2">，微調元件群組位置。<br>
+　</font></li>       
+    </ul>       
+  </li>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">編輯    
+    (edit)：</font> <br>
+　<ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">    
+        單一元件：</font><font size="2">元件於選取狀態時，以滑鼠雙擊進入屬性編輯，或按右鍵選取屬性編輯選單。</font></li>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">    
+        多個元件：</font><font size="2" color="#000000">選取多個元件，按右鍵選取支援多個元件的功能選單。</font></li>      
+    </ul>      
+  </li>      
+</ul>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>      
+  <p style="margin-top: 1; margin-bottom: 1" align="center">      
+  <img border="0" src="images/ch07_03_4_pink.gif" width="556" height="200"></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p> 
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <b><a name="Alignment"></a>元件對齊 (alignment)</b></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>  
+    <blockquote> 
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">對齊 (alignment)：</font><font size="2">必須先選取多個元件，才可以使用此功能。選取的方式，以按住滑鼠左鍵並拉出涵蓋的範圍，放開滑鼠後，被選取的元件會以綠框標示。可以再以滑鼠，點選未標示綠框的其他元件加入選取；或點選已加入的元件將其排除於選取範圍。</font></p>     
+  <ul type="disc">        
+    <li>        
+<p style="margin-top: 1; margin-bottom: 1">        
+<font size="2" color="#666699">復原 (undo )      
+<img border="0" src="images/undo.gif" width="16" height="16"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗左邊界對齊 (alignment to form left)      
+<img border="0" src="images/wl.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗上邊界對齊 (alignment to form top)      
+<img border="0" src="images/wt.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗右邊界對齊 (alignment to form right)      
+<img border="0" src="images/wr.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗下邊界對齊 (alignment to form    
+bottom)      
+<img border="0" src="images/wb.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平靠左 (horizontal left)      
+<img border="0" src="images/hl.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平靠中 (horizontal center)      
+<img border="0" src="images/hc.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平靠右 (horizontal right)      
+<img border="0" src="images/hr.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平置於視窗中間 (horizontal form center)      
+<img border="0" src="images/hw.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平平均分配距離 (horizontal equal space)      
+<img border="0" src="images/he.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直靠上 (vertical top)      
+<img border="0" src="images/vt.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直靠中 (vertical center)      
+<img border="0" src="images/vc.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直靠下 (vertical bottom)      
+<img border="0" src="images/vb.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直置於視窗中間 (vertical form center)      
+<img border="0" src="images/vw.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直平均分配距離 (vertical equal space)      
+<img border="0" src="images/ve.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">刪除 (delete)      
+<img border="0" src="images/delete.gif" width="20" height="20"></font></p>          
+    </li>          
+  </ul>          
+</blockquote>     
+<p style="margin-top: 1; margin-bottom: 1" align="center">      
+  <img border="0" src="images/ch07_03_auth.gif" width="580" height="464"></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p> 
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <b><a name="Duplicate_Copy_Paste"></a>元件複製、拷貝、貼上 (duplicate、copy、paste)</b></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+</p>      
+<ul type="disc">     
+  <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+<font size="2" color="#666699">複製 (duplicate)：</font><font size="2">在視窗上複製相同的元件，可設定複製數量。請在目標元件上按滑鼠右鍵，選擇複製。<br>
+　</font></p>     
+  </li>     
+    <li>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <font size="2" color="#666699">拷貝 (copy)：</font><font size="2">拷貝元件。拷貝的元件可貼至其他視窗或其他應用程式的視窗。<br>
+　</font></p>     
+    </li>     
+    <li>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <font size="2" color="#666699">貼上 (paste)：</font><font size="2">貼上元件。<br>
+　</font></p>     
+    </li>     
+    <li>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <font size="2" color="#666699">刪除 (delete)：</font><font size="2">刪除選取的元件。</font></p>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  　</p>     
+    </li>     
+</ul>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <img border="0" src="images/ch07_03_edit.gif" width="580" height="278"></p>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a name="prefer"></a></font><b>元件偏好設定   
+(component preference)</b></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">設計師在工作視窗下配置元件   
+(layout component) 時，系統會以預設的元件屬性   
+(大小、外觀、字型)   
+配置元件。設計師可以隨時將編輯過的元件，按滑鼠右鍵選擇【存成個人喜好】選單功能，將其屬性設定為預設元件屬性，下一次執行配置時，即會以新的預設屬性配置該類別元件。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE   
+Builder&trade; 的系統預設元件屬性偏好設定檔 <font face="Courier New"> prefer.xml</font> 位於 
+<font face="Courier New">jLIVE\xml\ </font>目錄下，每當設計師新增一個應用程式時，jLIVE   
+Builder&trade; 會將 <font face="Courier New"> prefer.xml</font> 複製到該應用程式路徑 
+<font face="Courier New">\xml\</font> 目錄下，並更名為 <font face="Courier New">_prefer.xml</font>，所以 jLIVE Builder&trade;   
+的每一個應用程式皆有獨立的元件屬性偏好設定檔。設計師亦可將應用程式的元件屬性偏好設定檔 
+<font face="Courier New">  
+_prefer.xml</font> 回存到<font face="Courier New">jLIVE\xml\ </font> 目錄下，更名取代原有的 
+<font face="Courier New"> prefer.xml</font>，系統在下一次新增應用程式時，即以其為預設元件屬性偏好設定檔。</font></p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">多人協同開發應用程式時，系統規劃師可以先行設定各個元件的預設偏好 
+<font face="Courier New">  
+_prefer.xml</font>，並將其分發至工作群組的各個設計師，應用系統開發時，每一位設計師的視窗模組即能有一致的外觀與介面。</font></p>       
+<p style="margin-top: 1; margin-bottom: 1">　</p>       
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 1; margin-bottom: 1">　</p>      
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  　</p>    
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  　</p>    
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <b><a name="Preview_mode"></a>進入預覽列印模式 (preview mode)</b></p>       
+<ul type="square">       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<font color="#666699" size="2">預覽列印(preview mode)：</font><font size="2"><img border="0" src="images/run20.gif" width="24" height="24">      
+ 按下工具列中的預覽列印，如果使用資料來源列印程序，系統會出現一個視窗，要求選擇預覽列印的資料來源名稱。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2">     
+<img border="0" src="images/ch07_03_preview.gif" width="265" height="118"></font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+  </li>     
+</ul>     
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2">點選確定後出現預覽的畫面。</font></p>     
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2">     
+<img border="0" src="images/ch07_03_report_open.gif" width="604" height="609"></font></p>     
+<ul type="square">     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">預覽視窗的工具列功能<br>
+<br>
+<img border="0" src="images/ch07_03_tools.gif" width="467" height="32"><br>
+<br>
+</font>     
+<font size="2">
+預覽視窗開啟時，系統會在第一頁列印資料完整後，隨即開啟。如果設計師設定需要精確總頁數，系統會在開啟後，立即計算總頁數，直到最後一頁，且頁數不會出現 ??? 
+。在大資料量時，設計師須考慮讀取所有資料的時間與客戶端 (client) 記憶體是否足夠。出現預覽視窗後，使用者可以選擇，直接列印或預覽，按下</font><font color="#666699"><font size="2"><img border="0" src="images/_nav2.gif" width="24" height="24"> </font>     
+<font size="2" face="新細明體">下一頁</font></font><font face="新細明體" size="2" color="#666699">    
+(next) </font><font face="新細明體" size="2">或 </font>
+<img border="0" src="images/_nav3.gif" width="24" height="24"><font face="新細明體" size="2" color="#666699"> 
+尾頁</font><font face="新細明體" size="2" color="#666699"> (last) </font>
+<font face="新細明體" size="2">
+時，如果該頁尚未存在，系統隨即計算資料至該頁，計算中的訊息視窗會出現，使用者若不想等待可以按下取消鍵，系統隨即停止且目前頁會顯示至計算完的當頁</font><font size="2">。 </font></p>     
+  </li>     
+</ul>     
+<blockquote>     
+  <ul>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/exit20.gif" width="21" height="20"><font color="#666699" size="2">&nbsp; 
+離開預覽 (exit)：</font><font size="2">離開預覽作業。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2">
+<img border="0" src="images/ch07_03_previewsize.gif" align="texttop" width="132" height="236"><font color="#666699"> 
+預覽尺寸</font><font color="#666699"> (preview size)：</font> 選擇預覽報表尺寸。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">     
+<img border="0" src="images/_real.gif" align="middle" width="24" height="24">存成圖檔 (snap shot)：</font><font size="2">在報表
+執行期，將
+  報表快照 
+(snap shot) 並存成圖檔(*.png)。執行時系統會出現訊息視窗，詢問置放圖檔的位置與檔名。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/_nav0.gif" width="24" height="24">
+<font face="新細明體" size="2" color="#666699">首頁</font><font size="2" color="#666699"><font face="新細明體"> 
+(first)</font>：</font><font size="2">預覽首頁。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">     
+<img border="0" src="images/_nav1.gif" width="24" height="24"> </font>     
+<font color="#666699" size="2" face="新細明體">上一頁</font><font size="2" color="#666699"><font face="新細明體">    
+(previous)</font>：</font><font size="2">預覽上一頁。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699"><font size="2">     
+<img border="0" src="images/_nav2.gif" width="24" height="24"> </font>     
+<font size="2" face="新細明體">下一頁</font></font><font size="2" color="#666699"><font face="新細明體">    
+(next)</font>：</font><font size="2">預覽下一頁。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/_nav3.gif" width="24" height="24"><font face="新細明體" size="2" color="#666699"> 
+尾頁</font><font size="2" color="#666699"><font face="新細明體"> (last)</font>：</font><font size="2">預覽
+尾頁。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch07_03_prevpage.gif" width="93" height="25"><font face="新細明體" size="2" color="#666699"> 
+目前頁</font><font size="2" color="#666699"><font face="新細明體"> (current)</font>：</font><font size="2">目前此頁
+與總頁數。頁數由 1 起算，在編輯元件中可以輸入頁數且按下【Enter】鍵，輸入非數字及小於 1 
+為錯誤，輸入大於總頁數時，系統會計算至總頁數即停止且更正使用者輸入的頁數。 <br>
+<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">     
+<img border="0" src="images/_print.gif" width="20" height="20">&nbsp;    
+列印 (print)：</font><font size="2">執行列印作業     
+，按下此鍵會出現列印設定頁。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+    <ul>     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">一般 (general )</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p> 
+      <ul> 
+        <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2" color="#666699">列印服務 (print service)</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p> 
+      <ul type="disc"> 
+        <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2" color="#666699">名稱 (name)：</font><font size="2">印表機名稱。</font></p>      
+        </li>      
+        <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">狀態 (status)：</font><font size="2">目前工作狀態。</font></p>      
+        </li>      
+        <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">類型 (type)</font></p>      
+        </li>      
+        <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">資訊 (info)</font></p>      
+        </li>      
+        <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">列印至檔案 (print to file)</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>  
+        </li>  
+      </ul>  
+        </li>  
+        <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">列印範圍 (print range)</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>  
+      <ul type="disc">  
+        <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">全部 (all )：</font><font size="2">列印全部頁面。</font></p>      
+        </li>      
+        <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">頁面 (page)：</font><font size="2">選擇列印範圍。</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+        </li>      
+      </ul>      
+        </li>      
+        <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2"><font color="#666699">份數 (copies)</font></font><font size="2" color="#666699">：</font><font size="2">列印總份數。</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+        </li>      
+      </ul>      
+      </li>      
+    </ul>    
+    </li>    
+  </ul>    
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch07_03_print_nomal.gif" width="518" height="414"></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+    <ul>     
+      <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">頁面設定 (page setup)</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>  
+      <ul>  
+        <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">媒體 (media)：</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>    
+      <ul type="disc">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">大小 (size)：</font><font size="2">列印紙張大小。</font></p>     
+        </li>     
+        <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">來源 (source)：</font><font size="2">列印紙張來源。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+        </li>     
+      </ul>     
+        </li>     
+        <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">方向 (orientation)：</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>    
+      <ul type="disc">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">直向 (portrait)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">橫向 (landscape)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">反向直印 (reverse portrait)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">反向橫印 (reverse landscape)</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+        </li>
+      </ul>
+        </li>
+        <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">邊距 (margins)：</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>    
+      <ul type="disc">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">左邊距 (left)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">右邊距 (right)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">頂端邊距 (top) </font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">底部邊距 (bottom) </font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+        </li>
+      </ul>
+        </li>
+      </ul>
+      </li>
+    </ul>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch07_03_print_page.gif" width="517" height="416"></p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+    <ul> 
+      <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">外觀 (appearance)：</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+      <ul>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">色彩外觀 (color appearance)：</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>    
+      <ul type="disc">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">單色 (monochrome) </font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">色彩 (color)</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+        </li>
+      </ul>
+        </li>
+        <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">品質 (quality)：</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>    
+      <ul type="disc">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">草圖 (draft)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">正常 (normal)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">高 (high) </font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+        </li>
+      </ul>
+        </li>
+        <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">邊 (sides)：</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>    
+      <ul type="disc">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">單面 (one side)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">翻轉 (tumble)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">雙面列印 (duplex)</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+        </li>
+      </ul>
+        </li>
+        <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">工作屬性 (job attributes)：</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+      <ul type="disc">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">標題頁 (banner page)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">優先權 (priority)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">工作名稱 (job name)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">使用者名稱 (user name)</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+        </li>
+      </ul>
+        </li>
+      </ul>
+      </li>
+    </ul>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch07_03_print_look.gif" width="518" height="416"></p>
+</blockquote>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  　</p> 
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <b><a name="Java_source_code"></a>瀏覽 Java 程式碼 (Java&trade; source code)</b></p>       
+  <p style="margin-top: 1; margin-bottom: 1">       
+  　</p> 
+  <p style="margin-top: 1; margin-bottom: 1" align="justify"> 
+  <font size="2">&nbsp;&nbsp;&nbsp; 按下瀏覽按鍵後，系統會先將目前的設計視窗存檔，之後產生此視窗的 Java&#8482;      
+  程式碼，在程式碼的瀏覽視窗中，不能編輯修改原始碼。 jLIVE&nbsp; Builder&#8482; 提供程式設計師自行加入   
+  Java&#8482; source code      
+  ，並保留此段自行加入的程式碼。加入的方法為利用註解標籤 <b>&nbsp;<font color="#808080">//&lt;reserve&gt;            
+</font> </b>           
+<font color="#000000">和</font> <b><font color="#808080"> //&lt;/reserve&gt;</font> </b>            
+  將自行加入的程式內容用此標籤包住。自行加入程式後如果再進入jLIVE&nbsp; Buider&#8482; 編輯設計，jLIVE&nbsp; Builder&#8482; 在產生   
+  Java&#8482; source code ( *.java ) 時將會把以 <b><font color="#808080">//&lt;reserve&gt; </font> </b>           
+<font color="#000000">和</font> <b><font color="#808080"> // &lt;/reserve&gt;</font>            
+</b>標籤包住的程式碼，放在 source code 的最下面並將其標示成註解，並不會覆蓋或刪除掉，設計師必須重新將此段程式，安置於適當的地方， 然後再將      
+  *.java&nbsp; compile 成 class。</font></p>       
+  <p style="margin-top: 1; margin-bottom: 1">       
+  　</p>       
+  <p style="margin-top: 1; margin-bottom: 1">       
+  <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>       
+  <p style="margin-top: 1; margin-bottom: 1">       
+  　</p> 
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <b><a name="Reload_Images"></a>重讀圖檔 (reload Images)</b></p>       
+  <p style="margin-top: 1; margin-bottom: 1">       
+  　</p>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <font size="2"> &nbsp;&nbsp;&nbsp;    
+  在設計時，修改、刪除、增加圖片 (image file) 到        
+<font color="#808080">preloadimages</font> 或是 <font color="#808080">images</font>      
+  等目錄，必須重讀圖片，才可以使用那些圖片。</font></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>     
+<hr align=left color="#000000">     
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=200 align=left valign=top>     
+<a href="ch07_02.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>     
+<td width=196 align=center valign=top><a href="index.html">     
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>     
+<td width=204 align=right valign=top>     
+<a href="ch07_04.html">     
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+       
+      </td>    
+    </tr>    
+  </table>    
+  </center>    
+</div>    
+       
+</body>      
+      
+</html>

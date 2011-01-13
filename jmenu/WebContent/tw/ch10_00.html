@@ -1,0 +1,241 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Common properties</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%" height="3026">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>          
+<td width=204 align=right valign=top>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<a href="ch10_01.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>          
+          
+<hr align=left color="#000000">          
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 2; margin-bottom: 2"><b><font size="2"><a name="common"></a>
+</font><font size="4">元件共同屬性設定 (common properties)</font></b></p>           
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#format">     
+<font size="2">格式 (format)</font></a></p>          
+<p style="margin-top: 1; margin-bottom: 1"><a href="#border">          
+<font size="2">外框 (border)</font></a></p>          
+<p style="margin-top: 1; margin-bottom: 1"><a href="#font">          
+<font size="2">字型 (font)</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<blockquote>
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2">開啟元件的屬性設定有兩種方式，可以用滑鼠雙擊元件，或移到目標元件，按下滑鼠右鍵，選擇【屬性】。</font></p>     
+</blockquote>
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch10_21_design.gif" width="523" height="458"></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a name="format"></a><font size="2"><b>
+格式 (format)</b></font></p>          
+<ul type="square">     
+  <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">          
+<font color="#666699">元件名稱 (component name)</font>：元件名稱，命名不可以和其他元件重複，建議以英文命名且須遵循       
+    Java&trade; 變數 (variable) 命名法則 (naming rule)。元件名稱 
+(component name)    
+參照、使用於下述系統中，當元件名稱更改後，運算公式元件的內含值    
+{<font color="#666699">元件名稱</font>} 會自動更新，但 <font face="Courier New"> SetProp(&quot;</font><font color="#666699">元件名稱</font><font face="Courier New">&quot;,     
+        &quot;</font>屬性<font face="Courier New">&quot;, &quot;</font>值<font face="Courier New">&quot;) 
+</font>以文字串指名的<font color="#666699">元件名稱</font><font color="#000000">參照不會更動</font>，設計師必須自行維護更新。</font>
+    <br>
+　<ul type="square">  
+      <li type="disc">   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">jLIVE Builder&trade;     
+    產生的 Java&trade; 原始程式碼：Java&trade; 物件變數名稱 
+    (object     
+    Name)，例如：zEdit <font color="#666699">元件名稱 = </font><font color="#000000">new     
+    zEdit(); </font>。</font></li>    
+      <li type="disc"><p style="margin-top: 1; margin-bottom: 1"><font size="2">運算公式 
+        (formula) 的元件內含值：<font color="#505050">{</font><font color="#666699">元件名稱</font><font color="#505050">}</font>。</font></li>    
+      <li type="disc"><p style="margin-top: 1; margin-bottom: 1"><font size="2">運算公式 
+        (formula) 的元件名稱參照：<font face="Courier New">SetProp(&quot;</font><font color="#666699">元件名稱</font><font face="Courier New">&quot;,     
+        &quot;</font>屬性<font face="Courier New">&quot;, &quot;</font>值<font face="Courier New">&quot;)</font>。<br>
+　</font></li>   
+    </ul>   
+  </li>    
+  <li>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">元件尺寸 (size)</font>：元件位置及大小。<br>
+　</font></p>         
+  </li>    
+  <li>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<font color="#666699">元件提示 (tips)</font>：當滑鼠移到元件時，顯示的提示文字。多行或特殊文字可以輸入 HTML 標記 
+(tag)文字。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<font color="#666699">不透明 (opaque)</font>：元件背景 (background)     
+以背景顏色顯示。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">          
+<font color="#666699">顯示 (visible)</font>：元件顯示或隱藏。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<font color="#666699">附加在選單上 (append to menu)</font>： 
+執行時將元件安置於選單 (menu) 上。</font></p>          
+  </li>          
+</ul>          
+<blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/ch10_21_comm_format_.gif" width="475" height="476"></p>          
+</blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><b><a name="border"></a>外框 (border)</b></font></p>          
+<ul type="square">          
+  <li>          
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">          
+<font color="#666699">預設外框 (default)</font>：預設為 Java&trade; 
+Swing set 的元件外框，取消核取 (unchecked)，即可使用組合式外框。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">         
+<font color="#666699">組合式外框 (compound border)</font>：設定裡 
+(inner) 外 (outer) 的外框模式。　<br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">使用標題外框 (titled border)</font>：加上標題外框。</font></p>       
+<p style="margin-top: 1; margin-bottom: 1">　</p>       
+<ul type="disc">       
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">水平位準 
+(justification)</font>：標題相對於元件的水平位置。</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">垂直位準 
+(position)</font>：標題相對於元件的垂直位置。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">        
+<font color="#666699">顏色 (color)</font>：標題顏色。</font></p>        
+  </li>        
+</ul>        
+  </li>        
+</ul>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch10_21_comm_border.gif" width="476" height="476"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<a name="font"></a><b><font size="2">字型 (font)</font></b></p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">      
+<font color="#666699">字型</font>：選擇字型。jLIVE Builder&trade;  
+的應用程式是客戶端 (client) 以瀏覽器 (browser)  
+執行於網際網路，在無法確定客戶端是否安裝所選字型的狀況下，建議使用  
+Dialog 字型，Java&trade; 的字型是以 JRE (Java Runtime Environment)  
+的外掛字型設定顯示，客戶端 (client)  
+仍可以有各種不同選擇性，參閱 Java&trade; JRE  
+的字型設定。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">      
+<font color="#666699">大小 (size)</font>：字型大小。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">     
+<font color="#666699">樣式 (style)</font>：核取所要的字型特性。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">     
+<font color="#666699">顏色 (color)</font>：選擇字體顏色及背景顏色。</font></p>     
+  </li>     
+</ul>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch10_21_comm_font.gif" width="475" height="476"></p>     
+</blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<hr align=left color="#000000">    
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">    
+<tr>    
+<td width=200 align=left valign=top>    
+<a href="ch10.html">    
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>    
+<td width=194 align=center valign=top><a href="index.html">    
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>    
+<td width=206 align=right valign=top>    
+<a href="ch10_01.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~    
+2004 Probe Technology . All Rights Reserved.</font></p>   
+   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,    
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>   
+   
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+     
+</body>     
+     
+</html>

@@ -1,0 +1,392 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Getting Start</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellspacing="1" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=596 border=0 cellspacing=1>
+<tr>
+<td width=195 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch03_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=192 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch03.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 3</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch03.html" style="text-decoration: none"><font color="#000000">Project 
+develop procedure</font></a></font></b></TD>           
+<td width=199 align=right valign=top>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<a href="ch03_03.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>           
+          
+<hr align=left color="#000000">          
+<p><b><font size="4"><a class="TITLE">3.2 </a>フォームデザイン (form design)</font></b></p>     <!--                            
+<p>　<font size="2">視窗畫面 (form)           
+是分散式應用程式系統的基本模組，在視窗畫面設計完成後，設計師只要按系統流程及使用程序，提供使用者開&#21855;、關閉相關視窗的介面，即可完成應用系統設計。在開始進入視窗設計前，設計師必需先充分了解物件導向           
+(OOP) 及事件驅動 (event drive) 的概念與運用。jLIVE Builder&trade; 中視窗         
+(form)                   
+是一個物件 (object) ，是形成應用程式的基本模組，也是 jLIVE Builder&trade;           
+系統中，可以在不同應用程式參照 (reference) 重用 (reuse)                
+的物件。設計師可以<a href="ch06_03.html#design">視窗設計平台操作的進入視窗設計模式</a>，開始設計視窗畫面。</font></p>   -->                  
+<p style="text-indent: 20"><font size="2">&#12501;&#12457;&#12540;&#12512;&#12487;&#12470;&#12452;&#12531;手順 (form design                        
+procedure)</font></p>                     
+<ol>            
+  <li><font size="2"><a href="#formprop">&#12501;&#12457;&#12540;&#12512;&#12398;&#12503;&#12525;&#12497;&#12486;&#12451;設定 (form properties                
+    setting)</a></font></li>          
+  <li><font size="2"><a href="#addds">&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;作成 (add data source)</a></font></li>                    
+  <li><font size="2"><a href="#layout">&#12524;&#12452;&#12450;&#12454;&#12488;&#12467;&#12531;&#12509;&#12540;&#12493;&#12531;&#12488; (layout components)</a></font></li>                     
+  <li><font size="2"><a href="#compprop">&#12467;&#12531;&#12509;&#12540;&#12493;&#12531;&#12488;&#12398;&#12503;&#12525;&#12497;&#12486;&#12451;設定 (component                
+    properties setting)</a></font></li>                    
+  <li><font size="2"><a href="#createeventflow">&#12452;&#12505;&#12531;&#12488;&#12501;&#12525;&#12540;作成 (create event                
+    flow)</a></font></li>          
+  <li><font size="2"><a href="#linkevent">&#12452;&#12505;&#12531;&#12488;&#12522;&#12531;&#12463; (link event)</a></font></li>                     
+  <li><font size="2"><a href="#debugexe">&#12487;&#12496;&#12483;&#12464;及&#12403;&#23455;行&#12486;&#12473;&#12488; (debug and                
+    execute form)</a></font></li>                    
+</ol>         
+<blockquote>      
+<p><img border="0" src="images/ch03_02_form_design_procedure.gif" width="332" height="332"></p>                   
+</blockquote>     
+<p>　</p>              
+<p><font size="2"><b><a name="formprop"></a>&#12501;&#12457;&#12540;&#12512;&#12503;&#12525;&#12497;&#12486;&#12451;設定 (form properties setting)</b></font></p>                                
+<p><font size="2">　　</font><font size="2">【&#12501;&#12457;&#12540;&#12512;&#12503;&#12525;&#12497;&#12486;&#12451;設定】&#12461;&#12540;&#12434;&#12463;&#12522;&#12483;&#12463;&#12375;，<a href="ch06_01.html#form_prop">&#12501;&#12457;&#12540;&#12512;&#12503;&#12525;&#12497;&#12486;&#12451;設定</a>&#12391;&#12491;&#12540;&#12474;&#12395;&#12424;&#12387;&#12390;&#12501;&#12457;&#12540;&#12512;表示&#12524;&#12452;&#12450;&#12454;&#12488;&#12392;作業&#12501;&#12525;&#12540;、&#12452;&#12505;&#12531;&#12488;&#12434;設定&#12375;&#12414;&#12377;。</font></p>                     
+<p><img border="0" src="images/ch03_02_form_properties_setting.gif" width="591" height="668"></p>                    
+<p style="text-indent: 20"><font size="2">&#12487;&#12470;&#12452;&#12531;&#12398;&#12450;&#12452;&#12486;&#12512; (design tips)</font></p>                                
+<ul>             
+  <li><font size="2">&#12501;&#12457;&#12540;&#12512;&#12479;&#12452;&#12488;&#12523; (form title)<br>                      
+    &#12487;&#12470;&#12452;&#12531;&#12490;&#12540;&#12399;&#12501;&#12457;&#12540;&#12511;&#12517;&#12521; <font color="#666699"><font face="Courier New">SetTitle(&quot;title&quot;)</font>                      
+    </font><font color="#000000">&#12392;</font><font color="#666699">  <font face="Courier New"> FormName()</font></font>&#12434;使用&#12375;&#12390;フォームタイトルを設定します。</font></li>            
+  <li><font size="2">フォーム位置とサイズ (Form position                      
+    and size)<br>                     
+    ランタイムに (Runtime) ，フォーミュラ <font color="#666699" face="Courier New">FormPos(left,                      
+    top)</font>  と <font face="Courier New">FormSize(width, height)</font>                      
+    を利用してフォームの位置とサイズを変更することが可能です。【オープンフォーム】                      
+    (Open form)を選択すると，フォームのプロパティ設定ページが表示されます；フォーミュラ <font color="#666699"><font face="Courier New">                     
+    OpenForm(&quot;formname&quot;, &quot;pos&quot;)</font>  </font>を利用すれば，コンポーネントの相対位置をとフォーム中央に表示することが可能です。          
+    <a href="ch12_11.html#OpenForm(formname,pos)">OpenForm フォーミュラ</a>参考&nbsp;。</font></li>             
+  <li><font size="2">フォームタイプ (Form type)<br>                     
+    フォームの種類はメインフォーム (main)、ダイアログボックス               
+    (dialog)、内部フレーム (internal frame)</font><font size="2">、隠しプロセス               
+    (process)。メイン (main)フォームはブラウザ (browser)で実行の場合，ブラウザ (browser)          
+    の画面に組み込まれます；スタンドアロン(stand alone)          
+    で実行する場合，メインフレーム (main frame)          
+    の中に組み込まれます。ダイアログボックス               
+    (dialog) は独立のフォーム               
+    (window)の形でブラウザ (browser) 或いはメインフレーム (main frame)の外に表示されます。内部フレーム               
+    (internal frame) のフォームはブラウザ中(browser)のアプレット大きさ或いはメインフレーム枠               
+    (main frame)の範囲内に表示されます。全ての内部フォームにおいて，マウスでフォーム               
+    (active window)の切り替えは可能です。フォームが重なる場合がありますが，作業処理に影響はありません。隠しプロセス               
+    (process)フォームの場合，ユーザの操作は必要なくフォームとして表示されません，フローに準じて実行されます：データソースオープン前イベント               
+    (before data source open event) 、データソースオープン (open data source)、データソースオープン後イベント               
+    (after data source event)、フォームクローズ前イベント (final event)、フォームクローズ(invisible)。</font></li>   <!--                  
+  <li><font size="2">modal 屬性 (modal property)<br>           
+    應用程式中，需要按一定程序開&#21855;的視窗，例如：開&#21855;地址編輯視窗前，需先將原地址字串傳入，使用者以地址編輯視窗輸入或更新地址，地址編輯視窗關閉後，須將編輯後的地址傳回，並更新至顯示元件中。<br>         
+    具有 modal            
+    屬性的視窗顯示後，會暫時凍結使用者操作其他視窗，直到此視窗關閉，系統程序才會回到呼叫開&#21855;此視窗的作業程序。具有      
+    modal&nbsp; 屬性的對話方塊類別 (dialog)            
+    視窗，會暫停使用者對其他視窗的所有的操作行為，直到這個視窗結束；具有      
+    modal&nbsp; 屬性的&#20839;部視窗類別 (internal frame)            
+    視窗，會維持此視窗出現在所有&#20839;部視窗的最上方，但允許使用者操作其他視窗。不具有此屬性的視窗，當被開&#21855;後，系統程序隨即返回呼叫開&#21855;此視窗的程序。</font></li>            
+  <li><font size="2">選單 (menu)<br>          
+    選用 jLIVE&trade; 授權式安全控管 (authorized security control)            
+    時，選單項目 (menu item)            
+    所開&#21855;的視窗或執行的事件，不具有授權時，選單項目會被移除 
+    (remove)，如果選單 (menu) 下的所有選單項目 (menu item)            
+    都不具有授權時，選單會被移除 (remove)。</font></li>             
+  <li><font size="2">事件 (event)<br>          
+    視窗的【資料來源開&#21855;前後】事件，通常運用於視窗的資料傳輸，如果資料使用於資料來源的開&#21855;            
+    SQL      
+    指令參數中，則運用【資料來源開&#21855;前】事件將資料讀入，否則前後事件皆可。例如：開&#21855;地址編輯視窗前，可以先將原地址字串以運算式    
+    <font face="Courier New">         
+    StackPush()</font>存入 Stack 中，在地址編輯視窗的資料來源開&#21855;前或後事件，以運算式    
+    <font face="Courier New">         
+    StackPop()</font>，將原地址字串讀入，使用者編輯後，在關閉視窗前事件      
+    (final event) ，再將編輯後的地址字串以運算式 <font face="Courier New"> StackPush()</font>，存回            
+    Stack 再返回呼叫開&#21855;地址編輯視窗的事件程序。</font></li>           -->   
+</ul>            
+<p style="text-indent: 20">　</p>         
+<p><font size="2"><b><a name="addds"></a>データソース作成 (add data source)</b></font></p>                                
+<p style="text-indent: 20"><font size="2">データソース (data source)      
+はアプリ (application)とモジュール (form)      
+プロセス操作のために，データテーブルに連結する資料構築 (table structure data)です。データソース               
+(data source)は源によって<a href="ch09.html#dstype">三種類</a>に分けられています：テーブルデータソース               
+(Table data source)、SQL データソース (SQL data source)、Buffer      
+データソース               
+(Buffer data source)，デザインナーは<a href="ch09.html#dsdesignproc">データソースによる設定</a>に基づいてフォームにデータソースを追加します。</font></p>                               
+<p><img border="0" src="images/ch03_02_add_datasource.gif" width="581" height="789"></p>                    
+<p style="text-indent: 20"><font size="2">デザイン提示 (design tips)</font></p><!--                                
+<ul>             
+  <li><font size="2">讀取列 (row fetch)</font>              
+    <p style="margin-top: 0px; margin-bottom: 0px"><font size="2">資料來源是&#34395;擬模式          
+    (virtual mode) 的資料元件，資料來源在開&#21855; (open)               
+    時，並不會讀入所有資料記&#37636; (record) 至客&#25142;端 (client)               
+    的資料記&#37636;緩衝區 (record buffer)               
+    中，而是根據資料來源&#25847;取列數的設定 (row fetch)，先行讀入，在元件或事件驅動時，需要的資料記&#37636;不在緩衝區          
+    (buffer)               
+    且尚未至&#27284;尾 (EOF) 時，資料來源會以背景執行緒 (background               
+    thread) 按&#25847;取記&#37636;數 (row fetch)，讀入&#27284;案記&#37636; (record)               
+    至資料記&#37636;緩衝區(record buffer) 中。<br>              
+    資料來源與資料庫伺服器 (database server) &#27599;次需求 (request)               
+    與回應 (response) 的資料記&#37636;列 (record)&#25847;取列數。預設&#20540;為               
+    15 列，0 表示預設&#20540;，-1 表示回覆所有列 (all rows)。當資料紀&#37636;不多且是屬於關連資料來源          
+    (lookup data source) 時，應設定為 -1 (回覆所有列)，加快應用程式讀取的效率。</font></li>                  
+  <li>        
+    <p style="margin-top: 0px; margin-bottom: 0px"><font size="2">全域資料來源          
+    (globe data source)</font></p>             
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">jLIVE                    
+Builder&trade; 可以將資料來源設定為全域 (globe)                    
+資料來源，允許多個視窗模組 (forms)                    
+同時存取一個資料來源。資料來源在&#27599;個視窗中的行為性          
+    (behavior) 是同&#27493; (synchronized)                    
+且即時反應操作&#29376;態，例如：兩個共用全域資料來源的視窗，其中之一移動資料記&#37636;時，&#21478;一視窗亦會反應資料記&#37636;移動，包括相關的連結元件          
+    (data aware component)                    
+的&#20839;含&#20540;亦會同&#27493;更新，資料來源的編輯、新增、刪除也會有同樣的效果。</font></p>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">全域 (globe) 資料來源是以資料來源名稱          
+    (data                    
+source name) 及全域屬性的核取 (checked globe data source)                    
+與一般資料來源作區分，所以將資料來源名稱，在多個視窗資料來源設定中，給予相同的名稱且核取全域屬性，這些視窗即共享同一資料來源。在這些共享資料來源的視窗中，第一個開&#21855;的視窗，將以其資料來源開&#21855;的                    
+SQL 指令開&#21855; (open)                    
+資料來源，隨後開&#21855;的視窗將共享其資料。開&#21855;此資料來源的視窗          
+    (form) 關閉 (close) 時，此共享的資料來源並不一定關閉          
+    (close data                    
+source)，而是由最後關閉的共享資料來源視窗負責執行資料來源關閉          
+    (close data source)。</font></li>              
+  <li>       
+    <p style="margin-top: 0px; margin-bottom: 0px"><font size="2">SQL&nbsp; (SQL             
+    command)</font></p>      
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2">輸入 SQL             
+    指令時，可以按下 F2             
+    鍵，資料欄位輸入輔助視窗會出現，設計師可以按選資料欄位，加快指令輸入的速度及正確性。&nbsp;任何更動             
+    SQL 指令後，皆必須按 SQL             
+    測試按鍵，測試指令執行的正確性。SQL 指令中以 ?             
+    代表傳入的參數，設計師必須依序在參數表中，以運算式          
+    (formula) 給定其&#20540;，並依欄位型別 (field type)             
+    選擇參數類別。</font></p>      
+  </li>      
+  <li>      
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2">資料列識別             
+    ID 欄位 (row id fields)</font><br>           
+    <font size="2">屬性為 <font color="#666699">唯讀 (read only)</font>            
+    的資料來源，不必設定資料列識別 ID 欄位。 屬性不是 <font color="#666699">唯讀&nbsp;(read          
+    only)</font> 的資料來源，如果資料庫驅動程式 (database             
+    driver)，不支援結果集直接更新、新增、刪除 (result set             
+    position update, insert, delete)             
+    的功能，設計師必須選取資料列識別 ID 欄位 (row id fields)，jLIVE&trade;             
+    middle ware 將依此組成更新 (update)、新增 (insert)、刪除          
+    (delete) 的 SQL 命令。資料庫驅動程式 (driver)，是否支援結果集直接更新、新增、刪除，在控制面版資料庫屬性設定中，按下資料庫連結測試          
+    (database connection test)，jLIVE&trade; middle ware             
+    將會回覆相關訊息。</font></p>      
+  </li>      
+  <li>      
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2">SQL error          
+    handle<br>     
+    當資料庫伺服器發生錯誤 (exception) 時，jLIVE&trade; middle ware             
+    會將此錯誤訊息(message) 及代碼 (error             
+    code)，回傳至發出請求的客&#25142;端，並&#21855;動客&#25142;端相關的資料來源或事件模組中的             
+    SQL Error Handle 事件，以便設計師在 SQL Error Handle             
+    的事件流程中，根據錯誤訊息及代碼，回應使用者及回復系統程序(error             
+    respond and recovery)。設計師如果未設定相關的 SQL Error Handle             
+    事件流程，當資料庫伺服器錯誤發生 (exception) 時，jLIVE&trade;             
+    系統會以訊息視窗，顯示錯誤代碼及訊息，但不做任何的後續處理。參&#38321;             
+    <a href="sql_error_handle.html">SQL 錯誤處理程序 (SQL error handle)</a>。</font></p>      -->
+<p>　</p>        
+<p><font size="2"><b><a name="layout"></a>レイアウトコンポーネント (layout components)</b></font></p>                   
+<p style="text-indent: 20"><font size="2" color="#000000">レイアウトコンポーネントにつき，１．ツールバーから選択               
+(drag &amp; drop toolbar components)，２．データフィールドからドラッグ＆ドロップ (drag &amp;                  
+drop data field)，３．データソースからドラッグ＆ドロップ (drag &amp; drop data source)。     
+<a href="ch06_03.html#layout">レイアウトコンポーネント (layout component)</a>、<font size="2"><a href="ch06_03.html#select">コンポーネントセレクト、移動、編集 
+(select、move、edit components)</a>、<a href="ch06_03.html#align">コンポーネント整列     
+(alignment)</a>、<a href="ch06_03.html#duplicate">コンポーネント複写、コピー、貼り付け 
+(duplicate、copy、paste)</a></font>。</font></p>       
+<p><img border="0" src="images/ch03_02_layout_components.gif" width="537" height="743"></p>       
+<p style="text-indent: 20"><font size="2">デザイン提示 (design tips)</font></p>                                
+<ul>       
+  <li><font size="2">整列 (alignment)<br>               
+    タブコンポーネント (Tabbed component)     
+    は整列をサポートしません。</font></li>     
+  <li><font size="2">コンポーネント位置 (position)<br>                
+    <font color="#000000" size="2">一つか多数のコンポーネントを選択し，マウスかキー                  
+    Ctrl 加 ←↑↓→ で位置を微調整します</font>。</font></li>                
+</ul>      
+<p>　</p>      
+<p><font size="2"><a name="compprop"></a><b>コンポーネントプロパティ設定 (component               
+properties setting)</b></font></p>                 
+<p><img border="0" src="images/ch03_02_component_properties_setting.gif" width="533" height="609"></p>     
+<p style="text-indent: 20"><font size="2">デザイン提示 (design tips)</font></p>                                
+<ul>       
+  <li>       
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">デザインタイム               
+    (design time)</font>                 
+    <ul>      
+      <li>      
+        <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">共用プロパティ設定               
+        (common properties)：フォーマット (format)、 外枠 (border)     
+        、フォント               
+        (font)。</font></p>     
+      <li>     
+        <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">データ連結設定              
+        (data binding) ：データフィールド(data field)、フォーミュラ               
+        (formula) 。</font></p>                 
+      <li>      
+        <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">特殊プロパティ設定               
+        (extra properties)：コンポーネントの特殊プロパティ。</font></p>                
+      <li>      
+        <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">起動イベント設定               
+        (fire event)：コンポーネント種類によってイベント起動 (action)、変化イベント (change)、 GainFocusイベント、LostFocus     
+        イベント、ダブルクリック               
+        (double                  
+        click)、右キーイベント (right click)。</font></p>                 
+      </li>      
+    </ul>      
+  <li>      
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">ランタイム               
+    (run time)</font>                 
+    <ul>      
+      <li>      
+        <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">コンポーネント位置調整</font> 
+        <font size="2">(position)、サイズ (size)、可視 (visible)、使可能 (enable)、フォント            
+        (font)、前景カラー(foreground               
+        and background color)</font>                 
+        <ul>      
+          <li>      
+            <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">イベント起動               
+            (fire event)方式：コンポーネントイベント (component event)     
+            の位置               
+            (position)、サイズ(size)、可視 (visible)、使可能 (enable)、フォント               
+            (font)、前景カラー (foreground and background color)     
+            イベント。</font></p>            
+          <li>      
+            <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">フォーミュラ               
+            (formula)方式：<font face="Courier New">SetProp(&quot;</font><font color="#666699">コンポーネント名</font><font face="Courier New">&quot;,              
+            &quot;</font><font color="#666699">プロパティ</font><font face="Courier New">&quot;, &quot;</font><font color="#666699">&#20540;</font><font face="Courier New">&quot;)</font>        
+            ， <a href="get_set_prop.html">Ger-Set Component                 
+            Properties</a>コンポーネント参考。</font></p>      
+          </li>      
+        </ul>      
+      <li>      
+        <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">コンポーネントFocusの調整</font>      
+        <ul>      
+          <li>      
+            <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">イベント               
+            (fire event)起動方式：起動Focusイベント (component event)     
+            。</font></p>      
+          <li>      
+            <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">フォーミュラ               
+            (formula) 方式：<font face="Courier New">SetProp(ComponentName, &quot;focus&quot;,                  
+            &quot;1&quot;)</font>。</font></p>      
+          </li>      
+        </ul>      
+      <li>      
+        <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">コンポーネント調整</font>      
+        <ul>      
+          <li>      
+            <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">起動イベント               
+            (fire event)方式：起動コンポーネントイベント (component event)     
+            。</font></p>      
+          <li>      
+            <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">フォーミュラ               
+            (formula)方式：<font face="Courier New">SetProp(&quot;</font><font face="Courier New"></font><font color="#666699">コンポーネント名</font><font face="Courier New">&quot;,        
+            &quot;</font><font color="#666699">プロパティ</font><font face="Courier New">&quot;, &quot;</font><font color="#666699">&#20540;</font><font face="Courier New">&quot;)</font>        
+            ，<a href="get_set_prop.html">Ger-Set Component                  
+            Properties</a>コンポーネント参考。</font></p>      
+          </li>      
+        </ul>      
+      </li>      
+    </ul>      
+  </li>      
+</ul>      
+<p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px">　</p>      
+　      
+<p><font size="2"><a name="createeventflow"></a><b>イベントフロー作成 (create              
+event flow)</b></font></p>                
+<p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px; TEXT-INDENT: 20px"><font size="2">イベントフロースキーマ              
+(event flow schema)はデザインナーのため新規 (create)、編集 (edit)、ビュー(view)    
+イベント (event object)，分析 (analysis)、企画 (route) 、調整 (adjust)    
+イベントフロー (event flow)及び実行テストとイベント中断 (interrupt)の設定を提供します。   
+<!--設計師在視窗設計平台 (form design framework)              
+按下事件列表 (event table)              
+的新增事件按鈕，進入事件流程綱要設計平台，可以在工作區域中檢視所有運用於視窗的事件。工作區域以流程圖示所有事件物件           
+(event object)，其中較大的圖示 (icon) 表示該事件為視窗元件           
+(component) 、資料來源 (data source) 或系統流程 (system flow)              
+所連結&#21855;動，較小的圖示 (icon)              
+則為事件串流中的事件。藍色連結線表示事件的後續事件           
+(next event)；粉紅色的連結線表示事件的否則事件 (otherwise              
+event)。設計師以滑鼠移動到事件物件時，該事件會以綠色外框標示為選取，工作區域左邊的事件屬性列示區，會列示事件的所有資訊，工作區域左上角的引發器列表           
+(event invoker listing)，會列示連結引發該事件的元件、資料來源及系統流程。設計師可以滑鼠&#25302;拉快速地調整事件流程，設定除錯的中斷點，檢視執行時資料及參數的正確性。--> 
+<a href="ch11_01.html#newevent">新規イベント (create new event)</a>、<a href="ch11_01.html#editdelevent">編集、削除、複写、コピー、イベント貼り付け      
+(edit, delete, duplicate, copy, paste&nbsp; event)</a>。</font></p>       
+<p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><img border="0" src="images/ch03_02_create_event_flow.gif" width="572" height="535"></p>    
+<p>　</p>     
+<p><font size="2"><a name="linkevent"></a><b>　リンクイベント (link event)</b></font></p>                
+<p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px; TEXT-INDENT: 20px"><font size="2">イベントフロー              
+(event flow)はユーザとシステム (system flow)  
+によって駆動されます。コンポーネントとデータソース設計を行う時に，ユーザの行為に基づいてリンク              
+(link) イベント，イベントフロー (event flow)を起動し，ユーザへ作業の反応 (respond)  
+を行います；システムによるイベントの起動は，例えば：フォームオープン最中，順序によってデータソースオープン前イベント              
+(before data source open event)及びデータソースオープン後イベント(after data source                 
+open event)，フォーム閉じる直前，最終イベント (final event)起動。</font></p>              
+<p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><img border="0" src="images/ch03_02_link_event.gif" width="551" height="859"></p>    
+<p>　</p>    
+<p><font size="2"><a name="debugexe"></a><b>フォームデバッグと実行 (debug and     
+execute form)</b></font></p>       
+<p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px; TEXT-INDENT: 20px"><font size="2">jLIVE        
+Builder&trade; はオブジェクト指向 (OOP) とイベントドライブ (event-driven) 
+がアプリケーション開発の中核コンセプト (concept)であり，オブジェクトとイベントが        
+jLIVE Builder&trade; のデバッグ(bug free)で処理される時に 
+，エラーがあれば，イベントルート     
+(event route)、システム変数 (system variable)、プロセスデータ配送 (computed        
+and transferred data)の部分に生じます。そのため、 jLIVE Builder&trade; 
+はフォームデザイン段階，イベント中断 (event interrupt) 
+機能を提供し、システムパラメーター、プロセスデータ配送において，デザインナーによる監視及び修正が可能です。</font></p>     
+<p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px; TEXT-INDENT: 20px"><font size="2">デザイナーは<a href="ch11_01.html">イベントフロー</a>の中，イベント実行前後に中断ポイントを設定します；実行テストの時，トラブルシューティングしやすい為，一時にこの中断ポイントを取り消します。</font></p>     
+<p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px">　</p>     
+<p><img border="0" src="images/ch03_02_debug_and_execute_form.gif" width="467" height="495"></p>    
+<p>　</p>    
+<hr align=left color="#000000">                
+<table width=596 border=0 cellspacing=1>                
+<tr>                
+<td width=195 align=left valign=top>                
+<a href="ch03_01.html">               
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>               
+<td width=190 align=center valign=top><a href="index.html">               
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>               
+<td width=201 align=right valign=top>               
+<a href="ch03_03.html">             
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>             
+</tr>             
+</table>             
+             
+<hr align=left color="#000000">             
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~                 
+2004 Probe Technology . All Rights Reserved.</font></p>                
+              
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,               
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>              
+              
+      </td>           
+    </tr>           
+  </table>           
+  </center>           
+                       
+</body>                       
+                       
+</html>

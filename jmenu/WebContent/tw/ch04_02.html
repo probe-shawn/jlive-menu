@@ -1,0 +1,329 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Tool</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=212 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch04_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=205 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch04.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 4</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch04.html" style="text-decoration: none"><font color="#000000">
+Application</font></a></font></b></TD>   
+<td width=219 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch05.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p><b><font size="4"><a name="top"></a>4<a class="TITLE">.3 </a>工具 (tool)</font></b></p>   
+<p style="margin-top: 2; margin-bottom: 2"><a href="#export"><font size="2">應用程式輸出  
+(application export)</font></a></p>    
+<p style="margin-top: 2; margin-bottom: 2"><a href="#import"><font size="2">應用程式輸入  
+(application import)</font></a></p>    
+<p style="margin-top: 2; margin-bottom: 2"><a href="#update"><font size="2">應用程式線上更新  
+(application online update)</font></a></p>    
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE     
+Builder&trade; 提供應用程式模組輸出 (export)、輸入 (import) 及線上更新  
+(online update)     
+等應用程式的保存、載入及維護方式。應用程式輸出 (export)     
+是將該專案應用程式的所有資源 (resource)，包括所有設定、     
+XML、圖檔、原始程式碼等等，壓縮 (jar) 成保存檔 (<font face="Courier New">*.jlv</font>)。利用應用程式輸入(import)&nbsp;，可以將整個專案應用程式的所有資源 
+(resources)，載入到任何其他的 jLIVE     
+Builder&trade; 作業平台。<br>  
+　</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">應用程式線上更新  
+(application online update) 是 jLIVE Builder&trade;     
+特有的功能，也是最方便、最有效率的程式維護、更新機制。jLIVE     
+Builder&trade; 所開發的應用程式是分散性的程式模組 (distributed     
+runtime module)，集中於 Web     
+主機，當應用程式有任何的修改，甚至只是簡單的畫面元件位移，過去的主從架構  
+(client/server) 或非分散性程式模組，需要重新編譯 (compile)     
+整個應用程式成 *.exe 檔，再將 *.exe 檔下載至每一個客戶端     
+(client)，jLIVE Builder&trade; 由於是分散性的程式模組 (distributed     
+runtime module)，只要編譯 (compile)     
+更新或新增的視窗即可，再透過應用程式線上更新 (application     
+online update) 將該視窗上載 (upload) 至 Web 中即可，每個客戶端  
+(client) 在參照到該視窗模組時即會自行下載更新。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch04_02_transfer.gif" width="100" height="99"></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+</blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<a name="export"></a><b>輸出 (export)</b></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">選擇輸出的模組名稱、路徑及輸出項目。</font></p>
+</blockquote>
+<ul type="square">
+  <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">存成模組名稱：輸出模組名。系統會自動加上<font color="#505050"> 
+ </font><font color="#505050" face="Courier New">  
+.jlv </font><font color="#000000">的附屬名稱</font>。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">輸出至路徑：輸出的路徑。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">選項： </font> </p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">輸出 
+XML</font><font size="2">：輸出 XML 檔案。檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;xml&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">輸出 Java 程式碼</font><font size="2">：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;source&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">輸出編譯 class</font><font size="2">：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;class&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><font color="#666699">輸出技術文件</font>：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;doc&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><font color="#666699">輸出圖片</font>：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;\class\images&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><font color="#666699">輸出 預載圖片</font>：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;\class\preloadimage&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">輸出 Doc</font><font size="2">：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;\class\doc&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">輸出 Audio</font><font size="2">：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;\class\audio&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">輸出 Video</font><font size="2">：檔案位置在應用程式主目錄下的子目錄 
+<font face="Courier New"> &quot;\class\video&quot;</font>。</font>　</p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><font color="#666699">輸出執行模組</font>：檔案位置在應用程式主目錄的 
+<font face="Courier New"> *.html </font> 和 <font face="Courier New"> *.jar</font> 檔案。&quot;*&quot; 代表應用程式名。</font></p>     
+    </li>     
+  </ul>     
+  </li>     
+</ul>     
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">     
+<img border="0" src="images/ch04_02_export.gif" width="417" height="397"></p>     
+</blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">     
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a name="import"></a><b><font size="4">
+輸入 (import)</font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">由 <font face="Courier New"> jlv </font> 檔案輸入應用程式到【應用程式】節點內。</font></p>    
+</blockquote>    
+<ul>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">輸入應用程式( <font face="Courier New"> *.jlv </font> )：選擇一個 
+<font face="Courier New"> *.jlv </font> 檔案。<br>
+　</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">安裝路徑：選擇應用程式安裝路徑。</font></p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch04_02_import.gif" width="416" height="236"></p>   
+</blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<b><font size="4"><a name="update"></a>線上更新 (online update)</font></b></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"> 
+<font size="2">當應用程式已經佈建 (deploy) 
+完成之後，只要有網際網路連線就可以利用此功能更新程式。     
+使用線上更新功能必須先將程式所在的資料夾分享權限給 jLIVE&trade; middle ware 所在的主機，如下圖的分享路徑為 Root。
+按選【線上更新】後，系統會詢問目標 jLIVE&#8482; middle ware&nbsp; 所在的 URL，使用者可以選取已存在的 URL 
+或自行輸入。每次線上更新成功傳輸後，系統會自動記錄該次所使用的 URL 及 分享路徑，再次使用線上更新時，即可自選單中直接選取。</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"> 
+　</p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"> 
+<font size="2">
+<img border="0" src="images/ch04_02_update_middleware.gif" width="432" height="147"></font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"> 
+　</p>     
+<ul type="square">     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699"><font size="2">分享路徑 (UNC)</font> :</font><font size="2">      
+ 應用程式所在的目錄，必須分享可讀寫給應用程式伺服器 (jLIVE&trade;     
+middle ware 所在的主機)。<br>
+　</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">Html &amp; Applet </font>      
+<font color="#666699"> :</font><font size="2">      
+&nbsp;</font> </p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">Html</font>    
+<font color="#666699"> :</font><font size="2">      
+ 列示應用程式的      
+html     
+檔案，勾選檔案即會執行更新。如果是第一次部署應用程式的話，就一定要選擇此檔案。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1" align="justify">    
+<font color="#666699" size="2">jlive.jar</font>    
+<font color="#666699"> :</font><font size="2"> jlive.jar 是 jLIVE Builder&trade; 執行期模組  
+(runtime class)，當使用者 (client)     
+第一次執行系統時，會先從應用伺服器 (application server) 下載，一旦下載過，以後執行就不需要再下載。除非 jLIVE Builder&trade; 有更新版本時才需要將新版 jlive.jar 
+上傳至應用伺服器 (application server)。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1" align="justify">    
+<font color="#666699" size="2">jimage.jar</font>    
+<font color="#666699"> :</font><font size="2"> jimage.jar 是 jLIVE Builder&trade; 
+先將應用程式中常用的圖形壓縮成  
+jar 檔，在使用者第一次執行程式時，先行下載到使用者端  
+(client)，除非 jimage.jar 
+有更新，否則只下載一次，此一機制能加快應用程式圖檔下載速度。jimage.jar 是將<font color="#808080"> </font>
+<font face="Courier New" color="#808080">&quot;\{application location}\class\</font><font color="#808080" face="Courier New">preloadimage</font><font face="Courier New" color="#808080">&quot; </font>目錄中的圖形檔壓縮起來，所以當目錄裏的圖形有更新時，必需一併上傳至伺服器 
+(web server)。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">classes</font>    
+<font color="#666699"> :</font><font size="2"> 在這個區域裡的 class 是指非視窗  
+(form) 和     
+報表 (report) 的 class。通常這些 class 是屬於 applet 的 class ，或者是曾經使用過但是已經更名的      
+class 。</font></p>     
+    </li>     
+  </ul>     
+  </li>     
+</ul>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<img border="0" src="images/ch04_02_update_1.gif" width="561" height="482"></p>     
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>     
+</blockquote>  
+<ul type="square">     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699" size="2">視窗&amp;報表</font>     
+<font color="#666699"> :</font><font size="2">      
+ 列示所有的視窗 (form) 和報表 (report) 的 class 。可以選擇 全選 或是 全不選，也可以逐一選擇。</font></p>    
+  </li>    
+</ul>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch04_02_update_2.gif" width="560" height="480"></p>    
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+</blockquote>  
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">提交<img border="0" src="images/coreicon.gif" width="24" height="24"></font>    
+<font color="#666699"> :</font><font size="2">      
+ 線上更新功能必須要有應用程式管理者的帳號和密碼，所以當按下提交鈕時，會出現下圖的對話框，只有輸入正確的帳號密碼，才能上傳更新模組。</font></p>    
+  </li>    
+</ul>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch04_02_submit.gif" width="561" height="482"></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>   
+<hr align=left color="#000000">   
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=212 align=left valign=top>   
+<a href="ch04_01.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=206 align=center valign=top>   
+<a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=218 align=right valign=top>   
+<a href="ch05.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+      </body>     
+     
+</html>

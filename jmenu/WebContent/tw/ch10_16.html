@@ -1,0 +1,449 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Image invoker component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_15.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=193 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD> 
+<td width=207 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch10_17.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><font size="4"><b>
+<a name="top"></a>圖片引發器元件</b>
+(<b>Image invoker component) </b>  
+<img border="0" src="images/dbtimageinvoker.gif" width="25" height="25"></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#invokerprop">  
+<font size="2">引發器屬性 (invoker properties)</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><a href="#region">圖片對映區域設定 (invoker region   
+setting)</a></font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><a href="#getsetprop">運算式屬性存取 (formula get/set 
+properties)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">圖片引發器元件   
+(Image invoker component) 是以圖片的不同範圍啟動事件 (fire event)。當使用者以滑鼠移入範圍時，設計師可以設定各個範圍的顏色變化   
+(由顏色1 至 顏色2 )，及提示文字 (tips)。使用者按下滑鼠  
+(clicked)時即啟動事件。如果採用jLIVE&trade;   
+授權機制，作用範圍連結的事件為開啟視窗事件 (open form)   
+、執行印表作業事件 (report job) 、查詢資料來源事件 (query data   
+source) 時，皆會根據使用者是否擁有相關授權項目 (IUDQP)，而使該區域致能  
+(enabled) 或失效 (disabled)。</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<b><font size="2"><a name="invokerprop"></a>引發器 (Invoker properties)</font></b></p>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">背景圖片 (background)：</font>選擇背景圖片。<br>
+　</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><font color="#666699">引發器 (invoker)：</font>設定引發器。</font></p> 
+  <ul type="disc"> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><font color="#666699">新增引發器 (create new invoker map)   
+<img border="0" src="images/new20.gif" width="24" height="24">：</font>建立引發器。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">刪除引發器 (delete invoker map)   
+<img border="0" src="images/delete20.gif" width="24" height="24">：</font>刪除引發器   
+。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">編輯引發器 (update invoker map)    
+<img border="0" src="images/update20.gif" width="24" height="24">：</font>編輯引發器   
+。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">上移 (move up)    
+<img border="0" src="images/up20.gif" width="24" height="24">：</font>次序往前移。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">下移 (move down)   
+<img border="0" src="images/down20.gif" width="24" height="24">：</font>次序往後移   
+。<br>
+　</font></p>   
+    </li>   
+  </ul>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">範圍 (region) ：</font>設定引發範圍。(左，上，寬，高)。<br>
+　</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">事件 (event) ：</font>選擇啟動事件。<br>
+　</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">顏色1 (color 1)：</font>   
+滑鼠移到引發範圍內時，引發範圍內所有顏色1 (color 1)   
+將轉變為顏色2 (color 2)。<br>
+　</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">顏色2 (color 2)：</font>   
+滑鼠移到引發範圍內時，引發範圍內所有顏色1 (color 1)   
+將轉變為顏色2 (color 2)。<br>
+　</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">框線 (border)：</font>  
+引發範圍框線。</font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+  <ul type="disc">  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">無框線 (no border)：</font>無外框。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font color="#666699" size="2">顏色</font><font size="2"><font color="#666699">框線  
+(colored border)：</font>引發範圍以顏色2 (color 2) 繪製框線。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">按鈕框線 (button border)：</font>引發範圍以按鈕型式繪製外框。<br>
+　</font></p>  
+  </li>  
+  </ul>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">提示 (tips)：</font>滑鼠移到引發範圍時，顯示的提示文字內容。</font></p> 
+    </li> 
+  </ul> 
+  </li> 
+</ul> 
+<blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_16_invoker1.gif" width="476" height="476"></p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_16_frame.gif" width="476" height="476"></p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+</blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><b><a name="region"></a>圖片對映區域設定 (invoker region   
+setting)</b></font></p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">
+<font size="2" color="#000000">新增一個引發器或以滑鼠雙擊範圍的儲存格， 
+會開啟圖片對映區域設定視窗。設計師可以滑鼠拖曳</font><font size="2">，</font><font size="2" color="#000000">設定引發器的作用範圍，同時工作視窗會顯示作用區域的大小及滑鼠所在位置的顏色值。</font></p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">工作畫面解說： </font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">作用區域：</font>引發範圍 (左，上，寬，高)。 <br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">滑鼠的位置：</font>(X，Y)。<br>
+　</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><font color="#666699">滑鼠所在位置的顏色值：</font>(R，G，B)。<br>
+　</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">粉紅色的框點</font><font size="2"><font color="#666699">：</font><font color="#000000">標示作用區域。<br>
+　</font></font></p> 
+  </li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">調整作用區域大小：</font><font color="#000000" size="2">以滑鼠拖拉引發器範圍的粉紅色框點</font><font size="2">。<br>
+　</font></p> 
+  </li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">移動作用區域：</font>滑鼠按住框點內移動。<br>
+　</font></p> 
+  </li> 
+</ul> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_16_invoker.gif" width="416" height="415"></p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+  </li> 
+  <li><p style="margin-top: 0; margin-bottom: 0"><font size="2">範例 (example)   
+    ：<br>  
+    　</font></p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">以滑鼠圈選涵蓋 Customers   
+字樣的區域；移動滑鼠到藍色的字；檢視(R, G, B)的值為(0, 0, 255)；按下   
+確定；回到屬性設定頁。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2">在引發器中選擇一個觸發事件 (event )。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">點選顏色1 (color 1) 設定其 RGB 值為 (0, 0, 255) 。<br>  
+　</font></p>
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch10_16_color.gif" width="434" height="418"></p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<ul>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">點選顏色2 (color 2) 設定當滑鼠移至時的顏色值為另一顏色   
+RGB ( 153, 204, 255 ) 。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">應用程式執行時，當滑鼠移至作用區域時，Customers   
+的藍色 RGB(0, 0, 255) 字樣，會變為水藍色 RGB( 153, 204, 255)   
+，滑鼠在作用區按下時 (clicked)，即會引發設定的事件 (event )。</font></p>   
+  </li>   
+</ul>   
+  </li>   
+</ul>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取 
+(formula get/set properties)</b></font></p>
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;,&nbsp; 值</font><font color="#666699">1,&nbsp; 值</font><font color="#666699">2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;)</font>：屬性讀取。</font></p> 
+ 
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699" width="443"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabledat</font></td>  
+    <td><font size="2">N 第 N 區，由 1 起算</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>
+    <td><font size="2">致能與失效。第 N 區為設計時的次序。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"></p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_15.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch10_17.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+   
+</body>   
+   
+</html>

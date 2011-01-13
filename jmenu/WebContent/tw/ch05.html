@@ -1,0 +1,374 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>DataBase</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111" height="25">
+<tr>
+<td width=200 align=left valign=top height="25">
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch04_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=198 align=center valign=top height="25">
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 5</font></b><font color="#000000" face="新細明體">
+</font>       
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">
+Database</font></b></TD>
+<td width=202 align=right valign=top height="25">
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch06.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p><font size="4"><b>5</b></font><b><a class="TITLE"><font size="4">.    
+資料庫</font></a><font size="4">  (database)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2"><a class="TITLE" href="#create_new_db">新增資料庫 (create  
+new database)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">
+<font size="2">jLIVE Builder&trade; 系統透過 jLIVE&trade; middle ware 與 JDBC   
+的連結，操控後端的資料庫系統 (database system)。jLIVE&trade; middle ware   
+會根據所使用的 JDBC 驅動程式之支援性，適時調整系統內部的作業狀態。應用程式可同時連結多個不同的資料庫系統 (database 
+system)，每個資料庫系統在設計時，皆以所謂的資料庫別名 DB Alias 
+參照使用，資料庫設計時如果不使用到個別的資料庫特殊功能，原則上資料庫系統是可以在不改變程式碼而可按需求隨時轉換更替。如果使用<a href="ch15_03.html">異地多應用伺服器同時存取 
+(multiple application server access simultaneously)</a>，設定頁會出現 jLIVE&#8482; middle ware 的別名，設計師必須選取此資料庫所在的 jLIVE&#8482; middle ware 。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><b> 
+<a name="create_new_db"><font size="5"> 
+</font></a>5<a class="TITLE">.1  </a>新增資料庫 (create new   
+database)</b></p>  
+<blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/ch05_db_node.gif" width="284" height="152"></p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">請先點選【資料庫】節點，按下右方 <i>新增資料庫</i>   
+<img border="0" src="images/new20.gif" width="24" height="24">    
+ (出現下方資料庫設定頁) 。<br>
+<br>
+<img border="0" src="images/ch05_init_database.gif" width="496" height="237"></font></p>  
+</blockquote>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+以示範程式 (jNorth) 為例，當填寫資料庫設定之後，按下 <i>新增 </i>&nbsp;<img border="0" src="images/new20.gif" width="24" height="24">   
+( 新增資料庫 ) 。</font></p>  
+</blockquote>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><i>  
+<font color="#666699">取消&nbsp;</font></i><font color="#666699">( cancel create   
+database operation )</font>&nbsp;<i>  
+</i><img border="0" src="images/cancel20.gif" width="24" height="24"> (取消新增動作 )。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><i>  
+<font color="#666699">新增</font> </i><font color="#666699">(create new database)</font>&nbsp;&nbsp;<img border="0" src="images/new20.gif" width="24" height="24">    
+(  新增資料庫系統)。<br>
+<br>
+<img border="0" src="images/ch05_database.gif" width="551" height="238"></font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><i>測試</i></font>&nbsp;<font color="#666699">(  
+test database connection )</font>&nbsp;   
+<img border="0" src="images/testconnect20.gif" width="24" height="24"> ( 測試連結資料庫   
+) 按驅動程式及URL的設定，透過 jLIVE&trade; middle ware   
+連結資料庫，當新增程式之後，可以使用此功能。測試連結後系統會顯示，連結狀態及資料庫驅動程式版本及相關訊息。<br>
+<br>
+<img border="0" src="images/ch05_db_testconnect.gif" width="479" height="354"><br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><i>刪除</i></font>&nbsp;<font color="#666699">(  
+delete this database )</font>&nbsp;   
+<img border="0" src="images/delete20.gif" width="24" height="24"> ( 刪除此程式 )    
+移除資料庫參照，當新增程式之後，就會出現此圖示。執行後系統將會移除控制面板上的節點。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><i>儲存</i></font>&nbsp;<font color="#666699">(  
+save modified database settings )</font>&nbsp;   
+<img border="0" src="images/update20.gif" width="24" height="24"> ( 儲存設定    
+)，當新增程式之後，就會出現此圖示。任何的設定修改後必須存檔。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">
+MW_HTTP</font><font size="2"><font color="#666699"> (middle ware HTTP)：</font>使用異地多應用伺服器同時存取 
+(multiple application server access simultaneously)。選取 2nd_HTTP jLIVE&#8482; middle 
+ware 的別名，預設主要 jLIVE&#8482; middle ware 的名稱為 -- default --。</font></p> 
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+  </li> 
+  <li>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">   
+<font color="#666699">資料庫別名 (DB alias)：</font>資料庫在程式設計時的參照名稱。名稱不可填空白，最好以英文字命名，在同一個應用程式中不可有相同的資料庫別名。</font></p> 
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+  </li>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2" align="justify"> 
+<span style="font-weight: 400"> 
+<font color="#666699" size="2">驅動程式 (driver)</font></span><font color="#666699" size="2">：</font><span style="font-weight: 400"><font color="#000000" size="2">資料庫的 JDBC   
+驅動程式。可以在下拉式選單中選取常用的驅動程式 (driver)，系統將會把相對的 URL    
+樣式填入URL中，只要更改主機及資料庫名稱即可。亦可自行填入未列於常用選單的驅動程式。驅動程式必須在啟動 jLIVE&trade; middle ware    
+時正確的安裝，相關資料請查閱 jLIVE&trade; middle ware 系統。jLIVE&trade; middle ware 支援 JDBC TYPE1, TYPE2,    
+TYPE3, TYPE4 的驅動程式。</font></span></p>   
+<p style="margin-top: 2; margin-bottom: 2">　</li>   
+  <li>   
+<p style="margin-top: 2; margin-bottom: 2">   
+<span style="font-weight: 400"><font color="#666699" size="2"><a class="TITLE">URL</a></font></span><font color="#666699" size="2">：</font><font size="2">根據驅動程式提供的廠商而有不同的設定方式及樣式，必須參照各家廠商所提供的文件正確的設定。<br>
+      例如：</font></p> 
+  <ol>
+    <li>   
+<p style="margin-top: 2; margin-bottom: 2">   
+<font size="2">選擇驅動程式為 <font face="Courier New"> com.inet.tds.TdsDrive</font>。 </font></p> 
+    </li>
+    <li>   
+<p style="margin-top: 2; margin-bottom: 2">   
+<font size="2">URL 列出 <font face="Courier New"> jdbc:inetdae:<font color="#808080">hostname</font>:1433?database=<font color="#808080">DATABASE</font>&amp;charset=Cp950</font>    
+        之設定，其中 <font color="#808080" face="Courier New">hostname</font> 和 <font color="#808080">   
+        <font face="Courier New">  
+        DATABASE</font> </font>名稱需要更改。 </font></p> 
+    </li>
+        <li><font size="2">假設主機名稱<font color="#666699">：</font><font face="Courier New">SUPER</font>，資料庫名稱：<font face="Courier New">DB</font>。</font></li>
+    <li>   
+<p style="margin-top: 2; margin-bottom: 2">   
+<font size="2">將 URL 更改成<font color="#666699">：</font><font face="Courier New">jdbc:inetdae:<font color="#808080">SUPER</font>:1433?database=<font color="#808080">DB</font>&amp;charset=Cp950</font> </font></p> 
+    </li>
+</ol>
+  </li>
+</ul>   
+<blockquote>
+  <ul>
+    <li>
+    <p style="TEXT-INDENT: 0px"><font size="2" color="#000000">JDBC connect to mySQL
+    </font> </li>
+  </ul>
+  <blockquote>
+    <p style="TEXT-INDENT: 0px"><font face="Courier New"><font size="2" color="#666699">DB Alias</font></font><font size="2" color="#000000">：</font><font face="Courier New"><font size="2">NorthWind<br>
+    <font color="#666699">
+    Driver</font></font></font><font size="2" color="#000000">：</font><font face="Courier New"><font size="2">org.gjt.mm.mysql.Driver<br>
+    <font color="#666699">
+    Url</font></font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">jdbc:mysql://HostName:3306/DatabaseName</font><font size="2">　</font></p>
+  </blockquote>
+  <ul>
+    <li>
+    <p style="TEXT-INDENT: 0px"><font size="2" color="#000000">JDBC connect to ORACLE  
+    </font> </li>  
+  </ul>  
+  <blockquote>  
+    <p style="TEXT-INDENT: 0px"><font face="Courier New"><font size="2" color="#666699">DB Alias</font></font><font size="2" color="#000000">：</font><font face="Courier New"><font size="2">ORACLE<br>
+    <font color="#666699">
+    Driver</font></font></font><font size="2" color="#000000">：</font><font face="Courier New"><font size="2">oracle.jdbc.driver.OracleDriver<br>
+    <font color="#666699">
+    Url</font></font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">jdbc:oracle:thin:@HostName:1521:DatabaseName</font><font size="2">　</font></p>
+  </blockquote>
+  <ul>
+    <li>
+    <p style="TEXT-INDENT: 0px"><font size="2" color="#000000">JDBC connect to 
+    MSSQL  
+    </font> </li>  
+  </ul>  
+  <blockquote>  
+    <p style="TEXT-INDENT: 0px"><font face="Courier New"><font size="2" color="#666699">DB Alias</font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">MSSQL<br>
+    <font color="#666699">
+    Driver</font></font><font size="2" color="#000000">：</font><font size="2" face="Courier New">com.microsoft.jdbc.sqlserver.SQLServerDriver<br>
+    <font color="#666699">
+    Url</font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">jdbc:microsoft:sqlserver://hostname:1433;DatabaseName=database</font><font size="2">　</font></p>
+  </blockquote>
+
+  <ul>
+    <li>
+    <p style="TEXT-INDENT: 0px"><font size="2" color="#000000">iNet MSSQL2000 Driver&nbsp;   
+    </font> </li>   
+  </ul>   
+  <blockquote>   
+    <p style="TEXT-INDENT: 0px"><font size="2" color="#666699"><font face="Courier New">DB Alias</font></font><font size="2" color="#000000">：</font><font face="Courier New"><font size="2">MSINET<br>
+    <font color="#666699">
+    Driver</font></font></font><font size="2" color="#000000">：</font><font face="Courier New"><font size="2">com.inet.tds.TdsDriver<br>
+    <font color="#666699">
+    Url</font></font></font><font size="2" color="#000000">：</font><font size="2" face="Courier New">jdbc:inetdae:HostName:1433?database=DatabaseName&amp;charset=Cp950</font></p>
+    <p style="TEXT-INDENT: 0px"><font size="2">* Cp950</font><font size="2" color="#000000">：</font><font size="2">中文語系 Cp950&nbsp;or   
+    MS950 (    
+    日文語系填寫MS932 )</font></p>
+  </blockquote>
+  <ul>
+    <li>
+    <p style="TEXT-INDENT: 0px"><font size="2" color="#000000">ODBC connect to Access</font></li>  
+  </ul>  
+  <blockquote>  
+    <p style="TEXT-INDENT: 0px"><font face="Courier New" size="2"><font color="#666699">DB Alias</font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">ODBC_ACCESS<br>
+    <font color="#666699">
+    Driver</font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">sun.jdbc.odbc.JdbcOdbcDriver<br>
+    <font color="#666699">
+    Url</font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">jdbc:odbc:ACCESS_ODBC_Name</font><font size="2">　</font></p>
+  </blockquote>
+  <ul>
+    <li>
+    <p style="TEXT-INDENT: 0px"><font size="2" color="#000000">JDBC connect to 
+    Sybase</font></li>  
+  </ul>  
+  <blockquote>  
+    <p style="TEXT-INDENT: 0px"><font face="Courier New" size="2"><font color="#666699">DB Alias</font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">SYBASE<br>
+    <font color="#666699">
+    Driver</font></font><font size="2" color="#000000">：</font><font face="Courier New" size="2">com.sybase.jdbc3.jdbc.SybDriver<br>
+    <font color="#666699">
+    Url</font></font><font size="2" color="#000000">：</font><font size="2" face="Courier New">jdbc:sybase:Tds:host:port/database</font></p>
+    <p style="TEXT-INDENT: 0px">　</p>
+  </blockquote>
+  
+</blockquote>
+<ul type="square">
+  <li>
+<p style="margin-top: 2; margin-bottom: 2">
+<span style="font-weight: 400"><font color="#666699" size="2">使用者 (user)</font></span><font size="2" color="#666699">：</font><span style="font-weight: 400"><font size="2">資料庫登入的使用者名稱。</font></span></p> 
+<p style="margin-top: 2; margin-bottom: 2">　</li> 
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<span style="font-weight: 400"><font color="#666699" size="2">密碼 (password)</font></span><font size="2" color="#666699">：</font><span style="font-weight: 400"><font size="2">資料庫登入的使用者密碼。</font></span></p> 
+<p style="margin-top: 2; margin-bottom: 2">　</li> 
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<span style="font-weight: 400"><font color="#666699" size="2">類型 (schema)</font></span><font size="2" color="#666699">：</font><span style="font-weight: 400"><font size="2">資料庫  
+Schema，有支援 Schema 的資料庫系統才需設定，目前只作用於 Oracle 資料庫，如果同時存取多個 Schema 時，則以 </span>
+<span style="font-weight: 700"><code> ;</code></span><span style="font-weight: 400">&nbsp;分隔 
+Schema。<br>
+　</span></font></p>
+  </li>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699">結果集 (result set)：</font><span style="font-weight: 400"><font size="2">JDBC 
+資料庫執行 SQL statement 時所要產生的結果集 (result set) 的型式。按下編輯結果集<img border="0" src="images/ds.gif" width="16" height="16">系統會出現結果集 
+Type 和 Concurrency 設定視窗，其中 Fetch Size 採用驅動程式預設值，個別 Fetch Size 
+由資料來源設定頁，根據實際操作需要給定其值。<br>
+<br>
+<img border="0" src="images/ch05_resultset.gif" width="320" height="240"></font></span><font size="2"><br>
+　</font></p>
+<ul>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699">Type：</font><span style="font-weight: 400"><font size="2">JDBC 
+資料庫執行 SQL statement 時所要產生的結果集 (result set) 的型式。<br>
+　</font></span></p>
+<ul type="disc">
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699">FORWARD_ONLY</font></p>
+  </li>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699">SCROLL_INSENSITIVE</font></p>
+  </li>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699">SCROLL_SENSITIVE</font></p>
+  </li>
+</ul>   
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699"><br>
+</font><span style="font-weight: 400"><font size="2">JDBC version 1.0 不支援 Type 和  
+Concurrency，使用 JDBC 1.0 驅動程式時，請將 Type 選為 FORWARD_ONLY ，系統內部會自動以不含 Type 及 
+Concurrency 的函式 (method) 建立 SQL statement。<br>
+除非驅動程式不支援，否則不要選用 FORWARD_ONLY，那對系統效率的影響非常大。<br>
+關於 JDBC 結果集 (result set) 的型式 各資料庫系統的驅動程式 (driver) 
+實作的機制不盡相同，請參各資料庫系統的驅動程式的說明。一般而言，FORWORD_ONLY 會以資料串流的型式，擷取結果集 (result 
+set)，驅動程式不會 cache 結果集資料，適用於大資料讀取時應用，例如：使用【複製資料來源至另一資料來源】事件時，原來源資料來源 (source datasource) 就以選用 FORWORD_ONLY 為宜。<br>
+SCROLL_INSENSITIVE 與 SCROLL_SENSITIVE 的分別，以 Oracle 為例，選用 
+SCROLL_INSENSITIVE 時，多個使用者同時更新同一資料記錄 (record) 時 ，檔案資料記錄值為最後更新的使用者輸入值。若選用 SCROLL_SENSITIVE 
+時，多個使用者同時選取同一資料記錄時，當第一個使用者更新檔案資料記錄值後，在此使用者之後選取 (select) 
+此資料檔案記錄的使用者，不可更新此資料檔案記錄，驅動程式會拋出 (throw)&nbsp; SQL 錯誤訊息，告知在選取 (select) 
+此資料檔案記錄後資料已被更新 (dirty data)，使用者需再次選取 (select) 此資料記錄，再進行更新。<br>
+　</font></span></p>
+  </li>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699">Concurrency：</font><span style="font-weight: 400"><font size="2">JDBC 資料庫執行 SQL statement   
+時所要產生的結果集 (result set) 的同步存取狀態。</font></span><font size="2" color="#666699"><br>
+　</font></p>
+<ul type="disc">
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2" color="#666699">READ_ONLY</font></p>
+  </li>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2"><font color="#666699">UPDATABLE</font><br>
+　</font></p>
+  </li>
+</ul>   
+<p style="margin-top: 2; margin-bottom: 2"> 
+<span style="font-weight: 400"><font size="2">JDBC 1.0 和 舊版的驅動程式大都不支援 UPDATABLE， jLIVE</font><font color="#000000" size="2">&trade;</font><font size="2"> 
+middle ware 會自行運作資料記錄更新的操作 。除非設計師確定驅動程式支援 UPDATABLE 且 UPDATABLE 的效率較好，否則選擇 READ_ONLY 即可。<br>
+　</font></span></p>
+  </li>
+  <li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font size="2"><font color="#666699">FetchSize：</font>JDBC </font><span style="font-weight: 400"><font size="2">
+驅動程式每次至資料庫擷取結果集的大小，並非所有驅動程式及資料庫都支援。 0 值代表不作設定，使用預設值， -99 
+值系統會將其轉換為整數最小值，以因應某些資料庫設定，例如：mySQL 。</font></span></p>
+  </li>
+</ul>   
+<p style="margin-top: 2; margin-bottom: 2">　</li>
+</ul>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 2; margin-bottom: 2">   
+<span style="font-weight: 400"><font color="#666699" size="2">連結  
+(connection)</font></span><font size="2" color="#666699">：</font><span style="font-weight: 400"><font size="2">當點選分享時，使用 
+Connection pool 連線。</font><font color="#000000" size="2">jLIVE Builder&#8482; </font><font size="2">
+必須支援多個 Session 的資料庫交易程序 (transaction) ，所以目前不開放使用 Connection pool 。</font></span></p> 
+<p style="margin-top: 2; margin-bottom: 2">　</li> 
+<li> 
+<p style="margin-top: 2; margin-bottom: 2"> 
+<font color="#666699" size="2">文件附註 (description)：</font><font size="2">設計者對於資料庫相關說明。</font></li> 
+</ul> 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<a href="ch04_02.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=196 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=204 align=right valign=top> 
+<a href="ch06.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+</body>  
+  
+</html>

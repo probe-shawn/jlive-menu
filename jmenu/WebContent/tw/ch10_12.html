@@ -1,0 +1,604 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Memo component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_11.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>    
+<td width=205 align=right valign=top>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="ch10_13.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p><font size="4"><b>   
+<a name="top"></a>備忘錄元件 (Memo component) </b>  
+<img border="0" src="images/dbtmemo.gif" width="25" height="25"></font></p>     
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p>     
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#prefixpath">檔案名稱與前綴路徑  
+(file name and prefix path)</a></font></p>     
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#downupload">編輯、下載、上載文字檔案  
+(edit, download, upload text file)</a></font></p>     
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#varchar">使用備忘錄元件編輯  
+VARCHAR    
+型別的欄位 (use memo to&nbsp;edit VARCHAR type field)</a></font></p>    
+<p style="margin-top: 2; margin-bottom: 2"><a href="#memoprop">    
+<font size="2">備忘錄屬性 (Memo properties)</font></a></p>     
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event">     
+<font size="2">事件 (event)</font></a></p>    
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">運算式屬性存取 
+(formula get/set properties)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">備忘錄元件      
+(Memo component) 是繼承自 Java&trade; JEditorPane      
+的元件，使用於不限制長度、可多行 (multi-line)      
+編輯的文字資料，其中：</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">文字的資料格式可以是</font></p>     
+<ol style="font-size: 10 pt">     
+  <li>     
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">純文字  
+    (plain text)。</font></li>    
+  <li>    
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">RTF。</font></li>    
+  <li>    
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">HTML。</font></li>    
+</ol>    
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">文字的資料來源可以是</font></p>    
+<ol style="font-size: 10 pt">    
+  <li>    
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">直接儲存於資料記錄中的      
+    LONGVARCHAR 欄位型別的文字資料。</font></li>    
+  <li>    
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">前綴路徑  
+    (prefix path) 加上 儲存於資料記錄中的VARCHAR      
+    欄位型別的檔案名稱 (file name)。</font></li>    
+  <li>    
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">前綴路徑  
+    (prefix path) 加上 直接指名的檔案名稱 (file   
+    Name)。</font></li>   
+</ol>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">只有直接儲存於資料記錄中的 LONGVARCHAR     
+欄位型別的文字資料，編輯資料後 (updated)，在連結的資料來源存檔時  
+(post)，異動的資料會更新至資料欄位中 (data field)。編輯時，使用者可以標示  
+(mark)     
+文字資料，按右鍵後，以顯示的功能選單 (menu)，加入文字樣式  
+(style)。使用檔案名稱 (file name)     
+做為文字資料來源，檔案內容的更新，必須透過 <a href="#downupload">檔案上載與下載</a>  
+的方式，進行實際的檔案內容更新。若只是改變資料記錄  
+(data field) 中的VARCHAR      
+欄位型別的檔案名稱，備忘錄元件 (Memo      
+component) 會在欄位值 (檔案名稱)      
+更新存檔後，自動下載該檔案，更新備忘錄元件的顯示資料，如果該檔案不存在則顯示空白。</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="prefixpath"></a>檔案名稱與前綴路徑  
+(file name and prefix path)</b></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">備忘錄元件可以顯示  
+(display) 文字資料檔(純文字、RTF、HTML)     
+的內容，設計師或使用者必須以前綴路徑與檔案名稱，指定文字資料檔所在的位置，前綴路徑與檔案名稱所組合成的字串，也必須是一有效且符合  
+UNC (Universal Naming Convention) 命名的檔案來源，才能正確顯示資料。UNC     
+(Universal Naming Convention) 命名法則包含三部份：主機名稱或IP  
+(host name or ip)、分享路徑 (sharing path)、檔案路徑名稱 (file path     
+and name) 合組成 <font color="#666699">\\SERVER\Sharing path\path\filename</font>     
+的檔案來源位置。檔案的資料存取是由 jLIVE&trade; middleware     
+提供服務，所以在 jLIVE&trade; middleware     
+所在的主機，可以且允許存取的網路資源，皆可以當成備忘錄元件的文字資料檔來源，因此網路管理師必須把要提供給系統或使用者存取的資源路徑，分享  
+(share)     
+存取權限給予jLIVE&trade; middleware 所在的主機。UNC     
+命名法則的主機名稱或IP (SERVER name or ip)     
+，設計師可以用運算式 (formula) 的<font color="#666699"> ApServerName()</font>     
+或 <font color="#666699">ApServerIp()</font> 取得 jLIVE&trade; middleware     
+主機，避免主機名稱或 IP     
+更換時程式須隨之更動。如果是存取使用者端 (client)     
+的檔案資源，則直接以磁碟名 (driver) 加檔案路徑名稱 (file path     
+and name) 即可 (例如：<font face="Courier New">C:\\jlive\doc\index.html</font>)，此時系統直接存取使用者端  
+(client) 的檔案資源，不經由 jLIVE&trade; middleware，但是使用者端  
+(client) 必須在 JRE&nbsp; (Java Runtime Environment) 中授權 (grant)     
+程式模組存取本機的權限，才可正確顯示資料。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><a name="memoprop"></a><b><font size="2">備忘錄屬性      
+(Memo properties)</font></b></p>     
+<ul type="square">     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">資料來源  
+(data source)：</font>選取資料來源。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">資料欄位  
+(data field)：</font>選取資料欄位。備忘錄元件只能選取資料欄位型別為      
+VARCHAR 或 LONGVARCHAR 的欄位，連結 VARCHAR      
+的欄位將解譯為檔案名稱 (file name)；LONGVARCHAR      
+的欄位將根據內含資料解譯為 text/plain 或 text/rtf。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">可編輯  
+(editable)：</font>是否允許使用者編輯。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">預設：</font><font size="2">預設存入資料記錄內的資料格式。<br>
+　</font></p>   
+  <ul>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">文字/Rtf 內容：</font><font size="2">RTF      
+格式。</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">文字/Plain 內容：</font><font size="2">純文字。<br>
+　</font></p>     
+    </li>     
+  </ul>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">靜態的檔案：</font>檔案名稱。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">     
+<font color="#666699">前綴路徑 (Prefix path) </font><a href="file://server/sharing" style="text-decoration: none"><font color="#666699">\\server\sharing</font></a><font color="#666699">Path\Path\&nbsp;</font></font><font color="#666699" size="2">：</font><font size="2"><font color="#666699">前綴路徑      
+</font>加上 <font color="#666699">檔案名稱 </font><font color="#000000">所組成的      
+UNC (Universal Naming Convention) 字串為完整檔案來源。</font>參閱 <a href="#prefixpath">檔案名稱與前綴路徑  
+(file name and prefix path)</a></font><br>
+　</p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">捲軸 (scrollbar)：</font><br>
+　</p>  
+  <ul>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">水平 (horizontal)：</font>是否出現水平捲軸。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2"><font color="#666699">垂直 (vertical)：</font>是否出現垂直捲軸。</font></p>   
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_12_memo.gif" width="476" height="476"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><a name="event"></a><b><font size="2">事件  
+(event)</font></b></p>    
+<ul>    
+  <li>    
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">值變事件  
+    (changed event)：</font>當每次輸入值改變時，即引發事件 (fire      
+    event)，每一個按鍵輸入包括刪除鍵 (delete)      
+    但不包括方向鍵，都會引發值變事件。<br>
+　</font></p>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">Gain      
+    Focus 事件：</font>當 Focus 移入備忘錄元件時，即引發事件      
+    。<br>
+　</font></p>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">Lost      
+    Focus 事件：</font>當 Focus 移出備忘錄元件時，即引發事件      
+    。<br>
+　</font></p>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">雙擊事件  
+    (double clicked event)：</font>當雙擊滑鼠的左鍵時，即引發事件。<br>
+　</font></p>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">按右鍵事件  
+    (right clicked event)：</font>當按下滑鼠右鍵時，即引發事件。</font></p>     
+  </li>     
+</ul>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch10_12_event.gif" width="476" height="477"></p>     
+</blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="downupload"></a>編輯、下載、上  
+傳文字檔案 (edit, download, upload text file)</b></font></p>     
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">使用備忘錄元件以檔案名稱為連結的文字資料來源，或動態的給定檔案名稱，直接操作編輯文字資料檔    
+(Plain text 、RTF、 HTML)    
+時，設計師必須負責將編輯後的文字資料檔上載更新。程式執行期  
+(runtime)，設計師隨時可以動態的根據需求，上傳下載文字資料檔，更新或儲存備忘錄元件的內含資料。備忘錄元件可以不連結資料來源，亦不需設定實際的檔案名稱，屬性設定時，核選屬性  
+<font color="#666699">靜態檔案 (static file) </font>而只給定<font color="#666699">前綴路徑  
+(prefix     
+path)</font>，在程式執行期 (runtime) 設計師以運算式 (formula)     
+動態的下載 (download) 檔案資料，在使用者編輯後，上傳  
+(upload) 更新檔案內容。</font></p>    
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">下載檔案資料：</font></p>    
+  <ul>    
+    <li>    
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699" face="Courier New">SetProp(&quot;</font><font color="#666699">備忘錄元件名稱</font><font color="#666699" face="Courier New">&quot;,     
+      &quot;file&quot;, &quot;</font><font color="#666699">檔案名稱</font><font color="#666699" face="Courier New">&quot;)</font>：只給定檔案名稱，檔案來源是備忘錄元件預設的前綴路徑加上&quot;檔案名稱&quot;。</font></li>    
+    <li>    
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699" size="2" face="Courier New">SetProp(&quot;</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" size="2" face="Courier New">&quot;,     
+      &quot;uncfile&quot;, &quot;UNC</font><font color="#666699" size="2">命名的檔案來源</font><font color="#666699" size="2" face="Courier New">&quot;)</font>：給定完整UNC命名的檔案來源。</font></li>    
+  </ul>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">上傳更新檔案資料：</font></p>    
+  <ul>    
+    <li>    
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699" face="Courier New" size="2">SetProp(&quot;</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" face="Courier New" size="2">&quot;,     
+      &quot;saveas&quot;, &quot;UNC</font><font color="#666699" size="2">命名的檔案來源</font><font color="#666699" face="Courier New" size="2">&quot;)</font>。</font></li>    
+  </ul>    
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">取得目前檔案來源名稱：</font></p>    
+  <ul>    
+    <li>    
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699" size="2" face="Courier New">GetProp(&quot;</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" size="2" face="Courier New">&quot;,     
+      &quot;file&quot;)</font>：傳回檔案來源名稱     
+      (前綴路徑加檔案名稱 或 完整 UNC 命名的檔案來源名稱)。</font></li>   
+  </ul>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">取得前綴路徑：</font></p>   
+  <ul>   
+    <li>   
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699" face="Courier New" size="2">GetProp(&quot;</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" face="Courier New" size="2">&quot;,     
+      &quot;prefix&quot;)</font>：傳回前綴路徑。</font></li>    
+  </ul>    
+  <p style="margin-top: 2; margin-bottom: 2"><font size="2">擷取備忘錄元件內含值：</font></p>    
+  <ul>    
+    <li>    
+      <p style="margin-top: 1; margin-bottom: 1"><font color="#666699" face="Courier New" size="2">GetProp(&quot;</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" face="Courier New" size="2">&quot;,     
+      &quot;text&quot;)</font><font size="2">：傳回不含文字式樣屬性  
+      (styled     
+      properties) 的純文字資料。</font></li>    
+    <li>    
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699" size="2" face="Courier New">{</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" size="2" face="Courier New">}</font>：傳回不含文字式樣屬性     
+      (Styled properties) 的純文字資料。</font></li>    
+    <li>    
+      <p style="margin-top: 1; margin-bottom: 1"><font color="#666699" face="Courier New" size="2">GetProp(&quot;</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" face="Courier New" size="2">&quot;,     
+      &quot;attrtext&quot;)</font><font size="2">：傳回含文字式樣屬性  
+      (styled     
+      properties) 的文字資料。</font></li>    
+  </ul>    
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="varchar"></a>使用備忘錄元件編輯    
+VARCHAR 型別的欄位 (use memo to edit VARCHAR type field)</b></font></p>    
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">    
+　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">  
+<font size="2">備忘錄元件連結資料欄位型別為 VARCHAR    
+的資料欄位，其內含值將會被解譯為檔案名稱。如果有屬於VARCHAR    
+的資料欄位，希望以備忘錄元件為編輯介面元件，設計師必須自行維護資料的讀取與更新，設計方式如下：</font></p>   
+<ol style="font-size: 10 pt">   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">備忘錄元件選擇以<font color="#666699">靜態檔案</font>連結，<font color="#666699">檔案名稱</font>留空白，<font color="#666699">前綴路徑  
+    </font>設為    
+    &quot;&quot; (空字串)。</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">讀入資料：VARCHAR    
+    的資料欄位所屬的資料來源 (Data    
+    Source)，在讀取後事件(After fetch event) 連接一運算式事件─</font>    
+    <font color="#666699" size="2" face="Courier New">SetProp(&quot;</font><font color="#666699" size="2">備忘錄元件名稱</font><font color="#666699" size="2" face="Courier New">&quot;,    
+    &quot;text&quot;, {</font><font color="#666699" size="2">資料來源</font><font color="#666699" size="2" face="Courier New">:VARCHAR  
+    </font><font color="#666699" size="2"> 的資料欄位</font><font color="#666699" size="2" face="Courier New">})</font><font size="2">，將該欄位值讀入備忘錄元件。</font></li>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">使用者以備忘錄元件編輯內容。</font></li>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">資料存檔：VARCHAR    
+    的資料欄位所屬的資料來源 (data source)，在更改前事件(before update event)&nbsp;  
+    連接一【設定資料欄位資料】事件 (set record field data    
+    event)，設定該欄位值為 <font color="#666699">{備忘錄元件名稱}    
+    </font>。</font></li>   
+</ol>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取 
+(formula get/set properties)</b></font></p>
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;,&nbsp; 值</font><font color="#666699">1,&nbsp; 值</font><font color="#666699">2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;)</font>：屬性讀取。</font></p> 
+ 
+<table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" cellpadding="2"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性  
+      (Properties)&nbsp;</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1  
+      (Value 1)</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2  
+      (Value 2)</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明  
+      (Descriptions)</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">enabled</font></td> 
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td><font size="2">　</font></td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">file</font></td>
+    <td><font size="2">文字串 檔案名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">以前綴路徑加上檔案名稱，下載檔案至備忘錄元件。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">uncfile</font></td> 
+    <td><font size="2">UNC 檔案資源名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">以UNC  
+      檔案資源名稱，下載檔案至備忘錄元件。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">saveas</font></td> 
+    <td><font size="2">UNC 檔案資源名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">將備忘錄內容，存檔成  
+      UNC 檔案資源名稱。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">text</font></td> 
+    <td><font size="2">文字串</font></td> 
+    <td>　</td> 
+    <td><font size="2">以文字串取代備忘錄內容。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">html</font></td> 
+    <td><font size="2">html 文字串</font></td> 
+    <td>　</td>
+    <td><font size="2">以 html 文字串取代備忘錄內容。</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2">refresh</font></td> 
+    <td><font size="2">1</font></td> 
+    <td>　</td>
+    <td><font size="2">重新下載，更新備忘錄內容。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">file</font></td> 
+    <td colspan="2"><font size="2">UNC 檔案資源名稱</font></td> 
+    <td><font size="2">目前備忘錄元件連結的檔案資源名稱。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">prefix</font></td> 
+    <td colspan="2"><font size="2">文字串 前綴路徑</font></td> 
+    <td><font size="2">備忘錄元件的前綴路徑。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">text</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">傳回目前備忘錄元件不含字元屬性的內容。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">attrtext</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">傳回目前備忘錄元件含字元屬性的內容。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p>　</p> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_11.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch10_13.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+      </body>    
+    
+</html>

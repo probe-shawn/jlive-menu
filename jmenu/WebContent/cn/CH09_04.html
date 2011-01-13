@@ -1,0 +1,320 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH09_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH09_01.html"><font color="#000000">Chapter 9</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH09_01.html"><font color="#000000">Event</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_01.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<h1 class="chapter"><a name="JFC-CH-1"><font size="5">9</font></a><font size="5"><a class="TITLE" name="JFC-CH-1">.4 </a>
+Advance Event</font></h1>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>Content:</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#941">Common 
+Properties</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#942">Copy 
+DataSource Data To Buffer DataSource</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#943">Copy 
+Server Text File To Buffer DataSource</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#944">Upload 
+File</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#945">Send Mail</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#946">Execute 
+Hyper Link</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#947">Execute 
+Play Audio</a></p>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_01_event_advance.gif" width="416" height="369"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="941"></a>9.4.1 Common Properties</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">General properties :</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Event name</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Condition : it have to 
+satisfy the condition before execute event</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Otherwise : you can 
+choose another event if not satisfy the condition</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Document note</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_01_event_event.gif" width="415" height="389"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Next event : After 
+execute the event, you choose next event to enforce</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_01_event_Comm_nextevent.gif" width="416" height="191"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="942"></a>9.4.2 Copy DataSource Data To Buffer DataSource</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">To use this event, you 
+have to create a buffer datasource first.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">DataSource : choose one 
+datasource</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Buffer DataSource : 
+choose buffer datasource </p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Append Record Data</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Transfer Filter : it can 
+transfer field data</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_04_CDD_perform.gif" width="416" height="356"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="943"></a>9.4.3 Copy Server Text File To Buffer DataSource</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">This event is able to 
+copy text file into buffer datasource.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">File Url : file position 
+in server</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Tab Delimited</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Define Text Record : 
+identify format and suitable buffer datasource field</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_04_CST_perform.gif" width="416" height="384"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Buffer DataSource : choose one datasource</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+Map Transfer Fields : the text field format map to buffer datasource</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_04_CST_perform2.gif" width="416" height="416"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="944"></a>9.4.4 Upload File</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">You can upload 
+datasource into file.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">File Url : file position</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Append</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Initial Event</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Content : upload data</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Break Cndition True will 
+break loop</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">&nbsp;next event</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_04_UF_perform.gif" width="417" height="416"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="945"></a>9.4.5 Send Mail</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Send mail event, type 
+the following message</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Smtp Host</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">From Addr</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">To Addr</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">CC Addr</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Subject</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Content</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Attachment</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_04_SM_perform.gif" width="416" height="415"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="946"></a>9.4.6 Execute HyperLink</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">This event is able to 
+execute hyperlink.</p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Ref</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Relative : file location 
+is in class/doc/</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">window title</p>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_04_EH_perform.gif" width="417" height="311"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="947"></a>9.3.7 Execute Paly Audio</font></b></p>
+<ul>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Ref</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Relative : file location 
+is in class/audio/</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Operation</p>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Start</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Loop</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">Stop</p>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH9_04_EPA_perform.gif" width="415" height="336"></p>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH09_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH10_01.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

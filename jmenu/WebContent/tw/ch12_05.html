@@ -1,0 +1,1621 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Date</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=204 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=196 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_06.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+12.5 日期 (date)</font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Today()">Today()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#CurrentTime()">CurrentTime()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Date(yyyy,mm,dd)">Date(yyyy,mm,dd)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#NextDate(fromdate,y,m,d)">NextDate(fromdate,#y,#m,#d)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DaysRange(formdate,todate)">DaysRange(formdate,todate)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Year(x)">Year(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Month(x)">Month(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Day(x)">Day(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DayofWeek(x)">DayofWeek(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DayofMonth(x)">DayofMonth(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DayofYear(x)">DayofYear(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#IsValidDate(x)">IsValidDate(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#IsValidTime(x)">IsValidTime(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#IsLeapYear(x)">IsLeapYear(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ElapsedTime(fromtime,totime)">ElapsedTime(fromtime,totime)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ElapsedDateTime(fromdatetime,todatetime)">ElapsedDateTime(fromdatetime,todatetime)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormatDateTime(pattern,datetime)">FormatDateTime(pattern,datetime)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormatDateTime(pattern,datetime, locale)">
+FormatDateTime(pattern, datetime, locale)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#NextDateTime(datetime,second)">NextDateTime(datetime,second)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ApServerDateTime()">ApServeDateTime()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ApServerDateTime(refresh)">ApServerDateTime(refresh)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+日期運算式是針對日期做處理。日期的原型格式 (original type)為  
+&quot;yyyyMMdd&quot;，時間的原型格式為 &quot;HHmmss&quot;，日期時間的原型格式為  
+&quot;yyyyMMddHHmmss&quot;。設計師以常數給值或由元件 (屬性格式為日期時間格式樣版)、資料欄位  
+(欄位型態為日期時間) 取值時，傳回的值皆為原型格式。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p> 
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/ch12_05_date.gif" width="345" height="462"></p> 
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"> 
+<a name="Today()">Today()</a></font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+客戶端(Client)的系統日期。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">
+    客戶端(Client)的系統日期，為 8 byte 字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/09</span><span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>  
+    傳回<span style="font-family: 新細明體">&nbsp;&nbsp; &nbsp; </span>  
+    <span lang="EN-US" style="font-family: Times New Roman">  
+    &nbsp;</span><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">20001109</span><span style="font-family: Times New Roman">&quot;</span></font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Date(yyyy,mm,dd)">Date(yyyy,mm,dd)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="23" height="16"></td>
+    <td width="58" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="516" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+將運算式組成日期，並自動調整成有意義的日期格式。</font></td>
+  </tr>
+  <tr>
+    <td width="23" height="16"></td>
+    <td width="58" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="516" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+    <font size="2">&quot;yyyy&quot;年份、&quot;mm&quot;月份、&quot;dd&quot;日期，參數均可為常數值或運算式。</font></td>
+  </tr>
+  <tr>
+    <td width="23" height="16"></td>
+    <td width="58" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="516" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+    <font size="2">
+    日期，為 8 byte 字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="23" height="16"></td>  
+    <td width="58" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="219" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/09</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span></font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Date (2000,11,09)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Date  
+    (2000,11,9)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Date (2000,02,31)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Date  
+    (2000,2,31)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Date (1999,02,31)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US" style="font-family: Times New Roman">Date (</span><span style="font-family: Times New Roman">2000</span><span lang="EN-US" style="font-family: Times New Roman">,</span><span style="font-family: Times New Roman">13</span><span lang="EN-US" style="font-family: Times New Roman">,</span><span style="font-family: Times New Roman">01</span><span lang="EN-US" style="font-family: Times New Roman">)</span></font></p>  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+    <span lang="EN-US" style="font-family: Times New Roman">Date (</span><span style="font-family: Times New Roman">2000</span><span lang="EN-US" style="font-family: Times New Roman">,</span><span style="font-family: Times New Roman">13</span><span lang="EN-US" style="font-family: Times New Roman">,</span><span style="font-family: Times New Roman">41</span><span lang="EN-US" style="font-family: Times New Roman">)</span></font></p>  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+    <span lang="EN-US" style="font-family: Times New Roman">Date (</span><span style="font-family: Times New Roman">&quot;a&quot;</span><span lang="EN-US" style="font-family: Times New Roman">,</span><span style="font-family: Times New Roman">&quot;b&quot;</span><span lang="EN-US" style="font-family: Times New Roman">,</span><span style="font-family: Times New Roman">&quot;c&quot;</span><span lang="EN-US" style="font-family: Times New Roman">)</span></font></p>  
+    </td>  
+    <td width="40" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td> 
+    <td width="85" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">20001109</span><span style="font-family: Times New Roman">&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">20001109</span><span style="font-family: Times New Roman">&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">20000229</span><span style="font-family: Times New Roman">&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">20000229</span><span style="font-family: Times New Roman">&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">19990228</span><span style="font-family: Times New Roman">&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+    <font size="2"> 
+    <span style="font-family: Times New Roman">&quot;20001201&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+    <span style="font-family: Times New Roman">&quot;20001231&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+    <span style="font-family: Times New Roman">&quot;20001109&quot;</span></font></td> 
+    <td width="169" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; border-left-width:1; border-top-width:1"> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="NextDate(fromdate,y,m,d)">NextDate(fromdate,#y,#m,#d)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="23" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="517" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+計算 &quot;fromdate&quot; 加上&quot;#y&quot; 年、&quot;#m&quot; 月、&quot;#d&quot; 日之後的日期。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="23" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="517" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">&quot;fromdate&quot; 基準日期、&quot;#y&quot;年份、&quot;#m&quot;月份、&quot;#d&quot;日期，參數均可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="23" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="517" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    日期，為 8 byte 字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="23" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="217" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span></font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">NextDate ( 20001110,   
+    0 , 3 ,20 )</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US" style="font-family: Times New Roman">NextDate ( Today(),   
+    0 , 0 ,1000 )</span></font></p>  
+    </td>  
+    <td width="32" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td> 
+    <td width="98" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">&quot;</span></font><span lang="EN-US" style="font-family: Times New Roman"><font size="2">20010302</font></span><font size="2"><span style="font-family: Times New Roman">&quot;</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">20030807</span><span style="font-family: Times New Roman">&quot;</span></font></td> 
+    <td width="167" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DaysRange(formdate,todate)">DaysRange(formdate,todate)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-bottom:1px solid #C0C0C0; border-collapse: collapse" bordercolor="#111111" width="600" height="109" cellpadding="0">
+  <tr>
+    <td width="23" height="16"></td>
+    <td width="56" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="518" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+計算 &quot;fromdate&quot; 與&quot;todate&quot; 間隔多少天。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="23" height="16"></td>  
+    <td width="56" align="right" height="17" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="518" height="17" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">&quot;fromdate&quot; 起始日期、&quot;todate&quot;終止日期。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="23" height="16"></td>  
+    <td width="56" align="right" height="17" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="518" height="17" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    間隔天數。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="23" height="61"></td>  
+    <td width="56" align="right" height="63" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="221" height="62" align="left" valign="top" style="border-bottom-style:solid; border-bottom-width:1">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">09</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span>  
+    <span lang="EN-US" style="font-family: Times New Roman">DaysRange (</span><span style="font-family: Times New Roman">Today()</span><span lang="EN-US" style="font-family: Times New Roman">   
+    , 20001209)</span></font></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">DaysRange  
+    (20000201 , 20000301)</font></span><font size="2"><span style="font-family: Times New Roman"><br>  
+    </span></font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">DaysRange (20000501   
+    , 20000401)</font></span></p>  
+    </td>  
+    <td width="33" height="62" align="left" valign="top" style="border-bottom-style:solid; border-bottom-width:1">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+傳回</font></td> 
+    <td width="94" height="62" align="right" valign="top" style="border-bottom-style:solid; border-bottom-width:1"> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> 
+<span lang="EN-US" style="font-family: Times New Roman">&nbsp;</span><span style="font-family: Times New Roman">30</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><span style="font-family: Times New Roman"><font size="2">29</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span style="font-family: Times New Roman">-30</span></font></td> 
+    <td width="167" height="62" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Year(x)">Year(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-right:1px solid #C0C0C0; border-collapse: collapse; border-bottom-style:solid; border-bottom-color:#C0C0C0; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="15" height="16"></td>
+    <td width="58" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="500" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+x 的年份。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="15" height="16"></td>  
+    <td width="58" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="500" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="15" height="16"></td>  
+    <td width="58" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="500" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    數值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="15" height="16"></td>  
+    <td width="58" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="169" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span>  
+    <span lang="EN-US" style="font-family: Times New Roman">Year (20001109)</span></font></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Year  
+    (Today())</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Year (&quot;ABCD&quot;)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Year  
+    (1999)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+    <span lang="EN-US" style="font-family: Times New Roman">Year (1999.14)</span></font></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Year  
+    (891)</font></span></p>  
+    </td>  
+    <td width="99" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回<br>
+傳回</font></td> 
+    <td width="54" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">2000</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">2000</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">2000</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">
+<span style="font-family: Times New Roman">1999</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">
+<span style="font-family: Times New Roman">1999</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">
+<span style="font-family: Times New Roman">891</span></font></td> 
+    <td width="154" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Month(x)">Month(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="22"></td>
+    <td width="66" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="509" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+x 的月份。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="22" height="16"></td>  
+    <td width="66" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="509" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="22" height="16"></td>  
+    <td width="66" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="509" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    數值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="22" height="16"></td>  
+    <td width="66" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="177" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span></font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Month</font></span><font size="2"><span lang="EN-US" style="font-family: Times New Roman">   
+(20001109)</span></font></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Month  
+    (Today())</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">Month (&quot;ABCD&quot;)</font></span></p>  
+    </td>  
+    <td width="37" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font><span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font><span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font><span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span></td> 
+    <td width="130" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><span style="font-family: Times New Roman">11</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><span style="font-family: Times New Roman">11</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><span style="font-family: Times New Roman">11</span></font></td> 
+    <td width="162" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Day(x)">Day(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse; border-bottom-style:solid; border-bottom-color:#C0C0C0" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="19" height="16"></td>
+    <td width="68" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="510" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+x 的日期。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="68" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="510" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="68" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="510" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    數值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="11" style="border-left-width: 1; border-right: 1px solid #C0C0C0; border-top-width: 1; border-bottom-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1"></td>  
+    <td width="68" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="176" align="left" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span></font>  
+    <span lang="EN-US"><font size="2">Day</font></span><font size="2"><span lang="EN-US" style="font-family: Times New Roman">   
+(20001109)</span></font></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US"><font size="2">Day</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2">  
+    (Today())</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US"><font size="2">Day</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2"> (&quot;ABCD&quot;)</font></span></p>  
+    </td>  
+    <td width="30" align="left" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 2"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 2"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 2"><font size="2">傳回</font></td> 
+    <td width="140" align="right" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">9</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">10</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">10</font></td> 
+    <td width="161" align="left" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DayofWeek(x)">DayofWeek(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="19" height="16"></td>
+    <td width="67" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+x 是一週的第幾天， 1 表星期日，2 表星期一，依此類推。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="67" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="67" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="511" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    數值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="67" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="181" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span></font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">DayofWeek (20001109)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US">DayofWeek</span> </font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">  
+    (Today())</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US"><font size="2">DayofWeek</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2">   
+    (</font></span><span lang="EN-US"><font size="2">20001015</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2">)</font></span></p>  
+    </td>  
+    <td width="64" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 2"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 2"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 2"><font size="2">傳回</font></td> 
+    <td width="108" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1"> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><span style="font-family: Times New Roman">5</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">
+<span style="font-family: Times New Roman">6</span></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">
+<span style="font-family: Times New Roman">1 </span><span lang="EN-US">(</span> Sunday
+</font> <span lang="EN-US"><font size="2">)</font></span></td> 
+    <td width="158" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; border-left-width:1; border-top-width:1"> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DayofMonth(x)">DayofMonth(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="19" height="16"></td>
+    <td width="64" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="514" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+x 是一個月中的第幾天。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="64" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="514" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="64" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="514" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    數值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="19" height="16"></td>  
+    <td width="64" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="184" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span>  
+    <span lang="EN-US">DayofMonth </span></font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">(20001109)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US">DayofMonth</span> </font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">  
+    (Today())</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US">DayofMonth</span></font><span lang="EN-US" style="font-family: Times New Roman"><font size="2">   
+    (</font></span><span lang="EN-US"><font size="2">&quot;ABCD&quot;</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2">)</font></span></p>  
+    </td>  
+    <td width="33" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td> 
+    <td width="138" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">9</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">10</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">10</font></td> 
+    <td width="156" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"> <a name="DayofYear(x)">DayofYear(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+x 是一年中的第幾天。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    數值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="188" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    <span style="font-family: Times New Roman"><br>  
+</span>  
+    <span lang="EN-US">Dayof</span></font><span lang="EN-US"><font size="2">Year</font></span><font size="2"><span lang="EN-US"> </span></font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">(</font></span><span lang="EN-US"><font size="2">19981012</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2">)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US">Dayof</span></font><span lang="EN-US"><font size="2">Year</font></span><font size="2">  
+    </font>  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2">  
+    (Today())</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US">Dayof</span></font><span lang="EN-US"><font size="2">Year</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2">   
+    (</font></span><span lang="EN-US"><font size="2">&quot;ABCD&quot;</font></span><span lang="EN-US" style="font-family: Times New Roman"><font size="2">)</font></span></p>  
+    </td>  
+    <td width="31" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td> 
+    <td width="144" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">285</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">315</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman" size="2">315</font></td> 
+    <td width="154" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; border-left-width:1; border-top-width:1"> 
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="IsValidDate(x)">IsValidDate(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+檢查 x 是否為合法的日期格式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    1 表合法，0 表不合法。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="186" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1">  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US"><font size="2">IsValidDate(19981012)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US" style="font-family: Times New Roman"><font size="2"> 
+    IsValidDate(1998931)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <span lang="EN-US"><font size="2">IsValidDate(&quot;ABC&quot;)</font></span></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">I<span lang="EN-US">sValidDate(1999</span>0<span lang="EN-US">229)</span></font></p>  
+    </td>  
+    <td width="33" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td>  
+    <td width="145" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span lang="EN-US">1</span>  
+    <span lang="EN-US">(</span><span style="font-family: 新細明體">True</span></font><span lang="EN-US"><font size="2">)</font></span></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> <span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span></font><span lang="EN-US"><font size="2">)</font></span></p> 
+<p style="margin-top: 0; margin-bottom: 0">  
+    <font size="2">  
+<span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span></font><span lang="EN-US"><font size="2">)</font></span></p> 
+<p style="margin-top: 0; margin-bottom: 0">  
+    <font size="2"> <span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span></font><span lang="EN-US"><font size="2">)</font></span></td>  
+    <td width="153" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; border-left-width:1; border-top-width:1">  
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="IsValidTime(x)">IsValidTime(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+檢查 x 是否為合法的時間格式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    1 表合法，0 表不合法。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="186" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+<font size="2">IsValidTime(&quot;184725&quot; )</font></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+<font size="2">IsValidTime(&quot;20020328184725&quot; )</font></p>  
+<p style="margin-top: 0; margin-bottom: 0; ">  
+    <font size="2">  
+    <span lang="EN-US">IsValid</span>Time<span lang="EN-US">(&quot;ABC&quot;)</span></font></p>  
+    </td>  
+    <td width="29" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td>  
+    <td width="151" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span lang="EN-US">1</span>  
+    <span lang="EN-US">(</span><span style="font-family: 新細明體">True</span></font><span lang="EN-US"><font size="2">)</font><O:P><font size="2">  
+    </font>  
+    </O:P>  
+    </span></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> <span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span></font><span lang="EN-US"><font size="2">)</font></span></p> 
+<p style="margin-top: 0; margin-bottom: 0">  
+    <font size="2">  
+<span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span></font><span lang="EN-US"><font size="2">)</font></span></td>  
+    <td width="151" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; ">  
+　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="IsLeapYear(x)">IsLeapYear(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64" cellpadding="0">
+  <tr>
+    <td width="20" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">
+<font size="2">
+檢查 x 是否為閏年。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">x 可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="520" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0" colspan="4">  
+    <font size="2">  
+    1 表&quot;真&quot;，0 表&quot;偽&quot;。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="20" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="187" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0; "><font size="2">  
+假設系統日期<span style="font-family: 新細明體">為 </span>  
+<span lang="EN-US" style="font-family: Times New Roman">2000/11/</span><span style="font-family: Times New Roman">10</span><span style="font-family: 新細明體"> </span>  
+    </font> <span lang="EN-US">  
+<font size="2"><br>  
+IsLeapYear(2000)<br>  
+IsLeapYear(</font></span><font size="2">Today()<span lang="EN-US">)</span></font><span lang="EN-US"><O:P><font size="2"><br>  
+    </font>  
+    </O:P>  
+    </span>  
+<font size="2"> <span lang="EN-US">  
+IsLeapYear(</span>&quot;<span lang="EN-US">200</span>10201&quot;<span lang="EN-US">)</span></font></p>  
+    </td>  
+    <td width="34" align="left" valign="top" style="border-bottom:1px solid #C0C0C0; ">  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">傳回</font></td> 
+    <td width="146" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; "> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span lang="EN-US">1</span> 
+    <span lang="EN-US">(</span><span style="font-family: 新細明體">True</span></font><span lang="EN-US"><font size="2">)</font></span></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><span lang="EN-US">1</span>  
+    <span lang="EN-US">(</span><span style="font-family: 新細明體">True</span></font><span lang="EN-US"><font size="2">)</font></span></p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"> <span lang="EN-US">0</span> <span lang="EN-US">(</span><span style="font-family: 新細明體">False</span></font><span lang="EN-US"><font size="2">)</font></span></td>  
+    <td width="150" align="left" valign="top" style="border-right:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; border-left-width:1; border-top-width:1">  
+<p style="margin-top: 0; margin-bottom: 0">　</td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="CurrentTime()">CurrentTime()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+目前客戶端(client)的系統時間。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">
+    時分秒，6 byte 字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">  
+<span lang="EN-US">CurrentTime( ) </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  
+    傳回<span style="font-family: 新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp; </font></span>  
+<font size="2">&quot;<span lang="EN-US">173732</span>&quot;&nbsp;&nbsp; <span lang="EN-US">(</span><span style="font-family: 新細明體">17:37:32</span></font><span lang="EN-US"><font size="2">)</font><O:P><font size="2">  
+    </font>  
+    </O:P>  
+    </span></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ElapsedTime(fromtime,totime)">ElapsedTime(fromtime,totime)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+計算 &quot;fromtime&quot; 與 &quot;totime&quot; 的時間間距，單位是秒。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    &quot;fromtime&quot; 起始時間、 &quot;totime&quot; 終止時間。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">  
+    數值，單位是秒。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2"><span lang="EN-US">ElapsedTime(174141   
+,184141 )</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span>  
+<font size="2">  
+<span lang="EN-US">3600 (</span><span style="font-family: 新細明體">sec</span></font><span lang="EN-US"><font size="2">)<O:P />  
+</font>  
+</span></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ElapsedDateTime(fromdatetime,todatetime)">ElapsedDateTime(fromdatetime,todatetime)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+計算 &quot;fromdatetime&quot; 與 &quot;todatetime&quot; 的時間間距，單位是秒。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    &quot;fromdatetime&quot; 起始日期時間、 &quot;todatetime&quot; 終止日期時間。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">  
+    數值，單位是秒。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">  
+<span lang="EN-US" style="font-family: Times New Roman">  
+ElapsedDateTime(</span><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">20001113080000</span><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+,</span><span style="font-family: Times New Roman"> &quot;</span><span lang="EN-US" style="font-family: Times New Roman">200011140000000</span><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </font></span>  
+<font size="2">  
+<span lang="EN-US" style="font-family: Times New Roman">57600 (</span><span style="font-family: 新細明體">sec</span></font><span lang="EN-US" style="font-family: Times New Roman"><font size="2">)</font></span></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="FormatDateTime(pattern,datetime)">FormatDateTime(pattern,datetime)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="FormatDateTime(pattern,datetime, locale)">FormatDateTime(pattern,datetime, 
+locale)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+將 &quot;datetime&quot; 以自訂的日期時間格式重新排列。<br>  
+格式代表符號如下。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    &quot;datetime&quot; 基準日期時間。<br>
+&quot;pattern&quot; 自訂日期時間的格式，參閱 <a href="format_pattern.html#datetimepattern">
+日期格式化符號</a>。<br>
+&quot;locale&quot; 預設不輸入時為西元，&quot;zh_TW&quot; 為台灣民國，&quot;ja&quot; 為日本和曆。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    日期時間。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">  
+<span style="font-family: Times New Roman">  
+Format</span><span lang="EN-US" style="font-family: Times New Roman">DateTime(</span><span style="font-family: Times New Roman">&quot;yyyy-MM-dd   
+HH:mm:ss&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+,</span><span style="font-family: Times New Roman"> &quot;</span><span lang="EN-US" style="font-family: Times New Roman">200011</span><span style="font-family: Times New Roman">09160138&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+)</span>&nbsp;&nbsp;&nbsp;  
+      
+    </font>  
+    </p>  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">  
+&nbsp;&nbsp;&nbsp;&nbsp; 傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;</span><span lang="EN-US" style="font-family: Times New Roman">2000</span><span style="font-family: Times New Roman">-</span><span lang="EN-US" style="font-family: Times New Roman">11</span><span style="font-family: Times New Roman">-09   
+16:01:38&quot;</span></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+　</p> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2"> 
+<span style="font-family: Times New Roman"> 
+Format</span><span lang="EN-US" style="font-family: Times New Roman">DateTime(</span><span style="font-family: Times New Roman">&quot;MMM-dd-yyyy&quot;</span><span lang="EN-US" style="font-family: Times New Roman"> 
+,</span><span style="font-family: Times New Roman"> &quot;</span><span lang="EN-US" style="font-family: Times New Roman">200011</span><span style="font-family: Times New Roman">09160138&quot;</span><span lang="EN-US" style="font-family: Times New Roman"> 
+)</span> </font></p> 
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; 在中文語系OS下傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;十一月-11-</span><span lang="EN-US" style="font-family: Times New Roman">2000</span><span style="font-family: Times New Roman">&quot;；</span></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; 英文OS則傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;Nov-11-</span><span lang="EN-US" style="font-family: Times New Roman">2000</span><span style="font-family: Times New Roman">&quot;</span></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2"><span style="font-family: Times New Roman"><br>  
+Format</span><span lang="EN-US" style="font-family: Times New Roman">DateTime(</span><span style="font-family: Times New Roman">&quot;MMMM-dd-yyyy&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+,</span><span style="font-family: Times New Roman"> &quot;</span><span lang="EN-US" style="font-family: Times New Roman">200011</span><span style="font-family: Times New Roman">09160138&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+)</span> </font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;   
+在中文語系OS下傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;十一月-11-</span><span lang="EN-US" style="font-family: Times New Roman">2000</span><span style="font-family: Times New Roman">&quot;；</span></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2"> 
+<span style="font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp; </span>英文OS則傳回<span style="font-family: 新細明體"> </span> 
+</font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;November-11-</span><span lang="EN-US" style="font-family: Times New Roman">2000</span><span style="font-family: Times New Roman">&quot;</span></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2"><span style="font-family: Times New Roman"><br>  
+Format</span><span lang="EN-US" style="font-family: Times New Roman">DateTime(</span><span style="font-family: Times New Roman">&quot;hh:mm:ss&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+,</span><span style="font-family: Times New Roman"> &quot;</span><span lang="EN-US" style="font-family: Times New Roman">200011</span><span style="font-family: Times New Roman">09160138&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+)</span>&nbsp;&nbsp;&nbsp;  
+      
+    </font>  
+    </p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; 傳回<span style="font-family: 新細明體"> </span> 
+</font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;04:01:38&quot;<br>
+　</span></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2"><span style="font-family: Times New Roman">
+FormatDateTime(&quot;yyy年MM月dd日&quot;, &quot;</span><span lang="EN-US" style="font-family: Times New Roman">200011</span><span style="font-family: Times New Roman">09160138&quot;, 
+&quot;zh_TW&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+)</span> </font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; 傳回<span style="font-family: 新細明體"> </span> 
+</font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;90年11月09日&quot;<br>
+<br>
+FormatDateTime(&quot;yyy年MM月dd日&quot;, &quot;</span><span lang="EN-US" style="font-family: Times New Roman">200011</span><span style="font-family: Times New Roman">09160138&quot;, 
+&quot;ja&quot;</span><span lang="EN-US" style="font-family: Times New Roman">  
+)</span> </font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; 傳回<span style="font-family: 新細明體"> </span> 
+</font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;</font></span><font size="2"><span style="font-family: Times New Roman">&quot;平成13年11月09日&quot;<br>
+　</span></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2"><span style="font-family: Times New Roman">套用各種符號所傳回</span>的日期時間格式請自行測試。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">  
+<font size="2"><br>  
+</font> </p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">  
+<font size="2">  
+日期時間格式符號簡介：</font> </p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">  
+　 </p>  
+<table border="1" cellspacing="1"> 
+  <tr> 
+    <td height="13" bgcolor="#505050" align="center"><font size="2" color="#FFFFFF">Symbol</font></td> 
+    <td height="13" bgcolor="#505050" align="center"><font size="2" color="#FFFFFF">Meaning 
+</font></td> 
+    <td height="13" bgcolor="#505050" align="center"><font size="2" color="#FFFFFF">Presentation&nbsp; 
+</font></td> 
+    <td height="13" bgcolor="#505050" align="center"><font size="2" color="#FFFFFF">Example 
+</font></td> 
+  </tr> 
+  <tr> 
+    <td height="13" align="center"><font size="2">G</font></td> 
+    <td height="13"><font size="2">era designator</font></td> 
+    <td height="13"><font size="2">Text</font></td> 
+    <td height="13"><font size="2">AD 
+</font></td> 
+  </tr> 
+  <tr> 
+    <td height="20" align="center"><font size="2"> y 
+</font></td> 
+    <td height="20"><font size="2"> year 
+</font></td> 
+    <td height="20"><font size="2"> Number 
+</font></td> 
+    <td height="20"><font size="2"> 1996 
+</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2">M</font></td> 
+    <td height="16"><font size="2"> month in year 
+</font></td> 
+    <td height="16"><font size="2"> Text &amp; Number 
+</font></td> 
+    <td height="16"><font size="2"> July &amp; 07 
+</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2">d</font></td> 
+    <td height="16"><font size="2">day in month</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">10</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> h 
+</font></td> 
+    <td height="16"><font size="2"> hour in am/pm (1~12) 
+</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">12</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2">H</font></td> 
+    <td height="16"><font size="2"> hour in day (0~23) 
+</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">0</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> m 
+</font></td> 
+    <td height="16"><font size="2"> minute in hour 
+</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">30</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> s 
+</font></td> 
+    <td height="16"><font size="2"> second in minute 
+</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">55</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> S 
+</font></td> 
+    <td height="16"><font size="2"> millisecond 
+</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">978</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> E 
+</font></td> 
+    <td height="16"><font size="2"> day in week 
+</font></td> 
+    <td height="16"><font size="2"> Text 
+</font></td> 
+    <td height="16"><font size="2"> Tuesday 
+</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> D 
+</font></td> 
+    <td height="16"><font size="2"> day in year 
+</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">189</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> F 
+</font></td> 
+    <td height="16"><font size="2"> day of week in month 
+</font></td> 
+    <td height="16"><font size="2"> Number 
+</font></td> 
+    <td height="16"><font size="2"> 2 (2nd Wed in July) 
+</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> w 
+</font></td> 
+    <td height="16"><font size="2"> week in year 
+</font></td> 
+    <td height="16"><font size="2"> Number 
+</font></td> 
+    <td height="16"><font size="2">27</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2">W</font></td> 
+    <td height="16"><font size="2"> week in month 
+</font></td> 
+    <td height="16"><font size="2">Number</font></td> 
+    <td height="16"><font size="2">2</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> a 
+</font></td> 
+    <td height="16"><font size="2"> am/pm marker 
+</font></td> 
+    <td height="16"><font size="2">Text</font></td> 
+    <td height="16"><font size="2">PM</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> k 
+</font></td> 
+    <td height="16"><font size="2"> hour in day (1~24) 
+</font></td> 
+    <td height="16"><font size="2"> Number 
+</font></td> 
+    <td height="16"><font size="2">24</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> K 
+</font></td> 
+    <td height="16"><font size="2"> hour in am/pm (0~11) 
+</font></td> 
+    <td height="16"><font size="2"> Number 
+</font></td> 
+    <td height="16"><font size="2">0</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> z 
+</font></td> 
+    <td height="16"><font size="2"> time zone&nbsp; 
+</font></td> 
+    <td height="16"><font size="2"> Text 
+</font></td> 
+    <td height="16"><font size="2"> Pacific Standard Time 
+</font></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2"> ' 
+</font></td> 
+    <td height="16"><font size="2"> escape for text 
+</font></td> 
+    <td height="16"><font size="2"> (Delimiter) 
+</font></td> 
+    <td height="16"></td> 
+  </tr> 
+  <tr> 
+    <td height="16" align="center"><font size="2">''</font></td> 
+    <td height="16"><font size="2"> single quote 
+</font></td> 
+    <td height="16"><font size="2"> (Literal) 
+</font></td> 
+    <td height="16"><font size="2">'</font></td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="NextDateTime(datetime,second)">NextDateTime(datetime,second)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+計算 &quot;datetime&quot;&nbsp; 加上 &quot;second&quot; 之後的日期時間。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    &quot;datetime&quot; 基準日期時間、 &quot;second&quot; 秒。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    日期時間。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2"> <span style="font-family: Times New Roman">  
+    假設系統日期</span>時間<span style="font-family: Times New Roman">為   
+&quot;2000/11/10-18:43:36&quot;</span><br>  
+NextDateTime( Today() ,86400)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;</font></span><font size="2">2000/11/11-18:43:36&quot;</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="4"><b>
+<a name="ApServerDateTime()">ApServerDateTime()</a></b></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+取得Application server (jLIVE middle ware) 目前的日期時間。系統在第一次取得 Application server 
+的日期時間後，為避免頻繁的查詢Application server，隨即由使用者端以此基準計算時間。設計師可以呼叫 
+ApServerDateTime(refresh)，重新查詢日期時間。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">無。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    日期時間原型 (yyyyMMddHHmmss)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2"> <span style="font-family: Times New Roman">  
+    假設系統日期</span>時間<span style="font-family: Times New Roman">為   
+&quot;2000/11/10-18:43:36&quot;</span><br>  
+ApServerDateTime()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    傳回<span style="font-family: 新細明體"> </span></font>  
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;</font></span><font size="2">20001110184336&quot;<br>
+<br>
+設計師可能運用此函數所得的日期時間，以 SetProp(&quot;timer&quot;, &quot;time&quot;, ApServerDateTime()) 方式將 Application 
+Server 的時間設定給計時器元件(timer component)。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="4"><b>
+<a name="ApServerDateTime(refresh)">ApServerDateTime(refresh)</a></b></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+重新連結查詢取得Application server (jLIVE middle ware) 目前的日期時間。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1：重新連結查詢。<br>
+0：不重新連結查詢。與 ApServerDateTime() 同。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">  
+    日期時間原型 (yyyyMMddHHmmss)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">同 ApServerdateTime()。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=189 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=211 align=right valign=top>
+<a href="ch12_06.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

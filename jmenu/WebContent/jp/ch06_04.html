@@ -1,0 +1,382 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=shift_jis">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="ch06_04.files/filelist.xml">
+<link rel=Edit-Time-Data href="ch06_04.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Form debug and event interrupt</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>gao</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>gao</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2003-01-07T06:24:00Z</o:Created>
+  <o:LastSaved>2003-01-07T06:24:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>336</o:Words>
+  <o:Characters>1919</o:Characters>
+  <o:Company>FM-USER</o:Company>
+  <o:Lines>15</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2251</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:2 1 6 1 0 1 1 1 1 1;
+	mso-font-alt:"Arial Unicode MS";
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:1 134742016 16 0 1048576 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ Ｐゴシック";
+	panose-1:2 11 6 0 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@PMingLiU";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:1 134742016 16 0 1048576 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"ＭＳ Ｐゴシック";
+	mso-bidi-font-family:"ＭＳ Ｐゴシック";}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"ＭＳ Ｐゴシック";
+	mso-bidi-font-family:"ＭＳ Ｐゴシック";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:878207176;
+	mso-list-template-ids:-321113014;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:標準の表;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
+	mso-para-margin:0mm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+</style>
+<![endif]-->
+<meta http-equiv=Content-Language content=zh-tw>
+</head>
+
+<body lang=JA link=blue vlink=blue style='tab-interval:42.0pt'>
+
+<div class=Section1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:450.0pt;border-collapse:collapse;mso-padding-alt:0mm 0mm 0mm 0mm'
+ id=AutoNumber1>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td width="100%" style='width:100.0%;padding:0mm 0mm 0mm 0mm'>
+  <p align=center style='margin:0mm;margin-bottom:.0001pt;text-align:center'><span
+  lang=EN-US><a href="index.html"><span style='text-decoration:none;text-underline:
+  none'><img border=0 width=345 height=60 id="_x0000_i1025"
+  src="images/jlogo.GIF"></span></a></span></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+   style='width:450.0pt;border-collapse:collapse;mso-padding-alt:0mm 0mm 0mm 0mm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=187 valign=top style='width:140.25pt;padding:0mm 0mm 0mm 0mm'>
+    <p style='margin:0mm;margin-bottom:.0001pt'><span lang=EN-US><a
+    href="ch06_03.html"><span style='text-decoration:none;text-underline:none'><img
+    border=0 width=70 height=18 id="_x0000_i1026"
+    src="images/jlogo_previous.gif"></span></a></span></p>
+    </td>
+    <td width=231 valign=top style='width:173.25pt;padding:0mm 0mm 0mm 0mm'>
+    <p align=center style='margin:0mm;margin-bottom:.0001pt;text-align:center'><span
+    lang=EN-US><a href="ch06.html"><b><span style='font-size:10.0pt;font-family:
+    PMingLiU;color:black;text-decoration:none;text-underline:none'>Chapter 6</span></b><span
+    style='font-family:PMingLiU;color:black;text-decoration:none;text-underline:
+    none'> </span></a></span></p>
+    <p align=center style='margin:0mm;margin-bottom:.0001pt;text-align:center'><b><span
+    lang=EN-US style='font-size:10.0pt;font-family:PMingLiU'><a href="ch06.html"><span
+    style='color:black;text-decoration:none;text-underline:none'>Form</span></a></span></b></p>
+    </td>
+    <td width=182 valign=top style='width:136.5pt;padding:0mm 0mm 0mm 0mm'>
+    <p align=right style='margin:0mm;margin-bottom:.0001pt;text-align:right'><span
+    lang=EN-US><a href="ch07.html"><span style='text-decoration:none;
+    text-underline:none'><img border=0 width=70 height=18 id="_x0000_i1027"
+    src="images/jlogo_next.gif"></span></a></span></p>
+    </td>
+   </tr>
+  </table>
+  <div class=MsoNormal><span lang=EN-US>
+  <hr size=2 width="100%" noshade color=black align=left>
+  </span></div>
+  <p><a name=top></a><b><span lang=EN-US style='font-size:13.5pt'>6.5 フォームデバッグとイベント中断
+  (form debug and event interrupt)</span></b></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  0mm'><span lang=EN-US style='font-size:10.0pt'><a href="#debug">デバッグ情報パネル (debug
+  information panel)</a>　</span></p>
+  <p style='margin-top:1.5pt;margin-right:0mm;margin-bottom:1.5pt;margin-left:
+  0mm'>　</p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  0mm'><a name=debug></a><b><span style='font-size:10.0pt'>デバッグ情報パネル<span
+  lang=EN-US> (debug information panel)</span></span></b></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>中断のキャンセル<span
+  lang=EN-US> (cancel this interrupt)：</span></span><span style='font-size:
+  10.0pt;color:black'>実行を継続にした後，この中断点で再び中断しません。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>全部中断のキャンセル<span
+  lang=EN-US> (cancel all interrupts)：</span></span><span style='font-size:
+  10.0pt;color:black'>全部中断をキャンセルします。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>デザインモードへ戻り<span
+  lang=EN-US> (back to design&nbsp;mode)：</span></span><span style='font-size:
+  10.0pt;color:black'>実行テストを終え，デザインモードに戻リます。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>継続<span
+  lang=EN-US> (continue)：</span></span><span style='font-size:10.0pt;
+  color:black'>実行テストの継続。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>イベント<span
+  lang=EN-US> (event)：</span></span><span style='font-size:10.0pt;color:black'>イベントプロパティ値。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>ローカルハッシュ－<span
+  lang=EN-US> (LocalHash)：</span></span><span lang=EN-US style='font-size:10.0pt;
+  color:black'>LocalHash のキー(key)と値(value)。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>ハッシュ－<span
+  lang=EN-US>(Hash)：</span></span><span lang=EN-US style='font-size:10.0pt;
+  color:black'>Hash のキー (key)と値 (value)。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt;
+  color:#666699'>Stack：</span><span lang=EN-US style='font-size:10.0pt;
+  color:black'>Stack　の値 (value)。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>システムパラメーター<span
+  lang=EN-US> (_sysvar)：</span></span><span lang=EN-US style='font-size:10.0pt;
+  color:black'>_sysvar1 から _sysvar8 までの値。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>ストアドプロシージャ転送パラメーター<span
+  lang=EN-US>(Sp Param)：</span></span><span style='font-size:10.0pt;color:black'>ストアドプロシージャ<span
+  lang=EN-US> (stored procedure) 転送されるパラメーター。</span></span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:10.0pt;color:#666699'>システムハッシュ－<span
+  lang=EN-US>SysHash：</span></span><span lang=EN-US style='font-size:10.0pt;
+  color:black'>SysHash のキー(key)と値 (value)。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><![if !supportLists]><span
+  lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+  Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>&middot;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt;
+  color:#666699'>Servlet：</span><span lang=EN-US style='font-size:10.0pt;
+  color:black'>Servlet に転送されるパラメーター。</span></p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  0mm'>　</p>
+  <p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+  0mm'><span lang=EN-US><img border=0 width=570 height=456 id="_x0000_i1029"
+  src="images/ch06_04_debug.gif"></span></p>
+  <p style='margin-top:1.5pt;margin-right:0mm;margin-bottom:1.5pt;margin-left:
+  0mm'>　</p>
+  <p style='margin-top:1.5pt;margin-right:0mm;margin-bottom:1.5pt;margin-left:
+  0mm'>　</p>
+  <p style='margin:0mm;margin-bottom:.0001pt'><span lang=EN-US><a href="#top"><span
+  style='font-size:10.0pt;color:#003366'>▲Top</span></a></span></p>
+  <p style='margin:0mm;margin-bottom:.0001pt'>　</p>
+  <div class=MsoNormal><span lang=EN-US>
+  <hr size=2 width="100%" noshade color=black align=left>
+  </span></div>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+   style='width:450.0pt;border-collapse:collapse;mso-padding-alt:0mm 0mm 0mm 0mm'>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=200 valign=top style='width:150.0pt;padding:0mm 0mm 0mm 0mm'>
+    <p class=MsoNormal><span lang=EN-US><a href="ch06_03.html"><span
+    style='text-decoration:none;text-underline:none'><img border=0 width=70
+    height=18 id="_x0000_i1031" src="images/jlogo_previous.gif"></span></a></span></p>
+    </td>
+    <td width=195 valign=top style='width:146.25pt;padding:0mm 0mm 0mm 0mm'>
+    <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><a
+    href="index.html"><span style='text-decoration:none;text-underline:none'><img
+    border=0 width=144 height=25 id="_x0000_i1032" src="images/jlogo_small.gif"></span></a></span></p>
+    </td>
+    <td width=205 valign=top style='width:153.75pt;padding:0mm 0mm 0mm 0mm'>
+    <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US><a
+    href="ch07.html"><span style='text-decoration:none;text-underline:none'><img
+    border=0 width=70 height=18 id="_x0000_i1033" src="images/jlogo_next.gif"></span></a></span></p>
+    </td>
+   </tr>
+  </table>
+  <div class=MsoNormal><span lang=EN-US>
+  <hr size=2 width="100%" noshade color=black align=left>
+  </span></div>
+  <p style='margin:0mm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:10.0pt'>Copyright &copy; 2001~ 2004 Probe Technology . All Rights
+  Reserved.</span></p>
+  <p style='margin:0mm;margin-bottom:.0001pt'><span lang=EN-US
+  style='font-size:10.0pt'>Questions, comments, and suggestions to <a
+  href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Internet Enterprise Application Integration</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=165 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=253 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch02.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 2</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch02.html" style="text-decoration: none"><font color="#000000">Technical       
+overview</font></a></font></b></TD>     
+<td width=182 align=right valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="ch02_02.html">     
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<h1 class="chapter"><font size="4">2<a class="TITLE">.1 </a></font><b><font size="3">網際網路
+應用程式與企業應用整合         
+(Enterprise Application Integration)</font></b></h1>       
+<p style="text-indent: 20" align="justify"><font size="2">網際網路    
+(internet)        
+無遠弗屆地連接起全世界的資訊情報，也串連起世界性的商業市場。網際網路的企業應用整合         
+(Enterprise Application Integration)         
+成為企業發展上的必須，如何快速整合新的網際網路方案和舊有應用系統的網際網路化，也成為企業成長的當務之急。<span lang="en-us"> </span>jLIVE            
+Builder&#8482;            
+ 正是企業架構企業應用整合 (EAI)<span lang="en-us"> </span>&nbsp;系統最佳的工具與環境。</font></p>        
+<p style="text-indent: 20" align="justify"><font size="2">在網際網路上開發應用系統與過去的主從架構    
+(client/server)         
+是完全不同的，舊有的設計理念必須由封閉的區域網路 (local network) 提昇至開放的網際網路 (internet)<span lang="en-us">
+</span>，在資料的傳輸 (transfer)<span lang="en-us"> </span>、保密 
+(encryption)<span lang="en-us"> </span>、存取 (retrieval) 以至於系統規劃、流程、架構，皆需有所謂的網際網路考量    
+(internet thinking) 和完整的解決方案 (total solution)<span lang="en-us"> </span>。</font></p>        
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE            
+Builder&#8482;            
+ 無論在網際網路上的應用以及解決方案上的完整性，都是符合最先進的條件。</font></p>        
+<p><font size="3"><b>網際網路的應用考量 (<span lang="en-us">I</span>nternet thinking)</b></font></p>        
+<ul>        
+  <li><b><font size="2">多層式架構取代主從架構 (N-tiers architecture)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">多層式架構  
+  (N-tiers architecture)         
+  在網際網路的企業應用整合環境是絕對必需的，應用程式執行時是不允許客戶端    
+  (client)         
+  直接存取後端的資料庫伺服器 (database server)<span lang="en-us"> </span>。企業中防火牆內的資料庫伺服器與系統資源，
+  必須透過中間層    
+  (middle tier) 取得服務。 jLIVE            
+Builder&#8482;           
+  是內設 (default) 至少三層式的架構，中間層 (middle tier) jLIVE&#8482;           
+  middle ware 是由 Java&#8482; Servlet 所設計成的應用伺服器 (application server) 
+  ，可以安裝及協同運作於各種知名的應用伺服器 (Web&nbsp; sphere&#8482; 、Web logic&#8482; 、Interstage&#8482; 、Tomcat&#8482; ‧‧‧)，並適用於各種作業平台 
+  (OS&nbsp; platform) 。</font></p>        
+</blockquote>        
+<ul>        
+  <li><b><font size="2">集中式應用程式</font></b><font size="2">，</font><b><font size="2">分散式運算模組   
+    (Centralized programs and distributed computing)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">網際網路應用程式的客戶端 
+  (client) 是分散於世界各地，再也不可能像過去主從架構 ( client/server) 似地將應用程式安裝在每一個客戶端 (client) 
+  。網際網路應用程式必須分散模組化 (distributed modules) ，集中於 Web 伺服器或應用伺服器 (application server) 
+  管理，客戶端 (client) 要求服務或執行程式模組時， Web 只需傳輸目前客戶端 (client) 所需服務的小程式模組 (java class) 
+  即可，不需安裝整套的應用程式，當然如果該模組已存在 (cached) 客戶端 (client) ，則直接由客戶端 (client) 啟動即可。</font></p>        
+  <p style="text-indent: 20" align="justify"><font size="2">
+  由於網際網路的應用通常是使用瀏覽器，真正可行的應用程式，必須使客戶端 (client) 的瀏覽器，亦具備有運算能力而不光只是能瀏覽而已。 jLIVE 
+  Builder&#8482; 運用 Java&#8482; Applet 、 Swing set 與 class loader 的軟體元件技術 (component 
+  architecture) ，在網際網路應用程式的開發、執行與維護，不但能達到以上的需求，在整體系統的運算負載 (computing loading)&nbsp; 
+  中，亦達到所謂的分散式運算 (distributed computing) ，即是系統將使用者的操作需求與要求的服務，分別由客戶端 (client 
+  tier) 、中間層 (middle tier) 及伺服器端 (database tier) 按最有效率的方式分配擔任運算角色。</font></p>        
+</blockquote>        
+<ul>        
+  <li><b><font size="2">跨作業平台 (Cross heterogeneous OS platforms)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">網際網路的應用程式，通常是由各種作業平台 
+  (OS) 的瀏覽器所執行，所以企業開發應用程式的首要條件，必然是要能使應用程式在各種不同的作業平台上執行。 jLIVE Builder&#8482; 所使用的 Java&#8482; 
+  具備跨平台的特性，中間層 (middle tier) 亦由 Java&#8482; Servlet 所設計成，所以在各種作業平台 (MS 
+  Windows 、Solaris 、Red hat 、MacOs 、Unix ‧‧‧) ，皆能運作。</font></p>        
+</blockquote>        
+<ul>        
+  <li><b><font size="2">異質型資料庫系統同時存取 (Heterogeneous database manipulate 
+  simultaneously)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">網際網路的企業應用整合 (EAI)         
+  ，應用程式所面對的可能是企業體中舊有或新增的各種不同資料庫系統，應用程式不只是要能存取各種不同的資料庫，亦要能同時處理各種不同資料庫的資料處理。因此應用程式中間層 (middle tier) 
+  在服務客戶端 (client) 時必須能夠跨越不同的資料庫系統存取、整合資料。 jLIVE Builder&#8482; 的 middle ware 
+  正是支援同時存取多個不同資料庫系統的中間層 (middle tier) 。</font></p>        
+</blockquote>        
+<ul>        
+  <li><b><font size="2">異地應用伺服器同時存取 (Multiple application servers access 
+  simultaneously)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">
+  跨國性與多分公司的企業，資料庫系統通常是獨立存在於各據點，網際網路應用程式不但要能處理單一據點資料處理，還要能適時地同時存取各據點的資料訊息。 jLIVE 
+  Builder&#8482;&nbsp; 
+  允許在開發應用程式時，同時連接異地的應用伺服器，並存取異地應用伺服器所連結的資料庫系統，跨國性與多分公司的企業，隨時可透過應用程式，統計、分析、處理各據點資料。</font></p>        
+</blockquote>        
+<ul>        
+  <li><b><font size="2">授權式安全控管 (Authorized security control)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">網際網路是個不安全的執行環境，應用程式的使用者必需要經過查驗與授權的過程才能使用資源。應用程式的驗證程序也必須是在         
+  Web         
+  中間層，才能保障驗證程序的安全性。而驗證的使用者資料儲存於資料庫伺服器，除了安全外也可提供具有權限的管理者，隨時按需求，機動地新增、修改使用者授權及增減受保護的程式模組。 jLIVE Builder&#8482; 提供內設的授權式安全控管 (authorized security 
+  control) 的模組與其程式碼，開發者除了可選用外，尚可進一步按需求予以修改。</font></p>        
+</blockquote>        
+<ul>        
+  <li><b><font size="2">資料流量與伺服器負載 (Data transferring and server loading)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">在網際網路多層架構下，客戶端    
+  (client)        
+  的資料是透過網際網路 (internet)    
+  取得，由於網際網路的頻寬和區域網路的頻寬相距甚遠，所以在應用程式的開發上必須有特殊的考量。尤其在資料的傳輸上必須與使用者的需求緊密的互動，例如：當使用者查詢的結果資料高達數萬或數百萬筆，要經由網際網路傳輸這些資料至客戶端    
+  (client)        
+  ，那不但使用者無法忍耐長時間等待，伺服器的的傳輸頻寬，也會被大量佔據，產生伺服器形同當機的情況。 jLIVE&nbsp;            
+Builder&#8482; 內建的虛擬模式 (virtual mode) ，採取 ROD (request on        
+  demand) 的機制，不論傳輸的資料量多大，系統會按客戶端    
+  (client)        
+  目前的最小需求，以背景執行緒 (background thread)        
+  分批傳輸。亦即不論使用者查詢的結果資料是數萬、數百萬筆或數筆，客戶端    
+  (client)        
+  回應的時間幾乎是一樣的。而且這種虛擬的 ROD (request on demand)        
+  是由個別獨立運作的元件所掌控，自行按需求作資料的調整，應用程式的開發者不需特別去維護。在 jLIVE            
+Builder&#8482; 的資料來源 (data source)、清單方塊元件 (List        
+  box)、下拉式清單方塊元件 (Combo box)、資料表元件 (Grid)        
+  等元件，都具有此項功能。</font></p>       
+</blockquote>       
+<ul>       
+  <li><b><font size="2">應用系統流程與使用者介面 (System flow and        
+    user interactive)</font></b></li>        
+</ul>        
+<blockquote>        
+  <p style="text-indent: 20" align="justify"><font size="2">網際網路的企業應用整合 (EAI) ，並非單純或動態網頁    
+  (web page) 可以達成的，網頁 (web&nbsp; page)       
+  是沒有應用系統流程的，一般的公司簡介、商品簡介也許可以使用網頁，但是應用系統程式卻不能以單純的網頁達到系統及使用者的需求。網際網路應用程式，必須像區域網路主從架構的應用程式，具有使用者和系統流程，使用者的介面，也須像一般應用程式具有互動性。 jLIVE     
+  Builder&#8482; 所開發的應用程式和一般視窗應用程式一模一樣，具有系統流程和親善的使用者介面，即時性的服務回應和互動性的資料作業。</font></p>      
+</blockquote>      
+<ul>      
+  <li><b><font size="2">網際網路報表作業 (Internet report system)</font></b></li>       
+</ul>       
+<blockquote>      
+  <p><font size="2">報表作業是企業應用程式不可或缺的系統服務，報表系統使用上須滿足以下的最低需求：</font></p>     
+  <ul>     
+    <li><font size="2">查詢、篩選列印資料 (query       
+      printing data)</font></li>      
+  </ul>      
+  <blockquote>      
+    <p><font size="2">應用系統的報表作業，通常是由使用者查詢後再進行列印作業。所以報表作業與應用程式的使用者介面程式應該是整合在一起的。</font></p>      
+  </blockquote>      
+  <ul>      
+    <li><font size="2">分頁的機制 (paging)</font></li>     
+  </ul>     
+  <blockquote>     
+    <p align="justify"><font size="2">所謂的分頁機制，舉例來說，當使用者查詢後，共有二百頁資料需要列印時，系統必須在使用者端    
+    (client)    
+    依列印報表的尺寸予以分頁，再由使用者決定是全部列印或選頁列印，按下列印功能後系統即進行列印。此一機制在一般的視窗應用程式是很普遍的，但是在網際網路上，如果只用       
+    HTML       
+    傳輸列印資料，那列印作業將無法進行，因為究竟要傳輸二百頁       
+    HTML 或是將這二百頁合成一頁 HTML    
+    檔，無論如何，分頁再也無法達成。沒有網際網路的報表作業系統，除了分頁外包括報表中的圖檔及統計圖表列印、套表列印、即時的統計分析列印，將都無法順利進行，因為沒有使用者端    
+    (client) 的報表系統 (report system) 參與列印作業，伺服器端 (server)       
+    的負載將加重許多，可以預期的是如果所有列印作業都由伺服器運作，那列印作業負載    
+    (loading) 必將佔據伺服器 (server) 的許多運算時間，       
+    整個應用程式也無法順利進行。</font></p>      
+  </blockquote>      
+  <ul>      
+    <li><font size="2">圖檔及統計圖表列印 (image and statistic chart)</font></li>      
+  </ul>      
+  <blockquote>      
+    <p align="justify"><font size="2">圖檔及統計圖表列印在報表上是必需的， jLIVE            
+Builder&#8482; 的圖檔與統計圖是由客戶端 (client)       
+    所即時產出與繪製的，因為製作統計圖及經由網際網路傳輸圖檔，不但使伺服器負載加重，亦會佔據網路相當的頻寬，而所傳輸的圖檔格式及更新、刪除暫時列印的圖檔，都將使伺服器無法負荷。</font></p>      
+  </blockquote>      
+  <ul>      
+    <li><font size="2">套表列印 (absolute printing position)</font></li>      
+  </ul>      
+  <blockquote>      
+    <p align="justify"><font size="2">既然是透過網際網路提供列印服務，系統必須使列印出的報表，無論在何處以任何品牌的印表機，都能有相同的輸出，尤其在套表列印時，更必須有精確的定位。 jLIVE            
+Builder&#8482;  在報表設計時，即採絕對的位置 (absolute       
+    printing&nbsp; position)       
+    配置列印資料。在網際網路報表的列印達到真正所見即所得    
+    (what you&nbsp; see is what you get) 。</font></p>      
+  </blockquote>      
+  <ul>      
+    <li><font size="2">即時的統計分析列印 (real time printing)</font></li>      
+  </ul>      
+  <blockquote>      
+    <p align="justify"><font size="2">jLIVE            
+Builder&#8482;  報表是由客戶端 (client)       
+    即時查詢列印，與其他所謂網際網路由伺服器 (server)       
+    製作報表，再由客戶端 (client)       
+    查詢列印資料是否已經就緒，是完全不同的。 jLIVE            
+Builder&#8482;  報表具有即時性，所列印統計的資料是當下最正確的資訊，列印的服務是馬上的回應，客戶端和伺服器端的效率是最佳化的。</font></p>      
+  </blockquote>      
+  <p align="justify" style="text-indent: 20"><font size="2">報表系統上更必須符合，客戶端    
+  (client) 負責資料運算 (data aggregate) 、統計圖表製作 (statistic chart plot) 、 列印格式配置    
+  (format layout) ，伺服器端 (server) 只按照客戶端 (client) 目前列印需求，提供查詢結果集    
+  (query result set) 的資料，如此的分散運算各司其職，網際網路報表作業才能順利進行。</font></p>      
+</blockquote>      
+<ul>       
+  <li><b><font size="2">網路資料安全 -- 隨選資料加密傳輸 
+    (Transmitted data security -- encryption on demand)</font></b></li>      
+</ul>      
+<blockquote>      
+  <p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&#8482 
+  網際網路資料傳輸，不但能按設計師的系統需求，選擇是否以加密資料的方式傳輸。所要加密的資料亦可由設計師自行選定。由資料庫或檔案系統存取的資料，設計師可以根據需要只加密部份資料，有些資料例如：參考地址檔、圖檔等，可以選擇不加密傳輸，如此系統不但具有安全的網路資料傳輸，亦可保有高效率的作業。 jLIVE Builder&#8482 
+  加密的方式採用 Java&#8482 JCE 
+  模組，應用程式啟動後，客戶端 (client) 與 </font><font size="2">jLIVE Builder&#8482 
+  middle ware 協商一傳輸的 Session 
+  Key ，以此進行資料加密。任一客戶端在不同時期登入，皆以不同的 
+  Session Key 進行加密。</font></p>      
+</blockquote>      
+<ul>      
+  <li><b><font size="2">國際化 -- 多國語言應用程式 (Internationalization -- multi-language 
+  internet application)</font></b></li>      
+</ul>      
+<blockquote>      
+  <p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&#8482; 
+  不但開發平台為多國語言版，設計師運用 </font><font size="2">jLIVE Builder&#8482 
+  亦能輕易地開發多國語言網際網路應用程式。多國語言網際網路應用程式，能根據執行期客戶端 
+  (client) 作業系統語系 (OS locale) 
+  自動轉換對應語系。設計師可以設計一應用程式放諸四海皆準。</font></p>      
+</blockquote>      
+<p align="justify" style="text-indent: 20">　</p>
+<hr align=left color="#000000">          
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">          
+<tr>          
+<td width=200 align=left valign=top>          
+<a href="ch02.html">       
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>       
+<td width=215 align=center valign=top><a href="index.html">       
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>       
+<td width=185 align=right valign=top>       
+<a href="ch02_02.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=left color="#000000">       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~          
+2004 Probe Technology . All Rights Reserved.</font></p>         
+         
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,          
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>         
+         
+      </td>    
+    </tr>    
+    <tr>
+      <td width="100%">
+
+　</td>    
+    </tr>    
+  </table>    
+  </center>    
+</div>    
+         
+</body>         
+         
+</html>

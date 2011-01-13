@@ -1,0 +1,257 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Send Mail</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_06.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=215 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD>   
+<td width=185 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch11_05_07.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>發送電子郵件 (send mail)</font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#event_status">事件執行狀態與訊息 (event runtime status and message)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+發送電子郵件的事件。</font></p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<font size="2">設計師可以利用這個事件，結合資料庫，做出各式各樣的電子郵件自動發送系統。<br>
+　</font></p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">jLIVE   
+Builder&trade; 發送電子郵件系統會檢測 FROM 位址、TO 位址、CC 位址，其中 
+FROM 位址 與 TO 位址 是必要欄位，其格式 (format)   
+由發送時的同一個執行緒 (thread)   
+檢測及回覆錯誤訊息，有誤時系統不傳送郵件。如果TO 位址、CC 
+位址格式正確但位址錯誤或無法傳送，系統會以   
+jLIVE&trade; middle ware 的另一個執行緒 (thread)，將錯誤訊息以郵件方式傳送給 
+FROM 位址。<br>
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">jLIVE   
+Builder&trade; 發送電子郵件作業，是由 jLIVE&trade; middle ware   
+以另外一個執行緒執行發送。應用程式的客戶端 (client)   
+負責將郵件的資訊傳遞至 jLIVE&trade; middle ware ，jLIVE&trade;   
+middle ware   
+檢測地址格式，如果有誤以同一個執行緒回覆錯誤訊息並返回，若無誤則啟動發送執行緒後隨即返回。發送作業中的所有錯誤，jLIVE&trade;   
+middle ware 會將錯誤訊息以郵件方式傳送給 FROM 位址。<br>
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">SMTP  
+host 如果未給值時，系統會以 localhost，代替意即jLIVE&trade;   
+middle ware 所在的主機為 SMTP 主機；編碼 (encoding)  
+未給值時，系統以jLIVE&trade;   
+middle ware&nbsp; 所在主機的VM (virtual machine) 編碼為郵件編碼(encoding)。<br>
+　</font></p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">附加檔案 
+(attachment) 可以是存在於客戶端 (client) 或 jLIVE&trade; middle ware  
+所存在的區域網路內的任何主機檔案 (須設定共享存取權限給  
+jLIVE&trade; middle ware 主機)。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"> 
+<font size="2">例如：TO address 連接客戶會計單位的 email address 欄位，CC address 連接客戶採購單位的 email     
+address 欄位，主旨為客戶名稱+&quot;XX年XX月請款單&quot;，內容則由資料庫抓取該客戶該月的應收帳款資料，逐筆寫入，加上公司 
+LOGO 及其他通訊資料，就是一份正確而美觀的請款郵件。更迷人的是，設計師還可以定義日期，由系統自動寄出，省略許多人力工時。</font></p>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">執行 ： </font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">HTML Content ：</font>  核取 (checked)    
+這個選項，則傳送的郵件內容為 HTML 的格式。<br>
+　</font></p>   
+    </li>   
+  </ul>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">SMTP host：</font><font size="2">外送郵件主機，例如：<font face="Courier New">mail.probe.com.tw</font>。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">FROM 位址 (from address)：</font><font size="2">寄件者     
+email address。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">TO 位址 (to address)：</font><font size="2">收件者 email     
+address。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">CC 位址 (cc address)：</font><font size="2">照會者 email     
+address，若為多人則中間以 &quot;,&quot; 分開。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">編碼 (encode)：</font><font size="2">該檔案所使用的字元集 
+(character Set)，繁體中文為 &quot;MS950&quot;。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">主旨 (subject)：</font><font size="2">電子郵件的主旨。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">內容 (content)：</font><font size="2">電子郵件的內容。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">附加檔案 (attachment)：</font><font size="2">郵件的附加檔案 
+(Aatached Files)，若為多檔則中間以 &quot;,&quot; 分開。</font></p>    
+    </li>    
+  </ul>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch11_05_perform_4.gif" width="415" height="415"></p>    
+</blockquote>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="event_status"></a><b>事件執行狀態與訊息 (event runtime status and message)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱&quot;) ：</font><font size="2">取得事件執行狀態。<br>
+　</font></p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">狀態</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">空字串</font></td>
+    <td width="84%" height="16"><font size="2">事件未被引發。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">-1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，依條件判斷後執行否則事件。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">0</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行過程有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.error&quot;) ：</font><font size="2">取得事件執行錯誤代碼。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">空字串 或 0</font></td>
+    <td width="84%"><font size="2">沒有錯誤訊息或無法取得錯誤訊息。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">1</font></td>
+    <td width="84%"><font size="2">發送電子郵件錯誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.INFO_STRING&quot;) ：</font><font size="2">取得事件執行 
+INFO_STRING 的訊息。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">INFO_STRING</font></td>
+    <td width="28%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="140%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  </table>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">    
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">    
+<tr>    
+<td width=200 align=left valign=top>    
+<a href="ch11_05_06.html">    
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>    
+<td width=191 align=center valign=top><a href="index.html">    
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>    
+<td width=209 align=right valign=top>    
+<a href="ch11_05_07.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+      </body>    
+    
+</html>

@@ -1,0 +1,227 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Getting Start</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellspacing="1" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=596 border=0 cellspacing=1>
+<tr>
+<td width=195 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch03_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=192 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch03.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 3</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch03.html" style="text-decoration: none"><font color="#000000">Project 
+develop procedure</font></a></font></b></TD>           
+<td width=199 align=right valign=top>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<a href="ch04.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>          
+          
+<hr align=left color="#000000">          
+<p><b><font size="4"><a class="TITLE">3.3 </a><a class="TITLE">&#12524;&#12509;&#12540;&#12488;作業&#12487;&#12470;&#12452;&#12531;</a> (report design)</font></b></p>                          
+<!--<p align="justify">　<font size="2">jLIVE Builder&trade; 的報表作業是與視窗畫面高度整合的系統，不但擁有與視窗畫面     
+(form design) 相同的視覺化的&#25302;放 (drag and drop)       
+設計方式，且與視窗畫面共享資料來源，所有在視窗畫面上的物件，包括資料來源、視窗元件、圖&#27284;、統計圖、條碼等，皆可以是報表中的可列印物件     
+(printable object)。報表設計時，只要將可列印物件 (printable       
+object) 擺設在預定的區域上即可。報表系統以公釐 (mm) 或       
+英吋 (inch)       
+量測列印區域，透過網際網路，不論以任何品牌的印表機，都能得到完全一致的報表，尤其在套印時更是精確無比。可列印物件     
+(printable object) 的列印&#20839;容是由 jLIVE&trade;       
+&#20839;含的即時運算解譯器 (formula interpreter )       
+所運算的結果&#20540;。而所要列印的資料，是動態的根據目前所列印的頁次，陸續地由中間層(jLIVE&trade;       
+middle ware)       
+所提供，並非將數千頁的資料&#25847;取後再行列印。設計師可以<a href="ch07_03.html#Design_mode">報表設計平台操作的進入報表設計模式</a>，開始設計視窗畫面。</font></p>       -->            
+<p style="text-indent: 20"><font size="2">レポート作業デザイン手順</font><font size="2"> (report design                 
+procedure)　</font></p>                    
+<ol style="font-size: 10 pt">           
+  <li><font size="2"><a href="#rptprop">レポートプロパティ設定 (report properties        
+    setting)</a></font></li>         
+  <li><font size="2"><a href="#layout">レイアウト印刷可能コンポーネント (layout printable    
+    components)</a></font></li>        
+  <li><font size="2"><a href="#compprop">印刷可能コンポーネントプロパティ設定 (printable        
+    component properties setting)</a></font></li>             
+  <li><font size="2"><a href="#testprint">印刷テスト (test printing)</a></font></li>            
+</ol>       
+<blockquote>    
+<p><img border="0" src="images/ch03_03_report_design_procedure.gif" width="390" height="208"></p>                
+<p>　</p>              
+</blockquote>
+<p><font size="2"><b><a name="rptprop"></a>レポートプロパティ設定 (report properties        
+setting)</b></font></p>                   
+<p style="text-indent: 20"><font size="2">【レポートプロパティ設定】キーを押し，<a href="ch07_02.html">レポートプロパティ</a>の上に印刷用紙のサイズ・印刷方向及びプリービュー必要かどうか(preview)のリクエストをプリンターに転送することができます。</font></p>                
+<p style="text-indent: 20">　</p>                  
+<p style="text-indent: 20"><font size="2">デザイン提示 (design tips)</font></p>                         
+<ul>            
+  <li><font size="2">専用プリンター (dedicated printer)</font>         
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px" align="justify"><font color="#000000" size="2">フォーミュラを用いてプリンターに名前を与えることができます</font><font size="2">，STRING形かフォーミュラ</font><font color="#000000" size="2">      
+    (formula)の形でダイナミック</font><font color="#000000" size="2">        
+    (dynamic)的にプリンター名の作成することができます</font><font size="2">。リモートプリンターを使う時，ネットワークパスと共用名を入力する必要があります。以下のようになります：\\プリンターサーバー名\PC名。</font></li>              
+  <li>    
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px" align="justify"><font size="2">ブラウザプリンター作業の          
+    Java&trade; セキュリティ対策 (Java&trade; print security policy)</font><font size="2"><br>         
+    Java&trade; はブラウザの上に実行される時，Java&trade;   
+    セキュリティ対策 (security policy) に管理されます，授権されないソースがローカルPCにアクセスができません。その中にローカルプリンターが含まれています。Java&trade;          
+    1.30 の JRE (Java runtime environment)の場合，ブラウザでプリンター作業を行う時，メッセージボックスが表示され，ユーザの確認の上で作業が続けられます。Java&trade;          
+    1.40 の JRE の場合，メッセージボックスが継続的に表示されます，それを変更したければ，   
+    Java&trade; セキュリティ対策 (security policy)の中にローカルソースをアクセスできるように授権します。以下のように：</font></p>        
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px">　</p>    
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font color="#000000" size="2"><font face="Courier New">C:\Program      
+    Files\Java\j2re1.4.0\lib\security\java.policy</font>&nbsp; 内容追加 ：</font>         
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px">　    
+    <blockquote>    
+      <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#000000">&nbsp;HTTP   
+      での起動 ：</font>         
+      <blockquote>    
+        <p><font face="Courier New">grant codeBase &quot;http://</font><font color="#666699">ソース</font><font face="Courier New" color="#666699">IP</font><font color="#666699">或ローカル</font><font color="#808080">/-&quot;          
+        {</font></p>    
+        <p><font color="#808080" face="Courier New">permission java.security.AllPermission;</font></p>    
+        <p><font color="#808080" face="Courier New">};</font></p>    
+      </blockquote>    
+      <p><font color="#000000">ローカル (HTML) での起動 ：</font></p>         
+      <blockquote>    
+        <p><font face="Courier New">grant codeBase &quot;file:</font><font color="#666699"><font face="Courier New">c:/HTML</font></font><font color="#666699">ファイルパス</font><font color="#808080">/-&quot;          
+        {</font></p>    
+        <p><font color="#808080" face="Courier New">permission java.security.AllPermission;</font></p>    
+        <p><font color="#808080" face="Courier New">};</font></p>    
+      </blockquote>    
+      </blockquote>    
+    </font>    
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2">上の</font><font color="#666699" size="2">ソースIP或いはローカル</font><font size="2">はHTML&nbsp;の Web   
+    ローカルIP或いは名前。<font color="#666699" face="Courier New">c:/HTML</font><font color="#666699">ファイルパス</font>はHTMLの起動パス。</font></p>      
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px">　</p>    
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px">　</li>    
+</ul>          
+<p style="text-indent: 20">　</p>       
+<p><font size="2"><b><a name="layout"></a>レイアウト印刷可能コンポーネント (layout printable        
+components)</b></font></p>      
+<p style="text-indent: 20"><font size="2" color="#000000"><font size="2">マウスで必要なコンポーネントを選択し，レポート上に持ってくると，十字マークが表示され，マウス左キーでクリックすれば結構です。</font> 
+<a href="ch07_03.html#Layout_components">レイアウトコンポーネント (layout component)</a>、<font size="2"><a href="ch07_03.html#Select_Move_Edit components">コンポーネントセレクト、移動、編集   
+(select、move、edit components)</a>、<a href="ch07_03.html#Alignment">コンポーネント整列    
+(alignment)</a>、<a href="ch07_03.html#Duplicate_Copy_Paste">コンポーネント複写、コピー、貼り付け 
+(duplicate、copy、paste)</a></font>。</font></p>      
+<p style="text-indent: 20"><img border="0" src="images/ch03_03_layout_printable_components.gif" width="512" height="610"></p>                  
+<p style="text-indent: 20"><font size="2">デザイン提示 (design tips)</font></p>                         
+<ul>      
+  <li><font size="2">コンポネント位置 (position)<br>         
+    <font color="#000000" size="2">一つか多数コンポーネントを選択し，マウスかキーCtrl   
+    プラス加 ←↑↓→ で移動することができます</font>。</font></li>         
+</ul>     
+<p>　</p>     
+<p><font size="2"><b><a name="compprop"></a>印刷可能コンポーネントプロパティ設定 (printable        
+component properties setting)</b></font></p>          
+<p style="text-indent: 20"><img border="0" src="images/ch03_03_printable_component_properties_settinf.gif" width="565" height="771"></p>                  
+<p style="text-indent: 20"><font size="2">デザイン提示 (design tips)</font></p>                         
+<ul>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2" color="#000000">Clip     
+    Bounds<br>    
+    </font><font size="2">印刷された内容が許容範囲 (幅、高さ)を超えてしまった部分          
+    。</font></p>    <!--
+  </li>    
+  <li>    
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2">Freeze        
+    Bounds</font><font size="2"><font color="#000000"><br>    
+    </font>元件大小尺寸，不列入表身(content) 單筆資料記&#37636;總高度的計算，當元件置於表身     
+    (content) 列印時，只列印一次，不隨資料記&#37636;移動而逐筆列印，適用於浮水印或格式化的報表。</font></p>     
+  </li>  
+  <li>  
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2" color="#000000">圖片列印元件      
+    (image printable component)</font><font size="2"><br>       
+    選擇資料來源的資料欄位&#20839;含&#20540;，或是靜態圖片&#27284;，作為圖&#27284;來源。資料來源的資料欄位&#20839;含&#20540;，        
+    jLIVE Builder&trade; 會以欄位型別(data field type)        
+    自動判斷其&#20839;含&#20540;，是二進位的圖&#27284; (LONGVARBINARY)        
+    資料或是圖&#27284;路徑(VARCHAR 、 CHAR)名稱。若是二進位的圖&#27284;        
+    (LONGVARBINARY) 資料， jLIVE Builder&trade; 支援&#20839;含 JPG        
+    格式資料。圖&#27284;路徑(VARCHAR 、 CHAR)名稱，則支援 JPG 及 GIF。</font></li>       
+  <li>    
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2">備忘&#37636;</font><font size="2" color="#000000">列印元件&nbsp;</font><font size="2">     
+    (memo </font><font size="2" color="#000000">printable component</font><font size="2">)<br>       
+    選擇資料來源的資料欄位&#20839;含&#20540;，或使用靜態&#27284;案，使用靜態&#27284;案，必須放在相對路徑的..\class\doc        
+    下。資料來源的資料欄位&#20839;含&#20540;， jLIVE Builder&trade;        
+    會以欄位型別(Data Field Type) 自動判斷其&#20839;含&#20540;，是&#27284;案 (LONGVARCHAR)        
+    資料或是&#27284;案路徑(VARCHAR 、 CHAR)名稱。jLIVE&trade;        
+    支援 TXT、RTF、HTML 格式資料&#27284;。</font></li>       
+  <li>    
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2" color="#000000">統計圖元件      
+    (statistic printable component)</font><font size="2"><font color="#000000"><br>      
+    </font>jLIVE Builder&trade; 為方便使用列印</font><font color="#000000" size="2">統計圖元件，統計圖元件必須先於視窗中定義。在報表中只要設定位置及大小即可        
+    。</font></li>    
+  <li>    
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2">條碼報表元件      
+    (barcode </font><font size="2" color="#000000">printable component</font><font size="2">)&nbsp;<br>       
+    是客製 (third party) 元件</font><font color="#000000" size="2">，屬性及功能請參照</font><font size="2"><font color="#000000">       
+    http://www.idautomation.com/</font>。</font></li>   
+  <li>   
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px" align="justify"><font size="2"><font color="#000000">跳頁時機   
+    (page break)</font><br>    
+    跳頁 (page break) 元件是依可列印運算公式 (formula)        
+    的結果來判斷是否跳頁列印。元件與所擺放的位置無關，所以跳頁報表元件可擺在報表任何位置，&#27599;移動一筆資料時都會判別跳頁時機，在同一張報表可放置多個        
+    跳頁報表元件。</font></li>    -->
+</ul>    
+<p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px">　</p>    
+　    
+<p><font size="2"><b><a name="testprint"></a>プリンターテスト (test printing)</b></font>        
+<p style="text-indent: 20; margin-top: 1px; margin-bottom: 1px">　</p>
+<p style="text-indent: 20; margin-top: 1px; margin-bottom: 1px" align="justify"><font size="2">jLIVE       
+Builder&trade; 
+レポートフローはデザインナーによって指定されたデータソース(data    
+source)からデータを最後までアウトプットします。このデータソース     
+(data source) はフォーム (form) と共用るか，或いはクエリー     
+(query) による結果が<font color="#666699">プリント制限     
+(print      
+constraint)</font><font color="#666699"> </font>プロパティにコントロールされます。<a href="ch07.html#printflow">プリンターフローとメカニズム     
+(printing flow and mechanical)</a>参考</font></p>     
+<p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px">　<img border="0" src="images/ch03_03_test_printing.gif" width="301" height="294"></p>  
+<p>　</p>  
+<p>　</p>  
+<hr align=left color="#000000">              
+<table width=596 border=0 cellspacing=1>              
+<tr>              
+<td width=195 align=left valign=top>              
+<a href="ch03_02.html">             
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>             
+<td width=190 align=center valign=top><a href="index.html">             
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>             
+<td width=201 align=right valign=top>             
+<a href="ch03_04.html">           
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>           
+</tr>           
+</table>           
+           
+<hr align=left color="#000000">           
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~              
+2004 Probe Technology . All Rights Reserved.</font></p>             
+             
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,              
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>             
+             
+      </td>          
+    </tr>          
+  </table>          
+  </center>          
+                      
+</body>                      
+                      
+</html>

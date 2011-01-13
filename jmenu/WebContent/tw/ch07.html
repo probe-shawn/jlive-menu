@@ -1,0 +1,362 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Report system</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch06_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=197 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 7</font></b><font color="#000000" face="新細明體">
+</font>       
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">
+Report system</font></b></TD>    
+<td width=203 align=right valign=top>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="ch07_01.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p><b><font size="4"><a name="top"></a>7<a class="TITLE">. </a>報表 (report system)</font></b></p>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#printflow">列印流程機制   
+(printing flow and        
+mechanical)</a></font></p>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#datasourceflow">資料來源列印程序 (datasource printing flow)</a></font></p>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#customerflow">客製列印程序 
+(customer printing flow)</a></font></p>      
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="ch07_01.html#rpt_new">新增報表 (create new report)</a></font></p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><a href="ch07_01.html#rpt_arrangement">報表管理 (report arrangement)</a></font></p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<a href="ch07_02.html"><font size="2">報表屬性 (report properties)</font></a></p>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<a href="ch07_03.html"><font size="2">報表設計平台操作 (design     
+framework)</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="ch07_04.html">報表元件   
+(report printable components)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="ch07_05.html">表格式報表 (table report mode)</a></font></p>     
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&trade;        
+的報表作業是與視窗畫面高度整合的系統，不但擁有與視窗畫面   
+(form design) 相同的視覺化拖放式 (drag-drop)        
+設計方式，且與視窗畫面共享資料來源，所有在視窗畫面上的物件，包括資料來源、視窗元件、圖檔、統計圖、條碼等，皆可以是報表中的可列印物件   
+(printable object)。報表設計時，只要將可列印物件 (printable        
+object) 擺設在預定的區域上即可。</font></p>       
+<p style="text-indent: 20" align="justify"><font size="2">報表系統以公釐 (mm) 或        
+英吋 (inch)        
+量測列印區域，透過網際網路，不論以任何品牌的印表機，都能得到完全一致的報表，尤其在套印時更是精確無比。可列印物件   
+(printable object) 的列印內容是由 jLIVE </font><font size="2"> Builder&trade;        
+內含的即時運算解譯器 (formula interpreter)        
+所運算的結果值。縱使待列印的資料多達數千頁， jLIVE </font><font size="2"> Builder&#8482; 也會動態的根據目前所列印的頁次，陸續地由中間層   
+(jLIVE&#8482; middle ware)   
+提供資料，並非將數千頁的資料擷取後再行列印，因此無論列印資料的多寡，客戶端   
+(client)   
+都將可以立即進行列印。此一分散式運算列印的機制，在網際網路的應用上是目前最有效率且最為成功的列印作業。</font></p>      
+<p style="text-indent: 20" align="justify"><font size="2">在jLIVE Builder&trade;        
+中每一個視窗項目下可設計多張報表。在報表設計環境中，模擬實際報表紙的大小，並分為<font color="#666699">表頭區   
+(header)</font>、<font color="#666699">表身區 (content)</font>、<font color="#666699">表尾區   
+(footer) </font><font color="#000000">等</font>三部份。各區間以綠色線 (header   
+line)、和紅色線 (footer line) 分隔。每一區域皆可放入印表元件。<br>       
+　</font></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch07_rpt_frame.gif" width="580" height="387"></p>
+<ul type="square">
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font color="#666699" size="2">表頭及表尾 (header and footer)</font><font size="2"><br>       
+</font>       
+<br>       
+<font size="2">這兩個區域屬於靜態資料，擺置於這區域上的列印元件，只列印一次，並在下一頁中同樣位置再列印一次，如果是頁數資料則會依頁數遞增。   
+常用於報表名稱、公司 logo、資料擷取時間等內容。<br>       
+　</font></p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0" align="justify">
+<font color="#666699" size="2">表身 (content)</font><font size="2"><br>      
+</font>      
+<br>      
+<font size="2">配置於此區域的列印元件將為每一筆資料記錄列印的資料，報表系統將自動計算所有擺置的列印元件總合高度，扣除換頁元件區域及具有        
+<font color="#666699">Freeze bounds</font>        
+屬性的元件，作為一筆資料記錄列印時的預設高度，並以此高度據以計算預估總頁數，由於        
+jLIVE Builder&#8482; 
+報表系統提供強迫換頁及基於運算條件才列印的機制，所以實際的總頁數在某些情況下並不相等於預估總頁數，如果需要精確的總頁數，設計師需設定報表屬性的【<font color="#666699">列印前精確計算總頁數</font>】，系統將先行擷取所有資料及運算列印資料，使用者在列印前所需等待的時間相對較長，系統亦不能發揮列印完一頁，即刻拋棄該頁列印資料的功能，所以列印前精確計算總頁數，比較不適用於數百或數千頁的大資料列印，但使用者可以得到精確的總頁數。</font></p>       
+  </li>       
+</ul>       
+<blockquote>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<img border="0" src="images/ch07_rpt_area.gif" width="385" height="231"></p>       
+<p style="margin-top: 0; margin-bottom: 0">       
+　</p>       
+<p style="margin-top: 0; margin-bottom: 0">       
+　</p>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<img border="0" src="images/ch07_rpt_demoarea.gif" width="433" height="505"></p>       
+</blockquote>       
+<ul type="square">       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2">       
+<font color="#666699">如何區別元件歸屬於表頭、表身和表尾</font><br>       
+<br>       
+列印元件依其下方的端點所在的區域來辦別其為表頭、表尾或表身元件，但用目視來判斷容易混淆，最簡單且明確的方式是將滑鼠游標移到元件上，當顯示的八個控點呈現藍色，意即此報表元件位於表身區，呈現粉紅色，則為表頭、表尾區。<br>      
+<br>      
+<br>      
+1. 元件 A 擺設的位置屬於表頭裡的元件，滑鼠移到元件時會顯示八個粉紅色的控點。<br>      
+2. 元件 B、D 擺設的位置屬於表身裡的元件，滑鼠移到元件時會顯示八個藍色的控點。<br>      
+3. 元件 C、E、F 擺設的位置屬於表尾裡的元件，滑鼠移到元件時會顯示八個粉紅色的控點。</font></p>      
+  </li>      
+</ul>      
+<blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch07_rpt_loc.gif" width="340" height="233"></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p>      
+</blockquote>      
+<p style="margin-top: 2; margin-bottom: 2"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 2; margin-bottom: 2">　</p>      
+<p style="margin-top: 2; margin-bottom: 2">　</p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<b><font size="2"><a name="printflow"></a>列印流程機制 (printing flow and        
+mechanical)</font></b></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">jLIVE Builder&trade;        
+報表列印流程，分為<br><ul><li><a href="#datasourceflow">資料來源列印程序 (datasource printing flow)</a></li><li>
+  <a href="#customerflow">客製列印程序 (customer 
+  printing flow)</a></li></ul></p>
+<p style="text-indent: 20">資料來源列印程序是系統
+預設程序，設計師在報表列印時需要自行控制每筆列印輸出時，或列印資料須要參與多個資料來源，或不需任何資料來源參與時，則可運用客製列印程序，自行控制報表輸出。</font></p>
+<p><b><font size="2"><a name="datasourceflow"></a>資料來源列印程序 (datasource printing 
+flow)</font></b></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">簡單的說，即是由設計師設定一個資料來源   
+(data source)，系統依序從第一筆記錄 (record) 將資料印出，直到最後一筆記錄。此資料來源   
+(data source) 是與視窗 (form)        
+共享，亦即資料來源可能是經由使用者查詢 (query)        
+或篩選過，而每筆記錄是否列印亦會受列印元件的<font color="#666699">列印限制   
+(print        
+constraint)</font><font color="#666699"> </font>屬性所控制。以下是列印作業流程：<br>
+　</font></p>     
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="center">
+<img border="0" src="images/ch07_ds_flowchart.gif" width="494" height="397"></p>     
+<ol style="font-size: 10 pt">     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">標記資料來源   
+    (data source) 目前的資料記錄位置 (record number)。</font></li>       
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">將資料來源移至首筆，並引發資料來源的讀取前   
+    (before        
+    fetch) 及讀取後 (after fetch) 事件 (Event)。</font></li>      
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">計算表身   
+    (content)        
+    中列印元件 (printable components) 總高度。</font></li>       
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">如果列印元件   
+    (printable components)        
+    須列印總頁數，則查詢資料來源總筆數並計算預估總頁數。</font></li>       
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">列印屬於表頭   
+    (header) 的列印元件。</font></li>       
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">列印屬於表身(content)        
+    的列印元件。</font>       
+    <ol type="I">       
+      <li>       
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+        檢查是否強迫換頁。若是，則列印表尾(footer) 後換頁。</font></li>      
+      <li>      
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">檢查資料來源是否已到最後一筆       
+        (EOF)。若是，則列印表尾(footer) 後結束作業。</font></li>      
+      <li>      
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+        檢查剩餘表身能否容納下筆列印資料。若否，則列印表尾   
+        (footer) 後換頁。</font></li>      
+      <li>      
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">資料來源(data   
+        source) 移至下筆並引發讀取前後事件 (event)。</font></li>     
+      <li>     
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">繼續列印表身   
+        (content)。</font></li>     
+    </ol>     
+  </li>     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">列印屬於表尾   
+    (footer) 的列印元件。</font></li>       
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">檢查資料來源(data   
+    source) 是否已到最後一筆 (EOF)。若否則換頁由表頭 (header) 繼續列印作業。</font></li>      
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">資料來源 (data   
+    source) 移至原先標記的記錄位置 (record number)，並引發讀取前後事件   
+    (event)。</font></li>     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">結束印表作業。</font></li>     
+</ol>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="customerflow"></a>客製列印程序 
+(customer printing flow)</b></font></p>    
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">jLIVE Builder&trade; 
+報表列印流程，可以由設計師自行控制。核取 <font color="#666699">客製列印程序</font>按鈕或按下<font color="#666699">客製列印程序</font>設定按鍵，由設計師填入流程控制運算式。</font></p>    
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">列印流程控制運算式分為以下
+六個程序</font></p>    
+<ul>
+  <li>
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">列印作業前運算式 
+    (before print job formula)</font></li>
+  <li>
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font color="#666699"><font size="2">列</font><font size="2">印內容區 
+    列印一筆前運算式 (before content print formula)</font></font></li>
+  <li>
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font color="#666699"><font size="2">列</font><font size="2">印內容區 
+    列印一筆後運算式 (after content print formula)</font></font></li>
+  <li>
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">結束列印控制運算式 
+    (end print control formula)</font></li>
+  <li>
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+    <font size="2" color="#666699">下一筆列印流程控制運算式 (next print control formula)</font></li>
+  <li>
+    <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">列印作業後運算式 
+    (after print job formula)<br>
+    </font></li>
+</ul>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="left"><font size="2">列印作業流程如下：<br>
+<br></p> 
+<p align="center"> 
+<img border="0" src="images/ch07_customer_flowchart.gif" width="511" height="334"></font> <br>
+　</p>
+<ol style="font-size: 10 pt">    
+  <li>    
+    <p style="margin-top: 0; margin-bottom: 0">開始列印作業。</li>      
+  <li>    
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">執行 </font><font size="2" color="#666699">列印作業前運算式 
+    (before print job formula)</font><font size="2">。</font></li>      
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">計算表身   
+    (content)        
+    中列印元件 (printable components) 總高度。</font></li>       
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">列印屬於表頭   
+    (header) 的列印元件。</font></li>       
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0">執行 <font color="#666699"><font size="2">列印內容區 
+    列印一筆前運算式 (before content print formula)</font></font><font size="2">。</font>    
+  </li>    
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">列印屬於表身(content)        
+    的列印元件。</font>       
+  </li>     
+  <li>       
+    <p style="margin-top: 0; margin-bottom: 0">執行 <font size="2" color="#666699">列印內容區 
+    列印一筆後運算式 (after content print formula)</font><font size="2">。</font>      
+    <ol type="I">      
+      <li>      
+        <p style="margin-top: 0; margin-bottom: 0">執行 <font size="2" color="#666699">結束列印控制運算式 
+        (end print control formula)</font><font size="2" color="#000000">，並檢查是否結束列印 
+        (非 0 且非空字串 結束列印) ，</font><font size="2" color="#000000">若是結束列印則</font><font size="2" color="#000000">進行步驟 
+        9 (go to step 9)，否則往下進行步驟 II。</font></li>     
+      <li>      
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">  
+        檢查是否強迫換頁。若是，則列印表尾(footer) 後換頁，進行</font><font size="2" color="#000000">步驟 
+        8 (go to step 8)</font><font size="2">。</font></li>      
+      <li>      
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+        檢查剩餘表身能否容納下筆列印資料。若否，則列印表尾   
+        (footer) ，換頁，進行</font><font size="2" color="#000000">步驟 
+        8 (go to step 8)</font><font size="2">。</font></li>      
+      <li>     
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">進行</font><font size="2" color="#000000">步驟 
+        8 (go to step 8)</font><font size="2"> ，繼續列印表身   
+        (content)。</font></li>     
+    </ol>     
+  </li>     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0">執行<font size="2" color="#666699">下一筆列印流程控制運算式 (next print control formula)</font><font size="2">，進行步驟 
+    5 (go to step 5)，繼續列印表身 (content)。</font></li>     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">列印屬於表尾   
+    (footer) 的列印元件。</font></li>       
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">執行 </font><font size="2" color="#666699">列印作業後運算式 
+    (after print job formula)</font><font size="2">。</font></li>    
+  <li>    
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">結束印表作業。</font></li>    
+</ol>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">jLIVE Builder&trade;       
+通用列印元件 (generic printable component) 的內部列印機制 ：</font></p>      
+<ol style="font-size: 10 pt">      
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">計算   
+    <font color="#666699">列印限制</font><font color="#000000"> (print       
+    constraint) </font>的運算公式 (formula) 決定是否列印。</font></li>      
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">依列印類別，連結、擷取列印資料。</font></li>      
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">列印外框。</font></li>      
+  <li>      
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">計算列印內容的運算公式   
+    (formula)，列印結果值。</font></li>     
+  <li>     
+    <p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">是否需累計   
+    (sum) 、歸零 (reset to zero)。</font></li>     
+</ol>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch06_04.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=194 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=206 align=right valign=top>   
+<a href="ch07_01.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+     
+</body>     
+     
+</html>

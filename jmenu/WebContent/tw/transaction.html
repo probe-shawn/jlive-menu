@@ -1,0 +1,229 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Transaction</title>
+</head>
+
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="1" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width="596" border=0 cellspacing=1>
+<tr>
+<td width=185 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+<td width=211 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" size="2">
+<a href="appendix.html" style="text-decoration: none"><font color="#000000">Appendix</font></a></font></b></TD>
+<td width=190 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<h2 class="sect1" style="margin-top: 1; margin-bottom: 1">　</h2>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="4">Transaction 交易</font></b><p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#ACID characteristics">ACID characteristics</a></font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#由事件控制 Isolation Level">由事件控制 Isolation Level</a></font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+<ul type="square">
+  <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699"><a name="ACID characteristics">ACID 
+characteristics</a> ：</font><b><font face="ARIEL,HELVETICA,HELV,SANSERIF" size="-1">Transaction 
+ 
+</font><font face="新細明體" size="-1">交易</font></b><font face="新細明體" size="-1"> (通常為一組完整的SQL命令) 必須具備的四項特性，稱之為 
+ACID，合適的交易存取權限設定，可以用來確保資料庫系統的一致性以及正確性，也是資料庫實現並行控制、故障回復控制的基礎。</font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+  <ul type="disc">
+    <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font face="新細明體" size="-1" color="#666699">Atomicty 
+原子：</font><font face="新細明體" size="-1">不可部分完成性。如同原子一般，一個交易被視為最小的運作單位，不容許分割的完整個體，也就是說交易的處理只有成功執行或是不執行，沒有模糊地帶。</font></p>
+    </li>
+    <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font face="新細明體" size="-1" color="#666699">Consistency 
+一致：</font><font face="新細明體" size="-1">每個交易所造成的資料異動，必須滿足資料庫整體資料的一致性，否則將拒絕此異動作業，還原原始資料。</font></p>
+    </li>
+    <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font face="新細明體" size="-1" color="#666699">Isolation 
+隔離：</font><font face="新細明體" size="-1">隔離性，資料庫系統可以同時處理多個交易，每個交易之間應當具備循序能力(Serializability)，所以當一個交易尚未完成時，所異動的資料是不可以被其他交易使用，以免不確定性的異動結果造成其他交易的不正確處理結果。</font></p>
+    </li>
+    <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font face="新細明體" size="-1" color="#666699">Durability 
+耐久：</font><font face="新細明體" size="-1">持續性，利用交易所處理的異動，在交易尚未結束前，不會變動原始資料，只有當交易完成後，才會將異動反映到資料庫。此時即使發生系統故障，也不會影響異動後的資料。</font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+    </li>
+  </ul>
+  </li>
+  <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699"><a name="由事件控制 Isolation Level">由事件控制 Isolation 
+Level</a> ：</font><font size="2">jLIVE Builder 利用【事件】來控制 Isolation 
+Level，每一層級的設定，會決定交易鎖定(Lock)時間的長短，以及不同交易之間所造成的相互影響，也會因為所使用的層級差別，產生同時存取資料時，可能發生的潛在錯誤。</font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+  <ul type="disc">
+    <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">錯誤種類：</font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+    <ul type="circle">
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Lost Update ：</font><font size="2">當兩筆交易同時對一筆資料進行異動時，先完成的交易結果會被後來的交易所改變，形同無效。</font></p>
+      </li>
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Dirty Read ：</font><font size="2">Uncommitted 
+Dependency，一個交易尚未完成時，而另一筆交易又讀取到同一筆資料時，可能因為前一個交易對資料的改變，而造成其他交易讀取到異動前的資料，產生錯誤。</font></p>
+      </li>
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Nonrepeatable Read ：</font><font size="2">Inconsistent 
+Analysis，一個交易如果對同一筆資料進行兩次以上的讀取，可能因為其他交易已經在過程中異動資料，而發生兩次讀取的資料不相同。</font></p>
+      </li>
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Phantoms Read ：</font><font size="2">一個交易在進行異動資料範圍之選取條件中，所下的條件( 
+Where )所選取的資料，可能因為其他交易的異動，讓原本可能不在範圍的資料，被一併選入此交易的異動範圍中。</font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+      </li>
+    </ul>
+    </li>
+    <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Isolation Level：層級高的也具備低層級的功能。</font></p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+    <ul type="circle">
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Level 0 ：</font><font size="2"><b>Read 
+Uncommitted</b>，允許一個交易讀取另一個尚未完成的交易所異動的資料，可能造成讀取到尚未 Commit 
+的資料，這個層級對資料存取的限制最少，雖然讓最多人可以同時使用，但也無法確保資料的一致性及完整性。</font></p>
+      </li>
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Level 1 ：</font><font size="2"><b>Read Committed</b>，不允許讀取正在異動的資料，所以當資料正被一筆交易異動時，另一筆交易是不可以去讀取的，但是此層級對於一個進行中的交易，允許其他交易可以更改相關資料，如，新增、修改、刪除等，可能造成錯誤。</font></p>
+      </li>
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Level 2 ：</font><font size="2"><b>Repeatable Read</b>，當一筆資料被讀取後，其他的交易就不被允許修改或刪除這筆資料，如此一來就降低了資料同時使用的機會。</font></p>
+      </li>
+      <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">Level 3 ：</font><font size="2"><b>Serialized Read</b>，當一筆資料被讀取後，其他的交易就不被允許新增、修改或刪除這筆資料，不會因為被另一個交易新增了一筆符合選取範圍的資料，造成兩次查詢結果的不同。</font></p>
+      </li>
+    </ul>
+    </li>
+  </ul>
+  </li>
+</ul>
+<blockquote>
+  <blockquote>
+<table border="1" cellspacing="1">
+  <tr>
+    <td align="center" width="294" bgcolor="#505050" height="26">
+    <font size="2" color="#FFFFFF">Isolation Level / 可能發生的錯誤</font></td>
+    <td align="center" width="161" bgcolor="#505050" height="26">
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#FFFFFF">
+    Lost Update</font></td>
+    <td align="center" width="174" bgcolor="#505050" height="26">
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#FFFFFF">
+    Dirty Read</font></td>
+    <td align="center" width="129" bgcolor="#505050" height="26">
+    <font size="2" color="#FFFFFF">Nonrepeatable Read</font></td>
+    <td align="center" width="144" bgcolor="#505050" height="26">
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#FFFFFF">
+    Phantoms Read </font></td>
+  </tr>
+  <tr>
+    <td width="294" height="16"><b><font size="2">Level 0 ：Read Uncommitted</font></b></td>
+    <td width="161" align="center" height="16"><b><font face="新細明體">ˇ</font>&nbsp;</b></td>
+    <td width="174" align="center" height="16"><b>&nbsp;<font face="新細明體">ˇ</font></b></td>
+    <td width="129" align="center" height="16"><b><font face="新細明體">ˇ</font></b></td>
+    <td width="144" align="center" height="16"><b>&nbsp;<font face="新細明體">ˇ</font></b></td>
+  </tr>
+  <tr>
+    <td width="294" height="16"><b><font size="2">Level 1 ：Read Committed</font></b></td>
+    <td width="161" align="center" height="16">&nbsp;</td>
+    <td width="174" align="center" height="16">&nbsp;</td>
+    <td width="129" align="center" height="16"><b><font face="新細明體">ˇ</font></b></td>
+    <td width="144" align="center" height="16"><b><font face="新細明體">ˇ</font></b></td>
+  </tr>
+  <tr>
+    <td width="294" height="16"><b><font size="2">Level 2 ：Repeatable Read</font></b></td>
+    <td width="161" align="center" height="16">&nbsp;</td>
+    <td width="174" align="center" height="16">&nbsp;</td>
+    <td width="129" align="center" height="16">&nbsp;</td>
+    <td width="144" align="center" height="16"><b><font face="新細明體">ˇ</font></b></td>
+  </tr>
+  <tr>
+    <td width="294" height="19"><b><font size="2">Level 3 ：Serialized Read</font></b></td>
+    <td width="161" align="center" height="19">　</td>
+    <td width="174" align="center" height="19"><b>&nbsp;</b></td>
+    <td width="129" align="center" height="19">　</td>
+    <td width="144" align="center" height="19">　</td>
+  </tr>
+</table>
+  </blockquote>
+  <ul>
+    <li>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">jLIVE Builder 事件：</font><font size="2">要控制Isolation 
+Level，可以使用<b>【設定資料庫 Transaction Isolation Level】</b>事件，來決定是否使用交易或是選擇 
+Isolation Level的層級。</font></p>
+    </li>
+  </ul>
+  <blockquote>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch11_03_perform_8.gif" width="415" height="417"></p>
+    </blockquote>
+</blockquote>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width="100%" border=0 cellspacing=1>
+<tr>
+<td width=172 align=left valign=top>
+　</td>
+<td width=171 align=center valign=top>
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+　</td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~    
+2004 Probe Technology . All Rights Reserved.</font></p>   
+   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,    
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>   
+   
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

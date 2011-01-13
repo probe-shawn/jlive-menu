@@ -1,0 +1,604 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_basc_cate.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_rpt_order_report.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Orders</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>ORDR_INFO</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">訂單處理作業。</font></li>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">
+         處理主檔(訂單資訊)、副檔(貨品項目)的示範。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="18" colspan="2" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <font size="2"><b>Orders</b></font><b><font size="2">： </font></b></td>
+       <td width="661" height="18" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+         訂單資訊主檔<br>
+       【SQL】：<font face="Courier New">Select * from orders</font><br>
+       【預設】【OrderDate】：運算式&nbsp; 
+       <font color="#666699" face="Courier New">Today()$CurrentTime()</font>，新增訂單時會先把作業當時的日期時間填入訂貨日期欄位，客戶端(Client)仍可編輯。<br>
+       【事件】【讀取後】選擇 <font color="#666699">
+       trig_details</font>，表示客戶之記錄一經移動，
+       就會執行<font color="#666699">trig_details </font>
+       觸發資料來源事件。這是常見的將所謂的主檔與副檔的資料同步化的設計方法。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <font size="2"><b>OrderDetails</b></font><b><font size="2">：</font></b></td>
+       <td width="661" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+         訂單副檔(貨品項目)<br>
+       【SQL】：</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;<font face="Courier New">&nbsp; Select * From orderdetails where 
+       orderid is null<br>
+       &nbsp;
+       </font>&quot;where orderid is null&quot; 
+       目的在於讓視窗剛開啟時，OrderDetails是一個空的資料來源</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; ，增加效率。<br>
+       【預設】</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp; 【OrderID】：運算式&nbsp;
+       <font color="#666699" face="Courier New">{Orders:OrderID}</font>，以訂單編號作為主副檔的關連欄</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 位，
+       新增訂單副檔時會先把主檔的訂單編號填入副檔的訂單編號欄位。<br>
+       &nbsp;&nbsp;&nbsp;
+       【確認】</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp; 【新增】&amp;【編輯】：驗證運算式&nbsp;
+       <font color="#666699" face="Courier New">not {Orders:InsMode()}</font>，無效事件 
+       </font>
+       <p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msg_ins</font>。表示新增一筆訂單且未存檔之前，主檔之訂單編號尚未產生
+       ，這</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       時若要新增訂單 項目，將會彈出訊息盒，提醒客戶端(Client)先將訂單主檔</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 資訊作一個存檔動作。這個主副檔關連性維護的設計方式，在應用程式的</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 實做上，
+       常會用較為複雜的流程來處理，以提供客戶端方便使用的介面。<br>
+       【事件】</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp; 【更改後】、【新增後】、【刪除後】：選<font color="#666699"> 
+       sub_top</font>，重新計算訂單金額。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Customers：</font></b></td>
+       <td width="661" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">客戶資料檔，作為下拉式清單方塊(combo_cust)的關連資料來源
+       。<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; Select 
+       CustomerID, CompanyName, Address,City,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Region, PostalCode,Country, ContactName
+       <br>
+&nbsp;&nbsp; 
+       From&nbsp;&nbsp; Customers</font></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Employee：</font></b></td>
+       <td width="661" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">員工資料檔，作為下拉式清單方塊(combo_sales)的關連資料來源
+       。<br>
+       【SQL】：</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font face="Courier New" size="2">Select EmployeeID, LastName, 
+       FirstName </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp; From&nbsp;&nbsp; Employees</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Products：</font></b></td>
+       <td width="661" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">產品資料檔，作為Gid第一個欄位(ProductID)的關連資料來源
+       。<br>
+       【SQL】：</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font face="Courier New" size="2">Select ProductID, ProductName, UnitPrice </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp; 
+       From&nbsp;&nbsp; Products</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2"></td>
+       <td width="661" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【combo_sales】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">下拉式清單方塊元件 (ComboBox)。<br>
+       【資料來源】【資料欄位】連接 <font color="#666699">Orders / CustomerID</font>(客戶編號)。<br>
+       【關連資料來源】【資料欄位】連接 <font color="#666699">Customers / CustomerID</font>(客戶編號)。<br>
+       【顯示】運算式為 <font color="#666699" face="Courier New">{Customers:CompanyName}</font>，</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 核取【<font color="#666699">被選時移至關連資料來源記錄</font>】。<br>
+       如此將兩個資料來源的資料欄位值建立好關連性之後，縱使欄位內容存放的是數值資料(員工編號)，但是在客戶端(Client)的操作介面上，顯示的卻是員工姓名(Last 
+       Name + First Name)。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【combo_cust】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">下拉式清單方塊元件 (ComboBox)。<br>
+       【資料來源】【資料欄位】連接 <font color="#666699">Orders / EmployeeID</font>(員工編號)。<br>
+       【關連資料來源】【資料欄位】連接 <font color="#666699">Employees / EmployeeID</font>(員工編號)。<br>
+       【顯示】運算式<font color="#666699" face="Courier New">{Employee:LastName}$&quot; &quot;${Employee:FirstName}</font>。<br>
+       【事件】【動作事件】選擇 <font color="#666699">set_cusinfo</font>，表示點選此元件之任一項目，就會執行<font color="#666699">set_cusinfo
+       </font>設定元件內含值事件。<font color="#666699">set_cusinfo</font>會將被點選的客戶的出貨地址，填入訂單資料的其他相關欄位內。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【radio_shipvia】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">選擇鈕元件 (Radiogroup)。<br>
+       【資料來源】【資料欄位】連接 <font color="#666699">Orders / ShipVia</font>。<br>
+       【選擇鈕】共有Express、Mail、Pickup 三組。</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 以Express為例，進入【選擇鈕屬性】【版面】【文字】填<font color="#666699">&quot;Express&quot;</font>，此為
+       第一個</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 選擇鈕顯示的文字。<br>
+       【選取】【條件運算式】填入<font color="#666699" face="Courier New">{Orders:ShipVia}=1</font>，其意義為當</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       【Orders:ShipVia】內含值為&quot;1&quot;時， 第一個選擇鈕為被選取狀態。 </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">【選取值】【被選時填入內含值】運算式填入<font color="#666699">&nbsp; <font face="Courier New">1</font></font>，代表當客戶端(Client)點選第一個</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 選擇鈕時，會將【Orders:ShipVia】內含值更改成 
+       <font color="#666699">&nbsp;1 </font>。 依此類推， 當【Orders:ShipVia】內含值為&quot;2&quot;時， 
+       第二個選擇鈕 &quot;Mail&quot; 為被選取狀態 ；【Orders:ShipVia】內含值為&quot;3&quot;時， 第三個選擇鈕 &quot;Pickup&quot; 為被選取狀態 。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_detail】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">OrderDetails</font>，允許新增、修改、刪除，奇偶列不同色。
+       要新增或修改訂單項目時，只要操作上下鍵，就會執行存檔動作；同時按下 [Ctrl] [Del] 則刪除該筆訂單項目。<br>
+       【欄位】【資料表元件欄位】選擇ProductID、UnitPrice、Quantity、Discount、Price。 <br>
+       ProductID 以 
+       combobox 作為介面元件，關連資料欄位為 <font color="#666699">Products\ProductID</font>，顯示內容為 
+       <font color="#666699">{Products:ProductName}</font>，值變時啟動set_unitprice，把所選擇產品的單價(UnitPrice)，填入 
+       OrderDetails 的 UnitPrice 欄位內。<br>
+       計算欄位 <font color="#666699">Price </font>，運算式為 </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2"> 
+       <font color="#666699" face="Courier New">{OrderDetails:UnitPrice}*{OrderDetails:Quantity}*(1-{OrderDetails:Discount})</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">，顯示該筆項目的金額小計 
+       (單價*數量*(1-折扣))。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【subtotal】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       顯示該筆訂單的金額小計。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【total】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       運算式為 <font color="#666699" face="Courier New">{subtotal}+{Freight}</font>，顯示該筆訂單的總金額。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【nav_orders】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">導覽元件 (Navigator)。 <br>
+       【資料來源】連接 <font color="#666699">Orders </font>，反應客戶端(Client) 新增、修改、刪除等等對資料的操作。<br>
+       【事件】【存檔】選擇 <font color="#666699">
+       msg_chk_date</font>，表示當客戶端(Client)按存檔按鈕時，不執行內定的存檔動作，而執行<font color="#666699">msg_chk_date
+       </font>事件。<br>
+       【刪除】選擇 <font color="#666699">del_details</font>，則表示以<font color="#666699">del_details
+       </font>事件，取代導覽元件預設的刪除功能。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_unitprice】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">設定資料來源記錄之欄位內含值事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">{OrderDetails:ProductID}&lt;&gt; {Products:ProductID}</font>，意即訂單副檔的 ProductID不等於產品的ProductID時，才會執行此事件。<br>
+       【執行】把所選擇產品的單價(UnitPrice)，填入 OrderDetails 的 UnitPrice 欄位內。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_cusinfo】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">設元件內含值事件。<br>
+       【執行】把所選擇客戶的地址資料，填入 OrderDetails 相關的送貨地址欄位內。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【del_details】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行NON_SELECT SQL 命令事件。<br>
+       【SQL】為：</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2"><font face="Courier New">&nbsp;&nbsp; DELETE FROM orderdetails </font>
+       </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp; </font><font size="2"><font face="Courier New">WHERE&nbsp; OrderID = ?</font><font color="#666699"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       參數類別 &quot;INTEGER&quot;</font>，<font color="#666699">運算式為 
+        
+       <font face="Courier New">{orderid}</font></font>，這個SQL會刪除該筆訂單的所</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 有項目。<br>
+       【後續事件】選 <font color="#666699">del_order </font>，意即此事件執行後，接著執行 <font color="#666699">
+       del_order </font>&nbsp;事件。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【del_order】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699">Orders</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">刪除</font>，執行<font color="#666699">Orders</font>的
+       刪除動作。<br>
+       與上一個事件 del_details 串連執行背後的意義在於，當客戶端(client)要刪除該筆訂單時，需先刪除訂單副檔，再刪除訂單主檔記錄。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_ins】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Caution</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Post the Order Information first !&quot;</font>，執行</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 期此字串會出現在訊息方塊中間</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tri_details】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【執行】【資料來源】選<font color="#666699"> OrderDetails</font>。<br>
+       【SQL】為：</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2"><font face="Courier New">&nbsp;&nbsp; Select *  </font>
+       </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp; </font><font size="2"><font face="Courier New">From&nbsp;&nbsp; OrderDetails </font>
+       </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp; </font><font size="2"><font face="Courier New">Where&nbsp; OrderID = ?</font><font color="#666699"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       參數類別 &quot;INTEGER&quot;</font>，<font color="#666699">運算式為 
+        
+       <font face="Courier New">{Orders:OrderID}</font></font>，這個SQL會找</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OrderDetails資料來源的OrderID欄位內含值，等於<font color="#666699">{Orders:OrderID} </font>元件內含值的</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 記錄。<br>
+       【後續事件】選<font color="#666699"> sub_top</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【sub_top】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2"> <font color="#666699" face="Courier New">&nbsp;&nbsp; not {OrderDetails:IsEmpty()}  </font>
+       </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp; </font>
+       <font size="2"> <font color="#666699" face="Courier New">and (1 or LocalHashPut(&quot;detrec&quot;,&nbsp; </font>
+       </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">{OrderDetails:RecordNo()}) </font>
+       </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">or LocalHashPut(&quot;subtot&quot;,0))</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"><font color="#666699">not {OrderDetails:IsEmpty()}</font>意即資料來源OrderDetails至少有一筆記錄時才會執行</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 此事件。<font color="#666699">LocalHashPut(&quot;detrec&quot; 
+       , {OrderDetails:RecordNo()}) or LocalHashPut(&quot;subtot&quot; </font>
+       </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"><font color="#666699">,0 ) </font>是把OrderDetails的記錄編號存入區域變數 
+       &quot;detrec&quot; 內，並且把區域變數</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;subtot&quot; 的內含值變成 &quot;0&quot;。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699"> OrderDetails</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">首筆</font>，移動記錄指標到 
+       OrderDetails的第一筆記錄。<br>
+       【後續事件】選 <font color="#666699">sum_sub </font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【sum_sub】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式內容為<font color="#666699"> </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp; </font>
+       <font size="2"> <font face="Courier New" color="#666699">LocalHashPut(&quot;subtot&quot;,</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">LocalHashGet(&quot;subtot&quot;)+</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">&nbsp;({OrderDetails:UnitPrice}*</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {OrderDetails:Quantity}*</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">(1-{OrderDetails:Discount})))</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp; </font>
+       <font size="2">動作是將訂單項目的金額小計<font color="#666699">({OrderDetails:UnitPrice} 
+       * {OrderDetails:Quantity} *  </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp; </font>
+       <font size="2"><font color="#666699">(1-{OrderDetails:Discount}))</font>，加上區域變數&quot;subtot&quot;的內含值(<font color="#666699">LocalHashGet(&quot;subtot&quot;) </font>
+       )</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp; 之後，再回存到區域變數&quot;subtot&quot;裡面。<br>
+       【允許再進入次數】填入<font color="#666699"> &quot;-1&quot;</font>，表示無限次。<br>
+       【後續事件】選<font color="#666699"> next_sub</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【next_sub】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {OrderDetails:Eof()}</font>，意即資料來源OrderDetails不是最後一筆記錄時才會執行此事件。<br>
+       【否則事件】選<font color="#666699"> set_sub</font>，記錄指標移動到 OrderDetails的最後一筆記錄時執行<font color="#666699">set_sub</font>事件。<br>
+       【執行】【資料來源】選<font color="#666699"> OrderDetails</font>，【操作】選<font color="#666699">下筆</font>，移動記錄指標到 
+       OrderDetails的下一筆記錄。<br>
+       【允許再進入次數】填入<font color="#666699"> &quot;-1&quot;</font>，表示無限次。<br>
+       【後續事件】選<font color="#666699"> sum_sub</font>。<br>
+       【sum_sub】與【next_sub】構成一個無窮迴圈，跳出點為<font color="#666699">{OrderDetails:Eof()}</font>。
+       迴圈的目的在於統計該筆訂單的金額。統計訂單金額的另一個做法是下SQL命令，例如 ：select sum(UnitPrice * Quantity 
+       * (1-Discount)) as subtot from OrderDetails where OrderID=訂單主檔.OrderID。
+       使用迴圈的原因在於 trig_details 執行後，OrderDetails的所有記錄已傳送到客戶端(client)，而且 buffer 
+       起來，這時執行迴圈其實非常快，若是下SQL命令，重新由 server 端資料庫送回 result set ，效率不見得更高。
+       兩種方式在效率上的最佳化，實作時再做比較。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_sub】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【條件】運算式內容為<font color="#666699"> </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp; </font>
+       <font size="2"> <font face="Courier New" color="#666699">1 or DsMoveto(&quot;OrderDetails&quot;,LocalHashGet(&quot;detrec&quot;))</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp; </font>
+       <font size="2">動作是移動記錄指標回到迴圈開始時， OrderDetails 的該筆記錄。<br>
+       【執行】把區域變數&quot;subtot&quot;的內含值， 填入元件 &quot;subtot&quot; 裡面。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_chk_date】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">LRTrim({OrderDate})=&quot;&quot;</font>，意即未輸入訂單日期時才會執行此事件。<br>
+       【否則】選 <font color="#666699">msg_chk_cus</font>，意即元件 &quot;OrderDate&quot; 不是空白就執行msg_chk_cus事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Message</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Order date cann't be empty !!&quot;</font>，執行期此字</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 串會出現在訊息方塊中間</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。<br>
+       【後續事件】選 <font color="#666699">focus_date </font>，意即此事件執行後，接著執行 <font color="#666699">
+       focus_date </font>&nbsp;事件。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【focus_date】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件focus事件。<br>
+       【執行】【設定focus】勾選<font color="#666699">OrderDate</font>，會將focus移到<font color="#666699">OrderDate</font>元件上。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_chk_cus】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">{combo_cust}=&quot;&quot;</font>，意即未選擇客戶時才會執行此事件。<br>
+       【否則】選 <font color="#666699">msg_chk_empl</font>，意即元件 &quot;combo_cust&quot; 不是空白就執行msg_chk_empl事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Message</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Select one of the customer first !!&quot;</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       執行期此字串會出現在訊息方塊中間</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_chk_empl】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">{combo_sales}=&quot;&quot;</font>，意即未選擇sales時才會執行此事件。<br>
+       【否則】選 <font color="#666699">msg_chk_cus</font>，意即元件 &quot;combo_sales&quot; 不是空白就執行post_order事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Message</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Select one of the employee &quot;$&quot;\n&quot;$&quot;who</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> 
+       <font color="#666699" face="Courier New">receive 
+       this order !!&quot;</font>，執行期此字串會出現在訊息方塊中間</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ，&quot;\n&quot; 是換行符號</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【post_order】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】【資料來源】選<font color="#666699">Orders</font>，【操作】選<font color="#666699">存檔</font>，執行<font color="#666699">Orders</font>的存檔動作。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2"></td>
+       <td width="906" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_basc_cate.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=377 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=107 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_rpt_order_report.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

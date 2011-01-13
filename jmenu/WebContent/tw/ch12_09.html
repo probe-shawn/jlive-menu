@@ -1,0 +1,1308 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>DsOperation</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_08.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=191 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=209 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_10.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="top"></a><font size="4">
+12.9 資料來源運作 (dsoperation)</font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DsNavigator(ds,op_str)">DsNavigator(ds,op_str)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DsMoveto(ds,recno)">DsMoveto(ds,recno)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#PrevRecord(ds,fld)">PrevRecord(ds,fld)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#NextRecord(ds,fld)">NextRecord(ds,fld)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#RecordData(ds,fid,recno)">RecordData(ds,fid,recno)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#RecordData(ds, fld, recno, exact)">RecordData(ds, fld, 
+recno, exact)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#IsDelete(ds,recno)">IsDelete(ds,recno)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#IsUpdate(ds,recno)">IsUpdate(ds,recno)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Isinsert(ds,recno)">Isinsert(ds,recno)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Seek(ds,fld,value)">Seek(ds,fld,value)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Seek(ds,fld,value,seek_ops)">Seek(ds,fld,value,seek_ops)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Seek(ds,fld,value,seek_ops,moveto)">Seek(ds,fld,value,seek_ops,moveto)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Seek(ds,fld,value,seek_ops,moveto,from)">Seek(ds,fld,value,seek_ops,moveto,from)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#SeekNext(ds)">SeekNext(ds)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#GetSpOutParam(spname.paramname)">GetSpOutParam(spname.paramname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ClearSpOutParam(spname.paramname)">ClearSpOutParam(spname.paramname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#GetSqlErrcode(ds.op)">GetSqlErrcode(ds.op)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#GetSqlState(ds.op)">GetSqlState(ds.op)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#GetSqlErrmsg(ds.op)">GetSqlErrmsg(ds.op)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#SumField(ds,fld)">SumField(ds,fld)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#SetFieldData(ds,fld,value)">SetFieldData(ds,fld,value)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#SetFieldData(ds,fld,value,notifycomp)">SetFieldData(ds. fld, 
+value, notifycomp)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#SwapRecord(ds,recno1,recno2)">SwapRecord(ds,recno1,recno2)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#SwapRecord(ds,recno1,recno2,moveto)">SwapRecord(ds,recno1,recno2,moveto)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#DbURL(dbalias)">DbURL(dbalias)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#UpdBufdsFld(bufds, field, value)">UpdBufdsFld(bufds, 
+field, value)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#UpdBufdsFld(bufds, field, value, all)">UpdBufdsFld(bufds, 
+field, value, all)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch12_09_ds_operation.gif" width="390" height="585"></p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DsNavigator(ds,op_str)">DsNavigator(ds,op_str)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="46">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+功能與導覽元件相同，可執行資料來源的各種操作，如備新增、修改、刪除...等。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="17"></td>
+    <td width="57" align="right" height="17" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="17" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;ds&quot; 資料來源名稱，須用引號括起來，&quot;op_str&quot; 資料來源的各種操作，細節如下。<br>    
+    <font color="#666699">first ：</font> 首筆。當資料在首筆時，按鍵會失效。<br>    
+    </font>    
+<font color="#666699" size="2">prior ：</font><font color="#000000" size="2"> </font>    
+<font size="2">上一筆。當資料在首筆時，按鍵會失效。<br>    
+    </font>    
+<font color="#666699" size="2">next ：</font><font color="#000000" size="2"> </font>    
+<font size="2">下一筆。當資料在尾筆時，按鍵會失效。<br>    
+    </font>    
+<font color="#666699" size="2">last ：</font><font color="#000000" size="2"> </font>    
+<font size="2">尾筆。    
+當資料在尾筆時，按鍵會失效。</font><p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">insert ：</font><font color="#000000" size="2"> </font>    
+<font size="2">新增。在新增狀態或編輯狀態時，按鍵會失效。<br>    
+</font>    
+<font color="#666699" size="2">edit ： </font>    
+<font size="2">編輯。<br>    
+</font>    
+<font color="#666699" size="2">delete ：</font><font color="#000000" size="2">     
+刪除。</font><font size="2">按刪除鍵時，不會出現警示訊息，請小心。<br>    
+</font>    
+<font color="#666699" size="2">post ：</font><font color="#000000" size="2"> </font>    
+<font size="2">存檔。 <br>    
+</font>    
+<font color="#666699" size="2">cancel ：</font><font color="#000000" size="2"> </font>    
+<font size="2">取消新增狀態或編輯狀態。<br>    
+</font>    
+<font color="#666699" size="2">refresh ：</font><font color="#000000" size="2">    
+更新</font><font size="2">。<br>    
+</font>    
+<font color="#666699" size="2">reopen ：</font><font color="#000000" size="2"> </font>    
+<font size="2">重新開啟資料來源。<br>    
+</font>    
+<font color="#666699" size="2">deleteall ： </font>    
+<font size="2">將資料全部刪除，只適用於 Buffered 資料來源。<br>    
+</font>    
+<font color="#666699" size="2">query ： </font>    
+<font size="2">查詢。</font></p>    
+    </td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+    <font size="2">1 表執行成功，0 表失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">DsNavigator(&quot;BASC_CUST&quot; ,&quot;next&quot; ) ，移動客戶資料 (&quot;BASC_CUST&quot;     
+    ) 到下一筆記錄 (&quot;next&quot;)。</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DsMoveto(ds,recno)">DsMoveto(ds,recno)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">移動資料來源的記錄指標。若指定的記錄編號不合理 (例如負數或超出尾筆)，則資料來源不動作，記錄指標停在原始位置。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="16"></td>    
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    參數：</font></td>    
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+    <font size="2">&quot;ds&quot; 資料來源名稱，須用引號括起來，&quot;recno&quot; 記錄編號，可為常數值或運算式。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+    <font size="2">1 表執行成功，0 表失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+    <font size="2">DsMoveto(&quot;BASC_CUST&quot; , 15)，移動客戶資料 (&quot;BASC_CUST&quot; ) 到第15筆記錄。</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="PrevRecord(ds,fld)">PrevRecord(ds,fld)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">資料來源上一筆記錄的欄位值。函數作用不會移動記錄指標。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot; 欄位名稱，須用引號括起來，可為常數值或運算式。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<font size="2">欄位內含值，若已在首筆，則傳回空值。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+    <font size="2">PreRecord(&quot;BASC_CUST&quot; , &quot;CUST_ID&quot;)，傳回上一筆客戶 (&quot;BASC_CUST&quot; ) 的     
+    ID (&quot;CUST_ID&quot;)。</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="NextRecord(ds,fld)">NextRecord(ds,fld)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">資料來源下一筆記錄的欄位值。函數作用不會移動記錄指標。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot; 欄位名稱，須用引號括起來，可為常數值或運算式。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<font size="2">欄位內含值，若已在尾筆，則傳回空值。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+    <font size="2">NextRecord(&quot;BASC_CUST&quot; , &quot;CUST_ID&quot;)，傳回下一筆客戶 (&quot;BASC_CUST&quot; ) 的     
+    ID (&quot;CUST_ID&quot;)。</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="RecordData(ds,fid,recno)">RecordData(ds,fld,recno)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="RecordData(ds, fld, recno, exact)">RecordData(ds, fld, recno, exact)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">資料來源第 (recno) 筆記錄的欄位值。函數作用不會移動記錄指標。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="16"></td>    
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    參數：</font></td>    
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+    <font size="2">&quot;ds&quot; 資料來源名稱。<br>
+    &quot;fld&quot; 欄位名稱，須用引號括起來。<br>
+    &quot;recno&quot; 記錄編號，可為常數值或運算式。<br>
+    &quot;exact&quot; 未給值時，預設為 0。<br>
+    &quot;exact&quot; ：1 -- 當 recno 記錄編號，不存在時，傳回空字串。<br>
+    &quot;exact&quot; ：0 -- 當 recno 記錄編號，不存在時，傳回空字串，但是負數 (&lt; 0) 時，傳回最後一筆記錄 fld 欄位值。零 (0) 
+    時，傳回目前記錄fld 欄位值。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">欄位內含值，若指定的記錄編號不合理 (例如超出尾筆)，則傳回空值。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+    <font size="2">RecordData(&quot;BASC_CUST&quot; , &quot;CUST_ID&quot; , 15)，傳回第 15 筆客戶 (&quot;BASC_CUST&quot;    
+    ) 的 ID (&quot;CUST_ID&quot;)。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="IsDelete(ds,recno)">IsDelete(ds,recno)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查資料來源第 (recno) 筆記錄是否已被刪除。<br>   
+函數作用不會移動記錄指標。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;ds&quot; 資料來源名稱，須用引號括起來，&quot;recno&quot; 記錄編號，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+已經被刪除傳回 1，否則傳回 0。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+    <font size="2">IsDelete(&quot;BASC_CUST&quot; , 15)，第 15 筆客戶資料 (&quot;BASC_CUST&quot;    
+    ) 是否已被刪除。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="IsUpdate(ds,recno)">IsUpdate(ds,recno)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查資料來源第 (recno) 筆記錄是否被修改過。<br>   
+函數作用不會移動記錄指標。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;ds&quot; 資料來源名稱，須用引號括起來，&quot;recno&quot; 記錄編號，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">被修改過傳回 1，否則傳回 0。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+    <font size="2">IsUpdate(&quot;BASC_CUST&quot; , 15)，第 15 筆客戶資料 (&quot;BASC_CUST&quot;    
+    ) 是否被修改過。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Isinsert(ds,recno)">IsInsert(ds,recno)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">檢查資料來源第 (recno) 筆記錄是否為新增的資料。<br>   
+函數作用不會移動記錄指標。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;ds&quot; 資料來源名稱，須用引號括起來，&quot;recno&quot; 記錄編號，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">是新增的資料傳回 1，否則傳回 0。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+    <font size="2">IsInsert(&quot;BASC_CUST&quot; , 15)，第 15 筆客戶資料 (&quot;BASC_CUST&quot;    
+    ) 是否為新增的資料。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Seek(ds,fld,value)">Seek(ds,fld,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">尋找資料來源 (&quot;ds&quot;) 欄位名稱為 (&quot;fld&quot;) 內含值是 (&quot;value&quot;) 的記錄。<br>   
+若找得到則記錄指標會移動到該筆。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot; 欄位名稱，須用引號括起來，&quot;value&quot; 可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">該筆記錄編號。找不到傳回 0 。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+    <font size="2">Seek(&quot;BASC_CUST&quot; , &quot;CUST_ID&quot; , &quot;CS137&quot;)，尋找客戶資料 (&quot;BASC_CUST&quot;    
+    ) 的客戶編號 (&quot;CUST_ID&quot;) 等於 &quot;CS137&quot; 的記錄。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Seek(ds,fld,value,seek_ops)">Seek(ds,fld,value,seek_ops)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">尋找資料來源 (&quot;ds&quot;) 欄位名稱為 (&quot;fld&quot;) 內含值是 (&quot;value&quot;) 的記錄。<br>   
+&quot;seek_ops&quot; 是搜尋規則，意義如下：<br>   
+<font color="#666699">0 ：</font>  全等<br>  
+<font color="#666699">1 ：</font> 起始相同<br>   
+<font color="#666699">2 ：</font> 內容中含有<br>   
+<font color="#666699">3 ： </font>結尾相同</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot; 欄位名稱，須用引號括起來，&quot;value&quot; 可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">該筆記錄編號。找不到傳回 0 。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+    <font size="2">Seek(&quot;BASC_CUST&quot; , &quot;CUST_ID&quot; , &quot;CS137&quot; , 1)，尋找客戶資料 (&quot;BASC_CUST&quot;    
+    ) 的客戶編號 (&quot;CUST_ID&quot;) 開頭等於 &quot;CS137&quot; 的記錄。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Seek(ds,fld,value,seek_ops,moveto)">Seek(ds,fld,value,seek_ops,moveto)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">尋找資料來源 (&quot;ds&quot;) 欄位名稱為 (&quot;fld&quot;) 內含值是 (&quot;value&quot;) 的記錄。<br>   
+&quot;seek_ops&quot; 是搜尋規則，其意義參考前項函數。<br>   
+&quot;moveto&quot; 代表找到該筆資料之後，記錄指標是否移動。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot; 欄位名稱，須用引號括起來，&quot;value&quot; 可為常數值或運算式。<br>   
+    &quot;moveto&quot;=1 表示尋找並移動，0 則不移動。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">該筆記錄編號。找不到傳回 0 。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+    <font size="2">Seek(&quot;BASC_CUST&quot; , &quot;CUST_ID&quot; , &quot;CS137&quot; , 1, 
+    1 )，尋找客戶資料 (&quot;BASC_CUST&quot;    
+    ) 的客戶編號 (&quot;CUST_ID&quot;) 開頭等於 &quot;CS137&quot; 的記錄，且記錄指標移動到該筆。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Seek(ds,fld,value,seek_ops,moveto,from)">Seek(ds,fld,value,seek_ops,moveto,from)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">尋找資料來源 (&quot;ds&quot;) 欄位名稱為 (&quot;fld&quot;) 內含值是 (&quot;value&quot;) 的記錄。<br>   
+&quot;seek_ops&quot; 是搜尋規則，其意義參考前項函數。<br>   
+&quot;moveto&quot; 代表找到該筆資料之後，記錄指標是否移動。<br> 
+&quot;from&quot; 從第幾筆資料(含該筆)開始尋找。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot; 欄位名稱，須用引號括起來，&quot;value&quot; 可為常數值或運算式。<br>   
+    &quot;moveto&quot;=1 表示尋找並移動，0 則不移動。&quot;from&quot; 
+    從第幾筆資料(含該筆)開始尋找。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">該筆記錄編號。找不到傳回 0 。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+    <font size="2">Seek(&quot;BASC_CUST&quot; , &quot;CUST_ID&quot; , &quot;CS137&quot; , 1, 
+    1 
+    , 100)，從第 100 筆資料開始尋找客戶資料 (&quot;BASC_CUST&quot;    
+    ) 的客戶編號 (&quot;CUST_ID&quot;) 開頭等於 &quot;CS137&quot; 的記錄，且記錄指標移動到該筆。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"> 
+<a name="SeekNext(ds)">SeekNext(ds)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">以最後一次執行 Seek(ds, ...) 指令，尋找資料來源 (&quot;ds&quot;) 
+的條件，往下搜尋下一筆符合條件的資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">該筆記錄編號。找不到傳回 0 。尚未執行過 Seek(ds, 
+...) 亦傳回 0 。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">SeekNext(&quot;BASC_CUST&quot;)。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetSpOutParam(spname.paramname)">GetSpOutParam(spname.paramname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">擷取執行預儲程序 (&quot;apname&quot;) 之後，輸出參數 (&quot;paramname&quot;) 的內含值。<br>  
+相關內容請參考 <a href="ch11_03_06.html">執行預儲程序</a>。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;spname&quot; 預儲程序名稱，&quot;paramname&quot; 輸出參數名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">輸出參數的內含值，若無此參數傳回空字串。。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">GetSpOutParam(&quot;AUTOENCODE.@RETCODE&quot;)，取得執行預儲程序 (&quot;AUTOENCODE&quot;)   
+    之後，輸出參數 (&quot;@RETCODE&quot;) 的內含值。<br> 
+    <br>  
+    &quot;@RETCODE&quot; 是 Microsoft SQL 2000 輸出參數的寫法。輸出參數名稱的寫法各資料庫不盡相同，請參考資料庫使用手冊。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ClearSpOutParam(spname.paramname)">ClearSpOutParam(spname.paramname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">清除預儲程序 (&quot;<span lang="en-us">s</span>pname&quot;) 輸出參數 (&quot;paramname&quot;) 的內含值。<br>  
+相關內容請參考 <a href="ch11_03_06.html">執行預儲程序</a>。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;spname&quot; 預儲程序名稱，&quot;paramname&quot; 輸出參數名稱。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">執行成功傳回輸出參數的內含值，失敗傳回空字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+    <font size="2">ClearSpOutParam(&quot;AUTOENCODE.@RETCODE&quot;)，清除預儲程序 (&quot;AUTOENCODE&quot;)   
+    輸出參數 (&quot;@RETCODE&quot;) 的內含值。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetSqlErrcode(ds.op)">GetSqlErrcode(ds.op)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp;</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">擷取資料來源 (&quot;ds&quot;) 在執行資料操作 (&quot;op&quot;) 之後，由Probe middleware   
+或資料庫傳回之錯誤代碼。相關內容請參考 <a href="sql_error_handle.html">SQL Error Handle</a>。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;op&quot; 操作內容 (如 insert 、post...etc)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">SQL 錯誤代碼。若無此項錯誤傳回 0。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">GetSqlErrcode(&quot;Customer.insert&quot;)，檢查客戶資料 (&quot;Customer&quot; )   
+    執行新增動作的結果，一般而言，0 表執行成功。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetSqlState(ds.op)">GetSqlState(ds.op)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp;</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">擷取資料來源 (&quot;ds&quot;) 在執行資料操作 (&quot;op&quot;) 之後，由Probe middleware   
+或資料庫傳回之錯誤狀態。相關內容請參考 <a href="sql_error_handle.html">SQL Error Handle</a>。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;op&quot; 操作內容 (如 insert 、post...etc)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">SQL 錯誤狀態。若無此項錯誤傳回空字串。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">GetSqlState(&quot;Customer.insert&quot;)，檢查客戶資料 (&quot;Customer&quot; )   
+    執行新增動作的錯誤結果狀態。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetSqlErrmsg(ds.op)">GetSqlErrmsg(ds.op)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">擷取資料來源 (&quot;ds&quot;) 在執行資料操作 (&quot;op&quot;) 之後，由Probe middleware   
+或資料庫傳回之錯誤訊息。相關內容請參考 <a href="sql_error_handle.html">SQL Error Handle</a>。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;op&quot; 操作內容 (如 insert 、post...etc)。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">SQL 錯誤訊息。若無此項錯誤傳回空字串。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">GetSql<span lang="en-us">Errmsg</span>(&quot;Customer.insert&quot;)，檢查客戶資料 (&quot;Customer&quot; )   
+    執行新增動作的錯誤結果訊息。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SumField(ds,fld)">SumField(ds,fld)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將資料來源 (&quot;ds&quot;) 的欄位內含值 (&quot;fld&quot;) 加總，若該欄位非數值欄位則傳回 0。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot; 欄位名稱，須用引號括起來。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">數值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+    <font size="2">SumField(&quot;Orders&quot; , &quot;Subtotal&quot;)，將客戶訂單 (&quot;Orders&quot; )   
+    的小計 (&quot;Subtotal&quot;) 加總。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SetFieldData(ds,fld,value)">SetFieldData(ds,fld,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將值 (&quot;value&quot;) 填入資料來源 (&quot;ds&quot;) 的欄位 (&quot;fld&quot;) 中。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;fld&quot;欄位名稱，須用引號括起來，&quot;value&quot;   
+    值，可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">傳回存入值 (value)。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">SetFieldData(&quot;Orders&quot; , &quot;Subtotal&quot; , 5000 )，將客戶訂單 (&quot;Orders&quot;   
+    ) 的小計 (&quot;Subtotal&quot;) 填入5000。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SetFieldData(ds,fld,value,notifycomp)">SetFieldData(ds,fld,value,notifycomp)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將值 (&quot;value&quot;) 填入資料來源 (&quot;ds&quot;) 的欄位 (&quot;fld&quot;) 中。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱。<br>
+    &quot;fld&quot;欄位名稱，須用引號括起來。<br>
+    &quot;value&quot;   
+    值，可為常數值或運算式。<br>
+    notifycomp：將值填入後，是否引發元件 (component) 重新取值計算。1 表&quot;是&quot;，0 表&quot;否&quot;。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">傳回存入值 (value)。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">SetFieldData(&quot;Orders&quot; , &quot;Subtotal&quot; , 5000 
+    , 1)，將客戶訂單 (&quot;Orders&quot;   
+    ) 的小計 (&quot;Subtotal&quot;) 填入5000。並引發元件 (component) 重新取值計算。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SwapRecord(ds,recno1,recno2)">SwapRecord(ds,recno1,recno2)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將資料來源 (&quot;ds&quot;) 的第 (recno1) 筆記錄的所有欄位內含值，與第 (recno2) 筆完全對調。<br>  
+此函數只適用於 Buffered 資料來源。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;recno1&quot;、&quot;recno2&quot; 記錄編號，可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功，0 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">SwapRecord(&quot;BUFF_TBL&quot; , 2 , 5 )，將資料來源 (&quot;BUFF_TBL&quot; )   
+    第 2筆記錄與第5筆對調。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="SwapRecord(ds,recno1,recno2,moveto)">SwapRecord(ds,recno1,recno2,moveto)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將資料來源 (&quot;ds&quot;) 的第 (recno1) 筆記錄的所有欄位內含值，與第 (recno2) 筆完全對調，再將記錄指標移到第 (&quot;moveto&quot;)   
+筆。此函數只適用於 Buffered 資料來源。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;ds&quot; 資料來源名稱，&quot;recno1&quot;、&quot;recno2&quot; 、&quot;moveto&quot;   
+    記錄編號，可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功，0 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">SwapRecord(&quot;BUFF_TBL&quot; , 2 , 5, 5 )，將資料來源 (&quot;BUFF_TBL&quot;   
+    ) 第 2筆記錄與第5筆對調，並移到第5筆。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DbURL(dbalias)">DbURL(dbalias)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">取得資料庫別名 dbalias 所連結 URL 資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">dbalias：資料庫別名。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">資料庫連結 URL。 </font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">範例程式 NorthWind_sample，資料庫別名 Northwind，查詢<br>
+    DbURL(&quot;Northwind&quot;)<br>
+    傳回<br>
+    jdbc:mysql://localhost:3306/northwind?useUnicode=true&amp;characterEncoding=Cp950</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="UpdBufdsFld(bufds, field, value)">UpdBufdsFld(bufds, field, value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">在 Buffer 資料來源 (&quot;ds&quot;) 目前資料記錄的 (&quot;field&quot;) 欄位，填入 value 值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">ds：資料來源名稱。<br>
+    field：欄位名稱。<br>
+    value：填入值可為常數值或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功，0 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">將資料來源 (&quot;BUFF_TBL&quot;) 目前資料記錄的 (&quot;FLAG&quot;) 欄位，填入 0 值。<br>
+    UpdBufdsFld(&quot;BUFF_TBL&quot; , &quot;FLAG&quot;&nbsp; , &quot;0&quot; )。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="UpdBufdsFld(bufds, field, value, all)">UpdBufdsFld(bufds, field, value, 
+all)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">在 Buffer 資料來源 (&quot;ds&quot;) 資料記錄的 (&quot;field&quot;) 欄位，全部或目前資料記錄填入 
+value 值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">ds：資料來源名稱。<br>
+    field：欄位名稱。<br>
+    value：填入值可為常數值或運算式。<br>
+    all：1 -- 全部資料記錄； 0 -- 目前資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功，0 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">將資料來源 (&quot;BUFF_TBL&quot;) 全部資料記錄的 (&quot;FLAG&quot;) 欄位，填入 0 值。<br>
+    UpdBufdsFld(&quot;BUFF_TBL&quot; , &quot;FLAG&quot;&nbsp; , &quot;0&quot;,&nbsp; 1)。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_08.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=185 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=215 align=right valign=top>
+<a href="ch12_10.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

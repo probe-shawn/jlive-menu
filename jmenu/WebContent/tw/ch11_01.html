@@ -1,0 +1,521 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Event flow schema design framework</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<font size="2">
+<a href="index.html">  
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></font></p>  
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=183 align=left valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"> 
+<a href="ch11.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></font></td>
+<td width=224 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD>     
+<td width=193 align=right valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2">     
+<a href="ch11_06.html">     
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></font></td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<p><b><font size="4"><a name="top"></a></font></b><font size="3"><b>事件流程綱要設計平台 
+(event flow      
+schema design framework)</b></font></p>      
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#framework">
+事件設計平台操作 
+(event design framework)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#eventpanel">事件屬性列示區 
+(event properties panel)</a></font></p>     
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#newevent">新增事件 
+(create new event)</a></font></p>    
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#editdelevent">編輯、刪除、複製、拷貝、貼上事件 
+(edit, delete, duplicate, copy, paste&nbsp; event)</a></font></p>    
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#routevent">調整事件流程 
+(route event flow)</a></font></p>    
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#interrupt">事件中斷與除錯 
+(event interrupt and debug)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#eventset">
+事件集管理 (event set management)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">
+<a href="#store_eventset">儲存事件集 (store event set)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">
+<a href="#paste_eventset">選用事件集 (paste event set)</a></font></p>   
+<p style="text-indent: 0px; line-height: 100%; margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">事件流程綱要 
+(event flow schema)，提供設計師新增(create)、編輯(edit)、檢視 
+(view) 事件(event object)，分析 (analysis)、規劃 (route)、調整 
+(adjust)  
+事件流程 (event flow)，以及測試執行的事件中斷 (interrupt)  
+設定。設計師在視窗設計平台 (form design framework)  
+按下事件列表 (event table)  
+的新增事件按鈕，進入事件流程綱要設計平台，可以在工作區域中檢視所有運用於視窗的事件。工作區域以流程圖示所有事件物件 
+(event object)，其中較大的圖示 (icon)<img border="0" src="images/eventschema.gif" width="32" height="32"> 表示該事件為視窗元件 
+(component) 、資料來源 (data source) 或系統流程 (system flow)  
+所連結啟動，較小的圖示 (icon)  
+<img border="0" src="images/evschema.gif" width="24" height="24">則為事件串流中的事件。藍色連結線表示事件的後續事件 
+(next event)；粉紅色的連結線表示事件的否則事件 (otherwise  
+event)。設計師以滑鼠移動到事件物件時，該事件會以綠色外框標示為選取，工作區域左邊的事件屬性列示區，會列示事件的所有資訊，工作區域左上角的引發器列表 
+(event invoker listing)，會列示連結引發該事件的元件、資料來源及系統流程。設計師可以滑鼠拖拉快速地調整事件流程，設定除錯的中斷點，檢視執行時資料及參數的正確性。</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">事件集 (event set) 
+管理提供設計師儲存已設計完成的事件流程，設計師可以將常用的事件流程，像一般瀏覽器加入我的最愛的方式，儲存及管理事件集。事件集可以在任何專案中的視窗模組參用，設計師在參用時必須考慮在事件流程中所參用的資料來源及變數。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>     
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>     
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>     
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><b><a name="framework"></a>事件設計平台操作 (design framew</b><b>ork)</b></font></p>      
+<p style="margin-top: 1; margin-bottom: 1" align="center">  
+<font size="2"><b><br>
+</b>     
+<img border="0" src="images/ch11_01_event_toolbar.gif" width="576" height="37"></font></p>      
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">    
+<font color="#666699"><img border="0" src="images/system.gif" width="16" height="16"> 系統 (system)：</font><br>
+<br>
+<img border="0" src="images/ch11_01_event_toolbar_1.gif" width="192" height="98"><br>
+　</font></p>    
+<ul type="disc">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">    
+返回視窗設計摸式：</font><font size="2">返回視窗設計摸式。</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">事件綱要 screen capture：</font>將事件綱要流程圖以快照 
+(snap shot) 的方式存成圖檔 (*.png)，執行時系統會出現訊息視窗，詢問置放圖檔的位置與檔名。預設存放於【應用程式目錄】【doc】【screen】目錄下以 
+evt_ 加視窗名稱為檔名。</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">事件設計提示：</font>核選 (check) 
+是否在滑鼠移入事件區域中，出現設計提示視窗 (tool tips)。 </font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">寬鬆性觸發資料來源檢查：</font><font size="2">觸發資料來源 (trigger 
+data source) 欄位型別檢查是否使用寬鬆性檢核 (lenient)。參閱 
+<a href="ch11_03_03.html#觸發資料來源欄位檢查 (trigger data source type check)">觸發資料來源欄位檢查</a> 
+。<br>
+<br>
+　</font></p>    
+  </li>
+</ul>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">   
+<font color="#666699"><img border="0" src="images/menuedit.gif" width="16" height="16"> 編輯 (edit)：</font>可以將複製的事件貼上。<br>
+<br>
+<img border="0" src="images/ch11_01_event_toolbar_2.gif" width="117" height="52"><br>
+　</font></p>    
+<ul type="disc">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">貼上 (paste)：</font>將系統剪貼簿中的事件貼上。</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">事件集管理：</font>開啟事件集管理視窗。<br>
+　</font></p>    
+  </li>
+</ul>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">   
+<font color="#666699"><img border="0" src="images/_exit.gif" width="21" height="20"> 離開 (exit)：</font>回到視窗設計模式。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699"><img border="0" src="images/dbtarrow.gif" width="25" height="25">選擇事件 (select)：</font><font size="2" color="#000000">選擇事件模式。<br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699"><img border="0" src="images/evschema.gif" width="24" height="24"> 新增事件 (create)：</font><font size="2" color="#000000">按選此按鈕，滑鼠顯示為十字狀，在工作區域按下 
+(clicked) 滑鼠新增事件。<br>
+　</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2">     
+<font color="#666699">顯示引發器列表 (invoker listing)：</font><font color="#000000">在工作區域左上角，
+是否顯示啟動連結 
+(link) 此事件的元件和事件列表。顯示的格示為：</font><font color="#003366">物件類別‧元件名稱‧引發位置</font><font color="#000000">。<br>
+　</font></font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2">     
+<font color="#666699">工作區域 (work area)： </font><font color="#000000">調整事件圖示的安置區域大小。</font></font></p>     
+  </li>     
+</ul>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="eventpanel"></a>事件屬性列示區 
+(event properties panel)</b></font></p>      
+<ul>  
+  <li>  
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">名稱 
+    (event name)：</font><font size="2" color="#000000">事件名稱。<br>
+　</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">條件 
+    (fire condition)：</font><font size="2" color="#000000">啟動條件運算式。<br>
+　</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">否則 
+    (otherwise event)：</font><font size="2" color="#000000">連結的否則事件。<br>
+　</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">執行 
+    (perform computing process)：</font><font size="2" color="#000000">運算程序。<br>
+　</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">後續 
+    (next event)：</font><font size="2" color="#000000">連結的後續事件。</font></li>
+</ul>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">　<img border="0" src="images/ch11_01_view.gif" width="176" height="322"></p>  
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="newevent"></a>新增事件 
+(create new event)</b></font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">新增一個事件有兩種方式，直接將滑鼠移到工作區域空白的地方，按下滑鼠右鍵，在出現的選單項目中選擇【新增事件】，或是按下工作列的圖示 <i>       
+新增</i> <img border="0" src="images/evschema.gif" width="24" height="24">&nbsp;    
+，</font><font size="2" color="#000000">滑鼠顯示為十字狀，在工作區域按下 
+(clicked) 滑鼠即可新增事件。</font></p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2">     
+<font color="#666699">新增事件 (create event) ： </font>新增一個事件。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2">     
+<font color="#666699">貼上事件 (paste event)： </font>將拷貝的事件貼上。</font></p>      
+  </li>      
+</ul>      
+<blockquote>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2">     
+<img border="0" src="images/ch11_01_eventnew.gif" width="123" height="83"></font></p>     
+</blockquote>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="editdelevent"></a>編輯、刪除、複製、拷貝、貼上事件 
+(edit, delete, duplicate, copy, paste&nbsp; event)</b></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">將滑鼠移到事件物件 
+(event object) 上，事件物件 (event object)    
+會以綠色外框標示 (mark) 為選取狀態(selected)，按下滑鼠右鍵，在出現的選單項目中選取【屬性】、【刪除】、【複製】、【拷貝】、【貼上】選單功能項目。</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">事件物件 
+(event object) 的位置，除了可以滑鼠按住事件物件的中心，拖拉至目標位置外，亦可以<font color="#000000" size="2">按住鍵盤的    
+Ctrl 加 ←↑↓→ 鍵</font>，微調位置。設計師可以<font color="#000000" size="2">按住鍵盤的 Ctrl 後</font>，以滑鼠 
+cascading 拖曳事件。</font></p>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+在選單項目中 拷貝、刪除、貼上含 cascading 的作業，是由所選事件加上其後續事件及否則事件所連結的所有事件，一併納入作業。例如：刪除 
+cascading，將會刪除所選事件外，加上其後續事件及否則事件的後續事件及否則事件‧‧‧。設計師可以選取事件物件 (event object)<font color="#000000" size="2"> 
+後，按住鍵盤的 Ctrl ，再以滑鼠</font>拖曳選取事件，其相關的 cascading 事件會一併移動。</font></p>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>      
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2">在工作區域空白區域按下滑鼠右鍵，系統將會出現以下選單：<br>
+　</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<img border="0" src="images/ch11_01_right_menu_1.gif" width="162" height="137"></p>     
+<ul type="square">
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">新增事件：</font><font size="2">在滑鼠所在位置新增事件。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">貼上事件：</font><font size="2">將拷貝的事件在滑鼠所在位置貼上。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">貼上事件 cascading：</font><font size="2">將拷貝 
+cascading 的事件在滑鼠所在位置貼上 cascading。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">由事件集貼上事件：</font><font size="2">顯示事件集列示視窗，選取事件集並在滑鼠所在位置貼上。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">取消全部中斷：</font><font size="2">取消所有的中斷設定。</font></p>     
+  </li>
+</ul>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2">在選取的事件上按下滑鼠右鍵，系統將會出現以下選單：</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<img border="0" src="images/ch11_01_right_menu_2.gif" width="213" height="360"></p>     
+<ul type="square">
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">屬性：</font><font size="2">編輯選取事件。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">刪除：</font><font size="2">刪除選取事件。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">刪除 cascading：</font><font size="2">刪除選取事件 
+cascading。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">拷貝：</font><font size="2">拷貝選取事件。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">拷貝 cascading：</font><font size="2">拷貝選取事件 
+cascading。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">複製：</font><font size="2">直接在工作區域內，複製一個不同事件名稱，但相同運算程序的事件。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">儲存事件集：</font><font size="2">將選取事件儲存於事件集中。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">移除後續事件：</font><font size="2">移除選取事件的後續事件。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">移除否則事件：</font><font size="2">移除選取事件的否則事件。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">中斷於事件發生之前：</font><font size="2">系統在執行選取事件之前中斷執行，顯示系統相關資訊，進行除錯。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">中斷於事件發生之後：</font><font size="2">系統在執行選取事件之後中斷執行，顯示系統相關資訊，進行除錯。<br>
+　</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">     
+<font size="2" color="#666699">取消全部中斷：</font><font size="2"><font color="#666699"> </font>取消所有的中斷設定。</font></p>     
+  </li>
+</ul>
+<blockquote>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>     
+</blockquote>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b>
+<a name="routevent"></a>調整事件流程 
+(route event flow)</b></font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">設計師可以在工作區域中，將滑鼠移到事件物件 
+(event object) 上，事件物件 (event object) 會以綠色外框標示 (mark) 
+為選取狀態 (selected)，在綠色外框的右緣 (right margin)，按住 
+(pressed) 滑鼠，將後續事件 (next event)    
+的連結拖曳至目標事件，放開 (released) 滑鼠後，系統會以藍色線顯示連結。在綠色外框的下緣(bottom margin)，按住 
+(pressed) 滑鼠，將否則事件 (otherwise event)    
+的連結拖曳至目標事件，放開 (released)    
+滑鼠後，系統會以粉紅色線顯示連結。<br> 
+　</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">在標示綠色外框的選取事件上，按下滑鼠右鍵，可以用選單項目的【<font color="#666699">移除後續事件</font>】、【<font color="#666699">移除否則事件</font>】，移除事件連結。或進入屬性設定頁，編輯否則事件 
+(otherwise event) 及後續事件 (next event)，重新連結事件流程 (route    
+event flow)。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/ch11_01_mouse_move.gif" width="363" height="235"></p>   
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="interrupt"></a>事件中斷與除錯 
+(event interrupt and debug)</b></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE  
+Builder&trade;  
+在設計模式下，提供事件執行的前後中斷機制，設計師在視窗設計平台上測試執行時，系統執行至中斷點，隨即顯示事件相關資訊及系統變數，設計師可更改測試的變數資料，以及選擇是否繼續執行、此中斷點是否繼續提供中斷服務、是否取消所有中斷服務。參閱 
+<a href="ch06_04.html">視窗除錯與事件中斷 (form debug and event interrupt)</a>。事件中斷的設定只在設計模式下才有作用，且中斷設定在離開視窗設計後，即消除沒有存檔記錄。</font></p>    
+<ul type="square">   
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">   
+<font color="#666699">中斷於事件發生之前&nbsp; (interrupt before event)： </font>     
+系統在執行事件之前中斷執行，顯示系統相關資訊，進行除錯。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">   
+<font color="#666699">中斷於事件發生之後&nbsp; (interrupt after event)： </font>     
+系統在執行事件之後中斷執行，顯示系統相關資訊，進行除錯。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">   
+<font color="#666699">取消全部中斷&nbsp; (cancel all interrupts)： </font>取消所有的中斷設定。</font></p>    
+  </li>    
+</ul>    
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/ch11_01_right_click.gif" width="351" height="341"></p>   
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="eventset">
+</a>事件集管理 (event set management)</font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">事件集 
+(event set) 是以所選事件物件 (event object) 含以下 cascading 後續 (next) 及否則 (otherwise) 
+事件所組成。設計師可以將一完整程序的事件集儲存，而在其他任何專案中的視窗模組參用，參用時必須考慮在事件流程中所參用的資料來源及變數是否可運用於該視窗模組。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+由操作選單【編輯】【事件集管理】的選單項目，開啟事件集管理視窗：<br>
+　</font></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<img border="0" src="images/ch11_01_eventset_man.gif" width="400" height="400"></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+事件集的管理是與 Window 的檔案總管一樣的樹狀結構，設計師可以<img border="0" src="images/new20.gif" width="24" height="24">新增、<img border="0" src="images/delete20.gif" width="24" height="24">刪除、<img border="0" src="images/edit20.gif" width="24" height="24">更名目錄節點及事件集名稱。在同一目錄節點下可以<img border="0" src="images/up20.gif" width="24" height="24">上移、<img border="0" src="images/down20.gif" width="24" height="24">下移事件集。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2">
+<a name="store_eventset"></a>儲存事件集 (store event set)</font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+在工作區域中所取事件，按右鍵選擇【儲存事件集】選單項目後，系統會顯示輸入事件集名稱的視窗<br>
+　</font></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<img border="0" src="images/ch11_01_eventset_add.gif" width="274" height="127"></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+輸入事件集名稱，系統會出現管理視窗，設計師可以選擇一目錄節點，或按<img border="0" src="images/new20.gif" width="24" height="24">新增，另命名一新目錄節點。<br>
+　</font></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<img border="0" src="images/ch11_01_eventset_add_2.gif" width="280" height="360"><br>
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2">
+<a name="paste_eventset"></a>選用事件集 (paste event set)</font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+在工作區域中按滑鼠右鍵，選擇【由事件集貼上事件】選單項目。在選取事件集視窗中選擇一事件集貼上。系統將會檢查視窗中是否存在相同事件物件名稱，並自動以序號動態更動欲貼入的事件名稱，以維持系統事件物件名稱的唯一性。<br>
+　</font></p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<img border="0" src="images/ch11_01_eventset_paste.gif" width="280" height="360"></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p> 
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=219 align=left valign=top> 
+<font size="2"> 
+<a href="ch11.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></font></td> 
+<td width=212 align=center valign=top><a href="index.html"> 
+<font size="2"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></font></a></TD> 
+<td width=225 align=right valign=top> 
+<font size="2"> 
+<a href="ch11_06.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></font></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+</body>    
+    
+</html>

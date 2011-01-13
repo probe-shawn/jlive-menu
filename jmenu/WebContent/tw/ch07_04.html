@@ -1,0 +1,789 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Report printable components</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch07_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch07.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 7</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch07.html" style="text-decoration: none"><font color="#000000">
+Report system</font></a></font></b></TD>  
+<td width=204 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch07_05.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><font size="5"><a name="top"></a></font><font size="4"><b>7</b></font><b><font size="4"><a class="TITLE">.5</a> 報表元件   
+(report printable components)</font></b></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#generic">通用報表元件(Generic     
+printable component)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#Image_rintable_component">圖片報表元件(Image printable component)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#Memo_printable_component">備忘錄報表元件(Memo printable component)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#Statistic_printable_component">統計圖報表元件(Statistic printable component)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#Barcode_printable_component">條碼報表元件(Barcode printable component)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#pagebreak">跳頁報表元件(Page break component)</a></font></p>     
+<ul type="square">     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699"><a name="Common_properties"></a></font><font size="2"><b>共同屬性設定頁   
+(common properties)</b></font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+  <ul type="square"> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2" color="#666699"><b>位置 (location)：</b><br>
+<br>
+</font>    
+<img border="0" src="images/ch07_04_location.gif" width="459" height="422"></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+    <ul type="circle">    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">位置(點) (location dot)：</font><font size="2">元件的位置及大小，由像素點來表示。<br>
+　</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">位置(英吋) (location inch)：</font><font size="2">元件的位置及大小，由英吋來表示。<br>
+　</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font SIZE="2"><font color="#666699">墊充 (點) (inset dot)：</font>元件內緣墊充</font><font size="2">，以像素點來表示。<br>
+<br>
+<img border="0" src="images/ch07_04_inset.gif" width="216" height="135"><br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">Clip Bounds：</font><font size="2">當列印資料內容超過範圍     
+(寬、高)，裁割掉超過的部分 。<br>
+<br>
+<img border="0" src="images/ch07_04_clipbound.gif" width="325" height="118"><br>
+　</font></p>      
+      </li>      
+      <li>      
+<p style="margin-top: 0; margin-bottom: 0" align="justify">      
+<font color="#666699" size="2">Freeze Bounds：</font><font size="2">此元件大小尺寸，不列入表身   
+(content) 單筆資料記錄總高度的計算，當元件置於表身 (content)   
+列印時，只列印一次，不隨資料記錄移動而逐筆列印，適用於浮水印或格式化的報表。<br>
+<img border="0" src="images/ch07_04_freebound.gif" width="484" height="247"></font></p>    
+      </li>    
+    </ul>    
+    </li>    
+  </ul>    
+  </li>    
+</ul>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="square">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699"><b>框線 (frame)</b></p> 
+</font>   
+<p align="center">   
+<img border="0" src="images/ch07_04_frame.gif" width="460" height="422"> <br>
+　<ul type="circle"> 
+      <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">線寬 </font><font color="#666699" size="2">(line 
+width)：</font><font size="2">框線寬度，以浮點數值 (float) 
+設定，單位為 1/72 inch。<br>
+　</font></p>   
+      </li>   
+      <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">左 (left)：</font><font size="2">左邊界框線。</font></p>    
+      </li>    
+      <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">左弧 (left )：</font><font size="2">左弧框線。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">上 (top)：</font><font size="2">上邊界框線。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">上弧 
+(top)：</font><font size="2">上弧框線。 </font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">右 (right)：</font><font size="2">右邊界框線。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">右弧 (right)：</font><font size="2">右弧框線。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">下 (bottom)：</font><font size="2">下邊界框線。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">下弧 (bottom)：</font><font size="2">下弧框線。<br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">水平中心線 (horizontal center)：</font><font size="2">列印出水平線。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">垂直中心線 (vertical     
+Center)：</font><font size="2">列印出垂直線。<br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">左上右下對角線 (left_top -- right_bottom)：</font><font size="2">列印出左上    
+到右下的框線。</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">右上左下對角線 (right_top -- left_bottom)：</font><font size="2">列印出右上到左下的框線。<br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">內切橢圓 (oval)：</font><font size="2">橢圓形框線。<br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">實線 (solid line)</font></p>   
+      </li>   
+      <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">虛線 (dash line)<br>
+<img border="0" src="images/ch07_04_dashframe.gif" width="268" height="200"></font></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<ul type="circle">
+  <li type="disc">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font SIZE="2" color="#666699">虛線段長 (dash segment)：</font><font size="2">以浮點數值 
+(float) 設定，單位為 1/72 inch。</font></p>   
+  </li>
+  <li type="disc">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font SIZE="2" color="#666699">虛線間隔 (space segment)：</font><font size="2">以浮點數值 
+(float) 設定，單位為 1/72 inch。</font></p>   
+  </li>
+</ul>
+      </li>   
+    </ul>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+    </li>   
+  </ul>   
+<blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch07_04_area.gif" width="520" height="238"><br>
+<img border="0" src="images/ch07_04_arcframe.gif" width="277" height="236"></p>   
+</blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+  <ul type="square">   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699"><b>字型 (font)</b><br>
+<br>
+</font> 
+<img border="0" src="images/ch07_04_font.gif" width="481" height="420"></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+    <ul type="disc"> 
+      <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">字型 (font)：</font><font size="2">選擇字型</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">大小 (size)：</font><font size="2">選擇字型大小。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">樣式 (style)：</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+      <ul type="circle">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">粗體 (bold)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">斜體 (italic) </font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p> 
+        </li> 
+      </ul> 
+      </li> 
+      <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2" color="#666699">顏色 (color)：</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+      <ul type="circle">    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">前景顏色 (foreground)</font></p>    
+        </li>    
+        <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">背景顏色 (background)<br>
+　</font></p>    
+        </li>    
+      </ul>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">旋轉 (rotate)：</font><font size="2">將字型旋轉列印 (0 -- 
+360)。水平順時鐘為正值。<br>
+<br>
+<img border="0" src="images/ch07_04_font_rotate.gif" width="331" height="189"><br>
+　</font></p>    
+        </li>
+    </ul>    
+    </li> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2" color="#666699"><b>可列印 (printable)</b>：</font><font size="2" color="#000000">動態的以</font><font size="2">條件</font><font size="2" color="#000000">運算公式 
+(formula) 的結果決定是否列印資料。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+    <ul type="disc">     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">列印限制 (print out constraint)：</font><font size="2">使用條件</font><font size="2" color="#000000">運算公式   
+(formula) </font><font size="2">來控制列印與否。 <br>
+　</font></p>     
+    <ul type="circle">     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">條件 (condition)：</font><font size="2">依條件運算</font><font size="2" color="#000000">公</font><font size="2">式   
+(formula) 的結果決定是否列印此元件 。<br>
+　</font></p>      
+      </li>      
+    </ul>      
+      </li>      
+      <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font color="#666699" size="2">換頁即強迫列印 (force to print while first record in new page)：</font><font size="2">忽略
+條件運算</font><font size="2" color="#000000">公</font><font size="2">式   
+(formula) 的結果，每一頁的第一筆記錄都會列印。</font>&nbsp; </p>     
+      </li>     
+    </ul>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+    </li>     
+  </ul> 
+  <blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch07_04_prinetable.gif" width="453" height="257"></p>     
+    </blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<a name="generic"></a>通用報表元件 (Generic printable component )<font size="2"> </font></b>      
+<font size="2">      
+<img border="0" src="images/rptgeneric.gif" width="25" height="25"></font></p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2"><a href="#Common_properties">共同屬性 (common properties)</a></font><br>
+　</p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699"><b>內容 (content)</b></p>
+</font>     
+<p align="center">     
+<img border="0" src="images/ch07_04_content.gif" width="459" height="422"> </p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font color="#666699" size="2">純文字 (simple text)：</font><font size="2" color="#000000">使用文字敘述當成要列印的內容     
+。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+    <ul type="circle">     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">頁碼 (page no)：</font><font size="2"> 列印頁碼。 <br>
+　</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">當前 (current page no)：</font><font size="2">列印當頁的頁碼。<br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">全部 (預估值) (total pages estimate)：</font><font size="2">由於       
+jLIVE Builder&trade;       
+報表系統提供強迫換頁及基於運算條件才列印的機制，所以實際的總頁數在某些情況下並不相等於預估總頁數。</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+      </li>      
+    </ul>      
+    </li>      
+    <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font color="#666699" size="2">使用運算式 (use formula)：</font><font size="2" color="#000000">使用運算公式   
+(formula) 的結果值來列印      
+。<br>
+　</font></p>      
+    </li>      
+    <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">Html 內容 (html content) ：</font><font size="2" color="#111111">運算式內容為 
+HTML 格式</font><font size="2" color="#000000">。 允許以 HTML tag 格式化列印資料。<br>
+　</font></p>      
+    </li>      
+    <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font color="#666699" size="2">加總 (sum result)：</font><font size="2">如果</font><font size="2" color="#000000">運算公式   
+(formula) 的結果值是數值資料</font><font size="2">，可以運用元件內部的加總功能，</font><font size="2" color="#000000">累計加總列印。<br>
+　</font></p>     
+  <ul type="disc">  
+    <li type="circle">      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2" color="#666699">平均值 (average)：</font><font size="2">運用元件內部的加總功能，</font><font size="2" color="#000000">累計加總
+後列印平均值。<br>
+　</font></p>     
+    </li>
+  </ul>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">歸零 (reset to zero)：</font><font size="2">元件內部的加總功能，</font><font size="2" color="#000000">歸零的時機    
+。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+    <ul type="circle">    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">永不 (never)：</font><font size="2" color="#000000">累計</font><font size="2">加總，不</font><font size="2" color="#000000">歸零     
+。(例如：全部列印資料的&quot;金額總計&quot;)<br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">列印後 (after printout)：</font><font size="2" color="#000000">當列印之後歸零      
+。(例如：列印單筆訂單的&quot;金額小計&quot;)<br>
+　</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">換頁 (new page)：</font><font size="2" color="#000000">當換頁之後歸零      
+。(例如：列印單一頁次的&quot;金額小計&quot;)<br>
+　</font></p>     
+      </li>     
+    </ul>     
+    </li>     
+  </ul>     
+  </li>     
+</ul>     
+<ul type="square">     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#66669</p>9"><b><font color="#666699">列印格式 (format)</font></b><br>
+</p>
+</font>   
+<p align="center">   
+<img border="0" src="images/ch07_04_rptgeneric_format.gif" width="459" height="422"> </p>
+<p align="center">　<ul type="disc"> 
+    <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font color="#666699" size="2">格式 (format printout)：</font><font size="2">    
+ </font>     
+<font size="2" color="#000000">設定列印資料的資料型態及列印格式。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">Render 類別 (render type)：</font><font size="2">將資料格式化為 
+Render 型式。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">格式 (format)：</font><font size="2">顯示</font><font size="2" color="#000000">格式</font><font size="2">樣板   
+(format pattern)。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">對齊列印 (alignment printout)：</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+    <ul>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">水平 (horizontal)：</font><font size="2">水平對齊方式。<br>
+　</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">垂直 (vertical)：</font><font size="2">垂直對齊方式。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+      </li>    
+    </ul>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">自動轉折 (multi line )：</font><font size="2" color="#000000">當文字資料比顯示的範圍方塊</font><font size="2"><font color="#000000">區間    
+還長時</font>，</font><font size="2" color="#000000">自動轉折至下行。</font> <br>
+<br>
+<img border="0" src="images/ch07_04_multiline.gif" width="349" height="96"><br>
+　</p>     
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699"><font size="2">行距 
+(row gap)</font><font size="2">：</font></font><font size="2" color="#000000">橫向列印每行間距，中文直式列印每列間距。</font>
+<br>
+　</p>    
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font SIZE="2"><font color="#666699">中文直排字距 
+(vertical character gap)：</font>中文直式列印，每直式列印單元間距。</font> <br>
+　</p>    
+    </li>   
+    <li><p style="margin-top: 0; margin-bottom: 0"><font SIZE="2" color="#666699">中文直排 
+      (由右到左) (Chinese vertical layout -- right to left)</font> </p>    
+<p style="margin-top: 0; margin-bottom: 0">   
+　 </p>    
+      <ul type="disc">
+        <li type="square"><p style="margin-top: 0; margin-bottom: 0"><font SIZE="2">
+        中文直排 -- 英數字元間隔 (break) 方式：中文直式列印，由橫式資料轉為直式列印單元時資料擷取間隔 (break) 方式。</font> </p>    
+<p style="margin-top: 0; margin-bottom: 0">   
+　 </p>    
+          <ul type="disc">
+            <li type="circle"><p style="margin-top: 0; margin-bottom: 0"><font SIZE="2" color="#666699">字元間隔 
+              (character break)：</font><font size="2" color="#000000">以字元為單元轉印為直式，不論中文或英數字皆為一個直式列印單元，每個單元定寬定高。</font>
+            <br>
+　</p>    
+            </li>
+            <li type="circle">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font SIZE="2" color="#666699">字元間隔 ASCII 字元翻轉 (character break 
+and ASCII rotate)：</font><font size="2" color="#000000">以字元為單元轉印為直式，不論中文或英數字皆為一個直式列印單元，每個單元定寬定高。單元字元 
+(character) 為 ASCII 字元時，順時鐘旋轉九十度。</font> <br>
+　</p>    
+            </li>
+            <li type="circle"><p style="margin-top: 0; margin-bottom: 0"><font SIZE="2" color="#666699">英文(數)字間隔 
+              (English word break)：</font><font size="2" color="#000000">以英文字 
+              (word) 及一中文字為單元轉印為直式，英文字 (word) 
+              橫式列印，</font><font size="2" color="#000000">每個單元按所需寬度及高度列印，所有資料中的ASCII 
+              空白 (space) 自動忽略不列印。</font> <br>
+　</p>    
+            </li>
+            <li type="circle">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font SIZE="2" color="#666699">英文(數)字間隔且翻轉 (English word break 
+and rotate)</font><font SIZE="2" color="#666699">：</font><font size="2" color="#000000">以英文字 
+(word) 及一中文字為單元轉印為直式，英文字 (word) 
+順時鐘旋轉九十度，每個單元按所需高度列印。</font> <br>
+　</p>    
+            </li>
+          </ul>
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch07_04_vertchinese.gif" width="324" height="332"></p>    
+        </li>
+      </ul>
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+    </li>
+  </ul>   
+  </li>   
+</ul>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<a name="Image_rintable_component"></a>圖片報表元件 (Image printable component) </b>      
+<img border="0" src="images/rptimage.gif" width="25" height="25"></p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2"><a href="#Common_properties">共同屬性 (common properties)</a></font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0" align="justify">   
+<font color="#666699" size="2">圖片 (Image)：</font><font size="2">選擇資料來源的資料欄位內含值，或是靜態圖片檔，作為圖檔來源。資料來源的資料欄位內含值，     
+jLIVE Builder&trade; 會以欄位型別(data field type)     
+，自動判斷其內含值是二進位的圖檔資料 (LONGVARBINARY)，亦或是圖片檔路徑名稱 (VARCHAR 、 CHAR) 。若資料欄位內含值是二進位的圖檔資料     
+(LONGVARBINARY)， jLIVE Builder&trade;     
+支援內含 JPG 格式資料。若資料欄位內含值是圖檔路徑(VARCHAR 、 CHAR) 名稱，則支援 JPG 及 GIF。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+  <ul type="disc">     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">資料來源 (data source)：</font><font size="2">選擇資料來源。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">資料欄位 (data field)：</font><font size="2">選擇資料欄位。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">ImageScale (image scale)：</font><font size="2">當圖檔實際大小大於列印元件範圍時，系統將以何種演算法將圖檔按比例列印於元件範圍內。特別在於將圖檔當成 
+freeze bound 
+的浮水印或圖檔上擺設其他列印元件時，當圖檔輸出至印表機時，圖檔縮放的演算法會影響擺設於圖檔上的其他列印元件輸出，請按圖檔及印表機型別選擇適當演算法。<br>
+　</font></p>      
+  <ul type="circle">     
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2"><font color="#666699">SCALE_DEFAULT：</font>使用預設 default 
+image-scaling 演算法。</font></p>      
+    </li>
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2"><font color="#666699">SCALE_FAST：</font>Choose an image-scaling 
+algorithm that gives higher priority to scaling speed than smoothness of the 
+scaled image。</font></p>      
+    </li>
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2"><font color="#666699">SCALE_SMOOTH：</font>Choose an image-scaling 
+algorithm that gives higher priority to image smoothness than scaling speed。</font></p>      
+    </li>
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2"><font color="#666699">SCALE_REPLICATE：</font>Use the image 
+scaling algorithm embodied in the <code>ReplicateScaleFilter</code> class。</font></p>      
+    </li>
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2"><font color="#666699">SCALE_AREA_AVERAGING：</font>Use the Area 
+Averaging image scaling algorithm。<br>
+　</font></p>      
+    </li>
+  </ul>      
+    </li>      
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">靜態圖片 (static image)：</font><font size="2" color="#000000">是否要使用圖檔   
+(image file) 列印      
+。</font></p>      
+    </li>      
+  </ul>      
+  </li>      
+</ul>      
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch07_04_2_image.gif" width="458" height="420"></p>      
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<a name="Memo_printable_component"></a>備忘錄報表元件 (Memo printable component)<font size="2">&nbsp; </font></b>      
+<font size="2">      
+<img border="0" src="images/rptmemo.gif" width="25" height="25"></font></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><a href="#Common_properties">共同屬性 (common properties)</a></font><br>
+　</p>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">備忘錄 (Memo)：</font><font size="2">選擇資料來源的資料欄位內含值，或使用靜態檔案    
+。使用靜態檔案，必須放在相對路徑的<font face="Courier New">..\class\doc</font>     
+下。資料來源的資料欄位內含值， jLIVE     
+Builder&trade; 會以欄位型別(data field type) 自動判斷其內含值，是檔案     
+(LONGVARCHAR) 資料或是檔案路徑(VARCHAR 、 CHAR)名稱。jLIVE Builder&trade;     
+支援 TXT、RTF、HTML 格式資料檔。</font> </p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+  <ul type="disc">     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">資料來源 (data source)：</font><font size="2" color="#000000">選擇資料來源     
+。<br>
+　</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font color="#666699" size="2">資料欄位 (data field)：</font><font size="2" color="#000000">選擇資料欄位。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">靜態檔案 (static file)：</font><font size="2">選擇檔案，目前支援     
+TXT 、RTF 與 HTML 等資料格式的檔案。</font></p>     
+    </li>     
+  </ul>     
+  </li>     
+</ul>     
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch07_04_3_memo.gif" width="456" height="249"></p>     
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<a name="Statistic_printable_component"></a>統計圖報表元件 (Statistic printable component) </b>      
+<img border="0" src="images/rptchart.gif" width="25" height="25"></p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2"><a href="#Common_properties">共同屬性 (common properties)</a></font><br>
+　</p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">統計圖元件 (Statistic)：</font><font size="2">jLIVE     
+Builder&trade; 為方便使用列印</font><font size="2" color="#000000">統計圖元件，統計圖元件必須先於視窗中定義。在報表中只要設定位置及大小即可      
+。</font></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+  <ul type="disc">      
+    <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font color="#666699" size="2">統計圖元件：</font><font size="2">選擇視窗上的統計圖元件。</font></p>     
+    </li>     
+  </ul>     
+  </li>     
+</ul>     
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch07_04_4_chart.gif" width="454" height="171"></p>     
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<a name="Barcode_printable_component"></a>條碼報表元件&nbsp; (Barcode printable component)<font size="2">      
+</font></b>      
+<font size="2">      
+<img border="0" src="images/rptbarcode.gif" width="25" height="25"></font></p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<font size="2"><a href="#Common_properties">共同屬性 (common properties)</a></font><br>
+　</p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">條碼報表元件     
+(Barcode)：</font><font size="2">條碼報表元件 (Barcode) 是客製 (third party)   
+元件</font><font size="2" color="#000000">，屬性及功能請參照   
+原開發廠商</font><font size="2"><font color="#000000">    
+ <font face="Courier New">    
+http://www.idautomation.com/</font></font>。</font></p>    
+  </li>    
+</ul>    
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch07_04_barcode_content.gif" width="508" height="185"></p>    
+</blockquote>   
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">類別 (type)：</font><font size="2">目前支援十八種種類。</font></p>    
+  </li>    
+</ul>    
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch07_04_barcode_type.gif" width="484" height="416"></p>    
+</blockquote>   
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">&nbsp;選項 (options)：</font></p>    
+  </li>    
+</ul>    
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch07_04_barcode_options.gif" width="484" height="417"></p>    
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<a name="pagebreak"></a>跳頁報表元件<font size="2">  
+</font>(Page break component)<font size="2">&nbsp;      
+</font></b>      
+<font size="2">      
+<img border="0" src="images/rptbreak.gif" width="24" height="24"></font></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2"><font color="#666699">跳頁時機  
+(page break)</font>：跳頁 (Page break) 元件是依可列印運算公式 (formula)     
+的結果來判斷是否跳頁列印。元件與所擺放的位置無關，所以跳頁報表元件可擺在報表任何位置，每移動一筆資料時都會判別跳頁時機，在同一張報表可放置多個      
+跳頁報表元件。</font></p>     
+<ul type="square">     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2"><a href="#Common_properties">共同屬性 (common properties)</a></font> </p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  </li>    
+</ul>    
+<p style="margin-top: 0; margin-bottom: 0" align="center">    
+<img border="0" src="images/ch07_04_pagebreak.gif" width="580" height="384"></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<hr align=left color="#000000">    
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">    
+<tr>    
+<td width=200 align=left valign=top>    
+<a href="ch07_03.html">    
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>    
+<td width=195 align=center valign=top><a href="index.html">    
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>    
+<td width=205 align=right valign=top>    
+<a href="ch07_05.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+       
+      </td>    
+    </tr>    
+  </table>    
+  </center>    
+</div>    
+       
+</body>      
+      
+</html>

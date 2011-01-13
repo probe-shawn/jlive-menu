@@ -1,0 +1,324 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Load text file to buffered data source</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=191 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=231 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=178 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_05_06.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>載入文字檔到 Buffer 資料來源 (load text file to buffered data source)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#event_status">事件執行狀態與訊息 (event runtime status and message)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">載入文字檔到 Buffer 資料來源  
+。jLIVE Builder&trade; 目前提供載入固定長度 (fixed length) 和 Tab  
+分隔 (Tab delimited) 的文字檔資料，文字檔資料 (text file)  
+可以存在於客戶端 (client) 或 jLIVE&trade; middle ware  
+所存在的區域網路內的任何本機。</font></p> 
+<ul type="square"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2" color="#666699">文字</font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+  <ul type="disc"> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">檔案 URL&nbsp; (file URL)： </font>文字檔案的路徑。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">Tab Delimited ：</font>  核取 (checked) 為使用 Tab  
+符號做為欄位分隔的文字檔，不核取 (unchecked) 為使用固定長度  
+(Fixed length) 的文字檔。</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">定義文字記錄 (define text record)：</font>  
+定義文字檔的欄位格式。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">  
+使用固定長度 (fixed length)  
+的文字檔，需正確的定義每個欄位的 BYTE  
+數，包括每筆記錄的最後是否有附加換行字元 (0D0A) (carriage  
+return and line feed)，如果有附加換行字元 (0D0A)  
+，設計師須定義一個長度為 2 (0D0A) 的欄位 (fld) ，當作解析 
+(parser) 換行字元 (0D0A) 欄位，系統才能正確的分割每筆記錄。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+使用Tab 分隔(Tab delimited)  
+的文字檔，長度屬性系統將會忽略，可不設定。</font></p> 
+    <ul type="circle"> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><i> 
+<font color="#666699">向上  
+<img border="0" src="images/up20.gif" align="bottom" width="24" height="24"> </font></i> 
+<font color="#666699">：</font> 將標示欄位移向上。</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699"><i>向下  
+<img border="0" src="images/down20.gif" align="bottom" width="24" height="24"> </i>：</font>  
+將標示欄位移向下。</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699"><i>刪除  
+<img border="0" src="images/delete20.gif" width="24" height="24"></i> ：</font>  
+刪除資料欄位定義。</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">資料欄位 (field)：</font> 文字資料的暫時欄位名稱，從 fld1依序排列。</font></p>  
+      </li>  
+      <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">類別 (type)：</font> 資料型態，有VARCHAR、INTEGER、FLOAT、DATE、TIME、TIMESTAMP。</font></p>  
+      </li>  
+      <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">長度 (length)：</font>  文字欄位資料長度，以  
+Byte 數計量 。</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1" align="justify"> 
+<font size="2" color="#666699">格式 (format)： </font>  
+<font size="2">當文字欄位資料為日期時間，須指明其日期時間的格式，系統會依格式自動解析 
+(parser)。例如：文字欄位資料為<font face="Courier New">&quot;2001-12-31   
+14:29:51&quot;</font>，選擇 TIMESTAMP  
+類別，定義格式為：<font face="Courier New">&quot;yyyy-MM-dd hh:mm:ss&quot;</font>， 系統讀入至  
+Buffer 資料來源的值為&quot;20011231142951&quot;。</font></p>  
+      </li>  
+      <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">台灣 (Taiwan)： </font>  
+<font size="2">當資料型態選擇 DATE 或者 TIMESTAMP時，這個選項才致能   
+(enable)，當文字資料檔所含的日期資料是中華民國年，須核取此選項，系統解析時會自動將中華民國年，轉成西元年份。例如：&quot;901231&quot; 轉成 &quot;20011231&quot;。</font></p>  
+      </li>  
+    </ul>  
+    </li>  
+  </ul>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_05_perform_1.gif" width="416" height="416"></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+</blockquote>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">Buffer 資料來源 ： </font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<ul type="disc">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><font color="#666699">Buffer 資料來源 (buffer data source)： </font>選擇 Buffer 資料來源。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><font color="#666699">資料欄位轉換對應表 (map transfer 
+fields)：</font> 將載入的文字檔的欄位對映到   
+Buffer 資料來源的欄位    
+。</font></p>  
+<ul type="circle">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">資料欄位 (field)</font><font size="2"><font color="#666699">：</font>  
+Buffer 資料來源所定義的欄位順序編號。</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2"><font color="#666699">名稱 ：</font> Buffer 資料來源的欄位名稱。</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2"><font color="#666699">文字欄位 ：</font> 選取前一頁設定的文字欄位。</font></p> 
+  </li> 
+</ul> 
+  </li> 
+</ul> 
+  </li> 
+</ul> 
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/ch11_05_perform_2.gif" width="416" height="416"></p> 
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="event_status"></a><b>事件執行狀態與訊息 (event runtime status and message)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱&quot;) ：</font><font size="2">取得事件執行狀態。<br>
+　</font></p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">狀態</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">空字串</font></td>
+    <td width="84%" height="16"><font size="2">事件未被引發。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">-1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，依條件判斷後執行否則事件。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">0</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行過程有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.error&quot;) ：</font><font size="2">取得事件執行錯誤代碼。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">空字串 或 0</font></td>
+    <td width="84%"><font size="2">沒有錯誤訊息或無法取得錯誤訊息。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">1</font></td>
+    <td width="84%"><font size="2">文字檔檔案名稱錯誤。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">2</font></td>
+    <td width="84%"><font size="2">資料來源名稱錯誤。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">3</font></td>
+    <td width="84%"><font size="2">文字檔檔案載入錯誤。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">4</font></td>
+    <td width="84%"><font size="2">不支援指定的編碼 (unsupported encoding )。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.INFO_STRING&quot;) ：</font><font size="2">取得事件執行 
+INFO_STRING 的訊息。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">INFO_STRING</font></td>
+    <td width="28%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="140%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    name</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    檔案名稱</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    文字檔檔案名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    name2</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    資料來源名稱</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    Buffer 資料來源名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    count</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    資料記錄筆數</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    寫入Buffer 資料來源筆數。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=172 align=left valign=top> 
+<a href="ch11_05_03.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=171 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=172 align=right valign=top> 
+<a href="ch11_05_06.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+      </body> 
+ 
+</html>

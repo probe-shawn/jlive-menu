@@ -1,0 +1,419 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Format Pattern</title>
+</head>
+
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td>
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width="600" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=169 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+<td width=267 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" size="2">
+<a href="appendix.html" style="text-decoration: none"><font color="#000000">Appendix</font></a></font></b></TD> 
+<td width=164 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="4"><a name="top"></a>Format Pattern 格式樣板</font></b>  
+<p style="margin-top: 0; margin-bottom: 0">　<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#originaltype">數值、日期時間的原型格式 
+(original type of numeric and datetime)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#readeditpattern">格式樣板設定 
+(format pattern setting)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#datetimepattern">日期時間格式符號 
+(datetime format symbol)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<a href="#numericpattern">數值格式符號 (numeric format symbol)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE  
+Builder&trade; 對於日期時間和數值的處理是採取 MVC (Model、View、Controller)的方式，元件顯示 
+(view) 的結果是經由格式樣板(format pattern) 格式化 (formatted)  
+後的樣式，內部資料的模式(model) 是原型格式 (original type)，設計師或使用者對元件內含值的存取控制 
+(access Control) ，以資料的原型格式 (original type)  
+傳遞。以數值資料為例，設計師可以設定元件顯示 (view)  
+的格式樣板含有撇節號和幣別<font face="Courier New">('USD'##,###,###,##0.00)</font>，資料由檔案讀入或設計師給值時，則以不含幣別、撇節號的純數值 
+(original type)  
+傳入元件；資料由元件讀出時，不論使用資料於運算公式或存入資料庫，元件亦會自動濾除幣別、撇節號，傳出純數值資料 
+(original type)。日期時間的格式樣板運作與數值資料是一樣的。jLIVE  
+Builder&trade; 格式樣板是以 Java&trade; 中的 SimpleDateFormat.class 和 DecimalFormat.class  
+運作，設計師可以參考這兩個 class 的說明。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a name="originaltype"></a><b>數值、日期時間的原型格式 
+(original type of numeric and datetime)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">在下列設定中，當以常數給值時，須以原型格式資料。</font></p>
+<ul>
+  <li>
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">具有格格式樣板屬性的元件取值或設值</font></li>
+  <li>
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">以運算式傳入參數的  
+    SQL 指令</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">資料來源的運算式預設值</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">事件中設定元件內含值的運算式</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">觸發及查詢資料來源的設定值</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">具有格式樣板屬性的報表元件給值</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2"><font face="Courier New">FormatDateTime(pattern,datetime) 
+    </font> 
+    運算式</font></li>
+</ul>
+<blockquote>
+<table border="1"> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">資料型別</font></td> 
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">原型格式</font></td> 
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">資料實例</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">數值 (numeric)</font></td>  
+    <td><font size="2">+ - 數字 小數點</font></td>  
+    <td><font size="2">10、120、99.99</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">日期 (Date)</font></td>   
+    <td><font size="2">yyyyMMdd</font></td>   
+    <td><font size="2">&quot;20030501&quot;</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">時間 (Time)</font></td>   
+    <td><font size="2">HHmmss</font></td>   
+    <td><font size="2">&quot;145058&quot;</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">日期時間 (Timestamp)</font></td>   
+    <td><font size="2">yyyyMMddHHmmss</font></td>   
+    <td><font size="2">&quot;20030501145058&quot;</font></td>   
+  </tr>   
+</table>   
+  <p style="margin-top: 1; margin-bottom: 1">　</p> 
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2"><a name="readeditpattern"></a></font><font size="2"><b>格式樣板設定 
+(format pattern setting)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE  
+Builder&trade; 在元件屬性、資料來源、SQL參數、事件、運算公式、報表元件的設定中，皆含有格式樣板 
+(format pattern)  
+的設定或使用，設計師可以選取預設的選項或自行編輯輸入，系統會驗證格式樣板的語法是否正確。格式樣板 
+(format pattern) 分為數值 (numeric) 與日期時間 (datetime)，設計師以樣板符號 
+(format symbol) 組成格式樣板 (format pattern)，系統會根據格式樣板，將資料予以格式化 
+(formatted)。<br>
+　</font></p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">編輯方塊原件  
+(Edit component) 具有讀取 (read) 和編輯 (edit)  
+格式樣板，設計師可以根據需求，讓使用者能瀏覽詳細的資料，而編輯時能簡化輸入。</font></p> 
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">讀取格式   
+：<font face="Courier New">yyyy/MM/dd HH:mm:ss</font></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/pattern_reading.gif" width="158" height="28"></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">編輯格式   
+：<font face="Courier New">yyyyMMddHHmmss</font></font></p> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/pattern_editing.gif" width="162" height="28"></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/pattern_edit_read.gif" width="461" height="241"></p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699"><a name="datetimepattern"></a></font><b><font size="2">日期時間格式符號 
+(datetime format symbol)</font></b></p> 
+<blockquote> 
+<table cellSpacing="1" border="1"> 
+  <tr bgColor="#ccccff"> 
+    <th align="center" width="63" bgcolor="#505050"><font color="#FFFFFF" size="2">Symbol</font> </th> 
+    <th align="center" width="205" bgcolor="#505050"><font size="2" color="#FFFFFF">時刻代表意義</font></th> 
+    <th align="center" width="202" bgcolor="#505050"><font size="2" color="#FFFFFF">描述方式</font></th> 
+    <th align="center" width="221" bgcolor="#505050"><font size="2" color="#FFFFFF">範例 ~ 格式</font></th>  
+    <th align="center" width="267" bgcolor="#505050"><font size="2" color="#FFFFFF">範例 ~ 顯示</font></th>  
+  </tr>  
+  <tr>  
+    <td width="63" height="16" align="center"><code><font size="2">G</font></code> </td> 
+    <td width="205" height="16"><font size="2">Era designator</font> </td>  
+    <td width="202" height="16"><font size="2">Text</font> </td> 
+    <td width="221" height="16"><font size="2">yyyy'/'MM'/'dd <b>G</b></font></td>  
+    <td width="267" height="16"><font size="2">2002/07/12 <b>民國</b></font></td>  
+  </tr>  
+  <tr bgColor="#eeeeff">  
+    <td width="63" height="16" align="center"><code><font size="2">y</font></code> </td> 
+    <td width="205" height="16"><font size="2">Year 年</font></td>  
+    <td width="202" height="16"><font size="2">Year</font> </td> 
+    <td width="221" height="16"><b><font size="2">yyyy</font></b><font size="2">MMdd</font></td> 
+    <td width="267" height="16"><font size="2"><b>2002</b>0712</font></td> 
+  </tr> 
+  <tr> 
+    <td width="63" height="16" align="center"><code><font size="2">M</font></code> </td> 
+    <td width="205" height="16"><font size="2">Month in year</font></td>  
+    <td width="202" height="16"><font size="2">Month</font> </td> 
+    <td width="221" height="16"><font size="2">yyyy-<b>MMM</b>-dd</font></td> 
+    <td width="267" height="16"><font size="2">2002-<b>七月</b>-12</font></td> 
+  </tr> 
+  <tr bgColor="#eeeeff"> 
+    <td width="63" height="16" align="center"><code><font size="2">w</font></code> </td> 
+    <td width="205" height="16"><font size="2">Week in year</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2">yyyy'/'MM'/'dd G<b>w</b></font></td>  
+    <td width="267" height="16"><font size="2">2002/07/12 民國<b>28</b></font></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="16" align="center"><code><font size="2">W</font></code> </td> 
+    <td width="205" height="16"><font size="2">Week in month</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2">yyyy'/'MM'/'dd G<b>W</b></font></td>  
+    <td width="267" height="16"><font size="2">2002/07/12 民國<b>2</b></font></td>  
+  </tr>  
+  <tr bgColor="#eeeeff">  
+    <td width="63" height="16" align="center"><code><font size="2">D</font></code> </td> 
+    <td width="205" height="16"><font size="2">Day in year</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2">yy'/'MM'/'dd G<b>D</b></font></td>  
+    <td width="267" height="16"><font size="2">02/07/12 民國<b>193</b></font></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="16" align="center"><code><font size="2">d</font></code> </td> 
+    <td width="205" height="16"><font size="2">Day in month</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2">yy'/'MMMM'/'dd G<b>d</b></font></td>  
+    <td width="267" height="16"><font size="2">02/七月/12 民國<b>12</b></font></td>  
+  </tr>  
+  <tr bgColor="#eeeeff">  
+    <td width="63" height="16" align="center"><code><font size="2">F</font></code> </td> 
+    <td width="205" height="16"><font size="2">Day of week in month</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2"><b>F</b> MMMM'/'dd'/'yyyy</font></td>  
+    <td width="267" height="16"><font size="2"><b>2</b> 七月/12/2002</font></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="13" align="center"><code><font size="2">E</font></code> </td> 
+    <td width="205" height="13"><font size="2">Day in week</font> </td>  
+    <td width="202" height="13"><font size="2">Text</font> </td> 
+    <td width="221" height="13"><font size="2"><b>E</b> MMMM'/'dd'/'yyyy</font></td>  
+    <td width="267" height="13"><b><font size="2">星期五</font></b> <font size="2"> 七月/12/2002</font></td>  
+  </tr>  
+  <tr bgColor="#eeeeff">  
+    <td width="63" height="16" align="center"><code><font size="2">a</font></code> </td> 
+    <td width="205" height="16"><font size="2">Am/pm marker</font> </td>  
+    <td width="202" height="16"><font size="2">Text</font> </td> 
+    <td width="221" height="16"><font size="2">E MMMM'/'dd'/'yyyy <b>a</b></font></td>  
+    <td width="267" height="16"><font size="2">星期五 七月/12/2002 <b>上午</b></font></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="17" align="center"><code><font size="2">H</font></code> </td> 
+    <td width="205" height="17"><font size="2">Hour in day (0-23)</font> </td>  
+    <td width="202" height="17"><font size="2">Number</font> </td> 
+    <td width="221" height="17"><font size="2"><b>H</b> MMMM'/'dd'/'yyyy a</font></td>  
+    <td width="267" height="17"><code><font size="2"><b>12</b> 七月/12/2002 下午</font></code></td>  
+  </tr>  
+  <tr bgColor="#eeeeff">  
+    <td width="63" height="16" align="center"><code><font size="2">k</font></code> </td> 
+    <td width="205" height="16"><font size="2">Hour in day (1-24)</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2"><b>k</b> MMMM'/'dd'/'yyyy a</font></td>  
+    <td width="267" height="16"><code><font size="2"><b>12</b> 七月/12/2002 下午</font></code></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="16" align="center"><code><font size="2">K</font></code> </td> 
+    <td width="205" height="16"><font size="2">Hour in am/pm (0-11)</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2"><b>K</b> MMMM'/'dd'/'yyyy a</font></td>  
+    <td width="267" height="16"><font size="2"><b>0</b> 七月/12/2002 下午</font></td>  
+  </tr>  
+  <tr bgColor="#eeeeff">  
+    <td width="63" height="16" align="center"><code><font size="2">h</font></code> </td> 
+    <td width="205" height="16"><font size="2">Hour in am/pm (1-12)</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2"><b>h</b> MMMM'/'dd'/'yyyy a</font></td>  
+    <td width="267" height="16"><font size="2"><b>12</b> 七月/12/2002 下午</font></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="16" align="center"><code><font size="2">m</font></code> </td> 
+    <td width="205" height="16"><font size="2">Minute in hour</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2">yyyy'/'MM'/'dd hh:<b>mm</b>:ss a</font></td>  
+    <td width="267" height="16"><font size="2">2002/07/12 12:<b>24</b>:20 下午</font></td>  
+  </tr>  
+  <tr bgColor="#eeeeff">  
+    <td width="63" height="16" align="center"><code><font size="2">s</font></code> </td> 
+    <td width="205" height="16"><font size="2">Second in minute</font> </td>  
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"><font size="2">yyyy'/'MM'/'dd hh:mm:<b>ss</b> a</font></td>  
+    <td width="267" height="16"><font size="2">2002/07/12 12:24:<b>20</b> 下午</font></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="16" align="center"><code><font size="2">S</font></code> </td> 
+    <td width="205" height="16"><font size="2">Millisecond</font> </td> 
+    <td width="202" height="16"><font size="2">Number</font> </td> 
+    <td width="221" height="16"></td> 
+    <td width="267" height="16"><code><font size="2">978</font></code> </td> 
+  </tr> 
+  <tr bgColor="#eeeeff"> 
+    <td width="63" height="32" align="center"><code><font size="2">z</font></code> </td> 
+    <td width="205" height="32"><font size="2">Time zone</font> </td>  
+    <td width="202" height="32"><font size="2">General time zone</font> </td>  
+    <td width="221" height="32"><font size="2">yyyy'/'MM'/'dd <b>z</b></font></td>  
+    <td width="267" height="32"><font size="2">2002/07/12 <b>CST</b></font></td>  
+  </tr>  
+  <tr>  
+    <td width="63" height="32" align="center"><code><font size="2">Z</font></code> </td> 
+    <td width="205" height="32"><font size="2">Time zone</font> </td>  
+    <td width="202" height="32"><font size="2">RFC 822 time zone</font> </td>  
+    <td width="221" height="32"><font size="2">yyyy'/'MM'/'dd <b>Z</b></font></td>  
+    <td width="267" height="32"><font size="2">2002/07/12 <b>+0800</b></font></td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699"><a name="numericpattern"></a></font><b><font size="2">數值格式符號 
+(numeric format symbol)</font></b></p> 
+<blockquote> 
+  <table cellSpacing="1" border="1"> 
+    <tr bgColor="#ccccff"> 
+      <th align="center" width="53" bgcolor="#505050"><font size="2" color="#FFFFFF">Symbol</font></th> 
+      <th align="center" width="100" bgcolor="#505050"><font size="2" color="#FFFFFF">描述方式</font></th> 
+      <th align="center" width="223" bgcolor="#505050"><font size="2" color="#FFFFFF">範例 ~ 格式</font></th>  
+      <th align="center" width="231" bgcolor="#505050"><font size="2" color="#FFFFFF">範例 ~ 顯示</font></th>  
+    </tr>  
+    <tr vAlign="top">  
+      <td width="53" align="center"><code><font size="2">0</font></code> </td> 
+      <td width="100"><font size="2">Number</font> </td> 
+      <td width="223"><font size="2">#,###,###,###,###,##0.00</font></td> 
+      <td width="231"><font size="2">123,456,789.09</font></td> 
+    </tr> 
+    <tr vAlign="top" bgColor="#eeeeff"> 
+      <td width="53" align="center"><code><font size="2">#</font></code> </td> 
+      <td width="100"><font size="2">Number</font> </td> 
+      <td width="223"><font size="2">#,###,###,###,###,##0.00</font></td> 
+      <td width="231"><font size="2">123,456,789.09</font></td> 
+    </tr> 
+    <tr vAlign="top"> 
+      <td width="53" align="center"><code><font size="2">.</font></code> </td> 
+      <td width="100"><font size="2">Number</font> </td> 
+      <td width="223"><font size="2">#,###,###,###,###,##0.00</font></td> 
+      <td width="231"><font size="2">123,456,789.09</font></td> 
+    </tr> 
+    <tr vAlign="top" bgColor="#eeeeff"> 
+      <td width="53" align="center"><code><font size="2">-</font></code> </td> 
+      <td width="100"><font size="2">Number</font> </td> 
+      <td width="223"><font size="2">-#,###,###,###,###,##0.00</font></td> 
+      <td width="231"><font size="2">-123,456,789.09</font></td> 
+    </tr> 
+    <tr vAlign="top"> 
+      <td width="53" align="center"><code><font size="2">,</font></code> </td> 
+      <td width="100"><font size="2">Number</font> </td> 
+      <td width="223"><font size="2">#,###,###,###,###,##0.00</font></td> 
+      <td width="231"><font size="2">123,456,789.09</font></td> 
+    </tr> 
+    <tr vAlign="top" bgColor="#eeeeff"> 
+      <td width="53" align="center"><code><font size="2">E</font></code> </td> 
+      <td width="100"><font size="2">Number</font> </td> 
+      <td width="223"><code><font size="2">0.###E0</font></code></td> 
+      <td width="231"><font size="2">1.234E3</font></td> 
+    </tr> 
+    <tr vAlign="top"> 
+      <td width="53" align="center"><code><font size="2">;</font></code> </td> 
+      <td width="100"><font size="2">Subpattern boundary</font> </td>  
+      <td width="223"><font size="2">　</font></td> 
+      <td width="231"><font size="2">Separates positive and negative subpatterns</font> </td>  
+    </tr>  
+    <tr vAlign="top" bgColor="#eeeeff">  
+      <td width="53" align="center"><code><font size="2">%</font></code> </td> 
+      <td width="100"><font size="2">Prefix or suffix</font> </td>  
+      <td width="223"><font size="2">#,###,###,###,###,##0.00%</font></td> 
+      <td width="231"><font size="2">12.00%</font></td> 
+    </tr> 
+    <tr vAlign="top"> 
+      <td width="53" align="center"><code><font size="2">\u2030</font></code> </td> 
+      <td width="100"><font size="2">Prefix or suffix</font> </td>  
+      <td width="223"><font size="2">　</font></td> 
+      <td width="231"><font size="2">Multiply by 1000 and show as per mille</font> </td>  
+    </tr>  
+    <tr vAlign="top" bgColor="#eeeeff">  
+      <td width="53" align="center"><code><font size="2">&curren;</font></code> <font size="2"> (<code>\u00A4</code>)</font> </td>  
+      <td width="100"><font size="2">Prefix or suffix</font> </td>  
+      <td width="223"><font size="2">　</font></td> 
+      <td width="231"><font size="2">Currency sign, replaced by currency symbol. If doubled,   
+      replaced by international currency symbol. If present in a pattern, the   
+      monetary decimal separator is used instead of the decimal separator.</font> </td>  
+    </tr>  
+    <tr vAlign="top">  
+      <td width="53" align="center"><code><font size="2">'</font></code> </td> 
+      <td width="100"><font size="2">Prefix or suffix</font> </td>  
+      <td width="223"><font size="2">'USD$' #,###,###,###,###,##0.00</font></td>  
+      <td width="231"><font size="2">USD$ 5,040.00</font></td>  
+    </tr>  
+  </table>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p> 
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=172 align=left valign=top> 
+　</td> 
+<td width=171 align=center valign=top> 
+<a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=172 align=right valign=top> 
+　</td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+  
+</body>  
+  
+</html>
