@@ -1,0 +1,1393 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Flow</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_10.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=216 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=184 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_12.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>
+12.11 流程 (flow)</font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Condition(cond,true,false)">Condition(cond,true,false)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenForm(formname)">OpenForm(formname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenForm(formname,pos)">OpenForm(formname,pos)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenForm(formname,type,modal)">OpenForm(formname,type, 
+modal)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenForm(formname,pos,type,modal)">OpenForm(formname,pos,type, 
+modal)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenReport(rptname)">OpenReport(rptname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenReport(rptname,preview)">OpenReport(rptname,preview)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenReport(rptname,preview,setup)">OpenReport(rptname,preview,setup)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenReport(rptname,preview,setup,copies)">OpenReport(rptname,preview,setup,copies)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#OpenReport(rptname,preview,setup,copies,tray)">OpenReport(rptname,preview,setup,copies,tray)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Report2File(rptname, filename)">Report2File(rptname, 
+filename)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Report2File(rptname, filename, printer)">
+Report2File(rptname, filename, printer)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Report2Pdf(filename)">Report2Pdf(rptname, filename)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Report2Pdf(filename, font, encoding)">
+Report2Pdf(rptname, filename, font, encoding)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#PrinterExist()">PrinterExist()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#PrinterExist(printer)">PrinterExist(printer)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Formula()">Formula(fmla)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DoEvent(evname)">DoEvent(evname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#DoEvent(evname,retvalue)">DoEvent(evname,retvalue)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#Evlnvoker()">Evlnvoker()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#EvlnvokerAt()">EvlnvokerAt()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#EvStatus(evname)">EvStatus(evname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ProgressShow(message,value,min,max,tick)">ProgressShow(message,value,min,max,tick)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ProgressMsg(message,value)">ProgressMsg(message,value)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#ProgressHide()">ProgressHide()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#If x Then y Else z">If x 
+Then y Else z</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#(x)">(x)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch12_11_flow_new.gif" width="376" height="564"></p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Condition(cond,true,false)">Condition(cond,true,false)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">流程控制的條件運算式，功能與 IF-THEN-ELSE 相同，但運算速度更快。</font></td>     
+  </tr>     
+  <tr>     
+    <td width="21" height="16"></td>     
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">     
+    參數：</font></td>     
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">     
+    <font size="2">&quot;cond&quot; ：條件判斷的運算式，外面需加上括號。<br>     
+    &quot;true&quot; ：當條件為&quot;真&quot;時，所執行的運算式。<br>     
+    &quot;false&quot; ：當條件為&quot;偽&quot;時，所執行的運算式。</font></td>     
+  </tr>     
+  <tr>     
+    <td width="21" height="12"></td>     
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">     
+    傳回值：</font></td>     
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">     
+<font size="2">&quot;true&quot;、&quot;false&quot; 運算式的結果。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">Condition((Today()&gt;=&quot;20001201&quot;)&nbsp; , &quot;true&quot; , &quot;false&quot; )</font></p>     
+    </td>     
+  </tr>     
+</table>     
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenForm(formname)">OpenForm(formname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟另一個視窗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;formname&quot; ：視窗名稱， 區分大小寫。</font></td>     
+  </tr>     
+  <tr>     
+    <td width="21" height="12"></td>     
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">     
+    傳回值：</font></td>     
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">     
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenForm(&quot;BASC_CUST&quot;)</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenForm(formname,pos)">OpenForm(formname,pos)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟另一個視窗。並調整視窗位置。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;formname&quot; ：視窗名稱， 區分大小寫。<br>     
+    &quot;pos&quot; ：視窗位置，有下列三種選擇。</font>    
+    <font size="2"><font color="#666699"><br>    
+    &quot;center&quot; </font>：將視窗開啟在螢幕或瀏覽器     
+    Applet 範圍的中央。<font color="#666699"><br>    
+    &quot;relright&quot;</font>：將開啟視窗的右緣與引發此事件元件右緣對齊。<font color="#666699"><br>    
+    &quot;relleft&quot;</font>：將開啟視窗的左緣與引發此事件元件左緣對齊。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenForm(&quot;BASC_CUST&quot; , &quot;relright&quot; )</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenForm(formname,type,modal)">OpenForm(formname,type,modal)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟另一個視窗。並定義其視窗類別、Modal 屬性。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;formname&quot; ：視窗名稱， 區分大小寫。<br>     
+    &quot;type&quot;：視窗類別。<br> 
+    <font color="#666699">&quot;0&quot;</font>：原預設視窗類別。<br> 
+    <font color="#666699">&quot;1&quot;</font>：主視窗類別。<br> 
+    <font color="#666699">&quot;2&quot;</font>：對話方塊類別。<br> 
+    <font color="#666699">&quot;3&quot;</font>：內部視窗類別。<br> 
+    <font color="#666699">&quot;4&quot;</font>：隱藏程序類別。<br> 
+    &quot;modal&quot;：是否為 Modal 屬性視窗。<br> 
+    <font color="#666699">&quot;0&quot;</font>：不具有 Modal 屬性。<br> 
+    <font color="#666699">&quot;1&quot;</font>：具有 Modal 屬性。<br> 
+    <font color="#666699">其餘值</font>：原預設 Modal 屬性。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenForm(&quot;BASC_CUST&quot; , &quot;2&quot;, &quot;1&quot;)  
+將視窗開啟為對話方塊 Modal 的視窗。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenForm(formname,pos,type,modal)">OpenForm(formname,pos,type,modal)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟另一個視窗。並調整視窗位置、視窗類別、Modal 屬性。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;formname&quot; ：視窗名稱， 區分大小寫。<br>     
+    &quot;pos&quot; ：視窗位置，有下列三種選擇。<font color="#666699"><br>    
+    &quot;center&quot; </font>：將視窗開啟在螢幕或瀏覽器     
+    Applet 範圍的中央。<font color="#666699"><br>    
+    &quot;relright&quot;</font>：將開啟視窗的右緣與引發此事件元件右緣對齊。<font color="#666699"><br>    
+    &quot;relleft&quot;</font>：將開啟視窗的左緣與引發此事件元件左緣對齊。<br>  
+    &quot;type&quot;：視窗類別。<br> 
+    <font color="#666699">&quot;0&quot;</font>：原預設視窗類別。<br> 
+    <font color="#666699">&quot;1&quot;</font>：主視窗類別。<br> 
+    <font color="#666699">&quot;2&quot;</font>：對話方塊類別。<br> 
+    <font color="#666699">&quot;3&quot;</font>：內部視窗類別。<br> 
+    <font color="#666699">&quot;4&quot;</font>：隱藏程序類別。<br> 
+    &quot;modal&quot;：是否為 Modal 屬性視窗。<br> 
+    <font color="#666699">&quot;0&quot;</font>：不具有 Modal 屬性。<br> 
+    <font color="#666699">&quot;1&quot;</font>：具有 Modal 屬性。<br> 
+    <font color="#666699">其餘值</font>：原預設 Modal 屬性。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenForm(&quot;BASC_CUST&quot; ,&quot;center&quot;,  
+&quot;2&quot;, &quot;1&quot; )&nbsp;</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenReport(rptname)">OpenReport(rptname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟報表。使用此運算式可開啟同一應用程式的任何報表。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;rptname&quot; ：報表名稱， 區分大小寫。</font></td>     
+  </tr>     
+  <tr>     
+    <td width="21" height="12"></td>     
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">     
+    傳回值：</font></td>     
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">     
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenReport(&quot;RPT_CUST&quot; )</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenReport(rptname,preview)">OpenReport(rptname,preview)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟報表，可重新定義是否預覽。使用此運算式可開啟同一應用程式的任何報表。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;rptname&quot; ：報表名稱， 區分大小寫。<br>     
+    &quot;preview&quot; ：1 表預覽，0 表直接列印。</font></td>     
+  </tr>     
+  <tr>     
+    <td width="21" height="12"></td>     
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">     
+    傳回值：</font></td>     
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">     
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenReport(&quot;RPT_CUST&quot; , 1 )</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenReport(rptname,preview,setup)">OpenReport(rptname,preview,setup)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟報表，可重新定義是否預覽與是否出現印表機設定視窗。使用此運算式可開啟同一應用程式的任何報表。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;rptname&quot; ：報表名稱， 區分大小寫。<br>     
+    &quot;preview&quot; ：1 表預覽，0 表直接列印。<br>  
+    &quot;setup&quot;：1 表列印前出現印表機設定視窗，0  
+    表不出現，其餘值沿用原報表設定。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenReport(&quot;RPT_CUST&quot; , 1 , 1)</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenReport(rptname,preview,setup,copies)">OpenReport(rptname,preview,setup,copies)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟報表，可重新定義是否預覽、是否出現印表機設定視窗、列印份數。使用此運算式可開啟同一應用程式的任何報表。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;rptname&quot; ：報表名稱， 區分大小寫。<br>     
+    &quot;preview&quot; ：1 表預覽，0 表直接列印。<br>  
+    &quot;setup&quot;：1 表列印前出現印表機設定視窗，0  
+    表不出現，其餘值沿用原報表設定。<br> 
+    &quot;copies&quot;：列印份數。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenReport(&quot;RPT_CUST&quot; , 0, 0, 2)</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="OpenReport(rptname,preview,setup,copies,tray)">OpenReport(rptname,preview,setup,copies,tray)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+開啟報表，可重新定義是否預覽、是否出現印表機設定視窗、列印份數、指定進紙匣。使用此運算式可開啟同一應用程式的任何報表。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;rptname&quot; ：報表名稱， 區分大小寫。<br>     
+    &quot;preview&quot; ：1 表預覽，0 表直接列印。<br>  
+    &quot;setup&quot;：1 表列印前出現印表機設定視窗，0  
+    表不出現，其餘值沿用原報表設定。<br> 
+    &quot;copies&quot;：列印份數。<br> 
+    &quot;tray&quot;：指定進紙匣。<br> 
+    <font color="#666699">&quot;0&quot;</font>：不指定進紙匣。<br> 
+    <font color="#666699">&quot;1&quot;</font>：上方 (top) 進紙匣。<br> 
+    <font color="#666699">&quot;2&quot;</font>：中間 (middle) 進紙匣。<br> 
+    <font color="#666699">&quot;3&quot;</font>：下方 (bottom) 進紙匣。<br> 
+    <font color="#666699">&quot;4&quot;</font>：ENVELOPE&nbsp; 進紙匣。<br> 
+    <font color="#666699">&quot;5&quot;</font>：MANUAL 進紙匣。<br> 
+    <font color="#666699">&quot;6&quot;</font>：LARGE_CAPACITY&nbsp;  
+    進紙匣。<br> 
+    <font color="#666699">&quot;7&quot;</font>：MAIN 進紙匣。<br> 
+    <font color="#666699">&quot;8&quot;</font>：SIDE 進紙匣。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="12"></td>    
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    傳回值：</font></td>    
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">OpenReport(&quot;RPT_CUST&quot; , 0, 0, 2,1)</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Report2File(rptname, filename)">Report2File(rptname, filename)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 rptname 的報表輸出至 filename 檔案。如果選用 PDFWriter 的印表機，可以將報表結果輸出為 
+filename 名稱的 PDF 檔。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">rptname：報表模組名稱。<br>
+    filename：檔案名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">1 作業成功 ，0 失敗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">將 order_list 報表輸出至 order_report 檔案。<br>
+Report2File(&quot;order_list&quot;, &quot;c:\order_report&quot;)。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Report2File(rptname, filename, printer)">Report2File(rptname, filename, 
+printer)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 rptname 的報表輸出至 filename 檔案。如果選用 PDFWriter 的印表機，可以將報表結果輸出為 
+filename 名稱的 PDF 檔。同時可指定印表機。 </font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">rptname：報表模組名稱。<br>
+    filename：檔案名稱。<br>
+    printer：印表機名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">1 作業成功 ，0 失敗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">將 order_list 報表輸出為 order_report.pdf 檔案。<br>
+Report2File(&quot;order_list&quot;, &quot;c:\order_report&quot;, &quot;PDFWriter&quot;)。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Report2Pdf(filename)">Report2Pdf(rptname, filename)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 rptname 的報表輸出至 檔名為 filename 的 PDF 
+檔案。系統自動偵測作業系統語系，並以該語系預設字型及編碼輸出 PDF。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">rptname：報表模組名稱。<br>
+    filename：PDF 檔案名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">1 作業成功 ，0 失敗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">將 order_list 報表輸出為 order_report.pdf 檔案。<br>
+Report2Pdf(&quot;order_list&quot;, &quot;c:\order_report&quot;)。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Report2Pdf(filename, font, encoding)">Report2Pdf(rptname, filename, 
+font, 
+encoding)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 rptname 的報表輸出至 檔名為 filename 的 PDF 檔案。指定字型採用font (*.ttf or ttc) 
+，編碼為 encoding。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">rptname：報表模組名稱。<br>
+    filename：檔案名稱。<br>
+    font 與 encoding 設定。</font><table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+      <tr>
+        <td width="17%">
+        <p align="center"><font size="2">語系</font></td>
+        <td width="39%">
+        <p align="center"><font size="2">字型</font></td>
+        <td width="44%">
+        <p align="center"><font size="2">編碼</font></td>
+      </tr>
+      <tr>
+        <td width="17%">
+    <font size="2">繁體中文</font></td>
+        <td width="39%"><font size="2">MHei-Medium</font></td>
+        <td width="44%"><font size="2">UniCNS-UCS2-H</font></td>
+      </tr>
+      <tr>
+        <td width="17%">　</td>
+        <td width="39%"><font size="2">MSung-Light</font></td>
+        <td width="44%"><font size="2">UniCNS-UCS2-H</font></td>
+      </tr>
+      <tr>
+        <td width="17%">
+    <font size="2">簡體中文</font></td>
+        <td width="39%"><font size="2">STSong-Light</font></td>
+        <td width="44%"><font size="2">UniGB-UCS2-H</font></td>
+      </tr>
+      <tr>
+        <td width="17%">
+    <font size="2">日文</font></td>
+        <td width="39%"><font size="2">HeiseiKakuGo-W5　</font></td>
+        <td width="44%"><font size="2">UniJIS-UCS2-H</font></td>
+      </tr>
+      <tr>
+        <td width="17%">　</td>
+        <td width="39%"><font size="2">HeiseiMin-W3</font></td>
+        <td width="44%"><font size="2">UniJIS-UCS2-H</font></td>
+      </tr>
+      <tr>
+        <td width="17%">
+    <font size="2">韓文</font></td>
+        <td width="39%"><font size="2">HYGoThic-Medium　</font></td>
+        <td width="44%"><font size="2">UniKS-UCS2-H</font></td>
+      </tr>
+      <tr>
+        <td width="17%">　</td>
+        <td width="39%"><font size="2">HYSMyeongJo-Medium</font></td>
+        <td width="44%"><font size="2">UniKS-UCS2-H</font></td>
+      </tr>
+      </table>
+      <font size="2">以上為 itext 中日韓預設字型與語系。<br>
+    設計師亦可指定語系，字型為 ttf 或 ttc 檔，且必須存在於 PDF reader 端。 MS Windows 作業系統不在 C 或 D 
+    必須給予絕對位置。編碼須給定為 Identity-H。</font><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">1 作業成功 ，0 失敗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">將 order_list 報表輸出為 order_report.pdf 檔案。<br>
+使用繁體中文 MHei-Medium 編碼 UniCNS-UCS2-H<br>
+Report2File(&quot;order_list&quot;, &quot;c:\order_report&quot;, &quot;MHei-Medium&quot;, 
+&quot;UniCNS-UCS2-H&quot;)。<br>
+指定字型 arialuni.ttf 編碼為 Identity-H。<br>
+Report2File(&quot;order_list&quot;, &quot;c:\order_report&quot;, &quot;arialuni.ttf &quot;, 
+&quot;Identity-H&quot;)。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="PrinterExist()">PrinterExist()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">本機是否有連接任何印表機。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">1 有 ，0 沒有。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">PrinterExist()。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="PrinterExist(printer)">PrinterExist(printer)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">本機是否有連接名稱為 printer 
+的印表機。應用於報表輸出至指定名稱之印表服務。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">printer：作業系統安裝的印表機名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">1 有 ，0 沒有。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">PrinterExist(&quot;HP LaserJet 1100&quot;)。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Formula()">Formula(fmla)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; </p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+執行運算式。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">&nbsp;fmla ：可以含有 IF-THEN-ELSE 的運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">&nbsp;fmla 運算式的結果值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">Formula({programpool:fmlacode})</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DoEvent(evname)">DoEvent(evname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+啟動同一視窗的任何事件。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;evname&quot; ：事件名稱， 區分大小寫。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">DoEvent(&quot;order_event&quot;)</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="DoEvent(evname,retvalue)">DoEvent(evname,retvalue)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; </p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+啟動同一視窗的任何事件後，並運算 retvalue   
+運算式，傳回其結果值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">&quot;evname&quot; ：事件名稱， 區分大小寫。</font> <font size="2"><br>  
+    &quot;retvalue&quot; ：常數或運算式。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">傳回 retvalue 結果值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">DoEvent(&quot;calc_event&quot;, LocalHashGet(&quot;calc_ret&quot;))</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Evlnvoker()">Evlnvoker()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+擷取事件原始啟動者。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+事件原始啟動者名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2"><span lang="en-us">LocalHushPut( &quot;invoker&quot; , </span>EvInvoker()<span lang="en-us"> 
+)</span></font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="EvlnvokerAt()">EvlnvokerAt()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+擷取事件原始啟動者的啟動位置。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+事件原始啟動者的啟動位置。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2"><span lang="en-us">LocalHushPut( &quot;invokerat&quot; , </span>EvInvoker<span lang="en-us">At</span>()<span lang="en-us"> 
+)</span></font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="EvStatus(evname)">EvStatus(evname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+檢查事件是否執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;evname&quot; ：事件名稱， 區分大小寫。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">1 表執行成功，0 表失敗。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">EvStatus(&quot;ins_item&quot;)</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ProgressShow(message,value,min,max,tick)">ProgressShow(message,value,min,max,tick)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">宣告一個執行進度方塊，上面有計數器元件。<br>
+與 ProgressMsg() 並用以顯示即時的執行進度。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;message&quot; ：顯示的訊息字串。<br>   
+    &quot;value&quot;：計數器元件起始值。<br>   
+    &quot;min&quot;：計數器元件最小值。<br>   
+    &quot;max&quot;：計數器元件最大值。<br>   
+    &quot;tick&quot;：計數器元件刻度。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;message&quot;。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">ProgressShow(&quot;資料計算中，請稍候...&quot; , 0, 0, 100, 10)</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ProgressMsg(message,value)">ProgressMsg(message,value)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">動態改變執行進度方塊的顯示訊息與計數器元件值。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;message&quot; ：顯示的訊息字串。<br>   
+    &quot;value&quot;：計數器元件值。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;message&quot;。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">ProgressMsg(&quot;資料計算中，請稍候...&quot; , 50)。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="ProgressHide()">ProgressHide()</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">關閉執行進度方塊。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">1。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; ">
+<font size="2">ProgressHide()。</font></p>
+    </td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="If x Then y Else z">If x Then y Else z</a></font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+流程控制敘述句。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;x&quot; ：條件判斷的運算式。<br>   
+    &quot;y&quot; ：當條件為&quot;真&quot;時，所執行的運算式。<br>   
+    &quot;z&quot; ：當條件為&quot;偽&quot;時，所執行的運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">&quot;y&quot; 或 &quot;z&quot; 的結果值。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">if Today()&gt;=&quot;20001201&quot; then &quot;true&quot; else &quot;false&quot;</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="(x)">(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+流程控制，括號裡的運算式優先被處理。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;x&quot; ：運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">&quot;x&quot;。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">&nbsp;</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_10.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=194 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=206 align=right valign=top>
+<a href="ch12_12.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+</body>  
+  
+</html>

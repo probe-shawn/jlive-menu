@@ -1,0 +1,170 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Language" content="ja">
+<title>DataBase</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" cellpadding="0" cellspacing="0"
+bordercolor="#FFFFFF" bordercolordark="#FFFFFF"
+bordercolorlight="#FFFFFF" style="border-style: solid; border-color: #FFFFFF">
+    <tr>
+        <td align="left" colspan="2"><img border="0" src="images/jlogo_small.gif" align="left" width="144" height="25"></td> 
+    </tr> 
+    <tr>
+        <td align="center" colspan="2">
+          <p align="center"><img border="0" src="images/Database.gif" width="217" height="31"></p>
+        </td> 
+    </tr> 
+    <tr>
+        <td bgcolor="#FFFFFF" colspan="2"><font color="#0080FF" size="4">データベース(Database)
+          
+          </font></td>       
+    </tr>       
+    <tr>      
+        <td bgcolor="#CDCDFF" colspan="2" style="text-indent: 0">      
+          <p style="text-indent: 20">jLIVE システムはjLIVE ミドルウェアを通して、データベースと接続します。jLIVE 
+          ミドルウェアはJava　JDBC接続によって、データベースにアクセスします。jLIVE 
+          ミドルウェアはJDBCドライバーのサポート機能によって、内部作業を自動的に行います。アプリケーションは同時に幾つかの異なるデータベースをアクセスすることができます。データベースシステムを設計するとき、それぞれのデータベースはデータベースアリアスで識別され、参照されます。データベースシステムを設計するとき、データベースの特殊機能を使っていない限り、プログラムを修正なしで、簡単に他のデータベースへ移行巣rことができます。
+          
+          </p>    
+        </td>           
+    </tr>           
+    <tr>           
+        <td colspan="2"><hr size="1">           
+        </td>           
+    </tr>           
+    <tr>           
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">データベース新規作成 :&nbsp;</font></td>                
+        <td>     
+          新しいデータベースを作成します。<o:p>     
+          &nbsp;     
+          </td>                
+    </tr>                
+    <tr>                
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">データベース接続テスト       
+          :&nbsp;</font></td>                 
+        <td>ドライバーとURLの設定により、ミドルウェア通してデータベース接続をテストします。     
+        </td>               
+    </tr>               
+    <tr>                
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">キャンセル       
+          :&nbsp;</font></td>                 
+        <td>新規作成を取り消します。<o:p>      
+          </o:p>      
+        </td>                
+    </tr>                
+    <tr>                
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">保存       
+          :&nbsp;</font></td>                
+        <td>変更を保存します。</td>               
+    </tr>               
+    <tr>               
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">削除       
+          :&nbsp;</font></td>                 
+        <td>データベースレファレンス【参照】を削除します。<o:p>      
+          </o:p>      
+        </td>                
+    </tr>                
+    <tr>                
+        <td colspan="2" nowrap><hr size="1" color="#800080">                
+        </td>                
+    </tr>                
+    <tr>                
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">データベース　アリアス       
+          :&nbsp;</font></td>                
+        <td>データベースアリアスはプログラムデザインを行うとき、データベースのレファレンスとして参照されます。データベースアリアスは空白にしてはなりません。英文字を使用してください。なお、アプリケーション中、データベースアリアスは重複してはなりません。</td>                
+    </tr>                
+    <tr>                 
+        <td valign="top" align="right" nowrap><font size="3" color="#666699">ドライバー       
+          :&nbsp;        
+          </font></td>                 
+        <td>      
+          <p class="MsoNormal">データベースのJDBCドライバーのことを表します。コンボボックスからよく使用するドライバーをセレクトすることができます。システムは自動的に関連するURLデータをURLパターン中に書き込みます。ホストとデータベース名を修正すればいいです。もちろん、コンボボックスにはないドライバーを手動で記入することもできます。ミドルウェアを起動する時に、ドライバーを正しくインストールして置けなければなりません。詳しくはjLIVE 
+          ミドルウェアシステムを参考してください。<o:p>     
+          </o:p>      
+          </p>      
+          <p class="MsoNormal">jLIVE&nbsp; ミドルウェアは JDBC TYPE1,       
+          TYPE2, TYPE3, TYPE4       
+          のドライバーをサポートしています。</td>                 
+    </tr>                 
+    <tr>                 
+        <td rowspan="2" valign="top" align="right" nowrap><font color="#666699" size="3">URL       
+          :&nbsp;</font></td>                
+        <td>      
+          <p class="MsoNormal">ドライバーを提供しているベンダーによって、URLの設定方式及びフォーマットが異なっています。それぞれのベンダーのマニュアルに従って設定してください。<o:p>      
+          </o:p>      
+          </p>      
+          <p class="MsoNormal">例えば：</td>                
+    </tr>                
+    <tr>                 
+        <td>        
+          <ul>    
+            <li>com.inet.tds.TdsDriveを選択します。</li>    
+            <li>URL       
+              欄は jdbc:inetdae:hostname:1433?database=DATABASE       
+              を表示します,&nbsp; hostnameとDATABASEは編こする必要があります。</li>    
+            <li>ホストは       
+              SUPER とし、データベースは DBとします。 <o:p>      
+              </o:p>      
+            </li>    
+            <li>URLはこのように、jdbc:inetdae:SUPER:1433?database=DB       
+              となります。<o:p>      
+              </o:p>      
+            </li>    
+          </ul>    
+        </td>                
+    </tr>                
+    <tr>               
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">ユーザ       
+          :&nbsp;</font></td>                
+        <td>データベースへログインするユーザ名です。<o:p>      
+          </o:p>      
+        </td>                
+    </tr>                
+    <tr>                
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">パスワード       
+          :&nbsp;</font></td>               
+        <td>データベースへログインするユーザのパスワードです。<o:p>      
+          </o:p>      
+        </td>               
+    </tr>               
+    <tr>               
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">スキーマ(Schema)       
+          :&nbsp;</font></td>                  
+        <td>データベース　スキーマ(Database　Schema)。スキーマ(Schema)サポートしているデータベースシステムを使用しているときのみ、設定が必要です。例えば、Oracleデータベース。<o:p>  
+          </o:p>      
+        </td>                  
+    </tr>                  
+    <tr>                  
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">タイプ       
+          :&nbsp;</font></td>                  
+        <td>JDBC データベースがSQLステートメントを実行するときのResult   
+          Setのタイプを表します。JDBC       
+          version 1.0 はTypeと concurrencyをサポートしていません。ドライバー自身がサポートしている以外は、FORWARD_ONLYを使用しないでください。システムパフォーマンスを低下させかねません。SCROLL_INSENITIVE+1はベンダー独自の強化機能です。例えば       
+          inet for mssqlはその例です。<o:p>      
+          </o:p>      
+        </td>                  
+    </tr>                  
+    <tr>                  
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Concurrency       
+          :&nbsp;</font></td>                   
+        <td>JDBCデータベースがSQLステートメントを実行するときのResult  
+          Setに同期アクセスステータスを表します。JDBC       
+          1.0 と旧バージョンのドライバーは大抵UPDATABLEをサポートしていません。       
+          JLIVE&trade;ミドルウェアは必要な時、自動的にデータレコード更新を行います。UPDATABLE+1       
+          とUPDATABLE+2 ベンダー独自の強化機能です。</td>                   
+    </tr>                   
+    <tr>                   
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">記述       
+          :&nbsp;</font></td>                 
+        <td>データベースの相関情報をプログラマーが記入します。<o:p>      
+          </o:p>      
+        </td>                 
+    </tr>                 
+</table>               
+</body>               
+</html>               

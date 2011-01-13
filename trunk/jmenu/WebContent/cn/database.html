@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>DataBase</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" cellpadding="0" cellspacing="0"
+bordercolor="#FFFFFF" bordercolordark="#FFFFFF"
+bordercolorlight="#FFFFFF" style="border-style: solid; border-color: #FFFFFF">
+    <tr>
+        <td align="left" colspan="2"><img border="0" src="images/jlogo_small.gif" align="left" width="144" height="25"></td> 
+    </tr> 
+    <tr>
+        <td align="center" colspan="2">
+          <p align="center"><img border="0" src="images/Database.gif" width="217" height="31"></p>
+        </td> 
+    </tr> 
+    <tr>
+        <td bgcolor="#FFFFFF" colspan="2"><font color="#0080FF" size="4">Database</font></td>   
+    </tr>   
+    <tr>  
+        <td bgcolor="#CDCDFF" colspan="2" style="text-indent: 0">  
+          <p style="text-indent: 20"><font size="3">jLIVE system through the
+          middle ware to connect the database. The middle ware use the Java JDBC
+          to connect and control the database. Due to the third party JDBC
+          driver is not fully support the JDBC 2.0 so jLIVE middle ware will
+          adjust the operations to fit the client request. The application can
+          have multiple databases manipulation. The jLIVE internal programming
+          which refer to the database by logical name that were so called DB
+          Alias,&nbsp; if do not use the special database dependent functions,
+          the application can change the database, event no code changed
+          necessarily.</font></p>  
+        </td>         
+    </tr>         
+    <tr>         
+        <td colspan="2"><hr size="1">         
+        </td>         
+    </tr>         
+    <tr>         
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">Create
+          new database :&nbsp;</font></td>          
+        <td><font size="3">Create a new database.</font></td>         
+    </tr>         
+    <tr>         
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">Test
+          connection :&nbsp;</font></td>          
+        <td><font size="3">Through the middle ware, use the driver and URL to
+          connect the database.</font></td>          
+    </tr>          
+    <tr>          
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">Cancel   
+          :&nbsp;</font></td>          
+        <td><font size="3">Cancel.</font></td>         
+    </tr>         
+    <tr>         
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">Save
+          update :&nbsp;</font></td>         
+        <td><font size="3">Save the modified properties.</font></td>        
+    </tr>        
+    <tr>        
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">Delete   
+          :&nbsp;</font></td>          
+        <td><font size="3">Remove this reference.</font></td>         
+    </tr>         
+    <tr>         
+        <td colspan="2" nowrap><hr size="1" color="#800080">         
+        </td>         
+    </tr>         
+    <tr>         
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">DB
+          Alias :&nbsp;</font></td>         
+        <td><font size="3">The reference name use in programming. Can not be
+          blank and must follow the Java variable naming rule.</font></td>         
+    </tr>         
+    <tr>          
+        <td valign="top" align="right" nowrap><font size="3" color="#666699">Driver :&nbsp; 
+          </font></td>          
+        <td><font size="3" color="#000000">JDBC database driver. You can select
+          the driver from the combo box, system will fill the URL pattern in the
+          URL box, just modified the host and database will do. or you can
+          specify the driver which not in combo box by yourself. Beware that
+          jLIVE middle ware must boot first and the driver must install&nbsp;
+          properly.&nbsp; jLIVE middle ware support TYPE 1, 2, 3, 4 JDBC driver.</font></td>          
+    </tr>          
+    <tr>          
+        <td rowspan="2" valign="top" align="right" nowrap><font color="#666699" size="3">Url  
+          :&nbsp;</font></td>         
+        <td><font size="3">URL pattern. must refer to the driver document which
+          provided by driver vendor. for example :&nbsp;</font></td>         
+    </tr>         
+    <tr>          
+        <td> 
+          <ol> 
+            <li><font size="3">Select the driver&nbsp; com.inet.tds.TdsDrive.</font></li> 
+            <li><font size="3">URL box display jdbc:inetdae:<font color="#0000FF">hostname</font>:1433?database=<font color="#0000FF">DATABASE</font>
+              , The <font color="#0000FF">hostname</font>  and <font color="#0000FF">DATABASE
+              </font><font color="#000000">must be modified.</font></font></li> 
+            <li><font size="3">Supposed the host is SUPER and the database is DB</font></li> 
+            <li><font size="3">Then change it to jdbc:inetdae:<font color="#0000FF">SUPER</font>:1433?database=<font color="#0000FF">DB</font></font></li> 
+          </ol> 
+        </td>         
+    </tr>         
+    <tr>        
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">User  
+          :&nbsp;</font></td>         
+        <td><font size="3">The database user log in name.</font></td>         
+    </tr>         
+    <tr>         
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Password  
+          :&nbsp;</font></td>        
+        <td><font size="3">The database user log in password.</font></td>        
+    </tr>        
+    <tr>        
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Schema  
+          :&nbsp;</font></td>           
+        <td><font size="3">The Schema of database.</font></td>           
+    </tr>           
+    <tr>           
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Type  
+          :&nbsp;</font></td>           
+        <td><font size="3">The SQL result set type, which request when prepared
+          the SQL statement. JDBC 1.0 does not support Type and Concurrency. Do
+          not use the FORWARD_ONLY if you have another chose, because the type
+          will decrease the system performance. The SCROLL_INSENITIVE+1 is
+          enhanced by driver vendor. for example : inet for mssql</font></td>           
+    </tr>           
+    <tr>           
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Concurrency  
+          :&nbsp;</font></td>            
+        <td><font size="3">The SQL result set type, which request when prepared
+          the SQL statement. The JDBC 1.0 and most driver are not support UPDATABLE.
+          jLIVE middle ware will generate the update SQL when needed.UPDATABLE+1
+          and  
+          UPDATABLE+2 are enhance by driver vendor individually.</font></td>            
+    </tr>            
+    <tr>            
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Description  
+          :&nbsp;</font></td>          
+        <td>Description</td>          
+    </tr>          
+</table>        
+</body>        
+</html>        

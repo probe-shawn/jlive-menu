@@ -1,0 +1,268 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Copy DataSource Data To DataSource</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=164 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=277 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=159 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_05_03.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a></font></b><font size="4"><b>複製資料來源到另一資料來源  
+(</b></font><b><font size="4">copy data source data to data source)</font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#event_status">事件執行狀態與訊息 (event runtime status and message)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">複製資料來源到
+另一資料來源 
+，適用於多個 jLIVE&#8482; middle ware 資料檔案複製。jLIVE&#8482; 在複製資料時不啟動相關事件，來源的資料來源 (source data 
+source) ，在複製時會每 20 筆複製完，隨即移除前 15 筆，避免已複製資料累積佔用記憶體，複製完成後系統會重開來源的資料來源 (source data 
+source) 。此一機制在於大量資料 (數百萬筆) 複製時能快速且運用最少記憶體完成作業。為避免資料庫驅動程式 (JDBC driver) cache 
+查詢結果集 (result set) ，驅動程式的 Type 應選用 FORWORD_ONLY。資料複製作業時，目的資料來源產生任何錯誤時，系統會出現詢問視窗，使用者可以選擇是否繼續複製，或跳過此筆記錄繼續複製下一筆，或結束複製作業。</font></p> 
+<ul type="square"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">資料來源 (data source) ：</font> 選擇資料來源 
+(source)。<br>
+　</font></p>
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">目</font><font size="2"><font color="#666699">的 
+資料來源 (target data source)：</font> 選擇目的資料來源 (target)。<br>
+　</font></p>
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">傳輸速度 (transfer speed)： </font>  
+<font size="2">複製資料來源到另一資料來源，會以極快的速度複製，有一些應用伺服器並不能提供這樣的速度，會產生服務的 socket 
+尚未就緒，例如：Tomcat v4.01 可以提供 10 ms/record 的速度，但 Tomcat 4.1 卻必須設定於 70 ms/record 。<br>
+　</font></p>  
+  </li>  
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">篩選條件</font><font size="2"><font color="#666699">  
+(transfer filter)：</font>  
+執行複製資料來源時，會依條件運算式過濾資料，當條件為真時  
+(非零且非空字串) ，才進行複製 (copy)。<br>
+　</font></p>
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<font color="#666699">資料欄位設定 (record data fields setting)：</font> 設定目的資料來源欄位擬填入的內含值。</font></p>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_05_02_perform.gif" width="420" height="421"></p>  
+</blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">  
+<font size="2">按下<font color="#666699">【資料欄位設定】(record data 
+fields setting)  
+</font>的按鍵之後，會出現下列設定資料欄位的視窗。資料欄位名稱 (field name) 是依照目的資料來源 的欄位順序排列，欄位內含值使用運算式 (formula) 填入。</font></p> 
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/ch11_05_02_fldset.gif" width="421" height="441"></p> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p> 
+<ul>
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font color="#666699" size="2"><img border="0" src="images/apply20.gif" width="24" height="24">快速欄位運算式輸入：</font><font size="2">尋找來源與目的欄位名稱相同的欄位 
+(field)，快速建立運算式。欄位名稱相同的欄位，系統會出現詢問視窗，並列示來源與目的欄位型別及長度，設計師可以據以判斷是否由系統輔助輸入運算式。在不同的資料庫系統，來源與目的的表格檔 
+(table) ，欄位與結構皆相同時，此功能可以快速建立運算式。</font></p> 
+  </li>
+</ul>
+</blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="event_status"></a><b>事件執行狀態與訊息 (event runtime status and message)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱&quot;) ：</font><font size="2">取得事件執行狀態。<br>
+　</font></p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">狀態</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">空字串</font></td>
+    <td width="84%" height="16"><font size="2">事件未被引發。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">-1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，依條件判斷後執行否則事件。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">0</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行過程有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.error&quot;) ：</font><font size="2">取得事件執行錯誤代碼。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">空字串 或 0</font></td>
+    <td width="84%"><font size="2">沒有錯誤訊息或無法取得錯誤訊息。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">1</font></td>
+    <td width="84%"><font size="2">來源資料來源或目的資料來源錯誤。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">2</font></td>
+    <td width="84%"><font size="2">目的資料來源是唯讀無法寫入。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">3</font></td>
+    <td width="84%"><font size="2">寫入錯誤發生，使用者放棄該筆寫入，由下筆繼續作業。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">4</font></td>
+    <td width="84%"><font size="2">寫入錯誤發生，使用者不繼續作業。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">5</font></td>
+    <td width="84%"><font size="2">使用者取消作業。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.INFO_STRING&quot;) ：</font><font size="2">取得事件執行 
+INFO_STRING 的訊息。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5" height="69">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">INFO_STRING</font></td>
+    <td width="28%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="140%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    name</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    資料來源名稱</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    來源資料來源名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="10"><font size="2">name2</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="10"><font size="2">
+    資料來源名稱</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="10"><font size="2">
+    目的資料來源名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    read</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    資料記錄筆數</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    讀取來源資料來源筆數。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    count</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    資料記錄筆數</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="16"><font size="2">
+    寫入目的資料來源筆數。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<a href="ch11_05_01.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=195 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=205 align=right valign=top> 
+<a href="ch11_05_03.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+</body>  
+  
+</html>

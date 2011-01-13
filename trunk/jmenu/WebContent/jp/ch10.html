@@ -1,0 +1,315 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Components</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%" height="1160">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch09.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>          
+<td width=204 align=right valign=top>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<a href="ch10_01.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>          
+          
+<hr align=left color="#000000">          
+<p><font size="4"><b>10</b></font><b><font size="4"><a class="TITLE">. </a><a class="TITLE">コンポーネン</a>ト (Components)</font></b></p>               
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#type">コンポーネント種類   
+(components)</a>　</font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="ch06_03.html#layout">コンポーネントのレイアウト     
+(layout components)</a></font></p>               
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#use">コンポーネントの使用と調整     
+(use and adjust components)</a></font></p>               
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"> 
+<a href="ch10_21.html">共同プロパティ設定 (common properties)</a></font></p>               
+<p style="margin-top: 2; margin-bottom: 2"> 
+<a href="component_event.html"> 
+<font size="-1"> 
+イベント </font>    
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="-1"> 
+ (event)</font></a></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>  <!--   
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">jLIVE Builder&trade;         
+的元件是以 Java&trade; Swing 為基礎物件 (base object)，&#20839;部以 MVC         
+(Model, View,&nbsp;Controller) 運作的資料關聯元件 (data-aware         
+component)。清單方塊 (Listbox)、下拉式清單方塊 (Combobox)、資料表元件         
+(Grid) 提供&#34395;擬 (virtual mode)         
+讀取模式，不論連結的資料量多寡，皆能以最佳的效率呈現資料；統計圖元件   
+(Chart component) 以背景執行緒 (background thread)         
+運算、讀取資料，統計圖形以隨到資料即時繪製方式，呈現隨資料變化的動態統計圖示；計時器元件         
+(Timer)，除了時間的顯示外，亦提供多執行緒 (multi-thread)         
+的事件流程 (event flow)；備忘&#37636;元件 (Memo)、圖片元件         
+(Image)，可以直接連結儲存於資料表的二進位圖&#27284;資料或圖&#27284;路徑名稱；條碼元件         
+(Barcode) 是客製(third party)元件，採用條碼專業公司 Automation         
+所開發的元件為基礎物件，&#20296;建執行 (deployment) 時須向         
+Automation 購改授權。</font></p>            
+<p style="margin-top: 1; margin-bottom: 1">　</p>      -->     
+<p style="margin-top: 1; margin-bottom: 1">　</p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p>           
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="type"></a>コンポーネント分類     
+(components)</b></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<div align="right">
+<table border="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="middle"> 
+    <font size="2"> 
+    <img border="0" src="images/ch10_label.gif" width="30" height="30"></font></td>  
+    <td valign="middle"> 
+    <font size="2"><a href="ch10_01.html">ラベル( Label)</a></font></td>              
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_21_edit.gif" width="30" height="30"></font></td>         
+    <td valign="middle">         
+    <a href="ch10_02.html"><font size="2">エディト (Edit)</font></a></td>             
+    <td valign="middle">        
+    <font size="2">        
+    <img border="0" src="images/ch10_password.gif" width="30" height="30"></font></td>        
+    <td valign="middle">        
+    <font size="2">        
+    <a href="ch10_03.html">パスワード (Password)</a></font></td>            
+    <td valign="middle">        
+    <font size="2">        
+    <img border="0" src="images/ch10_check.gif" width="30" height="30"></font></td>        
+    <td valign="middle">        
+    <font size="2">        
+    <a href="ch10_04.html">チェックボックス (Checkbox)</a></font></td>            
+  </tr>        
+  <tr>        
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_radio.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_05.html"><font size="2">ラジオグループ (Radiogroup)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_listbox.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_06.html"><font size="2">リストボックス (Listbox)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_combobox.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10.html"><font size="2">コンボボックス (Combobox)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_tree.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_08.html"><font size="2">ツリー</font></a><a href="ch10_08.html"><font size="2"> (Tree)</font></a></td>            
+  </tr>        
+  <tr>        
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_combotree.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_09.html"><font size="2">コンボツリー (Combotree)</font></a></td>          
+    <td valign="middle">        
+    <font size="2">        
+    <img border="0" src="images/ch10_slider.gif" width="30" height="30"></font></td>       
+    <td valign="middle">        
+    <a href="ch10_10.html"><font size="2">スライダー (Slider)</font></a></td>           
+    <td valign="middle">        
+    <font size="2">        
+    <img border="0" src="images/ch10_grid.gif" width="30" height="30"></font></td>       
+    <td valign="middle">        
+    <a href="ch10.html"><font size="2">グリッド</font></a><a href="ch10_11.html"><font size="2"> (Grid)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_memo.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10.html"><font size="2">メモ (Memo)</font></a></td>            
+  </tr>        
+  <tr>        
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_image.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10.html"><font size="2">イメージ (Image)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_navigator.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_14.html"><font size="2">ナビゲーター (Navigator)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_button.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_15.html"><font size="2">ボタン (Button)</font></a></td>            
+    <td valign="middle">         
+    <font size="2"><img border="0" src="images/ch10_imageinvoker.gif" width="30" height="30"></font></td>         
+    <td valign="middle">         
+    <a href="ch10_16.html"><font size="2">イメージ引用 (Image Invoker)</font></a></td>             
+  </tr>         
+  <tr>         
+    <td valign="middle">          
+    <font size="2">          
+    <img border="0" src="images/ch10_tab.gif" width="30" height="30"></font></td>        
+    <td valign="middle">          
+    <a href="ch10_17.html"><font size="2">タブパネル</font></a><a href="ch10_17.html"><font size="2">(Tabbed Pane)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_chart.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_18.html"><font size="2">チャートー (Chart)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_timer.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_19.html"><font size="2">タイマー (Timer)</font></a></td>            
+    <td valign="middle">         
+    <font size="2">         
+    <img border="0" src="images/ch10_barcode.gif" width="30" height="30"></font></td>        
+    <td valign="middle">         
+    <a href="ch10_20.html"><font size="2">バーコード</font></a><a href="ch10_20.html"><font size="2"> (Barcode)</font></a></td>           
+  </tr>       
+</table>       
+</div>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">       
+　</p>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="use"></a>コンポーネントの使用と調整     
+(use and adjust components)</b></font></p>              
+<ul>      
+  <li>      
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">デザイン段階   
+    (design time)</font>        
+    <ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">共通プロパティの設定   
+        (common properties)：フォーマット (format)、 外枠 (border)  
+        、フォント   
+        (font)。</font></li>     
+      <li>     
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">データ連結の設定   
+        (data binding) ：データフィールド(data Field)に連結、フォーミュラ   
+        (formula) 。</font></li>        
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">特別プロパティの設定   
+        (extra properties)：コンポーネント特別の操作プロパティ。</font></li>       
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">起動イベント   
+        (fire event)：コンポーネント類によって起動されるイベント (action)、変化イベント (change)、 GainFocusイベント、LostFocusイベント、ダブルクリックイベント   
+        (double         
+        click)、右クリックイベント (right click)。</font></li>        
+    </ul>      
+  </li>      
+  <li>      
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">ランタイム   
+    (run time)</font>        
+    <ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">コンポーネント位置   
+        (position)調整、寸法 (size)、可視 (visible)、使用可能に (enable)、フォント(font)、前景カラー(foreground   
+        and background color)</font>        
+        <ul>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">起動イベント   
+            (fire event)方式：コンポーネントイベント (component event)中の位置(position)、寸法(Size)、可視   
+            (visible)、使用可能に (enable)、フォント (font)、前景カラー   
+            (foreground and background color)イベント。</font></li>       
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">フォーミュラ   
+            (formula) 方式：SetProp(&quot;<font color="#666699">コンポーネント名</font>&quot;,         
+            &quot;<font color="#666699">プロパティ</font>&quot;, &quot;<font color="#666699">&#20540;</font>&quot;)  
+            ，コンポーネント参照 <a href="get_set_prop.html">Get-Set Component         
+            Properties</a>。</font></li>      
+        </ul>      
+      </li>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">コンポーネントFocus調整</font>      
+        <ul>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">起動イベント   
+            (fire event)方式：コンポーネントイベント (component event)  
+            中の Focus イベント。</font></li>       
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">フォーミュラ   
+            (formula)方式：SetProp(ComponentName, &quot;focus&quot;,         
+            &quot;1&quot;)。</font></li>      
+        </ul>      
+      </li>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">コンポーネント調整</font>      
+        <ul>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">起動イベント  
+            (fire event)方式：コンポーネントイベント (component event)  
+            。</font></li>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2">フォーミュラ  
+            (formula)方式：SetProp(&quot;<font color="#666699">コンポーネント名</font>&quot;,         
+            &quot;<font color="#666699">プロパティ</font>&quot;, &quot;<font color="#666699">&#20540;</font>&quot;) 
+            ，コンポーネント <a href="get_set_prop.html">GertSet Component         
+            Properties</a>参照。</font></li>      
+        </ul>      
+      </li>      
+    </ul>      
+  </li>      
+</ul>      
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>           
+<hr align=left color="#000000">     
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=200 align=left valign=top>     
+<a href="ch09.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>     
+<td width=194 align=center valign=top><a href="index.html">     
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>     
+<td width=206 align=right valign=top>     
+<a href="ch10_01.html">     
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+      
+</body>      
+      
+</html>

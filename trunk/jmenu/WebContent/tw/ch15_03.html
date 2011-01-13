@@ -1,0 +1,142 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>multiple jLIVE middle ware</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch15_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=194 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="ch15.html"><font color="#000000">Chapter 1</font><font color="#003366">5</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">        
+<b><font face="新細明體" size="-1">        
+<a style="text-decoration: none" href="ch15.html"><font color="#000000">        
+application server</font></a></font></b></TD>       
+<td width=206 align=right valign=top>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<a href="ch15_04.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=left color="#000000">       
+<h1 class="chapter"><font size="4"><a class="TITLE" name="top">15.3 異地應用伺服器同時存取 
+(multiple application servers access simultaneously)</a></font></h1>       
+<p class="chapter"><font size="2">
+<a href="#建立異地 jLIVE&#8482; middle ware (create secondary jLIVE&#8482; middle ware)">建立異地 
+jLIVE&#8482; middle ware (create secondary jLIVE&#8482; middle ware)</a></font><br>
+<font size="2">
+<a href="#使用異地 jLIVE&#8482; middle ware 的資料庫系統 (2nd  jLIVE&#8482; middle ware database)">
+使用異地 jLIVE&#8482; middle ware 的資料庫系統 (2nd&nbsp; jLIVE&#8482; middle ware database) </a>
+</font></p>       
+<p class="chapter" style="text-indent: 20"><font size="2">
+跨國性與多分公司的企業，資料庫系統通常是獨立存在於各據點，網際網路應用程式不但要能處理單一據點資料處理，還要能適時地同時存取各據點的資料訊息。 jLIVE 
+Builder&#8482; 允許在開發應用程式時，同時連接異地的應用伺服器 (jLIVE&#8482; middle 
+ware)，並存取異地應用伺服器所連結的資料庫系統，跨國性與多分公司的企業，隨時可透過應用程式，統計、分析、處理各據點資料。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="center">
+<img border="0" src="images/ch15_03_multimw.gif" width="440" height="424"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2">
+<a name="建立異地 jLIVE&#8482; middle ware (create secondary jLIVE&#8482; middle ware)">建立異地 
+jLIVE&#8482; middle ware (create secondary jLIVE&#8482; middle ware)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">在 jLIVE Builder&#8482; 應用程式控制面版，選取專案，輸入主要 HTTP 後，核取 (check) 2nd MW_HTTP 
+並按下設定鍵<img border="0" src="images/testconnect20.gif" width="24" height="24">。在 2nd MW_HTTP property 
+設定視窗中，建立異地 jLIVE&#8482; middle ware 。設計師可以按下<img border="0" src="images/testconnect20.gif" width="24" height="24">測試連結建立的 
+jLIVE&#8482; middle ware。在按下確定鍵後，系統會嘗試連結每一個已建立的&nbsp; jLIVE&#8482; middle 
+ware，並回覆連結的結果訊息。如果遠端jLIVE&#8482; middle ware 
+未開機無法連結或有任何的錯誤，系統會出現測試連結失敗訊息視窗，並詢問設計師是否暫時忽略連線結果繼續設定作業。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch15_03_createmw.gif" width="511" height="332"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">別名：</font><font size="2"> jLIVE&#8482; middle ware 
+在系統中被引用時的名稱。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">Middle ware URL：</font><font size="2"> jLIVE&#8482; 
+middle ware 的 URL。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2">
+<a name="使用異地 jLIVE&#8482; middle ware 的資料庫系統 (2nd  jLIVE&#8482; middle ware database)">使用異地 
+jLIVE&#8482; middle ware 的資料庫系統 (2nd&nbsp; jLIVE&#8482; middle ware database) </a></font>
+</b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">建立異地 jLIVE&#8482; middle ware 後，使用異地 jLIVE&#8482; middle ware 的資料庫系統 
+，只要在新增資料庫時選擇此資料庫系統安置在那一個&nbsp; jLIVE&#8482; middle ware 即可。MW_HTTP 的選項中列示所有可用的異地 jLIVE&#8482; 
+middle ware 別名，其中 --default-- 為主要 jLIVE&#8482; middle ware 的別名。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch15_03_mwdb.gif" width="489" height="228"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">應用程式開發時，設計師以資料庫別名引用資料檔案，系統內部會依據資料庫節點所設的 MW_HTTP 別名，至相關的 jLIVE&#8482; 
+middle ware 取得資料庫檔案存取服務，設計師不需做任何額外的設定。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<hr align=left color="#000000">        
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">        
+<tr>        
+<td width=200 align=left valign=top>        
+<a href="ch15_02.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=195 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=205 align=right valign=top>        
+<a href="ch15_04.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.          
+</font></p>          
+          
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,           
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>          
+          
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+          
+</body>          
+          
+</html>

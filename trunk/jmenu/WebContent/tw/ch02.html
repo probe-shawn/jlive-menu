@@ -1,0 +1,154 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Technical overview</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="346" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch01_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=192 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">Chapter 2</font></b><font face="新細明體"> </font>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">Technical       
+overview</font></b></TD>        
+<td width=208 align=right valign=top>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<a href="ch02_01.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=left color="#000000">       
+<h1 class="chapter"><font size="4">2<a class="TITLE">. </a>jLIVE Builder&#8482;         
+技術機能概論 (<span lang="en-us">T</span>echnical overview)</font></h1>          
+<p class="chapter">　</p>     
+<p class="chapter" style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="ch02_01.html">網際網路應用程式與企業應用整合<span lang="en-us">
+</span>(Internet         
+application &amp; Enterprise Application <span lang="en-us">I</span>ntegration)</a></font></p>       
+<p class="chapter" style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="ch02_02.html">
+網際網路應用程式與單純網頁 (<span lang="en-us">I</span>nternet&nbsp;application vs. web page)</a></font></p>       
+<p class="chapter" style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="ch02_03.html">jLIVE Builder&#8482;          
+與傳統式程式設計環境 (jLIVE Builder&#8482;&nbsp;vs. traditional         
+coding IDE)</a></font></p>        
+<p class="chapter" style="margin-top: 4; margin-bottom: 4"><font size="2">
+<a href="ch02_04.html">jLIVE 
+Builder&#8482; 與其他設計工具 (jLIVE Builder&#8482; vs. 3rd party programming tool)</a></font></p>        
+<p class="chapter" style="margin-top: 4; margin-bottom: 4"><font size="2">
+<a href="ch02_05.html"> 應用程式執行環境與機制  
+(<span lang="en-us">A</span>pplication environment and mechanism)</a></font></p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4">　</p>          
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&#8482;        
+所開發的網際網路應用程式，可以以下列三種方式執行：</font></p>          
+<ul>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2"><a href="#html_run">由瀏覽器啟動執行<span lang="en-us">
+</span>(browser 
+enabled HTML)</a></font></p>          
+  </li>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2"><a href="#jar_run">Java&#8482; 可執行檔獨立執行 
+(<span lang="en-us">s</span>tandalone executable JAR)</a></font></p>          
+  </li>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2"><a href="#jnlp_run">以 Java web start&#8482; 
+啟動執行<span lang="en-us"> </span>(web start JNLP)</a></font></p>          
+  </li>
+</ul>
+<p style="text-indent: 20" align="justify"><font size="2">在網際網路上啟動執行後，應用程式皆以多層式的架構 (n-tiers) 運作。此一機制與過去的主從架構 (client-server)   
+，不論在內部的系統、資料流程或執行的作業平台，都是截然不同的。</font></p>          
+<p style="text-indent: 20" align="justify"><font size="2">以下章節將說明 jLIVE Builder&#8482; 
+ 
+網際網路應用程式在企業應用整合<span lang="en-us"> </span>(Enterprise Application 
+<span lang="en-us">I</span>ntegration) 上的應用；<span lang="en-us"> </span>jLIVE Builder&#8482; 
+所開發的網際網路應用程式 (internet application) 與一般網頁<span lang="en-us"> </span>(web      
+page) 在客戶端 (client) 、伺服器端 (server) 之差異與可行性；<span lang="en-us"> </span>jLIVE Builder&#8482;         
+ 完整的開發環境與傳統程式設計環境 (traditional coding IDE) 的比較；網際網路應用程式   
+(internet application)  運作執行的程序與機制、以及如何以 jLIVE Builder&#8482;           
+快速地開發網際網路應用程式 (internet application)<span lang="en-us"> </span>，架構企業應用的網際網路 
+n-tiers 環境 (web environment)<span lang="en-us"> </span>。</font></p>          
+<p><b><font size="2"><a name="html_run"></a>瀏覽器啟動執行<span lang="en-us"> </span>(browser 
+enabled HTML)</font></b></p>          
+<p style="text-indent: 20"><font size="2">jLIVE Builder&#8482; 在應用程式開發完成，產生執行模組時 
+(build)<span lang="en-us"> </span>，會自動產生一個 HTML 及 Java&#8482; Applet<span lang="en-us">
+</span>&nbsp;原始檔案。佈建程式後，使用者只要在瀏覽器執行 HTML 
+檔即可執行程式。一個應用系統只會存在一個 Java&#8482; Applet ，<span lang="en-us"> </span>Applet 的作用只在於初始化瀏覽器的應用程式，應用程式接下來的所有運作，將會在此 
+Applet 區域，運用<span lang="en-us"> </span>Java&#8482; J2SDK Swing set ，以多視窗模組的型式呈現。這也是為什麼 jLIVE Builder&#8482; 的應用程式執行時不用不斷的換頁，以及為什麼 jLIVE Builder&#8482; 
+的應用程式具有使用者及系統流程 (system<span lang="en-us"> </span>&nbsp;flow) 的原因。</font></p>          
+<p style="text-indent: 20"><font size="2">以瀏覽器啟動執行的程式，使用者端 (client) 
+會根據執行模組的需求，自動下載及更新最新版的 Java&#8482;&nbsp; class 模組，應用程式管理者只要把新增或更新的 Java&#8482;&nbsp;class 
+模組，置入應用伺服器，所有使用者端 (client)<span lang="en-us"> </span>&nbsp;會自動更新。在執行環境上以瀏覽器啟動執行的程式，具有最佳的更新及分散載入的機制。</font></p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4"><b><font size="2">
+<a name="jar_run"></a>Java&#8482; 可執行檔獨立執行 (standalone executable JAR)</font></b></p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4">　</p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4; text-indent:20"><font size="2">
+jLIVE Builder&#8482; 在應用程式開發完成，產生執行模組時 (build)<span lang="en-us"> </span>，系統會將所有 Java&#8482;&nbsp;class 模組及資源，壓縮成一個可單獨執行的 Java&#8482; 可執行 JAR 檔，應用伺服器佈建後，使用者下載此 Java&#8482; 可執行 JAR<span lang="en-us">
+</span>&nbsp;檔，即可在任何平台像執行一般 
+Windows 的程式一樣執行多層式網際網路應用程式。此種執行方式與一般 (client/server) 程式一樣，使用者須自行下載更新版本。</font></p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4">　</p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4"><b><font size="2">
+<a name="jnlp_run"></a>Java web start&#8482; 
+啟動執行<span lang="en-us"> </span>(web start JNLP)</font></b></p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4">　</p>          
+<p class="chapter" style="margin-top: 4; margin-bottom: 4; text-indent:20"><font size="2">
+jLIVE Builder&#8482; 在應用程式開發完成，產生執行模組時 (build)<span lang="en-us"> </span>，系統會產生 Java web start&#8482; 啟動執行的 JNLP&nbsp;(Java&#8482; Network Launching Protocol)<span lang="en-us">
+</span>，佈建程式後，使用者只要啟動 Java web start&#8482; 即可執行程式。程式執行時不需經過瀏覽器，程式執行的外觀及方式與一般<span lang="en-us">
+</span>Windows 
+的程式一樣，與單獨執行的<span lang="en-us"> </span>Java&#8482; 可執行 JAR 檔不一樣的地方是，<span lang="en-us">
+</span>Java web start&#8482; 
+會控制版本更新，在應用程式管理者更新應用伺服器程式後，使用者端的&nbsp;Java web start&#8482; 會自動載入新版。</font></p>          
+<div v:shape="_x0000_s3074" class="O">        
+  <div style="mso-char-wrap:1;mso-kinsoku-overflow:1">        
+  <p style="text-indent: 20">        
+  </div>        
+</div>        
+<p>　</p>          
+<hr align=left color="#000000">           
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">           
+<tr>           
+<td width=200 align=left valign=top>           
+<a href="ch01_01.html">           
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>           
+<td width=218 align=center valign=top><a href="index.html">           
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>           
+<td width=182 align=right valign=top>           
+<a href="ch02_01.html">         
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>         
+</tr>         
+</table>         
+         
+<hr align=left color="#000000">         
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~            
+2004 Probe Technology . All Rights Reserved.</font></p>           
+           
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,            
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>           
+           
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+           
+</body>           
+           
+</html>

@@ -1,0 +1,218 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_sub_ordr.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_top10_cust.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Query Customer Contact Person's 
+Information</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>QURY_CONT</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="line-height: 150%"><font size="2">查詢客戶聯絡人 
+         (Customer Contact Person)，按英文字母按鈕即開始查詢，亦可以快速鍵啟動。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Customers：</font></b></td>
+       <td width="661" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">客戶 (Customers) 資料來源。<br>
+       【SQL】：<font face="Courier New">Select * From Customers</font></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2"></td>
+       <td width="661" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_cont】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">Customers</font>。<br>
+       【欄位】【資料表元件欄位】選擇 Customers 其中 4 個欄位。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_A】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">trig_alpha </font>，按下時觸發 &quot;Customers&quot; 資料來源 
+       ，括出客戶聯絡人姓名以 &quot;A&quot; 開頭的人。 依此類推，&quot;btn_B&quot; 到 &quot;btn_Z&quot; 行為相同
+       。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_AllCheck】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">trig_cont </font>，按下時觸發 &quot;Customers&quot; 資料來源 
+       ，傳回全部資料。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【trig_alpha】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【執行】【資料來源】選<font color="#666699"> Customers</font>。<br>
+       【SQL】為：<font face="Courier New">@FORMULA <br>
+&nbsp; &quot;Select * <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; Customers <br>
+&nbsp;&nbsp; where&nbsp; CompanyName like '&quot;$ 
+       EvInvoker()[5] $&quot;%'&quot;<br>
+       &nbsp;&nbsp;
+       </font>其中 &quot;@Formula&quot; 的作用在於把之後的命令字串、jLIVE 
+       運算式等等，先行解</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 譯為字串，再把字串整個送到資料庫去執行。也因為可以使用運算式，設計</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 師便可依此組合出動態的 SQL 命令。&quot;EvInvoker()&quot; 
+       會擷取到使用者所按下的</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 按鈕元件名稱，[5] 表示第5個字元，即 A、B、C...等，以這個英文字母做</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;類似查詢&quot; (... 
+       LIKE 'A%')，即得到我們需要的結果。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【trig_cont】</font></td>
+       <td width="906" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【執行】【資料來源】選<font color="#666699"> Customers</font>。<br>
+       【SQL】為：Select * From Customers，重新叫入所有資料。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2"></td>
+       <td width="906" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_sub_ordr.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=373 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=111 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_top10_cust.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

@@ -1,0 +1,239 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Trigger DataSource</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_03_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=206 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD>  
+<td width=194 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch11_03_04.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>觸發資料來源 (trigger data source)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#event_status">事件執行狀態與訊息 (event runtime status and message)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#觸發資料來源欄位檢查 (trigger data source type check)">觸發資料來源欄位檢查 (trigger data 
+source type check)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">將已開啟 
+(opened) 或尚未開啟 (not opened)&nbsp;的資料來源，依另訂的條件   
+(SQL command) 重新查詢 (query)，資料庫伺服器 (database server) 
+並重送結果集 (result set) 到客戶端 (client) 。觸發資料來源的   
+SQL 指令，所選取 (select) 的結果集 (result set) 其欄位名稱 (field   
+name) 與次序，必須與原定義 (defined)   
+的資料來源完全相同，否則相關的連結資料元件 (data aware   
+component)，無法正確的取值 (retrieve data)。</font></p>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">資料來源 (data source)：</font> 選擇資料來源。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">SQL ：</font> SQL命令編輯區。輸入 SQL  
+指令，可以按下 F2 鍵，SQL  
+資料欄位輸入輔助視窗會出現，設計師可以按選資料欄位，加快指令輸入的速度及正確性。&nbsp;SQL 命令可以使用 @Formula 運算式，動態組成查詢&nbsp; 
+SQL命令。參閱 <a href="formula_sql.html">附錄@Formula SQL</a> 說明。<br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">參數 (parameters)： <br>
+　</font></p>  
+<ul type="disc">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">類別 (type)：</font> 欄位型態。選擇字串、數字、日期、時間、邏輯...等。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">運算式 (formula)：</font>  雙擊滑鼠 (double 
+clicked)  
+以運算式編輯視窗輸入運算式。<br>
+　</font></p>  
+  </li>  
+</ul>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">讀取列 (row fetch)：</font> 設定每次傳送到客戶端 
+(client) 的記錄筆數。</font></p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch11_03_perform_4.gif" width="415" height="416"></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+</blockquote>   
+<p style="margin-top: 1; margin-bottom: 1; "><b><font size="2">
+<a name="觸發資料來源欄位檢查 (trigger data source type check)">觸發資料來源欄位檢查 (trigger data 
+source type check)</a></font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1; ">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+在設計模式下，觸發資料來源後其結果集的欄位名稱 (field name) 、型別 (type)、 次序與個數，和原定義 (defined) 
+的資料來源不符合時，系統會出現觸發來源事件錯誤視窗，列示前後查詢的結果集欄位訊息。紅色標示為不符合的欄位名稱、型別，藍色為前後查詢多出的欄位。
+預設型別檢核為嚴謹性的檢查，例如：VARCHAR 不等於 CHAR ；DECIMAL 不等於 FLOAT。核選 (check) 寬鬆性欄位型別檢查 
+(lenient field type check)，系統將欄位型別分類為 字串 (string) 、數值(number) 、日期時間 (datetime)、日期(date)、時間(time)，屬於該類別的型別視為相等，不出現錯誤訓息。例如：VARCHAR 
+與 CHAR 同屬於字串 (string) ；所有數值型別皆屬於數值類別。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+觸發資料來源欄位檢查，只作用於設計模式下，實際執行期 (runtime) 
+並不會出現。設計師在設計時需考量資料來源欄位型別不符合，是否會影響資料處理的正確性，並更正 SQL 命令的選取 (select) 指令。如果檢查的結果為欄位名稱 
+(field name) 、 次序與個數不符合，一定得更正，否則元件資料欄位連結將會發生錯誤。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<img border="0" src="images/ch11_03_trigerror.gif" width="553" height="339"></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="event_status"></a><b>事件執行狀態與訊息 (event runtime status and message)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱&quot;) ：</font><font size="2">取得事件執行狀態。<br>
+　</font></p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">狀態</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">空字串</font></td>
+    <td width="84%" height="16"><font size="2">事件未被引發。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">-1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，依條件判斷後執行否則事件。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">0</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行過程有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.error&quot;) ：</font><font size="2">取得事件執行錯誤代碼。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4" height="76">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="15"><font size="2">空字串 或 0</font></td>
+    <td width="84%" height="15"><font size="2">沒有錯誤訊息或無法取得錯誤訊息。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="15"><font size="2">1</font></td>
+    <td width="84%" height="15"><font size="2">資料來源名稱不存在。以 EvStatus(&quot;事件名稱.name&quot;) 
+    取得其名稱。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="15"><font size="2">2</font></td>
+    <td width="84%" height="15"><font size="2">資料庫 SQL 執行有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.INFO_STRING&quot;) ：</font><font size="2">取得事件執行 
+INFO_STRING 的訊息。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">INFO_STRING</font></td>
+    <td width="28%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="140%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF"><font size="2">name</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF"><font size="2">資料來源名稱</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF"><font size="2">不存在的資料來源名稱。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch11_03_02.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=190 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=210 align=right valign=top>   
+<a href="ch11_03_04.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+   
+</body>   
+   
+</html>

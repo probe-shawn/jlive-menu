@@ -1,0 +1,422 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Project develop procedure image manage</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellspacing="1" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=596 border=0 cellspacing=1>
+<tr>
+<td width=195 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch03_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=192 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch03.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 3</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch03.html" style="text-decoration: none"><font color="#000000">Project 
+develop procedure</font></a></font></b></TD>           
+<td width=199 align=right valign=top>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<a href="ch04.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>          
+          
+<hr align=left color="#000000">          
+<p><b><font size="4"><a class="TITLE">3.4 </a><a class="TITLE">預載圖片檔</a> 
+(pre-load images)</font></b></p>                         
+<p><font size="2"><a href="#preloadimage">系統預載圖片 (pre-load image)</a></font></p>                        
+<p align="justify">　<font size="2">jLIVE Builder&trade; 對於圖片檔 (image      
+file) 的使用分為應用程式的一、資料圖片檔 (image data files)      
+及二、使用者介面圖片檔 (GUI image files)。資料圖片檔是應用程式的圖片檔資料，通常存放於檔案伺服器      
+(file server)，而另以路徑型式存放於相關檔案資料記錄的資料庫中，例如：產品的型錄圖片檔或公司員工照片。使用者介面圖片檔則是程式圖形介面      
+(GUI) 所使用的圖片檔，例如：按鈕的圖示 (icon)      
+、圖片啟動元件 (image invoker)      
+的背景圖片或常出現在程式中的公司 LOGO 圖片檔。</font></p>                       
+<p align="justify" style="text-indent: 20"><font size="2">資料圖片檔 (image      
+data files) 的使用可以參閱 <a href="ch10_13.html">圖片元件 (Image      
+component)</a> 的使用方式及<a href="file_down_upload.html">上下載檔</a><a href="file_down_upload.html">案      
+(file down and upload)</a>的相關說明。</font></p>                       
+<p align="justify" style="text-indent: 20"><font size="2">使用者介面圖片檔      
+(GUI image files)     
+，在應用程式中，設計師可依使用的頻繁度，分別將其置放於應用程式      
+<font face="Courier New">class\images</font> 及<font face="Courier New">class\preloadimage</font>      
+ 目錄下，其中置放於<font face="Courier New">class\preloadimage</font>     
+ 目錄下的圖片檔，稱之為預載圖片檔 (pre-load image file)：</font></p>                      
+<ul>    
+  <li>    
+    <p align="justify"><font size="2">應用程式設計時 (design time)&nbsp;&nbsp;<br>    
+    jLIVE Builder&trade;     
+    會將此兩目錄下的圖片檔，載入於需使用介面圖片的元件設定頁，下拉式選單方塊 (combobox)     
+    中，例如：按鈕元件 (Button component) 的圖示 (icon)     
+    選取設定，設計師可以快速的選用。</font></li>    
+  <li>    
+    <p align="justify"><font size="2">應用程式製作時 (build time)<br>    
+    jLIVE Builder&trade; 會將 <font face="Courier New">class\preloadimage </font>     
+    目錄下的圖片檔壓縮為 <font face="Courier New">jimage.jar</font>，並將<font face="Courier New">jimage.jar     
+    </font>置放於 <font face="Courier New">class </font>目錄下。</font></li>    
+  <li>    
+    <p align="justify"><font size="2">應用程式執行時 (run time)&nbsp;<br>    
+    使用者第一次執行應用程式或 <font face="Courier New">jimage.jar </font>有更新版本時，系統會自動下載     
+    <font face="Courier New">jimage.jar </font>並 <font face="Courier New">cache</font>     
+    在客戶端 (client)，當應用程式執行需要使用</font><font size="2">介面圖片檔     
+    (GUI image files) 時，系統會先搜尋 <font face="Courier New">cache</font>     
+    在客戶端的 <font face="Courier New">jimage.jar</font>     
+    中的圖片檔，如果存在則直接引用，否則要求 jLIVE&trade;     
+    middle ware 搜尋並傳回 <font face="Courier New">class\images </font>     
+    目錄下的圖片檔。</font></li>    
+</ul>    
+<p align="justify" style="text-indent: 20"><font size="2">所以使用頻繁的圖片檔，可將其置放於     
+<font face="Courier New">class\preloadimage</font>     
+，不經常使用的圖片檔則置放於 <font face="Courier New">class\images</font>，設計師可按需求自行配置。</font></p>    
+<p align="justify" style="text-indent: 20"><font size="2">在 jLIVE Builder&trade;     
+設計環境中，如果有新增或修改 <font face="Courier New">class\preloadimage</font>     
+或 <font face="Courier New">class\images </font>目錄下的圖片檔，設計師須按選功能選單中的【重讀圖片檔】，更新目前系統所使用的圖檔。</font></p>    
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE      
+Builder&trade; 系統預設的預載圖片檔 (pre-load image file)，存放於 <font face="Courier New">jLIVE\preloadimage\</font>     
+目錄下，每當設計師新增一個應用程式時，jLIVE Builder&trade;      
+會將 <font face="Courier New">jLIVE\preloadimage\</font>     
+ 目錄下所有的圖片檔，複製到該應用程式路徑 <font face="Courier New">class\preloadimage</font>     
+目錄下，所以      
+jLIVE Builder&trade;     
+的每一個應用程式皆有獨立的預載圖片檔。設計師亦可將新增或修改的圖片檔存到<font face="Courier New">jLIVE\preloadimage\</font>     
+目錄下，系統在下一次新增應用程式時，即以其為預設的預載圖片檔。</font></p>          
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>          
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">多人協同開發應用程式時，系統規劃師可以先行選定</font><font size="2">預載圖片檔     
+(pre-load image file)，並將其分發至工作群組的各個設計師，應用系統開發時，每一位設計師的視窗模組即能有一致的圖示介面。</font></p>          
+<p align="justify" style="text-indent: 20">　</p>    
+<p align="justify"><font size="2"><a name="preloadimage"></a><b>系統預載圖片     
+(pre-load image)</b></font></p>                       
+<p align="justify" style="text-indent: 20"><font size="2">預設的系統預載圖片檔，設計師可以更改圖示，但不可更改檔名且須以英文小寫命名  
+(case sensitive)，除了</font><font size="2">使用於萬年月曆輸入面盤的<font face="Courier New">_cal.gif&nbsp;</font>  
+<font face="Courier New">(160X148) </font>外，其他圖片尺寸可以按需求更改大小。</font></p>                      
+<p align="justify"><font size="2">使用於瀏覽器元件 (Navigator component)：</font></p>                      
+<table border="1">   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2"><img border="0" src="images/_nav0.gif" width="24" height="24"></font></td>   
+    <td><font face="Courier New" size="2">_nav0.gif</font></td>   
+    <td><font size="2">首筆</font></td>   
+    <td><font size="2"><img border="0" src="images/_nav0p.gif" width="24" height="24"></font></td>   
+    <td><font size="2" face="Courier New">_nav0p.gif</font></td>   
+    <td><font size="2">首筆滑鼠按下</font></td>   
+    <td><font size="2"><img border="0" src="images/_nav0r.gif" width="24" height="24"></font></td>   
+    <td><font size="2" face="Courier New">_nav0r.gif</font></td>   
+    <td><font size="2">首筆滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav1.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav1.gif</font></td>   
+    <td><font size="2">上筆</font></td>   
+    <td><img border="0" src="images/_nav1p.gif" width="24" height="24"></td>   
+    <td><font size="2" face="Courier New">_nav1p.gif</font></td>   
+    <td><font size="2">上筆滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav1r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav1r.gif</font></td>   
+    <td><font size="2">上筆滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav2.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav2.gif</font></td>   
+    <td><font size="2">下筆</font></td>   
+    <td><img border="0" src="images/_nav2p.gif" width="24" height="24"></td>   
+    <td><font size="2" face="Courier New">_nav2p.gif</font></td>   
+    <td><font size="2">下筆滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav2r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav2r.gif</font></td>   
+    <td><font size="2">下筆滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav3.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav3.gif</font></td>   
+    <td><font size="2">尾筆</font></td>   
+    <td><img border="0" src="images/_nav3p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav3p.gif</font></td>   
+    <td><font size="2">尾筆滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav3r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav3r.gif</font></td>   
+    <td><font size="2">尾筆滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav4.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav4.gif</font></td>   
+    <td><font size="2">新增</font></td>   
+    <td><img border="0" src="images/_nav4p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav4p.gif</font></td>   
+    <td><font size="2">新增滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav4r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav4r.gif</font></td>   
+    <td><font size="2">新增滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav5.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav5.gif</font></td>   
+    <td><font size="2">刪除</font></td>   
+    <td><img border="0" src="images/_nav5p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav5p.gif</font></td>   
+    <td><font size="2">刪除滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav5r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav5r.gif</font></td>   
+    <td><font size="2">刪除滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav6.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav6.gif</font></td>   
+    <td><font size="2">編輯</font></td>   
+    <td><img border="0" src="images/_nav6p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav6p.gif</font></td>   
+    <td><font size="2">編輯滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav6r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav6r.gif</font></td>   
+    <td><font size="2">編輯滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav7.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav7.gif</font></td>   
+    <td><font size="2">存檔</font></td>   
+    <td><img border="0" src="images/_nav7p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav7p.gif</font></td>   
+    <td><font size="2">存檔滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav7r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav7r.gif</font></td>   
+    <td><font size="2">存檔滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav8.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav8.gif</font></td>   
+    <td><font size="2">取消</font></td>   
+    <td><img border="0" src="images/_nav8p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav8p.gif</font></td>   
+    <td><font size="2">取消滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav8r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav8r.gif</font></td>   
+    <td><font size="2">取消滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav9.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav9.gif</font></td>   
+    <td><font size="2">更新</font></td>   
+    <td><img border="0" src="images/_nav9p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav9p.gif</font></td>   
+    <td><font size="2">更新滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav9r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav9r.gif</font></td>   
+    <td><font size="2">更新滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav10.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav10.gif</font></td>   
+    <td><font size="2">重開</font></td>   
+    <td><img border="0" src="images/_nav10p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav10p.gif</font></td>   
+    <td><font size="2">重開滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav10r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav10r.gif</font></td>   
+    <td><font size="2">重開滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav11.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav11.gif</font></td>   
+    <td><font size="2">全刪</font></td>   
+    <td><img border="0" src="images/_nav11p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav11p.gif</font></td>   
+    <td><font size="2">全刪滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav11r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav11r.gif</font></td>   
+    <td><font size="2">全刪滑鼠滑過</font></td>   
+  </tr>   
+  <tr>   
+    <td><img border="0" src="images/_nav12.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav12.gif</font></td>   
+    <td><font size="2">查詢</font></td>   
+    <td><img border="0" src="images/_nav12p.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav12p.gif</font></td>   
+    <td><font size="2">查詢滑鼠按下</font></td>   
+    <td><img border="0" src="images/_nav12r.gif" width="24" height="24"></td>   
+    <td><font face="Courier New" size="2">_nav12r.gif</font></td>   
+    <td><font size="2">查詢滑鼠滑過</font></td>   
+  </tr>   
+</table>   
+<p><font size="2">使用於資料表元件 (Grid component) ：</font></p>     
+<table border="1">   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center">   
+      <p align="center"><img border="0" src="images/_first.gif" width="10" height="10"></td>   
+    <td><font face="Courier New" size="2">_first.gif</font></td>   
+    <td><font size="2">資料表元件移至首筆記錄</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center">   
+      <p align="center"><img border="0" src="images/_end.gif" width="10" height="10"></td>   
+    <td><font face="Courier New" size="2">_end.gif</font></td>   
+    <td><font size="2">資料表元件移至尾筆記錄</font></td>   
+  </tr>   
+</table>   
+<p><font size="2">使用於預設查詢介面 (default query panel) ：</font></p>   
+<table border="1">   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center">   
+      <p align="center"><img border="0" src="images/_up.gif" width="24" height="24"></td>  
+    <td><font face="Courier New" size="2">_up.gif</font></td>  
+    <td><font size="2">上移欄位</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_down.gif" width="24" height="24"></td>  
+    <td><font face="Courier New" size="2">_down.gif</font></td>  
+    <td><font size="2">下移欄位</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_query.gif" width="20" height="20"></td>  
+    <td><font face="Courier New" size="2">_query.gif</font></td>  
+    <td><font size="2">查詢欄位</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_orderby.gif" width="20" height="20"></td>  
+    <td><font face="Courier New" size="2">_orderby.gif</font></td>  
+    <td><font size="2">查詢排序</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_ok.gif" width="20" height="20"></td>  
+    <td><font face="Courier New" size="2">_ok.gif</font></td>  
+    <td><font size="2">輸入確定</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_cancel.gif" width="20" height="20"></td>  
+    <td><font face="Courier New" size="2">_cancel.gif</font></td> 
+    <td><font size="2">取消輸入</font></td> 
+  </tr> 
+</table> 
+<p><font size="2">使用於預覽報表視窗 (report preview window) ：</font></p>   
+<table border="1">   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>   
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center">   
+      <p align="center"><img border="0" src="images/_fit.gif" width="24" height="24"></td>  
+    <td><font face="Courier New" size="2">_fit.gif</font></td>  
+    <td><font size="2">符合視窗大小</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_real.gif" width="24" height="24"></td>  
+    <td><font face="Courier New" size="2">_real.gif</font></td>  
+    <td><font size="2">實際尺寸</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_print.gif" width="20" height="20"></td>  
+    <td><font face="Courier New" size="2">_print.gif</font></td>  
+    <td><font size="2">列印</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center">  
+      <img border="0" src="images/_exit.gif" width="21" height="20"></td>  
+    <td><font face="Courier New" size="2">_exit.gif</font></td>  
+    <td><font size="2">離開</font></td>  
+  </tr>  
+</table>  
+<p>　</p>  
+<p><font size="2">使用於運算式 ProgressShow () (formula <span style="font-size: 9pt">ProgressShow()</span>) ：</font></p>   
+<table border="1">  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>  
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>  
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>  
+  </tr>  
+  <tr>  
+    <td><img border="0" src="images/_proc.gif" width="96" height="32"></td>  
+    <td><font size="2">_</font><font face="Courier New" size="2">proc</font><font size="2">.gif</font></td>  
+    <td><font size="2">Progress panel 圖示</font></td>  
+  </tr>  
+</table>  
+<p><font size="2">使用於萬年月曆輸入面盤 (calendar panel) ：</font></p>   
+<table border="1">  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">圖示</font></td>  
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">檔名</font></td>  
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">用途</font></td>  
+  </tr>  
+  <tr>  
+    <td><img border="0" src="images/_cal.gif" width="160" height="148"></td>  
+    <td><font face="Courier New" size="2">_cal.gif</font></td>  
+    <td><font size="2">月曆輸入面盤背景圖片</font></td>  
+  </tr>  
+</table>  
+<p><font size="2">置換月曆背景圖片，其功能點擊區域 (hit area)   
+如下：</font></p>  
+<p><img border="0" src="images/ch03_04_cal.gif" width="253" height="244"></p> 
+<p>　</p> 
+<hr align=left color="#000000">               
+<table width=596 border=0 cellspacing=1>               
+<tr>               
+<td width=195 align=left valign=top>               
+<a href="ch03_03.html">              
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>              
+<td width=190 align=center valign=top><a href="index.html">              
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>              
+<td width=201 align=right valign=top>              
+<a href="ch04.html">            
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>            
+</tr>            
+</table>            
+            
+<hr align=left color="#000000">            
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~                   
+2004 Probe Technology . All Rights Reserved.</font></p>                  
+                  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,                   
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>                  
+                  
+      </td>               
+    </tr>               
+  </table>               
+  </center>               
+                           
+</body>                           
+                           
+</html>

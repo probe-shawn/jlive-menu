@@ -1,0 +1,302 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Label Component</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></td>
+<td width=190 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter&nbsp;</font></b></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" face="新細明體" size="-1"><a style="text-decoration: none">WebSphere</a></font></b></TD> 
+<td width=210 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><b><font size="4">WebSphere&trade; 安裝 jLIVE&trade; middle ware </font></b><font size="4"><b>(setup    
+jLIVE&trade; middle ware)</b> &nbsp; </font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">安裝前 (Before 
+setup Websphere)：請先按</font><font size="2"> [jslive 授權光碟]\jslive\ 
+Middleware 快速安裝.doc ，安裝 middle ware keypro 
+所需程式模組，否則 jLIVE middle ware 將會自行調整為 light 
+version for development only，屆時只能服務一個線上使用者。</font></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟一 (Step 1)：安裝   
+IBM WebSphere&trade; WebSphere Application Server version 4.0 Advanced Edition   
+Single Server&nbsp;</font></p>  
+<ol>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">測試版的網址：http://www7b.boulder.ibm.com/wsdd/downloads/evaluation.html#WAS。</font></li>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">IBM HTTP server 
+    請一併安裝，應用程式模組 (Html and java classes)&nbsp; ，將由 
+    IBM HTTP server 啟動。</font></li> 
+</ol> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟二 (Step 2)：建立   
+J2EE Web Application Module -- jslive.war 。</font></p>  
+<ol>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">選擇執行選單【開始】【程式集】【IBM   
+    WebSphere】【應用程式伺服器 V40 AES】【應用程式組合工具】。</font></li>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">在</font><font size="2">【一般】</font><font size="2">標籤頁中選擇  
+    <b>Web 模組</b>，按確定鍵進入應用程式組譯器視窗。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">在右下方的【</font><font size="2">新建</font><font size="2">】</font><font size="2">標籤頁中填入<br> 
+    顯示名稱：ProbeServlet<br> 
+    可分送：核取 (checked)<br> 
+    類別路徑：jslive.jar<br> 
+    按套用鍵後，左邊樹狀根節點會更名為 ProbeServlet。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">按選標示  
+    (mark) Web 元件節點後，按滑鼠右鍵選擇</font><font size="2">【</font><font size="2">新建</font><font size="2">】選單。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">在新建 Web  
+    元件視窗的</font><font size="2">【</font><font size="2">一般</font><font size="2">】</font><font size="2">標籤頁中填入<br> 
+    元件名稱：ProbeServlet<br> 
+    顯示名稱：ProbeServlet<br> 
+    元件類型：核選 Servlet<br> 
+    類別名稱：com.probe.jslive.ProbeServlet<br> 
+    按確定鍵後離開新建 Web 元件視窗。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">按選標示  
+    (mark) Servlet 對映 節點後，按滑鼠右鍵選擇</font><font size="2">【</font><font size="2">新建</font><font size="2">】選單。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">在新建 Servlet對映視窗的</font><font size="2">【</font><font size="2">一般</font><font size="2">】</font><font size="2">標籤頁中填入<br> 
+    URL 型樣：/*<br> 
+    Servlet：選取 ProbeServlet<br> 
+    按套用鍵，套用此設定後，再次填入<br> 
+    URL 型樣：/com.probe.jslive.ProbeServlet/*<br> 
+    Servlet：選取 ProbeServlet<br> 
+    按確定鍵，套用後，離開新建 Servlet對映視窗。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">展開 檔案  
+    節點，</font><font size="2">按選標示 (mark) JAR 檔  
+    節點後，按滑鼠右鍵選擇</font><font size="2">【</font><font size="2">新增檔案</font><font size="2">】選單。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">在新增檔案視窗中，按瀏覽選取目錄  
+    [jslive 授權光碟]\jslive\jre141\lib<br>
+    根目錄或保存檔：[jslive 授權光碟]\jslive\jre141\lib<br>
+    在右視窗中會出現所有 jar 檔。<br> 
+    jslive.jar<br>
+    imap.jar<br>
+    mail.jar<br>
+    mailapi.jar<br>
+    mysql-connector-java-2.0.14-bin.jar<br>
+    pop3.jar<br>
+    smtp.jar<br>
+    Sprinta2000.jar<br>
+    按新增鍵，將所有 jar 檔加入於選取的檔案列示中。<br> 
+    按確定鍵，離開新增檔案視窗。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">展開 檔案  
+    節點，</font><font size="2">按選標示 (mark) 類別檔  
+    節點後，按滑鼠右鍵選擇</font><font size="2">【</font><font size="2">新增檔案</font><font size="2">】選單。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">在新增檔案視窗中，按瀏覽選取目錄  
+    [jslive 授權光碟]\jslive\jre141\classes<br>
+    根目錄或保存檔：[jslive 授權光碟]\jslive\jre141\classes<br>
+    在右視窗中會出現所有檔案。<br>
+    ServletCallTest.class<br>
+    按新增鍵，將所有檔案加入於選取的檔案列示中。<br>
+    按確定鍵，離開新增檔案視窗。</font></li>
+  <li>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">按【檔案】【另存新檔】選單，將檔案存於  
+    c:\temp，檔名為 jslive.war。&nbsp;</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">離開</font><font size="2">應用程式組合工具。<br> 
+    </font></li> 
+</ol> 
+<p><font size="2">步驟三 (Step 3)：在 WebSphere 中建立 jLIVE&trade;  
+middle ware Web 應用程式。</font></p> 
+<ol> 
+  <li><font size="2">選擇執行選單【開始】【程式集】【IBM  
+    WebSphere】【應用程式伺服器 V40 AES】【啟動應用程式伺服器】。</font></li> 
+  <li><font size="2">等待 DOS BOX 中出現 “暫停中；請按 Enter  
+    鍵，繼續作業”訊息。</font></li> 
+  <li><font size="2">選擇執行選單【開始】【程式集】【IBM  
+    WebSphere】【應用程式伺服器 V40 AES】【管理主控台】。</font> 
+  </li> 
+  <li><font size="2">填入安裝時登入 ID ，登入</font><font size="2">應用程式伺服器管理主控台。</font> 
+  </li> 
+  <li><font size="2">展開左方 [節點] 節點的樹狀結構至出現 [企業應用程式]  
+    節點，按選該節點，右方會出現企業應用程式的管理視窗。</font> 
+  </li> 
+  <li><font size="2">按【安裝】鍵後，視窗出現應用程式安裝精靈。填入以下屬性<br> 
+    路徑：c:\temp\jslive.war (由步驟二所製作的 Web 模組)<br> 
+    應用程式名稱：ProbeServlet<br> 
+    環境定義根目錄：/servlet</font> 
+  </li> 
+  <li><font size="2">按下一步鍵。</font> 
+  </li> 
+  <li><font size="2">在指定Web模組的虛擬主電腦和經過前置編譯的  
+    JSP 選項。按下一步。</font> 
+  </li> 
+  <li><font size="2">按完成鍵。</font> 
+  </li> 
+  <li><font size="2">在隨後的視窗上<br> 
+    若出現：必須儲存配置，則按該選項，並於隨後出現的視窗中按確定儲存配置</font><font size="2">。<br> 
+    若出現：必須重新產生外掛程式配置，則</font><font size="2">按該選項，並於隨後出現的視窗中按產生鍵</font><font size="2">。</font> 
+  </li> 
+  <li><font size="2">按結束離開應用程式伺服器管理主控台</font><font size="2">。 
+    </font> 
+  </li> 
+  <li><font size="2">完成後請檢視【WebSphere 安裝路徑】【AppServer】【installedApps】是否已建立以下目錄及檔案<br>
+    ProbeServlet.ear<br>
+    |---META-INF<br>
+    |---jslive.war<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; |---META-INF<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; |---WEB-INF<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |---classes<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |---lib<br>
+    其中 classes 目錄下含在組合應用程式時，所選入的檔案。<br>
+    其中 lib 目錄下含在組合應用程式時，所選入的檔案。<br>
+    在下一步驟將根據 Java 
+    版本之不同，將所需的相關檔案複製至此兩目錄中。<br>
+    </font>
+  </li>
+</ol>
+<p><font size="2">步驟四(Step 4)：Java 版本檢查與調整 (Java version 
+check and patch)。<br>
+<br>
+由於 WebSphere Java VM 是由 IBM 所發展的版本，與 Sun Java 
+的版本不盡相同，jLIVE middle ware 是 Sun Java 1.41 
+版本，如果您所使用的 WebSphere Java 版本是 1.41 
+版，請直接進行步驟五。</font></p>
+<ol>
+  <li><font size="2">檢查 Java 版本。<br>
+    在 DOS BOX 中，change directory (cd) 至</font><font size="2">【</font><font size="2">WebSphere 安裝路徑】【AppServer】【java】【bin】，輸入 
+    java -version 。如果 版本小於 1.4 請進行以下步驟。</font></li>
+  <li><font size="2">加入 xml jar 檔。<br>
+    將 </font><font size="2">[jslive 授權光碟]\jslive\jre141\lib_131\xml 
+    的所有檔案複製至 </font><font size="2">【WebSphere 安裝路徑】【AppServer】【installedApps】</font><font size="2">【ProbeServlet.ear】</font><font size="2">【jslive.war】</font><font size="2">【WEB-INF】</font><font size="2">【lib】目錄下。</font></li>
+  <li><font size="2">加入 JCE jar 檔。<br>
+    將 </font><font size="2"> 
+    [jslive 授權光碟]\jslive\jre141\lib_131\jre13\lib 目錄下的 jce.jar 
+    及jsse.jar 複製至 </font><font size="2">【WebSphere 安裝路徑】【AppServer】【java】【jre】【lib】目錄下。<br>
+    將 </font><font size="2"> 
+    [jslive 授權光碟]\jslive\jre141\lib_131\jre13\lib\ext 目錄下的 sunjce_provider.jar 
+    複製至 【WebSphere 安裝路徑】【AppServer】【java】【jre】【lib】【ext】目錄下。<br>
+    將 </font><font size="2"> 
+    [jslive 授權光碟]\jslive\jre141\lib_131\jre13\lib\security 目錄下的 local_policy.jar 
+    及 US_export_policy.jar 複製至 【WebSphere 安裝路徑】【AppServer】【java】【jre】【lib】【security】目錄下。</font></li>
+</ol>
+<p>　</p>
+<p><font size="2">步驟五(Step 5)：重新啟動 WebSphere 及 IBM HTTP SERVER。</font></p> 
+<ol> 
+  <li><font size="2">選擇執行選單【開始】【程式集】【IBM HTTP  
+    server】【啟動 HTTP Server】。</font></li> 
+  <li><font size="2">在【WebSphere 安裝路徑】</font><font size="2">【AppServer】</font><font size="2">【bin】下，執行  
+    stopServer.bat。</font></li> 
+  <li><font size="2">在【WebSphere 安裝路徑】【AppServer】【bin】下，執行  
+    startServer.bat。</font></li> 
+</ol> 
+<p><font size="2">步驟六(Step 6)：測試 jLIVE&trade; middle ware。</font></p> 
+<ol> 
+  <li><font size="2">等待 DOS BOX 中出現 “暫停中；請按 Enter  
+    鍵，繼續作業”訊息。</font></li> 
+  <li><font size="2">開啟 IE ，在 URL 中輸入<br> 
+    HTTP://localhost<br> 
+    IE 將會出現 IBM HTTP Server 歡迎使用的畫面，表示 HTTP Server  
+    服務正常   
+    。</font></li>  
+  <li><font size="2">在 URL 中輸入<br> 
+    HTTP://localhost/servlet/com.probe.jslive.ProbeServlet/<br> 
+    IE 將會出現 jLIVE&trade; middle ware 的管理模組，輸入 ID  
+    Password 後，按選Server Configuration 。</font></li> 
+  <li><font size="2">檢視 Authorized ID 及 Authorized concurrent users  
+    是否為所購買的授權數。</font></li> 
+  <li><font size="2">如果出現任何無法啟動或非預期的狀況，請將</font><font size="2">【WebSphere 安裝路徑】【AppServer】【logs】目錄下的記錄檔傳至 
+    service@probe.com.tw。</font></li>
+</ol>
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>關於應用程式  
+deployment&nbsp;</b></font></p>  
+<ol> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">由 jLIVE Builder&trade;  
+    所產生的執行模組包括 *.html 及以下 class  
+    的所有檔案，可安置於 HTTP Server。<br> 
+    將其複製於 [IBM HTTP Server 安裝路徑]\htdocs\下。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">IBM HTTP server 
+    及WebSphere 預設是運作於 port 80，所以請檢查應用程式開發時的 
+    middle ware HTTP 是否已改為 80 port。</font></li>
+</ol>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>關於 JDBC  
+driver&nbsp;</b></font></p> 
+<ol> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">可使用  
+    WebSphere 已安裝的 JDBC Driver。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">以 WebSphere  
+    安裝 JDBC Driver。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">若只使用於  
+    jLIVE&trade; 系統，可以直接將 JDBC jar 檔，複製於[WebSphere  
+    安裝路徑]\AppServer\installedApps\ProbeServlet.ear\jslive.war\WEB-INF\lib  
+    中，若是 class 檔則複製至[WebSphere 安裝路徑]\AppServer\installedApps\ProbeServlet.ear\jslive.war\WEB-INF\classes  
+    中。<br> 
+    例如：<br>
+    安置 middle ware 中的 oracle driver ：將 </font><font size="2"> 
+    [jslive 授權光碟]\jslive\jre141\oracle_driver 
+    目錄下的所有檔案複製至 </font><font size="2">【WebSphere 安裝路徑】【AppServer】【installedApps】【ProbeServlet.ear】【jslive.war】【WEB-INF】【classes】目錄下。</font></li>
+</ol>
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></td> 
+<td width=196 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=204 align=right valign=top> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+       
+      </td>    
+    </tr>    
+  </table>    
+  </center>    
+       
+      </body>     
+     
+</html>

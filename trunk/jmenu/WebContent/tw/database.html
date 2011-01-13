@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>DataBase</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" cellpadding="0" cellspacing="0"
+bordercolor="#FFFFFF" bordercolordark="#FFFFFF"
+bordercolorlight="#FFFFFF" style="border-style: solid; border-color: #FFFFFF">
+    <tr>
+        <td align="left" colspan="2"><img border="0" src="images/jlogo_small.gif" align="left" width="144" height="25"></td> 
+    </tr> 
+    <tr>
+        <td align="center" colspan="2">
+          <p align="center"><img border="0" src="../images/Database.gif" width="217" height="31"></p>
+        </td> 
+    </tr> 
+    <tr>
+        <td bgcolor="#FFFFFF" colspan="2"><font color="#0080FF" size="4">資料庫   
+          Database</font></td>   
+    </tr>   
+    <tr>  
+        <td bgcolor="#CDCDFF" colspan="2" style="text-indent: 0">  
+          <p style="text-indent: 20"><font size="3">jLIVE 系統透過 jLIVE  
+          middle ware 以 JDBC   
+          的連結，操控後端的資料庫系統。jLIVE   
+          會根據所使用的 JDBC   
+          驅動程式之支援性，適時調整系統內部的作業狀態。應用程式可同時連結多個不同的資料庫系統，每個資料庫系統在設計時，皆以所謂的資料庫別名   
+          DB Alias   
+          參照使用，資料庫設計時如果能不使用個別的資料庫特殊功能，原則上資料庫系統是可以在不改變程式碼而可按需求隨時更替。</font></p>  
+        </td>         
+    </tr>         
+    <tr>         
+        <td colspan="2"><hr size="1">         
+        </td>         
+    </tr>         
+    <tr>         
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">新增   
+          :&nbsp;</font></td>          
+        <td><font size="3">新增資料庫系統。</font></td>         
+    </tr>         
+    <tr>         
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">測試   
+          資料庫 連結 :&nbsp;</font></td>          
+        <td><font size="3">按驅動程式及URL的設定，透過middle   
+          ware連結資料庫。</font></td>          
+    </tr>          
+    <tr>          
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">取消   
+          :&nbsp;</font></td>          
+        <td><font size="3">取消新增。</font></td>         
+    </tr>         
+    <tr>         
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">存檔 :&nbsp;</font></td>         
+        <td><font size="3">存檔。</font></td>        
+    </tr>        
+    <tr>        
+        <td align="right" valign="top" nowrap><font color="#0080FF" size="3">刪除   
+          :&nbsp;</font></td>          
+        <td><font size="3">移除資料庫參照。</font></td>         
+    </tr>         
+    <tr>         
+        <td colspan="2" nowrap><hr size="1" color="#800080">         
+        </td>         
+    </tr>         
+    <tr>         
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">資料庫別名  
+          :&nbsp;</font></td>         
+        <td><font size="3">資料庫在程式設計時的參照名稱。名稱不可填空白，最好以英文字命名，在同一個應用程式中不可有相同的資料庫別名。</font></td>         
+    </tr>         
+    <tr>          
+        <td valign="top" align="right" nowrap><font size="3" color="#666699">驅動程式 :&nbsp; 
+          </font></td>          
+        <td><font size="3" color="#000000">資料庫的 JDBC  
+          驅動程式。可以在下拉式選單中選取常用的驅動程式，系統將會把相對的  
+          URL 樣式填入URL中，只要更改主機及資料庫名稱即可。亦可自行填入未列於常用選單的驅動程式。驅動程式必須在啟動  
+          jLIVE middle ware 時正確的安裝，相關資料請查閱 jLIVE  
+          middle ware 系統。jLIVE middle ware 支援 JDBC TYPE1, TYPE2,  
+          TYPE3, TYPE4 的驅動程式。</font></td>          
+    </tr>          
+    <tr>          
+        <td rowspan="2" valign="top" align="right" nowrap><font color="#666699" size="3">Url  
+          :&nbsp;</font></td>         
+        <td><font size="3">URL  
+          是根據驅動程式提供的廠商而有不同的設定方式及樣式，必須參照各家廠商所提供的文件正確的設定。例如  
+          :&nbsp;</font></td>         
+    </tr>         
+    <tr>          
+        <td> 
+          <ol> 
+            <li><font size="3">選擇驅動程式為 com.inet.tds.TdsDrive。</font></li> 
+            <li><font size="3">URL 列出 jdbc:inetdae:<font color="#0000FF">hostname</font>:1433?database=<font color="#0000FF">DATABASE</font>&amp;charset=Cp950        
+          之設定，其中 <font color="#0000FF">hostname</font> 和 <font color="#0000FF">DATABASE</font>  
+              名稱需要更改。</font></li> 
+            <li><font size="3">假設主機名稱 : SUPER，資料庫名稱 : DB。</font></li> 
+            <li><font size="3">則將URL更改成jdbc:inetdae:<font color="#0000FF">SUPER</font>:1433?database=<font color="#0000FF">DB</font>&amp;charset=Cp950</font></li> 
+          </ol> 
+        </td>         
+    </tr>         
+    <tr>        
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">使用者  
+          :&nbsp;</font></td>         
+        <td><font size="3">資料庫登入的使用者名稱。</font></td>         
+    </tr>         
+    <tr>         
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">密碼  
+          :&nbsp;</font></td>        
+        <td><font size="3">資料庫登入的使用者密碼。</font></td>        
+    </tr>        
+    <tr>        
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">類型  
+          :&nbsp;</font></td>           
+        <td><font size="3">資料庫Schema，有支援Schema的資料庫系統才需設定，例如Oracle<font color="#000000"></font>。</font></td>           
+    </tr>           
+    <tr>           
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Type  
+          :&nbsp;</font></td>           
+        <td><font size="3">JDBC 資料庫執行 SQL statement  
+          時所要產生的結果集的型式。JDBC version 1.0 不支援 Type  
+          和 concurrency。除非驅動程式不支援，否則不要選用  
+          FORWARD_ONLY，那對系統效率的影響非常大。SCROLL_INSENITIVE+1  
+          是廠商所各別加入的增強版，例如 inet for mssql。</font></td>           
+    </tr>           
+    <tr>           
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">Concurrency  
+          :&nbsp;</font></td>            
+        <td><font size="3">JDBC 資料庫執行 SQL statement  
+          時所要產生的結果集的同步存取狀態。JDBC 1.0 和  
+          舊版的驅動程式大都不支援 UPDATABLE， jLIVE middle ware  
+          會自行運作資料記錄更新的操作 。UPDATABLE+1 和  
+          UPDATABLE+2 是廠商所各別加入的增強版，例如 inet for  
+          mssql。</font></td>            
+    </tr>            
+    <tr>            
+        <td valign="top" align="right" nowrap><font color="#666699" size="3">文件附註  
+          :&nbsp;</font></td>          
+        <td><font size="3">設計者對於資料庫相關說明。</font></td>          
+    </tr>          
+</table>        
+</body>        
+</html>        

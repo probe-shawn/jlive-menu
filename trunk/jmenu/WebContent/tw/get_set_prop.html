@@ -1,0 +1,4285 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>GetProp</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width="100%" border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+　</td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" size="2">
+<a href="appendix.html" style="text-decoration: none"><font color="#000000">Appendix</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+　</td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+
+<p><font size="4"><b><a name="top"></a>運算式元件屬性存取 <span style="font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA; mso-bidi-font-weight: normal" lang="EN-US"><b style="mso-bidi-font-weight: normal; font-family: Arial; mso-fareast-font-family: 細明體; mso-bidi-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">(Formula  
+Get/Set Properties)</b></span></b></font></p>  
+<table>  
+  <tr>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbttext.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"> 
+    <font size="2"> 
+    <a href="#label">標籤元件( Label)</a></font></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtedit.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#edit"><font size="2">編輯方塊   
+      (Edit)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtpass.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><font size="2"><a href="#password">密碼元件   
+      (Password)</a></font></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtcheck.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><font size="2"><a href="#checkbox">核取方塊   
+      (Checkbox)</a></font></td>  
+  </tr>  
+  <tr>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtradio.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#radiogroup"><font size="2">選擇鈕 (Radiogroup)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtlistbox.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#listbox"><font size="2">清單方塊 (Listbox)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtcombo.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#combobox"><font size="2">下拉式清單方塊   
+      (Combobox)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbttree.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#tree"><font size="2">樹狀元件   
+      (Tree)</font></a></td>  
+  </tr>  
+  <tr>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtcombotree.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#combotree"><font size="2">下拉式樹狀元件   
+      (Combotree)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtslider.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#slider"><font size="2">計數器元件   
+      (Slider)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtgrid.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#grid"><font size="2">資料表元件   
+      (Grid)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtmemo.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#memo"><font size="2">備忘錄元件   
+      (Memo)</font></a></td>  
+  </tr>  
+  <tr>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtimage.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#image"><font size="2">圖片元件   
+      (Image)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtbutton.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#button"><font size="2">按鈕元件   
+      (Button)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtimageinvoker.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#imageinvoker"><font size="2">圖片引發器   
+      (Image Invoker)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbttab.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#tab"><font size="2">索引標籤元件(Tabbed   
+      Pane)</font></a></td>  
+  </tr>  
+  <tr>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtchart.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#chart"><font size="2">統計圖元件   
+      (Chart)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbttimer.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#timer"><font size="2">計時器 (Timer)</font></a></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtbarcode.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><a href="#barcode"><font size="2">條碼元件 (Barcode)</font></a></td>  
+    <td vAlign="center">           
+    <img border="0" src="images/dbtmulti.gif" width="25" height="25"></td>  
+    <td vAlign="center"><font size="2"><a href="#multiline">多行編輯元件(Multi-line 
+    Edit)</a></font></td>  
+  </tr>  
+  <tr>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtformcontainer.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><font size="2"><a href="#formcontainer">視窗容器 (Form 
+    container)</a></font></td>  
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtmaskedit.gif" width="25" height="25"></font></td>  
+    <td vAlign="center"><font size="2"><a href="#maskedit">MaskEdit(MaskEdit)</a></font></td> 
+    <td vAlign="center"><font size="2"> 
+    <img border="0" src="images/dbtspinner.gif" width="25" height="25"></font></td> 
+    <td vAlign="center"><font size="2"><a href="#spinner">Spinner(Spinner)</a></font></td> 
+    <td vAlign="center"></td> 
+    <td vAlign="center"></td> 
+  </tr> 
+</table> 
+ 
+<p>　</p>
+
+<p style="text-indent: 20"><font size="2">jLIVE Builder&trade;  
+元件屬性的設定，可分為一、設計期 (design time)  
+的靜態屬性設定，二、執行期 (runtime)  
+以事件或運算式設定屬性。以元件事件設定屬性，可以一次同時設定多個元件；以運算式則除了可以設定屬性外，亦可以讀取元件內含屬性值。屬性存取運算式  
+：</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699"><font face="Courier New">SetProp(&quot;</font>元件名稱<font face="Courier New">&quot;,  
+&quot;</font>屬性<font face="Courier New">&quot;,&nbsp; </font>值<font face="Courier New">)</font> </font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699" face="Courier New">SetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699" face="Courier New">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699" face="Courier New">&quot;,&nbsp; 
+</font><font color="#666699">值</font><font color="#666699" face="Courier New">1,&nbsp; 
+</font><font color="#666699">值</font><font color="#666699" face="Courier New">2)</font>：屬性設定。</font></p>
+
+<p style="text-indent: 20"><font size="2"><font color="#666699" face="Courier New">GetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699" face="Courier New">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699" face="Courier New">&quot;)</font>：屬性讀取。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2">屬性設定時，按元件類別及屬性之不同，輸入的參數值亦不相同。元件名稱及屬性皆須區分大小寫 
+(case sensitive)。設計師可以在事件流程中，存取元件屬性，動態的改變元件外觀、顯示、致能及內含值。</font></p> 
+ 
+<p style="text-indent: 20">　</p> 
+ 
+<p><font size="2"><b><a name="label"></a>標籤元件 (Label)</b></font></p> 
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>  
+&nbsp;(Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>  
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>  
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>  
+&nbsp;(Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">內含值文字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+ 
+<p>　</p> 
+ 
+<p><font size="2"><b><a name="edit"></a>編輯方塊 (Edit)</b></font></p>  
+  
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>  
+&nbsp;(Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>  
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>  
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>  
+&nbsp;(Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1 運算式重新計算</font></td>   
+    <td>　</td>   
+    <td><font size="2">運算式重新計算。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">editable</font></td>   
+    <td><font size="2">1 可編輯，0 唯讀</font></td>   
+    <td>　</td>   
+    <td><font size="2">可編輯與唯讀。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td><font size="2">文字串</font></td>   
+    <td>　</td>   
+    <td><font size="2">設定文字串為其內含值。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">select</font></td>   
+    <td><font size="2">起始位置</font></td>   
+    <td><font size="2">終止位置</font></td>   
+    <td><font size="2">將起始至終止位置的文字標示為選取，位置由    
+      1 起算。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">caretpos</font></td>   
+    <td><font size="2">游標位置</font></td>   
+    <td>　</td>   
+    <td><font size="2">設定游標位置，位置由 1    
+      起算。</font></td>   
+  </tr>   
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">iseditable</font></td>   
+    <td colspan="2"><font size="2">1 可編輯，0 唯讀</font></td>   
+    <td><font size="2">可編輯與唯讀。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">編輯方塊中內含值文字串。</font></td>   
+  </tr>   
+  <tr>
+    <td><font size="2">masktext</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">編輯方塊中加上格式樣式的內含值文字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">length</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">內含文字串長度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>   
+   
+<p>　</p>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p>　</p>
+
+<p><font size="2"><b><a name="password"></a>密碼元件 (Password)</b></font></p>  
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td></td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">editable</font></td>  
+    <td><font size="2">1 可編輯，0 唯讀</font></td>  
+    <td>　</td>  
+    <td><font size="2">可編輯與唯讀。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">iseditable</font></td>  
+    <td colspan="2"><font size="2">1 可編輯，0 唯讀</font></td>  
+    <td><font size="2">可編輯與唯讀。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p>　</p>
+
+<p><font size="2" color="#000000"><a name="checkbox"></a><b>核取方塊   
+(Checkbox)</b></font></p>  
+ 
+<table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br> 
+&nbsp;(Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      <br> 
+    (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 運算式重新計算</font></td>  
+    <td>　</td>  
+    <td><font size="2">核取運算式重新計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">text</font></td>  
+    <td><font size="2">文字串</font></td>  
+    <td>　</td>  
+    <td><font size="2" color="#000000">設定核取方塊</font><font size="2">說明文字(   
+      Label text)。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">1 核取，0 不核取</font></td>  
+    <td>　</td>  
+    <td><font size="2" color="#000000">設定核取方塊為核取 (Checked)   
+      或不核取 (Unchecked)狀態</font><font size="2">。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td colspan="2"><font size="2">1 核取，0 不核取</font></td>  
+    <td><font size="2">核取或不核取。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">text</font></td>  
+    <td colspan="2"><font size="2">文字串</font></td>  
+    <td><font size="2" color="#000000">核取方塊</font><font size="2"><font color="#000000">的</font>說明文字(   
+      Label text)。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+
+<p><font size="2" color="#000000"><b><a name="radiogroup"></a>選擇鈕 (Radiogroup)</b></font></p>  
+ 
+<table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 運算式重新計算</font></td>  
+    <td>　</td>  
+    <td><font size="2">核選運算式重新計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">N 核選第 N 個選擇按鈕</font></td>  
+    <td>　</td>  
+    <td><font size="2">核選第 N 個選擇按鈕，N 由 1 起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">selected</font></td>  
+    <td colspan="2"><font size="2">N 被核選的是第 N 個選擇按鈕</font></td>  
+    <td><font size="2">被核選的是第 N 個選擇按鈕，N 由 1 起算。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+
+<p><font size="2" color="#000000"><b><a name="listbox"></a>清單方塊 (Listbox)</b></font></p>  
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br> 
+&nbsp;(Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br> 
+&nbsp;(Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td> 
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 重整清單方塊資料</font></td>  
+    <td>　</td>  
+    <td><font size="2">重整清單方塊資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">N 選取第 N 個選擇項目</font></td>  
+    <td>　</td>  
+    <td><font size="2">選取第 N 個選擇項目，N 由 1 起算，N = 0   
+      清除選取。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">selected</font></td>  
+    <td colspan="2"><font size="2">N 被選取的是第 N 個選擇項目</font></td>  
+    <td><font size="2">被選取的是第N個選擇項目，N由 1 起算，N=0 未選取。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">selectedcode</font></td>   
+    <td colspan="2"><font size="2">被選取的關連資料值。</font></td>   
+    <td><font size="2">被選取的關連資料值。沒有選取列時回傳空字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">selectedtext</font></td>   
+    <td colspan="2"><font size="2">被選取的顯示資料值。</font></td>   
+    <td><font size="2">被選取的顯示資料值。沒有選取列時回傳空字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+
+<p><font size="2" color="#000000"><b><a name="combobox"></a>下拉式清單方塊   
+(Combobox)</b></font></p>  
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 重整下拉式清單方塊資料</font></td>  
+    <td>　</td>  
+    <td><font size="2">重整下拉式清單方塊資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">N 選取第 N 個選擇項目</font></td>  
+    <td>　</td>  
+    <td><font size="2">選取第 N 個選擇項目，N 由 1 起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">selected</font></td>  
+    <td colspan="2"><font size="2">N 被選取的是第 N 個選擇項目</font></td>  
+    <td><font size="2">被選取的是第 N 個選擇項目，N 由 1 起算。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">selectedcode</font></td>   
+    <td colspan="2"><font size="2">被選取的關連資料值。</font></td>   
+    <td><font size="2">被選取的關連資料值。<br>
+    可編輯時，傳回目前編輯值。<br>
+    沒有選取時回傳空字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">selectedtext</font></td>   
+    <td colspan="2"><font size="2">被選取的顯示資料值。</font></td>   
+    <td><font size="2">被選取的顯示資料值。<br>
+    可編輯時，若有相對選項則傳回選項的顯示字串，否則傳回目前編輯值。<br>
+    沒有選取時回傳空字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+
+<p>　</p>
+
+<p><font size="2" color="#000000"><b><a name="tree"></a>樹狀元件 (Tree)</b></font></p>  
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br> 
+&nbsp;(Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      <br> 
+    (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td> 
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 重建樹狀元件</font></td>  
+    <td>　</td>  
+    <td><font size="2">重建樹狀元件，重整資料來源連結至樹狀節點的資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">reload</font></td>  
+    <td><font size="2">1 重整樹狀元件</font></td>  
+    <td>　</td>  
+    <td><font size="2">重整樹狀元件，由目前選取節點，重整以下的所有子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">leafonly</font></td>  
+    <td><font size="2">1 只能選取末端節點，0 不限末端節點</font></td>  
+    <td>　</td>  
+    <td><font size="2">限制使用者只能選取末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">RecordNo 選取資料記錄編號為 RecordNo的節點</font></td>  
+    <td><font size="2">1： 引發事件<br>
+    0 ：不引發事件</font></td>  
+    <td><font size="2">選取資料記錄編號為 RecordNo 的節點。<br>  
+      RecordNo = 0 ，清除選取。<br>  
+      如果設定</font><font SIZE="2" color="#666699">被選時移至關連資料來源記錄</font><font size="2">，連結的資料來源，會移至 RecordNo 資料記錄。<br>
+    節點將會捲動至可視區域。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">expand</font></td>   
+    <td><font size="2">RecordNo</font></td>   
+    <td><font size="2">1：展開<br>
+    0：隱藏</font></td>   
+    <td><font size="2">資料記錄編號為 RecordNo 的節點。原選取節點不會改變。展開或隱藏的節點將會捲動至可視區域。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">shownode</font></td>   
+    <td><font size="2">RecordNo</font></td>   
+    <td>　</td>   
+    <td><font size="2">原選取節點不會改變。 節點將會捲動至可視區域。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">leafonly</font></td>  
+    <td colspan="2"><font size="2">1 只能選取末端節點，0   
+      不限末端節點</font></td>  
+    <td><font size="2">讀取是否限制使用者只能選取末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td colspan="2"><font size="2">RecordNo 被選取節點的資料記錄編號</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isexpand</font></td>  
+    <td colspan="2"><font size="2">1 展開 ，0 隱藏</font></td>  
+    <td><font size="2">被選取節點展開或隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">first</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      樹狀元件第一個節點的資料記錄編號</font></td>  
+    <td><font size="2">讀取樹狀元件第一個節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isleaf</font></td>  
+    <td colspan="2"><font size="2">1 末端節點，0 不是末端節點</font></td>  
+    <td><font size="2">被選取的節點是否為末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">childcount</font></td>  
+    <td colspan="2"><font size="2">N 子節點數</font></td>  
+    <td><font size="2">被選取的節點擁有 N 個子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">dotcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的   
+      DotCode 資料</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄的 DotCode 資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">code</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的   
+      Code 資料</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄的 Code 資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">level</font></td>  
+    <td colspan="2"><font size="2">N 被選取節點位於樹狀結構的 N   
+      階層</font></td>  
+    <td><font size="2">被選取節點位於樹狀結構的 N 階層。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">firstchild</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的第一個子節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的第一個子節點的記錄編號。<br>  
+      RecordNo = 0 ，沒有子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">dottext</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的顯示資料</font></td>  
+    <td><font size="2">被選取節點的資料記錄的顯示 (Display)   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">siblingcount</font></td>  
+    <td colspan="2"><font size="2">N 旁系節點數</font></td>  
+    <td><font size="2">被選取的節點擁有 N   
+      個同一階層的旁系節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parent</font></td>  
+    <td colspan="2"><font size="2">RecordNo 父節點的資料記錄編號</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parentdotcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的父節點的資料記錄的   
+      DotCode 資料</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄的 DotCode   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parentcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的父節點的資料記錄的   
+      Code 資料</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄的 Code   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">prevsibling</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的前一個旁系節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的前一個旁系節點的記錄編號。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">nextsibling</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的下一個旁系節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的下一個旁系節點的記錄編號。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">y</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">w</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">h</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p>　</p>
+
+<p><font size="2" color="#000000"><b><a name="combotree"></a>下拉式樹狀元件   
+(Combotree)</b></font></p>  
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br> 
+&nbsp;(Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      <br> 
+    (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td> 
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 重建樹狀元件</font></td>  
+    <td>　</td>  
+    <td><font size="2">重建樹狀元件，重整資料來源連結至樹狀節點的資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">reload</font></td>  
+    <td><font size="2">1 重整樹狀元件</font></td>  
+    <td>　</td>  
+    <td><font size="2">重整樹狀元件，由目前選取節點，重整以下的所有子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">leafonly</font></td>  
+    <td><font size="2">1 只能選取末端節點，0 不限末端節點</font></td>  
+    <td>　</td>  
+    <td><font size="2">限制使用者只能選取末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">RecordNo 選取資料記錄編號為 RecordNo的節點</font></td>  
+    <td><font size="2">1： 引發事件<br>
+    0 ：不引發事件</font></td>  
+    <td><font size="2">選取資料記錄編號為 RecordNo 的節點。<br>  
+      RecordNo = 0 ，清除選取。<br>  
+      如果設定</font><font SIZE="2" color="#666699">被選時移至關連資料來源記錄</font><font size="2">，連結的資料來源，會移至 RecordNo 資料記錄。<br>
+    節點將會捲動至可視區域。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">expand</font></td>   
+    <td><font size="2">RecordNo</font></td>   
+    <td><font size="2">1：展開<br>
+    0：隱藏</font></td>   
+    <td><font size="2">資料記錄編號為 RecordNo 的節點。原選取節點不會改變。展開或隱藏的節點將會捲動至可視區域。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">shownode</font></td>   
+    <td><font size="2">RecordNo</font></td>   
+    <td>　</td>   
+    <td><font size="2">原選取節點不會改變。 節點將會捲動至可視區域。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">leafonly</font></td>  
+    <td colspan="2"><font size="2">1 只能選取末端節點，0   
+      不限末端節點</font></td>  
+    <td><font size="2">讀取是否限制使用者只能選取末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td colspan="2"><font size="2">RecordNo 被選取節點的資料記錄編號</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isexpand</font></td>  
+    <td colspan="2"><font size="2">1 展開 ，0 隱藏</font></td>  
+    <td><font size="2">被選取節點展開或隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">first</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      樹狀元件第一個節點的資料記錄編號</font></td>  
+    <td><font size="2">讀取樹狀元件第一個節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isleaf</font></td>  
+    <td colspan="2"><font size="2">1 末端節點，0 不是末端節點</font></td>  
+    <td><font size="2">被選取的節點是否為末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">childcount</font></td>  
+    <td colspan="2"><font size="2">N 子節點數</font></td>  
+    <td><font size="2">被選取的節點擁有 N 個子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">dotcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的   
+      DotCode 資料</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄的 DotCode 資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">code</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的   
+      Code 資料</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄的 Code 資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">level</font></td>  
+    <td colspan="2"><font size="2">N 被選取節點位於樹狀結構的 N   
+      階層</font></td>  
+    <td><font size="2">被選取節點位於樹狀結構的 N 階層。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">firstchild</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的第一個子節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的第一個子節點的記錄編號。<br>  
+      RecordNo = 0 ，沒有子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">dottext</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的顯示資料</font></td>  
+    <td><font size="2">被選取節點的資料記錄的顯示 (Display)   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">siblingcount</font></td>  
+    <td colspan="2"><font size="2">N 旁系節點數</font></td>  
+    <td><font size="2">被選取的節點擁有 N   
+      個同一階層的旁系節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parent</font></td>  
+    <td colspan="2"><font size="2">RecordNo 父節點的資料記錄編號</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parentdotcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的父節點的資料記錄的   
+      DotCode 資料</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄的 DotCode   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parentcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的父節點的資料記錄的   
+      Code 資料</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄的 Code   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">prevsibling</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的前一個旁系節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的前一個旁系節點的記錄編號。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">nextsibling</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的下一個旁系節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的下一個旁系節點的記錄編號。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">y</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">w</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">h</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p><font size="2"><b><a name="slider"></a>計數器元件 (Slider)</b></font></p>  
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 運算式重新計算</font></td>  
+    <td>　</td>  
+    <td><font size="2">運算式重新計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">value</font></td>  
+    <td><font size="2">N 內含值</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定計數器內含值為 N。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">value</font></td>  
+    <td colspan="2"><font size="2">N 內含值</font></td>  
+    <td><font size="2">讀取計數器目前內含值。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+
+<p><font size="2" color="#000000"><b><a name="grid"></a>資料表元件 (Table)</b></font></p>  
+  
+<table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+    Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2"><nobr>屬性</nobr>    
+      (Properties)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td><font size="2">　</font></td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件是否可視。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1 重整資料表資料</font></td>   
+    <td>　</td>   
+    <td><font size="2">重整資料表連結資料。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">stopedit</font></td>   
+    <td><font size="2">1 停止編輯模式</font></td>   
+    <td>　</td>   
+    <td><font size="2">停止資料表的編輯模式。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">allowins</font></td>   
+    <td><font size="2">1 允許新增，0 禁止新增</font></td>   
+    <td>　</td>   
+    <td><font size="2">允許或禁止使用者新增資料記錄。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">allowupd</font></td>   
+    <td><font size="2">1 允許編輯，0 禁止編輯</font></td>   
+    <td>　</td>   
+    <td><font size="2">允許或禁止使用者編輯資料記錄。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">allowdel</font></td>   
+    <td><font size="2">1 允許刪除，0 禁止刪除</font></td>   
+    <td>　</td>   
+    <td><font size="2">允許或禁止使用者刪除資料記錄。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">promptmsg</font></td>   
+    <td><font size="2">1 出現確認訊息，0 不出現</font></td>   
+    <td>　</td>   
+    <td><font size="2">出現確認訊息後，再新增、存檔、刪除。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">msgtitle</font></td>  
+    <td><font size="2">文字串</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定確認訊息視窗的標題文字。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selrow</font></td>  
+    <td><font size="2">N 選取列</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定選取列 N，由 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selcol</font></td>  
+    <td><font size="2">N 選取欄</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定選取欄 N，由 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">headertext</font></td>  
+    <td><font size="2">N 第 N 欄</font></td>  
+    <td><font size="2">文字串 表頭文字</font></td>  
+    <td><font size="2">設定第 N 欄的表頭文字。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">rowheight</font></td>  
+    <td><font size="2">N 第 N 列</font></td>  
+    <td><font size="2">M 高度</font></td>  
+    <td><font size="2">將第 N 列的高度設為 M dot 高，N   
+      由 1 起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">colwidth</font></td> 
+    <td><font size="2">N 第 N 欄</font></td> 
+    <td><font size="2">M 寬度</font></td> 
+    <td><font size="2">將第 N 欄的寬度設為 M dot 寬，N 由 1 起算。</font></td> 
+  </tr>
+  <tr>  
+    <td><font size="2">enteraction</font></td> 
+    <td><font size="2">0&nbsp; JAVA 預設，1 由左至右，2 由上至下。</font></td> 
+    <td>　</td> 
+    <td><font size="2">控制資料表 ENTER 鍵瀏覽次序。 </font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">freeze</font></td>   
+    <td><font size="2">N 第 N 欄</font></td>   
+    <td><font size="2">M 計 M 欄</font></td>   
+    <td><font size="2">由第 N 欄起算計 M 欄，固定不捲動，N 由 1 起算。M 值為 0&nbsp; 解除固定不捲動。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">allowins</font></td> 
+    <td colspan="2"><font size="2">1 允許新增，0 禁止新增</font></td>  
+    <td><font size="2">允許或禁止使用者新增資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">allowupd</font></td> 
+    <td colspan="2"><font size="2">1 允許編輯，0 禁止編輯</font></td>  
+    <td><font size="2">允許或禁止使用者編輯資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">allowdel</font></td> 
+    <td colspan="2"><font size="2">1 允許刪除，0 禁止刪除</font></td>  
+    <td><font size="2">允許或禁止使用者刪除資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">ispromptmsg</font></td> 
+    <td colspan="2"><font size="2">1 出現確認訊息，0 不出現</font></td>  
+    <td><font size="2">是否出現確認訊息。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">msgtitle</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">確認訊息視窗的標題文字。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">isediting</font></td> 
+    <td colspan="2"><font size="2">1 編輯狀態，0 非編輯狀態</font></td> 
+    <td><font size="2">資料表目前是否正處於編輯狀態。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">selrow</font></td> 
+    <td colspan="2"><font size="2">N 第 N 列被選取</font></td> 
+    <td><font size="2">傳回被選取列 N，由 1 起算。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">selcol</font></td> 
+    <td colspan="2"><font size="2">N 第 N 欄被選取</font></td> 
+    <td><font size="2">傳回被選取欄 N，由 1 起算。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+
+<p><font size="2"><b><a name="memo"></a>備忘錄元件 (Memo)</b></font></p> 
+ 
+<table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" cellpadding="2"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性  
+      (Properties)&nbsp;</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1  
+      (Value 1)</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2  
+      (Value 2)</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明  
+      (Descriptions)</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">enabled</font></td> 
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td><font size="2">　</font></td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">file</font></td>
+    <td><font size="2">文字串 檔案名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">以前綴路徑加上檔案名稱，下載檔案至備忘錄元件。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">uncfile</font></td> 
+    <td><font size="2">UNC 檔案資源名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">以UNC  
+      檔案資源名稱，下載檔案至備忘錄元件。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">saveas</font></td> 
+    <td><font size="2">UNC 檔案資源名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">將備忘錄內容，存檔成  
+      UNC 檔案資源名稱。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">text</font></td> 
+    <td><font size="2">文字串</font></td> 
+    <td>　</td> 
+    <td><font size="2">以文字串取代備忘錄內容。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">html</font></td> 
+    <td><font size="2">html 文字串</font></td> 
+    <td>　</td>
+    <td><font size="2">以 html 文字串取代備忘錄內容。</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2">refresh</font></td> 
+    <td><font size="2">1</font></td> 
+    <td>　</td>
+    <td><font size="2">重新下載，更新備忘錄內容。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">file</font></td> 
+    <td colspan="2"><font size="2">UNC 檔案資源名稱</font></td> 
+    <td><font size="2">目前備忘錄元件連結的檔案資源名稱。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">prefix</font></td> 
+    <td colspan="2"><font size="2">文字串 前綴路徑</font></td> 
+    <td><font size="2">備忘錄元件的前綴路徑。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">text</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">傳回目前備忘錄元件不含字元屬性的內容。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">attrtext</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">傳回目前備忘錄元件含字元屬性的內容。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+
+<p><font size="2"><b><a name="image"></a>圖片元件 (Image)</b></font></p> 
+ 
+<table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" cellpadding="2"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性  
+      (Properties)&nbsp;</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1  
+      (Value 1)</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2  
+      (Value 2)</font></td> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明  
+      (Descriptions)</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">enabled</font></td> 
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td><font size="2">　</font></td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">file</font></td>
+    <td><font size="2">文字串 檔案名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">以前綴路徑加上檔案名稱，下載檔案至圖片元件。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">uncfile</font></td> 
+    <td><font size="2">UNC 檔案資源名稱</font></td> 
+    <td>　</td> 
+    <td><font size="2">以UNC 檔案資源名稱，下載檔案至圖片元件。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">refresh</font></td> 
+    <td><font size="2">1</font></td> 
+    <td>　</td>
+    <td><font size="2">重新下載，更新圖片內容。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">file</font></td> 
+    <td colspan="2"><font size="2">UNC 檔案資源名稱</font></td> 
+    <td><font size="2">目前圖片元件連結的檔案資源名稱。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">prefix</font></td> 
+    <td colspan="2"><font size="2">文字串 前綴路徑</font></td> 
+    <td><font size="2">圖片元件的前綴路徑。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+
+<p><font size="2" color="#000000"><b><a name="button"></a>按鈕元件 (Button)</b></font></p> 
+ 
+<table border="1" width="100%" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699" width="513"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">text</font></td>  
+    <td><font size="2">文字串</font></td>  
+    <td>　</td>  
+    <td><font size="2" color="#000000">設定按鈕元件</font><font size="2">說明文字  
+      (Face text)。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">text</font></td>  
+    <td colspan="2"><font size="2">文字串</font></td>  
+    <td><font size="2" color="#000000">按鈕元件</font><font size="2"><font color="#000000">的</font>說明文字  
+      (Face text)。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+ 
+<p><font size="2"><b><a name="imageinvoker"></a>圖片引發器 (ImageInvoker)</b></font></p> 
+ 
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699" width="443"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabledat</font></td>  
+    <td><font size="2">N 第 N 區，由 1 起算</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>
+    <td><font size="2">致能與失效。第 N 區為設計時的次序。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+ 
+<p><font size="2"><b><a name="tab"></a>索引標籤元件 (Tabbed pane)</b></font></p> 
+  
+<table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse" bordercolor="#111111">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性    
+      (Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1&nbsp;</font></td>  
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">enabledat</font></td>
+    <td><font size="2">N 第 N 個標籤頁</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">將第 N 個標籤頁，設定為致能或失效，N 由   
+      1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">titleat</font></td>  
+    <td><font size="2">N 第 N 個標籤頁</font></td>  
+    <td><font size="2">文字串</font></td>  
+    <td><font size="2">設定第 N 個標籤頁的標題，N 由 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">N 第 N 個標籤頁</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定第 N 個標籤頁為目前標籤頁，N 由 1   
+      起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">selected</font></td> 
+    <td colspan="2"><font size="2">N 第 N 個標籤頁</font></td>  
+    <td><font size="2">目前標籤頁 N，N 由 1 起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">selectedtitle</font></td> 
+    <td colspan="2"><font size="2">字串</font></td> 
+    <td><font size="2">目前標籤頁的標題文字。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p>
+
+<p><font size="2"><b><a name="chart"></a>統計圖元件 (Chart)</b></font></p> 
+ 
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">重新統計資料並重繪。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">title</font></td>
+    <td><font size="2">文字串</font></td>
+    <td>　</td>
+    <td><font size="2">設定統計圖示的標題文字。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">type</font></td>
+    <td><font size="2">N 編號 N 的統計圖形</font></td> 
+    <td>　</td> 
+    <td><font size="2">以編號 N 的統計圖形，重繪。<br> 
+      N = 1 Belt Chart Fancy。<br> 
+      N = 2 Belt Chart 2D。<br> 
+      N = 3 Belt Chart。<br> 
+      N = 21 Line Chart Fancy。<br> 
+      N = 22 Line Chart Fancy 2。<br> 
+      N = 23 Line Chart 2D。<br> 
+      N = 24 Line Chart 2D 2。<br> 
+      N = 25 Line Chart。<br> 
+      N = 26 Line Chart 2。<br> 
+      N = 31 Pie Chart 。<br> 
+      N = 32 Pie Chart 2D。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td> 
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">title</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">統計圖示的標題文字。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">type</font></td> 
+    <td colspan="2"><font size="2">N 編號 N 的統計圖形</font></td> 
+    <td><font size="2">目前統計圖形的編號。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p>
+
+<p><font size="2" color="#000000"><b><a name="timer"></a>計時器元件 (Timer)</b></font></p> 
+ 
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">delay</font></td>
+    <td><font size="2">N 每隔幾 N 毫秒</font></td> 
+    <td>　</td> 
+    <td><font size="2" color="#000000">重設</font><font size="2">每隔幾 N  
+      毫秒啟動事件。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">time</font></td>   
+    <td><font size="2">yyyyMMddHHmmss</font></td>   
+    <td>　</td>   
+    <td><font size="2" color="#000000">重設時間</font><font size="2">。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">time</font></td>   
+    <td colspan="2"><font size="2">yyyyMMddHHmmss</font></td>   
+    <td><font size="2">讀</font><font size="2" color="#000000">取時間</font><font size="2">。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+ 
+<p><font size="2" color="#000000"><b><a name="barcode"></a>條碼元件  
+(Barcode)</b></font></p> 
+  
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性    
+      (Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td>　</td> 
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1 運算式重新計算</font></td>   
+    <td>　</td>   
+    <td><font size="2">條碼運算式重新計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">text</font></td>  
+    <td><font size="2">文字串&nbsp;</font></td>  
+    <td>　</td> 
+    <td><font size="2" color="#000000">設定條碼</font><font size="2">。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>  
+    <td colspan="2"><font size="2">文字串&nbsp;</font></td>  
+    <td><font size="2">條碼文字。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">masktext</font></td>  
+    <td colspan="2"><font size="2">文字串&nbsp;</font></td>  
+    <td><font size="2">加上 Supplement 的條碼文字。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2">
+<a name="multiline"></a>多行編輯元件(Multi-line Edit)</font></b></p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+   
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111">    
+  <tr>    
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set     
+      Properties</font></td>    
+  </tr>    
+  <tr>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>   
+&nbsp;(Properties)&nbsp;</font></td>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>   
+&nbsp;(Value 1)</font></td>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>   
+&nbsp;(Value 2)</font></td>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>   
+&nbsp;(Descriptions)</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">enabled</font></td>    
+    <td><font size="2">1 致能，0 失效</font></td>    
+    <td>　</td>    
+    <td><font size="2">致能與失效。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">setfocus</font></td>    
+    <td><font size="2">1 設定 Focus</font></td>    
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">visible</font></td>    
+    <td><font size="2">1 顯示，0 隱藏</font></td>    
+    <td>　</td>    
+    <td><font size="2">顯示與隱藏。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">repaint</font></td>    
+    <td><font size="2">1 重繪，2     
+      立即重繪</font></td>    
+    <td>　</td>    
+    <td><font size="2">重繪。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">revalidate</font></td>    
+    <td><font size="2">1 運算式重新計算</font></td>    
+    <td>　</td>    
+    <td><font size="2">運算式重新計算。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">editable</font></td>    
+    <td><font size="2">1 可編輯，0 唯讀</font></td>    
+    <td>　</td>    
+    <td><font size="2">可編輯與唯讀。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">text</font></td>    
+    <td><font size="2">文字串</font></td>    
+    <td>　</td>    
+    <td><font size="2">設定文字串為其內含值。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">select</font></td>    
+    <td><font size="2">起始位置</font></td>    
+    <td><font size="2">終止位置</font></td>    
+    <td><font size="2">將起始至終止位置的文字標示為選取，位置由     
+      1 起算。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">caretpos</font></td>    
+    <td><font size="2">游標位置</font></td>    
+    <td>　</td>    
+    <td><font size="2">設定游標位置，位置由 1     
+      起算。</font></td>    
+  </tr>    
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>    
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get     
+      Properties</font></td>    
+  </tr>    
+  <tr>    
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性     
+      (Properties)</font></td>    
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值     
+      (Return value)</font></td>    
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">isenabled</font></td>    
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>    
+    <td><font size="2">致能與失效。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">isvisible</font></td>    
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>    
+    <td><font size="2">顯示與隱藏。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">iseditable</font></td>    
+    <td colspan="2"><font size="2">1 可編輯，0 唯讀</font></td>    
+    <td><font size="2">可編輯與唯讀。</font></td>    
+  </tr>    
+  <tr>
+    <td><font size="2">text</font></td>    
+    <td colspan="2"><font size="2">文字串</font></td>    
+    <td><font size="2">多行編輯方塊中內含值文字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2">
+<a name="formcontainer"></a>視窗容器 (Form container)</font></b></p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+  
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>  
+&nbsp;(Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>  
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>  
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>  
+&nbsp;(Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">form</font></td>   
+    <td><font size="2">文字串，視窗名稱</font></td>   
+    <td>　</td>   
+    <td><font size="2">關閉原內含視窗，重啟 form 視窗。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">form</font></td>   
+    <td colspan="2"><font size="2">文字串，視窗名稱</font></td>   
+    <td><font size="2">內含視窗名稱。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">
+▲Top</font></a></p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+ 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="maskedit">
+</a>MaskEdit 元件  
+(MaskEdit)</b></font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>  
+&nbsp;(Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>  
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>  
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>  
+&nbsp;(Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1 運算式重新計算</font></td>   
+    <td>　</td>   
+    <td><font size="2">運算式重新計算。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">editable</font></td>   
+    <td><font size="2">1 可編輯，0 唯讀</font></td>   
+    <td>　</td>   
+    <td><font size="2">可編輯與唯讀。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td><font size="2">文字串</font></td>   
+    <td>　</td>   
+    <td><font size="2">設定文字串為其內含值。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">select</font></td>   
+    <td><font size="2">起始位置</font></td>   
+    <td><font size="2">終止位置</font></td>   
+    <td><font size="2">將起始至終止位置的文字標示為選取，位置由    
+      1 起算。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">caretpos</font></td>   
+    <td><font size="2">游標位置</font></td>   
+    <td>　</td>   
+    <td><font size="2">設定游標位置，位置由 1    
+      起算。</font></td>   
+  </tr>   
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">iseditable</font></td>   
+    <td colspan="2"><font size="2">1 可編輯，0 唯讀</font></td>   
+    <td><font size="2">可編輯與唯讀。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">MaskEdit 中內含值文字串。</font></td>   
+  </tr>   
+  <tr>
+    <td><font size="2">masktext</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">MaskEdit 中加上格式樣式的內含值文字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">length</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">內含文字串長度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+ 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#003366">&nbsp;</font></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="spinner">
+</a>Spinner 元件(Spinner)</b></font></p>
+
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 運算式重新計算</font></td>  
+    <td>　</td>  
+    <td><font size="2">運算式重新計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">value</font></td>  
+    <td><font size="2">N 內含值</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定Spinner內含值為 N。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">value</font></td>  
+    <td colspan="2"><font size="2">N 內含值</font></td>  
+    <td><font size="2">讀取 Spinner 目前內含值。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p>　</p>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=172 align=left valign=top> 
+　</td> 
+<td width=171 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=172 align=right valign=top> 
+　</td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~    
+2004 Probe.com.tw . All Rights Reserved.   
+</font></p>   
+   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,    
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>   
+   
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+   
+</body>    
+    
+</html>

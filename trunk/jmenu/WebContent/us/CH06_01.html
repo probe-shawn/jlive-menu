@@ -1,0 +1,194 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH05_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="-1">Chapter 6</font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH06_02.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<h1 class="chapter">6<a class="TITLE">. </a>Report</h1>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>Content:</font></b></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#61">Create 
+New Report</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">
+<a href="CH06_02.html">Report Management</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">
+<a href="CH06_03.html">Report Sheet Property</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">
+<a href="CH06_04.html">Report Design And 
+Components</a></p>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">jLIVE Bulider 
+的報表系統在Internet上是一個獨一無二的應用系統，報表設計環境是模擬各式紙張大小，報表元件可以直接在絕對位置上放置，而且各報表元件皆為獨立作業不會互相干擾位置。在套表列印時非常準確，設計方式以視覺化的開發環境，並且與<br>
+視窗畫面的資料來源整合列印。<br>
+<br>
+在視窗畫面項目底下可擁有多張報表，而報表設計系統可以列印運算元件、圖形元件、統計圖表元件、備註元件........等等。設計環境非常簡單易學，在短短的幾分鐘就有一張傲人的報表。</p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">　</p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">在jLIVE中，因為報表系統與視窗面緊密結合在一起，所以報表能使用視窗畫面中所使用的資料來源的欄位值 
+( 包括SQL Table )，所有的元件、圖形資料，報表甚至是Formula等等兜組起來，以拖放的方式(Drag Drop)簡單地完成一份複雜的報表。</p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+在報表設計環境中，實際模擬報表紙大小的情況，並在其中分為表頭區、表身區、表尾區三部份。各區間以綠色線(Header Line)、和紅色線(Footer 
+Line)隔開。每一區域皆可放入印表元件。或是使用來自視窗畫面的資料元件當成列印資料的來源<br>
+<br>
+<b>Header &amp; Footer</b><br>
+<br>
+這兩個區域屬於靜態資料，放在這區域上的資料在同一頁中只列印一次，並在下一頁中同樣位置列印一次，如果是頁數資料則會依頁數遞增<br>
+<br>
+<b>Body</b><br>
+<br>
+這個區域可以指定一個來自視窗畫面的 datasource 為參照對象，從這個 datasource 目前的範圍為依據。<br>
+<br>
+報表系統將自動計算所有擺置的列印元件總合高度，在表身區內排列；並會自動換頁。</p>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH06_02_STR1.gif" width="385" height="231"></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+</blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">如何區別元件歸屬於表頭、表身和表尾<br>
+<br>
+列印元件依其下方的端點所在的區域來辦別其為表頭、表尾或表身元件，但用目視來判斷容易混淆，最簡單且明確的方式是將滑鼠游標移到元件上，當顯示的8個控點呈現藍色，即報表元件位於表身區，呈現粉紅色，則為表頭、表尾區。<br>
+<br>
+<br>
+1.元件A擺設的位置屬於表頭裡的元件，滑鼠移到元件時會顯示八個粉紅色的控點。<br>
+<br>
+2.元件B、D擺設的位置屬於表身裡的元件，滑鼠移到元件時會顯示八個藍色的控點。<br>
+<br>
+3.元件C、E、F擺設的位置屬於表尾裡的元件，滑鼠移到元件時會顯示八個粉紅色的控<br>
+<br>
+點。</p>
+<blockquote>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH06_02_str2.gif" width="340" height="233"></p>
+</blockquote>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">　</p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<b>
+<font size="5"><a name="61"></a>6</font><font size="5"><a class="TITLE">.</a>1 Create New Report</font></b></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">Create a 
+new report. Report system is designed under form.
+Please click the button &quot; Create New Report &quot; which looks 
+like below image to create new report.</p>
+<blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH6_01_report.gif" width="158" height="35"></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH5_01_buttons.gif" width="68" height="35">You can 
+delete a report or save it.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH5_01_button3.gif" width="30" height="30">&nbsp;To 
+make java source ( .java ). </p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH5_01_button4.gif" width="30" height="30"> To see 
+java source code.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH5_01_button5.gif" width="30" height="30"> Xml to 
+java.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH5_01_button6.gif" width="30" height="30"> Xml --&gt; 
+java --&gt; class</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/CH6_01_report2.gif" width="474" height="207"></p>
+</blockquote>
+<ul>
+  <li>
+<p class="para" style="margin-top: 2; margin-bottom: 2">
+<b>
+<font size="4">Class Name :</font><font size="5"> </font></b>The name of the report. It should take a notice of that the name string can not 
+have any space inside. Each report will be complied as java class format. Report 
+name will become class name.</p>
+  </li>
+  <li>
+<p class="para" style="margin-top: 2; margin-bottom: 2">
+<a class="TITLE">
+<b>
+<font size="4">Author :</font></b><span style="font-weight: 700"><font size="4"> </font>
+</span></a><span style="font-weight: 400"><font size="3">Author name. Allow null.</font></span></p>
+  </li>
+  <li>
+<h1 class="chapter" style="margin-top: 2; margin-bottom: 2"><font size="4">
+Version :</font><span style="font-weight: 400"><font size="4"> </font>
+<font size="3">Version name. Allow null.</font></span></h1>
+  </li>
+  <li>
+<h1 class="chapter" style="margin-top: 2; margin-bottom: 2"><font size="4">
+<a class="TITLE">Xml File : </a></font><span style="font-weight: 400">
+<font size="3">jLIVE Builder use xml 
+file to record all of the properties when you design a form. The following image 
+is the xml file name and directory. This is result voluntarily.</font></span></h1>
+  </li>
+  <li>
+<h1 class="chapter" style="margin-top: 2; margin-bottom: 2"><font size="4">Java 
+Source :</font><span style="font-weight: 400"><font size="4"> </font>
+<font size="3">The following image is 
+the java file name and directory. This is result voluntarily.</font></span></h1>
+  </li>
+  <li>
+<h1 class="chapter" style="margin-top: 2; margin-bottom: 2"><font size="4">Class 
+Path :</font><span style="font-weight: 400"><font size="4"> </font>
+<font size="3">The following image 
+is class file name and directory. This is result voluntarily.</font></span></h1>
+  </li>
+</ul>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<p class="para" style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH05_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH06_02.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

@@ -1,0 +1,770 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>jLIVE middle ware</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch15.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=194 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="ch15.html"><font color="#000000">Chapter 1</font><font color="#003366">5</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">        
+<b><font face="新細明體" size="-1">        
+<a style="text-decoration: none" href="ch15.html"><font color="#000000">        
+application server</font></a></font></b></TD>       
+<td width=206 align=right valign=top>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<a href="ch15_02.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=left color="#000000">       
+<h1 class="chapter"><font size="4"><a class="TITLE" name="top">15.1 jLIVE</a>&#8482; <a class="TITLE" name="top">
+middle ware 
+(jLIVE</a>&#8482; middle ware<a class="TITLE" name="top">)</a></font></h1>       
+<p class="chapter"><font size="2">
+<a href="#jLIVE&#8482; middle ware 啟動與結束 (jLIVE&#8482; middle ware startup and shutdown)">
+jLIVE&#8482; middle ware 啟動與結束 (jLIVE&#8482; middle ware startup and shutdown) </a></font>
+<br>
+<font size="2" color="#003366">
+<a href="#jLIVE&#8482; middle ware Time out 管理 (jLIVE&#8482; middle ware Time out management)">jLIVE&#8482; middle ware Timeout 管理 
+(jLIVE&#8482; middle ware Time out management)</a></font><br>
+<font size="2">
+<a href="#jLIVE&#8482; middle ware 服務請求與回應 (jLIVE&#8482; middle ware service request and respond)">
+jLIVE&#8482; middle ware 服務請求與回應 (jLIVE&#8482; middle ware service request and respond)</a><br>
+<a href="#jLIVE&#8482; middle ware 服務代碼 (jLIVE&#8482; middle ware service code)">jLIVE&#8482; 
+middle ware 服務代碼 (jLIVE&#8482; middle ware service code)</a><br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+<a name="jLIVE&#8482; middle ware 啟動與結束 (jLIVE&#8482; middle ware startup and shutdown)">j<b>LIVE&#8482; 
+middle ware 啟動與結束 (jLIVE&#8482; middle ware startup and shutdown)</b></a></font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+jLIVE&#8482; middle ware 的啟動 (startup)、結束 (shutdown) 與存在期 (life cycle) 由應用伺服器 
+(application server) 所負責。相關的啟動方式與結束，請參照各應用伺服器中對啟動 Servlet 的說明。例如：在 Tomcat 安裝完jLIVE&#8482; 
+middle ware 後 ，執行 Tomcat 中的 startup.exe 啟動 Tomcat 服務，在第一次使用者端請求服務時， Tomcat 會啟動 
+jLIVE&#8482; middle ware 初始化程序，有些應用伺服器可以在應用伺服器啟動後，立即啟動 jLIVE&#8482; middle ware 初始化程序。結束 
+Tomcat 的 jLIVE&#8482; middle ware 服務，則執行 shutdown.exe ，jLIVE&#8482; middle ware 會執行結束程序。<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">jLIVE&#8482; middle ware 啟動初始化程序</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行 Java Servlet 組態初始化 (Servlet initialize)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">查詢系統環境 (Java 版本、OS 版本)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">是否支援加密 (encryption supported)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">使用授權檢驗 (authorized license)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">讀取及建立 jLIVE&#8482; middle ware 屬性設定檔 (properties)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">建立語系管理 (language management)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">建立應用程式管理 (application management)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">建立使用者管理 (user management)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">建立使用者服務作業管理 (user service handle management)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">建立 Time out 管理 (time out management)。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">jLIVE&#8482; middle ware 結束程序</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行 Time out 管理結束程序 (close time out management)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行 使用者服務作業管理結束程序 (close user service handle management)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行 使用者管理結束程序 (close user management)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行 應用程式管理結束程序 (close application management)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">釋放連結資源&nbsp; (close connection)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">記錄作業狀態 (log status)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行 Java Servlet 結束程序 (destroy)。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2">
+<a name="jLIVE&#8482; middle ware Time out 管理 (jLIVE&#8482; middle ware Time out management)">jLIVE&#8482; middle ware Timeout 管理 
+(jLIVE&#8482; middle ware Time out management)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+jLIVE&#8482; middle ware 在使用者端發出連線服務請求 (connection request) 
+，並經檢驗為合法使用者後，隨即在系統中建立一個使用者服務作業模組 (user service 
+handle)，使用者端接續的所有服務請求，皆由此專屬使用者服務作業模組提供服務。例如：使用者資訊、加密 Session key 、使用者資料來源結果集 
+Cache 機制、交易 (Transaction)、使用者存取 log ‧‧‧等。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+使用者端發出服務請求時，jLIVE&#8482; middle ware 會先尋找使用者服務作業模組 (user service handle)，並將服務請求轉交其提供服務，如果jLIVE&#8482; middle ware 
+無法找到專屬使用者服務作業模組，jLIVE&#8482; middle ware 
+會回應使用者操作逾時訊息，並停止提供服務。一般正常狀態使用者端不會產生操作逾時，通常是使用者不正常斷線或網路斷線後，沒有再經連線服務請求 (connection 
+request) 的程序，隨即傳送要求作業服務請求 (request service)。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+jLIVE&#8482; middle ware 在啟動後，會建立 Time out 管理 (time out management)。Time out 管理的 
+Thread 每隔 1分鐘會啟動 Timeout 檢查，在下列狀況下：</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">使用者 5 分鐘內未要求服務且未有心跳連線 (heart beat connection)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">後端資料庫服務超過 15 分鐘。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+jLIVE&#8482; Builder 視窗設計平台，超過 8 小時未要求服務。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">會移除使用者服務作業模組 (user service handle)，使
+jLIVE&#8482; middle ware 在系統資源使用上有最佳狀態。所以使用者如果不正常關機或網路斷線，最慢在 5 分鐘內，
+jLIVE&#8482; middle ware&nbsp; 會清除其所用的所有資源，系統管理師亦可經由&nbsp;
+<a href="ch15_02.html">jLIVE&#8482; middle ware 管理介面</a>，在任何時刻移除任何使用者服務作業模組。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">jLIVE Builder&#8482; 的使用者端應用程式，在使用者操作應用程式時，如果使用者端未在 3 
+分鐘內，發出任何服務請求時，使用者端系統會自動產生一心跳連線請求 (heart beat connection) 至 jLIVE&#8482; middle ware ，通知jLIVE&#8482; middle ware 使用者端仍在作業，尚需&nbsp;
+jLIVE&#8482; middle ware 提供服務，
+jLIVE&#8482; middle ware 在 Timeout 管理時不會移除此使用者。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">jLIVE&#8482; middle ware&nbsp; 
+屬於資料庫存取的服務會連結後端資料庫系統，轉請其服務並等待回應，如果回應等待時間超過 15 分鐘，可能是後端資料庫系統有不可知的錯誤產生 (一般錯誤會以 SQL 
+Exception 回應)， jLIVE&#8482; middle ware&nbsp; 會移除此使用者服務作業模組，並回應使用者端操作逾時訊息。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+jLIVE&#8482; Builder 視窗設計平台，並不會產生心跳連線請求 (heart beat connection) ，系統為避免 jLIVE&#8482; middle ware Timeout 管理造成視窗設計平台操作逾時，設計畫面無法正常存檔，所以 8 小時 才會 
+Timeout。設計師如果在設計時有不正常的關機或網路斷線，可以使用
+jLIVE&#8482; middle ware&nbsp; 管理介面，移除應用程式名稱為 jdlive 的使用者。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b><font size="2">
+<a name="jLIVE&#8482; middle ware 服務請求與回應 (jLIVE&#8482; middle ware service request and respond)">
+jLIVE&#8482; middle ware 服務請求與回應 (jLIVE&#8482; middle ware service request and respond)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+jLIVE&#8482; middle ware 初始化後，隨即提供使用者的服務請求與回應。使用者端發出的第一個請求，是連線服務請求 (service connection 
+request) ，並傳入以下資訊：</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">使用者 IP。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">應用程式名稱。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">登入名稱、密碼。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫資訊。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">加密協商資訊。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+jLIVE&#8482; middle ware 回應程序如下：</font></p>       
+<ol>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">根據 jLIVE&#8482; middle ware 所記錄應用程式名稱資訊，查驗是否須作登入者安全控管。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">如果使用 jLIVE 安全控管 (jLIVE&#8482; security control)</font></p>       
+  <ul>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">查詢使用者是否合法。</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">擷取授權資訊 (authorized items)。</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">查詢登入名稱、密碼的資料庫登入名稱、密碼。</font></p>       
+    </li>
+  </ul>
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">非法使用者，回傳使用者名稱、密碼不正確訊息，返回。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">建立使用者服務作業模組 (user service handle)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">回傳加密協商資訊、授權資訊、連線服務請求成功訊息，返回。</font></p>       
+  </li>
+</ol>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+使用者端在發出第一個請求後，隨即可以要求 jLIVE&#8482; middle ware 提供應用程式所需的服務。jLIVE&#8482; middle ware 
+所提供的服務分為系統資源服務及資料庫伺服器服務。服務項目代碼請參照<a href="#jLIVE&#8482; middle ware 服務代碼 (jLIVE&#8482; middle ware service code)">
+jLIVE&#8482; middle ware 服務代碼</a>。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">系統資源服務</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">檔案上下載 (file download and upload)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">應用伺服器所在的區域網路，檔案系統服務 (file system service)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">Cookie 服務 (cookie service)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">SMTP 服務 (smtp service)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">應用伺服器環境資訊 (application server environment)。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">程式設計期服務</font></p>       
+  <ul>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="left">
+<font size="2">測試連結 (test connection)。</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="left">
+<font size="2">上下載應用程式 XML 資源 (upload and download application XML)。</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="left">
+<font size="2">檢驗程式管理員 (application administrator)。</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="left">
+<font size="2">授權人數 (authorized concurrent user)。</font></p>       
+    </li>
+    <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="left">
+<font size="2">目前線上人數 (user count)。</font></p>       
+    </li>
+  </ul>
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">資料庫伺服器服務</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">開啟資料庫連結 (open&nbsp; connection)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">關閉資料庫連結 (close connection)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">開啟資料來源 (open data source)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">關閉資料來源 (close data source)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">整批開啟資料來源 (batch open data source)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">整批關閉資料來源 (batch close data source)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">取得資料來源 Meta data (get data source meta data)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料來源，取得起迄資料記錄的資料值 (get record data)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料來源，新增資料記錄 (insert record data)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料來源，更新資料記錄(update record data)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料來源，刪除資料記錄 (delete record data)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">查詢資料來源 (query data source)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行 SQL 命令集 (execute SQL command)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行資料庫系統的預儲程序 (execute stored procedure)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行資料庫系統Auto Commit 的設定與取消 (auto commit on or off)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行資料庫系統 Commit (commit)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行資料庫系統 Roll back (roll back)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">執行資料庫系統 Isolation level (isolation level)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">程式設計期服務</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統 連結測試 (data base connection test)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統 Meta data (data base meta data)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統資料表資訊 (data base table information)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統資料表欄位資訊 (data base table column information)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統資料表索引資訊 (data base table index information)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統預儲程序資訊 (data base stored procedure information)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統預儲程序名稱 (data base stored procedure name)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫系統預儲程序欄位資訊 (data base stored procedure column information)</font></p>       
+  </li>
+</ul>
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2">
+<a name="jLIVE&#8482; middle ware 服務代碼 (jLIVE&#8482; middle ware service code)">jLIVE&#8482; 
+middle ware 服務代碼 (jLIVE&#8482; middle ware service code)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<div align="center">
+  <center>
+  <table border="1" cellpadding="2" style="border-collapse: collapse" bordercolor="#111111" width="80%" id="AutoNumber2">
+    <tr>
+      <td width="9%" bgcolor="#003366" align="center">
+      <font color="#FFFFFF" size="2">代碼</font></td>
+      <td width="91%" align="center" bgcolor="#003366">
+      <font size="2" color="#FFFFFF">註解</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10</font></td>
+      <td width="91%"><font size="2">連線服務請求 (service connection request)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">11</font></td>
+      <td width="91%"><font size="2">結束連線服務 (service disconnection)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">18</font></td>
+      <td width="91%">
+<font size="2">開啟資料庫連結 (open&nbsp; connection)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">19</font></td>
+      <td width="91%">
+<font size="2">關閉資料庫連結 (close connection)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20</font></td>
+      <td width="91%">
+<font size="2">開啟資料來源 (open data source)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">21</font></td>
+      <td width="91%">
+<font size="2">取得資料來源 Meta data (get data source meta data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">22</font></td>
+      <td width="91%">
+<font size="2">資料來源，取得起迄資料記錄的資料值 (get record data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">23</font></td>
+      <td width="91%">
+<font size="2">資料來源，更新資料記錄(update record data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">24</font></td>
+      <td width="91%">
+<font size="2">資料來源，取得資料記錄的 BLOB 資料值 (get blob record data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">25</font></td>
+      <td width="91%">
+<font size="2">資料來源，新增資料記錄 (insert record data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">26</font></td>
+      <td width="91%">
+<font size="2">資料來源，刪除資料記錄 (delete record data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">27</font></td>
+      <td width="91%">
+<font size="2">查詢資料來源 (query data source)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">28</font></td>
+      <td width="91%">
+<font size="2">資料來源，執行 SQL 命令 (execute SQL command)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">29</font></td>
+      <td width="91%">
+<font size="2">資料來源，Refresh 資料記錄 (refresh record data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">30</font></td>
+      <td width="91%">
+<font size="2">關閉資料來源 (close data source)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">31</font></td>
+      <td width="91%"><font size="2">使用者端下載檔案 (download file)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">32</font></td>
+      <td width="91%">
+<font size="2">執行 SQL 命令集 (execute SQL command)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">33</font></td>
+      <td width="91%">
+<font size="2">執行資料庫系統的預儲程序 (execute stored procedure)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">34</font></td>
+      <td width="91%">
+<font size="2">執行資料庫系統Auto Commit 的設定與取消 (auto commit on or off)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">35</font></td>
+      <td width="91%">
+<font size="2">執行資料庫系統 Commit 或 Roll back</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">36</font></td>
+      <td width="91%">
+<font size="2">執行資料庫系統 Isolation level (isolation level)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">37</font></td>
+      <td width="91%">
+<font size="2">SMTP 服務 (smtp service)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">38</font></td>
+      <td width="91%">
+<font size="2">資料來源，快速新增資料記錄 (fast insert record data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">80</font></td>
+      <td width="91%">
+<font size="2">檔案下載 (file download)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">81</font></td>
+      <td width="91%">
+<font size="2">檔案上載 (file upload)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">82</font></td>
+      <td width="91%"><font size="2">
+      心跳連線請求 (heart beat connection request) </font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">84</font></td>
+      <td width="91%"><font size="2">取得 Cookie (get cookie)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">85</font></td>
+      <td width="91%"><font size="2">加入 Cookie (add cookie)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">86</font></td>
+      <td width="91%">
+<font size="2">應用伺服器所在的區域網路，檔案系統服務 (file system service)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">87</font></td>
+      <td width="91%">
+<font size="2">應用伺服器時間 (application server date time)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">100</font></td>
+      <td width="91%">
+<font size="2">整批關閉資料來源 (batch close data source)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10001</font></td>
+      <td width="91%">
+<font size="2">資料庫系統 Meta data (data base meta data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10002</font></td>
+      <td width="91%"><font size="2">測試連結 (test connection)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10003</font></td>
+      <td width="91%">
+<font size="2">上載應用程式 XML 資源 (upload application XML)。</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10004</font></td>
+      <td width="91%">
+<font size="2">下載應用程式 XML 資源 (download application XML)。</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10005</font></td>
+      <td width="91%"><font size="2">取得應用程式名稱 (get application name)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10007</font></td>
+      <td width="91%"><font size="2">檢查 jLIVE&#8482; middle ware 管理者 (check 
+      administrator)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10008</font></td>
+      <td width="91%"><font size="2">檢查 應用程式 管理者 (check application&nbsp; 
+      administrator)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10009</font></td>
+      <td width="91%"><font size="2">取得 jLIVE&#8482; middle ware 版本 (get jLIVE&#8482; middle 
+      ware version)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10010</font></td>
+      <td width="91%"><font size="2">取得 jLIVE&#8482; middle ware 授權 (get jLIVE&#8482; middle 
+      ware authorized id)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">10011</font></td>
+      <td width="91%"><font size="2">取得 jLIVE&#8482; middle ware 授權人數 (get jLIVE&#8482; 
+      middle ware authorized user)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20000</font></td>
+      <td width="91%">
+<font size="2">資料庫系統 Meta data (data base meta data)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20001</font></td>
+      <td width="91%">
+<font size="2">資料庫系統資料表資訊 (data base table information)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20002</font></td>
+      <td width="91%">
+<font size="2">資料庫系統資料表欄位資訊 (data base table column information)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20003</font></td>
+      <td width="91%">
+<font size="2">資料庫系統預儲程序資訊 (data base stored procedure information)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20004</font></td>
+      <td width="91%">
+<font size="2">資料庫系統預儲程序名稱 (data base stored procedure name)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20005</font></td>
+      <td width="91%">
+<font size="2">資料庫系統預儲程序欄位資訊 (data base stored procedure column information)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20006</font></td>
+      <td width="91%">
+<font size="2">資料庫系統資料表 best row id (data base table best row id)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20007</font></td>
+      <td width="91%">
+<font size="2">資料庫系統資料表primary key 資訊 (data base table primary key information)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">20008</font></td>
+      <td width="91%">
+<font size="2">資料庫系統資料表索引資訊 (data base table index information)</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">30000</font></td>
+      <td width="91%"><font size="2">jLIVE&#8482; middle ware Group Set START</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">30001</font></td>
+      <td width="91%"><font size="2">jLIVE&#8482; middle ware Group Set ACK</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">30002</font></td>
+      <td width="91%"><font size="2">jLIVE&#8482; middle ware Group Set POLLING</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">30003</font></td>
+      <td width="91%"><font size="2">jLIVE&#8482; middle ware Group Set REGISTER</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">30004</font></td>
+      <td width="91%"><font size="2">jLIVE&#8482; middle ware Group Set CLOSE</font></td>
+    </tr>
+    <tr>
+      <td width="9%" align="center"><font size="2">31000</font></td>
+      <td width="91%"><font size="2">jLIVE&#8482; middle ware Group Set END</font></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><br>
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<hr align=left color="#000000">        
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">        
+<tr>        
+<td width=200 align=left valign=top>        
+<a href="ch15.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=195 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=205 align=right valign=top>        
+<a href="ch15_02.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.          
+</font></p>          
+          
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,           
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>          
+          
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+          
+</body>          
+          
+</html>

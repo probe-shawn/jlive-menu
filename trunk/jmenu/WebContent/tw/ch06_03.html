@@ -1,0 +1,663 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Form design framework</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch06_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch06.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 6</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch06.html" style="text-decoration: none"><font color="#000000">
+Form</font></a></font></b></TD>      
+<td width=204 align=right valign=top>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<a href="ch06_04.html">      
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>      
+</tr>      
+</table>      
+      
+<hr align=left color="#000000">      
+<p><b><font size="5"><a name="top"></a></font><font size="4">6<a class="TITLE">.4 </a>      
+視窗設計平台操作 (design framework)</font></b></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">      
+<a href="#design">進入視窗設計模式 (design mode)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">         
+<a href="#exit">返回主控制面板 (exit to control panel)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">         
+<a href="#layout">配置元件 (layout          
+components)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">       
+<a href="#select">元件選取、移動、屬性編輯 (select、move、edit        
+components)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">        
+<a href="#align">元件對齊 (alignment)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">        
+<a href="#duplicate">元件複製、拷貝、貼上 (duplicate、copy、paste)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#prefer">元件偏好設定   
+(component preference)</a></font></p>        
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">       
+<a href="#run">進入測試執行模式 (run mode)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">         
+<a href="#source">瀏覽 Java 程式碼          
+(Java source code)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">         
+<a href="#reload">重讀圖檔 (reload          
+Images)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">         
+<a href="#hash">編輯 Hash 變數          
+(Hash &amp; SysHash editor)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><b><font size="2"><a name="design"></a>
+進入視窗設計模式 (design mode)</font></b></p>          
+<p style="text-indent: 20"><font size="2">進入視窗設計畫面，可以在【控制面板】按下 <i>設計&nbsp;            
+<img border="0" src="images/design20.gif" width="20" height="20"> </i>(             
+進入設計模式 )，或是點選該視窗，然後按滑鼠右鍵，選擇設計    
+(design)，如下圖所示。　</font></p> 
+  <blockquote>
+  <p><img border="0" src="images/ch06_03_design.gif" width="319" height="450"></p> 
+  <p><font size="2">視窗設計環境：</font></p> 
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1" align="center">   
+<img border="0" src="images/formdesign12.gif" width="580" height="426"></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 2; margin-bottom: 2"><b><font size="2"><a name="exit"></a>
+返回主控制面板 (exit to control panel)</font></b></p>          
+<ul>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">返回主面板 (back to console)：</font><font size="2">離開設計畫面，回到控制面板。<br>
+　</font></p>         
+  </li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font size="2" color="#666699">儲存修訂 (save modified)：</font><font size="2">在設計模式下，未執行儲存修訂     
+(save modified)     
+前，所有的變更都尚未儲存，因此當程式有類似迴圈的邏輯時，建議在測試執行前先行存檔動作，以免進入無窮迴圈後，程式必須強制中止而無法存檔，將會喪失存檔前的所有設計內容。<br>
+　</font></p>         
+  </li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font size="2"><font color="#666699">重讀圖片 (reload images) ：</font>參閱 
+<a href="#reload">重讀圖片</a>。<br>
+　</font></p>         
+    </li>
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font size="2"><font color="#666699">Hash &amp; SysHash 編輯器 (hash &amp; syshash editor)：</font>參閱 
+<a href="#hash">Hash &amp; SysHash 編輯器</a>。<br>
+　</font></p>         
+    </li>
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font color="#666699" size="2">視窗 screen capture：</font><font size="2">在視窗設計期或測試執行期，將作業的視窗快照 
+(snap shot) 並存成圖檔(*.png)。執行時系統會出現訊息視窗，詢問置放圖檔的位置與檔名。預設存放於【應用程式目錄】【doc】【screen】目錄下以視窗名稱為檔名。</font><font color="#666699" size="2"><br>
+　</font></p>         
+    </li>
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font size="2"><font color="#666699">元件設計提示 (tooltips)&nbsp; ：</font>滑鼠移過元件時是否出現元件設計屬性提示視窗。<br>
+　</font></p>         
+    </li>
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font size="2"><font color="#666699">寬鬆性觸發資料來源檢查 (lenient trigger data source 
+check)：</font>觸發資料來源 (trigger data source) 欄位型別檢查是否使用寬鬆性檢核 (lenient)。參閱 
+<a href="ch11_03_03.html#觸發資料來源欄位檢查 (trigger data source type check)">觸發資料來源欄位檢查</a>。</font></p>         
+    <p style="margin-top: 1; margin-bottom: 1">          
+　</p>         
+<p style="margin-top: 1; margin-bottom: 1">          
+<img border="0" src="images/ch06_03_system.gif" width="456" height="239"></p>          
+  </li>
+</ul>         
+<p style="margin-top: 2; margin-bottom: 2"><a href="#top">         
+<font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="layout"></a>
+配置元件 (layout          
+components)</font></b></p>         
+<ul type="square">         
+  <li>         
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">         
+  由工具列選擇 (components toolbar)：</font><font size="2">以滑鼠點選所需元件，然後將滑鼠移至工作視窗上，此時滑鼠游標會顯示十字符號，再將滑鼠移到所要的位置上，點滑鼠左鍵置放即可。</font></li>       
+</ul>       
+<blockquote>       
+  <p style="margin-top: 1; margin-bottom: 1">       
+  <img border="0" src="images/ch06_03_toolbar.gif" width="452" height="221"></p>       
+</blockquote>       
+<ul type="square">       
+  <li>       
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+  由資料欄位拖放 (data field)： </font><font size="2">設計時可以由資料來源中，選取一個資料欄位，直接拖曳到工作視窗    
+  ( form)        
+  上，此時會顯示一個設定對話框：</font></p>        
+  <p style="margin-top: 1; margin-bottom: 1">　<ul type="disc">        
+    <li>        
+    <p style="margin-top: 1; margin-bottom: 1">        
+    <font color="#666699" size="2">位置 (position)</font><font size="2"><font color="#666699">：</font>元件置放位置。<br>
+　</font></p>       
+    </li>       
+    <li>       
+    <p style="margin-top: 1; margin-bottom: 1">       
+    <font color="#666699" size="2">連結資料來源 (link data source )</font><font size="2"><font color="#666699">：</font>顯示選擇的資料來源中的資料欄位。<br>
+　</font></p>        
+    </li>        
+    <li>        
+    <p style="margin-top: 1; margin-bottom: 1">        
+    <font color="#666699" size="2">元件名稱 (component name)</font><font size="2"><font color="#666699">：</font>元件名稱。<br>
+　</font></p>       
+    </li>       
+    <li>       
+    <p style="margin-top: 1; margin-bottom: 1">       
+    <font color="#666699" size="2">置標籤於 (put label at)</font><font size="2"><font color="#666699">：</font>是否加上標籤元件，及使用時的位置。</font></p>       
+    <ul type="circle">       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      無 (none)：</font><font size="2">不需標籤元件。</font></p>       
+      </li>       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">左 (left)：</font><font size="2">標籤位於元件左方。</font></p>       
+      </li>       
+    </ul>       
+    <ul type="circle">       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      上 (top)：</font><font size="2">標籤位於元件上方。<br>
+　</font></li>       
+    </ul>       
+    </li>       
+    <li>       
+    <p style="margin-top: 1; margin-bottom: 1">       
+    <font color="#666699" size="2">標籤 (label)</font><font size="2"><font color="#666699">：</font>當使用標籤元件    
+    (label component) 時，請填入標籤內容。<br>
+　</font></p>       
+    </li>       
+    <li>       
+    <p style="margin-top: 1; margin-bottom: 1">       
+    <font color="#666699" size="2">元件類別 (component type)</font><font size="2"><font color="#666699">：</font>選擇連結資料欄位的元件類別。</font></p>       
+    <ul type="circle">       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      編輯方塊 (Edit component)</font></p>       
+      </li>       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      核取方塊 (CheckBox component) </font></p>       
+      </li>       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      選擇鈕 (RadioGroup component)</font></p>       
+      </li>       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      清單方塊 (ListBox component)</font></p>       
+      </li>       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      下拉式清單方塊&nbsp; (ComboBox component)</font></p>       
+      </li>       
+      <li>       
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">       
+      計數器元件 (Slider component)</font></li>       
+    </ul>       
+    </li>       
+  </ul>       
+  <p style="margin-top: 1; margin-bottom: 1">　</p>   
+  <p style="margin-top: 1; margin-bottom: 1">   
+  <img border="0" src="images/ch06_03_field.gif" width="396" height="377"></p>   
+  <p style="margin-top: 1; margin-bottom: 1">　</li>   
+  <li>   
+  <p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699">   
+  由資料來源拖放 (data source)：</font><font size="2">如果要將整個資料來源的所有欄位一起配置於工作視窗    
+  (form) 上，請直接標示資料來源，然後拖曳 (drag)    
+  到工作視窗上所要配置元件的起始位置，置放後 (drop)    
+  會出現設定精靈 (layout wizard)：</font></p>        
+  <p style="margin-top: 1; margin-bottom: 1">　<ul type="disc">        
+    <li>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">擺設    
+    (layout components)</font></p>       
+    <ul type="circle">     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+      開始位置 (start position)：</font><font size="2">設定開始位置。</font></li>     
+    </ul>     
+    <ul type="circle">     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+      元件間隙 (gap between component)：</font><font size="2">設定元件間隙。</font></li>     
+    </ul>     
+    <ul type="circle">     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+      標籤位置 (label position)：</font><font size="2">是否使用標籤，及使用時的位置。</font></li>     
+    </ul>     
+    <ul type="circle">     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+      擺設方向 (layout position)：</font><font size="2">元件擺設方向。</font></li>     
+    </ul>     
+    </li>     
+  </ul>     
+  <p style="margin-top: 1; margin-bottom: 1">　</p>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <img border="0" src="images/ch06_03_ds1.gif" width="416" height="396"></p>     
+  <p style="margin-top: 1; margin-bottom: 1">　<ul type="disc">     
+    <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+    資料欄位 (fields)：</font><font size="2">可以分別為資料欄位選擇連結的元件類型。</font></p>     
+    <ul type="circle">     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1">     
+      <font color="#666699" size="2">選擇        
+      (select)</font><font size="2"><font color="#666699">：</font>是否為此資料欄位配置元件。</font></p>     
+      </li>     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+      資料欄位名稱 (field name)：</font><font size="2">資料表的資料欄位名稱。不可編輯。</font></p>     
+      </li>     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+      元件名稱 (component name)：</font><font size="2">元件名稱，可自訂名稱，不可重複。</font></p>     
+      </li>     
+      <li>     
+      <p style="margin-top: 1; margin-bottom: 1">     
+      <font color="#666699" size="2">元件類別        
+      (component type)</font><font size="2"><font color="#666699">：</font>由下拉式選單選擇連結資料欄位的元件類別。</font></li>     
+    </ul>     
+    </li>     
+  </ul>     
+  </li>     
+</ul>     
+<blockquote>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <img border="0" src="images/ch06_03_ds2.gif" width="416" height="471"></p>     
+</blockquote>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="select"></a>
+元件選取、移動、編輯 (select、move、edit components)</b></font></p>        
+<ul>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">選取    
+    (select)：</font> <br>
+　<ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">單一元件：</font><font size="2" color="#000000">當滑鼠移至元件且元件顯示八個色框時，該元件即在選取狀態</font><font size="2">。</font></li>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">多個元件：</font><font size="2">以滑鼠按住左鍵並拉出涵蓋的範圍，放開滑鼠後，被選取的元件會以綠框標示。</font>      
+        <ul>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1">    
+            <font size="2" color="#666699">加入選取：</font><font size="2" color="#000000">選取多個元件後，可以再以滑鼠點選未標示綠框的其他元件加入選取</font><font size="2">。</font></li>      
+          <li>      
+            <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">取消選取：</font><font size="2" color="#000000">可在已選取的元件中，再以滑鼠點選，將其排除於選取範圍外。<br>
+　</font></li>      
+        </ul>      
+      </li>      
+    </ul>      
+  </li>      
+  <li>      
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">移動    
+    (move)：</font> <br>
+　<ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">單一元件：</font><font size="2" color="#000000">以滑鼠拖拉移動元件或按住鍵盤的        
+        Ctrl 加 ←↑↓→ 鍵</font><font size="2">，微調元件位置。</font><font size="2" color="#000000">以滑鼠拖拉選取元件的色框可改變元件大小尺寸。</font></li>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">多個元件：</font><font size="2" color="#000000">選取多個元件，以滑鼠拖拉移動元件或按住鍵盤的        
+        Ctrl 加 ←↑↓→ 鍵</font><font size="2">，微調元件群組位置。</font></li>       
+      <li>       
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">
+        <font color="#666699">標籤頁元件：</font>移入選取元件時，所選取元件最左上角須落入 (hit) 
+        標籤頁的頁面中，且標籤頁面須能容納所有選取元件，系統才會進行移入。從標籤頁元件移出時，所選取的元件最左上角，落入 (hit) 
+        到視窗中，系統即進行移出。<br>
+　</font></li>       
+    </ul>       
+  </li>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">編輯    
+    (edit)：</font> <br>
+　<ul>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">單一元件：</font><font size="2" color="#000000">元件於選取狀態時，以滑鼠雙擊    
+        (double clicked)    
+        進入屬性編輯，或按右鍵選取屬性編輯選單。</font></li>      
+      <li>      
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">多個元件：</font><font size="2" color="#000000">選取多個元件，按右鍵選取支援多個元件的功能選單。</font></li>      
+    </ul>      
+  </li>      
+</ul>      
+<p style="margin-top: 2; margin-bottom: 2"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="align"></a>
+元件對齊 (alignment)</font></b></p>        
+<ul type="square">          
+  <li>          
+<p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font size="2" color="#666699">對齊 (alignment)：</font><font size="2">           
+ 必須先選取多個元件，才可以使用此功能。選取的方式，以按住滑鼠左鍵並拉出涵蓋的範圍，放開滑鼠後，被選取的元件會以綠框標示。可以再以滑鼠，點選未標示綠框的其他元件加入選取；或點選已加入的元件將其排除於選取範圍。</font></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p>         
+  <ul type="disc">         
+    <li>         
+<p style="margin-top: 1; margin-bottom: 1">         
+<font size="2" color="#666699">復原 (undo)      
+<img border="0" src="images/undo.gif" width="16" height="16"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗左邊界對齊 (alignment to form left)      
+<img border="0" src="images/wl.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗上邊界對齊 (alignment to form top)      
+<img border="0" src="images/wt.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗右邊界對齊 (alignment to form right)      
+<img border="0" src="images/wr.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">靠視窗下邊界對齊 (alignment to form    
+bottom)      
+<img border="0" src="images/wb.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平靠左 (horizontal left)      
+<img border="0" src="images/hl.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平靠中 (horizontal center)      
+<img border="0" src="images/hc.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平靠右 (horizontal right)      
+<img border="0" src="images/hr.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平置於視窗中間 (horizontal form center)      
+<img border="0" src="images/hw.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">水平平均分配距離 (horizontal equal space)      
+<img border="0" src="images/he.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直靠上 (vertical top)      
+<img border="0" src="images/vt.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直靠中 (vertical center)      
+<img border="0" src="images/vc.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直靠下 (vertical bottom)      
+<img border="0" src="images/vb.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直置於視窗中間 (vertical form center)      
+<img border="0" src="images/vw.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">垂直平均分配距離 (vertical equal space)      
+<img border="0" src="images/ve.gif" width="20" height="20"></font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">刪除(delete)      
+<img border="0" src="images/delete.gif" width="20" height="20"></font></p>          
+    </li>          
+  </ul>          
+  </li>          
+</ul>          
+<blockquote>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<img border="0" src="images/ch06_03_aligment.gif" width="377" height="493"></p>          
+</blockquote>          
+<blockquote>          
+    <p></p>         
+    <p><font size="2">當選取範圍包含多個元件時，控點會成標示為綠色，這時可以一次移動多個元件或改變字型及元件大小。</font></p>         
+    <p><img border="0" src="images/ch06_03_selects.gif" width="404" height="291"></p>         
+    <p align="left">　</p>         
+    <p align="left"><font size="2">要一次改變所有元件大小和字型的方法是先選取目標元件，然後在上方點滑鼠右鍵即可出現下列功能選單    
+    (menu)，點選選單項目後即可進行作業。</font></p>        
+    <p>        
+    <img border="0" src="images/ch06_03_size.gif" width="338" height="254"></p>        
+    <p>　</p>        
+    <p><font size="2">當元件在索引標籤元件 (Tabbed panel) 中時，標示的控點為粉紅色。</font></p>         
+    <p><font size="2"><img border="0" src="images/ch06_03_tab.gif" width="519" height="458"></font></p>         
+</blockquote>          
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">       
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="duplicate"></a>
+元件複製、拷貝、貼上          
+(duplicate、copy、paste)</font></b></p>        
+  <ul type="disc">          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">複製 (duplicate)：</font><font size="2">在同一視窗上複製相同的元件，可設定複製數量。請在目標元件上按滑鼠右鍵，選擇複製。<br>
+　</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 1; margin-bottom: 1">         
+<font size="2" color="#666699">拷貝 (copy)：</font><font size="2">拷貝元件。拷貝的元件可貼至其他視窗或其他應用程式的視窗。<br>
+　</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 1; margin-bottom: 1">         
+<font size="2" color="#666699">貼上 (paste)：</font><font size="2">貼上元件。<br>
+　</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 1; margin-bottom: 1">         
+<font size="2" color="#666699">刪除 (delete)：</font><font size="2">刪除選取的元件。</font></p>         
+    </li>         
+  </ul>         
+<blockquote>         
+<p style="margin-top: 1; margin-bottom: 1">         
+<img border="0" src="images/ch06_03_edit.gif" width="254" height="155"></p>         
+</blockquote>         
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a name="prefer"></a><b>元件偏好設定   
+(component preference)</b></font></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">設計師在工作視窗下配置元件   
+(layout component) 時，系統會以預設的元件屬性 (大小、外觀、字型)</font><font size="2">   
+配置元件。設計師可以隨時將編輯過的元件，按滑鼠右鍵選擇【存成個人喜好】選單功能，將其屬性設定為預設元件屬性，下一次執行配置時，即會以新的預設屬性配置該類別元件。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE   
+Builder&trade; 的系統預設元件屬性偏好設定檔 <font face="Courier New">prefer.xml   
+</font>位於 <font face="Courier New">jLIVE\xml\</font>   
+目錄下，每當設計師新增一個應用程式時，jLIVE Builder&trade;   
+會將 <font face="Courier New">prefer.xml </font>複製到該應用程式路徑   
+<font face="Courier New">\xml\</font>目錄下，並更名為 <font face="Courier New">_prefer.xml</font>，所以   
+jLIVE Builder&trade;   
+的每一個應用程式皆有獨立的元件屬性偏好設定檔。設計師亦可將應用程式的元件屬性偏好設定檔   
+<font face="Courier New">_prefer.xml</font> 回存到<font face="Courier New">jLIVE\xml\</font>   
+目錄下，更名取代原有的 <font face="Courier New">prefer.xml</font>，系統在下一次新增應用程式時，即以其為預設元件屬性偏好設定檔。</font></p>        
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">多人協同開發應用程式時，系統規劃師可以先行設定各個元件的預設偏好   
+</font><font face="Courier New" size="2">_prefer.xml</font><font size="2">，並將其分發至工作群組的各個設計師，應用系統開發時，每一位設計師的視窗模組即能有一致的外觀與介面。</font></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">       
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p style="margin-top: 1; margin-bottom: 1">　</p>      
+<p style="margin-top: 1; margin-bottom: 1">　</p>      
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="run"></a>進入測試執行模式    
+(run mode)</font></b></p>         
+<ul type="square">          
+  <li>           
+<p style="margin-top: 1; margin-bottom: 1">           
+<font size="2" color="#666699">視窗畫面 (forms)</font></p>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>      
+  <ul type="disc">      
+    <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2" color="#666699">視窗屬性&nbsp;(form properties)：</font><font size="2">進入視窗屬性設定頁。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">執行&nbsp;(run)：</font><font size="2">測試視窗執行。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2" color="#666699">設計 (design)：</font><font size="2">當進入測試執行時，可以使用這個按鍵回到設計畫面。</font></p>          
+    </li>          
+  </ul>          
+  </li>          
+</ul>         
+<blockquote>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<img border="0" src="images/ch06_03_forms.gif" width="251" height="157"></p>          
+</blockquote>          
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="source"></a>
+瀏覽 Java&trade; 程式碼          
+(Java&trade; source code)</font></b></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">按下瀏覽按鍵後    
+，系統會先將目前的設計視窗存檔，之後產生此視窗的        
+Java&trade; 程式碼，在程式碼的瀏覽視窗中，不能編輯修改原始碼。 jLIVE&nbsp; Builder&trade;             
+提供程式設計師自行加入 Java&trade; source code ，並保留此段程式碼。加入的方法為利用註解標籤 <b>&nbsp;<font color="#808080">//&lt;reserve&gt;            
+</font> </b>           
+<font color="#000000">和</font> <b><font color="#808080"> //&lt;/reserve&gt;</font> </b>            
+將自行加入的程式內容用此標籤包住。自行加入程式碼後如果再進入jLIVE&nbsp; Builder&trade;            
+編輯設計，jLIVE&nbsp; Builder&trade; 在產生 Java&trade; source code ( *.java )            
+時將會把以 <b><font color="#808080">//&lt;reserve&gt; </font> </b>           
+<font color="#000000">和</font> <b><font color="#808080"> // &lt;/reserve&gt;</font>            
+</b>標籤包住的程式碼，放在 source code 的最下面並將其標示成註解，並不會覆蓋或刪除掉，設計師必須重新將此段程式，安置於適當的地方， 然後再將 *.java&nbsp;             
+compile 成 class。</font></p>           
+  <blockquote>           
+<p style="margin-top: 1; margin-bottom: 1">           
+<font size="2">           
+<img border="0" src="images/ch06_03_source.gif" width="394" height="489"></font></p>           
+  </blockquote>           
+<p style="margin-top: 1; margin-bottom: 1">           
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>           
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="reload"></a>
+重讀圖檔 (reload          
+Images)</font></b></p>         
+<ul type="square">         
+  <li>         
+  <p style="margin-top: 1; margin-bottom: 1">           
+<font size="2" color="#666699">重讀圖片 (reload images)：</font><font size="2">設計時，修改、刪除、增加圖片檔    
+(image file) 到             
+<font color="#808080">preloadimages</font>  或 <font color="#808080">images</font>             
+ 等目錄，必須重讀圖片，才可以使用那些圖片 (image file)。</font></li>        
+</ul>        
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="hash"></a>
+編輯 Hash 變數          
+(Hash &amp; SysHash editor)</font></b></p>        
+<ul type="square">        
+  <li>          
+<p style="margin-top: 1; margin-bottom: 1" align="justify">          
+<font size="2" color="#666699">Hash &amp; SysHash 編輯器 (Hash &amp; SysHash    
+editor)：</font><font size="2">只有在設計狀態 (design mode) 才有效。     
+每個應用程式皆有獨立的 Hash 跟 SysHash    
+變數，當設計視窗需要這些變數時，可以在編輯器中先編輯好預設的資料值，以利測試執行。</font></p>          
+<p style="margin-top: 1; margin-bottom: 1">          
+　</p>          
+  <ol style="font-size: 10 pt">    
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2">輸入鍵 (key) 與鍵值 (value)。</font></p>          
+    </li>    
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2">按下存檔按鍵。</font></p>          
+    </li>    
+    <li>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<font size="2">出現訊息視窗時，按是。</font></p>          
+    </li>    
+</ol>    
+  </li>        
+</ul>        
+  <blockquote>          
+<p style="margin-top: 1; margin-bottom: 1">          
+<img border="0" src="images/ch06_03_hash_msg.gif" width="433" height="415"></p>          
+  </blockquote>          
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">           
+<font color="#003366" size="2">▲Top</font></a></p>           
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<hr align=left color="#000000">        
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">        
+<tr>        
+<td width=200 align=left valign=top>        
+<a href="ch06_02.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=196 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=204 align=right valign=top>        
+<a href="ch06_04.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+       
+      </td>    
+    </tr>    
+  </table>    
+  </center>    
+</div>    
+       
+</body>           
+           
+</html>

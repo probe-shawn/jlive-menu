@@ -1,0 +1,381 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>MultiEdit Component</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111" height="21">
+<tr>
+<td width=200 align=left valign=top height="21">
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_20.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top height="21">
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>   
+<td width=205 align=right valign=top height="21">   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch10_22.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p><b>   
+<font size="4"><a name="top"></a><a name="top">多行</a>編輯方塊 
+(Multi-line Edit component)</font></b><span style="background-color: #FFFFFF">      
+    <font size="4">      
+    <img border="0" src="images/dbtmulti.gif" width="25" height="25"></font></span></p>      
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">    
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p>       
+<p style="margin-top: 2; margin-bottom: 2"><a href="#datasource">       
+<font size="2">資料來源 (data source)</font></a></p>      
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event">      
+<font size="2">事件 (event)</font></a></p>      
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">運算式屬性存取    
+(formula get/set properties)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+<font size="2" color="#000000">多行編輯方塊元件 (Multi-line Edit)，通常使用於連結資料來源     
+(data        
+Source) 資料欄位 (data field) 的顯示 (display)、輸入 (input)、修改     
+(update) 的基本元件，其與</font><font size="2" color="#000000">編輯方塊元件 
+(Edit) 不同的是資料中可以存取換行文字 (\n) 或 (0d0a)。編輯元件亦可不連結資料欄位 (binding)，可將其當作多行文字編輯器。</font><font size="2">可串接事件以反應各種商業邏輯     
+(business logical) 的運作，例如：當元件內含值修改     
+時、按下        
+Enter 鍵時、元件 Gain Focus 時、元件 Lost Focus 時、雙擊滑鼠的左鍵時、按下滑鼠右鍵時</font><font size="2" color="#000000">，     
+則會</font><font size="2">啟動指定的相關事件程序。</font></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="datasource"></a>資料來源     
+(data source)</font></b></p>      
+<ul type="square">      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">      
+<font color="#666699">資料來源 (data source)：</font>資料來源</font></p>       
+  </li>       
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">       
+<font color="#666699">資料欄位 (data field)：</font>資料來源內的資料欄位。</font></p>       
+  </li>       
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">       
+<font color="#666699">可編輯 (editable)：</font>是否允許使用者編輯。</font></p>      
+  </li>      
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1">       
+<font color="#666699" size="2">自動切換輸入法 (enable input method)：</font><font size="2">Focus      
+移至元件時，編輯</font><font size="2" color="#000000">方塊</font><font size="2">元件自動顯示切換為，使用者作業系統目前所使用的輸入法     
+(input method)。</font></p>       
+  </li>       
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Focus 加速器        
+(accelerator)：</font>按下所要的快速鍵。應用程式執行時，使用者須按住      
+&quot;ALT&quot; 鍵+快速鍵，可以將        
+Focus 移至元件。</font></p>       
+  </li>       
+</ul>      
+<ul type="square">
+  <li>
+    <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font color="#666699" size="2">捲軸 
+    (scrollbar)：</font>　</p>
+    <ul>
+      <li>
+        <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2"><font color="#666699">水平 
+        (horizontal)：</font>是否出現水平捲軸。</font></p>
+      <li>
+        <p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px"><font size="2"><font color="#666699">垂直 
+        (vertical)：</font>是否出現垂直捲軸。</font></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b>
+<font size="2"><a name="event"></a>事件 (event)</font></b></p>      
+<ul>      
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1">       
+<font size="2"><font color="#666699">值變事件 (changed event)：</font>當每次輸入值改變時，即引發事件     
+(fire event)，每一個按鍵輸入包括刪除鍵 (delete)        
+但不包括方向鍵，都會引發值變事件。</font></p>       
+  </li>       
+  <li>       
+<p style="margin-top: 1; margin-bottom: 1">       
+<font size="2"><font color="#666699">Gain Focus 事件：</font>當 Focus 移入</font><font size="2">多行編輯方塊時，即引發事件        
+。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Lost Focus 事件：</font>當        
+Focus 移出</font><font size="2">多行編輯方塊時，即引發事件        
+。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 1; margin-bottom: 1">        
+<font size="2"><font color="#666699">雙擊事件 (double clicked event)：</font>當雙擊滑鼠的左鍵時，即引發事件。</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><font color="#666699">按右鍵事件 (right clicked event)：</font>當按下滑鼠右鍵時，即引發事件。</font></p>      
+  </li>      
+</ul>      
+<blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch10_02_event.gif" width="475" height="475"></p>      
+</blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取   
+(formula get/set properties)</b></font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,    
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p>   
+   
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,    
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;,&nbsp;   
+值</font><font color="#666699">1,&nbsp; 值</font><font color="#666699">2)</font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,    
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;)</font>：屬性讀取。</font></p>   
+   
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111">    
+  <tr>    
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set     
+      Properties</font></td>    
+  </tr>    
+  <tr>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>   
+&nbsp;(Properties)&nbsp;</font></td>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>   
+&nbsp;(Value 1)</font></td>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>   
+&nbsp;(Value 2)</font></td>    
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>   
+&nbsp;(Descriptions)</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">enabled</font></td>    
+    <td><font size="2">1 致能，0 失效</font></td>    
+    <td>　</td>    
+    <td><font size="2">致能與失效。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">setfocus</font></td>    
+    <td><font size="2">1 設定 Focus</font></td>    
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">visible</font></td>    
+    <td><font size="2">1 顯示，0 隱藏</font></td>    
+    <td>　</td>    
+    <td><font size="2">顯示與隱藏。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">repaint</font></td>    
+    <td><font size="2">1 重繪，2     
+      立即重繪</font></td>    
+    <td>　</td>    
+    <td><font size="2">重繪。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">revalidate</font></td>    
+    <td><font size="2">1 運算式重新計算</font></td>    
+    <td>　</td>    
+    <td><font size="2">運算式重新計算。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">editable</font></td>    
+    <td><font size="2">1 可編輯，0 唯讀</font></td>    
+    <td>　</td>    
+    <td><font size="2">可編輯與唯讀。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">text</font></td>    
+    <td><font size="2">文字串</font></td>    
+    <td>　</td>    
+    <td><font size="2">設定文字串為其內含值。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">select</font></td>    
+    <td><font size="2">起始位置</font></td>    
+    <td><font size="2">終止位置</font></td>    
+    <td><font size="2">將起始至終止位置的文字標示為選取，位置由     
+      1 起算。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">caretpos</font></td>    
+    <td><font size="2">游標位置</font></td>    
+    <td>　</td>    
+    <td><font size="2">設定游標位置，位置由 1     
+      起算。</font></td>    
+  </tr>    
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>    
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get     
+      Properties</font></td>    
+  </tr>    
+  <tr>    
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性     
+      (Properties)</font></td>    
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值     
+      (Return value)</font></td>    
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">isenabled</font></td>    
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>    
+    <td><font size="2">致能與失效。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">isvisible</font></td>    
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>    
+    <td><font size="2">顯示與隱藏。</font></td>    
+  </tr>    
+  <tr>    
+    <td><font size="2">iseditable</font></td>    
+    <td colspan="2"><font size="2">1 可編輯，0 唯讀</font></td>    
+    <td><font size="2">可編輯與唯讀。</font></td>    
+  </tr>    
+  <tr>
+    <td><font size="2">text</font></td>    
+    <td colspan="2"><font size="2">文字串</font></td>    
+    <td><font size="2">多行編輯方塊中內含值文字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_20.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=194 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=206 align=right valign=top>  
+<a href="ch10_22.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,       
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>      
+      
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+     
+</body>     
+     
+</html>

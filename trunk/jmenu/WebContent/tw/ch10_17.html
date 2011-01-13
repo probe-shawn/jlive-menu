@@ -1,0 +1,458 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Tab Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+&nbsp;<a href="index.html"><img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_16.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=197 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>  
+<td width=203 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_18.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b>  
+<font size="4"><a name="top"></a>索引標籤 (Tab component)</font></b><font size="4">   
+    <img border="0" src="images/dbttab.gif" width="25" height="25"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#tabprop">    
+<font size="2">索引標籤屬性 (Tab properties)</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#event">    
+<font size="2">事件 (event)</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#tabdesign">索引標籤設計操作     
+(Tab component design)</a></font></p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#getsetprop">運算式屬性存取  
+(formula get/set properties)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">索引標籤元件(Tab component)    
+使用於資料項目需以不同標籤頁區分類別顯示時。所有元件包括索引標籤元件，皆可嵌入標籤頁(tabbed pane)中，成為隸屬於該標籤頁的元件。標籤頁中的元件，除了顯示   
+(display)及位置 (position) 由索引標籤所控管外，其餘使用方式及系統功能與一般工作視窗上的元件是完全一樣的。標籤頁中的元件與工作視窗元件可以滑鼠隨時移置互換，參閱</font>    
+<font size="2"><a href="#tabdesign">索引標籤設計操作     
+(Tab component design)</a>。</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<b><font size="2"><a name="tabprop"></a>索引標籤屬性 (Tab properties)</font></b></p>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">索引標籤方位 (tab position)：</font> 設定標籤位置。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">上 (top)：</font> 設定標籤在上方。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">左 (left)：</font> 設定標籤在左邊。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">右 (right)：</font> 設定標籤在右邊。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">下 (bottom)：</font> 設定標籤在下方。<br>
+　</font></p>    
+    </li>    
+  </ul>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">索引標籤框架：</font>     
+標籤設定</font></p>    
+<ul type="disc">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">刪除標籤頁 (delete tabbed pane)     
+<img border="0" src="images/delete20.gif" width="24" height="24">：</font>     
+刪除標籤頁。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">上移 (move up)      
+<img border="0" src="images/up20.gif" width="24" height="24">：</font>     
+往上調整標籤順序。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">下移 (move down)     
+<img border="0" src="images/down20.gif" width="24" height="24">：</font>     
+往下調整標籤順序。<br>
+　</font></p>    
+  </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">標題 (label)：</font> 設定標籤名稱。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">圖示 (icon)：</font>&nbsp;設定標籤圖示。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">提示 (tips)：</font> 設定標籤提示文字。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">標籤前景 (tab foreground)：</font>標籤頁未被選取時前景顏色。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">標籤背景 (tab background)：</font>標籤頁未被選取時背景顏色。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">區域背景 (area background)：</font>標籤頁下含區域背景顏色。</font></p>    
+    </li>    
+</ul>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_17_tab.gif" width="480" height="481"></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<ul>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2">顯示狀況<font color="#666699">：</font>&nbsp;</font> </p>    
+  </li>    
+</ul>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_17_tab2.gif" width="505" height="347"></p>    
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="event"></a>事件 (event)</font></b></p>   
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">動作事件 (action event)：</font>使用者按選不同的標籤頁   
+(selection changed) 時，即引發事件 (fire event)。<br>
+　</font></p>      
+  </li>      
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">Gain      
+    Focus 事件：</font>當 Focus 移入標籤元件時，即引發事件 。<br>
+　</font></p>     
+  </li>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">Lost      
+    Focus 事件：</font>當 Focus 移出標籤元件時，即引發事件 。<br>
+　</font></p>     
+  </li>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">雙擊事件   
+    (double clicked event)：</font>當雙擊滑鼠的左鍵時，即引發事件。<br>
+　</font></p>     
+  </li>     
+  <li>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">按右鍵事件   
+    (right clicked event)：</font>當按下滑鼠右鍵時，即引發事件。</font></p>     
+  </li>     
+</ul>     
+<p style="margin-top: 0; margin-bottom: 0">     
+　</p>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch10_17_event.gif" width="475" height="476"></p>     
+</blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="tabdesign"></a>索引標籤設計操作     
+(Tab component design)</b></font></p>    
+<ul>    
+  <li>    
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><b>建立索引標籤及標籤頁   
+    (create tab component and tabbed panes)</b></font></p>    
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">將索引標籤 (Tab     
+component) 擺置 (layout)    
+    於工作視窗中，雙擊滑鼠進入屬性設定頁，新增所需的標籤頁   
+    (tabbed pane)。<br>
+　</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><b>切換標籤頁   
+    (change    
+    selected tabbed pane)</b></font></p>   
+    <p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">在索引標籤元件上按滑鼠右鍵，將滑鼠移至功能選單   
+    (popup menu) 的【 調換標籤頁-- 索引標籤元件名稱    
+    】選單項目，選取標籤頁標題，索引標籤元件將會把該頁調為目前選取標籤頁   
+    (selected tabbed pane)。<br>
+　</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><b>配置元件   
+    (layout component)</b></font></p>   
+    <p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+    標籤頁中的元件，當滑鼠滑過 (roll over) 
+    元件時以粉紅色框點標示，而位於工作視窗的元件，則以藍色框點標示。元件可以滑鼠移入或移出標籤頁，元件在移動置入 (drop) 
+    時，以元件左上(left-top) 座標為準，當左上座標落入(hit) 
+    標籤頁頁面區域時，則元件將嵌入標籤頁，否則移出至工作視窗。選取多個元件移入標籤頁時，該標籤頁頁面區域必須能容納所有移入的元件，否則無法移入。<br>
+　</font><ul>   
+      <li>   
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">由元件工具列置入：按選元件   
+        (select component)；滑鼠顯示十字圖示；在標籤頁中按下   
+        (clicked) 滑鼠置入元件。</font></li>   
+      <li>   
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">由資料欄位置入：標示選取資料欄位以滑鼠拖曳至標籤頁，根據配置精靈視窗指示置入元件。</font></li>   
+      <li>   
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">由資料來源配置：拖曳資料來源至標籤頁，根據配置精靈視窗指示選取配置元件。</font></li>   
+      <li>   
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">由工作視窗移入標籤頁：以滑鼠選取多個元件或按住單元件拖拉至標籤頁。</font></li>   
+      <li>   
+        <p style="margin-top: 1; margin-bottom: 1"><font size="2">由標籤頁移出至工作視窗：以滑鼠按住元件拖拉至工作視窗。</font></li>   
+    </ul>   
+  </li>   
+</ul>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取  
+(formula get/set properties)</b></font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp; 值1,&nbsp; 值2)</font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;)</font>：屬性讀取。</font></p>  
+  
+<table border="1" cellspacing="0" cellpadding="2" width="100%" style="border-collapse: collapse" bordercolor="#111111">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性    
+      (Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1&nbsp;</font></td>  
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">enabledat</font></td>
+    <td><font size="2">N 第 N 個標籤頁</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">將第 N 個標籤頁，設定為致能或失效，N 由   
+      1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">titleat</font></td>  
+    <td><font size="2">N 第 N 個標籤頁</font></td>  
+    <td><font size="2">文字串</font></td>  
+    <td><font size="2">設定第 N 個標籤頁的標題，N 由 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">N 第 N 個標籤頁</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定第 N 個標籤頁為目前標籤頁，N 由 1   
+      起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">selected</font></td> 
+    <td colspan="2"><font size="2">N 第 N 個標籤頁</font></td>  
+    <td><font size="2">目前標籤頁 N，N 由 1 起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">selectedtitle</font></td> 
+    <td colspan="2"><font size="2">字串</font></td> 
+    <td><font size="2">目前標籤頁的標題文字。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p>　</p> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_16.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=196 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=204 align=right valign=top>  
+<a href="ch10_18.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,       
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>      
+      
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+    
+</body>    
+    
+</html>

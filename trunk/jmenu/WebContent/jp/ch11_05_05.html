@@ -1,0 +1,157 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Send Mail</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=215 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD>   
+<td width=185 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch11_05_06.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">メール送り (send mail)</font></b></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">jLIVE     
+Builder&trade; メールシステムは FROM アドレス、TO アドレス、CC  
+アドレスのチェックを行います，   
+FROM アドレスと TO アドレスは必要で，そのフォーマット (format) 
+は発送時と同じのthreadでチェックされ，エラーメッセージを転送します。システムはエラーがある時にメールの発送が出来ません。TO 
+アドレス、CC アドレスフォーマットは正確でアドレスが間違うかで発送出来ない時，システム     
+jLIVE&trade; middle wareは他の一つのthreadでエラーメッセージをメールで   
+FROM アドレスに発送します。<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">jLIVE     
+Builder&trade; のメール送る作業において，jLIVE&trade; middle ware 
+は他の一つのthreadで実行します。アプリのクライアント (client)はメール情報を jLIVE&trade; middle wareに転送し ，jLIVE&trade;     
+middle ware はアドレスフォーマットをチェックします。もしエラーがあれば，同じthreadでエラーメッセ－ジを転送し，エラーがなければ発送threadを起動します。<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">SMTP    
+host に値がない時に，システムは localhostでjLIVE&trade;     
+middle ware のホストを SMTP ホストとして使い；インコード (encoding)  
+に値がない時に，システムはjLIVE&trade;     
+middle ware&nbsp;ホストのVM (virtual machine)  
+インコードをメールインコードにします(encoding)。<br>
+　</font></p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">アタッチ  
+(attachment) はクライアント (client) にあるファイルか jLIVE&trade; middle ware 
+ラン中の任意のホストにあるファイル (必ず共用アクセス権利を   
+jLIVE&trade; middle ware ホストに設定)。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">実行 ： </font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<font color="#666699">HTML Content ：</font>   選択 (checked) すると，転送のメールは HTML形式になります。</font></p>   
+    </li>   
+  </ul>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">SMTP host：</font><font size="2">外へメール送りのホスト，例えば：<font face="Courier New">mail.probe.com.tw</font>。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">FROM アドレス (from address)：</font><font size="2">送る側      
+email address。</font></p>     
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">TO アドレス (to address)：</font><font size="2">受ける側 email      
+address。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">CC アドレス (cc address)：</font><font size="2">経過側 email      
+address，人数が多い時， &quot;,&quot; で分けます。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">インコード (encode)：</font><font size="2">コード集  
+(character Set)。</font></p>     
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">サブジェクト (subject)：</font><font size="2">メールサブジェクト。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">内容 (content)：</font><font size="2">メールの内容。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">アタッチ (attachment)：</font><font size="2">メールのアタッチ  
+(Aatached Files)，多数の時に &quot;,&quot;で分けます。</font></p>    
+    </li>    
+  </ul>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch11_05_perform_4.gif" width="419" height="419"></p>    
+</blockquote>    
+<hr align=left color="#000000">    
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">    
+<tr>    
+<td width=200 align=left valign=top>    
+<a href="ch11_05_03.html">    
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>    
+<td width=191 align=center valign=top><a href="index.html">    
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>    
+<td width=209 align=right valign=top>    
+<a href="ch11_05_06.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~   
+2004 Probe Technology Inc. . All Rights Reserved.   
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+      </body>    
+    
+</html>

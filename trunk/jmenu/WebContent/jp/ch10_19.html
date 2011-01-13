@@ -1,0 +1,330 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Timer component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 height="31" style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top height="31">
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_18.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top height="31">
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1"><a href="ch10.html" style="text-decoration: none"><font color="#000000">Components</font></a></font></b></TD>  
+<td width=205 align=right valign=top height="31">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_20.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b>  
+<font size="4"><a name="top"></a> </font></b>       
+<font size="4"><b>タイマコンポーネント</b></font><font size="4"> </font><b>       
+<font size="4">(Timer component) </font></b><font size="4">      
+    <img border="0" src="images/ch10_timer.gif" width="30" height="30"></font></p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>      
+<p style="margin-top: 1; margin-bottom: 1"><a href="#face">    
+<font size="2">表面 (face)</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#timerprop">   
+<font size="2">タイマープロパティ (Timer properties)</font></a></p>      
+<p style="margin-top: 1; margin-bottom: 1"><a href="#event">    
+<font size="2">イベント (event)</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#change">ダイナミック更新&#27599;Every 
+milli-second起動     
+(dynamically change 'Every milli-second' trigger)</a></font></p>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#getsetprop">フォーミュラ 
+get/set プロパティ    
+(formula get/set properties)</a></font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<b><font size="2"><a name="face"></a>表面 (Face)</font> </b></p>      
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">Date Time パータン (display pattern)：</font>タイマーに表示する日付のフォーマット。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">水平 (horizontal position)：</font>表示する日付の水平位置。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">ヘッター (leading)：</font></p>    
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">左 (left)：</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">センター (center)：</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">右 (right)：</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">フッター (trailing)：</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+    </li>   
+  </ul>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">垂直 (vertical position)：</font>表示する日付の垂直位置。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">上 (top)：</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">センター (center)：</font></p>    
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">下 (bottom)：</font></p>     
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_19_face.gif" width="479" height="331"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="timerprop"></a>タイマープロパティ      
+(Timer properties)</font></b></p>      
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">イベント起動 (fire event)：</font>アクションイベント     
+(action event) の時期。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<ul type="disc">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">ナン (none)：</font>イベント起動しない。</font></p>    
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">毎milli-second (every milli-second)：</font>どのmilli-secondごとに一回イベントを起動，milli-secondは単位。</font></p>   
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">  
+<font color="#666699">毎日の (every day at)：</font>毎日何時に一回イベントを起動。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">毎月の (every month at)：</font>毎月何時に一回イベントを起動。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">条件はＴＲＵＥの時 (when condition is true)：</font>フォーミュラで計算した結果はＴＲＵＥの時，イベントを起動。</font></p>     
+  </li>    
+</ul>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_19_timer.gif" width="479" height="408"></p>    
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="event"></a>イベント     
+(event)</b></font></p>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">アクションイベント (action event)：</font>条件はＴＲＵＥの時，イベントを起動。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">ダブルクリック (double click event)：</font>マウス左キーをダブルクリックする時，イベントを起動。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">右クリックイベント (right click event)：</font>右クリックする時に，イベントを起動。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">初期起動 (initial firing)：</font><font size="2">【</font><font color="#666699" size="2">     
+(every milli-second)</font><font size="2">】初期される時にイベントを起動するのかを設定。</font></p>     
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_19_event.gif" width="479" height="301"></p>    
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="change"></a>ダイナミック変更でmilli-second毎に起動     
+(dynamically change 'Every milli-second' trigger)</b></font></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<ul>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><font face="Courier New">SetProp(&quot;</font>タイマーコンポーネント<font face="Courier New">&quot;,     
+    &quot;delay&quot;, </font> milli-second<font face="Courier New">)</font>：</font> 
+    milli-second毎に起動設定のし直し。</font></li>    
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><font face="Courier New">SetProp(&quot;</font>タイマーコンポーネント<font face="Courier New">&quot;,     
+    &quot;enabled&quot;, 0)</font>：</font> 
+    イベント起動を一時的に停止。</font></li>    
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699" size="2" face="Courier New">SetProp(&quot;</font><font color="#666699">タイマーコンポーネント</font><font color="#666699" size="2" face="Courier New">&quot;,     
+    &quot;enabled&quot;, 1)</font>： イベント起動設定のし直し。</font></li>    
+</ul>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>フォーミュラ 
+get/set プロパティ   
+(formula get/set properties)</b></font></p>  
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,値) </font>：プロパティの設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font></font><font color="#666699">コンポーネント名</font><font size="2"><font color="#666699">&quot;,    
+&quot;プロパティ&quot;,&nbsp; 値1,&nbsp;値2)</font>：プロパティの設定。</font></p>  
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font></font><font color="#666699">コンポーネント名</font><font size="2"><font color="#666699">&quot;,    
+&quot;</font><font color="#666699">プロパティ&quot;)</font>：プロパティの讀取。</font></p> 
+ 
+<table border="1" width="480"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699" width="470"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050" width="88"><font size="2">プロパティ</font><font color="#FFFFFF" size="2"> 
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050" width="117"><font color="#FFFFFF" size="2">値1    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050" width="74"><font color="#FFFFFF" size="2">値2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050" width="173"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>   
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">enabled</font></td>  
+    <td width="117"><font size="2">1 使用可能，0 無効</font></td>  
+    <td width="74">　</td>  
+    <td width="173"><font size="2">使用可能と無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">setfocus</font></td>  
+    <td width="117"><font size="2">1 Focus設定</font></td>  
+    <td width="74">　</td>
+    <td width="173"><font size="2">Focus設定。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">visible</font></td>  
+    <td width="117"><font size="2">1 </font><font size="2">表示，0 隠し</font></td>   
+    <td width="74">　</td>  
+    <td width="173"><font size="2">表示と隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">repaint</font></td>  
+    <td width="117"><font size="2">1 </font><font size="2">再描く，2 
+      即再度描く</font></td>  
+    <td width="74">　</td>  
+    <td width="173"><font size="2">再描く。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">revalidate</font></td>  
+    <td width="117"><font size="2">1&nbsp;</font></td> 
+    <td width="74">　</td>
+    <td width="173"><font size="2">コンポーネントのリロード。</font></td>
+  </tr>
+  <tr>
+    <td width="88"><font size="2">delay</font></td>
+    <td width="117"><font size="2">N 秒　 Nミリ秒ごと</font></td> 
+    <td width="74">　</td> 
+    <td width="173"><font size="2">&nbsp;Nミリ秒ごとの設定イベントのし直し。</font></td> 
+  </tr> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699" width="470"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center" width="88"><font color="#FFFFFF" size="2">プロパティ    
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center" width="197"><font color="#FFFFFF" size="2">値転送    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center" width="173"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>   
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">isenabled</font></td>  
+    <td colspan="2" width="197"><font size="2">1 使用可能，0 無効</font></td>  
+    <td width="173"><font size="2">使用可能と無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="88"><font size="2">isvisible</font></td>  
+    <td colspan="2" width="197"><font size="2">1 表示，0 隠し</font></td>  
+    <td width="173"><font size="2">表示と隠し。</font></td>  
+  </tr>  
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch10_18.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=193 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=207 align=right valign=top>   
+<a href="ch10_20.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+      </body>    
+    
+</html>

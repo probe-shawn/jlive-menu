@@ -1,0 +1,265 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Form Container Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_21.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=190 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD> 
+<td width=210 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch10_23.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><b> 
+<font size="4">視窗容器元件 </font></b><font size="4"><b>(Form container component)</b> </font><span style="background-color: #FFFFFF"> 
+    <font size="4"> 
+    <img border="0" src="images/dbtformcontainer.gif" width="25" height="25"></font></span></p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"> 
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p> 
+<p style="margin-top: 2; margin-bottom: 2"><a href="#face"><font size="2">視窗 
+(form)</font></a></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#getsetprop">運算式屬性存取   
+(formula get/set properties)</a></font></p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">
+視窗容器元件可以載入其他的視窗 (form) 於元件區域中。設計師設定初始啟動視窗，系統將於視窗容器元件所在視窗開啟 (open) 
+後，隨即開啟視窗容器元件中的視窗；關閉 (close) 視窗容器元件所在視窗時，系統將先關閉視窗容器元件中的視窗，再關閉 (close) 視窗容器元件所在視窗。
+設計師可以使用 <font color="#666699">SetProp(&quot;視窗容器元件&quot;, &quot;form&quot;, &quot;視窗名稱&quot;) </font>
+動態開啟其他視窗，原先開啟於視窗容器元件中的視窗，會先行關閉。如果要開啟的視窗名稱不正確或已開啟，視窗容器元件區域將留空，SetProp() 傳回 0 
+值，成功開啟則傳回 1 值。</font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="face"></a><b><font size="2">
+視窗 (form)</font></b></p>
+<ul type="square">
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">視窗 (forml) ：</font>選取視窗。</font></p> 
+  </li> 
+</ul> 
+<blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_23_form.gif" width="480" height="480"></p> 
+</blockquote> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取  
+(formula get/set properties)</b></font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp;  
+值1,&nbsp; 值2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;)</font>：屬性讀取。</font></p>  
+  
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>  
+&nbsp;(Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>  
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>  
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>  
+&nbsp;(Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">form</font></td>   
+    <td><font size="2">文字串，視窗名稱</font></td>   
+    <td>　</td>   
+    <td><font size="2">關閉原內含視窗，重啟 form 視窗。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">form</font></td>   
+    <td colspan="2"><font size="2">文字串，視窗名稱</font></td>   
+    <td><font size="2">內含視窗名稱。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<a href="ch10_21.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=196 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=204 align=right valign=top> 
+<a href="ch10_23.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>  
+  
+</html>

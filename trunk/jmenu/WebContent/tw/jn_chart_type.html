@@ -1,0 +1,250 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_stat_chart.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Sales by month by salesman</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600">
+     <tr>
+       <td width="36" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="564" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>CHART_TYPE</b></font></td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="24">　</td>
+       <td width="564" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="564" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="42">　</td>
+       <td width="564" colspan="3" height="42">
+       <ul>
+         <li>
+         <p style="line-height: 150%"><font size="2">業務人員當月銷售統計圖，可以展現長條圖、線形圖、派圖。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="24">
+       <img border="0" src="images/form_properties.gif" width="24" height="24"></td>
+       <td width="564" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>視窗屬性 (Form Properties)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="53">　</td>
+       <td width="564" colspan="3" height="53">
+       <ul>
+         <li>
+       <font size="2">【資料來源開啟後】選擇 <font color="#666699">ini </font>
+         事件，當資料來源開啟後，即執行 <font color="#666699">ini </font>事件。 </font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="564" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="35" align="center" height="16"></td>
+       <td width="87" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Sales：</font></b></td>
+       <td width="475" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">業務人員之業績。<br>
+       <font color="#666699">【SQL】</font>：<font face="Courier New"><br>
+&nbsp;&nbsp; Select z.LastName, z.EmployeeID,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sum(UnitPrice* 
+       Quantity*(1- Discount)) as Total<br>
+       &nbsp;&nbsp;
+       From&nbsp;&nbsp; Employees z , Orders x , OrderDetails y&nbsp; <br>
+&nbsp;&nbsp; where&nbsp; x.orderdate 
+       between ? and ?<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       and x.OrderID = y.OrderID <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and x.EmployeeID = z.EmployeeID<br>
+       &nbsp;&nbsp;
+       group&nbsp; by z.LastName ,z.EmployeeID <br>
+&nbsp;&nbsp; order&nbsp; by z.EmployeeID<br>
+       &nbsp;&nbsp;
+       </font>第一個<font color="#666699">參數類別 &quot;DATE&quot;</font>，<font color="#666699">運算式為&nbsp;<font face="Courier New">Date(Year(Today()),Month(</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp; </font><font size="2"> 
+       <font face="Courier New" color="#666699">Today()),01)</font>，表當月1日，第二個<font color="#666699">參數類別 &quot;DATE&quot;</font>，<font color="#666699">運算式為</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"><font color="#666699">&nbsp;<font face="Courier New">Date(Year(Today()),Month(Today()),31)</font></font>，表當月最後一天，這個</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       SQL會依使用者的系統時間，將該月份的業績 Join 出來。</font></td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="16"></td>
+       <td width="88" height="16" colspan="2"></td>
+       <td width="476" height="16"></td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="564" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="35" align="center" height="28"></td>
+       <td width="87" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【chart_sales】</font></td>
+       <td width="475" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">統計圖元件 (Chart)。<br>
+       【內含值】【資料來源】連接 <font color="#666699">Sales</font>。【X-運算式】輸入<font color="#666699" face="Courier New"> 
+       {Sales:LastName}</font>。【群組內含值】選擇<font color="#666699"> 依資料欄位</font>。【Y-資料欄位】核取<font color="#666699">
+       <font face="Courier New">{Sales:Total}</font></font>。<br>
+       【統計圖】【圖形類別】選擇<font color="#666699"> Belt Chart 2D</font>。 </font></td>
+     </tr>
+     <tr>
+       <td width="35" align="center" height="16"></td>
+       <td width="87" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【radio_type】</font></td>
+       <td width="475" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">選擇鈕元件 (Radiogroup)。<br>
+       【資料來源】【資料欄位】無。<br>
+       【選擇鈕】共有Belt Chart 2D、Line Chart Fancy、Pie Chart 2D三組。以Belt Chart 
+       2D為例，進入【選擇鈕屬性】【版面】【文字】輸入<font color="#666699" face="Courier New">&quot;Belt 
+       Chart 2D&quot;</font>，此為
+       第一個選擇鈕顯示的文字。<br>
+       【選取】【條件運算式】填入<font color="#666699" face="Courier New">{radio_type}=1</font>，其意義為當【radio_type】內含值為&quot;1&quot;時，
+       第一個選擇鈕為被選取狀態。
+       【選取值】【被選時填入內含值】運算式填入<font color="#666699">&nbsp;<font face="Courier New"> 1</font></font>，代表當客戶端(Client)點選第一個選擇鈕時，會將【radio_type】內含值更改成 
+       <font color="#666699">&nbsp;1 </font>。 依此類推， 當【radio_type】內含值為&quot;2&quot;時， 
+       第二個選擇鈕 &quot;Line Chart Fancy&quot; 為被選取狀態 ；【radio_type】內含值為&quot;3&quot;時， 第三個選擇鈕 &quot;Pie 
+       Chart 2D&quot; 為被選取狀態 。<br>
+       【動作事件】選擇 <font color="#666699">reset_chart </font>，按下時以不同的統計圖顯示資料。 </font></td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="16"></td>
+       <td width="88" height="16">
+       </td>
+       <td width="476" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="564" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="35" align="center" height="16"></td>
+       <td width="87" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ini】</font></td>
+       <td width="475" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】【運算式】 <font face="Courier New"> <font color="#666699">SetTitle(&quot;Total sales for &quot;$Year(Today() )$&quot;-&quot;$(100+Month(Today()))[2 to 3]$&quot; by salesman&quot; )</font>，</font>改變視窗的標題文字。</font></td>
+     </tr>
+     <tr>
+       <td width="35" align="center" height="16"></td>
+       <td width="87" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【reset_chart】</font></td>
+       <td width="475" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】【運算式】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2"> <font color="#666699" face="Courier New">if&nbsp;&nbsp; {radio_type}=1 </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2"> <font color="#666699" face="Courier New">then SetProp(&quot;chart_sales&quot;,&quot;type&quot;,2)</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2"> <font color="#666699" face="Courier New">else if&nbsp;&nbsp; {radio_type}=2  </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font color="#666699" face="Courier New">then SetProp(&quot;chart_sales&quot;,&quot;type&quot;,21) </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font color="#666699" face="Courier New">else SetProp(&quot;chart_sales&quot;,&quot;type&quot;,32)</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">依使用者的選擇，以不同的統計圖顯示資料。</font></td>
+     </tr>
+     <tr>
+       <td width="36" align="center" height="16"></td>
+       <td width="88" height="16" colspan="2"></td>
+       <td width="476" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_stat_chart.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=380 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=104 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

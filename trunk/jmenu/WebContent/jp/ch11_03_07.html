@@ -1,0 +1,120 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Transaction Isolation Level</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_03_06.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=211 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=189 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_03_08.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">データベースTransaction Isolation Levelの設定</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">データベース</font><font size="2"><font color="#666699"> (database) ： </font>データベース選択。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">Transaction Isolation ：&nbsp; </font>   
+</p>  
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">Transaction none    
+：</font><font size="2">コントロールなし。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">Transaction read    
+uncommitted ：</font><font size="2">まだ    
+Commit していない資料を読み取れます，データベースに対する制限はもっとも少ないが，多数の人が同時にアクセス可能ですが，データの一致性と完成性に欠けています。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">Transaction read    
+committed ：</font></p>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2">  
+データは安定するまで，他のアクセスから利用できないが，他のアクセス中のデータの更新を許すことで，例えば，新規、修正、削除など，エラーに導く可能性があります。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">Transaction repeatable    
+read ：</font><font size="2">一つのデータアクセスしている際中，他のデータアクセスの修正と削除が許可されない，そうすると，同じデータに同時アクセス機会が少なくなります。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">Transaction serializable    
+：</font><font size="2">一つのデータアクセスしている際中，他のデータアクセスの新規、修正と削除が許可されない，他のアクセスで新規されたデータがあっても，２回クエリー結果が異なることがありません。</font></p>  
+    </li>  
+  </ul>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_03_perform_8.gif" width="419" height="309"></p>  
+</blockquote>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch11_03_06.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=196 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=204 align=right valign=top>  
+<a href="ch11_03_08.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~   
+2004 Probe Technology Inc. . All Rights Reserved.   
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+</body>  
+  
+</html>

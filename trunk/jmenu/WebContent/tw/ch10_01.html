@@ -1,0 +1,267 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Label Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_00.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=190 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD> 
+<td width=210 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch10_02.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><b> 
+<font size="4">標籤元件 </font></b><font size="4"><b>(Label component)</b> </font><span style="background-color: #FFFFFF"> 
+    <font size="4"> 
+    <img border="0" src="images/dbttext.gif" width="25" height="25"></font></span></p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"> 
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p> 
+<p style="margin-top: 2; margin-bottom: 2"><a href="#face"><font size="2">版面 
+(face)</font></a></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#getsetprop">運算式屬性存取   
+(formula get/set properties)</a></font></p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">文字顯示的元件，作為標題，說明等等。</font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="face"></a><b><font size="2">
+版面 (face)</font></b></p>
+<ul type="square">
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<font color="#666699">文字 (text)：</font>顯示的文字字串。多行或特殊文字可以輸入 HTML 標記 (tag)文字。例如輸入：&lt html &gt &lt font size="5" color="#FF0000" &gt 文字放大 &lt /font &gt &lt br &gt &lt font size="3" &gt 第二行 &lt /font &gt &lt /html &gt 
+。(以上 HTML 因排版需要，在&lt; &gt; 間留存空白，實際輸入時請勿加入空白) 結果如下圖<br>
+<br>
+<img border="0" src="images/ch10_01_htmltext.gif" width="125" height="80"></code><br>
+　</font></p>
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<font color="#666699">水平 (horizontal) ：</font>字串水平位置。<br>
+　</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">垂直 (vertical) ：</font>文字垂直位置。</font></p> 
+  </li> 
+</ul> 
+<blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch11_01_face.gif" width="476" height="476"></p> 
+</blockquote> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取  
+(formula get/set properties)</b></font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp;  
+值1,&nbsp; 值2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;)</font>：屬性讀取。</font></p>  
+  
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br>  
+&nbsp;(Properties)&nbsp;</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br>  
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2<br>  
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br>  
+&nbsp;(Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪，2    
+      立即重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性    
+      (Properties)</font></td>   
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isenabled</font></td>   
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">isvisible</font></td>   
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>   
+    <td><font size="2">顯示與隱藏。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">text</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">內含值文字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>   
+</table>   
+   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<a href="ch10_00.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=196 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=204 align=right valign=top> 
+<a href="ch10_02.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>  
+  
+</html>

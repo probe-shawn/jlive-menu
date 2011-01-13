@@ -1,0 +1,260 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Format Pattern</title>
+</head>
+
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td>
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width="600" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=169 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+<td width=267 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" size="2">
+<a href="appendix.html" style="text-decoration: none"><font color="#000000">Appendix</a></font></font></b></TD> 
+<td width=164 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="4"><a name="top"></a>@Formula   
+SQL</font></b><p style="margin-top: 0; margin-bottom: 0">　<p style="margin-top: 0; margin-bottom: 0">　 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#tips">@Formula   
+設計提示 (@Formula design tips)</a></font><p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#example">@Formula   
+範例 (@Formula example)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE    
+Builder&trade; 是開發資料庫應用系統 (database application system)   
+的設計平台，對於資料庫的存取，是透過 JDBC 以 SQL   
+指令操作。系統中提供設計師運用 SQL 的介面有：</font></p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料來源 (data   
+    source)<br>  
+    　</font></p>
+    <p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">資料來源  
+    (data   
+    Source) 是設計師以 SQL 指令擷取 (select) 單一資料表 (table)   
+    或關連 (join) 多個資料表 (tables) 的結果集 (result set)。在工作視窗中的資料元件  
+    (data aware component) ，即是以結果集 (result set) 中的資料欄位  
+    (data field) 作為連結 (binding)   
+    的來源資料。因此，不論資料來源是否設定為自動開啟  
+    (auto open) ，設計師以 SQL   
+    指令定義一個資料來源時，其結果集即已決定了資料來源的欄位結構。如果設計師更改了   
+    SQL 結果集的欄位名稱、型別、個數時，連結 (binding)   
+    該結果集欄位的資料元件也須一併更改。以程式語言來說，定義資料來源，即是定義了一個資料結構  
+    (structure)，每個結果集的欄位名稱，都是一個資料位置  
+    (place holder)，參照資料結構的資料時，則以資料位置名稱存取。<br>  
+    　</font></li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">觸發資料來源事件</font><font size="2"> 
+    (trigger data source event)<br>  
+    　</font></p>
+    <p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">觸發資料來源事件，是將原先定義的資料來源，以不同的參數值  
+    (parameters)，不同的條件 (WHERE&nbsp; condition) ，再次執行 SQL   
+    指令，以得到所需的資料。觸發資料來源的 SQL   
+    指令，其結果集的欄位名稱 (field name)、型別 (field type)、次序  
+    (sequence)   
+    必須與原先定義的資料來源完全一樣。如果設計師要使用不同的參數、不同的條件，就必須使用   
+    @Formula SQL ，動態的重新組成一個 SQL   
+    ，其結果集欄位名稱、型別、次序必須與原資料來源一樣，但擷取條件  
+    (WHERE condition) 則可以按需要動態取捨。<br>  
+    　</font></li>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">執行 NON_SELECT   
+    SQL 事件 (execute non_select SQL event)<br>  
+    　</font></p>
+    <p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">執行 NON_SELECT   
+    SQL 事件，可以輸入合於所使用資料庫系統的任何 SQL   
+    指令。</font></li>  
+</ul>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">在   
+SQL 指令介面中，設計師可以輸入 SQL 指令，或以 @Formula   
+動態重組 SQL 指令。系統在輸入的 SQL 指令中，遇到以@Formula   
+起始的 SQL ，會將 @Formula   
+以下的所有字串當做運算式，先執行此運算式後，再將運算結果值當作   
+SQL 指令，傳送給資料庫執行。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a name="tips"></a><b>@Formula   
+設計提示 (@Formula design tips)</b></font></p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">使用於【觸發資料來源】事件的   
+    @Formula SQL ，須注意其結果集 (result set) 的欄位名稱 (field   
+    name)、型別 (field type) 、次序 (sequence)   
+    必須與原資料來源一致。</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">@Formula 在 SQL   
+    編輯視窗中，按下 SQL   
+    測試時，系統會出現執行期才能檢驗 SQL 正確性的訊息。</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">使用 @Formula   
+    SQL 時，可以設定【<font color="#666699">啟動事件後中斷(interrupt)</font><font color="#000000">】，測試執行時，系統除錯視窗會顯</font>示   
+    @Formula SQL   
+    運算的結果值，此結果值即是真正傳送至資料庫的 SQL   
+    指令。</font></li>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設計師以運算式組成   
+    SQL 時，需注意 SQL 的語法與參數型別，SQL 
+    的語法與參數型別與使用的資料庫系統有關，例如：VARCHAR 
+    型別得值時須加上 <font face="Courier New">''</font>於文字資料前後；日期的格式須參照使用的資料庫日期參數格式。</font></li> 
+  <li> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">使用 @Formula SQL 
+    時，SQL 參數 ?&nbsp; 
+    設定將會被忽略，設計師必須將其整合至 @Formula SQL 中。</font></li> 
+</ul> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="example"></a>@Formula   
+範例 (@Formula example)</b></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">範例：<a href="jn_qury_ordr.html">jNorth   
+示範程式剖析 Query Order Information</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000">操作說明：<br>
+　</font></p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">設計一個使用者查詢視窗，可自由組合客戶編號、客戶名稱、訂單起迄日期，再依訂單日期、客戶名稱、訂單編號、出貨日期的順序，查詢訂單相關資訊。</font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">資料來源：</font></p>
+<blockquote>
+  <table width="90%" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+    <tr>
+      <td colSpan="2" height="16" style="BORDER-BOTTOM: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid" width="57"><b><font size="2">Orders</font></b></td>
+      <td height="16" style="BORDER-BOTTOM: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid" width="478">
+        <p style="LINE-HEIGHT: 150%"><font size="2">客戶訂單歷史資料，為SQL資料來源。<br>
+        <font color="#666699">【SQL】</font>：<br>
+        <font face="Courier New">
+&nbsp;&nbsp; select  
+        A.CustomerID,C.CompanyName,A.orderid,<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A.OrderDate,A.ShippedDate,<br> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        concat(B.firstname,' ',B.lastname) as empl_name,<br> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        sum(D.UnitPrice*D.Quantity*(1-D.Discount)) <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as subtotal<br> 
+        &nbsp;&nbsp; 
+        from&nbsp;&nbsp; orders A left outer join employees B <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.employeeid=B.employeeid<br> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        left outer join customers C <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.customerid=C.customerid<br> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        left outer join orderdetails D <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.orderid=D.orderid<br> 
+        &nbsp;&nbsp; 
+        where&nbsp; A.orderid=0<br> 
+        &nbsp;&nbsp; 
+        group&nbsp; by A.orderid<br> 
+        &quot;concat&quot; </font> 是<font face="Courier New">MySQL</font>提供的命令，將括號裡的資料合併成一個字串；&quot;A.orderid=0&quot;   
+        目的在於讓視窗剛開啟時，Orders   
+        是一個空的資料來源，增加效率；其他命令或語法請參考MySQL手冊。</font></p>  
+      </td>  
+    </table>  
+  </blockquote>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">觸發資料來源事件：</font></p>  
+  <blockquote>  
+    <table width="540" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">  
+      <tr>  
+        <td colSpan="2" height="16" style="BORDER-BOTTOM: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid" width="61">  
+        <b><font size="2">trig_order</font></b></td>  
+        <td height="16" style="BORDER-BOTTOM: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid" width="476">  
+          <p style="LINE-HEIGHT: 150%"><font size="2">觸發資料來源事件。<br>  
+          【執行】【資料來源】選<font color="#666699"> Orders</font>。<br>  
+          【SQL】為：<font face="Courier New">@Formula<br>  
+          &nbsp;  
+          &quot;select   
+          A.CustomerID,C.CompanyName,A.orderid,<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A.OrderDate,A.ShippedDate,<br>  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          concat(B.firstname,' ',B.lastname) as empl_name,<br>  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          sum(D.UnitPrice*D.Quantity*(1-D.Discount)) <br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as subtotal<br>  
+          &nbsp;&nbsp;  
+          from&nbsp;&nbsp; orders A left outer join employees B <br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.employeeid=B.employeeid<br>  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          left outer join customers C <br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.customerid=C.customerid<br>  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          left outer join orderdetails D <br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.orderid=D.orderid<br>  
+          &nbsp;&nbsp;  
+          where&nbsp; A.orderid&gt;0 &quot;  
+          $LocalHashGet(&quot;querystring&quot;)$<br>  
+          &nbsp;&quot; group&nbsp; by A.orderid &quot;$<br>  
+          &nbsp;&quot; order&nbsp; by &quot;$LocalHashGet(&quot;orderstring&quot;)</font><br>  
+          這是動態組成SQL命令的寫法，&quot;@Formula&quot;   
+          的功能是把它以下所有的內容，包括運算式在內，先完全解譯出來，再重新組成SQL命令，送到資料庫執行。<br>  
+          【後續事件】選<font color="#666699"> msg_empty</font>。</font></p>  
+        </td>  
+      </table>  
+    </blockquote>  
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">【觸發資料來源】事件的   
+    SQL 指令，以 @Formula   
+    開始，系統會將以下的字串，當作運算式執行。其中 SQL   
+    所 Select 的欄位名稱、次序與原資料來源 Order   
+    完全一致，不同的是 Where 以後的查詢條件，是存於   
+    LocalHash 的 querystring   
+    變數中，由其他事件先行產生，查詢條件是根據使用者是否在該欄位輸入資料，若有則加入   
+    Where 的條件查詢，否則不列入 Where 條件中。Order by   
+    的組成方式，與 Where 是一樣的。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=172 align=left valign=top> 
+　</td> 
+<td width=171 align=center valign=top> 
+<a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=172 align=right valign=top> 
+　</td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,       
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>      
+      
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+   
+</body>   
+   
+</html>

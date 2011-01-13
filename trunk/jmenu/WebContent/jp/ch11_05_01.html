@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Copy DataSource Data To Buffer DataSource</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=164 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=277 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=159 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_05_02.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="4"><b>データソース内容を</b></font><font size="4"><b> Buffer 
+データソースへコピー   
+(</b></font><b><font size="4">copy data source data to buffer data source)</font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<ul type="square"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">データソース (data source) ：</font>  
+データソースの選択  
+(source)。</font></p>
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<font color="#666699">Buffer データソース (buffered DS)：</font>    
+ buffer データソースの選択 (target)。</font></p> 
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#666699">添付レコードデータ (append record data)： 
+</font><font size="2">データソース資料を</font><font size="2">Buffered data source 
+既にあるレコードの後ろに添付 (append) します 。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">Buffer データソース同期化 (buffer data source Synchronize)： 
+</font><font size="2">選択すると (checked)，システムはデータソースから Buffered  
+Data Source へコピーする時に，Buffered データソースは同時に新規前と後イベント (before and   
+after insert event) と保存前と後イベント (before and after post event)を起動します。関連コンポーネント  
+(data aware component) も行毎に表示更新されます。ソースを素早くコピーしたい時に，ここは選択しません  
+(unchecked)。</font></p>
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">転送フィルター</font><font size="2"><font color="#666699">  
+(transfer filter)：</font>   
+ データソースをコピーする時に，条件フォーミュラで条件に満たす資料を選び出します。</font></p>
+  </li>
+  <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">レコードデータフィールド設定 (record data fields setting)：</font>&nbsp; 
+Buffer  
+Data Source フィールドに値を与えます。</font></p>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_05_perform.gif" width="419" height="419"></p>  
+</blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">  
+<font size="2"><font color="#666699">【レコードデータフィールド設定】(record data  
+fields setting) </font>のキーを押した後に，上の Buffered 
+データフィールドフォームが表示されます。フィールド名 (field name) 
+は Buffer Data  
+Source フィールド順序で配列され，フィールド値はフォーミュラ (formula) 
+で与えられます。</font></p> 
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+　</p> 
+</blockquote> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<a href="ch11_05.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=195 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=205 align=right valign=top> 
+<a href="ch11_05_02.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+</body>  
+  
+</html>

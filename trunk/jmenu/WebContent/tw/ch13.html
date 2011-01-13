@@ -1,0 +1,495 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Internationalization</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_12.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=194 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<font color="#000000">Chapter 1</font>3</font></b><p style="margin-top: 0; margin-bottom: 0">        
+<b><font color="#000000" face="新細明體" size="-1">        
+Internationalization</font></b></TD>       
+<td width=206 align=right valign=top>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<a href="ch14.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=left color="#000000">       
+<h1 class="chapter"><font size="4"><a class="TITLE" name="top">13. 國際化 
+(Internationalization)</a></font></h1>       
+<p class="chapter"><font size="2"><a href="#UTF-8 編碼 Java&#8482; 原始程式">UTF-8 編碼 Java&#8482; 
+原始程 (UTF-8 Java source code)</a></font><br>
+<font size="2"><a href="#使用者程式介面國際化 (I18N user interface)">
+使用者程式介面國際化 (I18N user interface)</a><br>
+<a href="#資料儲存、傳輸國際化 (I18N data storage and transferation)">資料儲存、傳輸國際化 (I18N 
+data storage and transfer)</a><br>
+<a href="#分散式動態語系登轉 (distributed language mapping)">分散式動態語系登轉 (distributed 
+language mapping)</a><br>
+<a href="#支援的語系 (select supported language)">支援的語系 (select supported language)</a><br>
+<a href="#視窗及報表語系對照 (form and report language mapping)">視窗及報表語系對照 (form and 
+report language mapping)</a><br>
+<a href="#資料庫語系與國際字元欄位 (database language supporting and national character)">
+資料庫語系與國際字元欄位 (database language supporting and national character)</a><br>
+<a href="#使用者語系切換介面 (user language interface)">使用者語系切換介面 (user language 
+interface)</a><br>
+<a href="#編譯及佈建程式 (compile and deployment)">編譯及佈建程式 (compile and deployment)</a></font></p>      
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE 
+Builder&#8482;&nbsp; 是一個具多國語系 (multi-language) 的國際化 (Internationalization) 
+應用程式開發平台，目前可在英文、繁體中文 (big5)、簡體中文 (gb2312) 、日文 (ms932) 執行jLIVE Builder&#8482; 
+，其他語系以英文介面呈現。在安裝使用 jLIVE Builder&#8482;&nbsp; 
+後，系統會自動登轉至作業系統 (OS) 的語系，提供使用者一個 jLIVE Builder&#8482;&nbsp; 版本可在多個不同語系系統中使用。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+設計師運用 jLIVE Builder&#8482 
+  亦能輕易地開發多國語言網際網路應用程式。多國語言網際網路應用程式，能根據執行期客戶端 
+  (client) 作業系統語系 (OS locale) 
+  自動轉換對應語系；亦可由設計師根據使用者需求，在程式執行期提供使用者切換至其他語系。設計師可以設計一應用程式放諸四海皆準。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+開發多國語言網際網路應用程式，如果應用程式只是簡單地在同一畫面中出現各種不同的語系文字，則只要運用 jLIVE Builder&#8482; </font><span style="font-weight: 400"><font size="2">
+<a href="ch04.html#Java&#8482; 原始程式 UTF-8 編碼 (UTF-8 Java&#8482; source code)：">設定 UTF-8 編碼 
+Java&#8482;&nbsp; 原始程式</a> 即可</font></span><font size="2">
+；若要支援各種語系且系統自動登轉至作業系統 (OS) 的語系，則必須支援兩個層面的國際化 (Internationalization) 及 系統內部分散式動態語系登轉：</font></p>       
+<ul>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2"><a href="#UTF-8 編碼 Java&#8482; 原始程式">UTF-8 編碼 Java&#8482; 原始程式</a></font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2"><a href="#使用者程式介面國際化 (I18N user interface)">使用者程式介面國際化 (I18N user 
+interface)</a></font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2"><a href="#資料儲存、傳輸國際化 (I18N data storage and transferation)">
+資料儲存、傳輸國際化 (I18N data storage and transformation)</a></font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+<a href="#分散式動態語系登轉 (distributed language mapping)">分散式動態語系登轉 (distributed 
+language mapping)</a></font></p>       
+  </li>
+</ul>
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">設計師可以在程式設計完成後或設計中，按以下步驟完成應用程式國際化的需求。 jLIVE Builder&#8482; 開發多國語言網際網路應用程式的程序如下：</font></p>       
+<ol>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">選擇 -- <a href="#支援的語系 (select supported language)">支援的語系 (select 
+supported language)</a></font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">輸入 -- <a href="#視窗及報表語系對照 (form and report language mapping)">
+視窗及報表語系對照 (form and report language mapping)</a></font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">資料國際化 --
+<a href="#資料庫語系與國際字元欄位 (database language supporting and national character)">
+資料庫語系與國際字元欄位 (database language supporting and national character)</a></font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">語系切換 -- <a href="#使用者語系切換介面 (user language interface)">使用者語系切換介面 
+(user language interface)</a></font></p>       
+  </li>
+  <li>          
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2"><a href="#編譯及佈建程式 (compile and deployment)">編譯及佈建程式 (compile and 
+deployment)</a></font></p>       
+  </li>
+</ol>
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="UTF-8 編碼 Java&#8482; 原始程式">UTF-8 編碼 Java&#8482; 原始程式(UTF-8 Java 
+source code)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">一般應用程式原始檔 (source code) 皆以本機作業系統語系存檔，程式設計時若需要引用其他語系文字時，則以 UNICODE&nbsp; 
+給值，才能正確存檔及編譯 (compile)，但是使用 UNICODE 不容易輸入及維護，jLIVE Builder&#8482; 以UTF-8 編碼 Java&#8482; 
+原始程式的方式，讓設計師直接在設計環境中引用其他語系文字。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">&nbsp;jLIVE Builder&#8482; 在設計期將所有設計資料以 XML UTF-8&nbsp; 編碼方式儲存，產生 Java 
+原始檔 (*.java) 時，如果使用了其他語系文字，按一般正常方式輸出本機作業系統語系的原始檔 (source 
+code)，將會產生亂碼。所以設計師須核選以UTF-8 編碼 Java&#8482; 原始程式，jLIVE Builder&#8482; 除了以 UTF-8 編碼 Java&#8482; 
+原始程式外，</font><span style="font-weight: 400"><font size="2">jLIVE Builder&#8482; 會指示 
+javac 以 UTF-8 編譯 (compile) 原始程式。</font></span></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="使用者程式介面國際化 (I18N user interface)">使用者程式介面國際化 (I18N user 
+interface)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">當應用程式在使用者端 (client) 開啟後，系統會查詢使用者端作業系統 (operation system)&nbsp; 
+的語系，根據此語系，系統會要求所有視窗及元件以該語系呈現。如果該語系不存在，系統以預設語系 (原開發環境語系) 呈現。使用者介面所需國際化的部分包括所有非程式碼 (code) 
+的文句(字)，例如：所有標籤元件、元件抬頭文字、元件提示文字、核取方塊文字、選擇鈕文字、清單方塊的文字陣列、下拉式清單方塊的文字陣列、按鍵文字、資料表抬頭文字、索引標籤文字‧‧‧等等。設計師可以在設計視窗中以 jLIVE 
+Builder&#8482; 所提供的<a href="#視窗及報表語系對照 (form and report language mapping)">語系對照系統</a>直接輸入相對語系文字，或輸出對照表由其他編輯軟體作業
+，再輸入設計視窗中。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">語系對照表附加於視窗或報表小模組中，以 Unicode 的編碼型式存在。使用者視窗要呈現該語系文字時，必須要有相對的 
+Unicode 
+字型檔 (font) 存在，尤其是要同時顯示多國文字時。 jLIVE Builder&#8482; 在語系切換的函式 (formula function) 中，除了提供<a href="#使用者語系切換介面 (user language interface)">切換語系</a>外亦提供指定字型檔 
+(font)。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+　</p>       
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber2" height="344">
+  <tr>
+    <td height="24" align="center"><b><font size="2" color="#003366">繁體中文介面</font></b></td>
+    <td height="24" align="center"><b><font size="2" color="#003366">英文介面</font></b></td>
+  </tr>
+  <tr>
+    <td height="333"><img border="0" src="images/ch13_lang_tw.gif" width="267" height="333"></td>
+    <td width="50%" height="333">
+    <img border="0" src="images/ch13_lang_en.gif" align="left" width="268" height="327"></td>
+  </tr>
+</table>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="資料儲存、傳輸國際化 (I18N data storage and transferation)">
+資料儲存、傳輸國際化 (I18N data storage and transfer)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+多國語言網際網路應用程式，除了使用者程式介面國際化外，應用系統所存取的資料是否是多國語言，是另一個國際化的課題。 jLIVE Builder&#8482; 
+所處理的資料來自於上下載 (down and up load) 檔案伺服器 (file server) 的資源、郵寄信件 (send mail)、 FTP 
+上下載 (down and up load)、及資料庫伺服器 (database server)。除了資料庫伺服器 (database server) 
+外每個事件模組皆提供編碼字集 (encoding) 設定，設計師可以根據來源的資源性語系的不同，正確地使用資源。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+資料庫伺服器 (database server) 
+是否要支援多國語系，須根據應用系統資料作業範圍是否要涵蓋多國語言，如果需要支援多國語系，就必須設定資料庫內部的語系。<a href="#資料庫語系與國際字元欄位 (database language supporting and national character)">支援多國語系的資料庫伺服器</a>採行方案，一
+、將需要多國語系的欄位型別設為 national type；或二、可以將資料庫伺服器安裝時語系設定為 Unicode 或 UTF-8。這些方案的採用須視資料庫系統是否支援相關設定。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+支援多國語系資料存取的視窗介面。<br>
+　</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<img border="0" src="images/ch13_i18n_db.gif" width="560" height="352"></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">
+多國語言網際網路應用程式是多層式架構 (multi-tier)，除了最前端的使用者程式介面及最後端的資料庫伺服器外，尚需要將資料傳輸在一、使用者端 
+(client) 與應用伺服器端 (application sever)；二、應用伺服器端 (application sever) 與 
+資料庫伺服器。由於使用者端 (client) 與應用伺服器端 (application sever) 是以 HTTP 連結傳輸，多 byte 
+的語言文字，不一定能正確的在線上傳輸， jLIVE Builder&#8482; 的 middle ware 會將資料按加密需求後以 UTF-8 傳輸 
+所以資料將會正確無誤，設計師不需額外設定。至於應用伺服器端 (application sever) 與 資料庫伺服器 的連結傳輸是經由 JDBC ，
+如果不是使用資料庫所提供的national type 欄位時，或 JDBC 須設定驅動程式 (driver) 預設語系時，皆須設定 
+JDBC 驅動程式的語系支援。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<img border="0" src="images/ch13_lang_transfer.gif" width="418" height="137"></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b><font size="2">
+<a name="分散式動態語系登轉 (distributed language mapping)">分散式動態語系登轉 (distributed 
+language mapping)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">&nbsp;jLIVE 
+Builder&#8482; 多國語言網際網路應用程式與一般的主從應用程式 (client-sever) 不同，主從架構通常將程式下載至客戶端 (client) 
+執行，其中關於語系對照的資料整批附加於程式資源部分。如果是大型應用程式系統，其語系對照的資料也相對龐大，而網際網路應用程式所有資源必須由應用伺服器隨時更新下載，龐大的語系對照資料，如果不論是否使用到皆盲目下載至使用者端，不但效率差也會影響網路傳輸的頻寬與效率。jLIVE 
+Builder&#8482; 多國語言網際網路應用程式，其中關於語系對照的資料是分散於各視窗模組，使用者使用到的視窗模組，其語系對照資料才會下載至使用者端。</font></p>       
+<p class="chapter" style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">&nbsp;jLIVE 
+Builder&#8482; 
+多國語言網際網路應用程式，系統在程式開始執行時，會以使用者的作業系統語系自動登轉為該語系執行。設計師亦可使用語系相關的運算公式，提供使用者介面讓使用者能動態切換語系，使用的方式請參閱 
+<a href="#使用者語系切換介面 (user language interface)">使用者語系切換介面</a>。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="支援的語系 (select supported language)">支援的語系 (select 
+supported language)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">在應用程式控制面版選取應用程式節點，核取 i18n 多國語系，按下<img border="0" src="images/system20.gif" width="24" height="24">，在國際化支援語系選擇視窗
+，選取此應用程式所要支援的語系。選取支援的語系後，在每一個視窗與報表中必須定義相關的語系對照表。例如：選取中文(台灣)、中文(中國)、日文、英文後，在多國語系核取方塊 (checkbox) 後會出現語系代號 
+[zh_TW][zh_CN][ja][en]，國際化語系對照視窗中亦會出現相對各語系的對照輸入。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="center">
+<img border="0" src="images/ch13_lang_sel.gif" width="434" height="451"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="視窗及報表語系對照 (form and report language mapping)">視窗及報表語系對照 
+(form and report language mapping)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">&nbsp;jLIVE 
+Builder&#8482; 多國語言網際網路應用程式，其中關於語系對照的資料是分散於各視窗與報表模組，進入視窗設計環境 (form design 
+environment) 後在主控面版上按下<img border="0" src="images/system20.gif" width="24" height="24">，系統會出現 國際化語系對照表視窗。左方區域的樹狀節點，將會列示所有需要設定語系對照的元件。點選元件後，右方區域會出現語系對照的輸入表格。使用語言輸入鍵盤輸入對應的語系字串，或直接在儲存格內輸入 
+Unicode (例如： \\u30aa\\u30fc) <br>
+，當游標移開該儲存格，系統會自動將其轉換為該語系文字，設計師必須輸入所有語系空格資料，否則切換至該語系時，系統會以空白顯示。語系對照表使用 
+<font color="#003366">Arial Unicode MS</font> 字型，如果您的系統中沒有該字型，請按上方<img border="0" src="images/font.gif" width="16" height="16"> 
+[對照表字型] 按鈕，設定選擇其他使用 Unicode 的字型，否則多國語系字元將無法正確顯示。設計師可以按下<img border="0" src="images/transfer.gif" width="16" height="16"> 
+[複製語系] 按鈕，快速的先將英文 (或其他語系) 複製至另一語系，再逐一更改為該語系。<img border="0" src="images/help.gif" width="16" height="16"> 
+[檢查未設定語言對照元件] 按鈕，系統會檢查並將對照表移至尚未設定語言對照的儲存格。<img border="0" src="images/export.gif" width="16" height="16"> 
+[輸出語系對照表] 功能可以將所有相對應語言輸出至檔案 (*.utf8)，可以用支援編輯 Unicode 的文書處理軟體，編輯語言並將其存檔為 UTF-8 
+格式檔。<img border="0" src="images/import.gif" width="16" height="16">[輸入語系對照表] 
+功能將會將相對應文字串重新讀入。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">如果
+設計師允許使用者在應用程式中自行轉換語系，或同時顯示多國語言時，使用者端的 JRE (Java runtime environment) 所對應的 Dialog 
+字型設定，若無法正確顯示所有 Unicode 字型時，設計師必須在提供使用者切換語系的介面中，除了選擇語系外必指定支援 Unicode 的字型 (例如： 
+<font color="#003366">Arial Unicode MS</font>)。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="center">
+<img border="0" src="images/ch13_lang_map.gif" width="548" height="488"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<ul type="square">
+  <li type="square">       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2" color="#003366"><img border="0" src="images/transfer.gif" width="16" height="16"> 複製語系：</font><font size="2">快速的先將英文 
+(或其他語系) 複製至另一語系。並核取是否所有元件皆套用或只套用於此元件。<br>
+<br>
+<img border="0" src="images/ch13_lang_copy.gif" width="268" height="250"><br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2" color="#003366"><img border="0" src="images/help.gif" width="16" height="16"> 
+檢查未設定語言對照元件：</font><font size="2">系統會檢查並將對照表移至尚未設定語言對照的儲存格。<br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2" color="#003366"><img border="0" src="images/font.gif" width="16" height="16"> 對照表字型：</font><font size="2">語系對照表使用 
+<font color="#003366">Arial Unicode MS</font> 字型，如果您的系統中沒有該字型，設定選擇其他使用 Unicode 
+的字型，否則語系對照表多國語系字元將無法正確顯示。一般而言並不需要將此字型套用於所有元件，語系自動登轉為作業系統語系時， Java Dialog 字型透過 
+JRE 的 font.properties 
+將可以正確的顯示該作業系統語系字型，除非設計師提供語系切換，強制顯示非該作業系統語系時，元件的字型就必須是能顯示所有語系的 Unicode 字型。</font><font size="2" color="#003366"><br>
+<br>
+<img border="0" src="images/ch13_lang_font.gif" width="268" height="197"><br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2" color="#003366"><img border="0" src="images/export.gif" width="16" height="16"> 輸出語系對照表：</font><font size="2">將所有相對應語言輸出至檔案 
+(*.utf8)，可以使用支援編輯 Unicode 的文書處理軟體，編輯語言並將其存檔為 UTF-8 
+格式檔。輸出檔案時，按下按鈕，選擇檔案目錄即可，輸出檔名由系統內定為<font color="#003366"> 視窗名稱.utf8</font>，其內碼為 UTF-8 格式，開啟
+、更改內容後必須以 UTF-8 
+存檔，並且不可改變檔名，否則系統無法作業。輸出的對照表內容範例 --<a href="lang_MAIN_MENU_utf8.html"> 
+MAIN_MENU.utf8</a>。<br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2" color="#003366"><img border="0" src="images/import.gif" width="16" height="16"> 輸入語系對照表：</font><font size="2">設計師可以使用支援編輯 
+Unicode 的文書處理軟體，編輯輸出的語系對照表，並將其存檔為 UTF-8 格式檔，再輸入視窗中。語系對照表部分內容如下：<br>
+<br>
+</font><font color="#003366">#######################################################<br>#<br>#   jLIVE Builder international language map table    <br># Use editor which supported UTF-8 to modify and save <br>#<br>#######################################################<br><font size="2">
+<br>
+</font>###<br>視窗.title.zh_TW=【 北風貿易 】-- 教學示範程式<br>視窗.title.ja=<br>視窗.title.zh_CN=【 北&#39118;&#36152;易 】-- 教&#23398;示范程序<br>視窗.title.en=【 Northwind 】-- Sample Application<br>###<br>選單.text.zh_TW=基本資料<br>選單.text.ja=<br>選單.text.zh_CN=基本&#25968;据<br>選單.text.en=Basic info.<br>###</font><br>
+<font size="2" color="#003366"><br>
+</font><font size="2">設計師可以由等號左邊得知何是那一個元件及何種語系，並在等號右邊輸入相對文句。</font><font size="2" color="#003366"><br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2" color="#003366">水平檢視：</font><font size="2">語系對照表格垂直與水平列示對調，方便檢視，並不更動任何資料。</font><font size="2" color="#003366"><br>
+　</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2" color="#003366">垂直檢視：</font><font size="2">語系對照表格垂直與水平列示對調，方便檢視，並不更動任何資料。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2">
+<a name="資料庫語系與國際字元欄位 (database language supporting and national character)">
+資料庫語系與國際字元欄位 (database language supporting and national character)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">
+資料庫系統資料儲存是否須國際化，端視應用系統是否允許使用者同時可以輸入及儲存多國語言資料，如果資料只有英文與原作業系統語言混合，就無需設定資料庫語系。一般而言，資料庫安裝時即以作業系統語系進行安裝。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">如果需要在資料中同時處理及儲存多國語言，資料庫安裝及使用時，可以以下方式之一設定語系</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">選擇以資料庫提供的國際字元欄位 (national character field) 儲存多國語言。</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">選擇 Unicode 或 UTF-8 為預設資料庫語系。</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">資料庫提供的國際字元欄位 (national character field) ，以 MS SQL 及 Oracle 為例，其中 
+NCHAR、NVARCHAR 即是 CHAR 、VARCHAR 相對的國際字元欄位，其內部是以 Unicode 儲存資料，每個字元以兩個 byte 
+儲存。設計師只需要將使用者存取多國語言資料的欄位設定為 N- type 即可</font>，<font size="2">其他非多國語言文字資料的欄位仍可沿用 
+CHAR 及 VARCHAR 。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">並非所有資料庫皆提供國際字元欄位 (national character field) ，例如：mySQL。如果要在 mySQL 
+資料庫中存取多國語言資料，除了在 mySQL 資料庫組態設定中設定資料庫語系外，存取 mySQL 資料庫的驅動程式亦必須設定。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">例如：使用 <font face="Arial" color="#003366">
+mysql-connector-java-3.0.14-production-bin </font>的驅動程式 
+<font face="Arial" color="#003366">com.mysql.jdbc.Driver </font>，其 URL 設定：<font face="Arial" color="#003366">jdbc:mysql://localhost:3306/northwind?useUnicode=true&amp;characterEncoding=UTF-8</font>。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">使用 Unicode 與 UTF-8 的分別是 Unicode 所有字元包括英數都是兩個 byte ；而 UTF-8 
+則英數以一個byte 儲存，其他語系的字元是 2 至 3 byte。因此如果使用 UTF-8 或 Unicode 時，必須注意語系轉換時實際存入資料庫所使用的 
+byte 數是否會被截斷，並造成資料遺失與錯誤。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">不論使用國際字元欄位 (national character field) 儲存多國語言或以Unicode 或 UTF-8 為預設
+資料庫語系，jLIVE Builder&#8482; 皆可支援。設計師不必做任何程式設計上的額外設定。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="使用者語系切換介面 (user language interface)">使用者語系切換介面 (user 
+language interface)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">jLIVE 
+Builder&#8482; 所開發的多國語言網際網路應用程式，在使用者端執行時，會自動切換至使用者端所使用的語系。如果使用者在使用上並不
+需要自行切換至非本機語系，設計師即不需提供任何切換語系的功能介面。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">設計師在 jLIVE Builder&#8482; 上關於語系的運算式有：</font></p>       
+<ul>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">SetLang(lang)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">Se<span lang="en-us">t</span>Lang(lang, font)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">OsLang()</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">IsLang(lang)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">UTF2Str(utf)</font></p>       
+  </li>
+  <li>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2" color="#003366">Str2UTF(str)</font></p>       
+  </li>
+</ul>
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">其中變數</font><font size="2" color="#003366"> lang </font>
+<font size="2">是語系的代碼字串，設計師在選取支援語系時，系統將會標示於多國語系旁。設計師亦可參考國際化支援語系選擇視窗中所列示的語言項目。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">設計師可以執行 SetLang(lang) 切換語系，系統以原設定於元件的字型 (font) 
+顯示，如果使用者所使用的作業系統無法顯示，設計師可以使用 Se<span lang="en-us">t</span>Lang(lang, &quot;Dialog&quot;) 強制將所有元件字型更換為 Dialog 
+字型，Dialog 字型會根據 JRE (Java Runtime Environment) 上 font.properties 設定顯示，如果 Dialog 
+仍無法正確顯示，設計師可以選用 Window 上的 Unicode 字型，例如：SetLang(lang, &quot;Arial Unicode MS&quot;)。設計師亦可以 
+OsLang() 查詢使用者作業系統的語系，以及 IsLang(lang) 測試目前應用程式所使用或已切換至何種語系。UTF2Str(utf) 及 
+Str2UTF(utf) 則提供字串 String 與 Unicode 的轉換。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">使用者語系切換介面，設計師可以利用視窗選單 (menu) 或 按鍵 (button) ，執行運算式 SetLang(lang) 
+提供使用者動態切換語系。執行 SetLang(lang) 時，所有已開啟的視窗都會作用，以後再開啟的任何視窗也將以此語系呈現。由於 jLIVE Builder&#8482; 
+語系對照是存在於視窗模組中，不需在 SetLang(lang) 時額外再下載語系資源，所以語系切換是即時反應且作用於所有目前已開啟的視窗。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">以按鍵 (button) 切換語系。<br>
+　</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch13_setlang_1.gif" width="482" height="100"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<font size="2">以視窗選單 (menu) 切換語系。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify">
+<img border="0" src="images/ch13_setlang_2.gif" width="401" height="170"></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><b>
+<font size="2"><a name="編譯及佈建程式 (compile and deployment)">編譯及佈建程式 (compile and 
+deployment)</a></font></b></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1; text-indent:20" align="justify"><font size="2">
+開發 jLIVE Builder&#8482; 多國語言應用程式，設計師只要選擇支援語系及定義語系對照表，其餘所有系統機制皆由 jLIVE Builder&#8482; 
+自動服務。由於語系對照是附加於視窗元件，所以在更動語系對照後，須編譯 (compile) 該視窗模組，再透過 jLIVE Builder&#8482; 
+線上更新作業，將該視窗模組 (form) 傳送至應用程式伺服器即可。</font></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p class="chapter" style="margin-top: 1; margin-bottom: 1" align="justify">　</p>       
+<hr align=left color="#000000">        
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">        
+<tr>        
+<td width=200 align=left valign=top>        
+<a href="ch12_12.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=195 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=205 align=right valign=top>        
+<a href="ch14.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.          
+</font></p>          
+          
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,           
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>          
+          
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+          
+</body>          
+          
+</html>

@@ -1,0 +1,189 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Load text file to buffered data source</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=191 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=231 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=178 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_05_05.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">Buffer 
+データソースへテキストファイルのロード (load text file to buffered data source)</font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<ul type="square"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">テキスト</font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+  <ul type="disc"> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">ファイル URL&nbsp; (file URL)： </font>テキストファイルのパス。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">Tab Delimited ：</font>   選択すると (checked)，Tab 
+記号で分割されたテキストになります。選択しない (unchecked)と 
+，固定長さ   
+(Fixed length)のテキストになります。</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">テキストレコード定義 (define text record)：</font>   
+ テキストレコードの定義。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2">固定長さ   
+(Fixed length)のテキストの場合，正確にレコード BYTE 
+数を設定しなければなりません。Tab 
+記号で分割されたテキストの場合，システムは長さプロパティを無視します。</font></p> 
+    <ul type="circle"> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><i><font color="#666699">上へ   
+<img border="0" src="images/Up20.gif" align="bottom" width="24" height="24"> </font></i>  
+<font color="#666699">：</font>  上へ移り。</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699"><i>下へ   
+<img border="0" src="images/Down20.gif" align="bottom" width="24" height="24"> </i>：</font>   
+ 下へ移り。</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699"><i>削除   
+<img border="0" src="images/Delete20.gif" width="24" height="24"></i>  ：</font>  
+ データフィールド定義の削除。</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データフィールド (field)：</font>  
+文字データの一時フィールド名，fld1から順序並べが出来ます。</font></p>  
+      </li>  
+      <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">タイプ (type)：</font>  
+データスタイル，VARCHAR、INTEGER、FLOAT、DATE、TIME、TIMESTAMP。</font></p>  
+      </li>  
+      <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">長さ (length)：</font>   
+データの長さ，Byte で計算 。</font></p>  
+      </li> 
+      <li> 
+<p style="margin-top: 1; margin-bottom: 1" align="justify"> 
+<font size="2" color="#666699">フォーマット (format)： </font>   
+<font size="2">日付の場合</font><font size="2">，フォーマットが指定される必要があります。システムはフォーマットでパサー 
+(parser)が出来ます。例えば：データは<font face="Courier New">&quot;2001-12-31    
+14:29:51&quot;</font>の時， TIMESTAMP スタイルを選択し，フォーマットは：<font face="Courier New">&quot;yyyy-MM-dd hh:mm:ss&quot;</font>にすると，システムはBufferデータソースに&quot;20011231142951&quot;を記入します。　</font></p>  
+      </li>  
+    </ul>  
+    </li>  
+  </ul>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_05_perform_1.gif" width="419" height="419"></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+</blockquote>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">Buffer データソース ： </font></p>   
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<ul type="disc">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Buffer 
+データソース (buffer data source)： </font>Buffer 
+データソースの選択     
+。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><font color="#666699">対照マップ (map transfer  
+fields)：</font>  テキスト枠を    
+Bufferデータソースに対応させます     
+。</font></p>  
+<ul type="circle">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">データフィールド (field)</font><font size="2"><font color="#666699">：</font>   
+Buffer データソースで定義した枠順位番号。</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2"><font color="#666699">名前 ：</font> Buffer 
+データソース名。</font></p> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2"><font color="#666699">テキストフィールド ：</font>  
+前のページで設定されたテキストフィールドの選択。</font></p> 
+  </li> 
+</ul> 
+  </li> 
+</ul> 
+  </li> 
+</ul> 
+<blockquote> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/ch11_05_perform_2.gif" width="419" height="308"></p> 
+</blockquote> 
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=172 align=left valign=top> 
+<a href="ch11_05_02.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=171 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=172 align=right valign=top> 
+<a href="ch11_05_05.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+      </body> 
+ 
+</html>

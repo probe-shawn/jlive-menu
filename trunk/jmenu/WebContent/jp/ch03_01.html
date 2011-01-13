@@ -1,0 +1,183 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Programming guide</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="1" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=596 border=0 cellspacing=1>
+<tr>
+<td width=195 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=192 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch03.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 3</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch03.html" style="text-decoration: none"><font color="#000000">Project 
+develop procedure</font></a></font></b></TD>            
+<td width=199 align=right valign=top>            
+<p style="margin-top: 0; margin-bottom: 0">            
+<a href="ch03_02.html">          
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>          
+</tr>          
+</table>          
+          
+<hr align=left color="#000000">          
+<p><font size="4"><b>3.</b></font><b><font size="4">1<a class="TITLE"> </a>jLIVE Builder&trade;    
+プログラミングコンセプト(programming concept)</font></b></p>                      
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#oop">オブジェクト指向プログラミング       
+(object oriental programming)</a></font></p>                       
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#eventdriven">イベントドライブ</a><a href="#eventdriven"> 
+(event drive)</a></font></p>            <!--            
+<p align="justify">　<font size="2">jLIVE Builder&trade;                   
+ 是100% pure Java&trade; 的網際網路應用程式快速開發系統 (rapid     
+application development)。程式設計師以物件導向 (object               
+oriental programming) 及 事件驅動 (event drive)               
+的概念，在完全視覺化的設計平台 (fully visual design framework)               
+中，以滑鼠&#25302;曳元件 (components)， 設定屬性 (properties)               
+及&#21855;動事件 (event)               
+的方式架構應用程式。所有設計邏輯、流程、元件、資料來源等，皆會記&#37636;在               
+XML &#27284;中，再由 XML &#27284;&#29986;生 Java&trade; 原始程式碼 (source               
+code)，建立執行&#27284;時再編譯成 Java&trade; class &#27284;。</font></p>      -->             
+<p>　</p>                
+<p><font size="2"><b><a name="oop"></a>オブジェクト指向プログラミング (object oriental programming)</b></font></p>  <!--                   
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&trade;        
+以物件導向的理念，讓程式設計師快速的開發應用程式，以物件構築程式不但設計容易     
+(design)，也易於維護 (maintain) 及拓展 (extent) 與重用 (reuse)。在             
+jLIVE Builder&trade; 的設計平台中，從應用程式(application)、視窗畫面(form)         
+到視窗畫面中的元件 (component)、事件 (event)，以至於報表     
+(report)         
+及列印元件 (printable             
+component)，都是以物件的型式存在與使用。&#27599;一個物件都有屬性     
+(properties)，屬性包括物件的外觀顯示( display format)、&#20839;部程序     
+(internal process)、資料關連 (data             
+aware) 及系統或回應使用者操作的各種事件 (system and response        
+event)。</font></p>       
+<p style="text-indent: 20" align="justify"><font size="2">應用程式設計時，設計師按系統需求&#20296;建物件(create       
+objects)，設定&#27599;個物件的初始屬性 (properties)，且按物件提供給使用者操作的介面 (UI)，連結各種回應的事件流程     
+(response event flow)，如此即可完成使用者操作視窗介面的程式設計。</font></p>         
+<p style="text-indent: 20" align="justify"><font size="2">應用程式執行時，物件的&#20839;部系統屬性，會按系統流程自動引發程序，例如：資料連結     
+(data             
+binding) 會自行連結資料欄 (data field)         
+位，且更新資料至目前資料記&#37636;欄位&#20540;(record             
+field)；而設計師設定的回應事件流程 (event flow)，則會根據使用者的操作，觸發相關的事件流程     
+(event             
+flow)，而在事件流程中亦可進一&#27493;的更改執行期的物件屬性，使物件能反應各種作業需求，動態的改變屬性。</font></p>      --> 
+<p style="text-indent: 20"><font size="2">オブジェクト</font><font size="2"> (object)</font></p>           
+<ul>    
+  <li><font size="2">ディスプレイとフォーマット (display format)：位置、サイズ、フォント、カラー、隠し、資料表示方式。</font></li>         
+  <li><font size="2">内部プロセス (internal process)：initial and destroy、data   
+    stream、authorized enable、data logic。</font></li>         
+  <li><font size="2">データ関連 (data aware)：データコネクション、フェッチ、アップデード、認証。</font></li>         
+  <li><font size="2">システムとレスポンスイベント (system and response event)：システムフローイベント、ユーザ操作レスポンスイベント。</font></li>         
+</ul>     
+<p style="text-indent: 20"><font size="2">ＭＶＣ(<b>M</b>odel/<b>V</b>iew/<b>C</b>ontroller)   
+構造 (object Model/View/Controller architecture)&nbsp;</font></p>            
+<ul>     
+  <li><font size="2">Model：システム携帯，潜在的なロジスティックス。</font></li>     
+  <li><font size="2">View：Model ビュー。</font></li>         
+  <li><font size="2">Controller：ユーザは Model との連動。</font></li>         
+</ul>     
+<p style="text-indent: 20"><font size="2">オブジェクトデザイン (object design)</font></p>            
+<ul>     
+  <li><font size="2">オブジェクト作成 (create object )</font>         
+    <ul>    
+      <li><font size="2">新規オブジェクト (create object)</font><font size="2">：新規フォーム        
+        (form)、レポート (report)、データソース (data source)、コンポーネント        
+        (component)、イベント (event)。</font></li>         
+    </ul>    
+  </li>    
+  <li><font size="2">View</font>    
+    <ul>    
+      <li><font size="2">表示フォーマット (display format)：フォーム、レポートプロパティ設定        
+        (form and report&nbsp; properties)及びコンポーネント外見プロパティ設定 (format properties)。</font></li>         
+    </ul>    
+  </li>    
+  <li><font size="2">Model</font>    
+    <ul>    
+      <li><font size="2">データ関連 (data aware)：&nbsp;コンポーネントデータ連結        
+        (data binding)、データソース SQL コマンド (SQL command)、ダウン・アップロードファイル        
+        (download and upload file)。</font></li>         
+      <li><font size="2">内部プロセス (iternal process)：データソースフェッチ        
+        (fetch)、編集 (update)、新規追加 (insert)、削除 (delete)、SQL          
+        error handle。</font></li>         
+    </ul>    
+  </li>    
+  <li><font size="2">Controller</font>    
+    <ul>    
+      <li><font size="2">システム及び反応イベント (system and response event)：フォームオープン前後及びクローズイベント        
+        (before and after open event) 、コンポーネント起動イベント (component          
+        fire event)。</font></li>         
+    </ul>    
+  </li>    
+</ul>    
+<p><font size="2"><b><a name="eventdriven"></a>イベントドライブ (event drive)</b></font></p> <!--              
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&trade; 的事件物件   
+(event) 是一段作業程序 (process)。一連串的事件物件串接，按&#21855;動條件判斷   
+(fire condition) 是否執行程序 (perform process)          
+或者執行&#21478;一事件 (otherwise event)，以及該程序執行完後，是否執行下一事件   
+(next          
+event) ，即是事件流程 (event flow) 。</font></p>       --> 
+<p style="text-indent: 20" align="left"><img border="0" src="images/ch11_event_object.gif" width="320" height="198"></p>        
+<p style="text-indent: 20" align="left"><font size="2">イベントフローの起動：</font></p>        
+<ol style="font-size: 10 pt">      
+  <li>      
+    <p align="left"><font size="2">ユーザ起動</font><font size="2"> (user fired)：ユーザはフォームコンポーネントを操作すると，各種類のコンポーネントを起動できます，例えば：キークリック操作或いはデータ更新など。</font></li>      
+  <li>      
+    <p align="left"><font size="2">システム起動 (system fired)：フォームのオープン・クローズ、データソースフェッチ・更新・削除など、  
+    SQL 実行エラーなど。</font></li>     
+  <li>     
+    <p align="left"><font size="2">タイマーコンポーネント起動 (timer      
+    component fired)：タイマーコンポーネントは設定された時間と条件の元で起動されます。</font></li>      
+</ol>      
+<p style="text-indent: 20" align="left"><font size="2">作業フローのリクエストに基づいて，デザインナーは作業実行    
+(perform) のイベントフロー (event flow) を作り上げます。以下の図はユーザは保存キーを押した時のイベントフローです。</font></p>          
+<p style="text-indent: 20" align="left"><img border="0" src="images/ch03_01_event_flow.gif" width="363" height="235"></p>         
+<hr align=left color="#000000">              
+<table width=596 border=0 cellspacing=1>              
+<tr>              
+<td width=195 align=left valign=top>              
+<a href="ch03.html">             
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>             
+<td width=191 align=center valign=top><a href="index.html">             
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>             
+<td width=200 align=right valign=top>             
+<a href="ch03_02.html">           
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>           
+</tr>           
+</table>           
+           
+<hr align=left color="#000000">           
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.</font></p>          
+         
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,          
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>         
+         
+      </td>      
+    </tr>      
+  </table>      
+  </center>      
+</div>      
+                   
+</body>                   
+                   
+</html>

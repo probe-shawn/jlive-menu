@@ -1,0 +1,549 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_main_menu.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_basc_supp.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0">&nbsp;<b><font size="4">Customers</font></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600">
+     <tr>
+       <td width="32" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="568" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>BASC_CUST</b></font></td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="24">　</td>
+       <td width="568" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="568" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="53">　</td>
+       <td width="568" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">客戶資料的維護作業。</font></li>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">
+         【Order history】標籤頁顯示該客戶所有的訂單概要、筆數與總金額。</font></li>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">
+         客戶編號為人工給號，不得為空值，不能重複，存檔後不可修改 。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="24">
+       <img border="0" src="images/form_properties.gif" width="24" height="24"></td>
+       <td width="568" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>視窗屬性 (Form Properties)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="53">　</td>
+       <td width="568" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">【事件】【資料來源開啟後】選擇 
+         <font color="#666699">dis_id</font>，表示視窗開啟後即執行<font color="#666699">dis_id</font>事件，將【客戶編號】元件變成不可修改。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="568" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="18" colspan="2" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Customers： </font></b></td>
+       <td width="465" height="18" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2" align="justify"><font size="2">客戶資料檔<br>
+       【SQL】：<font face="Courier New">Select *&nbsp; from customers</font><br>
+       【事件】【讀取後】選擇 <font color="#666699">trig_order</font>，表示
+       客戶之記錄一經移動，
+       就會執行觸發資料來源事件<font color="#666699">trig_order </font>
+       。這是常見的將所謂的主檔與副檔的資料同步化的設計方法。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Cust_order：</font></b></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2" align="justify"><font size="2">客戶訂單歷史資料，為SQL資料來源。<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; select 
+       A.OrderDate,A.ShippedDate,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; concat(B.firstname,' ',B.lastname) 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as&nbsp; empl_name,A.orderid,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       (case A.shipvia when 1 then 'Express' <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when 2 then 'Mail' 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else 'Pickup' 
+       end) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as shipvia, 0 as subtot<br>
+&nbsp;&nbsp;
+       from&nbsp;&nbsp; orders A left outer join employees B <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.employeeid=B.employeeid<br>
+&nbsp;&nbsp;
+       where&nbsp; A.customerid is null<br>
+       </font><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &quot;concat&quot; 是 MySQL 提供的命令，將括號裡的資料合併成一個字串；&quot;case...when<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...then&quot; 是 SQL92 
+       的標準命令，執行後可將orders的shipvia欄位內含值置換成有<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 意義的字串；&quot;where A.customerid is null&quot; 
+       目的在於讓視窗剛開啟時，Cust_order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 是一個空的資料來源，增加效率；其他命令或語法請參考MySQL手冊。<br>
+       【讀取列】：-1，表示將所有資料傳到客戶端(client)。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <font size="2"><b>chk_dupli</b></font><b><font size="2">：</font></b></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">客戶編號重複與否之檢查<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; Select CustomerID <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; customers <br>
+&nbsp;&nbsp; where&nbsp; CustomerID=0</font><br>
+       【自動開啟】：取消，新增或修改前再來觸發。</font></td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="16"></td>
+       <td width="102" height="16" colspan="2"></td>
+       <td width="466" height="16"></td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="568" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="28"></td>
+       <td width="89" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【CustomerID】</font></td>
+       <td width="477" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       預設為可編輯，白底藍字。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="28"></td>
+       <td width="89" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tab_cust】</font></td>
+       <td width="477" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">索引標籤元件 (Tab)。<br>
+       【動作事件】選擇 <font color="#666699">
+       trig_order </font>事件(觸發資料來源)。意即當切換標籤頁時，則執行 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; trigger cust_order 事件。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="89" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_orders】</font></td>
+       <td width="477" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">Cust_order</font>，奇偶列不同色。<br>
+       【欄位】【資料表元件欄位】選擇Cust_order所有欄位。 </font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="89" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【nav_cust】</font></td>
+       <td width="477" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">導覽元件 (Navigator)。 <br>
+       【資料來源】連接 <font color="#666699">Customers </font>，反應客戶端(Client) 新增、修改、刪除等等對資料的<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 操作。<br>
+       【事件】<br>
+&nbsp;&nbsp;&nbsp; 【新增】選擇 <font color="#666699">en_id</font>，表示當客戶端(Client)按新增按鈕時，不執行內定的新增動<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 作，而執行<font color="#666699">en_id</font>事件。<br>
+       &nbsp;&nbsp;&nbsp;
+       【存檔】選擇 <font color="#666699">
+       msg_chk_cusid</font>，表示當客戶端(Client)按存檔按鈕時，不執行內定的<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 存檔動作，而執行<font color="#666699">msg_chk_cusid
+       </font>事件。<br>
+       &nbsp;&nbsp;&nbsp;
+       【取消】選擇 <font color="#666699">cancel_cust</font>，表示當客戶端(Client)按存檔按鈕時，不執行內定的存<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 檔動作，而執行<font color="#666699">cancel_cust
+       </font>事件。<br>
+       &nbsp;&nbsp;&nbsp;
+       【查詢】選擇 <font color="#666699">
+       query_cus</font>，則表示以<font color="#666699"> query_cus </font>
+       事件，取代導覽元件預設的查詢功<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 能。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="28"></td>
+       <td width="89" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tot_orders】</font></td>
+       <td width="477" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       運算式內容為<font color="#666699"> <font face="Courier New">{Cust_order:TotalRecord()}</font></font>，表示該客戶訂單總數。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="28"></td>
+       <td width="89" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tot_sales】</font></td>
+       <td width="477" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       運算式內容為&nbsp; <font color="#666699" face="Courier New">SumField(&quot;Cust_order&quot;,&quot;subtot&quot; )</font>，
+       執行期會把資料來源<font color="#666699">Cust_order</font>的欄位<font color="#666699">subtot</font>內含值全部加起來，
+       顯示在元件上。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="28"></td>
+       <td width="89" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【Classification】</font></td>
+       <td width="477" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊元件 (Edit)。<br>
+       運算式內容為&nbsp;<font face="Courier New"><font color="#666699"><br>
+       Condition(({tot_sales}&lt;3000000),&quot;C 
+       class&quot;, Condition(({tot_sales}&lt;5000000),&quot;B class&quot;,<br>
+       Condition(({tot_sales}&gt;=5000000),&quot;A class&quot;,&quot;&quot;)))<br>
+       </font>
+       </font>意即當tot_sales(客戶訂單總額)小於3000000，
+       此元件顯示&quot;C class&quot;；小於5000000，此元件顯示&quot;B class&quot;；大於等於5000000，此元件顯示&quot;A class&quot;。</font></td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="16"></td>
+       <td width="90" height="16">
+       </td>
+       <td width="478" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="568" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【dis_id】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件致能(enable)事件。<br>
+       【執行】<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 【設定】勾選<font color="#666699">CustomerID</font>，致能(enable)不勾選，代表將<font color="#666699"> 
+       CustomerID </font>元件disable，<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 使其無法編輯。<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+       【後續事件】選 <font color="#666699">color_dis </font>，意即此事件執行後，接著執行 <font color="#666699">
+       color_dis </font>&nbsp;事件，將<font color="#666699"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CustomerID </font>元件變色。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【color_dis】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件顏色事件。<br>
+       【執行】【設定】勾選<font color="#666699">CustomerID</font>，背景選淡藍色，執行時會將<font color="#666699"> 
+       CustomerID </font>元件的背景變成淡藍色。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; " bgcolor="#FFFFFF">
+       <font size="2">【en_id】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; " bgcolor="#FFFFFF">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件致能(enable)事件。<br>
+       【執行】【設定】勾選 CustomerID，勾選致能(enable)，代表將<font color="#666699"> 
+       CustomerID </font>元件enable。<br>
+       【後續事件】選 <font color="#666699">color_en </font>，意即此事件執行後，接著執行 <font color="#666699">
+       color_en </font>&nbsp;事件，將<font color="#666699"> CustomerID </font>元件變色。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【color_en】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件顏色事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">DsNavigator(&quot;Customers&quot;, &quot;insert&quot;)</font>。<br>
+       DsNavigator(DS,OP) 是一個&quot;動作運算式&quot;，它會對資料來源 &quot;Customer&quot;，
+       實際執行 &quot;Insert&quot; 動作，
+       其傳回值就是 &quot;Insert&quot; 這個字串。放在【條件】裡非關此元件執行與否的判斷 (return一個&quot;Insert&quot;字串則條件恆真)，
+       而是為了減少一個事件，讓程式精簡些。<br>
+       【執行】【設定】勾選<font color="#666699">CustomerID</font>，背景選白色，執行時會將<font color="#666699"> 
+       CustomerID </font>元件的背景變成白色。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_chk_cusid】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">LRTrim({CustomerID} ) = &quot;&quot;</font>，意即Customer 
+       ID為空值時才會執行此事件。<br>
+       【否則】選 <font color="#666699">tri_dupli </font>，意即Customer ID不是空值就執行tri_dupli事件。<br>
+       【執行】<br>
+&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Message<br>
+       </font><font color="#666699">&nbsp;&nbsp;&nbsp; </font>【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Please input Customer ID !!&quot;</font>，執行期此字串<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 會出現在訊息方塊中間<br>
+&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。<br>
+       【後續事件】選 <font color="#666699">focus_id </font>，意即此事件執行後，接著執行 <font color="#666699">
+       focus_id </font>&nbsp;事件。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【focus_id】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件focus事件。<br>
+       【執行】【設定focus】勾選<font color="#666699">CustomerID</font>，會將focus移到<font color="#666699">CustomerID</font>元件上。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【tri_dupli】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【條件】運算式為<font color="#666699"> <font face="Courier New">{Customers:InsMode()}</font></font>。即當資料來源<font color="#666699">Customers</font>新增資<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 料時，才會執行
+       此事件。<br>
+       【否則】選<font color="#666699"> post_cust </font>，意即Customers不是新增狀態就執行post_cust事件。<br>
+       【執行】【資料來源】選<font color="#666699">chk_dupli</font>，檢查客戶編號是否重複。<br>
+       【SQL】為：<font face="Courier New"><br>
+&nbsp;&nbsp; Select CustomerID <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; customers <br>
+&nbsp;&nbsp; where&nbsp; CustomerID=?<br>
+       </font><font color="#666699"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       參數類別 &quot;VARCHAR&quot;</font>，<font color="#666699">運算式為 
+        
+       <font face="Courier New">{CustomerID}</font></font>，這個SQL會找Customers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 資料來源的CustomerID欄位內含值，等於<font color="#666699">{CustomerID}</font>元件內含值的
+       記錄。<br>
+       【後續事件】選<font color="#666699"> msg_dupli</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_dupli】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {chk_dupli:IsEmpty()}</font>，意即資料來源chk_dupli至少有一筆記錄時才會執行此事件。<br>
+       【否則】選 <font color="#666699">post_cust</font>，意即資料來源chk_dupli無任何記錄時就執行post_cust事件。<br>
+       【執行】<br>
+&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Warning<br>
+       </font><font color="#666699">&nbsp;&nbsp;&nbsp; </font>【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Customers ID duplicate ! &quot;</font>，執行期此字串會<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 出現在訊息方塊中間<br>
+&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。<br>
+       【後續事件】選 <font color="#666699">focus_id </font>，意即此事件執行後，接著執行 <font color="#666699">
+       focus_id </font>&nbsp;事件。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【post_cust】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】<br>
+&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699">Customers<br>
+&nbsp;&nbsp;&nbsp; </font>【操作】選<font color="#666699">存檔</font>，執行<font color="#666699">Customers</font>的存檔動作。<br>
+       【後續事件】選 <font color="#666699">dis_id </font>，意即存檔後，接著將<font color="#666699"> 
+       CustomerID </font>元件disable，使其無法編<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 輯。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【cancel_cust】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】<br>
+&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699">Customers<br>
+&nbsp;&nbsp;&nbsp; </font>【操作】選<font color="#666699">取消</font>，取消<font color="#666699">Customers</font>的
+       編輯動作。<br>
+       【後續事件】選 <font color="#666699">dis_id </font>，意即取消後，接著將<font color="#666699"> 
+       CustomerID </font>元件disable，使其無法編<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 輯。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【query_cus】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">查詢資料來源事件。<br>
+       【資料來源】選<font color="#666699"> Customers<br>
+       </font>【查詢資料欄位】與【排序資料欄位】勾選CustomerID、CompanyName、<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ContactName、Phone，
+       執行期只會出現這四個欄位供查詢與排序。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【trig_order】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【條件】運算式為<font color="#666699"> <font face="Courier New">{tab_cust}=2 and 
+       LocalHashGet(&quot;cusid&quot; )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&gt;{Customers:CustomerID}</font></font>。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 這個事件是否執行的條件有二
+       ，一為<font color="#666699"> {tab}=2</font>，即當時索引標籤元件<font color="#666699"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tab_cust </font>正停留在第二頁(Order 
+       history)，或是click第二頁的標籤，背後的意<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 義在於，客戶端(client)若是看不到Order 
+       history標籤頁，就沒必要觸發資料<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 來源Cust_order；另一個條件是當時資料來源<font color="#666699">Customers</font>的<font color="#666699">CustomerID</font>內含值<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 不等於區域變數&quot;cusid&quot;，&quot;cusid&quot;是一個控制指標，
+       其內含值是最後一次執<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       行觸發資料來源事件時，資料來源 Customers 的 CustomerID，因此假如<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       &quot;cusid&quot;等於 CustomerID，代表 Cust_order 已被觸發過，客戶端 (client) 只是<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在一二頁間切換
+       而已，不需重新觸發資料來源。<br>
+       【執行】【資料來源】選 <font color="#666699">Cust_order</font>。<br>
+       【SQL】為：<font face="Courier New"><br>
+&nbsp;&nbsp; select A.OrderDate,A.ShippedDate,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; concat(B.firstname,' ',B.lastname) 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as empl_name,A.orderid,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (case A.shipvia when 1 
+       then 'Express' <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       when 2 then 'Mail' 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       else 'Pickup' end) as shipvia,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; round(sum(C.UnitPrice*C.Quantity),2) 
+       as subtot<br>
+       &nbsp;&nbsp; from&nbsp;&nbsp; orders A left outer join employees B <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.employeeid=B.employeeid<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left outer join 
+       orderdetails C <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.orderid=C.orderid<br>
+       &nbsp;&nbsp; where&nbsp; A.customerid=?&nbsp; <br>
+&nbsp;&nbsp; group&nbsp; by A.orderid&nbsp; <br>
+&nbsp;&nbsp; order&nbsp; by A.orderdate<br>
+       </font><font color="#666699"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       參數類別 &quot;VARCHAR&quot;</font>，<font color="#666699">運算式為 
+        
+       <font face="Courier New">{Customers:CustomerID}</font></font>，這個SQL<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 會把該客戶({Customers:CustomerID}) 
+       的所有訂單重新JOIN出來。<br>
+       【後續事件】選<font color="#666699"> set_hash</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="31" align="center" height="16"></td>
+       <td width="101" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_hash】</font></td>
+       <td width="465" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式內容為<font color="#666699"> <font face="Courier New"><br>
+&nbsp;LocalHashPut(&quot;cusid&quot;,{Customers:CustomerID})</font></font><br>
+&nbsp; 動作是將{Customers:CustomerID}存到區域變數&quot;cusid&quot;裡面。</font></td>
+     </tr>
+     <tr>
+       <td width="32" align="center" height="16"></td>
+       <td width="102" height="16" colspan="2"></td>
+       <td width="466" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=145 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_main_menu.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=476 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=129 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_basc_supp.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

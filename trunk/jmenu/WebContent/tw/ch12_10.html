@@ -1,0 +1,559 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>File</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch12_09.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=210 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch12.html" style="text-decoration: none">
+<font color="#000000">Chapter 12</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch12.html" style="text-decoration: none"><font color="#000000">Formula</font></a></font></b></TD> 
+<td width=190 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12_11.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>
+12.10 檔案 (file)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#FileChooser(title,isfile,filter)"><font size="2">FileChooser(title, isfile, filter)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FileChooser(title, isfile, filter, startpath)">
+FileChooser(title, isfile, filter, startpath)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#CopyTo(source,target)"><font size="2">CopyTo(source,target)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#Load(source)">Load(source)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#Load(source, charset)">Load(source, 
+charset)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#SaveAs(target, data)">SaveAs(target, 
+data)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#SaveAs(target, data, append)">SaveAs(target, 
+data, append)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#File(cmd,target)">File(cmd,target)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#FileSep()">FileSep()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#FTP(host, port(21), id, pass, CMD, workdir, remote, local)">FTP(host, 
+port(21), id, pass, CMD, workdir, remote, local)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch12_10_file.gif" width="407" height="265"></p>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="FileChooser(title,isfile,filter)">FileChooser(title,isfile,filter)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">開啟目錄或檔案的選擇視窗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;title&quot; ：視窗標題。<br>   
+    &quot;isfile&quot; ：1 表限制只能選擇檔案，0 表限制只能選擇目錄。<br>   
+    &quot;filter&quot;：篩選副檔名。0 表所有檔案，&quot;.txt&quot; 表限定副檔名為 &quot;.txt&quot; 的檔案。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">客戶端 (client) 所選擇的目錄或檔案的路徑 (path)，若客戶端 (client) 按 &quot;取消&quot;按鈕，則傳回空值。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">FileChooser(&quot;Choose Files&quot; ,1 ,&quot;.txt&quot;    
+) 。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="FileChooser(title, isfile, filter, startpath)">FileChooser(title, isfile, filter, 
+startpath)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">開啟目錄或檔案的選擇視窗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;title&quot; ：視窗標題。<br>   
+    &quot;isfile&quot; ：1 表限制只能選擇檔案，0 表限制只能選擇目錄。<br>   
+    &quot;filter&quot;：篩選副檔名。0 表所有檔案，&quot;.txt&quot; 表限定副檔名為 &quot;.txt&quot; 的檔案。<br>
+    &quot;startpath&quot;：從 startpath 的目錄開啟。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">客戶端 (client) 所選擇的目錄或檔案的路徑 (path)，若客戶端 (client) 按 &quot;取消&quot;按鈕，則傳回空值。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="1"></td>   
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">FileChooser(&quot;Choose Files&quot; ,1 ,&quot;.txt&quot;, &quot;c:\jlive\&quot;    
+) 。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b> <a name="CopyTo(source,target)">CopyTo(source,target)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+將檔案複製到所指定的位置，指定方式是以UNC路徑加上檔名。<br>
+ps: UNC 為 <b>U</b>niversal <b>N</b>aming <b>C</b>onvention 的縮寫。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">&quot;source&quot; ：檔案來源路徑檔名。( \\server\path\檔案名稱 )<br>   
+    &quot;target&quot; ：目標路徑檔名。( \\server\path\檔案名稱 )</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">1 表執行成功，0 表失敗。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">CopyTo( &quot;\\localhost\sample\test1.doc&quot; , &quot;\\server-3\williams\tes2.doc&quot;)。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="Load(source)">Load(source)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+將檔案以字串型態讀入，指定方式是以UNC路徑加上檔名。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;source&quot; ：檔案來源路徑檔名。( \\server\path\檔案名稱 )</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">成功讀取則傳回檔案內容資料，否則傳回空字串。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">Load( &quot;\\server-3\williams\tes2.html&quot;)。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><b> 
+<a name="Load(source, charset)">Load(source, charset)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+將檔案以字串型態讀入，指定方式是以UNC路徑加上檔名。讀入時以 
+charset 編碼</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;source&quot; ：檔案來源路徑檔名。( \\server\path\檔案名稱 )<br> 
+    &quot;charset&quot; ：編碼字集，例如：&quot;MS950&quot;、&quot;MS932&quot;</font><font size="2">。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">成功讀取則傳回檔案內容資料，否則傳回空字串。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">Load( &quot;\\server-3\williams\test2.html&quot;, 
+&quot;MS950&quot;)。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="File(cmd,target)">File(cmd,target)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+執行目錄與檔案的管理功能。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;cmd&quot; ：命令，分為以下五種。<br>   
+<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; md：</font>建立目錄， File( &quot;md&quot; , &quot;\\server\sharePath\目錄&quot; )。<br>   
+<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rd：</font>移除目錄， File( &quot;rd&quot; , &quot;\\server\sharePath\目錄&quot; )。<br>   
+<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; del：</font>刪除檔案， File( &quot;del&quot; , &quot;\\server\sharePath\檔名&quot; )。<br>   
+<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exist：</font>檢查目錄或檔案是否存在， File( &quot;exist&quot; ,    
+&quot;\\server\sharePath\目錄或檔名&quot; )。<br>   
+<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; deltree：</font>刪除目錄、子目錄、及所有檔案， File( &quot;deltree&quot; ,    
+&quot;\\server\sharePath\目錄名&quot; )。<br>   
+    &quot;target&quot; ：目標目錄或檔名路徑。( \\server\sharepath\檔案名稱 )</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">1 表執行成功， 0&nbsp; 表失敗。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+</p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><b> 
+<a name="SaveAs(target, data)"></a>SaveAs(target, data)</b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 data 字串存入 target，target 指定方式是以UNC路徑加上檔名。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;target&quot; ：目的檔案路徑檔名。( \\server\path\檔案名稱 )<br> 
+    data ：字串或運算式結果值</font><font size="2">。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功， 0&nbsp; 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">SaveAs( &quot;\\server-3\williams\test.txt&quot;, {memo})。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="SaveAs(target, data, append)"></a>SaveAs(target, data, append)</b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">以附加於檔尾方式將 data 字串存入 target，target 
+指定方式是以UNC路徑加上檔名。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;target&quot; ：目的檔案路徑檔名。( \\server\path\檔案名稱 )<br> 
+    data ：字串或運算式結果值</font><font size="2">。<br>
+    append：1 表附加，0&nbsp; 表覆蓋原資料。&nbsp;</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功， 0&nbsp; 表失敗。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">SaveAs( &quot;\\server-3\williams\test.txt&quot;, {memo}, 1)。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="FileSep()"></a>FileSep()</b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">傳回作業系統檔案分隔字元。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">分隔字元。&nbsp; MS Windows 傳回 &quot;\&quot; ，UNIX 
+傳回 &quot;/&quot;</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">FileSep()。&nbsp;</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<a name="FTP(host, port(21), id, pass, CMD, workdir, remote, local)">FTP(host, 
+port(21), id, pass, CMD, workdir, remote, local)</a></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">執行 FTP (File Transfer Protocol) 作業。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">host：FTP 主機名稱。<br>
+    port(21)：FTP port，一般為 21 。<br>
+    id：登入FTP 主機的 ID。<br>
+    pass：登入FTP 主機 PASSWORD。<br>
+    CMD：執行 FTP 的命令。RETR -- 讀取檔案；STOR -- 上傳檔案。<br>
+    workdir：登入FTP 主機並切換至目錄 workdir。<br>
+    remote：FTP 主機檔案名稱。<br>
+    local：使用者端檔案名稱</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功， 0&nbsp; 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+<font size="2">讀取 server-2 主機上，目錄 shared_doc 中的 customer_list.txt 檔案，存入為本機檔案名稱 
+c:\ftp_doc\customer.txt：<br>
+<br>
+FTP(&quot;server-2&quot;, &quot;21&quot;, &quot;probe&quot;, &quot;probe&quot;, &quot;RETR&quot;, &quot;shared_doc&quot;, &quot;customer_list.txt&quot;, 
+&quot;c:\ftp_doc\customer.txt&quot;)<br>
+<br>
+上傳本機 &quot;c:\ftp_doc\summary.txt 至 server-2 主機，目錄 shared_doc 中，並更名為 summary_今天日期.txt<br>
+<br>
+FTP(&quot;server-2&quot;, &quot;21&quot;, &quot;probe&quot;, &quot;probe&quot;, &quot;STOR&quot;, &quot;shared_doc&quot;, &quot;summary_&quot;$(Today()[1 
+to 8])$&quot;.txt&quot;, &quot;c:\ftp_doc\summary.txt&quot;)<br>
+　</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<a href="ch12_09.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=185 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=215 align=right valign=top>
+<a href="ch12_11.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

@@ -1,0 +1,257 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Programming flowchart</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch02_05.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=204 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch03.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 3</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch03.html" style="text-decoration: none"><font color="#000000">Project 
+develop procedure</font></a></font></b></TD>   
+<td width=196 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch03_01.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p><font size="4"><b>3 專案開發程序 (project develop procedure)</b></font></p>         
+<p style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="#developproc">應用程式系統開發程序   
+(application develop procedure)</a></font></p>           
+<p style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="ch03_01.html">
+jLIVE        
+Builder&trade; 程式設計概念 (programming concept)</a></font></p>           
+<p style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="ch03_02.html">視窗設計   
+(form design)</a></font></p>           
+<p style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="ch03_03.html">報表設計   
+(report design)</a></font></p>          
+<p style="margin-top: 4; margin-bottom: 4"><font size="2"><a href="ch03_04.html">預載圖片檔 
+(pre-load images)</a></font></p>         
+<p style="margin-top: 4; margin-bottom: 4">　</p>    
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE             
+Builder&#8482; 應用程式開發環境 (develop environment)       
+是以應用程式實際執行 (run time environment)            
+時的三層式架構 (3-tiers) 直接設計，所以進入 jLIVE             
+Builder&#8482; 系統前，請先檢查 jLIVE &#8482; middle ware        
+是否已經啟動，以及所要操作的資料庫是否已經就緒。應用程式的開發流程，首先新增建立應用程式    
+(application)，設定應用程式的組態 (configuration) 和屬性    
+(properties)；新增建立資料庫系統，連結、測試操作的資料庫系統；新增建立視窗畫面，設計應用程式操作視窗模組；設計應用系統所需的報表作業    
+(report) ；最後將設計的模組製作成應用程式 (build)。製作應用程式時，可以選擇以瀏覽器啟動    
+(browser enabled) 或製作成可獨立執行 (stand alone)       
+的程式或設定 JNLP (Java Network Launching Protocol) 資料以 Java web start 執行。在製作前，可以選擇是否要加入授權管理的機制 (authorized       
+security control)，系統將會加入 (plug in) 所需要的資料庫檔案及維護管理安全機制的視窗畫面，有經驗的設計師可以進一步的修改以符合個別的應用需求。</font></p>         
+<p>　</p>         
+<p><font size="2"><a name="developproc"></a><b>應用程式系統開發程序    
+(application develop procedure)</b></font></p>          
+<ul>       
+  <li><font size="2"><a href="#application">應用程式組態設定    
+    (application configuration)</a></font><br>
+  <font size="2">專案名稱、jLIVE middle ware&#8482;、加密 (encryption)、多國語系支援 (i18n)、登入機制 
+  (login mechanical)、群組設定 (workgroup)。</font></li>      
+</ul>      
+<blockquote>      
+  <p><font size="2"><a href="ch04.html">設定應用程式的組態    
+  (configuration) 和屬性 (properties)</a>。</font></p>     
+</blockquote>     
+<ul>     
+  <li><font size="2"><a href="#database">資料庫系統連結設定 (database      
+    connection)</a></font><br>
+  <font size="2">資料庫別名、驅動程式、URL、使用者、密碼。</font></li>      
+</ul>      
+<blockquote>      
+  <p><font size="2"><a href="ch05.html">設定驅動程式 (database driver)       
+  的組態和測試資料庫連結 (database connection)</a>。</font></p>      
+</blockquote>      
+<ul>      
+  <li><font size="2"><a href="#form">建立視窗畫面 (create form)</a></font><br>
+  <font size="2">視窗 class 名稱、 XML 、Java 、class。</font></li>      
+</ul>      
+<blockquote>      
+  <p><font size="2"><a href="ch03_02.html">視窗畫面設計 (form design)</a>。</font></p>      
+</blockquote>      
+<ul>      
+  <li><font size="2"><a href="#report">建立報表 (create report)</a></font><br>
+  <font size="2">報表 class 名稱、 XML 、Java 、class。</font></li>      
+</ul>      
+<blockquote>      
+  <p><font size="2"><a href="ch03_03.html">報表作業設計 (report design)</a>。</font></p>       
+</blockquote>       
+<ul>       
+  <li><font size="2"><a href="#build">製作應用程式 (build application)</a></font><br>
+  <font size="2">應用程式、主視窗、JRE plug in、客製 JAR 檔、安全控管。</font><br>
+　</li>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2">
+<a href="ch08.html">由瀏覽器啟動執行(browser 
+enabled HTML)</a>。</font></p>          
+  </li>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2">
+<a href="ch08_03.html">Java&#8482; 可執行檔獨立執行 (standalone executable JAR)</a>。</font></p>          
+  </li>
+  <li>        
+<p style="text-indent: 20" align="justify"><font size="2">
+<a href="ch08_02.html">以 Java web start &#8482; 
+啟動執行(web start JNLP)</a>。</font></p>          
+  </li>
+</ul>      
+<ul>       
+  <li><font size="2"><a href="#security">選用授權式管理機制(authorized            
+security control</a><a href="#security">)</a></font></li>       
+</ul>       
+<blockquote>       
+  <p><font size="2"><a href="ch08_03.html">jLIVE Builder&trade;        
+  授權管理機制</a>。</font></p>       
+</blockquote>       
+<p><img border="0" src="images/ch03_design.gif" width="561" height="415"></p>          
+<p><font size="2"><b><a name="application"></a>應用程式組態設定    
+(application configuration)</b></font></p>           
+<p style="text-indent: 20" align="justify"><font size="2">啟動jLIVE             
+Builder&#8482;         
+，應用程式控制面版位於左邊，右邊則是相對的說明及屬性設定頁。選取控制面版的【應用程式】節點，按選新增應用程式說明頁的新增應用程式鍵，填入應用程式屬性值，新增一應用程式。控制面版在此新增的【應用程式】節點下，將會加入【資料庫】【視窗】及【執行】等三個節點。<br>    
+&nbsp;jLIVE             
+Builder&#8482;【 應用程式】節點下可以管理多個應用程式，jLIVE Builder&#8482;             
+允許應用程式間互相的引用參照，設計師可以複製 (copy)             
+或引用 (refer) 其他應用程式的視窗模組。引用 (refer)         
+時，【視窗】節點上是一個指向來源視窗模組 (form) 的指標，不可進行編輯。</font></p>           
+<p style="text-indent: 20"><font size="2">參閱 <a href="ch04.html">新增建立應用程式    
+(create new application)</a>。</font></p>          
+<p>　</p>           
+<p><font size="2"><b><a name="database"></a>資料庫系統連結設定    
+(database connection)</b></font></p>           
+<p style="text-indent: 20" align="justify"><font size="2">在【資料庫】的節點下可以新增多個不同系統的資料庫，每個資料庫皆以<font color="#666699">別名    
+(alias) </font>命名，在應用程式設計時，將以此別名參用此資料庫系統。如果設計時不使用資料庫系統的特殊功能，例如：預儲程序(stored             
+procedure)，基本上設計一個應用程式，可以適用於各種不同的資料庫系統，換句話說，更換或升級資料庫系統時，可以不需更改程式。</font></p>           
+<p style="text-indent: 20"><font size="2">參閱 </font><a href="ch05.html"><font size="2">新增建立資料庫    
+(create new database)</font></a><font size="2">。</font></p>          
+<p>　</p>           
+<p><font size="2"><b><a name="form"></a>建立視窗畫面 (create form)</b></font></p>           
+<p style="text-indent: 20" align="justify"><font size="2">在【視窗】的節點下新增視窗，每一個視窗都會產生一個             
+XML         
+檔，記錄設計的所有程式邏輯與程序。製作執行程式時，系統會按             
+XML 中的記錄，產生 Java&#8482; source code，有經驗的 Java&#8482;             
+程式設計師，可以在系統編譯 (compile) 成 class             
+檔前，按需求更改或加入 Java&#8482;&nbsp; code。jLIVE&#8482;         
+應用程式是以編譯 (compile) 後的 class 檔執行。</font></p>            
+<p style="text-indent: 20"><font size="2">參閱 </font><font size="2"><a href="ch06.html">新增建立視窗    
+(create form)</a>。</font></p>          
+<p style="text-indent: 20"><font size="2">參閱 <a href="ch03_02.html">視窗設計    
+(form design)</a>。</font></p>          
+<p>　</p>          
+<p><font size="2"><b><a name="report"></a>建立報表 (create report)</b></font></p>           
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE             
+Builder&#8482;             
+ 的報表是依附在視窗 (form)         
+之下，因為報表作業，大都是經過使用者查詢後 (query)         
+再進行列印，所以報表的啟動列印 (printing) 或預覽 (preview)         
+，是安置 (build in) 在視窗畫面 (form) 的列印事件中。 jLIVE             
+Builder&#8482;             
+ 的報表系統是和視窗畫面 (form)            
+共享資料來源，所有視窗畫面 (form)         
+的元件內含值，都是可計算也可列印的資料。新增報表時，在【報表】的節點下選擇新增，每一個報表都會產生一個XML檔，記錄報表設計的所有列印邏輯與程序，製作成執行程式時，會按 XML 中的記錄產生 Java&#8482; source code，有經驗的 Java&#8482;            
+程式設計師，可以在系統編譯 (compile) 成 class             
+檔前，按需求更改或加入 Java&#8482;&nbsp; code。jLIVE Builder&#8482;            
+是以編譯 (compile) 後的 class 檔執行。</font></p>            
+<p style="text-indent: 20"><font size="2">參閱 </font><font size="2"><a href="ch07.html">新增建立報表    
+(create report)</a>。</font></p>          
+<p style="text-indent: 20"><font size="2">參閱 <a href="ch03_03.html">報表作業設計    
+(report design)</a>。</font></p>           
+<p>　</p>          
+<p><font size="2"><b><a name="build"></a>製作應用程式 (build application)</b></font></p>          
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE             
+Builder&#8482;             
+ 可以同時建立以瀏覽器啟動 (browser enabled HTML) 和獨立執行    
+(standalone executable JAR) 或以Java web start&#8482; (Java web start&#8482; JNLP) 啟動 的應用程式，其製作 (build)            
+的方式是一樣的。以瀏覽器啟動 (browser enabled)            
+的應用程式，系統會自動產生，啟動的 HTML 網頁以及內含的            
+Java&#8482; applet class            
+的程式碼，設計師必須指定開啟應用程式的主視窗，和在瀏覽器中的大小。設計師可以選擇是否要重導            
+Java&#8482; JRE 的來源位置或由預設的 Sun            
+網站。設計師自行開發或其他廠商客製化的程式檔 (customer            
+jar)，可經由 jLIVE             
+Builder&#8482;             
+ 所製作的 HTML 檔，在使用者執行的時候自動下載至使用者端    
+(client) 。獨立執行 (standalone executable)         
+的應用程式，系統會自動產生，執行時的主視窗框架，設計師可指定初始框架的大小、狀態及標題，其餘的設定與以瀏覽器啟動的應用程式相同。以 Java web 
+start&#8482; (Java web start&#8482; JNLP) 啟動的應用程式需設定 JNLP&nbsp; (Java Network Launching 
+Protocol) ，系統會產生 Java web start&#8482; 執行期所需的應用程式 JNLP 檔。</font></p>           
+<p style="text-indent: 20" align="justify"><font size="2">按選建立執行程式鍵 (製作應用程式)，精靈輔助視窗會出現，讓設計者選擇製作的方式，如果設計師修改過原始檔(Java&#8482;            
+source code)，請選擇編譯程式 (compile java&#8482; --&gt; class)，如果選擇建立程式            
+(XML --&gt; Java --&gt; class)，jLIVE             
+Builder&#8482;             
+ 將從 XML 重新製作原始檔(Java&#8482; source code)，設計師修改過的程式碼，將會被標示為註解，並搬移至程式最後段。</font></p>           
+<p style="text-indent: 20"><font size="2">參閱 </font><font size="2"><a href="ch08.html">製作應用程式    
+(build application)</a>。</font></p>         
+<p>　</p>         
+<p><font size="2"><b><a name="security"></a>選用授權管理機制 (authorized security control)</b></font></p>           
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE             
+Builder&#8482;             
+ 授權控管機制，是使用查驗後端資料庫的方式進行管理。應用程式開發者可以選擇自行管控或由         
+jLIVE             
+Builder&#8482;         
+授權控管機制進行使用者權限管理。系統會在資料庫建立起七個相關的資料表格         
+(tables) ，及四個權限管理視窗模組 (forms)。授權的方式，以建立各種層級的任務角色    
+(roles)，並對每一個任務角色分別授予可開啟的視窗畫面，及其是否在此視窗畫面可以擁有操作新增(insert) 、刪除    
+(delete)、編輯 (update)、查詢 (query)、列印 (print) 的權限    
+(authorized)。應用程式執行時，管理者 (administrator) 可以對每一個使用者    
+(user)，授予使用系統的任務角色 (roles)，及登入的名稱、密碼。 jLIVE&#8482;         
+應用程式在執行時，會自動將未授權的相關元件 (components)、功能    
+(functions) 使其失效&nbsp; (disabled)。此一授權控管機制，讓程式設計師在開發程式時，可以專注於資料流程與商業邏輯，應用程式執行時，授權管理人員可以機動性授予存取權限，整個應用程式的開發與管理可以達到最佳的效率。</font></p>         
+<p style="text-indent: 20"><font size="2">參閱</font><font size="2"> <a href="ch08_03.html">授權管理機制    
+(authorized security control)</a> 。</font></p>         
+<hr align=left color="#000000">          
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">          
+<tr>          
+<td width=200 align=left valign=top>          
+<a href="ch02_05.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=207 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=193 align=right valign=top>        
+<a href="ch03_01.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.</font></p>          
+          
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,           
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>          
+          
+      </td>       
+    </tr>       
+  </table>       
+  </center>       
+</div>       
+          
+</body>          
+          
+</html>

@@ -1,0 +1,131 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Web application vs. web page</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=180 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch02_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=233 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch02.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 2</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch02.html" style="text-decoration: none"><font color="#000000">Technical       
+overview</font></a></font></b></TD>      
+<td width=187 align=right valign=top>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<a href="ch02_03.html">      
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>      
+</tr>      
+</table>      
+      
+<hr align=left color="#000000">      
+<h1 class="chapter"><font size="4">2<a class="TITLE">.2 </a></font><font size="3">
+網際網路應用程式與單純網頁 (Internet application vs. web page)</font></h1>        
+<p style="text-indent: 20" align="justify"><font size="2">網際網路的企業應用程式與網頁是不盡相同的，一般企業有商品或公司服務簡介，這些可以以網頁方式呈現，但是應用系統例如： ERP 、 SCM 、 CRM       
+等等，甚至更簡單的人事薪資、庫存管理，都必須有完整的開發與維護的方案，才能整合企業所需的應用系統   
+(<span lang="en-us">E</span>nterprise <span lang="en-us">A</span>pplication
+<span lang="en-us">I</span>ntegration) 。本章節將比較 jLIVE             
+Builder&#8482;             
+ 所開發的應用程式 (web application) 與單純網頁 (web page)       
+之不同與架構企業應用整合 (EAI) 時應用程式 (web application)       
+的必要性。</font></p>        
+<p style="text-indent: 20" align="center">
+<img border="0" src="images/ch02_02_webapp.gif" width="491" height="369"></p>       
+<p style="text-indent: 20"><font size="3"><b>Java&trade; class vs. simple HTML</b></font></p>        
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE Builder&#8482; 
+所開發的應用系統 (internet application) 是以跨平台的 Java&#8482;      
+class 在運作，而網頁 (web page)<span lang="en-us"> </span>&nbsp;則以 HTML 在瀏覽器 (browser)       
+以超連結 (hyperlink) 瀏覽網頁，在客戶端 (client)       
+的機制與伺服器 (server) 的架構是不完全相同的。以 Java&#8482;       
+class 在客戶端的瀏覽器內參與 (plug in) 系統運作 ，網際網路應用程式在瀏覽器中的操作就不只是單純的瀏覽作業而已，而是像視窗應用程式般有完整的程式流程與功能。</font></p>        
+<p style="text-indent: 20"><font size="3"><b>System flow vs. stateless</b></font></p>        
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE             
+Builder&#8482;   
+是運用於開發網際網路應用程式系統，一個應用系統必須要有使用的流程與商業邏輯，網頁是沒有狀態和流程性的。使用者在應用程式中操作資料時不能像一般網頁作業，不斷的換頁再換頁。輸入一組資料，驗證數種檢核後已經換了數個網頁，使用者完全無法掌握當錯誤發生時，是往下頁或回前頁繼續操作。沒有流程性的單純網頁，無法符合應用系統的需求應是無庸置疑的。</font></p>       
+<p style="text-indent: 20"><font size="3"><b>User interactive operation</b></font></p>        
+<p style="text-indent: 20" align="justify"><font size="2">由於 jLIVE             
+Builder&#8482;             
+ 以 Java&#8482; class       
+在客戶端的瀏覽器內運作，所以系統不但能控管所有使用者操作流程，對於使用者端的任何操作需求皆可即時回應。簡單的輸入資料檢核驗證，在客戶端   
+(client)       
+即可作業<br>   
+，不需伺服器參與，也不會換頁，而是以對話視窗回應。而須向伺服器   
+(server) 要求資料的請求 (request)<span lang="en-us"> </span>，則在背景執行緒 (background       
+thread)       
+中執行，回應的資料也在視窗的操作元件中，使用者不但能得到最快速的回應，各種複雜的使用者操作介面，以及互動性皆可以 jLIVE             
+Builder&#8482;             
+ 快速開發完成。</font></p>        
+<p style="text-indent: 20"><font size="3"><b>Distributed computing</b></font></p>        
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE             
+Builder&#8482;             
+  運用 Java&#8482; Applet 、<span lang="en-us"> </span>Swing set 與          
+  class loader 的軟體元件技術 (component          
+  architecture)<span lang="en-us"> </span>，在網際網路應用程式的開發、執行與維護，不但能達到以上的需求，在整體系統的運算負載   
+(computing loading)<span lang="en-us"> </span>&nbsp;中，亦達到所謂的分散式運算 (distributed          
+  computing) ，即是系統將使用者的操作需求，分別由客戶端   
+(client)<span lang="en-us"> </span>、中間層 (middle tier) 及伺服器端 (server)       
+按最有效率的方式分配擔任運算角色。屬於客戶端 (client)<span lang="en-us"> </span>&nbsp;輸入、操作、檢核、流程、控制由客戶端自行負責，中間層   
+(middle tier)       
+負責客戶端登入權限、資料庫連結、結果資料流的存取及系統資源服務等等，資料庫伺服器端   
+(server)       
+負責統計、儲存、更新資料及執行資料庫的各種程序。</font></p>        
+<p style="text-indent: 20"><font size="3"><b>Printable data, server provided,       
+client computing&nbsp;&nbsp;</b></font></p>        
+<p style="text-indent: 20" align="justify"><font size="2">jLIVE             
+Builder&#8482; 報表系統亦使用分散式的系統原則，客戶端   
+(client) 負責資料運算 (data aggregate) 、統計圖表製作 (statistic chart plot)<span lang="en-us">
+</span>、列印格式配置   
+(format layout)<span lang="en-us"> </span>，伺服器端 (server) 只按客戶端 (client) 目前列印需求，提供查詢結果集   
+(query result set) 的資料。</font></p>        
+<hr align=left color="#000000">           
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">           
+<tr>           
+<td width=200 align=left valign=top>           
+<a href="ch02_01.html">        
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>        
+<td width=210 align=center valign=top><a href="index.html">        
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>        
+<td width=190 align=right valign=top>        
+<a href="ch02_03.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.</font></p>          
+          
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,           
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>          
+          
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+          
+</body>          
+          
+</html>

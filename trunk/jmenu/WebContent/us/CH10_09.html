@@ -1,0 +1,356 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Preface</title>
+</head>
+
+<body>
+
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_08.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Chapter 10</font></a></font></b><p style="margin-top: 0; margin-bottom: 0">
+<b><font face="新細明體" size="-1">
+<a style="text-decoration: none" href="CH10_01.html"><font color="#000000">Formula</font></a></font></b></TD>
+<td width=172 align=right valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="CH10_10.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+10.9 DsOperation</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>Content:</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1091">
+DsNavigator(ds,op_str)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1092">
+DsMoveto(ds,recno)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1093">
+PrevRecord(ds,fld)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1094">
+NextRecord(ds,fld)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1095">
+RecordData(ds,fid,recno)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1096">
+IsDelete(ds,recno)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1097">
+IsUpdate(ds,recno)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1098">
+Isinsert(ds,recno)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#1099">
+Seek(ds,fld,value)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10910">
+Seek(ds,fld,value,seek_ops)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10911">
+Seek(ds,fld,value,seek_ops,moveto)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10912">
+GetSpOutParam(spname.paramname)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10913">
+ClearSpOutParam(spname.paramname)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10914">
+GetSqlErrcode(ds.op)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10915">
+GetSqlState(ds.op)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10916">
+GetSqlErrmsg(ds.op)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#10917">
+SumField(ds,fld)</a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/CH10_09_DsOperation.gif" width="317" height="401"></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1091"></a>10.9.1 </font><font size="5">DsNavigator(ds,op_str)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; DsNavigator(&quot;BASC_CNTR_MTDL&quot; ,&quot;next&quot; ) </p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; <b>OP string</b></p>
+<blockquote>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+first</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">prior</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">next</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">last</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">insert</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">edit</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">delete</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">post</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">cancel</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">refresh</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">reopen</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">deleteall</font></p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+<font color="#000000">query</font></p>
+    </li>
+  </ul>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1092"></a>10.9.2 </font><font size="5">DsMoveto(ds,recno)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will base on record NO and move to.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1093"></a>10.9.3 </font><font size="5">PrevRecord(ds,fld)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Preceding record in ds field.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1094"></a>10.9.4 </font><font size="5">NextRecord(ds,fld)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; Next record in ds field.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1095"></a>10.9.5 </font><font size="5">RecordData(ds,fid,recno)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; The data in ds field at record number.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1096"></a>10.9.6 </font><font size="5">IsDelete(ds,recno)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; It will determine the ds record delete or not.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Outcome 1 or 0</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1097"></a>10.9.7 </font><font size="5">IsUpdate(ds,recno)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; It will determine the ds record update or not.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Outcome 1 or 0</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1098"></a>10.9.8 </font><font size="5">Isinsert(ds,recno)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp; It will determine the ds record insert or not.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Outcome 1 or 0</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="1099"></a>10.9.9 </font><font size="5">Seek(ds,fld,value)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp; It&nbsp; will find out whether the field in ds equal to &quot;value&quot; or not.&nbsp;&nbsp; 
+Outcome 1 or 0</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10910"></a>10.9.10 </font><font size="5">Seek(ds,fld,value,seek_ops)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">&nbsp;&nbsp;&nbsp; Seek 
+operation : </p>
+<blockquote>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">0 : Equal</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">1 : Start with</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">2 : Index of</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">3 : end with</p>
+    </li>
+  </ul>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10911"></a>10.9.11 </font><font size="5">
+Seek(ds,fld,value,seek_ops,moveto)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; Move to :</p>
+<blockquote>
+  <ul>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+0 : not move to</p>
+    </li>
+    <li>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+1 : move to</p>
+    </li>
+  </ul>
+</blockquote>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10912"></a>10.9.12 </font><font size="5">GetSpOutParam(spname.paramname)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">&nbsp;&nbsp;&nbsp; It 
+will get store procedure output value.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10913"></a>10.9.13 </font><font size="5">ClearSpOutParam(spname.paramname)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will clear store procedure output value.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10914"></a>10.9.14 </font><font size="5">GetSqlErrcode(ds.op)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will get sql error code.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10915"></a>10.9.15 </font><font size="5">GetSqlState(ds.op)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will get sql state code.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10916"></a>10.9.16 </font><font size="5">GetSqlErrmsg(ds.op)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will get sql error message.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><b><font size="5">
+<a name="10917"></a>10.9.17 </font><font size="5">SumField(ds,fld)</font></b></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">
+&nbsp;&nbsp;&nbsp; It will sum the field value.</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="para" style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left width=515>
+<table width=515 border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=172 align=left valign=top>
+<a href="CH10_08.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=171 align=center valign=top><a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=172 align=right valign=top>
+<a href="CH10_10.html">
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>
+</tr>
+</table>
+
+<hr align=left width=515>
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe.com.tw . All Rights Reserved.
+</font></p>
+
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>
+
+</body>
+
+</html>

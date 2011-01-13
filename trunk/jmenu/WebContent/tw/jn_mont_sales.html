@@ -1,0 +1,276 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_mont_cust.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_mont_prod.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Sales Information by 
+Month and Salesman</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>MONT_SALES</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="line-height: 150%"><font size="2">
+         業務人員當年度每個月份的訂單數量、業績金額、單張訂單平均業績額資料。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="83" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Salesman：</font></b></td>
+       <td width="660" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+         業務人員資料，作為 combobox 關連的資料來源。<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; select EmployeeID,</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; concat(FirstName,' 
+       ',LastName) as names&nbsp; <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; employees</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="83" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Monthly_Sales：</font></b></td>
+       <td width="660" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+         SQL資料來源。<br>
+       【SQL】：<font face="Courier New"><br>
+&nbsp;&nbsp; select sum(A.UnitPrice*A.Quantity*(1-A.Discount)) 
+        
+       </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">
+         <font face="Courier New">as subtot,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Month(B.orderdate) as orderdate,
+       
+       </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">
+         <font face="Courier New">sum(1) as orders&nbsp; <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; orders B left outer join orderdetails A <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.orderid=B.orderid&nbsp; 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left outer join employees C 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on B.employeeid=C.employeeid&nbsp; 
+       <br>
+&nbsp;&nbsp; where&nbsp; B.employeeid=?&nbsp;
+       <br>
+&nbsp;&nbsp; group&nbsp; by orderdate&nbsp; <br>
+&nbsp;&nbsp; order&nbsp; by orderdate</font><font color="#666699"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       參數類別 &quot;INTEGER&quot;</font>，<font color="#666699">運算式為&nbsp;&nbsp;<font face="Courier New">{combo_Name}</font></font>，查詢業務員業績資料。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="83" height="16" colspan="2"></td>
+       <td width="660" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【combo_Name】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">下拉式清單方塊元件 (ComboBox)。<br>
+       【關連資料來源】【資料欄位】連接 <font color="#666699">Salesman / EmployeeID </font>(員工編號)。<br>
+       【被選時移至關連資料來源記錄】核取此項。<br>
+       【顯示】運算式為 <font color="#666699" face="Courier New">{Salesman:names}</font> (員工姓名)。<br>
+       【關連資料來源初始化時清除選擇】核取此項，則視窗開啟時，此元件為空值。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_trig】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">trig_month </font>，按下時觸發 &quot;Monthly_Sales&quot; 資料來源 
+       。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【grid_sales】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料表元件 (Grid)。<br>
+       【資料來源】連接 <font color="#666699">Monthly_Sales</font>。<br>
+       【欄位】【資料表元件欄位】<font color="#666699"> </font>的最後一個欄位 &quot;Avg. per order&quot; 為計算欄位，運算式為 
+       <font color="#666699"><br>
+       <font face="Courier New">&nbsp;&nbsp; if&nbsp;&nbsp; {Monthly_Sales:orders} &lt;&gt; 0  </font></font> </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp; </font>
+       <font size="2">
+       <font face="Courier New" color="#666699">then {Monthly_Sales:subtot}/{Monthly_Sales:orders}</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp; </font>
+       <font size="2">
+       <font face="Courier New" color="#666699">&nbsp;else 0</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">如果該月訂單數量 &gt; 0，則計算單張訂單平均金額，否則填 0。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="20" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【trig_month】</font></td>
+       <td width="905" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">觸發資料來源事件。<br>
+       【執行】【資料來源】選<font color="#666699"> Monthly_Sales</font>。<br>
+       【SQL】為：<font face="Courier New"><br>
+&nbsp;&nbsp; select sum(A.UnitPrice*A.Quantity*(1-A.Discount))  </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"><font face="Courier New">as subtot,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Month(B.orderdate) as orderdate,
+       
+       </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"><font face="Courier New">sum(1) as orders&nbsp; <br>
+&nbsp;&nbsp; From&nbsp;&nbsp; orders B left outer join orderdetails A <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on A.orderid=B.orderid&nbsp; 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left outer join employees C 
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on B.employeeid=C.employeeid&nbsp; 
+       <br>
+&nbsp;&nbsp; where&nbsp; B.employeeid=?&nbsp;
+       <br>
+&nbsp;&nbsp; group&nbsp; by orderdate&nbsp; <br>
+&nbsp;&nbsp; order&nbsp; by orderdate</font><font color="#666699"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       參數類別 &quot;INTEGER&quot;</font>，<font color="#666699">運算式為&nbsp;&nbsp;<font face="Courier New">{combo_Name}</font></font>，依所選擇的業務人員， </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 重新查詢其業績資料。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="20" height="16" colspan="2"></td>
+       <td width="905" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_mont_cust.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=382 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=102 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_mont_prod.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

@@ -1,0 +1,315 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_basc_supp.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_rpt_employees_report.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Employees</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="24">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>BASC_EMPL</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">
+         處理員工資料的維護作業，資料欄位除了一些常見的基本資料外，還包括員工的照片檔。</font></li>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">
+         【Language】紀錄語言能力，欄位型態為&quot;字串&quot;，長度&quot;5&quot;，意即以5個字元分別表示某一種語言能力，這是常見的操作介面的設計。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="79" height="18" colspan="2" bordercolor="#000000" style="border:1px solid #C0C0C0; "><font size="2">
+       <b>Employees：</b> </font></td>
+       <td width="664" height="18" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+       員工資料檔<br>
+       【SQL】：<font face="Courier New">Select * from Employees</font><br>
+       【預設】：【Language】-&gt; &quot;00000&quot;</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="79" height="16" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">Supervisor：</font></b></td>
+       <td width="664" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">作為下拉式清單方塊(ReportsTo)的關連資料來源<br>
+       【SQL】：</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;
+       </font><font face="Courier New" size="2">Select EmployeeID, LastName, 
+       FirstName&nbsp; </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2">&nbsp;From employees</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="79" height="16" colspan="2"></td>
+       <td width="664" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ReportsTo】</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">下拉式清單方塊元件 (ComboBox)。<br>
+       【資料來源】【資料欄位】連接 <font color="#666699">Employees / ReportsTo</font>(員工編號)。<br>
+       【關連資料來源】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料欄位】連接 <font color="#666699">Supervisor / EmployeeID</font>(員工編號)。<br>
+       &nbsp;&nbsp;&nbsp;
+       【顯示】運算式為 </font>
+       <p style="margin-top:2; margin-bottom:2" align="justify">
+       <font size="2">&nbsp;<font color="#666699" face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {Supervisor:LastName}$&quot; &quot;${Supervisor:FirstName}</font><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       如此將兩個資料來源的資料欄位值建立好關連性之後，縱使欄位內容</font><p style="margin-top:2; margin-bottom:2" align="justify">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       存放的是數值資料(員工編號)，但是在客戶端(Client)的操作介面上，</font><p style="margin-top:2; margin-bottom:2" align="justify">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       顯示的卻是員工姓名(Last Name + First Name)。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【PhotoPath】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">編輯方塊 (Edit)。<br>
+       連接 <font color="#666699">Employees / PhotoPath</font>，記錄員工照片的檔案名稱，而檔案則存放在<font color="#666699">C:\jLIVE\programs\jNorth\class\images\
+       </font>底下。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【Photo】</font></td>
+       <td width="643" height="25" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">圖片元件 (Images)。<br>
+       連接 <font color="#666699">Employees / 
+       PhotoPath</font>，系統會自動抓取檔案，並將圖片顯示於元件上。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【TitleOfCourtesy】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">下拉式清單方塊元件 (ComboBox)。<br>
+       【資料來源】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料欄位】連接 <font color="#666699">Employees / 
+       TitleOfCourtesy</font>。<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       以內定的字串 &quot;Ms.&quot;、&quot;Dr.&quot;、&quot;Mrs.&quot;、&quot;Mr.&quot; 作為選項內容，同時</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       也是欄位紀錄的內容。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【Check_1】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">核取方塊元件 (CheckBox)。<br>
+       【版面】【文字】填&quot;English&quot;，此為元件後面顯示的文字標籤。<br>
+       【資料來源】【資料欄位】連接 <font color="#666699">Employees / Language </font>(語言能力)。<br>
+       【核取】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【運算式】填入<font color="#666699" face="Courier New">{Employees:Language}[1]='1'</font>，其意義為當Language</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 內含值的第一位為&quot;1&quot;時，元件為被核取狀態，&quot;0&quot;則取消核取。
+        
+       <br>
+       &nbsp;&nbsp;&nbsp;
+       【核取&nbsp; 核取時填入內含值】運算式填入<font color="#666699"> </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font face="Courier New" color="#666699">&quot;1&quot;${Employees:Language}[2 
+       to 5]</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">代表當客戶端(Client)核取此元件時，會將Language的第一位更改成</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;1&quot;，Language的二至五位不變
+       。 <br>
+       &nbsp;&nbsp;&nbsp;
+       【不核取&nbsp; 
+       不核取時填入內含值】運算式填入</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="Courier New">&quot;0&quot;${Employees:Language}[2 to 5]</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">代表當客戶端(Client)取消核取此元件時，會將Language的第一位更</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 改成&quot;0&quot;。<br>
+       依此類推，【Check_2】至【Check_5】則分別連接到Language的第二至五位。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【nav_empl】</font></td>
+       <td width="643" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">導覽元件 (Navigator)。 <br>
+       【資料來源】連接 <font color="#666699">Employees </font>
+       ，反應客戶端(Client) 新增、修改、刪除等等對資料的操作。<br>
+       【事件】【存檔】選擇 <font color="#666699">
+       msg_chk_name</font>，表示當客戶端(Client)按存檔按鈕時，不執行內定的存檔動作，而執行<font color="#666699">msg_chk_name
+       </font>事件。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="16" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【msg_chk_name】</font></td>
+       <td width="909" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">出現訊息方塊事件。<br>
+       【條件】運算式為</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#666699" face="Courier New">LRTrim({LastName})=&quot;&quot; or LRTrim({FirstName})=&quot;&quot;</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">意即LastName或是FirstName其中之一為空值才會執行此事件。<br>
+       【否則】選 <font color="#666699">post_empl </font>意即lLastName與FirstName都不是空值就執行post_empl 
+       事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【標題】填入<font color="#666699" face="Courier New">Message</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【訊息】運算式填入 
+       <font color="#666699" face="Courier New">&quot;Both First Name and Last Name can't be</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> 
+       <font color="#666699" face="Courier New">&nbsp;empty !&quot;</font>，執行期此字串會出現在訊息方塊中間</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【選項類別】選<font color="#666699">確定</font>，執行期將只出現一個確定按鈕。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="16" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【post_empl】</font></td>
+       <td width="909" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699">Employees</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">存檔</font>，執行Employees的存檔動作。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="16" height="16" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【rpt_empl】</font></td>
+       <td width="909" height="16" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">印表工作事件。<br>
+       【執行】【報表】選<font color="#666699">EmployeesReport</font>，執行報表列印動作。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="16" height="16" colspan="2"></td>
+       <td width="909" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_basc_supp.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=391 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=93 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_rpt_employees_report.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+   <p style="margin-top: 0; margin-bottom: 0">　</p>
+  
+</body>   
+   
+</html>

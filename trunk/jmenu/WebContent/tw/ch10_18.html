@@ -1,0 +1,1023 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Chart Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_17.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>    
+<td width=204 align=right valign=top>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a href="ch10_19.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p><font size="4"><b>   
+<a name="top"></a>統計圖元件 (Chart component) </b>     
+<img border="0" src="images/dbtchart.gif" width="25" height="25"></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="ch10_00.html">共同屬性 (common properties)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#runtime">統計圖元件執行機制  
+(Chart component runtime mechanical)</a></font></p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#aggregative">統計圖元件資料彙集機制  
+(Chart component data aggregative mechanical)&nbsp;</a></font></p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#8191">    
+<font size="2">內含值屬性 (data properties)</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#8192">    
+<font size="2">統計圖屬性 (chart properties)</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#type">動態</a></font><a href="#type"><font size="2">更換圖示類別  
+(dynamically change chart type)</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#bufferds">連結Buffered資料來源的統計圖元件(binding   
+buffered data source)&nbsp;</a></font></p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#getsetprop">運算式屬性存取 
+(formula get/set properties)</a></font>　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">統計圖元件   
+(Chart component) 連結資料來源，可依運算式 (by formula)   
+及依資料欄位 (by data field) 統計及繪製圖示(參閱 <a href="#aggregative">統計圖元件資料彙集機制  
+(Chart component data aggregative mechanical)</a>)。統計圖元件     
+(Chart component) 是多執行緒的元件 (multi-thread component)，透過設定資料來源(data  
+source) 讀取列(row fetch)，可以即時統計繪製已下載至客戶端  
+(client) 的資料，呈現動態的統計圖示 (參閱 <a href="#runtime">統計圖元件執行機制     
+(Chart component runtime mechanical)</a>)。統計圖元件   
+(Chart component) 是一個可列印的元件 (printable component)   
+，只要在報表系統直接引用即可將統計圖輸出至報表。</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">  
+　</p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="runtime"></a>統計圖元件執行機制     
+(Chart component runtime mechanical)</b></font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">統計圖元件     
+(Chart component) 是多執行緒的元件 (multi-thread component)，在元件初始化(initial)     
+後，統計圖的資料運算統計 (data computing) 與圖形繪製 (paint)     
+以獨立的背景執行緒 (thread)     
+運作，不影響其他元件的系統流程，使用者可以得到最快速的回應。統計圖元件初始化(initial)   
+後，即由連結資料來源的首筆 (first) 開始讀入資料記錄，並逐筆進行過濾  
+(filter)、 運算 (calculate)、 統計 (statistic)，而根據資料來源  
+(data source) 讀取列 (row fetch) 的設定，每讀入讀取列數 (row fetch)     
+立即重繪 (repaint)     
+統計圖示，並在統計圖示的左上角顯示【資料載入中‧‧】的訊息。當資料記錄到達尾筆時  
+(end of file)，【資料載入中‧‧】的訊息會消失表示資料統計已完成。設計師可以根據資料量，適當的設定資料來源的讀取列數  
+(row    
+fetch)，使統計圖示的繪製達到最佳化。 </font> </p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="aggregative"></a>統計圖元件資料彙集機制     
+(Chart component data aggregative mechanical)&nbsp;</b></font></p>    
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">統計圖元件     
+(Chart component) 統計的資料，是由連結資料來源的首筆 (first  
+record) 開始，經過逐筆篩選 (filter) 、運算 (computed) 以至尾筆  
+(last record)。每筆資料記錄在統計時，須設定相關的 X 軸 (X-axis)、Y  
+軸    
+(Y-axis)、Z 軸 (Z-axis) 運算式 (formula)，一般而言 X 軸、Y 軸屬於統計資料項目分類，而  
+Z 軸則是資料值 (data)。由於統計的資料來源是資料記錄  
+(record)，為因應系統分析師規劃的各種資料表規格不同，統計圖元件對於  
+X 軸、Y 軸、Z</font> <font size="2">軸的資料對應方式，分為依運算式  
+(by formula) 及 依資料欄位 (by data field)    
+，以下將示範不同的資料記錄結構 (record data structure)    
+、相同的統計資料，分別以依運算式 (by formula) 及依資料欄位  
+(by data field) 的對映方式，產生完全相同的統計圖示。</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">統計的資料來源為學生成績，統計圖示依  
+X 軸為姓名、Y 軸為科目、Z 軸為成績的方式顯示。</font></p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">依資料欄位  
+    (by data field)：</font></p>   
+    <p style="margin-top: 1; margin-bottom: 1">　</p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料表資料及資料結構</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料來源名稱：student</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="1" cellspacing="1">
+  <tr>
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF">name</font></td>
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF">history</font></td>
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF">science</font></td>
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF">english</font></td>
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF">math</font></td>
+  </tr>
+  <tr>
+    <td>Mary</td>
+    <td align="right">93</td>
+    <td align="right">82</td>
+    <td align="right">59</td>
+    <td align="right">77</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td align="right">31</td>
+    <td align="right">48</td>
+    <td align="right">82</td>
+    <td align="right">69</td>
+  </tr>
+  <tr>
+    <td>Max</td>
+    <td align="right">29</td>
+    <td align="right">92</td>
+    <td align="right">86</td>
+    <td align="right">49</td>
+  </tr>
+  <tr>
+    <td>Tom</td>
+    <td align="right">88</td>
+    <td align="right">53</td>
+    <td align="right">80</td>
+    <td align="right">72</td>
+  </tr>
+  <tr>
+    <td>Sally</td>
+    <td align="right">92</td>
+    <td align="right">91</td>
+    <td align="right">88</td>
+    <td align="right">89</td>
+  </tr>
+</table>
+    <p style="margin-top: 0; margin-bottom: 0"></p>
+    <p style="margin-top: 0; margin-bottom: 0">
+　<p style="margin-top: 0; margin-bottom: 0">
+<font size="2">統計圖元件屬性設定</font>
+    <p style="margin-top: 0; margin-bottom: 0">
+　<ul>
+      <li>
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">
+<font color="#666699">資料來源 (data source)：</font><font color="#505050">student</font></font></li>  
+      <li>  
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">  
+<font color="#666699">X-運算式 (X-axis)：</font><font color="#505050">{student:name}</font></font></li>   
+      <li>   
+        <p style="margin-top: 0; margin-bottom: 0">  
+        <font size="2" color="#666699">依資料欄位 (by data field)</font><font size="2"><font color="#666699">：</font><font color="#505050">核選    
+(Checked)</font></font></li>   
+      <li>   
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">Y-資料欄位：</font><font color="#505050">核取  
+        (checked) 除了name 以外的所有選擇欄</font></font></li>  
+    </ul>  
+  </li>  
+</ul>  
+<blockquote>  
+        <p style="margin-top: 0; margin-bottom: 0">  
+        <img border="0" src="images/ch10_18_chart_by_column.gif" width="476" height="475"></blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<ul>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">依運算式 (by formula)：</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1">　</p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料表資料及資料結構</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料來源名稱：student2</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1">　</p>
+    <table border="1" cellspacing="1">
+      <tr>
+        <td align="center" bgcolor="#505050"><font color="#FFFFFF">name</font></td>
+        <td align="center" bgcolor="#505050"><font color="#FFFFFF">subject</font></td>
+        <td align="center" bgcolor="#505050"><font color="#FFFFFF">score</font></td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>	math</td>
+        <td align="right">77</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>	science</td>
+        <td align="right">	48</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>	english</td>
+        <td align="right">59</td>
+      </tr>
+      <tr>
+        <td>John&nbsp;</td>
+        <td>	english</td>
+        <td align="right">	82</td>
+      </tr>
+      <tr>
+        <td>John&nbsp;</td>
+        <td>	math</td>
+        <td align="right">	69</td>
+      </tr>
+      <tr>
+        <td>Max</td>
+        <td>	history</td>
+        <td align="right">	29</td>
+      </tr>
+      <tr>
+        <td>Max</td>
+        <td>	science</td>
+        <td align="right">	92</td>
+      </tr>
+      <tr>
+        <td>Max</td>
+        <td>	english</td>
+        <td align="right">	86</td>
+      </tr>
+      <tr>
+        <td>Max</td>
+        <td>	math</td>
+        <td align="right">49</td>
+      </tr>
+      <tr>
+        <td>Tom</td>
+        <td>	history</td>
+        <td align="right">	88</td>
+      </tr>
+      <tr>
+        <td>Tom</td>
+        <td>science</td>
+        <td align="right">	53</td>
+      </tr>
+      <tr>
+        <td>Tom</td>
+        <td>	english</td>
+        <td align="right">	80</td>
+      </tr>
+      <tr>
+        <td>Tom</td>
+        <td>	math</td>
+        <td align="right">72</td>
+      </tr>
+      <tr>
+        <td>Sally</td>
+        <td>	history</td>
+        <td align="right">	92</td>
+      </tr>
+      <tr>
+        <td>Sally</td>
+        <td>	science</td>
+        <td align="right">	91</td>
+      </tr>
+      <tr>
+        <td>Sally</td>
+        <td>	english</td>
+        <td align="right">88</td>
+      </tr>
+      <tr>
+        <td>Sally</td>
+        <td>	math</td>
+        <td align="right">89</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>science</td>
+        <td align="right">	82</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>history</td>
+        <td align="right">	31</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>	history</td>
+        <td align="right">	93</td>
+      </tr>
+    </table>
+    <p style="margin-top: 0; margin-bottom: 0">　</p>
+    <p style="margin-top: 0; margin-bottom: 0">
+<font size="2">統計圖元件屬性設定</font>
+    <p style="margin-top: 0; margin-bottom: 0">
+　<ul>
+      <li>
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">
+<font color="#666699">資料來源 (data source)：</font><font color="#505050">student2</font></font></li> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"> 
+        <font size="2" color="#666699">篩選條件</font><font size="2"><font color="#666699">   
+        (filter)：</font> 依條件運算式過濾資料，當條件為真時   
+(非零且非空字串) ，才進行統計。</font></li>  
+      <li>  
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">X-運算式 (X-axis)：</font><font color="#505050" size="2">{student2:name}</font></font></li>  
+      <li>  
+        <p style="margin-top: 0; margin-bottom: 0">  
+        <font size="2" color="#666699">依運算式 (by   
+        formula)：</font><font color="#505050" size="2">核選 (checked)</font></li>  
+      <li>  
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">Y-運算式：</font><font color="#505050" size="2">{student2:subject}</font></font></li> 
+      <li> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">Z-運算式：</font><font size="2" color="#505050">{student2:score}</font></li> 
+    </ul> 
+  </li> 
+</ul> 
+<blockquote> 
+        <p style="margin-top: 0; margin-bottom: 0"> 
+        <img border="0" src="images/ch10_18_chart_by_formula.gif" width="475" height="474"></blockquote> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<ul>
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#505050">結果統計圖示<br>
+　</font></p>
+    <table border="0">
+      <tr>
+        <td><font size="2" color="#505050">Belt Chart Fancy<br>  
+          　</font></td> 
+      </tr> 
+      <tr> 
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_1.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050"><font size="2"><br>
+        Belt Chart 2D</font>　<br>
+          　</font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_2.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font size="2" color="#505050"><br>
+        Belt Chart<br>  
+          　</font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_3.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font size="2" color="#505050"><br>
+        Line Chart Fancy<br>  
+          　</font></td> 
+      </tr> 
+      <tr> 
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_4.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font size="2" color="#505050"><br>
+        Line Chart Fancy 2<br>  
+          　</font></td> 
+      </tr> 
+      <tr> 
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_5.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050"><font size="2"><br>
+        Line Chart 2D</font>　<br>
+          　</font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_6.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font size="2" color="#505050"><br>
+        Line Chart 2D 2<br>  
+          　</font></td> 
+      </tr> 
+      <tr> 
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_7.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050"><font size="2"><br>
+        Line Chart</font>　<br>
+          　</font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_8.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050"><font size="2"><br>
+        Line Chart 2</font>　<br>
+          　</font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_9.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050"><font size="2"><br>
+        Pie Chart</font>　<br>
+          　</font></td>
+      </tr>
+      <tr>
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_10.gif" width="409" height="249"></font></td>
+      </tr>
+      <tr>
+        <td><font size="2" color="#505050"><br>
+        Pie Chart 2D <br>  
+          　</font></td> 
+      </tr> 
+      <tr> 
+        <td><font color="#505050">
+        <img border="0" src="images/ch10_18_chart_study_11.gif" width="409" height="249"></font></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0">
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>  
+<p style="margin-top: 0; margin-bottom: 0">
+<a name="data"></a><b><font size="2">內含值屬性 (data properties)</font></b></p>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2"><font color="#666699">資料來源 (data source)：</font>選取資料來源。</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">篩</font><font size="2"><font color="#666699">選  
+(filter)：</font>不設定時 (blank)      
+，所有資料記錄 (record) 皆列入統計，否則運算式 (formula)      
+為真(true)時 (結果值不等於 0 且不為空字串)，該資料記錄才列入統計。</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">     
+<font color="#666699">X-運算式 (X-axis)：</font>統計圖的X軸的資料。</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">     
+<font color="#666699">群組內含值 (data)：</font>選擇統計資料的值來自於運算式  
+(formula) 或資料來源的欄位 (data field)。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">依運算式 (by formula)：</font>選擇統計資料的值來自於運算式。</font></p>     
+    </li>     
+    <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">     
+<font color="#666699">依資料欄位 (by data field)：</font>選擇統計資料的值來自於資料來源的欄位。</font></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+    </li>     
+  </ul>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">Y-運算式     
+(Y-axis)：</font>統計圖的 Y 軸的資料。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">Z-運算式&nbsp; (Z-axis)：</font>統計圖的 Z 軸的資料。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  </li>    
+</ul>   
+<blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_18_data.gif" width="475" height="477"></p>    
+  </blockquote> 
+<ul type="square">   
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">Y-資料欄位   
+(Y-record field)：</font><font size="2" color="#000000">核選統計的欄位。</font></p>    
+  </li>    
+</ul>    
+<blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_18_by_field.gif" width="476" height="476"></p>    
+</blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><a name="chartprop"></a><b><font size="2">統計圖屬性     
+(Chart properties)</font></b></p>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">標題 (title)：</font>統計圖的標題名稱。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">圖形類別 (chart type)：</font>選擇統計圖的型態，共有11種型態可以選擇。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<ul type="disc">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2" color="#666699">Belt Chart Fancy</font></p>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2" color="#666699">Belt Chart 2D</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Belt Chart</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Line Chart Fancy</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Line Chart Fancy 2</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Line Chart 2D</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Line Chart 2D 2</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Line Chart</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Line Chart 2</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Pie Chart</font>　 </p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Pie Chart 2D </font> </p>     
+  </li>     
+</ul>     
+  </li>     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">     
+<font color="#666699">圖例 (legend)：</font>選擇圖例位置。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">轉換內含值 (data)：</font>設定調整資料方式。</font></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">交換X-Y內含值 (swap XY)：</font>互換X軸及Y軸的資料。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">四捨五入 (round)：</font>資料值取整數顯示。</font></p>   
+    </li>   
+  </ul>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">數字標籤 (value)：</font>顯示統計項目的數值資料。</font></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">無 (none)：</font>不顯示。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">值 (value)：</font>顯示實際值。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">百分比 (percentage)：</font>以百分比顯示數值資料，只適合派圖。</font></p>   
+    </li>   
+  </ul>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">牆 (wall)：</font>設定顯示背景牆。</font></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">背牆  
+(back wall)：</font>顯示後方背景牆。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">左牆 (left wall)：</font>顯示左方背景牆。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">底牆 (bottom wall)：</font>顯示下方底版。</font></p>    
+    </li>    
+  </ul>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">軸線標題 (item label)：</font>設定顯示軸線統計項目標題。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">X 軸    
+(X-axis)：</font>顯示X軸統計項目標題。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">Y 軸 (Y-axis)：</font>顯示Y軸統計項目標題。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">Z 軸 (Z-axis)：</font>顯示Z軸統計項目標題。</font></p>    
+    </li>    
+  </ul>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">軸線刻度 (axis-tick)：</font> 設定顯示軸線刻度。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">X 軸 Cal：</font>顯示X軸刻度。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">Y 軸 Cal：</font>顯示Y軸刻度。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">Z 軸 Cal：</font>顯示Z軸刻度。</font></p>    
+    </li>    
+  </ul>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">派圖尺寸比率 (pie rate)：</font>調整派圖的大小比例。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">派圖字串大小比率：</font>    
+調整字串與派圖大小比例。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">派圖高：寬比率：</font>調整派圖的高度與寬度比例。</font></p>    
+  </li>    
+</ul>    
+<blockquote>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">    
+<font size="2">    
+<img border="0" src="images/ch10_18_chart.gif" width="476" height="477"></font></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font size="2">顯示結果<font color="#666699">：</font></font></p>    
+</blockquote>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">   
+<img border="0" src="images/ch10_18_chart_chart2.gif" width="580" height="364"></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2"><a name="type"></a>動態更換圖示類別  
+(dynamically change chart type)</font></b></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">設計師可以在執行期  
+(runtime) ，提供使用者更換統計的圖示類別 (chart type)   
+的介面，在使用者按選介面元件，產生事件時，以執行運算式  
+(formula) 事件的方式更換統計圖式。</font></p>    
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699" face="Courier New">SetProp(&quot;</font><font size="2" color="#666699">統計圖元件名稱</font><font size="2" color="#666699" face="Courier New">&quot;,   
+&quot;type&quot;, </font><font size="2" color="#666699"> 類別代碼</font><font size="2" color="#666699" face="Courier New">)</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<table border="1" cellspacing="1">
+  <tr>
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">類別</font></td>
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">類別代碼</font></td>
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">類別</font></td>
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">類別代碼</font></td>
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">類別</font></td>
+    <td align="center" bgcolor="#505050"><font size="2" color="#FFFFFF">類別代碼</font></td>
+  </tr>
+  <tr>
+    <td> 
+<font size="2" color="#666699">Belt Chart Fancy</font></td>   
+    <td align="center"><font size="2">1</font></td>  
+    <td>    
+<font size="2" color="#666699">Belt Chart 2D</font></td>   
+    <td align="center"><font size="2">2</font></td>  
+    <td>  
+<font size="2" color="#666699">Belt Chart</font></td>   
+    <td align="center"><font size="2">3</font></td>  
+  </tr>  
+  <tr>  
+    <td>  
+<font size="2" color="#666699">Line Chart Fancy</font></td>   
+    <td align="center"><font size="2">21</font></td>  
+    <td>  
+<font size="2" color="#666699">Line Chart Fancy 2</font></td>   
+    <td align="center"><font size="2">22</font></td>  
+    <td>  
+<font size="2" color="#666699">Line Chart 2D</font></td>   
+    <td align="center"><font size="2">23</font></td>  
+  </tr>  
+  <tr>  
+    <td>  
+<font size="2" color="#666699">Line Chart 2D 2</font></td>   
+    <td align="center"><font size="2">24</font></td>  
+    <td>  
+<font size="2" color="#666699">Line Chart</font></td>   
+    <td align="center"><font size="2">25</font></td>  
+    <td>  
+<font size="2" color="#666699">Line Chart 2</font></td>   
+    <td align="center"><font size="2">26</font></td>  
+  </tr>  
+  <tr>  
+    <td>  
+<font size="2" color="#666699">Pie Chart</font></td>   
+    <td align="center"><font size="2">31</font></td>  
+    <td>  
+<font size="2" color="#666699">Pie Chart 2D </font> </td>   
+    <td align="center"><font size="2">32</font></td>  
+    <td>　</td>
+    <td align="center">　</td>
+  </tr>
+</table>
+<ul type="disc"> 
+</ul>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="bufferds"></a>連結Buffered資料來源的統計圖元件(binding   
+buffered data source)&nbsp;</b></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">Buffered資料來源   
+(Buffered data source) 在視窗起始時(initial)   
+，通常是沒有內含資料記錄 (empty)，而由其他的事件將資料載入。由於統計圖元件的資料彙集及繪製是獨立執行緒  
+(thread)，在載入Buffered資料來源的事件尚未完成所有程序時，統計圖元件的執行緒  
+(thread) 可能已經完成作業，因此在載入Buffered資料來源的事件最後，必須再連結  
+(link)一個引發統計圖元件重整統計資料的執行運算式 (formula) 事件，才能保證顯示的是正確資料。</font></p>    
+<ul>  
+  <li>  
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">  
+    <font size="2" color="#666699"><font face="Courier New">SetProp(&quot;</font>統計圖元件名稱<font face="Courier New">&quot;,   
+    &quot;revalidate&quot;, 1) </font> ：</font><font size="2">統計圖重整統計資料。</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#666699"><font face="Courier New">SetProp(&quot;</font>統計圖元件名稱<font face="Courier New">&quot;,   
+    &quot;repaint&quot;, 1)</font>：</font><font size="2">統計圖以原有資料重繪。</font></li> 
+  <li> 
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#666699" face="Courier New">SetProp(&quot;</font><font size="2" color="#666699">統計圖元件名稱</font><font size="2" color="#666699" face="Courier New">&quot;,   
+    &quot;repaint&quot;, 2)</font><font size="2"><font color="#666699">：</font>統計圖以原有資料即時重繪。</font></li>  
+</ul>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取 
+(formula get/set properties)</b></font></p>
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;,&nbsp; 值1,&nbsp; 值2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;)</font>：屬性讀取。</font></p> 
+ 
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">重新統計資料並重繪。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">title</font></td>
+    <td><font size="2">文字串</font></td>
+    <td>　</td>
+    <td><font size="2">設定統計圖示的標題文字。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">type</font></td>
+    <td><font size="2">N 編號 N 的統計圖形</font></td> 
+    <td>　</td> 
+    <td><font size="2">以編號 N 的統計圖形，重繪。<br> 
+      N = 1 Belt Chart Fancy。<br> 
+      N = 2 Belt Chart 2D。<br> 
+      N = 3 Belt Chart。<br> 
+      N = 21 Line Chart Fancy。<br> 
+      N = 22 Line Chart Fancy 2。<br> 
+      N = 23 Line Chart 2D。<br> 
+      N = 24 Line Chart 2D 2。<br> 
+      N = 25 Line Chart。<br> 
+      N = 26 Line Chart 2。<br> 
+      N = 31 Pie Chart 。<br> 
+      N = 32 Pie Chart 2D。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td> 
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">title</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">統計圖示的標題文字。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">type</font></td> 
+    <td colspan="2"><font size="2">N 編號 N 的統計圖形</font></td> 
+    <td><font size="2">目前統計圖形的編號。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p>　</p> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=223 align=left valign=top>  
+<a href="ch10_17.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=215 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=231 align=right valign=top>  
+<a href="ch10_19.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+    
+</body>    
+    
+</html>

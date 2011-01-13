@@ -1,0 +1,1224 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Data Source</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=637 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=212 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch08_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=207 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 9</font></b><font color="#000000" face="新細明體">
+</font>       
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font color="#000000" face="新細明體" size="-1">
+Data Source</font></b></TD>      
+<td width=218 align=right valign=top>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<a href="ch10.html">     
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<p><font size="4"><b>9</b></font><b><a class="TITLE"><font size="4">.            
+資料來源 (data source</font></a><font size="4">)</font></b></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#dsdesignproc">資料來源設計規劃程序    
+(data source design procedures)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#dstype">資料來源的類別    
+(data source type)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#資料表格 ~ 屬性">資料庫資料表列示    
+(database tables listing)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><a href="ch11_02.html">          
+<font size="2">資料來源列示 (data source listing)</font></a></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#globeds">全域資料來源
+屬性    
+(globe data source property)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">
+<a href="#tableds_setting">資料表資料來源設定 (table data source setting)</a><br>
+<a href="#sqlds_setting">SQL資料來源設定 (SQL data source setting)</a><br>
+<a href="#bufferds_setting">Buffer資料來源設定 (Buffer data source setting)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#internalproc">資料來源讀取、新增、存檔、刪除的系統內部程序    
+(fetch, insert, post, delete system internal procedures)</a></font></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">資料來源    
+(data source) 是應用程式 (application)，將在此視窗模組 (form)          
+中運算操作，具有資料表結構的資料 (table structure data)。資料來源    
+(data source) 依來源與產生的方式不同分為<a href="#dstype">三種類別</a>，設計師可依<a href="#dsdesignproc">資料來源設計規劃程序</a>，將所要操作的資料來源加入視窗的資料來源中。在資料來源列示    
+(data source listing)      
+中，將會列示所有資料欄位的結構與型態。設計師可以據此將元件內含連結至資料欄位    
+(data binding)，執行期 (runtime)      
+關於資料來源欄位的更新、存檔，將會由元件及資料來源的內部程序自動執行。資料來源的開啟與關閉    
+(open and close data source)，除了全域資料來源 (globe data source)      
+外，是整批作業，因此應用程式中必須有程序性開啟 (open)      
+的資料來源，應將【<font color="#666699">自動開啟</font>】的屬性關閉，而以【觸發資料來源】事件的方式，將觸發事件連結    
+(link)      
+在相關的事件流程中。資料來源亦應用於報表系統中，報表在列印期，除了會移動資料記錄外，相關的事件也會一併啟動。<br>    
+　</font></p>    
+<p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px; TEXT-INDENT: 20px" align="justify"><font size="2">資料來源是虛擬模式    
+(virtual mode) 的資料元件，資料來源在開啟 (open)      
+時，並不會讀入所有資料記錄 (record) 至客戶端 (client)      
+的資料記錄緩衝區 (record buffer) 中，而是根據資料來源擷取列數的設定    
+(row fetch)，先行讀入，在元件或事件驅動時，需要的資料記錄不在緩衝區    
+(buffer)      
+且尚未至檔尾 (EOF) 時，資料來源會以背景執行緒 (background      
+thread) 按擷取記錄數 (row fetch)，讀入檔案記錄 (record)      
+至資料記錄緩衝區 (record buffer) 中。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>        
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="dsdesignproc"></a>資料來源設計規劃程序    
+(data source design procedures)</b></font></p>         
+<ol style="font-size: 10 pt">         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">選用資料表資料來源    
+    (table           
+data source)、 SQL資料來源 (SQL data source) 或 Buffer資料來源 (buffer           
+data source) 處理資料。參閱</font> <font size="2"><a href="#dstype">資料來源的類別    
+    (data source type)</a>。</font>      
+  </li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定資料來源與          
+    jLIVE&trade; middle ware <a href="#rowfetch"> 資料記錄列擷取數 (row fetch)         
+    </a>。 </font></p>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">讀取列是客戶端    
+    (client) 與資料庫伺服器 (database server) 每次需求 (request)          
+    與回應 (response) 的資料記錄列 (record) 擷取數。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定大型資料          
+    <a href="#blobfetch">(Blob and Clob) 欄位的擷取方式</a>。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料來源是否允許使用者編輯    
+    (updateable)。</font></p>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">&nbsp;SQL資料來源 (SQL data source)          
+    是關聯資料的結果集，內定是唯讀 (read only)資料。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">是否與其他視窗模組<a href="#globeds">共享此資料來源    
+    (globe data source)</a>。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">是否在視窗開啟後隨即開啟    
+    (auto open) 此資料來源。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#sqlprop">編輯測試資料表、SQL資料來源的SQL         
+    命令</a>，或定義Buffer資料來源的欄位結構 (field structure)。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">具有可編輯屬性的資料來源，選取<a href="#rowidprop">資料列識別          
+    ID 欄位</a>。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">以運算式    
+    (formula) 設定資料來源新增時<a href="#defaultprop">欄位預設值</a>。</font></li>        
+  <li>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料來源讀取    
+    (fetch)          
+    新增 (insert) 存檔 (post) 刪除 (delete) 的<a href="#validprop">作業正確性檢核</a>。</font></p>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設計師可以根據使用者輸入的資料正確性，或應用程式的流程控管需求，限制資料來源是否執行讀取(fetch)          
+    新增 (insert) 存檔 (post) 刪除 (delete) 的作業。</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定讀取、更新、新增、刪除的<a href="#event">前後事件    
+    (event)</a>。</font></li>        
+  <li>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">資料伺服器    
+    (database server) 產生 <a href="#errhandleprop"> SQL 錯誤時</a></font><a href="#errhandleprop"><font size="2">，應用程式回復的程序</font></a><font size="2">。</font></li>        
+</ol>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　 </p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="dstype"></a>資料來源的類別    
+(data source type)</b></font></p>          
+<ul>          
+  <li>          
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">
+    <font color="#666699">資料表資料來源           
+    (Table data source)</font>：執行選取 (select) 單一資料表 (table) SQL命令的結果集    
+    (result set)。<br>
+　</font></li>          
+  <li>          
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">
+    <font color="#666699">SQL資料來源           
+    (SQL data source)</font>：執行選取 (select) 多個關連資料表(table join)           
+    SQL命令的結果集 (result set)。<br>
+　</font></li>         
+  <li>         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">
+    <font color="#666699">Buffer資料來源           
+    (Buffer data source)：</font>是由設計師定義 (define) 使用於此視窗    
+    (form) 具有資料表結構 (table structure) 的資料來源。Buffer資料來源的起始    
+    (initial) 及使用 (operation) 只存在於客戶端 (client)。</font> <br>   
+    　<table border="1" cellspacing="1">     
+      <tr>     
+        <td align="center" bgcolor="#505050" valign="middle" width="30">　</td>     
+        <td align="center" bgcolor="#505050" width="213"><font size="2" color="#FFFFFF">資料表資料來源&nbsp;</font></td>     
+        <td align="center" bgcolor="#505050" width="246"><font size="2" color="#FFFFFF">SQL資料來源&nbsp;</font></td>     
+        <td align="center" bgcolor="#505050" width="131"><font size="2" color="#FFFFFF">Buffer資料來源</font></td>     
+      </tr>     
+      <tr>     
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">選用</font></td>     
+        <td width="213"><font size="2"><a href="#tablelist">由資料表列示選取</a></font></td>     
+        <td width="246"><font size="2"><a href="#dslist">由資料來源列示加入</a></font></td>     
+        <td width="131"><font size="2"><a href="#dslist">由資料來源列示加入</a></font></td>     
+      </tr>     
+      <tr>     
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">SQL</font></td>     
+        <td width="213"><font size="2">選取 (select) 單一資料表(table) SQL命令的結果集    
+          (result set)</font></td>         
+        <td width="246"><font size="2">選取 (Select) 多個關連資料表(table join)           
+    SQL命令的結果集 (result set)</font></td>          
+        <td width="131"><font size="2">定義資料欄位結構 (field          
+          structure)</font></td>         
+      </tr>         
+      <tr>         
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">存取</font></td>         
+        <td width="213"><font size="2">可編輯(updateable)</font></td>        
+        <td width="246"><font size="2">唯讀 (read only)，但可設定為使用者端擬 Buffer 資料來源操作</font></td>         
+        <td width="131"><font size="2">可編輯(updateable)</font></td>        
+      </tr>        
+      <tr>        
+        <td bgcolor="#505050" valign="middle" rowspan="3" width="30"><font size="2" color="#FFFFFF">來源</font></td>        
+        <td rowspan="3" width="213"><font size="2">資料庫資料表 (tables)</font></td>        
+        <td rowspan="3" width="246"><font size="2">資料庫資料表 (tables)及關連結果集 
+        (join-tables)</font></td>        
+        <td width="131"><font size="2">客戶端即時資料</font></td>        
+      </tr>        
+      <tr>        
+        <td width="131"><font size="2">文字檔載入</font></td>        
+      </tr>        
+      <tr>        
+        <td width="131"><font size="2">其他資料來源載入</font></td>        
+      </tr>        
+      <tr>        
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">查詢</font></td>        
+        <td width="213"><font size="2">給定參數 (parameters) 執行 SQL          
+          命令</font></td>         
+        <td width="246"><font size="2">給定參數 (parameters) 執行 SQL          
+          命令</font></td>         
+        <td width="131"><font size="2">重新載入以過濾調件選取資料</font></td>         
+      </tr>         
+      <tr>         
+        <td bgcolor="#505050" valign="middle" width="30" rowspan="3"><font size="2" color="#FFFFFF">適用</font></td>         
+        <td width="213" rowspan="3"><font size="2">資料庫資料表 (tables)          
+          維護</font></td>         
+        <td width="246" rowspan="3"><font size="2">資料表的關聯統計與彙總</font></td>         
+        <td width="131"><font size="2">暫存使用者資料</font></td>         
+      </tr>         
+      <tr>         
+        <td width="131"><font size="2">文字檔載入</font></td>         
+      </tr>         
+      <tr>         
+        <td width="131"><font size="2">批次 (batch) 作業的資料處理</font></td>         
+      </tr>         
+    </table>         
+  </li>         
+</ul>         
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">         
+<font color="#003366" size="2">▲Top</font></a></p>         
+<p style="margin-top: 1; margin-bottom: 1">         
+　 </p>
+<p style="margin-top: 1; margin-bottom: 1">
+　 </p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="tablelist"></a>資料庫資料表列示    
+(database tables listing)</b></font></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">資料庫資料表    
+(tables) 列示視窗 (listing panel) 位於設計平台 (design framework)           
+的右上方，設計師在專案中所設定加入的資料庫(database)，在資料表列示中，系統會以樹狀結構，列示所有已存在的資料表    
+(tables)           
+。設計師可以滑鼠雙擊或按滑鼠右鍵，將此資料表加入資料來源    
+(data source) 中。</font></p>          
+<p style="margin-top: 0; margin-bottom: 0"></p>          
+<blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/ch09_table_list.gif" width="314" height="355"></p>          
+</blockquote>          
+<p style="margin-top: 0; margin-bottom: 0"></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>          
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">          
+<font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="dslist"></a>資料來源列示    
+(data source listing)</b></font></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">資料來源列示    
+(data source listing) 顯示在此視窗 (form)           
+中，設計師所選用的資料表 (table data source) 、執行 SQL           
+命令所產生的資料結果集 (SQL data source)           
+、自定欄位型別的暫存緩衝區資料表 (buffered data source)。設計師可以按滑鼠右鍵以功能選單加入    
+(add)、編輯 (edit properties)、刪除 (remove)           
+資料來源。在每個資料來源下，系統會列示資料欄位名稱及欄位的屬性資料，包括：類別    
+(type)、精密度 (precision)、小數 (scale)、唯讀 (read           
+only)、可查詢 (searchable)、區分大小寫 (case           
+sensitive)、自動累加 (auto           
+increase)、可寫入 (writable)、預設可寫入 (default writable) 等欄位資訊，由於這些資訊是由資料庫驅動程式    
+(database driver) 所提供，真正的欄位屬性必須參照資料庫系統    
+(database system) ，因為有些驅動程式回覆的資料並不正確。</font></p>          
+<blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch09_ds_list.gif" width="281" height="357"></p>          
+</blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0"></p>          
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">          
+<font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="globeds"></a>全域資料來源
+屬性    
+(globe data source property)</b></font></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE          
+Builder&trade; 可以將資料來源設定為全域 (globe)          
+資料來源，允許多個視窗模組 (form)          
+同時存取一個資料來源。資料來源在每個視窗中的行為性    
+(behavior) 是同步 (synchronized)          
+且即時反應操作狀態，例如：兩個共用全域資料來源的視窗，其中之一移動資料記錄時，另一視窗亦會反應資料記錄移動，包括相關的連結元件    
+(data aware component)          
+的內含值亦會同步更新，資料來源的編輯、新增、刪除也會有同樣的效果。<br>    
+　</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">全域    
+(globe) 資料來源是以資料來源名稱 (data          
+source name) 及全域屬性的核取 (checked globe data source)          
+與一般資料來源作區分，所以將資料來源名稱，在多個視窗資料來源設定中，給予<b>相同的名稱</b>且<b>核取全域屬性</b>，這些視窗即共享同一資料來源。在這些共享資料來源的視窗中，第一個開啟的視窗，將以其資料來源開啟的          
+SQL 指令開啟 (open)          
+資料來源，隨後開啟的視窗將共享其資料。開啟此資料來源的視窗關閉    
+(form close) 時，此共享的資料來源並不一定關閉 (close data          
+source)，而是由最後關閉的共享資料來源視窗負責執行資料來源關閉    
+(close data source)。<br>    
+　</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">全域    
+(globe) 資料來源在視窗中分享其資料記錄資料(record          
+data)，全域資料來源在各個視窗上其餘的屬性設定(預設、確認、事件、Error    
+handle)，若有不同時，會以使用者目前操作的視窗設定為準。</font></p>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>         
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>         
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0">
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="tableds_setting"></a>資料表資料來源設定 (table data source 
+setting)</font></b></p>    
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch09_tableds_tab.gif" width="570" height="28"></p>    
+<ul>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#tablds_db_prop">資料表資料來源 資料庫屬性頁 (table data source database properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#sqlprop">SQL屬性頁 (SQL properties)</a></font></p>         
+  </li>
+  <li>        
+<p style="margin-top: 2; margin-bottom: 2">        
+<font size="2"><a href="#rowidprop">識別屬性頁 (row id properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#defaultprop">預設屬性頁 (default properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#validprop">確認屬性頁 (validation properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#event">事件屬性頁 (event)</a></font></p>        
+  </li>
+  <li>        
+<p style="margin-top: 2; margin-bottom: 2">        
+<font size="2"><a href="#errhandleprop">ErrHandle屬性頁 (SQL error handle)</a></font></p>        
+  </li>
+  <li>        
+<p style="margin-top: 2; margin-bottom: 2">        
+<font size="2"><a href="#encryption">加密屬性頁 (encryption)</a></font></p>       
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><a name="sqlds_setting"></a><b>SQL資料來源 (SQL data source setting)</b></font></p>    
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch09_sqlds_tab.gif" width="440" height="29"></p>    
+<ul>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#sqlds_db_prop">SQL 資料來源 資料庫屬性頁 (SQL data source database properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#sqlprop">SQL屬性頁 (SQL properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#validprop">確認屬性頁 (validation properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#event">事件屬性頁 (event)</a></font></p>        
+  </li>
+  <li>        
+<p style="margin-top: 2; margin-bottom: 2">        
+<font size="2"><a href="#errhandleprop">ErrHandle屬性頁 (SQL error handle)</a></font></p>        
+  </li>
+  <li>        
+<p style="margin-top: 2; margin-bottom: 2">        
+<font size="2"><a href="#encryption">加密屬性頁 (encryption)</a></font></p>       
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="bufferds_setting"></a>Buffer資料來源 (Buffer data source 
+setting)</font></b></p>    
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ch09_bufferds_tab.gif" width="367" height="29"></p>    
+<ul>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#bufferds_db_prop">Buffer 資料來源 資料庫屬性頁 (Buffer data 
+source database properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font color="#003366" size="2"><a href="#fieldprop">資料欄位屬性頁 (field       
+properties)</a></font></p>        
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#defaultprop">預設屬性頁 (default properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#validprop">確認屬性頁 (validation properties)</a></font></p>         
+  </li>
+  <li>         
+<p style="margin-top: 2; margin-bottom: 2">         
+<font size="2"><a href="#event">事件屬性頁 (event)</a></font></p>        
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">         
+<font color="#003366" size="2">▲Top</font></a></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="tablds_db_prop"></a>資料表資料來源 資料庫屬性頁 (table data source database properties)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<img border="0" src="images/ch09_tableds_db.gif" width="472" height="214"></p>          
+<ul>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">資料庫名稱 (database name)：</font>           
+顯示資料來源的資料庫名稱。<br>
+　</font></p>          
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">資料來源 (data source name)： </font>資料來源名稱。同一視窗中不可重覆，名稱允許修改，所有參照此名稱的元件及運算式會自動更新，但直接指名          
+(以字串給值)&nbsp; 的資料來源名稱不會更新。<br>
+　</font></p>          
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699"><a name="rowfetch"></a>讀取列    
+(row fetch)： </font>資料來源與資料庫伺服器 (database server)          
+每次需求 (request) 與回應 (response) 的資料記錄列 (record) 擷取列數。預設值為          
+15 列，0 表示預設值，-1 表示回覆所有列 (all rows)。當資料紀錄不多且是屬於關連資料來源    
+(lookup data source) 時，應設定為          
+-1 (回覆所有列)，加快應用程式讀取的效率。<br>
+　</font></p>          
+  </li>
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699"><a name="blobfetch"></a>Blob 讀取 (Blob fetch)：</font><font size="2">大型資料          
+(Blob and Clob) 欄位的擷取方式，設定在資料來源開啟 (open)時，大型資料          
+(Blob and Clob) 欄位的資料以何種方式傳輸資料。<br>
+　</font></p>          
+<ul type="circle">         
+  <li><p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">應要求    
+    (request on demand)：</font><font size="2" color="#000000">資料來源開啟時，大型資料          
+    (Blob and Clob) 欄位的資料，不隨資料記錄傳回，而是連結    
+    (binding) 該欄位的元件 (圖片元件或備忘錄元件)，在需顯示    
+    (display) 時，以背景執行緒 (background thread)，自行要求讀取資料。此機制能使視窗開啟的速度加快，圖片(Blob)          
+    或資料(Clob) 在資料記錄顯示後再呈現。</font></p>          
+  </li>         
+  <li><p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">目前記錄    
+    (current row)：</font><font size="2" color="#000000">資料來源開啟時，只傳回一筆目前資料記錄的大型資料          
+    (Blob and Clob) 欄位資料，資料來源資料紀錄移動時，連結    
+    (binding) 該欄位的元件 (圖片元件或備忘錄元件)，在需顯示    
+    (display) 時，再以背景執行緒 (background thread)，要求讀取其餘資料記錄的資料。</font></p>          
+  </li>         
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">全部 (all rows)：</font><font size="2" color="#000000">資料來源開啟時，傳回所有資料記錄的大型資料          
+(Blob and Clob) 欄位資料。<br>
+　</font></p>          
+  </li>         
+</ul>         
+  </li>          
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">唯讀 (read only)：</font>           
+設定資料來源為唯讀。<br>
+　</font></p>          
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">全域資料來源 (globe data source)：</font>           
+全域資料來源。參照</font>           
+<font size="2"><a href="#globeds">全域資料來源屬性 (globe data source property)</a>。<br>
+　</font></p>          
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">自動開啟 (auto open)：</font>           
+視窗開啟後，隨即自動開啟資料來源。<br>
+　</font></p>          
+  </li>
+  <li>    
+<p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px"><font color="#666699" size="2">
+<a name="resultset"></a>結果集 (result set)：</font><span style="FONT-WEIGHT: 400"><font size="2">JDBC 資料庫執行 
+SQL statement 時所要產生的結果集 (result set) 的型式。取消</font></span><span style="FONT-WEIGHT: 400"><font size="2">共同 
+Type and Concurrency ，</font></span><span style="FONT-WEIGHT: 400"><font size="2">按下
+專屬設定 <img src="images/ds.gif" border="0" width="16" height="16"> 
+系統會出現結果集 Type 和 Concurrency 設定視窗。共同 Type and Concurrency 採用在資料庫設定頁所設定的值，</font></span><span style="FONT-WEIGHT: 400"><font size="2">專屬設定即此資料來源另行設定Type 
+和 Concurrency 。</font></span><span style="FONT-WEIGHT: 400"><font size="2"><br>
+<br>
+<img src="images/ch09_resultset.gif" border="0" width="320" height="240"></font></span><font size="2"><br>
+　</font><ul>
+  <li>
+  <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px"><font color="#666699" size="2">
+  Type：</font><span style="FONT-WEIGHT: 400"><font size="2">JDBC 資料庫執行 SQL 
+  statement 時所要產生的結果集 (result set) 的型式。<br>
+  　</font></span><ul type="disc">
+    <li>
+    <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px">
+    <font color="#666699" size="2">FORWARD_ONLY</font></li>
+    <li>
+    <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px">
+    <font color="#666699" size="2">SCROLL_INSENSITIVE</font></li>
+    <li>
+    <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px">
+    <font color="#666699" size="2">SCROLL_SENSITIVE</font></li>
+  </ul>
+  <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px"><font color="#666699" size="2">
+  <br>
+  </font><span style="FONT-WEIGHT: 400"><font size="2">JDBC version 1.0 不支援 Type 
+  和 Concurrency，使用 JDBC 1.0 驅動程式時，請將 Type 選為 FORWARD_ONLY ，系統內部會自動以不含 Type 及 
+  Concurrency 的函式 (method) 建立 SQL statement。<br>
+  除非驅動程式不支援，否則不要選用 FORWARD_ONLY，那對系統效率的影響非常大。<br>
+  關於 JDBC 結果集 (result set) 的型式 各資料庫系統的驅動程式 (driver) 
+  實作的機制不盡相同，請參照各資料庫系統的驅動程式的說明。一般而言，FORWORD_ONLY 會以資料串流的型式，擷取 結果集 (result 
+  set)，驅動程式不會 cache 結果集資料，適用於大資料讀取時應用，例如：使用【複製資料來源至另一資料來源】事件時，來源 資料來源 (source datasource) 就以選用 FORWORD_ONLY 為宜。<br>
+  SCROLL_INSENSITIVE 與 SCROLL_SENSITIVE 的分別，以 Oracle 為例，選用 SCROLL_INSENSITIVE 
+  時，多個使用者同時更新同一資料記錄 (record) 時 ，檔案資料記錄值為最後更新的使用者輸入值。若選用 SCROLL_SENSITIVE 
+  時，多個使用者同時選取同一資料記錄時，當第一個使用者更新檔案資料記錄值後，在此使用者之後選取 (select) 
+  此資料檔案記錄的使用者，不可更新此資料檔案記錄，驅動程式會拋出 (throw)&nbsp; SQL 錯誤訊息，告知在選取 (select) 
+  此資料檔案記錄後資料已被更新 (dirty data)，使用者需再次選取 (select) 此資料記錄，再進行更新。<br>
+  　</font></span></li>
+  <li>
+  <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px"><font color="#666699" size="2">
+  Concurrency：</font><span style="FONT-WEIGHT: 400"><font size="2">JDBC 資料庫執行 
+  SQL statement 時所要產生的結果集 (result set) 的同步存取狀態。</font></span><font color="#666699" size="2"><br>
+  　</font><ul type="disc">
+    <li>
+    <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px">
+    <font color="#666699" size="2">READ_ONLY</font></li>
+    <li>
+    <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px"><font size="2">
+    <font color="#666699">UPDATABLE</font><br>
+    　</font></li>
+  </ul>
+  <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px"><span style="FONT-WEIGHT: 400">
+  <font size="2">JDBC 1.0 和 舊版的驅動程式大都不支援 UPDATABLE， jLIVE</font><font color="#000000" size="2">&#8482;</font><font size="2"> 
+  middle ware 會自行運作資料記錄更新的操作 。除非設計師確定驅動程式支援 UPDATABLE 且 UPDATABLE 的效率較好，否則選則 
+  READ_ONLY 即可。<br>
+  　</font></span></li>
+  <li>
+  <p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px"><font size="2">
+  <font color="#666699">FetchSize：</font>JDBC </font>
+  <span style="FONT-WEIGHT: 400"><font size="2">
+  驅動程式每次至資料庫擷取結果集的大小，並非所有驅動程式及資料庫都支援。 0 值代表不作設定，使用預設值， -99 
+  值系統會將其轉換為整數最小值，以因應某些資料庫設定，例如：mySQL 。</font></span></li>
+</ul>
+<p style="MARGIN-TOP: 2px; MARGIN-BOTTOM: 2px">　
+<font size="2"><br>
+　</font></li>
+</ul>
+  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">         
+<font color="#003366" size="2">▲Top</font></a><font color="#003366" size="2"> </font></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+  
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>          
+  
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>          
+  
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="sqlds_db_prop"></a>SQL資料來源 資料庫屬性頁 (SQL data source database properties)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<img border="0" src="images/ch09_sqlds_db.gif" width="473" height="238"></p>          
+<ul type="square">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">資料庫名稱 (database name)：</font> 選取資料來源的資料庫別名。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">資料來源 (data source name)： </font>資料來源名稱。同一視窗中不可重覆，名稱允許修改，所有參照此名稱的元件及運算式會自動更新，但直接指名          
+(以字串給值)&nbsp; 的資料來源名稱不會更新。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><a name="rowfetch"></a>讀取列    
+(row fetch)： </font>資料來源與資料庫伺服器 (database server)          
+每次需求 (request) 與回應 (response) 的資料記錄列 (record) 擷取列數。預設值為          
+15 列，0 表示預設值，-1 表示回覆所有列 (all rows)。當資料紀錄不多且是屬於關連資料來源    
+(lookup data source) 時，應設定為          
+-1 (回覆所有列)，加快應用程式讀取的效率。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699"><a name="blobfetch"></a>Blob 讀取 (Blob fetch)：</font><font size="2">大型資料          
+(Blob and Clob) 欄位的擷取方式，設定在資料來源開啟 (open)時，大型資料          
+(Blob and Clob) 欄位的資料以何種方式傳輸資料。<br>
+　</font></p>          
+<ul>         
+  <li><p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">應要求    
+    (request on demand)：</font><font size="2" color="#000000">資料來源開啟時，大型資料          
+    (Blob and Clob) 欄位的資料，不隨資料記錄傳回，而是連結    
+    (binding) 該欄位的元件 (圖片元件或備忘錄元件)，在需顯示    
+    (display) 時，以背景執行緒 (background thread)，自行要求讀取資料。此機制能使視窗開啟的速度加快，圖片(Blob)          
+    或資料(Clob) 在資料記錄顯示後再呈現。</font></p>          
+  </li>         
+  <li><p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">目前記錄    
+    (current row)：</font><font size="2" color="#000000">資料來源開啟時，只傳回一筆目前資料記錄的大型資料          
+    (Blob and Clob) 欄位資料，資料來源資料紀錄移動時，連結    
+    (binding) 該欄位的元件 (圖片元件或備忘錄元件)，在需顯示    
+    (display) 時，再以背景執行緒 (background thread)，要求讀取其餘資料記錄的資料。</font></p>          
+  </li>         
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">全部 (all rows)：</font><font size="2" color="#000000">資料來源開啟時，傳回所有資料記錄的大型資料          
+(Blob and Clob) 欄位資料。<br>
+　</font></p>          
+  </li>         
+</ul>         
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">唯讀 (read only)：</font>           
+設定資料來源為唯讀，SQL 資料來源只能設定為唯讀。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">全域資料來源 (globe data source)：</font>           
+全域資料來源。參照</font>           
+<font size="2"><a href="#globeds">全域資料來源屬性 (globe data source property)</a>。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">自動開啟 (auto open)：</font>           
+視窗開啟後，隨即自動開啟資料來源。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">允許 SQL 
+結果集擬 Buffer DataSource 操作 (Buffer DataSource operation)</font><font color="#666699">：</font><font size="2">SQL  
+資料來源內定為唯讀。設定此屬性，</font><font size="2">SQL  
+資料來源即可編輯 (updatable)，但是對此資料來源的新增、修改、刪除，將只作用於客戶端 (client) 的 SQL 結果集 (result 
+set)，並不會更改到後端資料庫原資料記錄。<br>
+　</font></p>         
+  </li>         
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">
+結果集 (result set)：</font><span style="FONT-WEIGHT: 400"><font size="2">JDBC 資料庫執行 
+SQL statement 時所要產生的結果集 (result set) 的型式。參閱 <a href="#resultset">資料表資料來源 結果集</a>。</font></span></p>         
+  </li>         
+</ul>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">         
+<font color="#003366" size="2">▲Top</font></a></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="bufferds_db_prop"></a>Buffer 資料來源 資料庫屬性頁 (buffer data 
+source database properties)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<img border="0" src="images/ch09_bufferds_db.gif" width="433" height="80"><br>
+　</p>          
+<ul type="square">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">資料來源 (data source name)： </font>資料來源名稱。同一視窗中不可重覆，名稱允許修改，所有參照此名稱的元件及運算式會自動更新，但直接指名          
+(以字串給值)&nbsp; 的資料來源名稱不會更新。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">全域資料來源 (globe data source)：</font>           
+全域資料來源。參照</font>           
+<font size="2"><a href="#globeds">全域資料來源屬性 (globe data source propertry)</a>。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">刪除的記錄即時移除 (Remove deleted record just in time)</font><font color="#666699">：</font><font size="2">當資料記錄刪除時隨即移除，並將目前資料記錄移至下筆記錄。</font></p>         
+  </li>         
+</ul>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">         
+<font color="#003366" size="2">▲Top</font></a></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="sqlprop"></a>SQL          
+屬性 (SQL properties)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">資料表資料來源         
+(Table data source) 及 SQL 資料來源，皆是以執行 SQL         
+指令取得其結果集 (result set)，兩者不同處在於，資料表資料來源所選取    
+(select) 的是單一資料表 (table) 且具有可編輯性 (updateable) ，SQL資料來源則否。SQL         
+指令含有參數 (parameters) 時，jLIVE&trade; middle ware 會以 JDBC&nbsp;         
+的 PreparedStatement 予以執行。SQL 指令中以 ?         
+代表傳入的參數，設計師必須依序在參數表中，以運算式    
+(formula) 給定其值，並依欄位型別 (field type)         
+選擇參數類別。參數的運算式中，不可包含尚未開啟 (open)         
+的資料來源欄位值 (data field)，否則在執行期 (runtime)         
+會產生執行期運算式錯誤訊息。在視窗資料來源中設定為【<font color="#666699">自動開啟</font>】屬性的資料來源，在執行期是以整批開啟(open)         
+的方式進行，所以資料來源的參數運算式，不可引用其他的資料來源欄位值    
+(data         
+field)。若須引用其他的資料來源欄位值，必需將該資料來源的【<font color="#666699">自動開啟</font>】屬性設為不核取(unchecked)，並新增一個觸發資料來源事件(trigger data source)，選擇該資料來源為被觸發的資料來源，將此事件連結    
+(link) 於視窗開啟後事件 (after data source open event)。</font></p>         
+<ul type="square">         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">SQL 按 F2            
+或滑鼠右鍵，以取的資料欄位列示 ：</font> 輸入 SQL         
+指令，可以按下 F2 鍵，SQL         
+資料欄位輸入輔助視窗會出現，設計師可以按選資料欄位，加快指令輸入的速度及正確性。&nbsp;</font></p>          
+  </li>          
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">SQL         
+指令測試</font><img border="0" src="images/formdesign16.gif" width="24" height="24"><font color="#666699">(SQL         
+test)</font> <font color="#666699">：</font> 任何更動 SQL         
+指令後，皆必須按此按鍵測試指令的執行正確性。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">          
+<font color="#666699">參數 (parameters)：</font> SQL         
+指令中以 ?         
+代表傳入的參數，設計師必須依序在參數表中，以運算式    
+(formula) 給定其值，並依欄位型別 (field type) 選擇參數類別。</font></p>          
+  </li>          
+</ul>          
+<blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/ch09_sql.gif" width="557" height="435"></p>          
+</blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>          
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">          
+<font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><font color="#003366" size="2"><a name="fieldprop"></a></font><b><font size="2">資料欄位屬性頁    
+(field       
+properties)</font></b></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">定義       
+Buffer 資料來源欄位名稱、型別及長度。</font></p>         
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>         
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch09_buffer_data_field.gif" width="416" height="415"></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">          
+<font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><b><a name="rowidprop"></a><font size="2">識別屬性頁          
+(row Id properties)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">具有可編輯屬性的資料來源，如果資料庫驅動程式    
+(database JDBC driver)，不支援結果集直接更新、新增、刪除 (result set position update, insert, delete)          
+    的功能，設計師必須選取資料列識別 ID 欄位 (row id fields)，jLIVE&trade;          
+    middle ware 將依此組成更新 (update)、新增 (insert)、刪除    
+(delete) 的 SQL 命令。資料庫驅動程式 (driver)，是否支援結果集直接更新、新增、刪除，在控制面版資料庫屬性設定中，按下資料庫連結測試    
+(database connection test)，jLIVE&trade; middle ware         
+將會回覆相關訊息。</font></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch09_row_id.gif" width="557" height="436"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="defaultprop"></a>預設屬性頁    
+(default properties)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">
+當使用者按下新增資料記錄 (insert)         
+按鈕或啟動【資料來源瀏覽的(新增)功能】事件時，資料來源將預設值運算式的結果值存入資料記錄的欄位內    
+(record field)，並反應到相關連結的元件 (data aware component)，使其成為使用者的預設輸入資料。</font></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch09_default.gif" width="556" height="435"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="validprop"></a>確認屬性頁    
+(validate properties)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">資料來源在對資料庫系統操作讀取    
+(fetch) 、編輯 (update) 、新增</font> <font size="2">(insert)、刪除    
+(delete)         
+作業前，會先行檢驗確認運算式 (formula) 是否為真 (非 0 且         
+非空字串)，運算式為真則執行相關作業，否則放棄相關作業並啟動<font color="#666699">無效事件         
+</font><font color="#000000">(invalidate event)</font>。</font></p>         
+<ul type="square">        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">        
+<font color="#666699">讀取 (fetch)：</font>      
+讀取時，確認運算式為真時才可以讀取。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">        
+<font color="#666699">編輯 (update)：</font>      
+編輯存檔時，確認運算式為真時才可存檔。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">        
+<font color="#666699">新增 (insert)：</font>      
+新增存檔時，確認運算式為真時才可以存檔。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">        
+<font color="#666699">刪除 (delete)：</font>      
+刪除時，確認運算式為真時才可以刪除。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">        
+<font color="#666699">無效事件 (invalidate event)：</font>       
+當確認為偽時，觸發事件。</font></p>        
+  </li>        
+</ul>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch09_validate.gif" width="555" height="436"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="event"></a>事件    
+(events)</font></b></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">資料來源在對資料庫系統操作讀取    
+(fetch)、編輯 (update)、新增 (insert)、刪除 (delete)         
+作業前後引發的事件。例如：主從 (master-detail relation)         
+資料來源，當主檔讀取 (fetch) 後，接續一個從屬檔 (detail         
+table) 的【觸發資料來源事件】，以達成當主檔 (master)         
+讀取或移動資料記錄時，從屬檔能重新按關聯鍵值 (relation         
+key)，取得關聯主檔的從屬資料記錄。</font></p>         
+<ul type="square">         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">讀取前&nbsp; (before fetch)：</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">讀取後&nbsp; (after fetch)： </font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">更改前&nbsp; (before update)： </font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">更改後&nbsp; (after update)： </font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">新增前&nbsp; (before insert)： </font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">新增後&nbsp; (after insert)： </font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">刪除前&nbsp; (before delete)： </font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">刪除後 (after delete)： </font></p>          
+  </li>          
+</ul>          
+<blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/ch09_events.gif" width="556" height="436"></p>          
+</blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">          
+<font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="errhandleprop"></a>ErrHandle (SQL error handle)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">當資料庫伺服器發生錯誤    
+(exception) 時，jLIVE&trade; middle ware 會將此錯誤訊息 (message)     
+及代碼 (error code)，回傳至發出請求的客戶端，並啟動客戶端相關的資料來源或事件模組中的     
+SQL Error Handle 事件，以便設計師在事件流程中，根據錯誤訊息及代碼，回應使用者及回復系統程序    
+(error     
+respond and recovery)。設計師如果未設定相關的 SQL Error Handle     
+事件流程，當資料庫伺服器錯誤發生 (exception) 時，jLIVE&trade;     
+系統會以訊息視窗，顯示錯誤代碼及訊息，但不做任何的後續處理。參閱     
+<a href="sql_error_handle.html">SQL 錯誤處理程序 (SQL error handle)</a>。</font></p>          
+<ul type="square">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">SQL 開啟錯誤 (open)<font size="2">：</font></font><font size="2" color="#000000">資料來源開啟    
+(open)、讀取資料記錄欄位屬性 (data source record meta-data)、查詢資料來源事件    
+(query data source)     
+，SQL 錯誤 (exception) 時引發此處理事件程序。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">SQL 讀取錯誤 (fetch)<font size="2">：</font></font><font size="2" color="#000000">資料來源讀取資料記錄    
+(record data) ，SQL 錯誤 (exception) 時引發此處理事件程序。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">SQL 編輯錯誤 (update)<font size="2">：</font></font><font size="2" color="#000000">資料來源資料記錄編輯存檔    
+(update)     
+，SQL 錯誤 (exception) 時引發此處理事件程序。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">SQL 新增錯誤 (insert)<font size="2">：</font></font><font size="2" color="#000000">資料來源資料記錄新增存檔    
+(insert)     
+，SQL 錯誤 (exception) 時引發此處理事件程序。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">SQL 刪除錯誤 (delete)<font size="2">：</font></font><font size="2" color="#000000">資料來源刪除    
+(delete) 資料記錄     
+，SQL 錯誤 (exception) 時引發此處理事件程序。</font></p>         
+  </li>         
+</ul>         
+<blockquote>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<img border="0" src="images/ch09_err_handle.gif" width="556" height="436"></p>         
+</blockquote>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>       
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">       
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="encryption"></a>加密 
+(encryption)</font></b></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">選取資料傳輸時欲加密的欄位，加密的機制只在實際執行時才會運作。Java 
+JCE 加密時資料將相對增大，如果考慮資料傳輸的負載 (loading)，請選擇必要欄位加密即可。<br>
+</p>
+<p align="center">
+<img border="0" src="images/ch09_ds_encryption.gif" width="600" height="440"></font> </p>
+<ul type="square">        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">加密資料欄位 (encryption field)：</font><font size="2">核選加密欄位。</font></p>         
+  </li>         
+</ul>         
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="internalproc"></a>資料來源讀取、新增、存檔、刪除的系統內部程序    
+(fetch, insert, post, delete system internal procedures)</b></font>　</p>  
+<ul>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>資料來源讀取程序 
+    (fetch procedures)</b></font> <br> 
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">檢驗確認讀取 
+        (fetch   
+        validation)   
+        運算式是否允許讀取，否則啟動讀取【無效事件 】(invalidate   
+        event) 後返回。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">讀取列是否已存在客戶端 
+        (client) ，若是則直接執行步驟 5。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求 
+        (request) jLIVE&trade; middle ware 傳送所需資料記錄列 (record)。</font></li> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求與回應 
+        (request and respond) 作業是否產生 SQL   
+        錯誤，若是則啟動【讀取SQL error handle 事件】後返回。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【讀取前事件   
+        】(before fetch event)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">資料記錄的資料存入緩衝區目前資料記錄欄位 
+        (current record data field)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【讀取後事件   
+        】(after fetch event)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">關連元件內含值更新及運算式重新計算。</font></li>  
+    </ol>  
+  </li>  
+</ul>  
+<p style="margin-top: 2; margin-bottom: 2">　</p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>資料來源新增程序 
+    (insert procedures)</b></font> <br> 
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">資料來源標示為新增狀態 
+        (insert mode)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求 
+        (request) jLIVE&trade; middle ware 傳送所最後資料記錄列 (last   
+        record)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求與回應 
+        (request and respond) 作業是否產生 SQL   
+        錯誤，若是則啟動【讀取SQL error handle 事件】後返回。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【讀取前事件   
+        】(before fetch event)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">執行資料來源預設值運算式，其結果值存入緩衝區目前資料記錄欄位 
+        (current record data field)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【讀取後事件   
+        】(after fetch event)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">關連元件內含值更新及運算式重新計算。</font></li>  
+    </ol>  
+  </li>  
+</ul>  
+<p style="margin-top: 2; margin-bottom: 2">　</p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>資料來源存檔程序 
+    (post procedures)</b></font> <br> 
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">關連元件內含值存入緩衝區目前資料記錄欄位 
+        (current record data field)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">依資料來源狀態執行新增存檔 
+        (insert) 或 編輯存檔 (update)</font> <br>
+        　<ul> 
+          <li> 
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>新增存檔 
+            (insert)</b></font> 
+            <ol> 
+              <li> 
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">檢驗確認新增 
+                (insert   
+                validation)   
+                運算式是否允許新增，否則啟動新增【無效事件   
+                】(invalidate event) 後返回。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【新增前事件   
+                】(before insert event)。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求 
+                (request) jLIVE&trade; middle ware 新增資料記錄 (insert   
+                new record)。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求與回應 
+                (request and respond) 作業是否產生 SQL   
+                錯誤，若是則啟動【新增SQL error handle   
+                事件】後返回。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">回傳的新增資料記錄的資料存入緩衝區目前資料記錄欄位 
+                (current record data field)。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【新增後事件   
+                】(after insert event)。<br> 
+                　</font></li> 
+            </ol> 
+          </li> 
+          <li> 
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>編輯存檔 
+            (update)</b></font> 
+            <ol> 
+              <li> 
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">檢驗確認編輯 
+                (update validation)   
+                運算式是否允許編輯，否則啟動編輯【無效事件   
+                】(invalidate event) 後返回。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【編輯前事件   
+                】(before update event)。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求 
+                (request) jLIVE&trade; middle ware 編輯資料記錄存檔 
+                (update record)。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求與回應 
+                (request and respond) 作業是否產生 SQL   
+                錯誤，若是則啟動【編輯SQL error handle   
+                事件】後返回。</font></li>  
+              <li>  
+                <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【編輯後事件   
+                】(after update event)。<br> 
+                　</font></li> 
+            </ol> 
+          </li> 
+        </ul> 
+      </li> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">關連元件內含值更新及運算式重新計算。</font></li> 
+    </ol> 
+  </li> 
+</ul> 
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<ul> 
+  <li> 
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>資料來源刪除程序 
+    (delete procedures)</b></font> <br> 
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">檢驗確認刪除</font> 
+        <font size="2">(delete   
+        validation)   
+        運算式是否允許刪除，否則啟動刪除【無效事件 】(invalidate   
+        event) 後返回。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【刪除前事件   
+        】(before delete event)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求 
+        (request) jLIVE&trade; middle ware 刪除資料記錄 (delete record)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">要求與回應 
+        (request and respond) 作業是否產生 SQL   
+        錯誤，若是則啟動【刪除SQL error handle 事件】後返回。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">啟動【刪除後事件   
+        】(after delete event)。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">執行<b>資料來源讀取程序</b>，將資料記錄移至下一筆記錄。</font></li>  
+    </ol>  
+  </li>  
+</ul>  
+<p style="margin-top: 2; margin-bottom: 2">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=637 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=212 align=left valign=top>  
+<a href="ch08_03.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=206 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=219 align=right valign=top>  
+<a href="ch10.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+     
+</body>     
+     
+</html>

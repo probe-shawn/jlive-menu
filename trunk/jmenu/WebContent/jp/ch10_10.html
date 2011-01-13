@@ -1,0 +1,344 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Slider Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_09.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>  
+<td width=204 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_14.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><font size="4"><b> 
+<a name="top"></a>スライダーコンポーネント (Slider component) </b>      
+    <img border="0" src="images/ch10_slider.gif" width="30" height="30"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>      
+<p style="margin-top: 1; margin-bottom: 1"><a href="#datasource">   
+<font size="2">データソース (data source)</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#prop">  
+<font size="2">スライダープロパティ (Slider properties)</font></a></p>      
+<p style="margin-top: 1; margin-bottom: 1"><a href="#event">   
+<font size="2">イベント (event)</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#getsetprop">フォーミュラget/setプロパティ    
+(formula get/set properties)</a></font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p><!--
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">計數器元件(Slider component)</font><font color="#000000" size="2">，使用於整數數&#20540;資料的顯示(display)、輸入(input)、修改(update)。可以選擇連結    
+(binding) 資料欄位 (data     
+field) 或使用運算式 (formula) 為元件&#20839;含&#20540;，當使用運算式時，有任何的視窗資料來源    
+(data     
+Source) 移動資料記&#37636;、存&#27284;、刪除或其他元件&#20540;&#20839;含&#20540;改變    
+(changed) 時，運算式 (formula) 將會自動重新計算，即時同&#27493;更新。</font><font size="2">當運算式的結果&#20540;或連結資料欄位&#20540;小於或大於屬性設定的&#20839;含&#20540;範圍    
+(value boundary) 時</font><font color="#000000" size="2">，元件會以最小&#20540;    
+(minimum) 及最大&#20540; (maximum) 顯示</font><font size="2">。</font></p>    
+<p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"></p>  -->
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a name="datasource"></a><b><font size="2"> 
+データソース (data source)</font></b></p>     
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データソース     
+(data source)：</font>データソースの選択。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データフィールド     
+(data field)：</font>データフィールドの選択。　</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify">   
+<font size="2" color="#666699">フォーミュラを使う (use formula)：</font><font color="#000000" size="2">フォーミュラ     
+(formula) を使ってプロセス結果を表示します。データソースは移動、保存、削除或いは他のコンポーネント値が変更 (changed) 
+された時，フォーミュラ     
+(formula) は同時に計算・更新します。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699">初期化の時に限って使用可能 (initial only)：</font>フォームオープンする時<font color="#000000" size="2">，フォーミュラ</font>     
+(formula) はプロセスされた結果をフォーム表示し<font color="#000000" size="2">，その後，再び自動にプロセス     
+(compute and refresh)更新を掛けません。デザインナーは</font><font color="#000000">【</font><font color="#505050" size="2">コンポーネント値設定</font><font color="#505050">】</font><font color="#000000" size="2">     
+(set component data event)イベントを使って SetProp() 
+のフォーミュラで更新します。</font></font></p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_10_ds.gif" width="479" height="339"></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="prop"></a>スライダープロパティ (Slider properties)</font></b></p>      
+<ul type="square">   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">スライダー方向<font SIZE="2">  (orientation)</font></font>　</p>
+  <ul type="disc">
+    <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">水平 (horizontal)</font></p>     
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">垂直 (vertical)</font></p>     
+    </li>  
+  </ul>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">値の範囲 (v<font SIZE="2">alue boundary)       
+：</font></font><font size="2" color="#000000">スライダー値の範囲，連結のフィールド     
+(data field) 或いはフォーミュラ (formula) 
+の結果は最小値より小さい時，最小値で表示します。最大値より大きい場合，最大値で表示します。</font></p>  
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">最小値 <font SIZE="2">(minimum)</font></font></p>     
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">最大値 <font SIZE="2">(maximum)</font></font></p>     
+    </li>  
+  </ul>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2" color="#666699">スライダーオプション (options)</font>　</p>
+  <ul type="disc">
+    <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Paint ラベル：</font><font size="2" color="#000000">スライダー度数表示。</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">Print Track：</font><font size="2" color="#000000">スライダー軌道表示。</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">Print Tick：</font><font size="2" color="#000000">スライダー度数表示。</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">Snap to Tick：</font><font size="2" color="#000000">度数は滑りユニット。</font></p>     
+    </li>   
+  </ul>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">Tick Spacing</font>　</p> 
+  <ul type="disc">
+    <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2" color="#666699">Minor Tick：</font><font size="2" color="#000000">いくつで一小度数。</font></p>     
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2" color="#666699">Major Tick：</font><font size="2" color="#000000">いくつで一大度数。</font></p>     
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_10_slider.gif" width="479" height="371"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="event"></a><b>
+ イベント (event)</b></font></p>     
+<ul>  
+  <li>  
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">アクションイベント   
+    (action event)：</font>ユーザはクリックかタッチする時，起動するイベント (fire event)。</font></p>      
+  <li>   
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">Gain     
+    Focus イベント：</font>Focus 
+    はスライダーに入る時，起動するイベント 。</font></p>     
+  <li>   
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">Lost     
+    Focus イベント：</font> Focus はスライダーから離れる時，起動するイベント 。</font></p>      
+  <li>   
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">ダブルクリックイベント     
+    (double clicked event)：</font>左ダブルクリックすると，起動するイベント。</font></p>     
+  <li>   
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">右クリックイベント     
+    (right clicked event)：</font>右クリックすると，起動するイベント。</font></p>     
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px">　</p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_10_event.gif" width="479" height="339"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>フォーミュラget/setプロパティ   
+(formula get/set properties)</b></font></p>  
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,&nbsp; &#20540;) </font>：プロパティ設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,&nbsp; &#20540;1,&nbsp; &#20540;2)</font>：プロパティ設定。</font></p>  
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;)</font>：プロパティ読み取り。</font></p> 
+ 
+<table border="1">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">プロパティ    
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">値１    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">値2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">説明(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 使用可能，0 無効</font></td>  
+    <td>　</td>  
+    <td><font size="2">使用可能と無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 Focus設定</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 表示，0 隠し</font></td>  
+    <td>　</td>  
+    <td><font size="2">&nbsp;表示と隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 再描く，2 即再度描く</font></td>  
+    <td>　</td>  
+    <td><font size="2">再描く。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 フォーミュラ再度計算</font></td>  
+    <td>　</td>  
+    <td><font size="2">フォーミュラ再度計算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">value</font></td>  
+    <td><font size="2">N 値</font></td>  
+    <td>　</td>  
+    <td><font size="2">スライダーデフォルト値をNに設定。</font></td>  
+  </tr>  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">プロパティ&nbsp; 
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">リターン値    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>   
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 使用可能，0 無効</font></td>  
+    <td><font size="2">使用可能と無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 表示，0 隠し</font></td>  
+    <td><font size="2">表示と隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">value</font></td>  
+    <td colspan="2"><font size="2">N 値</font></td>  
+    <td><font size="2">スライダーデフォルト値読み取り。</font></td>  
+  </tr>  
+</table>  
+  
+<p>　</p>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_09.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch10_14.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>   
+   
+</html>

@@ -1,0 +1,455 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Report properties</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch07_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch07.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 7</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch07.html" style="text-decoration: none"><font color="#000000">
+Report system</font></a></font></b></TD>  
+<td width=204 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch07_03.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><font size="4"><b>7</b></font><b><font size="4">.3 報表屬性 (report properties)</font></b></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#print_format">列印作業規格 (print format)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#print_printer">指定印表機 (dedicated&nbsp; printer)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#print_adjust">列印調整 (printing output adjustment)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#print_pdf">PDF 字型與編碼
+(pdf cjk font and encoding)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#security">關於瀏覽器印表作業的      
+Java&trade; 安全機制 (Java&trade; print security policy)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">
+<font size="2">jLIVE Builder&trade; 報表系統，經由報表的屬性設定    
+(report      
+properties)，設計師可以靈活地提供使用者在各種不同的列印作業中，能有適當的報表作業流程。諸如：</font></p>     
+<ul>     
+  <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">使用資料來源列印程序或客製列印程序 
+    (datasource or customer printing flow)。</font></li>     
+  <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">使用者是否需要列印預覽    
+    (preview)。</font></li>    
+  <li>    
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">使用者是否需要印表機設定    
+    (printer setup)。</font></li>     
+  <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">使用者是否需要內定複製份數    
+    (copies)。</font></li>     
+  <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">是否使用自定紙張大小 
+    (customer size)。</font></li>    
+  <li>    
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">是否需按各類報表動態指定印表機    
+    (printer)。</font></li>    
+  <li>    
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">是否需機動調整空白列 (output 
+    adjustment)。</font></li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">編輯報表屬性，可以由工作列上方的圖示 <i>      
+編輯 </i><img border="0" src="images/form_properties20.gif" width="24" height="24">     
+ ( 編輯報表屬性 ) 點擊後出現設定視窗。</font></p>      
+<p style="margin-top: 1; margin-bottom: 1">　</p>      
+</blockquote>      
+  <p style="margin-top: 1; margin-bottom: 1" align="center">      
+  <img border="0" src="images/ch07_02_open_prop.gif" width="580" height="298"></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  　</p>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <b><font size="2"><a name="print_format"></a>列印作業規格 (print format)</font></b></p>      
+<ul type="square">      
+  <li>      
+  <p style="margin-top: 1; margin-bottom: 1">      
+  <font size="2" color="#666699">列印作業 (print job)：<br>
+  <br>
+  <img border="0" src="images/ch07_02_printformat.gif" width="480" height="501"></font></p>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  　</p>     
+  <ul type="disc">     
+    <li>     
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+  印表工作名稱 (print job name)：</font><font size="2">列印工作的名稱。此名稱會出現在印表機    
+  Print Job queue 中。</font><p style="margin-top: 1; margin-bottom: 1">　</li>     
+    <li>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <font color="#666699" size="2">資料來源      
+  (data source)：</font><font size="2">列印資料的資料來源 (data    
+  source)。</font></li>    
+  </ul>    
+  <p style="margin-top: 1; margin-bottom: 1">     
+  　     
+  <ul type="disc">     
+    <li>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+  <font color="#666699" size="2">客製列印程序 (customer printing flow)：</font><font size="2">由設計師自行控制列印程序，參閱<a href="ch07.html#customerflow">客製列印程序說明</a>。<br>
+  </font>
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">列印作業前運算式 
+  (before print job formula)</font></p>
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font color="#666699"><font size="2">列</font><font size="2">印內容區 
+  列印一筆前運算式 (before content print formula)</font></font></p>
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font color="#666699"><font size="2">列</font><font size="2">印內容區 
+  列印一筆後運算式 (after content print formula)</font></font></p>
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">結束列印控制運算式 
+  (end print control formula)</font></p>
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">
+  <font size="2" color="#666699">下一筆列印控制運算式 (next print control formula)</font></p>
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">列印作業後運算式 
+  (after print job formula)<br>
+  <br>
+  <img border="0" src="images/ch07_02_customerflow.gis.gif" width="480" height="522"><br>
+  </font></li>   
+    <li>   
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">預覽列印    
+  (preview window)：</font></li>    
+  </ul>    
+  <blockquote>    
+  <ul>    
+    <li>    
+    <p style="margin-top: 1; margin-bottom: 1">    
+    <font color="#666699" size="2">預覽列印視窗 (show preview windows)：</font><font size="2">點選此屬性，在列印時會先出現預覽視窗    
+    (preview window)，由使用者決定是否進行列印。</font><p style="margin-top: 1; margin-bottom: 1">　</li>     
+    <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+    列印時出現印表機設定 (show printer setup dialog)&nbsp;：</font><font size="2">點選此屬性，列印時會出現印表機的設定頁，使用者可以進一步更動預設的印表設定值。</font></li>     
+  </ul>     
+  </blockquote>     
+  <ul type="disc">     
+    <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+    每頁複製 (copies)&nbsp;：</font><font size="2">每頁複製份數。</font><p style="margin-top: 1; margin-bottom: 1">　</li>     
+    <li>     
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">     
+    表頭、表尾位置 (header &amp; footer location)：</font>    
+    <p style="margin-top: 1; margin-bottom: 1">　<ul type="circle">    
+      <li>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">表頭(點)     
+  (header dot)：</font><font size="2">列印表頭分隔線的位置，以像素為單位。</font></li>    
+      <li>    
+  <p style="margin-top: 1; margin-bottom: 1">    
+  <font color="#666699" size="2">表尾(點) (footer dot) ：</font><font size="2">列印表尾分隔線的位置，以像素為單位。</font></li>    
+      <li>    
+  <p style="margin-top: 1; margin-bottom: 1">    
+  <font color="#666699" size="2">表頭(英吋) (header inch)：</font><font size="2">列印表頭分隔線的位置，以英吋為單位。</font></li>    
+      <li>    
+  <p style="margin-top: 1; margin-bottom: 1">    
+  <font color="#666699" size="2">表尾(英吋) (footer inch)：</font><font size="2">列印表尾分隔線的位置，以英吋為單位。</font></li>    
+    </ul>    
+  <p style="margin-top: 1; margin-bottom: 1">　</li>    
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1">    
+  <font color="#666699" size="2">頁面 Media 類別 (page media type )：</font><font size="2">各式世界通用尺寸模式可供選擇。如 iso、jis 等等，    
+  目前支援73種尺寸模式。</font></p>     
+  <p style="margin-top: 1; margin-bottom: 1">    
+  　</p>     
+  <ul type="disc"> 
+    <li type="circle">   
+  <p style="margin-top: 1; margin-bottom: 1">   
+  <font SIZE="2"><font color="#666699">自訂紙張大小 (customer size)：</font>設計師指定紙張大小，除非在頁面  
+  Media 類別中沒有所需尺寸，否則應由頁面 Media  
+  類別中選取標準 IPP 尺寸。</font></p>    
+    </li> 
+    <li type="circle"><p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">寬  
+      (width)：</font>紙張寬度以英吋為單位。</font></p>    
+    </li> 
+    <li type="circle">   
+  <p style="margin-top: 1; margin-bottom: 1">   
+  <font size="2"><font color="#666699">高 (height)：</font>紙張高度，根據  
+  IPP (Internet Printing Protocol) 的規定，紙張高度必須大於寬度，如果所需列印的寬度大於高度時，設計師可以調換所需的寬高值，再將列印方式選擇為橫印。<br>
+　</font></p>    
+    </li> 
+  </ul> 
+    </li>    
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1">    
+  <font color="#666699" size="2">頁面顏色 (page color type)：</font><font size="2">彩色列印或者是單色列印。<br>
+　</font><ul type="circle">     
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">彩色 (color)</font></li>
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">單色 (monochrome)<br>
+　</font></li>
+  </ul>    
+    </li>
+  </ul>    
+  <ul type="disc">     
+    <li> 
+  <p style="margin-top: 1; margin-bottom: 1"> 
+  <font color="#666699" size="2">列印方向 (page orientation requested type)：</font><font size="2">列印方向為直印或橫印。<br>
+　</font></li>
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1">    
+  <font color="#666699" size="2">列印品質 (page print quality type)：</font><font size="2">列印品質選項。</font>
+  <br>
+　<ul type="circle">     
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">細緻 (high)</font></li>
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">普通 (normal)</font></li>
+    <li>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">草稿 (draft)<br>
+　</font></li>
+  </ul>    
+    </li>
+  </ul>    
+  <ul type="disc">     
+    <li>  
+  <p style="margin-top: 1; margin-bottom: 1">  
+  <font color="#666699" size="2">單雙面列印 (side)：</font><font size="2"><font color="#000000">單雙面列印選項</font>。</font>
+  <br>
+　<ul type="circle">     
+    <li><p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">單面列印  
+        (one side)</font></li>
+    <li><p style="margin-top: 1; margin-bottom: 1"><font SIZE="2" color="#666699">雙面列印  
+        (duplex)</font></li>
+    <li><p style="margin-top: 1; margin-bottom: 1"><font SIZE="2" color="#666699">翻轉列印  
+        (tumble)</font></li>
+  </ul>    
+    </li>
+  </ul>    
+  </li>    
+</ul>    
+    <p style="margin-top: 1; margin-bottom: 1">　<p style="margin-top: 1; margin-bottom: 1"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a><p style="margin-top: 1; margin-bottom: 1">　<p style="margin-top: 1; margin-bottom: 1">　<p style="margin-top: 1; margin-bottom: 1">
+<b><font size="2"><a name="print_printer"></a>指定印表機 (dedicated&nbsp; printer)</font></b><ul type="square">     
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2" color="#666699">印表機 (printer)：</font><font size="2" color="#000000">指定</font><font size="2"><font color="#000000">列印輸出的印表機</font>。</font><p style="margin-top: 1; margin-bottom: 1">　<ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699">核取</font><font size="2"><font color="#666699">預設印表機</font>   
+<font color="#666699">(default printer)</font> </font><font size="2" color="#666699">：</font><font size="2">當</font><font color="#000000" size="2">核取預設印表機時，由使用者作業系統中所設定的預設印表機負責列印</font><font size="2">。如果此報表選取列印時出現印表機設定屬性，<font color="#000000">使</font>用者可以在印表機設定頁出現時，更改印表機。</font>     
+<p style="margin-top: 1; margin-bottom: 1">　</li>     
+</ul>     
+</li>     
+</ul>     
+<blockquote>    
+  <p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch07_02_prinet_setup.gif" width="519" height="415"></blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">　<ul type="disc">     
+    <li>     
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699">    
+不核取預設印表機：</font><font color="#000000" size="2">指定印表機須以運算公式    
+(formula) 給定印表機名稱</font><font size="2">，    
+可以用字串格式，或使用</font><font size="2" color="#000000">運算公式    
+(formula)  </font><font size="2">，</font><font size="2" color="#000000">可以動態的    
+(dynamic) 指定印表機名稱</font><font size="2">。當使用遠端印表機時，要填入網路印表機的路徑及印表機分享名稱。    
+格式如下：</font><p style="margin-top: 1; margin-bottom: 1">　<p style="margin-top: 1; margin-bottom: 1">    
+<b><font size="2">\\印表機伺服器名稱\網路印表機名稱</font></b></li>     
+</ul>     
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">     
+<img border="0" src="images/ch07_02_prinet.gif" width="477" height="188"></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>     
+</blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2">
+<a name="print_adjust"></a>列印調整 (printing output adjustment)</font></b></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<font size="2">jLIVE Builder&#8482; 報表系統，設計師在列印表身區域設計時，將所要列印資料以可列印元件，擺設在列印區，列印時，系統會根據<font color="#666699">列印限制運算式</font>的計算結果，決定是否列印出此可列印元件是否列印出結果值。由於此動態且彈性化的列印機制，使得列印結果可以符合各種報表需求。但是逐筆列印時，被<font color="#666699">列印限制運算式</font>，所動態限制不列印的元件列印區域，將會產生空白區域。列印調整的設定，即是動態調整其他可列印元件輸出的位置，以避免空白區域的產生。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20" align="center">
+<font size="2"><br>
+<img border="0" src="images/ch07_02_rpt_adjust.gif" width="480" height="290"></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<ul>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">
+移除列印內容區上方不列印元件的空白區域：<br>
+</font>
+<img border="0" src="images/ch07_02_up_adjust.gif" width="289" height="139"><br>
+<font size="2">當逐筆列印時，<b>A </b>與 <b>B </b>被限制不列印時，可列印的 <b>C</b> 與 <b>D</b> 
+相對位置不變， <b>C</b> 上緣 (y-axis) 將提升至 <b>A </b>上緣 (y-axis) 位置列印。如果<b> A </b>
+被限制不列印時，可列印的<b> B</b> 與&nbsp; <b>C</b> 與 <b>D</b> 相對位置不變， <b>B</b> 上緣 (y-axis) 
+將提升至 <b>A </b>上緣 (y-axis) 位置列印。<br>
+　</font></p>     
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">
+移除列印內容區下方不列印元件的空白區域：<br>
+<img border="0" src="images/ch07_02_down_adjust.gif" width="280" height="137"><br>
+</font><font size="2">當逐筆列印時，<b>C </b>與 <b>D </b>被限制不列印時，下一筆列印的上緣 (y-axis) 
+開始位置是由 B 的下緣 (bottom line) 起算。</font><font size="2" color="#666699">移除列印內容區下方不列印元件的空白區域 </font>
+<font size="2">
+為系統預設屬性。<br>
+　</font></p>     
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">
+移除列印內容區所有不列印元件的空白區域：<br>
+<img border="0" src="images/ch07_02_all_adjust.gif" width="285" height="147"><br>
+</font><font size="2">
+當逐筆列印時，系統會檢測不列印元件橫向區域是否有其他要列印元件，如果存在，則不做任何處理，否則處理此不列印元件的空白問題。例如：如果只有 <b>C</b> 
+不列印，則系統不作任何處理，因為其橫向區域中的 <b>B</b> 須列印，反之如果只有<b> B</b> 不列印，其橫向區域中 <b>A</b> 及 <b>C</b> 
+須列印，系統亦不作任何處理。當 <b>C</b> 與 <b>B </b>同時不列印時，<b>D</b> 之上緣將提升至 <b>C</b> 的上緣位置列印。<br>
+　</font></p>     
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">
+所有可列印元件須列印於同一頁：<br>
+<img border="0" src="images/ch07_02_allinone_adjust.gif" width="272" height="125"><br>
+</font><font size="2">當逐筆列印至表尾 (footer) ，系統要列印 <b>A</b> 、<b>B</b>、 <b>C </b>、<b>D</b> 
+時，將會超過表尾線 (footer)，如果設定</font><font size="2" color="#666699">所有可列印元件須列印於同一頁</font><font size="2">的屬性，則<b> 
+A</b> 、<b>B</b>、 <b>C</b> 、<b>D</b> 將移至下一頁列印；如果沒有設定</font><font size="2" color="#666699">所有可列印元件須列印於同一頁</font><font size="2">的屬性，則 
+<b>A</b> 、<b>B</b> 將列印於此頁， <b>C</b> 、<b>D</b> 將移至下一頁列印。<br>
+　</font></p>     
+  </li>
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">
+列印前精確計算總頁數：<br>
+</font>      
+<br>      
+<font size="2">jLIVE Builder&#8482; 報表系統，列印前將自動計算所有擺置於表身列印區 (content) 的列印元件總合高度，扣除換頁元件區域及具有        
+<font color="#666699">Freeze bounds</font>        
+屬性的元件，作為一筆資料記錄列印時的預設高度，並以此高度據以計算預估總頁數，由於        
+jLIVE Builder&#8482; 
+報表系統提供強迫換頁及基於運算條件才列印的機制，所以實際的總頁數在某些情況下並不相等於預估總頁數，如果需要精確的總頁數，設計師需設定報表屬性的【<font color="#666699">列印前精確計算總頁數</font>】，系統將先行擷取所有資料及運算列印資料，使用者在列印前所需等待的時間相對較長，系統亦不能發揮列印完一頁，即刻拋棄該頁列印資料的功能，所以列印前精確計算總頁數，比較不適用於數百或數千頁的大資料列印
+，但使用者可以得到精確的總頁數。 </font></p>     
+  </li>
+</ul>
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><a name="print_pdf"><font size="2"><b>PDF 字型與編碼</b></font><font size="2"><b>
+(pdf cjk font and encoding)</b></font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">      
+<font size="2">jLIVE Builder&#8482; 採用 iText free Java-PDF library (AS-IS) 作為 PDF 
+輸出介面程式庫。iText 網址：http://www.lowagie.com/iText/  </font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">      
+<font size="2">(iText 
+Library - Copyright (C) 1999-2004 by Bruno Lowagie and Paulo Soares. All Rights 
+Reserved.) </font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">      
+<font size="2">jLIVE Builder&#8482; 應用程式執行期，輸出 PDF 時會檢測使用者端 (client) 
+系統語系，中日韓語系的使用者端會根據該語系選取以下所預設使用的字型與編碼。設計師亦可指定 unicode 字型，例如：MSWORD 常用的 
+Arialuni.ttf (編碼除非特殊否則請用 Identity-H)。 自行紙定字型須確定該字型存在於 PDF Reader 
+端的作業系統，否則中日韓語系的字可能無法正確顯示。MS Windows&nbsp; 若作業系統不存在於 C: 或 D: 時，須給定絕對位置。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+報表預覽列印時，使用者可以按下 PDF 輸出按鈕，系統會出現輸入檔案名稱的視窗，選擇或給予檔名後，將列印結果輸出至 PDF。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+設計師可以使用運算式直接將報表輸出成 PDF，參照 運算式 <font color="#666699"><code>Report2Pdf(filename)</code> </font>
+。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; margin-left:20">　</p>     
+<p style="margin-top: 1; margin-bottom: 1" align="center">
+<img border="0" src="images/ch07_02_rpt_pdf.gif" width="480" height="392" ></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="security"></a>關於瀏覽器印表作業的      
+Java&trade; 安全機制 (Java&trade; print security policy)</b></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">由於      
+Java&trade; 在瀏覽器上執行時，會受 Java&trade; 安全機制 (security      
+policy)      
+的控管，不允許未經授權的程式碼存取使用本機資源，而印表機是本機的資源之一所以亦受其限制。在Java&trade;      
+1.30 的 JRE (Java Runtime Environment)，使用者在瀏覽器執行印表作業時，會出現詢問使用者是否允許的對話視窗，經使用者確定後即可進行列印作業。而Java&trade;      
+1.40 的 JRE 卻會不斷的出現詢問使用者是否允許的對話視窗。如果希望在使用者執行時不要出現詢問視窗，則須設定      
+Java&trade; 安全機制 (security policy) ，授權使用本機資源。在      
+Java security 中授權       
+class 來源檔的權限, 請參考以下說明：</font></p>     
+<p>     
+<font face="Courier New" color="#808080" size="2">C:\Program Files\Java\j2re1.4.0\lib\security\java.policy&nbsp;</font><font color="#000000" size="2">    
+加入下列內容      
+：</font><p style="margin-top: 1; margin-bottom: 1">     
+　     
+<blockquote>     
+  <p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#000000">使用 HTTP 啟動程式 ：</font>     
+<blockquote>     
+  <p>     
+<font face="Courier New">grant codeBase &quot;http://</font><font color="#666699">來源</font><font face="Courier New" color="#666699">IP</font><font color="#666699">或主機</font><font color="#808080" face="Courier New">/-&quot; {<br>   
+permission java.security.AllPermission;<br>   
+};</font></p>     
+</blockquote>     
+<p><font color="#000000">使用本機檔案(HTML) 啟動程式 ：</font></p>     
+<blockquote>     
+  <p><font face="Courier New" color="#808080">grant codeBase &quot;file:c:/HTML</font><font color="#808080">所在路徑</font><font face="Courier New" color="#808080">/-&quot; {<br>    
+  permission java.security.AllPermission;<br>   
+  };</font></p>     
+</blockquote>     
+  </blockquote>     
+</font><p><font size="2">其中 </font><font color="#666699" size="2">來源IP或主機</font><font size="2">，為置放      
+Html 的 Web 主機IP或名稱。<font face="Courier New" color="#808080">c:/HTML</font><font color="#808080">所在目錄</font>，為啟動的   
+HTML 路徑。</font></p>   
+<p>　</p>   
+<p><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch07_01.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=197 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=203 align=right valign=top>   
+<a href="ch07_03.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+       
+      </td>    
+    </tr>    
+  </table>    
+  </center>    
+       
+</body>      
+      
+</html>

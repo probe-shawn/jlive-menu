@@ -1,0 +1,288 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Listbox Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html"> 
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p> 
+ 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch10_05.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=194 align=center valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>   
+<td width=206 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="ch10_08.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p><font size="4"><b><a name="top"></a><a name="top">リストボックスのコンポーネント</a> (Listbox component)</b>    
+<img border="0" src="images/ch10_listbox.gif" width="30" height="30"></font></p>       
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>       
+<p style="margin-top: 2; margin-bottom: 2"><a href="#datasource"><font size="2">データソース     
+(data source)</font></a></p>      
+<p style="margin-top: 2; margin-bottom: 2"><a href="#lookup"><font size="2">関連データソース     
+(lookup data source)</font></a></p>      
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event"><font size="2">イベント     
+(event)</font></a></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">フォーミュラget/setプロパティ    
+(formula get/set properties)</a></font><font size="2">　</font></p>   
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="datasource"></a>データソース     
+(data source)</font></b></p>      
+<ul>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データソース     
+(data source)：</font>データソースの選択。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データフィールド     
+(data field)：</font>データフィールドの選択。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">アイテムサイズ    
+(item size)：</font>アイテムサイズの幅と高さ。</font></p>     
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_06_ds.gif" width="479" height="260"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font color="#000000"><b>
+<font size="2"><a name="lookup"></a>関連データソース (lookup data source)</font></b></font></p>      
+<ul>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font SIZE="2" color="#666699">選択されるデータソースと選時移至關連資料來源記&#37636;：</font><font size="2">ユーザはリストボックス       
+(Listbox)のアイテム(item)を選択する時，関連データソースは今のレコード     
+(current record) をこのアイテムのレコードに移動させます(move to)，同時に関連データソースの読取前後イベント(before and after fetch     
+event)を起動します。</font></p>   
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">関連データソース     
+(lookup data source)：</font><font size="2">データソースの選択。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">関連データフィールド     
+(lookup data field)：</font><font size="2">データフィールドの選択。</font></p>     
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">フォーミュラの表示     
+(display formula)：</font><font size="2">フォーミュラでアイテム(item)の表示。</font></p>    
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font color="#666699" size="2">Iconデータフィールド：</font><font size="2">アイテム     
+(item) 前にマークを表示し，オプションプロパティ (option)。　</font></p>   
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">文字列     
+(simple string)：</font><font size="2">使用 &quot;選擇項目文字&quot;       
+而不以關連資料來源為清單方塊的項目資料。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font color="#666699" size="2">初期選択アイテム     
+(initial selection)：</font><font SIZE="2">関連データソースが初期される時</font><font SIZE="2">，選択がクリアーされます。リストボックスがデータソースに連結されていない時，このプロパティを選択する時に，リストボックスに選択されたアイテムがない状態になります。このプロパティを選択する時に，第一アイテムは初期選択アイテムになります。　</font></p>    
+  </li>   
+</ul>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><a name="event"></a><b><font size="2">
+ イベント (event)</font></b></p>      
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">アクションイベント (action event)：</font>ユーザは     
+(clicked) リストアイテムを換える時，イベントを起動します (fire event)。</font></p>        
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">Gain Focus イベント：</font> Focus  
+をリストボックスに移動すると，イベントを起動します 。</font></p>        
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">Lost Focus イベント：</font>Focus  
+をリストボックス外に移動すると，イベントを起動します 。</font></p>        
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">ダブルクリックイベント (double click event)：</font>マウス左キーをダブルクリックすると，イベントを起動します  
+。</font></p>      
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">右クリックイベント (right click event)：</font>マウス右キーをクリックすると，イベントを起動します  
+。</font></p>      
+  </li>     
+</ul>     
+<blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<img border="0" src="images/ch10_06_event.gif" width="479" height="294"></p>     
+</blockquote>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>フォーミュラget/setプロパティ   
+(formula get/set properties)</b></font></p>  
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,値) </font>：プロパティの設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font></font><font color="#666699">コンポーネント名&quot;,   
+&quot;プロパティ</font><font size="2"><font color="#666699">&quot;,&nbsp;値1,&nbsp;値2)</font>：プロパティの設定。</font></p>  
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font></font><font color="#666699">コンポーネント名&quot;,   
+&quot;プロパティ</font><font size="2"><font color="#666699">&quot;)</font>：プロパティの読取。</font></p> 
+ 
+<table border="1">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699" width="607" height="13"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050" width="85" height="27"><font color="#FFFFFF" size="2"><font color="#ffffff" size="2">プロパティ</font><br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050" width="131" height="27"><font color="#FFFFFF" size="2">値1<br> 
+&nbsp;(Value 1)</font></td>   
+    <td align="center" bgcolor="#505050" width="48" height="27"><font color="#FFFFFF" size="2">値2<br> 
+&nbsp;(Value 2)</font></td>   
+    <td align="center" bgcolor="#505050" width="325" height="27"><font color="#FFFFFF" size="2">説明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="16"><font size="2">enabled</font></td>  
+    <td width="131" height="16"><font size="2">1 有効，0 無効</font></td>  
+    <td width="48" height="16">&nbsp;</td>  
+    <td width="325" height="16"><font size="2">有効か無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="16"><font size="2">setfocus</font></td>  
+    <td width="131" height="16"><font size="2">1 Focusの設定</font></td>  
+    <td width="48" height="16">&nbsp;</td> 
+    <td width="325" height="16"><font size="2">Focusの設定。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="16"><font size="2">visible</font></td>  
+    <td width="131" height="16"><font size="2">1 </font><font size="2">表示，0 隠し</font></td>   
+    <td width="48" height="16">&nbsp;</td>  
+    <td width="325" height="16"><font size="2">表示か隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="16"><font size="2">repaint</font></td>  
+    <td width="131" height="16"><font size="2">1 </font><font size="2">再描き，2 
+      即時に再描き</font></td>  
+    <td width="48" height="16">&nbsp;</td>  
+    <td width="325" height="16"><font size="2">再描き。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="16"><font size="2">revalidate</font></td>  
+    <td width="131" height="16"><font size="2">1 
+      リストボックスデータのリロード</font></td>  
+    <td width="48" height="16">&nbsp;</td>  
+    <td width="325" height="16"><font size="2">リストボックスデータのリロード。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="16"><font size="2">selected</font></td>  
+    <td width="131" height="16"><font size="2">N N個目アイテムの選択</font></td>  
+    <td width="48" height="16">&nbsp;</td>  
+    <td width="325" height="16"><font size="2">N 個目アイテムの選択，N 
+      は 1から計算，N = 0 選択のクリアー。</font></td>  
+  </tr>  
+  <tr>  
+    <td colspan="4" bgcolor="#666699" width="607" height="13"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center" width="85" height="26"><font color="#FFFFFF" size="2">プロパティ    
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center" width="185" height="26"><font color="#FFFFFF" size="2">値転送    
+      (Return value)</font></td>   
+    <td bgcolor="#505050" align="center" width="325" height="26"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>   
+  </tr>  
+  <tr>  
+    <td width="85" height="13"><font size="2">isenabled</font></td>  
+    <td colspan="2" width="185" height="13"><font size="2">1 </font><font size="2">有効，0 
+      無効</font></td>  
+    <td width="325" height="13"><font size="2">有効か無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="13"><font size="2">isvisible</font></td>  
+    <td colspan="2" width="185" height="13"><font size="2">1 </font><font size="2">表示，0 
+      隠し</font></td>  
+    <td width="325" height="13"><font size="2">表示か隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="13"><font size="2">selected</font></td>  
+    <td colspan="2" width="185" height="13"><font size="2">N 選択された N 
+      個目のアイテム</font></td>  
+    <td width="325" height="13"><font size="2">選択された N 
+      個目のアイテム，Nは 1から計算，N=0 選択なし。</font></td>  
+  </tr>  
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_05.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=196 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=204 align=right valign=top>  
+<a href="ch10_08.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>   
+   
+</html>

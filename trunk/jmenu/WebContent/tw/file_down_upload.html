@@ -1,0 +1,524 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>File Upload and Download</title>
+</head>
+
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="0" width="600" id="AutoNumber1" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width="100%" border=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111" cellpadding="0">
+<tr>
+<td width=152 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+<td width=266 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" size="2">
+<a href="appendix.html" style="text-decoration: none"><font color="#000000">Appendix</font></a></font></b></TD>   
+<td width=97 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">　</td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="4"><a name="top"></a>檔案下載與上載 (file download and    
+upload)</font></b>   
+<p style="margin-top: 2; margin-bottom: 2">   
+　</p>
+<p style="margin-top: 2; margin-bottom: 2">
+<font size="2"><a href="#unc">UNC 通用名稱協定 (Universal Naming    
+Convention)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2">   
+<font size="2"><a href="#httpcodebase">HttpCodeBase() 和 UNCCodePath()</a></font></p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"> 
+<a href="#download">檔案下載 (file download)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">   
+<a href="#upload">檔案上載 (file upload)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">   
+<a href="#filesystem">檔案系統的應用 (file system)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE    
+Builder&trade; 提供應用系統存取網際網路的檔案資源 (file    
+resource)，應用程式在客戶端 (client)    
+執行時，可以存取檔案資源的範圍，可分為三部份：客戶</font><font size="2" color="#000000">端的檔案資源(client)、jLIVE&trade;    
+middle ware 所在的區域網路的共享檔案資源(LAN)</font><font size="2" color="#000000">、網際網路資源(internet)。應用程式執行時，檔案資源的位置 
+(location) 指名方式及轉送者 (transmitter)    
+各有不同。檔案資源可以上</font><font size="2">傳</font><font size="2" color="#000000">下載 (download and upload)，表示檔案資源是可編輯的    
+(updateable)；檔案資源可以由應用程式接受者，表示可以進一步操作資料 
+(process data)，否則只能瀏覽 (browser)。</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<blockquote>  
+  <table border="1" cellspacing="1" width="512">  
+    <tr>  
+      <td align="left" bgcolor="#505050" width="77"><font size="2" color="#FFFFFF">
+      檔案資源</font></td>  
+      <td align="left" bgcolor="#505050" width="128"><font size="2" color="#FFFFFF">
+      使用者端的檔案資源(Client)</font></td>  
+      <td align="left" bgcolor="#505050" width="167"><font size="2" color="#FFFFFF">
+      jLIVE&#8482; middle ware 所在的區域網路的共享檔案資源(LAN)</font></td>   
+      <td align="left" bgcolor="#505050" width="117"><font size="2" color="#FFFFFF"> 
+      網際網路資源(Internet)</font></td>   
+    </tr>   
+    <tr>   
+      <td align="justify" width="77"><font size="2">下載/上傳</font></td>   
+      <td width="128" align="justify"><font size="2">下載/上傳</font></td>   
+      <td width="167" align="justify"><font size="2">下載/上傳</font></td>   
+      <td width="117" align="justify"><font size="2">下載</font></td>   
+    </tr>   
+    <tr>   
+      <td align="justify" width="77"><font size="2">資源位置</font></td>   
+      <td width="128" align="justify"><font size="2">直接指名 (c:\\work\myfile.txt)</font></td>   
+      <td width="167" align="justify"><font size="2">UNC 通用協定</font></td>   
+      <td width="117" align="justify"><font size="2">URL (HTTP://---)</font></td>   
+    </tr>   
+    <tr>   
+      <td align="justify" width="77"><font size="2">轉送者(Transmitter)</font></td>   
+      <td width="128" align="justify"><font size="2">客戶端作業系統</font></td>   
+      <td width="167" align="justify"><font size="2">jLIVE&#8482; middle ware&nbsp;</font></td>   
+      <td width="117" align="justify"><font size="2">瀏</font><font size="2" color="#000000">覽</font><font size="2">器 (Browser)</font></td>   
+    </tr>   
+    <tr>   
+      <td align="justify" width="77"><font size="2">接受者(Receiver)</font></td>   
+      <td width="128" align="justify"><font size="2">應用程式/客戶端作業系統</font></td>   
+      <td width="167" align="justify"><font size="2">應用程式/jLIVE&#8482; middle ware&nbsp;</font></td>   
+      <td width="117" align="justify"><font size="2">瀏</font><font size="2" color="#000000">覽</font><font size="2">器</font></td>   
+    </tr>   
+    <tr>   
+      <td align="justify" width="77"><font size="2">資料應用</font></td>   
+      <td width="128" align="justify"><font size="2">應用程式</font></td>   
+      <td width="167" align="justify"><font size="2">應用程式</font></td>   
+      <td width="117" align="justify"><font size="2">瀏</font><font size="2" color="#000000">覽</font><font size="2">器瀏</font><font size="2" color="#000000">覽</font></td>   
+    </tr>   
+  </table>   
+</blockquote>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE    
+Builder&trade; 上傳下載檔案資源可以透過：元件(component)、事件(event)以及運算公式 
+(formula)。備忘錄元件    
+(Memo component)、圖片元件 (Image component)    
+可以自行下載檔案資源，設計師透過運算式的元件屬性設定 (<font face="Courier New">SetProp()</font>)，可以將元件內含資料上傳更新。</font><font size="2">【</font><font size="2" color="#666699">下載文字檔到buffer資料來源】</font><font size="2">事件，可以將文字資料載入至    
+Buffer 資料來源中，【</font><font size="2" color="#666699">上傳檔案</font><font color="#000000"><font size="2">】事件則可將資料上</font></font><font size="2">傳</font><font size="2" color="#000000">更新或新增。使用運算公式不但可以上</font><font size="2">傳</font><font size="2" color="#000000">下載檔案資源，亦可新增 
+(create)、刪除 (delete)、檢查是否存在 (existed) 檔案及目錄 
+(directory)。</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><b>  
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="2" color="#666699">  
+<a name="unc"></a></font><font size="2" color="#000000">UNC (U</font></b><font size="2" color="#000000">niveral<b>   
+ N</b>aming<b>   
+ C</b>onvention<b>) 通用名稱協定</b></font></p>    
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE    
+Builder&trade; 採取 UNC    
+通用名稱協定，作為網路檔案資源的定址，UNC 格式為 ：</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">『 <font color="#666699">\\主機名稱或IP\分享資源名稱\資源路徑名稱</font>    
+<b> </b>』(『 \\Server Name or IP\Sharing Path\File Path and Name 』)</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">由於區域網路中檔案資源是由    
+jLIVE&trade; middle ware 所轉送 (transmitter)    
+，指定網路系統中的檔案資源時，依照 UNC    
+格式，必須先將檔案資源分享 (shared) 給 jLIVE&trade; middle ware    
+，否則無法存取檔案資源。<br> 
+　</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">屬性設定中的    
+UNC    
+通用名稱協定，如果沒有給予主機名稱，系統將視其為存取使用者 
+(client)    
+端的檔案資源，設計師或執行期的使用者，必須給予完整的檔案路徑名稱，例如：<font face="Courier New">c:\\work\myfile.txt</font>。</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">UNC    
+範例：</font></p>   
+<ul>   
+  <li>   
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2"><font color="#505050"><font face="Courier New">c:\\work\myfile.txt</font>    
+    </font>：存取使用者端的檔案 <font face="Courier New" color="#505050"> myfile.txt</font></font><font size="2" color="#000000">。</font></li>  
+  <li>  
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#505050" face="Courier New">\\Server1\customer\register.txt    
+    </font><font size="2" color="#000000">：存取 </font><font size="2" color="#505050" face="Courier New"> Server1</font><font size="2" color="#000000">所分享目錄 
+    </font><font size="2" color="#505050" face="Courier New">   
+    customer</font><font size="2" color="#000000"> 下的檔案 </font><font face="Courier New" color="#505050" size="2"> register.txt</font><font size="2" color="#000000">。</font></li>  
+  <li>  
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2" color="#505050" face="Courier New">&quot;\\&quot;    
+    $ ApServerName() $ &quot;class\doc\test.html&quot; </font><font size="2" color="#000000">：存取jLIVE</font><font size="2">&trade;</font><font size="2" color="#000000"> 
+    middle ware 所分享目錄</font><font color="#505050" face="Courier New"><font size="2"> 
+    class</font></font><font size="2" color="#000000"> 下的檔案</font><font color="#505050" face="Courier New"><font size="2"> doc\test.html</font></font><font size="2" color="#000000">。</font></li>   
+</ul>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/unc_all2.gif" width="600" height="332"></p>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+</blockquote>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="httpcodebase"></a>HttpCodeBase()   
+和 UNCCodePath()</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">jLIVE    
+Builder&trade; 提供兩個運算函式，以利於設計師定址 (addressing)   
+應用程式 class 碼所在的位置 (location)，當應用系統佈建執行時，不會因為   
+Web 、 middle ware 主機的 IP   
+或主機名稱更動時，須重新更改程式碼。<font color="#666699" face="Courier New">HttpCodeBase()   
+</font><font color="#000000">通常使用於超連結 (hyperlink) 應用程式   
+class 目錄下的檔案資源，例如：在【執行超連結】事件的 </font><font color="#666699">Ref</font><font color="#000000">   
+屬性運算式中填入 </font><font color="#666699" face="Courier New">HttpCodeBase()$ &quot;doc/company.html&quot; 
+</font><font color="#000000">  
+，表示以瀏覽器連結『 應用程式所在主機 <font face="Courier New"> class/doc/company.html</font>』。<font face="Courier New">UNCCodePath() 
+</font>  
+通常使用於存取應用程式 class   
+目錄下的檔案資源，例如：以【</font></font><font size="2">下載文字檔到buffer資料來源<font color="#000000">】事件下載文字檔，屬性   
+</font><font color="#666699">檔案URL </font><font color="#000000">填入</font><font color="#666699">   
+</font><font color="#505050" face="Courier New">UNCCodePath() $&quot;doc/register.txt&quot;</font><font color="#000000">，表示將『   
+應用程式所在主機 <font face="Courier New"> class/doc/register.txt</font>』載入 buffer 資料來源。<br> 
+　</font></font></p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font color="#000000" size="2">由於  
+</font><font size="2">jLIVE    
+Builder&trade; 完全模擬應用程式執行狀態，所以設計師在 一、jLIVE    
+Builder&trade; 設計時測試執行，二、以建立的應用程式 HTML   
+在本機執行，三、以瀏<font color="#000000">覽</font>器 (browser) 透過網際網路執行(實際執行)，三種狀況下系統會自動轉換 
+<font face="Courier New"> HttpCodeBase() </font> 及 <font face="Courier New"> UNCCodePath() 
+</font>  
+的結果值，以因應實際及測試狀況。</font></p> 
+<ul type="square"> 
+  <li> 
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"><font size="2">jLIVE    
+Builder&trade; 設計時測試執行</font></p>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"><font size="2">  
+在設計測試執行的環境下，兩者的值是相同的。<br> 
+　</font></p>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/design_time.gif" width="488" height="81"></p>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>  
+  </li>  
+  <li>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"><font size="2">以建立的應用程式   
+HTML 在本機執行</font></p>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"><font size="2">直接在檔案總管中，開啟 jNorth.html   
+，兩者間的差異。<br> 
+　</font></p> 
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"> 
+<img border="0" src="images/c_run.gif" width="538" height="237"></p> 
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p> 
+  </li> 
+  <li> 
+<p class="sect1" style="margin-top: 1; margin-bottom: 1"><font size="2">以瀏<font color="#000000">覽</font>器 
+(browser) 透過網際網路執行(實際執行)</font></p>  
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">　</p>
+<p class="sect1" style="margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/web.gif" width="538" height="237"></p>
+  </li>
+</ul>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="2" color="#666699"><a name="download"></a></font><font size="2" color="#000000">檔案下載 
+(file download)</font></b></p>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#000000">元件的應用 (component)：</font></p>  
+    </li>  
+  </ul>  
+  <blockquote>  
+  <ul>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#000000">備忘錄元件    
+(Memo component)<br> 
+　</font></font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">以備忘錄元件屬性的前綴路徑 
+(prefix path) 加上儲存於資料記錄中的 VARCHAR       
+    欄位型別的檔案名稱 (file name) ，或前綴路徑 (prefix path) 加上 直接指名的檔案名稱 
+(file name)，所組成的檔案資源位置 (UNC)，備忘錄元件可以自動下載連結的檔案資源。參閱<a href="ch10_12.html#prefixpath">備忘錄元件檔案名稱與前綴路徑 
+(file name and prefix path)</a>。<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">以屬性設定 
+(get/set properties) 運算公式下載檔案資訊，<font color="#666699"><font face="Courier New">SetProp( 
+</font> 元件名稱 <font face="Courier New"> , property, value )</font>，</font>例如：<font face="Courier New">SetProp(&quot;</font></font><font color="#000000" size="2">備忘錄元件名稱<font face="Courier New">&quot;,   
+&quot;uncfile&quot;, &quot;\\Server1\temp\readme.txt&quot;)</font>。參閱<a href="ch10_12.html#downupload">備忘錄元件下載、上載文字檔案 
+(download and upload text file)</a>。<br> 
+　</font></p> 
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#000000">圖片元件 (Image component)<br> 
+　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">以圖片元件屬性的前綴路徑 
+(prefix path) 加上 儲存於資料記錄中的 VARCHAR       
+    欄位型別的檔案名稱 (file name) ，或前綴路徑 (prefix path) 加上 直接指名的檔案名稱 
+(file name)，所組成的檔案資源位置 (UNC)，圖片元件可以自動下載連結的檔案資源。參閱 
+<a href="ch10_13.html#prefixpath">圖片元件檔案名稱與前綴路徑 (file name and prefix path)</a>。<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">以屬性設定 
+(get/set properties) 運算公式下載圖片檔案，<font color="#666699"><font face="Courier New">SetProp(   
+&quot;</font>元件名稱<font face="Courier New">&quot; , property, value )</font>，</font>例如：<font face="Courier New">SetProp(&quot;</font>圖片元件名稱<font face="Courier New">&quot;,   
+&quot;uncfile&quot;, &quot;\\Server1\temp\logo.gif&quot;)</font>。參閱<a href="ch10_13.html#download">圖片元件下載、更新圖檔 
+(download and update image file)</a>。</font></p>  
+    </li>  
+  </ul>   
+  </blockquote>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#000000">事件的應用 (event)：</font></p>  
+    </li>  
+  </ul>  
+  <blockquote>  
+  <ul>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">下載文字檔到buffer資料來源 (download text file to   
+buffer data source)<br> 
+　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">將格式化 
+(fixed   
+length or Tab-delimited) 的文字檔資料載入 Buffer 資料來源。參閱 <a href="ch11_05_04.html">載入文字檔到   
+Buffer 資料來源事件 (download text file to buffer data source)</a>。</font></p>   
+    </li>   
+  </ul>   
+  </blockquote>   
+  <ul type="disc">   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#000000">運算式的應用 (formula)：</font></p>  
+    </li>  
+  </ul>  
+  <blockquote>  
+  <ul>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699"><font face="Courier New">Load(source)</font><br>
+　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2" color="#000000">source   
+是UNC 指名的檔案資源，會以字串讀入，例如：<font face="Courier New">Load(&quot;\\Server1\temp\readme.txt&quot;)</font>。</font><font size="2">參閱 
+<a href="ch12_10.html#Load(source)">運算公式檔案-Load(source)</a>。<br>
+　</font></p>  
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699"><font face="Courier New">CopyTo(source,   
+target)</font><br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2" color="#000000">將來源檔案內容 
+(source) 複製到所指定的目標檔案 (target) 位置，以 UNC   
+指名來源及目標檔案資源。例如：&nbsp;<font face="Courier New">CopyTo( \\server\path\</font>檔案名稱 
+<font face="Courier New"> , \\server\path\</font>檔案名稱<font face="Courier New">)</font></font><font size="2">。參閱<a href="ch12_10.html#CopyTo(source,target)">運算公式檔案 
+CopyTo(source,   
+target)</a>。</font></p>  
+    </li>   
+  </ul>   
+  </blockquote>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1"></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b> 
+<font size="2" color="#666699"><a name="upload"></a></font><font size="2" color="#000000">檔案上傳 
+(file upload)</font></b></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+  <ul type="disc">
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2" color="#000000">元件的應用 (component)：</font></p>  
+    </li>  
+  </ul>  
+  <blockquote>  
+  <ul>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font color="#000000" size="2">備忘錄元件    
+(Memo component)<br> 
+　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">以屬性設定   
+(Get/Set properties) 運算公式</font><font size="2" color="#000000">上傳</font><font size="2">檔案資訊，<font color="#666699">S<font face="Courier New">etProp( 
+</font> 元件名稱 <font face="Courier New"> , property, value )</font>，</font>例如：<font face="Courier New">SetProp(&quot;</font>備忘錄元件名稱<font face="Courier New">&quot;,   
+&quot;saveas&quot;, &quot;\\Server1\temp\readme.txt&quot;)</font>。參閱 <a href="ch10_12.html#downupload">備忘錄元件下載、上傳文字檔案 
+(download and upload text file)</a>。</font></p>  
+    </li>   
+  </ul>   
+  </blockquote>   
+<ul type="disc">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#000000">事件的應用 (event)</font><font size="2" color="#000000">：</font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<ul type="circle"> 
+  <li type="disc"> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2" color="#000000">上傳檔案 (upload file)<br> 
+　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"> 
+<font size="2">將資料來源的記錄內容 (record data) 或執行迴圈 
+(loop) 內的文字資料 (text data)，寫到 (write to) 指定的檔案內 (如 .txt、.html...)。參閱<a href="ch11_05_06.html">上傳檔案事件 
+(upload file)</a>。<br> 
+　</font></p>  
+  </li>  
+</ul>  
+  </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#000000">運算式的應用 (formula)：</font></p>  
+    </li>  
+</ul>  
+  <blockquote>  
+  <ul>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font face="Courier New">  
+CopyTo(source,target)</font><br>
+　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2" color="#000000">將來源檔案內容 
+(source) 複製到所指定的目標檔案 (target) 位置，以 UNC   
+指名來源及目標檔案資源。例如：&nbsp;<font face="Courier New">CopyTo( \\server\path\</font>檔案名稱 
+<font face="Courier New"> , \\server\path\</font>檔案名稱<font face="Courier New">)</font></font><font size="2">。參閱<a href="ch12_10.html#CopyTo(source,target)">運算公式檔案 
+CopyTo(source,   
+target)</a>。<br> 
+　</font></p>  
+    </li>  
+    <li><p style="margin-top: 1; margin-bottom: 1"><font size="2"><font face="Courier New">SaveAs(target,   
+      data, append)</font><br> 
+      　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2" color="#000000">將字串資料 
+(data)   
+存至 (replace) 或加入 (append) 到所指定的目標檔案 (target)   
+位置，以 UNC 指名目標檔案資源。例如：&nbsp;<font face="Courier New">SaveAs( \\server\path\</font>檔案名稱 
+<font face="Courier New"> ,   
+&quot;Test text&quot;, 0)</font></font><font size="2">。參閱<a href="ch12_10.html#CopyTo(source,target)">運算公式檔案 
+SaveAs(target,   
+data, append)</a>。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+    </li>  
+  </ul>   
+  </blockquote>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><b> 
+<font size="2" color="#666699"><a name="filesystem"></a></font><font size="2" color="#000000">檔案系統應用 
+(file system)</font></b>　</p>
+  <ul type="disc">
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">檔案選擇器 (file chooser)：<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<font size="2">提供使用者以檔案選擇視窗，選取檔案資源。<br>
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">
+<font size="2" color="#666699"><font face="Courier New">FileChooser(title,isfile,filter)</font>：</font><font size="2">FileChooser(</font><font size="2">標題</font><font size="2">,</font><font size="2">是否為檔案</font><font size="2">,</font><font size="2">副檔名類型</font><font size="2">)</font><font size="2">，例如：</font><font size="2">FileChooser(&quot;Choose    
+Files&quot; ,1 ,0 ) </font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+  <ul type="square">
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">標題 (title)：檔案選擇系統標題。</font></p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">目標是否為檔案 (is file or directory)：1 或 0。</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">副檔名類型 
+(extension filter)：全部則輸入&quot;&quot;，其他使用字串，例如  
+：&quot;.txt&quot;。<font face="Courier New">FileChooser(&quot;Choose Files&quot; ,1 ,&quot;.txt&quot;)</font>。<br> 
+　</font></p> 
+    </li> 
+  </ul> 
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">檔案系統管理 
+(file system management)</font><font size="2">：<br> 
+　</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">運算公式提供設計師管理使用者端 
+(client) 及 jLIVE&trade; middle ware  
+所在區域網路的檔案管理，包括查詢是否存在 (existed)、新增、刪除目錄 
+(directory) 及檔案 (file)。</font><font size="2" color="#666699" face="Courier New">File(cmd, target)</font><font size="2"><font color="#666699">  
+</font><font color="#000000">，cmd 為運算公式的指令 (Command)，target  
+為 UNC 指名的檔案資源。</font></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<ul type="disc"> 
+  <li type="square"><p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699"><font face="Courier New">File(&quot;md&quot;, target)</font></font><font color="#666699" size="2" face="Courier New">&nbsp;</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">建立目錄 (make  
+    directory)。</font></p>  
+  </li> 
+  <li type="square"><p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699" face="Courier New">File(&quot;rd&quot;,  
+    target)</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">刪除目錄 
+    (remove directory)。target  
+    如果不是正確的目錄名稱，系統會回應錯誤訊息。目錄下如果仍存在檔案或目錄，該目錄無法刪除，系統會回應錯誤訊息，如果要一併刪除目錄下所有檔案及子目錄，以  
+    &quot;deltree&quot; 的指令運作。</font></p>  
+  </li> 
+  <li type="square"><p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699" face="Courier New">File(&quot;del&quot;,  
+    target)</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">刪除檔案 
+    (delete file)。target  
+    如果不是正確的檔案名稱，系統會回應錯誤訊息。</font></p>  
+  </li> 
+  <li type="square"><p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699" face="Courier New">File(&quot;exist&quot;,  
+    target)</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">目錄或檔案是否存在 
+    (directory or file is existed)。</font></p>  
+  </li> 
+  <li type="square"><p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699" face="Courier New">File(&quot;deltree&quot;,  
+    target)</font></p>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">刪除整個目錄 
+    (delete directory) ，包含目錄下所有檔案及子目錄。</font></p>  
+  </li> 
+</ul> 
+    </li>  
+  </ul>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<hr align=left color="#000000"> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=227 align=left valign=top> 
+　</td>
+<td width=221 align=center valign=top>
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>
+<td width=232 align=right valign=top>
+　</td>
+</tr>
+</table>
+
+<hr align=left color="#000000">
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,       
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>      
+      
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+   
+</body>   
+   
+</html>

@@ -1,0 +1,178 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Internet Enterprise Application Integration</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=165 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=253 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch02.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 2</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch02.html" style="text-decoration: none"><font color="#000000">Technical       
+overview</font></a></font></b></TD>     
+<td width=182 align=right valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="ch03.html">     
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<h1 class="chapter"><font size="4">2<a class="TITLE">.1 </a></font><b><font size="3"><span style="FONT-SIZE: 12pt">インターネットによるエンタープライズアプリケーションのインテグレーション</span> 
+(Internet Enterprise Application Integration)</font></b></h1>        
+<p style="text-indent: 20" align="justify"><font size="2">インターネットは全世界の情報を連結し、新しい世界的なビジネスをもたらしました。インターネットによるエンタープライズアプリケーションのインテグレーションは益々不可欠なものなって来ました。JLIVE 
+BuilderTMはEAIに最高なツールと環境を提供しています。過去のClient/Server形式と根本的に違います。古いコンセプトとしては必ずクロスネットワークからオープンネットワークにアップグレードにしなければなりませんでした。また、データの転送、セキュリティ等、ネットワーク的な考えを含めて全体解決方案</font><font size="2">(total 
+solution)を立案しなければなりませんでした。</font></p>       
+<p style="text-indent: 20" align="justify"><font size="2">JLIVE BuilderTMはインターネットを考慮し(internet 
+thinking)、また、解決する方式について最新の条件を充たしています。</font></p>       
+<p style="text-indent: 20" align="justify"><font size="2">　</font></p>
+<p><font size="3"><b>2.11．インターネット的な考え (internet thinking)</b></font></p>         
+<ul>       
+  <li><b><font size="2">多階層Nーtier形式 (N-tiers architecture )</font></b></li>         
+</ul>       
+<blockquote>       
+  <p style="text-indent: 20" align="justify"><font size="2">Nーtierはインターネットによるエンタープライズアプリケーションにとって絶対に必要な条件です。アプリケーションを実行する時、クライアントは直接データベースサーバにアクセスすることが許可されていません。必ずミードルウェアを経由し、企業内firewall内のデータベースにアクセスします。JLIVE BuilderTMはデフォルトで少くなくでも3－tier構造になっています。ミドル層はJAVATMでServletで構成され、どんなプラットフォームに適応しています。</font></p>        
+</blockquote>       
+<ul>       
+  <li><b><font size="2">集中アプリケーション構造、分散式な処理モジュール構造  
+    (centralized programs and distributed computing)</font></b></li>         
+</ul>       
+<blockquote>       
+  <p style="text-indent: 20" align="justify"><font size="2">インタネットクライアントは世界中のどこにでもあり、昔のように必ずアプリケーションを全部のクライアントにインストールする必要がありません、インタネットアプリに分散モジュールをWebはサーバに集中します。クライアントからサービスとモジュール実行のリクニストがあった時、Webは今クライアントが必要となる小さなモジュールだけを転送すれば結構です、アプリケーション全部を転送する必要はありません。もし、このモジュールが既にクライアントに存在する場合、直接起動ができます。インターネットアプリを実行するのがブラウザは表示機能だけではなくフォーミュラ処理機能ももっています。JLIVE BuilderTMはJavaTM Applet Swing とclass loaderなどのコンポーネントを用しているので、インターネットアプリケーションの開発、実行、メンテナンス、システム全体の分散式処理ができます。つまり、クライアントからのリクニスト、ミドル層、サーバ、役割分担で効率よく処理されるようになっています。</font></p>        
+</blockquote>       
+<ul>       
+  <li><b><font size="2">プラットフォームにこだわりなし (for all platforms)</font></b></li>         
+</ul>       
+<blockquote>       
+  <p style="text-indent: 20" align="justify"><font size="2">インターネットアプリは、通常、各種ブラットフォームブラウザで実行されます。その為、アプ<br>
+  リの第一条件は、必ず各種類のブラットフォームの上で実行できることです。JLIVE BuilderTMで使用しているJavaTMが当然一番良い選択肢となっています。</font></p>       
+</blockquote>       
+<ul>       
+  <li><b><font size="2">データベースにこだわりなし</font></b><b><font size="2">(for all databases)</font></b></li>         
+</ul>       
+<blockquote>       
+  <p style="text-indent: 20" align="justify"><font size="2"><span style="FONT-SIZE: 10pt">インターネットによるエンタープライズアプリケーションのインテグレーションを行うにあたり、企業内部には、新旧データベースを同時に使用している可能性があります、ミドル層はクライアントからみると必ず各種のデータベースにアクセス出来るようにしなければなりません</span>。JLIVE BuilderTMのミドルウェアは同時に各数の種類別のデータベースにアクセスをサポートしているミドルウェアです。</font></p>        
+</blockquote>       
+<ul>       
+  <li><b><font size="2">権限を授けられたセキュリティコントロール  
+    (authorized security control)</font></b></li>         
+</ul>       
+<blockquote>       
+  <p style="text-indent: 20" align="justify"><font size="2">インターネットは不完全な実行環境にあり、ユーザに対し、授権検査、認証検査のステップをミドルウェアで実行し、システムの安全性を確保しています。ユーザ認証インフォーメーションがデ<br>
+  ータベースサーバに保存されています。管理者はニーズによって権限を分配されていす。JLIVE 
+  BuilderTMはデフォルトのセキュリティ 
+  コントロールシステムを提供し、開発者はニーズによって修正することができます。</font></p>       
+</blockquote>       
+<ul>       
+  <li><b><font size="2">データの転送量とサーバーローティング (data transferring and server loading)</font></b></li>         
+</ul>       
+<blockquote>       
+  <p style="text-indent: 20" align="justify"><font size="2">インターネットNーtierシステムの場合、クライアントの情報はインターネットを通して獲得<br>
+  されます。そこで、インターネットと内部実行スピード違いがある為、対応を考えなければなり<br>
+  ません。JLIVE BuilderTMはデフォルトVirtual　モードを持ち、Request on demand方式を利用することにより、転送ボリュームにかかわらず、システムはクライアントの最小のリクエストに対し、Background treadで分割して転送します。その為、処理結果のボリュームに関係なく、クライアントへの反応時間はほぼ同じです。しかも、Request 
+  on demandが独自に実行しているコンポーネントにコントロールされている為、特別な開発者からのメンテナンスは必要ありません。</font></p>       
+  <p style="text-indent: 20" align="justify"><font size="2">JLIVE BuilderTM中のデータソース、リストボックス、Combo box、Gridなどのコンポーネントはこの機能を生かしています。</font></p>        
+</blockquote>      
+<ul>      
+  <li><b><font size="2">アプリケーションの流れとユーザインターフェース（</font></b><b><font size="2">system flow and         
+    user interactive)</font></b></li>         
+</ul>       
+<blockquote>       
+  <p style="text-indent: 20" align="justify"><font size="2"><span style="FONT-SIZE: 10pt">インターネットによるエンタープライズアプリケーションのインテグレーションは、単純或いはダイナミックなホームページでは実現できません。ホームページにはシステムフローがありません。</span>ホームページは一般に会社か商品の説明に使用されていますが、インターネットアプリケーションはC/S方式と同様に、システム上、ユーザインタフェースで即時にユーザに対してサービス反応し、連動して作業できます。</font></p>     
+</blockquote>     
+<ul>     
+  <li><b><font size="2">インターネットレポートシステム (internet report system)</font></b></li>        
+</ul>      
+<blockquote>     
+  <p><font size="2">レポート業務はエンタープライズアプリケーションにとって不可欠のサービスです。使用上最小限の条件として：</font></p>    
+  <ul>    
+    <li><font size="2">Query　データ印刷(query        
+      printing data)</font></li>       
+  </ul>     
+  <blockquote>     
+    <p><font size="2">アプリレポート作業において、通常ユーザクエリ-後にデータ印刷作業が行われます。その為、レポート業務とユーザインターフェースは統合されなければなりません。</font></p>     
+  </blockquote>     
+  <ul>     
+    <li><font size="2">ページ分け (paging)</font></li>     
+  </ul>    
+  <blockquote>    
+    <p align="justify"><font size="2">例えば、ユーザは200ページの資料をプリントする必要がある場合、システムは必ずユーザ側でレポートの寸法によってページ分割し、ユーザが全部印刷するか部分にするかを決め、印刷機能をクリックし実行させます。この機能はWindowsアプリに良く利用されていますが、インターネットHTMLでは実現できません。ユーザ側でページ分けプリント作業リスティングがなければ、すべてユーザ側で作業を行うと、負担がかかり過ぎますので、アプリ実行ができません</font><font size="2">。</font></p>     
+  </blockquote>     
+  <ul>     
+    <li><font size="2">ｲﾒｰｼﾞと統計チャート (image and statistic chart)</font></li>       
+  </ul>     
+  <blockquote>     
+    <p align="justify"><font size="2">レポート業務において、ｲﾒｰｼﾞと統計チャートが不可欠です。JLIVE BuilderTMの場合はクライアント側で即時に描かれサーバに負担をかけません。インターネットアプリなので、レポート業務はどんなプリンターにおいて同じく印刷されなければなりません。JLIVE BuilderTMレポート設計の時、絶対位置を設計し、見た目と印刷物は一致しています。<br>  
+    </font></p>     
+  </blockquote>     
+  <ul>     
+    <li><span style="FONT-SIZE: 10pt">絶対的なプリント位置</span><font size="2"> 
+      (absolute printing position)</font></li>       
+  </ul>     
+  <blockquote>     
+    <p align="justify"><font size="2">インターネットでプリントサービス提供する場合，システムはどんな種類のプリンターに置いても同じのレイアウト・位置を正確にアウトプットしなければなりません。jLIVE             
+Builder&#8482; レポーティング設計の時，絶対位置 (absolute        
+    printing position) を利用して配置することになっています。レイアウトに見えているものがイコール印刷で得られるものとなっています     
+    (what you see is what you get)。</font></p>       
+  </blockquote>     
+  <ul>     
+    <li><span style="FONT-SIZE: 10pt">リアルタイム印刷</span><font size="2"> (real time printing)</font></li>       
+  </ul>     
+  <blockquote>     
+    <p align="justify"><font size="2">JLIVE BuilderTMレポートシステムはリアルタイムがあり、プリントした資料は最新の情報でクライアントとサーバの効率を最適にされるようにされています。</font></p>     
+  </blockquote>     
+  <p align="justify" style="text-indent: 20"><font size="2">レポートシステムの場合、クライアントのリクニストに基いて結果集を作りますだけで、このような業務分けになります。よって、インターネットレポートシステムがスムーズに行われています。</font></p>     
+</blockquote>     
+<hr align=left color="#000000">          
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">          
+<tr>          
+<td width=200 align=left valign=top>          
+<a href="ch02.html">       
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>       
+<td width=215 align=center valign=top><a href="index.html">       
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>       
+<td width=185 align=right valign=top>       
+<a href="CH02_02.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=left color="#000000">       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~           
+2004 Probe Technology . All Rights Reserved.</font></p>          
+        
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,         
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>        
+        
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+        
+</body>        
+        
+</html>

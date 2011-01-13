@@ -1,0 +1,750 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Introduction</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="ch01.html"><font color="#000000" size="-1">Chapter 1</font></a></b><p style="margin-top: 0; margin-bottom: 0">         
+<b>         
+<a style="text-decoration: none" href="ch01.html"><font color="#000000" size="-1">         
+Introduction</font></a></b></TD>         
+<td width=205 align=right valign=top>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<a href="ch02.html">         
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>         
+</tr>         
+</table>         
+         
+<hr align=left color="#000000">         
+<h1 class="chapter"><font size="4">1.1    
+安裝與啟動 (<span lang="en-us">I</span>nstallation and getting start)</font></h1>          
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">          
+<a href="#111">          
+<font size="2">安裝 (<span lang="en-us">I</span>nstallation notes)</font></a></p>          
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">   
+<a href="#112">   
+<font size="2">範例程式 (<span lang="en-us">E</span>xecute sample    
+program)</font></a></p>          
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#113">   
+<font size="2">Tomcat 4.0.x 啟動 (<span lang="en-us">S</span>tart Tomcat)</font></a></p>          
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">   
+<a href="#114">   
+<font size="2">   
+JDBC 驅動程式 (IDBC drivers)</font></a></p>          
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#115">   
+<font size="2">設計環境系統需求 (<span lang="en-us">M</span>inimum system requirements)</font></a></p>           
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1"><b>
+<a name="111">
+<font size="3">
+</font></a><font size="3">安裝 jLIVE Builder&#8482; (<span lang="en-us">I</span>nstallation notes)</font></b></p>          
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">jLIVE Builder&#8482; 支援最新版的 Java&#8482;2 開發環境，在安裝 jLIVE&#8482; 之前必須先安裝 Java&#8482;2 SDK<span lang="en-us">
+</span>， Java&#8482;2 SDK 是 Sun<span lang="en-us"> </span>&nbsp;Microsystems&#8482;<span lang="en-us">
+</span>, Inc. 公司的產品。相關的 Java&#8482; 
+版本、授權、聲明及安裝說明請參閱     
+Sun Microsystems&#8482;<span lang="en-us"> </span>, Inc. 下載網站的說明。</font></p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+<font size="2">安裝的路徑請避免內含空白字元，例如：<font face="Courier New">C:\Program Files\ 
+</font> ，<span lang="en-us"> </span>JDK 內含的某些工具軟體    
+(tools) 的作業環境變數     
+(environment<span lang="en-us"> </span>&nbsp;variables) 可能產生不可預期的問題。</font></p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+<font size="2">在安裝完 jLIVE Builder&#8482; 後，將產生下列的目錄：</font></p>          
+<blockquote>          
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">   
+  <font size="2">【】     
+  -- 安裝時所選目錄名稱</font></p>           
+  <blockquote>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    【jLIVE】</font></p>         
+    <blockquote>         
+      <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+      <font size="2">    
+      【doc】<br>         
+      【images】<br>         
+      【jar】<br>         
+      【james】<br>         
+      【mysql】<br>         
+      【preloadimage】<br>         
+      【programs】<br>         
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+      【jNorth】<br>          
+      【tomcat】<br>          
+      【xml】</font></p>          
+    </blockquote>          
+  </blockquote>          
+</blockquote>          
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>            
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">啟動 jLIVE Builder&#8482;    
+前請確定以下環境已安裝或啟動就緒：</font></p>           
+<ol style="font-size: 10 pt">           
+  <li>           
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    Java&#8482; 1.4.x SDK 已安裝，JAVA_HOME 環境變數已正確設定。</font></li>           
+  <li>           
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    啟動資料庫系統。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    如果要測試範例程式，請先啟動 mySQL 資料庫。</font></li>           
+  <li>           
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">   
+    <font size="2">   
+    啟動 jLIVE&#8482; middle ware<span lang="en-us"> </span>。預設的 middle ware 安置於 Tomcat 4.0<span lang="en-us">
+    </span>，由 Tomcat 4.0 啟動服務。啟動 
+    Tomcat 4.0 請執行 <font face="Courier New"> jLIVE\tomcat\bin\startup.bat<span lang="en-us">
+    </span></font>。並確定 JAVA_HOME 和 CATALINA_HOME 的<a href="#env_variable">環境變數</a>已正確設定。</font></li>          
+  <li>          
+    <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    第一次執行 jLIVE Builder&#8482;<span lang="en-us"> </span>時，系統將會重導範例程式的路徑至安裝路徑。</font></li>          
+</ol>          
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+  <b>    
+  <font size="2">    
+  安裝步驟：</font></b>         
+  <p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+  　<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+  <font size="2">執行安裝光碟中的 Setup.bat<span lang="en-us"> </span>，當開始安裝程序時，會出現下列視窗。</font><blockquote>           
+              
+<p style="margin-top: 1; margin-bottom: 1">           
+<img border="0" src="images/setup-2.gif" width="475" height="342"></p>              
+              
+<p style="margin-top: 1; margin-bottom: 1">           
+　</p>              
+              
+</blockquote>           
+              
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">           
+<font size="2">步驟一：起始安裝畫面，點選下一步進行安裝。<br>   
+　</font></p>            
+            
+<p style="margin-top: 1; margin-bottom: 1">         
+<img border="0" src="images/setup-3.gif" width="564" height="570"></p>            
+            
+<blockquote>         
+            
+<p style="margin-top: 1; margin-bottom: 1">         
+　</p>            
+            
+</blockquote>         
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">步驟二：輸入使用者名稱及授權序號。<br>  
+　</font></p>            
+            
+<p style="margin-top: 1; margin-bottom: 1">         
+<img border="0" src="images/setup-4.gif" width="564" height="570"></p>            
+            
+<blockquote>         
+            
+<p style="margin-top: 1; margin-bottom: 1">         
+　</p>            
+            
+</blockquote>         
+            
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">步驟三：確認授權聲明，同意按下一步。<br>  
+　</font></p>            
+            
+<p style="margin-top: 1; margin-bottom: 1">         
+<img border="0" src="images/setup-5.gif" width="564" height="570"></p>            
+            
+<blockquote>         
+            
+<p style="margin-top: 1; margin-bottom: 1">         
+　</p>            
+            
+</blockquote>         
+            
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">步驟四：選擇安裝路徑 (預設路徑 
+<font face="Courier New"> <a href="file:///C:/jLIVE">C:\jLIVE</a></font>)<span lang="en-us">
+</span>，按【選擇路徑】開啟瀏覽訊息方塊 (dialog)<span lang="en-us"> </span>，或是直接輸入路徑。<br>    
+　</font></p>           
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+<img border="0" src="images/setup-6.gif" width="563" height="570"></p>           
+           
+<blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+　</p>           
+           
+</blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">        
+<font size="2">步驟五：安裝設定確認，按【安裝】鍵進行安裝。<br>
+　</font></p>           
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+<img border="0" src="images/setup-7.gif" width="563" height="570"></p>           
+           
+<blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+　</p>           
+           
+</blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">        
+<font size="2">步驟六：安裝進度，顯示安裝進度。<br>
+　</font></p>           
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+<img border="0" src="images/setup-8.gif" width="563" height="570"></p>           
+           
+<blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+　</p>           
+           
+</blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">        
+<font size="2">步驟七：安裝完成，按【確定】。<br>
+　</font></p>           
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+<img border="0" src="images/setup-9.gif" width="565" height="571"></p>           
+           
+<blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+　</p>           
+           
+</blockquote>        
+           
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">        
+<font size="2">步驟八：注意事項，按【離開】完成安裝。<br>
+　</font></p>           
+           
+<p style="margin-top: 1; margin-bottom: 1">        
+<img border="0" src="images/setup-10.gif" width="562" height="570"></p>           
+           
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a><p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1"><b>
+<a name="112"><font size="5">
+</font></a><font size="3">執行範例程式 (<span lang="en-us">E</span>xecute sample    
+program)</font></b></p>          
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">       
+<font size="2">jLIVE Builder&#8482; 內含一範例應用程式，所使用的測試資料庫為 mySQL<span lang="en-us">
+</span>。此程式僅供測試及展示使用。在安裝完 Java&#8482;     
+及 jLIVE<span lang="en-us"> </span>&nbsp;Builder&#8482; 後，請啟動 mySQL 資料庫系統。</font> </p>           
+<ol style="font-size: 10 pt">           
+  <li>           
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+  <font size="2">    
+  啟動     
+  mySQL<span lang="en-us"> </span>：<font face="Courier New"><span lang="en-us">
+  </span>jLIVE\mysql\bin\winmysqladmin.exe</font></font>。 </li>       
+  <li>       
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1"> 
+  <font size="2"> 
+  啟動     
+  Tomcat <span lang="en-us">&nbsp;</span>：<font face="Courier New"><span lang="en-us">
+  </span>jLIVE\tomcat\startup.bat</font></font>。</li>       
+  <li>       
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1"> 
+  <font size="2">可以直接執行 Java&#8482; 可執行檔(jar file) <font face="Courier New"> jLIVE\programs\jNorth\jnorth.jar</font> ，執行及操作的方式與一般的 Windows 程式一樣，以滑鼠雙擊<font face="Courier New">  jnorth.jar</font> 。或</font>由瀏覽器 (Browser) 啟動執行<font size="2">，請在</font>瀏覽器 
+  (Browser) 的<font size="2">網址列輸入&nbsp; HTML file<span lang="en-us"> </span>&nbsp;(<font face="Courier New">jLIVE\programs\jNorth\jnorth.html</font></font>)  。亦可進入 jLIVE Builder&#8482; 進一步編輯程式。 </li>           
+</ol>           
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+<a href="#top">           
+<font color="#003366" size="2">▲Top</font></a><br>           
+　<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+<b>
+<a name="113"><font size="5">
+</font></a><font size="3">Tomcat 4.0.x 啟動 (<span lang="en-us">S</span>tart Tomcat)</font></b></p>          
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　</p>       
+<p style="text-indent: 20; margin-top:1; margin-bottom:1">
+<font size="2">Tomcat     
+版本：jakarta-tomcat-4.0.1<span lang="en-us"> </span>，<span lang="en-us"> </span> <a href="http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v4.0.1/bin/">http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v4.0.1/bin/</a></font></p>           
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">   
+<font size="2"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jLIVE     
+Builder&#8482; Tomcat 路徑：<font face="Courier New">jLIVE\tomcat</font>。<br>  
+　</font></p>     
+<p style="text-indent: 20; margin-top:1; margin-bottom:1">
+<font size="2">在第一次啟動     
+Tomcat 前必須先設定 <font color="#800080"><b> JAVA_HOME</b> </font>和 <font color="#800080"><b>    
+CATALINA_HOME</b></font> 環境變數。</font></p>           
+<p style="text-indent: 0; margin-top:1; margin-bottom:1">　</p>           
+    <p style="text-indent: 0; margin-top:1; margin-bottom:1"><b><a name="env_variable"><font size="3"></font></a>    
+    <font size="3"> 環境變數&nbsp;</font></b><font size="2">( <font color="#800080"><b> JAVA_HOME</b> </font>    
+    和 <font color="#800080"><b>CATALINA_HOME</b></font> )</font><ul>           
+    <li>           
+      <p style="text-indent: 0; margin-top:1; margin-bottom:1">    
+      <b>    
+      <font size="2">           
+      Windows NT/2000/XP </font> </b>   
+      <font size="2">          
+      (圖例的作業系統是 Windows XP<span lang="en-us"> </span>；作業系統不同，設定畫面會有局部差異。)</font><p style="text-indent: 0; margin-top:1; margin-bottom:1">    
+      <br>             
+      <ol style="font-size: 10 pt">            
+        <li>            
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1">    
+          <font size="2">    
+          【控制台】-&gt;【系統】-&gt;【進階】-&gt; 【環境變數】。</font></li>            
+        <li>            
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1">    
+          <font size="2">    
+          新增<font color="#666699">系統變數</font>，<font color="#666699">變數名稱：</font><font color="#800080"><span lang="en-us">
+          </span>JAVA_HOME</font> ，<font color="#666699">變數值：<span lang="en-us">
+          </span></font></font><font color="#800080" size="2" face="Courier New">c:\j2sdk1.4.0</font><font size="2">。</font></li>          
+        <li>          
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1">   
+          <font size="2">   
+          新增<font color="#666699">系統變數</font>，<font color="#666699">變數名稱：<span lang="en-us">
+          </span></font><font color="#800080">CATALINA_HOME</font> ，<font color="#666699">變數值</font>：<span lang="en-us">
+          </span></font><font color="#800080" size="2" face="Courier New">c:\jLIVE\tomcat</font><font size="2">。</font></li>         
+      </ol>         
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1">  
+          <font size="2">  
+          　</font><p style="text-indent: 0; margin-top:1; margin-bottom:1">        
+<img border="0" src="images/sysvalue1.gif" width="419" height="458"><p style="text-indent: 0; margin-top:1; margin-bottom:1">　<p style="text-indent: 0; margin-top:1; margin-bottom:1">        
+          <img border="0" src="images/sysvalue2.gif" width="380" height="397"><p style="text-indent: 0; margin-top:1; margin-bottom:1">        
+          　<p style="text-indent: 0; margin-top:1; margin-bottom:1">        
+      <img border="0" src="images/sysvalue3.gif" width="347" height="139"><p style="text-indent: 0; margin-top:1; margin-bottom:1">        
+      　<p style="text-indent: 0; margin-top:1; margin-bottom:1">        
+      <img border="0" src="images/sysvalue4.gif" width="344" height="135"><p style="text-indent: 0; margin-top:1; margin-bottom:1">　</li>        
+    <li>        
+      <p style="text-indent: 0; margin-top:1; margin-bottom:1">  
+      <b>        
+      <font size="2">        
+      Windows 95/98/me</font></b><p style="text-indent: 0; margin-top:1; margin-bottom:1">    
+      　<ol style="font-size: 10 pt">  
+        <li>  
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1">
+          <font size="2">
+          編輯 </font>        
+          <font color="#666699" size="2" face="Courier New">         
+          <a href="file:///C:/autoexec.bat">C:\autoexec.bat</a></font><font size="2"><span lang="en-us">
+          </span>。</font></li>         
+        <li>         
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1"> 
+          <font size="2"> 
+          新增 <font color="#800080">    
+          SET JAVA_HOME<span lang="en-us"> </span>=<span lang="en-us"> </span></font></font><font color="#800080" face="Courier New" size="2">C:\j2sdk1.4.0</font>    
+          <font size="2">   
+ 和&nbsp; <font color="#800080">SET CATALINA_HOME<span lang="en-us"> </span>=<span lang="en-us">
+          </span></font></font><font color="#800080" face="Courier New" size="2">C:\jLIVE\tomcat</font>    
+          <font size="2">   
+ 。</font></li>           
+        <li>           
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1">    
+          <font size="2">    
+          重新開機。</font></li>           
+      </ol>           
+          <p style="text-indent: 0; margin-top:1; margin-bottom:1">           
+          　<p style="text-indent: 0; margin-top:1; margin-bottom:1">          
+          <img border="0" src="images/autoexec.gif" width="505" height="156"></li>          
+  </ul>          
+<ul>          
+  <li>          
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+  <b>          
+  <font size="2">啟動及關閉 Tomcat (<span lang="en-us">S</span>tart up and shut down the Tomcat)</font></b>    
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+  　<ol style="font-size: 10 pt"> 
+    <li> 
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  <b>      
+  <font size="2">啟動：</font></b><font size="2">執行<b>      
+        
+  </b><font face="Courier New">
+  <a href="file:///c:/jLIVE/tomcat/bin/startup.bat">c:\jLIVE\tomcat\bin\startup.bat</a><span lang="en-us">
+  </span></font></font>。       
+    </li> 
+    <li> 
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  <font size="2">
+  <b>      
+    關閉：</b>執行 <font face="Courier New"> 
+  <a href="file:///c:/jLIVE/tomcat/bin/shutdown.bat">c:\jLIVE\tomcat\bin\shutdown.bat</a><span lang="en-us">
+  </span></font></font>。</li> 
+  </ol> 
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  　</p>
+  </li>
+  <li>
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  <b>
+  <font size="2">Tomcat Troubleshooting</font></b><br>           
+  <br>           
+  <font size="2">在 Windows 安裝 Tomcat 4.0 時常見的系統設定問題 :&nbsp;<br>           
+  <br>           
+  1) 最常發生的問題，是 Tomcat HTTP 的預設 Port 8080<span lang="en-us"> </span>，已經被其他的 Web server 伺服器所使用，例如： Oracle&nbsp;     
+  9i 的 application<span lang="en-us"> </span>&nbsp;server<span lang="en-us">
+  </span>。要改變預設的 Port ，請開啟：<br>          
+  <br>          
+  <font face="Courier New">         
+  $CATALINA_HOME/conf/server.xml</font>         
+  </font><br>         
+  <br>         
+  <font size="2">‧‧‧搜詢 '8080' ，更改為尚未被使用的 Port<span lang="en-us"> </span>。建議最好大於 1024<span lang="en-us">
+  </span>，詳細情形請參照各作業系統說明。<br>           
+  <br>           
+  重新啟動 Tomcat 即可正常作業。必須注意當改變 Port 8080 後，程式在呼叫 Tomcat 服務的 URL 也要一併修改。例如：改 Port<span lang="en-us">
+  </span>&nbsp;為 1977<span lang="en-us"> </span>，呼叫 Tomcat 服務的 URL 為 <font face="Courier New"> http://localhost:1977/ 
+  </font> 。<br>          
+  <br>          
+  2) 在執行 Windows 9X/ME 的<span lang="en-us"> </span>batch file 啟動時出現 &quot;<font color="#800000"><span lang="en-us">
+  </span>out of     
+  environment space<span lang="en-us"> </span></font>&quot; 的錯誤。&nbsp;<br>           
+  <br>           
+  以滑鼠右擊 <span lang="en-us">&nbsp;</span>STARTUP.BAT 和 SHUTDOWN.BAT 的圖示，選擇<font color="#666699">內容</font><font color="#000000">選單項目</font>的【記憶體】設定頁，    
+  將傳統記憶體的<font color="#666699">起始環境</font>設定成           
+  <font color="#212163">4096<span lang="en-us"> </span></font>。<br>           
+  <br>           
+  確定或套用後，<span lang="en-us"> </span>Windows    
+  將會建立捷徑，可以此捷徑啟動或關閉 Tomcat 。<br>           
+  <br>           
+  3) localhost 不存在 ('localhost' machine isn't found)<span lang="en-us"> </span>，這是因為使用 Proxy     
+  的緣故。如果是在此情況下，必須要修改瀏覽器的 Proxy<span lang="en-us"> </span>&nbsp;設定，以避開 Proxy 主機。&nbsp;<br>           
+  <br>           
+  使用 Netscape<span lang="en-us"> </span>，請編輯 Edit/preferences -&gt; Advanced/proxies<span lang="en-us">
+  </span>。使用 Internet Explorer<span lang="en-us"> </span>，請編輯     
+  Tools -&gt; Internet Options -&gt; Connections -&gt; LAN Settings<span lang="en-us">
+  </span>。</font></li>           
+</ul>           
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1"><a href="#top">           
+  <font color="#003366" size="2">▲Top</font></a><p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+<b>
+<a name="114">
+<font size="2">
+</font></a><font size="2">JDBC 驅動程式 (JDBC drivers)</font></b></p>          
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">
+jLIVE Builder&#8482; 支援 JDBC 版本 2.0 API<span lang="en-us"> </span>
+。關於驅動程式的供應廠商及所支援資料庫系統等相關訊息，請參訪http://industry.java.sun.com/products/jdbc/drivers<span lang="en-us">
+</span>。     
+jLIVE Builder&#8482; 支援 JDBC TYPE 1, 2, 3, 4 的驅動程式。由於支援 TYPE 1 驅動程式，所以可以使用 JDBC-ODBC     
+bridge ，經由 ODBC 連結資料庫。但是 JDBC-ODBC bridge 的連結方式，除了效率非常不好外，<span lang="en-us">
+</span>Java&#8482;     
+亦建議只使用於資料庫測試。若非得使用 JDBC-ODBC bridge ，可參閱網站 <a href="http://www.merant.com">http://www.merant.com</a><span lang="en-us">
+</span>，使用 Merant     
+公司所提供的 MERANT ODBC<span lang="en-us"> </span>&nbsp;Driver Pack，該 Driver Pack 可以大幅提升&nbsp; JDBC-ODBC bridge 的效率。</font></p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+　</p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+<font size="2">    
+MSSQL Server 的使用者可以參訪 http://www.inetsoftware.de/&nbsp;(i-NET Software     
+company)<span lang="en-us"> </span>網站，下載試用版的 MSSQL Server 驅動程式 (TYPE 4)<span lang="en-us">
+</span>，此驅動程式的執行效率比 JDBC-ODBC bridge 好很多。</font></p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+　</p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">    
+<font size="2">    
+ORACLE 資料庫的使用者。在安裝完資料庫系統後，將其 JDBC Driver (classes12.jar) 安置於 Tomcat\lib 中，或設定 ClassPath 讓系統可以使用該驅動程式 (Driver)<span lang="en-us">
+</span>，相關 JDBC Driver 設定安裝請參照 Oracle 手冊。<span lang="en-us"> </span>Oracle 8i     
+(8.16) JDBC Driver 無法使用 Database 的<span lang="en-us"> </span>Metadata<span lang="en-us">
+</span>，請改用 8.17 版本，<span lang="en-us"> </span>Oracle 9i JDBC Driver 必須     
+unpack 後只使用 JDBC Driver 部份，其餘相關 Java&#8482; class 部份，因為 Java&#8482; 版本之不同，或有不相容的問題，可能會導致驅動程式 
+(driver) 無法載入。</font></p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+　</p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+<font size="2">    
+所有使用於 jLIVE Builder&#8482; 的驅動程式，必須詳閱供應商所提供之設定資料，正確地安裝，使系統能使用該驅動程式。連結資料庫所需的 Database     
+URL format String 亦必須正確設定，才能建立起資料庫之連結。</font></p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+　</p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+<font size="2">安裝
+jLIVE Builder&#8482; 後，在 jLIVE/tomcat/common/lib/ 目錄下，已預載下列驅動程式，各驅動程式的版權及使用請參照廠商說明。</font></p>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+　</p>           
+<ul>
+  <li>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+mysql-connector-java-3.0.14-production-bin.jar：<font size="2">mySQL 資料庫。</font></p>       
+  </li>
+  <li>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+ojdbc14.jar：Oracle
+  <font size="2">資料庫。</font></p>       
+  </li>
+  <li>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+mssqlserver.jar：MS sqlserver
+  <font size="2">資料庫。</font></p>       
+  </li>
+  <li>           
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+Sprinta2000.jar：MS sqlserver
+  <font size="2">資料庫 i-net 公司測試版本。</font></p>       
+  </li>
+</ul>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+　</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">    
+<font size="2">    
+驅動程式 (Driver) 設定範例：*' 為註解不需填入。<br>           
+</font>　</p>       
+<ul>
+  <li>
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  <font size="2">以 JDBC-ODBC bridge 連結 MS ACCESS<span lang="en-us"> </span>。</font></p>           
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+  　<ol style="font-size: 10 pt">         
+    <li>         
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    執行 ODBCAD32.EXE (<font face="Courier New">%SystemRoot%\system32\odbcad32.exe</font>) 建立 ODBC DSN 。例如 &quot;MYODBC&quot;。</font></li>           
+    <li>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    啟動 jLIVE&trade; middle ware (執行&nbsp; <font face="Courier New">jLIVE\tomcat\startup.bat</font>)<span lang="en-us">
+    </span>。</font></li>        
+    <li>        
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">  
+    <font size="2">  
+    啟動 jLIVE Builder&#8482;，新增應用程式後，在資料庫選擇新增，並在設定頁設定下列屬性</font>：<font size="2"><br>          
+    <font color="#666699">資料庫別名</font> (DB Alias)<span lang="en-us"> </span></font>：<font size="2"><font color="#505050" face="Courier New"><span lang="en-us">
+    </span>MYODBCALIAS</font><font color="#212163"> </font>    
+    **<br>          
+    <font color="#666699">驅動程式</font> (Driver)<span lang="en-us"> </span></font>：<font size="2"><font color="#212163" face="Courier New"><span lang="en-us">
+    </span>sun.jdbc.odbc.JdbcOdbcDriver</font><br>          
+    <font color="#666699">URL<span lang="en-us"> </span></font></font>：<font size="2"><font color="#505050"><span lang="en-us">
+    </span>j<font face="Courier New">dbc:odbc:MYODBC</font></font><br>         
+    <br>         
+    * <span lang="en-us">&nbsp; </span>所有以上設定區分大小寫 (case sensitive)。<br>           
+    ** 您可鍵入任何屬意的資料庫別名 (DB Alias)<span lang="en-us"> </span>，系統將依此名稱參照存取此資料庫。</font></li>           
+    <li>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    存檔後，您可按<i>測試連結鍵          
+    </i>(資料庫連結測試)，系統會回覆資料庫連結狀態及支援能力。<br>           
+    　</font></li>
+  </ol>
+  </li>
+  <li>
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  <font size="2">連結     
+  mySQL 資料庫</font> </li>           
+</ul>           
+<blockquote>           
+  <ol style="font-size: 10 pt">           
+    <li>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    啟動 mySQL<span lang="en-us"> </span></font>：<font size="2"><font face="Courier New"><span lang="en-us">
+    </span>jLIVE\mysql\bin\winmysqladmin.exe<span lang="en-us"> </span></font>。</font></li>        
+    <li>        
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">  
+    <font size="2">  
+    啟動 jLIVE&#8482; middle ware (執行<font face="Courier New"> jLIVE\tomcat\startup.bat</font>)<span lang="en-us">
+    </span>。</font></li>        
+    <li>        
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">  
+    <font size="2">  
+    啟動 jLIVE Builder&#8482;<span lang="en-us"> </span>，新增應用程式後，在資料庫選擇新增，並在設定頁設定下列屬性</font>：<font size="2"><br>           
+    <font color="#666699">資料庫別名</font> (DB Alias)<span lang="en-us"> </span></font>：<font color="#505050" face="Courier New" size="2"><span lang="en-us">
+    </span>MySQL_DB          
+    </font><font size="2" face="新細明體"><font color="#505050">          
+    </font>**<br>           
+    <font color="#666699">驅動程式 </font><font color="#000000">(Driver)<span lang="en-us">
+    </span></font></font>：<font color="#212163" face="Courier New" size="2"><span lang="en-us">
+    </span>com.mysql.jdbc.Driver</font><font size="2" face="新細明體"><br>        
+    <font color="#666699">URL<span lang="en-us"> </span></font></font>：<font color="#505050" face="Courier New" size="2"><span lang="en-us">
+    </span>jdbc:mysql://HostName:3306/DatabaseName?useUnicode=true&amp;characterEncoding=Cp950</font><font size="2" face="新細明體"><br>        
+    <br>        
+    * <span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>所有以上設定區分大小寫 (case sensitive)<span lang="en-us">
+    </span>。<br>           
+    ** <span lang="en-us">&nbsp;&nbsp;&nbsp; </span>您可鍵入任何屬意的資料庫別名 (DB Alias)<span lang="en-us">
+    </span>，系統將依此名稱參照存取此資料庫。<br>           
+    ***<span lang="en-us">&nbsp;&nbsp; </span> </font><font size="2" face="Courier New"> HostName<span lang="en-us">
+    </span></font>：<font size="2" face="新細明體">安裝資料庫的主機名稱。<br>         
+    **** </font><font size="2" face="Courier New"> DatabaseName<span lang="en-us">
+    </span></font>：<font size="2" face="新細明體">資料庫名稱。<br>         
+    　</font></li>  
+    <li>  
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">  
+    <font size="2">  
+    存檔後，您可按<i>測試連結鍵   
+    </i>(資料庫連結測試)，系統會回覆資料庫連結狀態及支援能力。<br>    
+    </font>　</li>
+  </ol>
+</blockquote>
+<ul>
+  <li>
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  <font size="2">連結     
+  ORACLE 資料庫</font></li>           
+</ul>           
+<blockquote>           
+  <ol style="font-size: 10 pt">           
+    <li>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    啟動 Oracle 資料庫。</font></li>           
+    <li>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    啟動 jLIVE&#8482;    
+    middle ware (執行&nbsp;<font face="Courier New">jLIVE\tomcat\startup.bat</font>)<span lang="en-us">
+    </span>。</font></li>          
+    <li>          
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    啟動 jLIVE Builder&#8482; ，新增應用程式後，在資料庫選擇新增，並在設定頁設定下列屬性</font>：<font size="2"><br>           
+    <font color="#666699">資料庫別名 </font>(DB Alias)<span lang="en-us"> </span></font>：<font color="#505050" face="Courier New" size="2"><span lang="en-us">
+    </span>ORACLE_DB</font> <font size="2" face="新細明體"> **<br>            
+    <font color="#666699">驅動程式 </font>(Driver)<span lang="en-us"> </span></font>：<font color="#212163" face="Courier New" size="2"><span lang="en-us">
+    </span>oracle.jdbc.driver.OracleDriver</font><font size="2" face="新細明體"><br>        
+    <font color="#666699">URL<span lang="en-us"> </span></font></font>：<font color="#505050" face="Courier New" size="2"><span lang="en-us">
+    </span>jdbc:oracle:thin:@HostName:1521:DatabaseName</font><font size="2" face="新細明體"><br>        
+    <br>        
+    * <span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>所有以上設定需區分大小寫 (case sensitive)<span lang="en-us">
+    </span>。<br>           
+    ** <span lang="en-us">&nbsp;&nbsp;&nbsp; </span>您可鍵入任何屬意的資料庫別名 (DB Alias)<span lang="en-us">
+    </span>，系統將依此名稱參照存取此資料庫。<br>           
+    ***<span lang="en-us">&nbsp;&nbsp; </span> </font><font size="2" face="Courier New"> HostName<span lang="en-us">
+    </span></font>：<font size="2" face="新細明體">安裝資料庫的主機名稱。<br>         
+    **** </font><font size="2" face="Courier New"> DatabaseName<span lang="en-us">
+    </span></font>：<font size="2" face="新細明體">資料庫名稱。<br>         
+    　</font></li>  
+    <li>  
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">  
+    <font size="2">  
+    存檔後，您可按<i>測試連結鍵   
+    </i>(資料庫連結測試)，系統會回覆資料庫連結狀態及支援能力。</font><br>    
+    　</li>
+  </ol>
+</blockquote>
+<ul>
+  <li>
+  <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+  <font size="2">以     
+  inet JDBC Driver 連結 MSSQL 資料庫&nbsp;</font> </li>           
+</ul>           
+<blockquote>           
+  <ol style="font-size: 10 pt">           
+    <li>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    按照 inet 的說明文件安裝 i-netSPRINTA<span lang="en-us"> </span>。</font></li>           
+    <li>           
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">    
+    <font size="2">    
+    啟動 jLIVE&#8482;    
+    middle ware (執行&nbsp;<font face="Courier New">jLIVE\tomcat\startup.bat</font>)<span lang="en-us">
+    </span>。</font></li>          
+    <li>          
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    啟動 jLIVE Builder&#8482; ，新增應用程式後，在資料庫選擇新增，並在設定頁設定下列屬性</font>：<font size="2" face="新細明體"><br>           
+    <font color="#666699">資料庫別名<span lang="en-us"> </span></font>(DB Alias)<span lang="en-us">
+    </span></font>：<font color="#505050" face="Courier New" size="2"><span lang="en-us">
+    </span>MSINET</font>    
+    <font size="2" face="新細明體">    
+    **<br>            
+    <font color="#666699">驅動程式 </font>(Driver)<span lang="en-us"> </span></font>：<font color="#212163" face="Courier New" size="2"><span lang="en-us">
+    </span>com.inet.tds.TdsDriver</font><font size="2" face="新細明體"><br>        
+    <font color="#666699">URL<span lang="en-us"> </span></font></font>：<font size="2" face="Courier New"><font color="#800080"><span lang="en-us">
+    </span></font></font><font color="#505050" face="Courier New" size="2">j</font><font color="#505050" size="2" face="Courier New">dbc:inetdae:HostName:1433?database=DatabaseName&amp;charset=Cp950</font><font size="2" face="新細明體"><br>        
+    <br>        
+    *&nbsp; <span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>所有以上設定需區分大小寫 (case sensitive)<span lang="en-us">
+    </span>。<br>           
+    ** <span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>您可鍵入任何屬意的資料庫別名 (DB Alias)<span lang="en-us">
+    </span>，系統將依此名稱參照存取此資料庫。<br>           
+    ***<span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </font><font size="2" face="Courier New"> HostName<span lang="en-us">
+    </span></font>：<font size="2">安裝資料庫的主機名稱。<br>         
+    **** <span lang="en-us"><font face="Courier New">&nbsp;</font></span><font face="Courier New">DatabaseName<span lang="en-us">
+    </span></font></font>：<font size="2">資料庫名稱。<br>         
+    ***** <font face="Courier New"> Cp950<span lang="en-us"> </span></font></font>：<font size="2">字元集 char set (Options)<span lang="en-us">
+    </span>，繁體中文<span lang="en-us"> </span>(Cp950&nbsp;或 MS950)<span lang="en-us">
+    </span>，簡體中文<span lang="en-us"> </span>(GB2312)<span lang="en-us"> </span>，日文<span lang="en-us">
+    </span>(MS932)<span lang="en-us"> </span>。</font></li>          
+    <li>          
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">   
+    <font size="2">   
+    存檔後，您可按<i>測試連結鍵         
+    </i>(資料庫連結測試)，系統會回覆資料庫連結狀態及支援能力。</font></li>          
+  </ol>          
+</blockquote>          
+    <p style="text-indent: 0px; margin-top: 1; margin-bottom: 1"><a href="#top">          
+    <font color="#003366" size="2">▲Top</font></a><p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">　<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">
+<b>
+<a name="115"><font size="5">
+</font></a><font size="3">系統需求 (<span lang="en-us">M</span>inimum system   
+requirements)</font></b></p>      
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">  
+　</p>     
+<blockquote> 
+<p style="text-indent: 0px; margin-top: 1; margin-bottom: 1">     
+<font size="2">Intel Pentium/166Mhz or Compatible<br>       
+Microsoft Windows 95/98 or NT 4 (SP3) or 2000/XP<br>       
+64MB RAM, 256MB RAM Recommended<br>      
+150MB Hard Disk space<br>     
+CD-ROM Drive<br>       
+SVGA or higher resolution (800x600, 256 Color)<br>       
+Mouse or other pointing device</font><br>       
+　</p>  
+</blockquote> 
+<p class="chapter" style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch01.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch02.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~    
+2004 Probe Technology . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,    
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+       
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+       
+</body>       
+       
+</html>

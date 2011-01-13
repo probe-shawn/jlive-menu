@@ -1,0 +1,323 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Table report mode</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch07_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=196 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch07.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 7</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch07.html" style="text-decoration: none"><b>
+<font face="新細明體" size="-1" color="#000000">Table report mode</font></b></a></TD>  
+<td width=204 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch08.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><font size="5"><a name="top"></a></font><font size="4"><b>7</b></font><b><font size="4"><a class="TITLE">.6</a> 
+表格式報表   
+(Table report mode)</font></b></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#使用表格式報表 (adopt table report)">使用表格式報表 (adopt table 
+report) </a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#新增、編輯、刪除表格列印行 (create、update、delete table and column)">
+新增、編輯、刪除表格列印行 (create、update、delete table and column)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#表格式報表屬性 (table report properties)">表格式報表屬性 (table 
+report properties)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#表格列印行屬性設定(table column properties)">表格列印行屬性設定(table 
+column properties)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:12">     
+<font size="2">表格式報表 (table report mode) 是 </font><font size="2">jLIVE Builder&#8482; 
+報表的延伸模式。表格式報表的列印原則、設計方式與 jLIVE Builder&#8482; 
+一般列印頁相同，其中唯一的不同是報表表身區 (content area) 
+以表格元件取代，表頭及表尾列印區可以與一般列印一樣配置報表列印元件，並可以在表格屬性設定中，選擇在何時列印表頭及表尾列印區。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:12">     
+<font size="2">表格式報表 (table report mode)，將列印資料以行列方式列印，每列 (row) 的列印高度 (height) 
+是根據資料長度及所選的字型而定，資料在當頁無法列印完時，其餘資料將會轉至下頁列印。每筆 (行) 資料列印前，設計師可以設定表格表頭 (table header) 
+是不印、首筆、每筆、換頁列印。 報表表頭列印區 (header area) 及報表表尾列印區 (footer area) 
+，設計師可以設定為不印、首頁、每頁、尾頁列印。報表表頭列印區 (header area) 不印時，當頁表格將由紙張上緣距，開始列印；報表表尾列印區 
+(footer area) 不印時，當頁表格將列印至紙張下緣距。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:12">     
+<img border="0" src="images/ch07_05_table_layout.gif" width="491" height="348"></p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:12">     
+　</p>     
+<p style="margin-top: 1; margin-bottom: 1; text-indent:12">     
+　</p>     
+<p style="margin-top: 0; margin-bottom: 0">    
+<b><font size="2"><a name="使用表格式報表 (adopt table report)">使用表格式報表 (adopt table 
+report) </a></font></b></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">    
+<font size="2">在 jLIVE Builder&#8482; 報表設計平台，按下報表屬性設定鍵<img border="0" src="images/formproperties20.gif" width="24" height="24">，在報表屬性設定視窗中選取【特殊】頁設定，核選 
+(check) 表格式報表後，按下表格式報表屬性設定，系統會開啟表格式報表屬性設定作業視窗。使用表格式報表，報表表身列印區 (content area) 
+除了表格外將不允許配置列印元件，按下報表屬性設定視窗的確定或套用時，如果報表表身列印區已配置列印元件，系統將會詢問並移除配置於報表表身列印區的列印元件。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">    
+<img border="0" src="images/ch07_05_prop_use.gif" width="405" height="231"></p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a name="新增、編輯、刪除表格列印行 (create、update、delete table and column)">新增、編輯、刪除表格列印行 (create、update、delete 
+table and column)</a></font></b></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">
+設計師可以在報表屬性設定視窗中選取【特殊】頁設定，核選 (check) 表格式報表後，按下表格式報表屬性設定，開啟格式報表屬性設定作業。如果只核選 
+(check) 
+表格式報表，並未隨即執行設定或未設定任何列印行，當還回報表設計平台時，系統會提示目前為表格式報表模式，設計師可以在表身列印區雙擊滑鼠，開啟格式報表屬性設定作業。<br>
+　</font></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<img border="0" src="images/ch07_05_table_empty.gif" width="320" height="149"></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">　</p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">
+設計師亦可按下滑鼠右鍵，選擇編輯表格屬性或新增列印行。<br>
+　</font></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<img border="0" src="images/ch07_05_menu_2.gif" width="112" height="56"></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">　</p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">在列印行 
+(column) 區域中按下按下滑鼠右鍵，可以選擇編輯表格屬性或新增列印行。<br>
+　</font></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<img border="0" src="images/ch07_05_menu_3.gif" width="112" height="80"></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">　</p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">在列印行 
+(column) 區域中雙擊滑鼠，可以直接開啟該列印行的屬性作業視窗。<br>
+<br>
+　</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a name="表格式報表屬性 (table report properties)">表格式報表屬性 (table report properties)</a></font></b></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<ul>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#003366">
+表格 (table)<br>
+<br>
+<ul>
+<li>表格左上開始位置 (left-top position)<br>
+　<ul>
+<li>左(點、英吋)：</font>距紙張左緣的距離。</li>
+<font color="#003366">
+<li>上(點、英吋)：</font>距表頭線的距離。<font color="#003366"><br>
+　</li>
+</ul>
+</li>
+<li>報表表頭列印區 (report header area)<br>
+　<ul>
+<li>不印：</font>不列印報表表頭區。</li>
+<font color="#003366">
+<li>首頁：</font>首頁印報表表頭區。</li>
+<font color="#003366">
+<li>每頁：</font>每頁印報表表頭區。</li>
+</ul>
+<font color="#003366">
+<p>紙張上緣距 (top offset)：</font>當報表表頭列印區不印時，當頁表格將由紙張上緣距，開始列印。<font color="#003366"><br>
+　</li>
+<li>報表表尾列印區 (report footer area)<br>
+　<ul>
+<li>不印：</font>不列印報表表尾區。</li>
+<font color="#003366">
+<li>首頁：</font>首頁印報表表尾區。</li>
+<font color="#003366">
+<li>每頁：</font>每頁印報表表尾區。</li>
+<font color="#003366">
+<li>尾頁：</font>尾頁印報表表尾區。</li>
+</ul>
+<font color="#003366">
+<p>紙張下緣距 (bottom offset)</font>：當報表表尾列印區不印時，當頁表格將列印至紙張下緣距。<font color="#003366"><br>
+　</li>
+<li>表格表頭 (table header)<br>
+　<ul>
+<li>不印：不列印表格表頭。</li>
+<li>首筆：首筆列印表格表頭。</li>
+<li>每筆：每筆列印表格表頭。</li>
+<li>換頁：換頁列印表格表頭。<br>
+　</li>
+</ul>
+</li>
+</ul>
+</font><br>
+<img border="0" src="images/ch07_05_prop_table.gif" width="480" height="453"><br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">框線 
+(line)<br>
+　</font></p>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">
+選取列印表格框線，並可按下右方設定鍵，設定線段屬性。<br>
+　</font></p>    
+<ul>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">表格外框線 
+(table outline)</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">
+表格表頭水平線 (table header horizontal line)</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">
+表格表頭垂直線 (table header vertical line)</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">
+行列印格水平線 (cell horizontal line)</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">
+行列印格垂直線 (cell vertical line)<br>
+　</font></p>    
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">
+<img border="0" src="images/ch07_05_prop_line.gif" width="480" height="278"></font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">框線屬性設定 
+(line properties)</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">
+<img border="0" src="images/ch07_05_line.gif" width="240" height="245"></font></p>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366"><br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#003366">列印行 
+(column)</font></p>    
+<p style="margin-top: 0; margin-bottom: 0"><br>
+<font size="2" color="#003366">表格列印行設定，設計師可以新增<img border="0" src="images/new20.gif" width="24" height="24">、編輯<img border="0" src="images/edit20.gif" width="24" height="24">、刪除<img border="0" src="images/delete20.gif" width="24" height="24">列印行
+，上移<img border="0" src="images/up20.gif" width="24" height="24">、下移<img border="0" src="images/down20.gif" width="24" height="24">已存在的列印行，以滑鼠雙擊已存在的列印行，亦可進入<a href="#表格列印行屬性設定(table column properties)">列印行屬性編輯作業視窗</a>。<br>
+<br>
+<img border="0" src="images/ch07_05_prop_column.gif" width="480" height="278"></font></p>    
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a name="表格列印行屬性設定(table column properties)">表格列印行屬性設定(table column properties)</a></font></b></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20"><font size="2">表格列印行 
+(column) 分為表格表頭 (table header) 及行列印格 (table column cell)，除了共用行寬 (column width) 
+外，所有可以設定的屬性與選擇項皆相同，設計師可以分別設定其值。<br>
+　</font></p>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<img border="0" src="images/ch07_05_column_prop.gif" width="480" height="500"></p>    
+<ul>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<font size="2" color="#003366">行寬 (column width)：</font><font size="2">表格表頭 
+(table header) 及行列印格 (table column cell) 同一行寬。行寬設定超過紙張右緣時，系統會出現錯誤訊息，並顯示目前所餘最大寬度。<br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<font size="2" color="#003366">文字 (資料) 運算式 (formula)：</font><font size="2">表格表頭 
+(table header) 及行列印格 (table column cell) 所要列印的資料，內設為多行列印，資料中含有 Char(13) 
+Char(10)，會產生換行列印。<br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<font size="2" color="#003366">墊充 (insets)：</font><font size="2">列印文字與左/右、上/下框線的點距。<br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<font size="2" color="#003366">行距 (line gap)：</font><font size="2">多行列印資料，行與行間的點距。</font><font size="2" color="#003366"><br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<font size="2" color="#003366">對齊 (alignment)：</font><font size="2">文字在列印格中水平與垂直對齊。<br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<font size="2" color="#003366">字型 (font)：</font><font size="2">列印的字型、大小、樣式。</font><font size="2" color="#003366"><br>
+　</font></p>    
+  </li>
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0; text-indent:20">
+<font size="2" color="#003366">顏色 (color)：</font><font size="2">列印格中前景及背景顏色。</font></p>    
+  </li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<hr align=left color="#000000">    
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">    
+<tr>    
+<td width=200 align=left valign=top>    
+<a href="ch07_04.html">    
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>    
+<td width=195 align=center valign=top><a href="index.html">    
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>    
+<td width=205 align=right valign=top>    
+<a href="ch08.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+       
+      </td>    
+    </tr>    
+  </table>    
+  </center>    
+</div>    
+       
+</body>      
+      
+</html>

@@ -1,0 +1,214 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_rpt_sales_chart_report.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_demo_av.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Orders List</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+     <tr>
+       <td width="53" align="center" height="24">
+      <font color="#0000FF" size="2">
+      <img border="0" src="images/reports.gif" align="absmiddle" width="24" height="24"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">報表名稱 (Report Name)</font></b>：<b>OrderList</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="line-height: 150%"><font size="2">
+         列印全部訂單的明細資料。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="79" height="18" colspan="2" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <font size="2"><b>OrderList：</b> </font></td>
+       <td width="664" height="18" bordercolor="#000000" style="border:1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">
+         訂單明細資料<br>
+       【SQL】：<br>
+       <font face="Courier New">&nbsp;&nbsp; Select a.OrderID, a.ShipName, a.Freight, b.UnitPrice,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b.Quantity, 
+       b.Discount, c.ProductName, d.Picture<br>
+       &nbsp;&nbsp;
+       From&nbsp;&nbsp; Orders a, OrderDetails b, Products c, Categories d<br>
+       &nbsp;&nbsp;
+       where&nbsp; a.OrderDate &gt;= ? <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and a.OrderDate&lt; ? <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and a.OrderID = b.OrderID
+       <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and 
+       b.ProductID = c.ProductID <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and c.CategoryID = d.CategoryID
+       <br>
+&nbsp;&nbsp; order&nbsp; by a.OrderID<br>
+       &nbsp;&nbsp;
+       </font>第一個<font color="#666699">參數類別 &quot;DATE&quot;</font>，<font color="#666699">運算式為 
+       <font face="Courier New">Today()</font></font>，表當天，第二個<font color="#666699">參數類別</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">
+         <font color="#666699">&nbsp;&quot;DATE&quot;</font>，<font color="#666699">運算式為 
+        
+       <font face="Courier New">NextDate(Today(),0,0,7)</font></font>，表7天後的日期，這個SQL</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       會依使用者的系統時間，括出7天內所有訂單資料。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="79" height="16" colspan="2"></td>
+       <td width="664" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="25" colspan="3"><font size="2">
+       <font color="#666699"><b>報表元件 (Report Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">通用報表元件</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件內容：訂單編號 (OrdersID) 。<br>
+       列印限制： <font color="#666699" face="Courier New">PrevRecord(&quot;OrderList&quot;,&quot;OrderID&quot; )&lt;&gt;{OrderList:OrderID}</font>，OrderList 
+       資料來源記錄指標的訂單編號 (OrdersID) 與前一筆不同時 (意即某筆訂單的第一筆項目)，才列印此元件。核取 
+       <font color="#666699">&quot;換頁即強迫列印&quot; </font>意即每頁的起始都會列印此元件。<br>
+       列印運算式：<font color="#666699" face="Courier New">{OrderList:OrderID}</font>，訂單編號。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="28"></td>
+       <td width="100" height="28" style="border: 1px solid #C0C0C0; ">
+       <font size="2">通用報表元件</font></td>
+       <td width="643" height="28" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">元件內容：單筆訂單金額總計 (Subtotal)。<br>
+       列印限制： <font color="#666699" face="Courier New">NextRecord(&quot;OrderList&quot;,&quot;OrderID&quot; )&lt;&gt;{OrderList:OrderID}</font>，OrderList 
+       資料來源記錄指標的訂單編號 (OrdersID) 與下一筆不同時 (意即某筆訂單的最後一筆項目)，才列印此元件。<br>
+       列印運算式： <font color="#666699" face="Courier New"><br>
+       &nbsp;&nbsp;
+       Condition((NextRecord(&quot;OrderList&quot;,&quot;OrderID&quot;)&lt;&gt;</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font color="#666699" face="Courier New">{OrderList:OrderID}),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; {OrderList:Quantity}*{OrderList:UnitPrice}*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; (1-{OrderList:Discount})+{OrderList:Freight},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; {OrderList:Quantity}*{OrderList:UnitPrice}*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; (1-{OrderList:Discount}))<br>
+       &nbsp;&nbsp;
+       </font>核取<font color="#666699"> 
+       &quot;加總&quot;</font>，選取 <font color="#666699">&quot;列印後歸零&quot;</font>。這個元件會依運算式內容自動累加，累加的對</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 象是：如果不在某筆訂單的最後一筆項目，則累加單筆項目的金額小計<font color="#666699">
+       </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">(&quot;{OrderList:Quantity}*{OrderList:UnitPrice}*(1-{OrderList:Discount}&quot;)，否則累加單筆項</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 目的金額小計與運費<font color="#666699">
+       </font>(&quot;{OrderList:Quantity}*{OrderList:UnitPrice}*(1-{OrderList:Discount}</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +{OrderList:Freight}&quot;)。<font color="#666699">&quot;列印後歸零&quot;
+       </font>意即跳到下一筆訂單時，單筆訂單金額總計 </font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Subtotal) 重新由零開始累加。</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 由此可知，若選取 
+       <font color="#666699">&quot;永不歸零&quot;</font>，則會累加所有訂單的金額總計。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="16" height="16" colspan="2"></td>
+       <td width="909" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_rpt_sales_chart_report.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=383 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=101 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_demo_av.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

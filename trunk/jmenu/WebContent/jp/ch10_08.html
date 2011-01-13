@@ -1,0 +1,479 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Tree Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_06.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=197 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>  
+<td width=203 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_09.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><font size="4"><b> 
+<a name="top"></a><a name="top">ツリーコンポーネント</a> (Tree component) </b>        
+<img border="0" src="images/ch10_tree.gif" width="30" height="30"></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#dotcode">Dot         
+code 構造 (dot code structure)</a></font></p>        
+<p style="margin-top: 2; margin-bottom: 2"><a href="#datasource"><font size="2">データソース        
+(data source)</font></a></p>         
+<p style="margin-top: 2; margin-bottom: 2"><a href="#lookup"><font size="2">関連データソース        
+(lookup data source)</font></a></p>         
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event"><font size="2">イベント        
+(event)</font></a></p>  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">フォーミュラget/setプロパティ       
+(formula get/set properties)</a></font></p>       
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">　</font></p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">ツリーコンポーネント        
+(Tree component)は関連データソース (lookup data source)でツリーの節を組み込み)，ツリー(binding)をデータソースフィールドに連結された後    
+，ツリーコンポーネントはデータソースフィールドで関連データソースフィールドに比較し，同じですと，この節を選択されたものとします。<br>   
+　</font></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">　</font></p>
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="dotcode"></a>Dot         
+code 節構造 (dot code structure)</b></font></p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">ツリーコンポーネント        
+(Tree component)は根の節(root node)以外，どの節でも (node)     
+関連データソース (lookup data source) の一つのレコード (record)を表しています。その為、関連データソースの中(lookup data source)，レコード(record)     
+がツリー節のどこにあるのを表すフィールド (field)を設定しなければなりません。このフィールドはプロパティの中に          
+<font color="#666699">Dot code field</font>  と呼ばれます；同じレベル (level)中の節 (node)はプロパティ中に設定された順序 (<font color="#666699">Sequence          
+filed</font>) でフィールド順位並べされます。</font></p>        
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>   
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2" color="#666699">Dot          
+code フィールド </font><font size="2" color="#000000">は (dot)     
+節のレベル(node level)の分割記号で</font><font size="2">，例えば：<font face="Courier New">asia.tw.taipei</font>，<font face="Courier New">taipei       
+</font>  
+はデータのCode， <font face="Courier New"> asia.tw</font>  は直前親の Code。以下は関連データソース        
+(lookup data source)のフィールド例：</font></p>       
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>  
+<table border="1" cellspacing="1" height="353">  
+  <tr>  
+    <td align="center" width="161" bgcolor="#505050" height="13"><font size="2" color="#FFFFFF">dotcode</font></td>  
+    <td align="center" width="90" bgcolor="#505050" height="13"><font size="2" color="#FFFFFF">sequence</font></td>  
+    <td align="center" width="143" bgcolor="#505050" height="13"><font color="#FFFFFF" size="2">icon</font></td>  
+    <td align="center" width="143" bgcolor="#505050" height="13"><font size="2" color="#FFFFFF">description</font></td>  
+  </tr>  
+  <tr>  
+    <td width="161" height="16"><font size="2">asia</font></td>  
+    <td width="90" height="16"><font size="2">1</font></td>  
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">アジア</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="13"><font size="2">asia.tw</font></td>
+    <td width="90" height="13"><font size="2">1</font></td>
+    <td width="143" height="13"><font size="2">tw.gif</font></td>
+    <td width="143" height="13"><font size="2">台湾</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="13"><font size="2">asia.tw.taipei</font></td>
+    <td width="90" height="13"><font size="2">1</font></td>
+    <td width="143" height="13"><font size="2">taipei.gif</font></td>
+    <td width="143" height="13"><font size="2">台北</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="13"><font size="2">asia.jp</font></td>
+    <td width="90" height="13"><font size="2">2</font></td>
+    <td width="143" height="13"><font size="2">japan.gif</font></td>
+    <td width="143" height="13"><font size="2">日本</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">asia.jp.tokyo</font></td>
+    <td width="90" height="16"><font size="2">1</font></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">東京</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="13"><font size="2">asia.cn</font></td>
+    <td width="90" height="13"><font size="2">3</font></td>
+    <td width="143" height="13"><font size="2">cn.gif</font></td>
+    <td width="143" height="13"><font size="2">中国</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">asia.cn.shanghai</font></td>
+    <td width="90" height="16"><font size="2">1</font></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">上海</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">america</font></td>
+    <td width="90" height="16"><font size="2">2</font></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">北米</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">america.usa</font></td>
+    <td width="90" height="16">　</td>
+    <td width="143" height="16"><font size="2">usa.gif</font></td>
+    <td width="143" height="16"><font size="2">米国</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">america.usa.newyork</font></td>
+    <td width="90" height="16"></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">ニューヨーク</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">america.canada.toronto</font></td>
+    <td width="90" height="16"></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">トロント</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">europe</font></td>
+    <td width="90" height="16"><font size="2">3</font></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">ヨーロッパ</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="13"><font size="2">europe.italy</font></td>
+    <td width="90" height="13"><font size="2">1</font></td>
+    <td width="143" height="13"><font size="2">italy.gif</font></td>
+    <td width="143" height="13"><font size="2">イタリア</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">europe.italy.milan</font></td>
+    <td width="90" height="16"><font size="2">1</font></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">ミランド</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="13"><font size="2">europe.france</font></td>
+    <td width="90" height="13"><font size="2">2</font></td>
+    <td width="143" height="13"><font size="2">france.gif</font></td>
+    <td width="143" height="13"><font size="2">フランス</font></td>
+  </tr>
+  <tr>
+    <td width="161" height="16"><font size="2">europe.france.paris</font></td>
+    <td width="90" height="16"><font size="2">1</font></td>
+    <td width="143" height="16">　</td>
+    <td width="143" height="16"><font size="2">パリ</font></td>
+  </tr>
+</table>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">ツリーコンポーネントは以下のように設定：</font></p>
+<ul> 
+  <li> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">Dot          
+code フィールド (dot code field)：</font><font size="2">dotcode。</font></p>        
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">フォーミュラ表示        
+(display formula)：</font><font size="2">{データソース:description}。</font></p>       
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">Iconデータフィールド：</font><font size="2">icon。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">順位フィールド   
+(sequence field)：</font>sequence。</font></p>  
+  </li> 
+</ul> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">以下の図はツリーコンポーネント        
+(Tree component) が実行された状態：</font></p>       
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/dotcode.gif" width="140" height="256"></p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#FF0000" face="Courier New">canada</font>   
+    節には対応データ (record data)がない為，Code が裸になり，実行するとユーザはこの節を選択が出来ません。</font></li>      
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">sequence    
+    field</font>  はオプション (optional)プロパティで，フィールドに値 (record        
+    field)を設定すると，ツリーコンポーネントはこれによって順序を並べ，設定しない，付録方式        
+    (append)で順序を決定します。</font></li>  
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">アイコンフィールド (icon         
+    field)はオプション (optional)のプロパティで，フィールドに値 (record        
+    field)を設定すると，ツリーコンポーネントはアイコンを表示 (icon)し，設定しないと，Java&trade;     
+    デフォルトマークを表示します。</font></li>   
+</ul>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="datasource"></a><b><font size="2">
+ データソース (data source)</font></b></p>        
+<ul>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データソース        
+(data source)：</font>データソースの選択。</font></p>        
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データフィールド        
+(data field)：</font>データフィールドの選択。</font></p>        
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Root：</font>根        
+(root)の節に表示する文字。</font></p>    
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Root Icon：</font>根        
+(root) の節にアイコン。</font></p>        
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Show Root：</font><font color="#000000">根の節        
+(root)の表示。</font></font></p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">  
+<img border="0" src="images/ch10_08_tree_root.gif" width="117" height="95"></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">&nbsp;Root表示なし 。</font></p>         
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch10_08_tree_noroot.gif" width="90" height="76"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Show Root handle：</font><font color="#000000">節(root)のHandleの表示。</font></font></p>        
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch10_08_tree_root.gif" width="117" height="95"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">Root Handle表示なし。</font></p>        
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch10_08_tree_no_handle.gif" width="98" height="94"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">終点の節のみを選択可能：</font><font size="2"><font color="#000000">ユーザは終点節を選択しても無効でイベントを起動しない</font>。</font></p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch10_07_ds.gif" width="478" height="374"></p>   
+</blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a name="lookup"></a><font color="#000000"><b><font size="2">  
+関連データソース        
+(lookup data source)</font></b></font></p>         
+<ul>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">関連データソース        
+(lookup data source)：</font><font size="2">データソースの選択。</font></p>        
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">関連データフィールド        
+(lookup data field)：</font><font size="2">データフィールドの選択。</font></p>        
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">Dot          
+code フィールド (dot code field)：</font><font size="2">データレコード (record)     
+はどのツリー節のフィールドに表示。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">フォーミュラ表示        
+(display formula)：</font><font size="2">フォーミュラで節(node)を表示。</font></p>       
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font color="#666699" size="2">Iconデータフィールド：</font><font size="2">節        
+(node)の前にアイコン表示，オプション(option)プロパティ。</font></p>    
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">順序フィールド   
+(sequence field)：</font>同じレベル (level) の節 (node)は順序フィールドで並べられます。</font></p>       
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font color="#666699" size="2">初期選択アイテム        
+(initial selection)：</font><font SIZE="2">関連データソースが初期化される時に</font><font size="2">，選択がクリアーされます。　</font></p>       
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch10_08_lookup.gif" width="479" height="412"></p>  
+</blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><a name="event"></a><b><font size="2">
+ イベント (event)</font></b></p>        
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">アクションイベント (action event)：</font><span style="FONT-SIZE: 10pt">使用が何かｱｸｼｮﾝしたとき、イベントを起動</span> (fire event)。</font></p>           
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">Gain Focus イベント：</font>Focus 移入時、イベントを起動 。</font></p>           
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">Lost Focus イベント：</font>Focus 移出時、イベントを起動 。</font></p>           
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">ダブルクリックイベント (double click event)：</font>マウス左キーをダブルクリックすると，イベントを起動。</font></p>          
+  </li>     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">右キークリックイベント (right click event)：</font>マウス右キーを押した時，イベントを起動。</font></p>          
+  </li>     
+</ul>     
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_08_event.gif" width="479" height="302"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>フォーミュラget/setプロパティ     
+(formula get/set properties)</b></font></p>    
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,&nbsp; 値) </font>：プロパティ設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font></font><font color="#666699">コンポーネント</font><font size="2"><font color="#666699">&quot;,    
+&quot;</font><font color="#666699">プロパティ&quot;,&nbsp; 値1,値2)</font>：プロパティ設定。</font></p>  
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font></font><font color="#666699">コンポーネント</font><font size="2"><font color="#666699">&quot;,    
+&quot;</font><font color="#666699">プロパティ&quot;)</font>：プロパティ読取。</font></p> 
+ 
+<table border="1" height="283">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699" width="607" height="13"><font size="2" color="#FFFFFF">Set      
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050" width="85" height="28"><font color="#FFFFFF" size="2">プロパティ<br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050" width="224" height="28"><font color="#FFFFFF" size="2">値1<br> 
+&nbsp;(Value 1)</font></td>     
+    <td align="center" bgcolor="#505050" width="53" height="28"><font color="#FFFFFF" size="2">値2   
+      <br> 
+    (Value 2)</font></td>     
+    <td align="center" bgcolor="#505050" width="277" height="28"><font color="#FFFFFF" size="2">説明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="19"><font size="2">enabled</font></td>  
+    <td width="224" height="19"><font size="2">1 使用可能へ，0 無効</font></td>    
+    <td width="53" height="19">&nbsp;</td>  
+    <td width="277" height="19"><font size="2">有効か無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="19"><font size="2">setfocus</font></td>  
+    <td width="224" height="19"><font size="2">1 Focusの設定</font></td>    
+    <td width="53" height="19">&nbsp;</td> 
+    <td width="277" height="19"><font size="2">Focus設定。</font></td>   
+  </tr>  
+  <tr>  
+    <td width="85" height="19"><font size="2">visible</font></td>  
+    <td width="224" height="19"><font size="2">1 表示，0 隠し</font></td>    
+    <td width="53" height="19">&nbsp;</td>  
+    <td width="277" height="19"><font size="2">表示か隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="19"><font size="2">repaint</font></td>  
+    <td width="224" height="19"><font size="2">1 再描き，2 即時に再描き</font></td>    
+    <td width="53" height="19">&nbsp;</td>  
+    <td width="277" height="19"><font size="2"><span style="FONT-SIZE: 10pt">再度描き</span>。<span style="FONT-SIZE: 10pt"></span></font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="26"><font size="2">revalidate</font></td>  
+    <td width="224" height="26"><font size="2">1 リビルド</font></td>    
+    <td width="53" height="26">　</td>  
+    <td width="277" height="26"><font size="2">再度データベースに連結し、リフラシューデータ。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="20"><font size="2">reload</font></td>  
+    <td width="224" height="20"><font size="2">1 リロード</font></td>    
+    <td width="53" height="20">　</td>  
+    <td width="277" height="20"><font size="2">以下の節をリロード。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="26"><font size="2">leafonly</font></td>  
+    <td width="224" height="26"><font size="2">1  
+      最後の節のみ選択可能，0 最後のに限らない</font></td>    
+    <td width="53" height="26">&nbsp;</td>  
+    <td width="277" height="26"><font size="2">ユーザは最後の節選択のみ可能。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="85" height="33"><font size="2">selected</font></td>  
+    <td width="224" height="33"><font size="2">RecordNo フィールドNO RecordNoの節</font></td>    
+    <td width="53" height="33">　</td>      
+    <td height="33">      　  
+  </tr>  
+  </table> 
+  </center> 
+  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_06.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch10_19.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>   
+   
+</html>  

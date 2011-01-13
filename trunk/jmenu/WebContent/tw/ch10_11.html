@@ -1,0 +1,1554 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Grid Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=204 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_10.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=199 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>        
+<td width=209 align=right valign=top>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<a href="ch10_12.html">        
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>        
+</tr>        
+</table>        
+        
+<hr align=left color="#000000">        
+<p><font size="4"><b>       
+<a name="top"></a>資料表元件 (Grid component) </b>
+<img border="0" src="images/dbtgrid.gif" width="25" height="25"></font></p>          
+<p style="margin-top: 2; margin-bottom: 2">    
+<font size="2"><a href="ch10_00.html">共同屬性 (common properties)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2">          
+<font size="2"><a href="#datasource">資料來源與資料表屬性 (data source and grid properties)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><a href="#8122"><font size="2">資料表欄位            
+(Grid columns)</font></a></p>          
+<blockquote>         
+<p style="margin-top: 1; margin-bottom: 1">         
+<font size="2"><a href="#define">定義資料表欄位 (define grid columns)</a></font></p>           
+<p style="margin-top: 1; margin-bottom: 1">           
+<font size="2"><a href="#colprop">欄位屬性 (column properties)</a></font> </p>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"><a href="#editprop">編輯方塊屬性    
+  (Edit properties)</a></font></p>          
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"><a href="#checkprop">核取方塊屬性          
+  (Checkbox properties)</a></font></p>          
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"><a href="#comboprop">下拉式清單方塊屬性          
+  (Combobox properties)</a></font></p>          
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"><a href="#formulaprop">運算式欄位屬性          
+  (Formula column properties)</a></font></p>          
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"><a href="#buttonprop">按鈕欄位元件屬性 (Button          
+  properties)</a></font></p>          
+</blockquote>         
+<p style="margin-top: 2; margin-bottom: 2"><a href="#advance">          
+<font size="2">進階 (advance)</font></a></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#accesscontrol">資料表的編輯、新增、刪除控制          
+(Grid update, insert and delete control)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#dyncolor">動態</a></font><a href="#dyncolor"><font size="2">欄位顏色控制    
+(dynamically column color control)</font></a></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#keyboard">資料表的鍵盤操作          
+(Grid keyboard function)</a></font></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#colhead">資料表欄位表頭字型與顏色          
+(Grid head column font and color)</a></font></p>         
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetrowcol">讀取和設定資料表目前所選的欄列        
+(Get and set selected column and row)</a></font></p>        
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">運算式屬性存取   
+(formula get/set properties)</a></font></p>       
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">資料表元件(Grid component) 連結資料來源    
+(data source)      
+，使用於資料記錄瀏覽及資料維護。設計師選取資料來源(data    
+source) 的資料欄位 (data field) 組合成資料表元件的欄位 (Grid column)，並根據作業需求可以選擇以編輯元件(Edit)、核取方塊(Checkbox)、下拉式清單方塊(Combobox)      
+操作欄位資料外，尚可加入衍生(derivative) 的運算式欄位    
+(formula field) 及啟動事件的按鈕欄位(Button field)。參閱 <a href="#define">定義資料表欄位    
+(define grid columns)</a>。<br>    
+　</font></p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">資料表(Grid)      
+與連結的資料來源 (data source) 是同步運作 (synchronized)      
+，資料表隨時反應資料來源的狀態，其中資料表以選取顏色表示的選取列      
+(Selected row)， 即是目前資料記錄所在的位置 (record position)；以內定灰色表示的資料列代表已刪除的資料記錄列    
+(deleted record row)，使用者不可選取亦不可編輯已刪除的資料記錄列；新增資料列    
+(inserted row)      
+則位於資料表的最後一列；設計師可以提供使用者呼叫重新開啟(reopen) 或查詢    
+(query)      
+資料來源的功能，資料表將會重整，並將已刪除的資料記錄排除。<br>    
+　</font></p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">資料表選取列改變    
+(selected row change)、編輯 (update)、新增 (insert) 及刪除 (delete)     
+的操作，會引發 (Fire)      
+相對的資料來源讀取、編輯、新增、刪除前後事件 (before and      
+after event)。<br>    
+　</font></p> 
+<p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px; TEXT-INDENT: 20px" align="justify"><font size="2">資料表是虛擬模式    
+(virtual mode)的元件，資料來源 (data source) 的檔案記錄 (record) 在初始時，並不會全部讀入資料表中，而是將客戶端    
+(client) 目前資料來源緩衝區 (buffer) 的檔案記錄讀入，當使用者以捲動軸瀏覽或資料欄位不在緩衝區    
+(buffer) 且資料來源尚未至檔尾 (EOF)    
+時，資料表會以背景執行緒按資料來源的擷取記錄數 (row fetch)，讀入檔案記錄    
+(record) 至資料表中。<br>   
+　</font></p>
+<p style="MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px; TEXT-INDENT: 20px" align="justify"><font size="2">設計師可以運用衍生    
+(derivative) 的運算式欄位 (formula field)，將運算的結果值顯示於資料表欄位中；以<a href="#dyncolor">動態</a></font><a href="#dyncolor"><font size="2">欄位顏色控制    
+(dynamically column color control)</font></a><font size="2">，顯示不同欄位資料值不同的前背景顏色；以<a href="#accesscontrol">資料表編輯、新增、刪除控制          
+(Grid update, insert and delete control)</a>，控管使用者操作資料表的流程與權限。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<a name="datasource"></a><b><font size="2">資料來源與資料表屬性 (data    
+source and grid     
+properties)</font></b></p>          
+<ul type="square">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">資料來源 (data source)：</font>選取資料來源。<br>
+　</font></p>           
+  </li>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2"><font color="#666699">訊息    
+(prompt confirm message) ：</font>當使用者新增 (insert) 或更改    
+(update) 資料後，資料表元件 Lost Focus 或            
+點選其他資料表列，系統會出現確認訊息 (confirm message)            
+視窗，使用者可決定是確認或回復原值。若未選用此屬性，元件將自動存檔。<br>
+　</font></p>           
+  </li>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">允許 (permit)：</font><font size="2">允許新增、編輯、刪除的屬性，資料表所連結的資料來源必須是非唯讀    
+(read only) 狀態時才有作用。參閱</font> <font size="2"><a href="#accesscontrol">資料表的編輯、新增、刪除控制          
+(Grid update, insert and delete control)</a>。</font></p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+  <ul type="disc">          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">新增 (insert)：</font>可以由資料表元件上新增    
+(insert) 一筆資料列 (row)。</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2"><font color="#666699">編輯 (update)：</font>可以由資料表元件上編輯    
+(update) 一筆資料列 (row)。</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2"><font color="#666699">刪除 (delete)：</font>可以從資料表元件上刪除    
+(delete) 一筆資料列 (row)。</font></p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+    </li>         
+  </ul>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">資料表元件格線 (grid lines)： </font> </p>           
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+  <ul type="disc">           
+    <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font color="#666699" size="2">水平格線</font><font size="2"><font color="#666699">            
+ (horizontal grid line)：</font>顯示水平格線。</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font color="#666699" size="2">垂直格線</font><font size="2"><font color="#666699">           
+ (vertical grid line)：</font>顯示垂直格線。</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">格線顏色 (grid line color) ：</font>格線顏色。<br>
+　</font></p>          
+    </li>          
+  </ul>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">背牆顏色 (background color)：</font><font size="2">資料表背牆顏色。
+顯示資料列少於資料表區域時背景所顯示的顏色。<br>
+　</font></p>          
+  </li>         
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">選擇顏色 (selected row color)：</font>被選取列            
+(Selected row) 的顏色。參閱</font> <font size="2"><a href="#dyncolor">動態</a></font><a href="#dyncolor"><font size="2">欄位顏色控制    
+(dynamically column color control)</font></a><font size="2">。<br>
+　</font></p>          
+  </li>         
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">選取列不透明 (Opague)：</font>取消預設不透明時，被選取列 
+(selected row) 將不顯示任何顏色。<br>
+　</font></p>          
+  </li>         
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">Focus cell：</font>設定被選取的儲存格顏色，預設為被選取列 
+(Selected row) 的顏色。<br>
+　</font></p>          
+<ul type="disc">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">前景顏色：</font>被選取的儲存格的前景顏色。</font></p>          
+  </li>
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">背景顏色：</font>被選取的儲存格的背景顏色。<br>
+　</font></p>          
+  </li>
+</ul>          
+  </li>         
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">捲軸 (scroll bar)： </font> </p>           
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+  <ul type="disc">           
+    <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2"><font color="#666699">水平 (horizontal scroll bar)：</font>視需要    
+(as needed)、 永不 (never) 、一直 (always) 顯示水平捲軸。</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">垂直 (vertical scroll bar)：</font>視需要    
+(as needed)、 永不 (never) 、一直 (always) 顯示垂直捲軸。</font></p>          
+    </li>          
+  </ul>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">自動調整欄寬    
+(auto resize)：</font>設計師可以在每個欄位設定中，給定初始欄位寬或選取大小符合寬度的屬性，再配合自動調整欄寬，控制初始及使用者改變欄寬時，其他欄寬相對的大小變化。<br>
+　</font></p>          
+<ul type="disc">          
+  <li type="disc"><p style="margin-top: 0; margin-bottom: 0" align="justify"><font SIZE="2"><font color="#666699">不重調大小    
+    (resize off)：</font>資料表根據每個欄位的寬度設定顯示欄位，使用者改變欄寬時，不影響其他欄位。當所有欄位寬度總合大於資料表           
+    (Grid) 時將出現水平捲軸 (horizontal scroll bar)。</font></p>          
+  </li>          
+  <li><p style="margin-top: 0; margin-bottom: 0" align="justify"><font SIZE="2"><font color="#666699">重調下一個欄位    
+    (resize_next_column)：</font>初始顯示時，所有欄位將根據設定的大小，按比例重調寬度至所有欄位顯示於資料表中且不出現水平捲軸    
+    (horizontal scroll bar)。當使用者改變一欄位寬度時，其下一個欄位寬亦隨之改變，以符合資料表總寬度。</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0" align="justify">          
+<font SIZE="2"><font color="#666699">重調隨後的欄位 (resize_subsequent_columns)：</font>初始顯示時，所有欄位將根據設定的大小，按比例重調寬度至所有欄位顯示於資料表中且不出現水平捲軸    
+(horizontal scroll bar)。當使用者改變一欄位寬度時，其隨後的每個欄位寬亦隨之改變，以符合資料表總寬度。</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0" align="justify">          
+<font SIZE="2"><font color="#666699">重調最後欄位 (resize_last_column)：</font>初始顯示時，所有欄位將根據設定的大小，按比例重調寬度至所有欄位顯示於資料表中且不出現水平捲軸    
+(horizontal scroll bar)。當使用者改變一欄位寬度時，最後一個欄位寬亦隨之改變，以符合資料表總寬度。</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0" align="justify">          
+<font SIZE="2"><font color="#666699">重調全部欄位 (resize_all_columns)：</font>初始顯示時，所有欄位將根據設定的大小，按比例重調寬度至所有欄位顯示於資料表中且不出現水平捲軸    
+(horizontal scroll bar)。當使用者改變一欄位寬度時，其他所有的欄位寬亦隨之改變，以符合資料表總寬度。<br>
+　</font></p>          
+  </li>          
+</ul>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font color="#666699" size="2">CellRect：<br>
+　</font></p>          
+<ul type="square">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font color="#666699" size="2">高 (height)：</font><font size="2">欄位的高度</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2"><font color="#666699">內部間距 (inter space)</font><font color="#666699">：</font>欄位內部
+寬、高的墊充間距(insets)。<br>
+　</font></p>         
+  </li>         
+</ul>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">列顏色 (row color)：</font><font size="2" color="#000000">設定奇偶數列的顏色。</font><font size="2">參閱</font>      
+<font size="2"><a href="#dyncolor">動態</a></font><a href="#dyncolor"><font size="2">欄位顏色控制    
+(dynamically column color control)</font></a><font size="2">。</font></p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+  <ul type="disc">         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">奇數列顏色 (odd row color)：</font><font size="2">奇數列顏色的背景顏色。</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">偶數列顏色 (even row color)：</font><font size="2">偶數列顏色的背景顏色。<br>
+　</font></p>          
+    </li>          
+  </ul>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">首尾筆按鈕(first and end button)：</font>是否需在捲軸上下出現首筆 
+<img border="0" src="images/_first.gif" width="10" height="10"> 或尾筆 
+<img border="0" src="images/_end.gif" width="10" height="10"> 按鈕。ORACLE 
+資料庫驅動程式在結果集 (result set) 直接移至尾筆 (move to 
+end)　時，驅動程式會讀取所有資料記錄列，所以大量資料列時可以選擇不出現尾筆按鈕，避免使用者按選時，所有資料記錄將由資料庫載入使用者端，耗費大量時間。<br>
+　</font></p>          
+    </li>
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">Freeze 行</font><font size="2"><font color="#666699">(freeze 
+columns)：</font>由開始行 (start column) 起算計 N 行，在使用者左右捲動 (scroll) 
+行時固定不捲動。適用於多資料行時檢視資料。開始行由 1 起算，行 (column) 為原始編列次序不會隨使用者拖曳置放而改變。捲動 (scroll) 時 
+，Freeze 開始行會移置首行並固定不捲動。設計師可以以 <font color="#666699"><code>SetProp(&quot;元件名稱&quot;, &quot;freeze&quot;, 
+start, count) </code></font>動態設定。計 N 行 (count)，N 值為 0&nbsp; 時解除固定不捲動。<br>
+　</font></p>          
+    </li>
+</ul>          
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/ch10_11_ds.gif" width="480" height="496"></p>         
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>
+<p style="margin-top: 0; margin-bottom: 0"><a name="column"></a><b><font size="2">
+資料表欄位 (Grid columns)</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p> 
+<blockquote>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><a href="#define">定義資料表欄位 (define grid columns)</a></font></p>           
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><a href="#colprop">欄位屬性 (column properties)</a></font></p>           
+  <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#000000"><a href="#editprop">編輯方塊屬性          
+  (Edit properties)</a></font></p>          
+  <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#000000"><a href="#checkprop">核取方塊屬性          
+  (Checkbox properties)</a></font></p>          
+  <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#000000"><a href="#comboprop">下拉式清單方塊屬性          
+  (Combobox properties)</a></font></p>          
+  <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#000000"><a href="#formulaprop">運算式欄位屬性          
+  (Formula column properties)</a></font></p>          
+  <p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#000000"><a href="#buttonprop">按鈕欄位元件屬性 (Button          
+  properties)</a></font></p>          
+</blockquote>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p> 
+<blockquote>
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="define"></a>定義資料表欄位 (define grid columns)<br>    
+　</font></b></p>       
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">      
+<font size="2">選定連結資料來源 (data source)           
+而不定義相關資料表欄位 (Grid columns) 時，系統預設將資料來源所有欄位    
+(record field)，依序加入資料表中，並以預設欄位型別 (default grid type) 顯示。<br>    
+　</font></p>       
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">在欄位    
+  (column) 屬性設定頁中，設計師可按需求將資料來源的欄位    
+  (record field)           
+  選入資料表中，並安排在資料表出現的次序。除了資料來源的欄位    
+  (record field) 外，設計師可以加入衍生的 (derivative)           
+  運算式欄位 (Formula column) 及按鈕欄位 (Button column)。運算式欄位           
+  (Formula column)           
+  以運算結果顯示資料，適用於多個資料來源的欄位 (record           
+  field) 計算衍生的結果，例如：數量欄位 * 單價欄位 *           
+  折扣欄位 ，顯示單筆的小計，或將結果值解譯為圖檔名稱    
+  (image file name) 並將欄位以圖像 (image) 顯示；按鈕欄位 (Button column)           
+  則適用於該列資料紀錄的事件啟動(fire event)。<br>   
+  　</font></p>       
+  <p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">每個資料表欄位    
+  (grid column) 可以滑鼠雙擊或按編輯按鈕，定義其屬性。資料表欄位的屬性除了可以設定外框、字型、欄位大小、前背景顏色、是否可編輯、各式啟動事件外，     
+  <br>    
+  設計師可以根據連結的資料欄位(record field)，選擇以編輯元件(Edit)、核取方塊    
+  (Checkbox)、下拉式清單方塊 (Combobox)           
+  作為編輯 (Edit) 控制資料的元件，依選擇元件之不同，系統會出現相關之屬性設定頁。</font></p>          
+</blockquote>         
+<ul type="square">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">資料來源_資料欄位 (data source           
+field)：</font>顯示連結資料來源 (data source) 的所有欄位 (record           
+field)。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">資料表元件欄位 (grid columns)：</font>從<font color="#666699">資料來源_資料欄位</font>中，選取並定義要顯示在資料表元件           
+(Grid) 中的欄位 (grid column)。</font></p>           
+  </li>           
+</ul>           
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">           
+<img border="0" src="images/ch10_11_column.gif" width="480" height="480"></p>           
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+<ul>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">
+<img border="0" src="images/right20.gif" width="24" height="24">：</font><font size="2">將資料來源欄位 
+(data source field) 選入資料表欄位 (grid columns)中。</font></p>           
+  </li>           
+</ul>           
+<ul>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">
+<img border="0" src="images/left20.gif" width="24" height="24">：</font><font size="2">將已選入的資料表欄位 
+(grid column) 移除 (remove)。</font></p>          
+  </li>          
+</ul>          
+<ul>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">
+<img border="0" src="images/edit20.gif" width="24" height="24">：</font><font size="2">資料表欄位屬性編輯及定義 
+(define column)。</font></p>           
+  </li>           
+</ul>           
+<ul>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">
+<img border="0" src="images/formula20.gif" width="24" height="24">：</font><font size="2">新增運算式資料表欄位 
+(Formula column)。</font></p>           
+  </li>           
+</ul>           
+<ul>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">
+<img border="0" src="images/addbutton20.gif" width="24" height="24">：</font><font size="2">新增按鍵式資料表欄位 
+(Button column)。</font></p>           
+  </li>           
+</ul>           
+<ul>          
+  <li>          
+    <p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/up20.gif" width="24" height="24"><font size="2" color="#666699">：</font><font size="2">將資料表欄位上移 (move up)。</font></p>          
+  </li>          
+</ul>          
+<ul>          
+  <li>          
+    <p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">
+<img border="0" src="images/down20.gif" width="24" height="24">：</font><font size="2">將資料表欄位下移 (move down)。</font></p>          
+  </li>          
+</ul>          
+<ul>          
+  <li>          
+    <p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">
+<img border="0" src="images/delete20.gif" width="24" height="24">：</font><font size="2">刪除資料表欄位 (delete column)。</font></p>          
+  </li>          
+</ul>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>           
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="colprop"></a>欄位屬性    
+(column properties)</b></font></p>           
+  <ul type="circle">           
+    <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">欄位 (column)： </font> </p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+    <ul type="square">         
+      <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2"><font color="#666699">欄位名稱 (column Name)：</font>欄位表頭說明文字    
+(column head title)。<br>
+　</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">欄位可編輯 (editable)：</font><font size="2" color="#000000">是否允許編輯。</font><font size="2">參閱</font>     
+<font size="2"><a href="#accesscontrol">資料表的編輯、新增、刪除控制          
+(Grid update, insert and delete control)</a>。</font></p>         
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+      </li>         
+      <li>         
+<p style="margin-top: 0; margin-bottom: 0" align="justify">         
+<font size="2" color="#666699">自動切換輸入法 (enable input method)：</font><font size="2" color="#000000">如果是編輯方塊元件或可編輯下拉式清單方塊，Focus           
+移入此欄位編輯時，自動顯示切換為，使用者作業系統目前所使用的輸入法    
+(input method)。<br>
+　</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">Render Cell As：</font><font size="2" color="#000000">資料表進入編輯模式    
+(edit mode) 時，以下列元件編輯資料 </font></p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+    <ul type="disc">         
+      <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">文字編輯方塊 (Edit)</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">核取方塊 (Checkbox)</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">下拉式清單 (Combobox)</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">按鈕元件 (Button)<br>
+　</font></p>          
+      </li>          
+    </ul>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">值變事件 (changed event)：</font>當欄位內含值改變時，啟動事件。<br>
+　</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">雙擊 (double click event)：</font>當滑鼠在欄位上雙擊滑鼠左鍵時，啟動事件。<br>
+　</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">按右鍵 (right click event)：</font>當滑鼠在欄位上按滑鼠右鍵時，啟動事件。　<br>
+　</font></p>
+      </li>
+      <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2"><font color="#666699">按欄標題 (column header click event)：</font>在欄標題上單擊滑鼠右鍵時，啟動事件。<br>
+　</font></p> 
+      </li> 
+      <li> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><font color="#666699">欄位提示 (column tips)：</font>當滑鼠移到欄位上時，出現的提示字串。<br>
+　</font></p>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">欄寬：</font>欄位寬度</font></p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+      <ul type="disc">          
+        <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">大小符合寬度：</font><font size="2" color="#000000">不設寬度自動調整為符合資料表元件寬度。</font></p>          
+        </li>          
+        <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">寬度：</font> 輸入寬度。<br>
+　</font></p>          
+        </li>          
+      </ul>          
+      </li>          
+      <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">外框顏色：</font><font size="2" color="#000000">選擇外框顏色。<br>
+　</font></p>         
+      </li>         
+      <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2"><font color="#666699">外框：</font>外框式樣。</font></p>         
+      </li>         
+    </ul>         
+    </li>         
+  </ul>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2">         
+<img border="0" src="images/ch10_11_butt_column.gif" width="485" height="479"></font></p>         
+  <blockquote>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+  </blockquote>         
+<ul type="circle">         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">字型：</font><font size="2" color="#000000">設定字型大小及顯示顏色。
+進階設定可以根據資料動態改變前背景顏色。例如：數值資料小於零時，自動顯示為紅色。<br>
+　</font></p>         
+<ul type="circle">    
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">進階 (advance)：</font><font size="2">參閱</font> <font size="2"><a href="#dyncolor">動態</a></font><a href="#dyncolor"><font size="2">欄位顏色控制    
+(dynamically column color control)</font></a><font size="2">。</font></p>         
+  </li>     
+</ul>     
+  </li>         
+</ul>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<img border="0" src="images/ch10_11_butt_font.gif" width="420" height="480"></p>         
+  <blockquote>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+  </blockquote>         
+<ul type="circle">         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<b>         
+<font size="2" color="#000000"><a name="editprop"></a>編輯方塊屬性 (Edit          
+properties)：</font></b></p>         
+  </li>         
+</ul>         
+  <blockquote>         
+<ul type="square">         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font color="#666699" size="2">使用預設驗證 ：</font><font size="2">不作任何確認限制。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font color="#666699" size="2">資料類別 ：</font><font size="2" color="#000000">根據資料連結    
+(data       
+binding) 的欄位型別(field type) 或運算公式 (formula)       
+的結果值類別，選擇要被格式化 (formatted) 的類別</font><font size="2">。選擇 
+Integer 或 Float 
+類別時，只允許使用者輸入數值資料，輸入錯誤時，系統不接受且發出 
+Beep 聲。使用</font><font size="2" color="#000000">資料連結 (data binding) 
+時，選取內含值類別必須注意需要與資料庫的欄位型別(field type) 一致，存取的資料才會正確。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font color="#666699" size="2">讀取格式樣板 ：</font><font size="2">選擇顯示的格式樣版    
+(format pattern) 或自行編輯輸入格式樣版。參閱 <a href="format_pattern.html">格式樣版編輯    
+(format              
+pattern)</a>。<br>
+　</font></p>           
+  </li>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font color="#666699" size="2">編輯格式樣板 ：</font><font size="2">選擇編輯的格式樣版    
+(format pattern) 或自行編輯輸入格式樣版。參閱 <a href="format_pattern.html">格式樣版編輯    
+(format pattern)</a>。<br>
+　</font></p>           
+  </li>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font color="#666699" size="2">限制字串長度 ：</font><font size="2">限制輸入文字的長度。<br> 
+</font><font color="#666699" size="2">文字長度：</font><font size="2">以  
+Character (文字) 為計算單位，例如：中華民國2003年  
+，長度為 9。</font></p>           
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">Byte：</font><font size="2">以  
+Byte 為計算單位，例如：中華民國2003年  
+，長度為 14。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+  </li>           
+  <li>           
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699" size="2">轉換大小寫：</font><font size="2">使用者輸入文字轉換大小寫。</font></p>     
+<blockquote> 
+  <ul> 
+    <li> 
+      <p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">不轉換
+      ：</font><font size="2">按使用者輸入。</font></p> 
+    </li> 
+    <li> 
+      <p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">轉為大寫
+      ：</font><font size="2">使用者輸入轉換成大寫。</font></p> 
+    </li> 
+    <li> 
+      <p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">轉為小寫
+      ：</font><font size="2">使用者輸入轉換成小寫。</font></p> 
+    </li> 
+  </ul> 
+</blockquote> 
+  </li>           
+  <li>           
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">字集：</font><font size="2">只允許中文全形字。限制使用者只能輸入 2 
+bytes character。應用於主機型式的資料庫系統。</font><br>
+　</p>     
+  </li>           
+  <li>           
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">數值：</font><font size="2">類別為數值資料時，是否限制允許輸入的最大值及最小值，超過範圍時，系統發出 
+Beep 聲且不接受輸入的數字元。當最小值的設定大於 0 或最大值設定小於 0 時，系統會暫時讓使用者輸入該數字，而於元件 Lost Focus 
+再行檢查，如果輸入數值不在範圍內，系統發出 Beep 聲且Focus 於該元件。例如：最小值 5 ，最大值 100，使用者可以輸入 
+1，但如果不再輸入即離開該元件，系統發出 Beep 聲且Focus 於該元件，直到輸入正確或清成空白。<br>
+　</font></p>     
+<ul type="disc">     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">最小值：</font><font size="2">設定時不可大於最大值。</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">最大值：</font><font size="2">設定時不可小於最小值。</font></p>     
+  </li>
+</ul>     
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+  </li>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font color="#666699" size="2">曆法：<br>
+　</font></p>           
+<ul type="square">         
+  <li type="disc">     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">西元：</font><font size="2">西元紀年。 </font></p>     
+  </li>
+  <li type="disc">     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><font color="#666699">台灣民國：</font>以中華民國的日期顯示日期。輸入的格式樣板 <b>年</b> 
+的部分，請輸入三位小寫 yyy。 </font></p>     
+  </li>
+  <li type="disc">     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">日本和曆：</font><font size="2">以日本的和曆顯示日期。輸入的格式樣板 <b>年</b> 
+的部分，請輸入四位小寫 yyyy。 </font></p>     
+<ul type="circle">     
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2">輸入：可以直接輸入西元日期，或以簡寫格式輸入，明治 (M)、大正 (T) 、昭和 (S) 、平成 
+(H)，例如：M120101，顯示為明治12年01月01日。以簡寫格式輸入時，輸入的日期必須為正確且存在的日本和曆日期，否則系統會出現日期錯誤訊息且提示正確日期範圍。欲輸入不存在的日本和曆日期，請以西元日期輸入。</font></p>     
+  </li>
+  <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2">顯示：根據讀取格式樣版顯示，不存在的日本和曆日期，直接以西元顯示；正確的和曆則以年號加兩位年顯示，例如：明治12年01月01日。</font></p>     
+  </li>
+</ul>     
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+  </li>
+</ul>           
+  </li>           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font color="#666699" size="2">對齊：</font><font size="2">選擇水平對齊方式。</font></p>           
+  </li>           
+</ul>           
+  </blockquote>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<img border="0" src="images/ch10_11_grid_editbox.gif" width="420" height="480" ></p>           
+  <blockquote>         
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+  </blockquote>           
+<ul type="circle">           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<b>           
+<font size="2" color="#000000"><a name="checkprop"></a>核取方塊屬性          
+(Checkbox properties)：</font></b></p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+  <ul type="square">         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">核取條件 (check condition) ：</font><font size="2">核取方塊判斷是否標示為核取的條件運算公式    
+(formula)。<br>
+　</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0" align="justify">         
+<font size="2" color="#666699">核取 (checked)：</font><font size="2">核取方塊為核取    
+(checked)            
+時，以核取運算公式 (formula)           
+的結果值為欄位內含值，如果核取元件連結 (binding) 資料欄位    
+(data field) ，當資料來源 (data source) 編輯存檔 (save)            
+時，將以此內含值填入資料欄位 (data field)。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0" align="justify">          
+<font size="2" color="#666699">不核取 (unchecked)：</font><font size="2">核取方塊為不核取    
+(unchecked)            
+時，以不核取運算公式的結果值為欄位內含值，如果核取元件連結    
+(binding) 資料欄位 (data field) ，當資料來源編輯存檔 (save)            
+時，將以此內含值填入資料欄位 (data            
+field)。</font></p>          
+    </li>          
+  </ul>          
+  </li>          
+</ul>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">          
+<img border="0" src="images/ch10_11_grid_checkbox.gif" width="420" height="480"></font></p>          
+<blockquote>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+  </blockquote>          
+<ul type="circle">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">核取方塊的版面 (face)：</font></p>         
+<p style="margin-top: 0; margin-bottom: 0">         
+　</p>         
+  <ul type="square">         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">文字 (text)：</font><font size="2">核取方塊的說明文字。<br>
+　</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">水平 (text horizontal position)：</font><font size="2">文字與核取圖示    
+(icon) 的水平相對位置。<br>
+　</font></p>           
+    </li>           
+    <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">垂直 (text vertical position)：</font><font size="2">文字與核取圖示    
+(icon) 的水平相對位置為中 (center) 時， 文字與核取圖示 (icon)            
+的垂直相對位置。<br>
+　</font></p>           
+    </li>           
+    <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">不核取時顯示 (unchecked icon)：</font><font size="2">核取方塊的不核取    
+(unchecked) 狀態的顯示圖示 (icon)。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">核取時顯示 (checked icon)：</font><font size="2">核取方塊的核取    
+(checked) 狀態的顯示圖示 (icon)。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">滑鼠滑過時 (roll over icon)：</font><font size="2">當滑鼠移到核取方塊上，核取方塊是不核取    
+(unchecked) 狀態時會改變為此圖示。</font></p>           
+    </li>           
+  </ul>           
+  </li>           
+</ul>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<img border="0" src="images/ch10_11_grid_checkbox_face.gif" width="420" height="480"></p>           
+<blockquote>           
+<p style="margin-top: 0; margin-bottom: 0">           
+　</p>           
+  </blockquote>           
+<ul type="circle">           
+  <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<b>           
+<font size="2" color="#000000"><a name="comboprop"></a>下拉式清單方塊屬性          
+(Combobox properties)&nbsp; ：</font></b></p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+  <ul type="square">          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">可編輯 (editable)：</font><font size="2">可以直接輸入項目值或拉選後編輯選取項目    
+(item)。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0" align="justify">          
+<font size="2" color="#666699">被選時移至關聯資料來源紀錄 ：</font><font size="2">使用者選取下拉式清單方塊(Combobox) 的項目(item)時，關連資料來源將目前的資料記錄    
+(current record) 移至該項目的資料記錄，並引發關連資料來源的讀取前後事件    
+(before and after fetch event)。而連結(binding) 此關連資料來源的其他元件都會自動更新內含值。<br>
+　</font></p>           
+    </li>           
+    <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">關連資料來源 (lookup data source)：</font><font size="2">選取
+關連資料來源。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">關連資料欄位 (lookup data field)：</font><font size="2">選取關連資料欄位。<br>
+　</font></p>          
+    </li>          
+    <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">顯示運算示 (display formula)：</font><font size="2">以運算式顯示項目資料(item)。<br>
+　</font></p>         
+    </li>         
+    <li>         
+<p style="margin-top: 0; margin-bottom: 0" align="justify">         
+<font size="2" color="#666699">Icon資料欄位 ：</font><font size="2">在每個項目    
+(item) 前顯示圖示，選擇性 (option) 屬性。選用時系統以欄位型別    
+(field type) 判斷是 LONGVARBINARY 的圖檔資料或是VARCHAR              
+的圖檔名稱，若是圖檔名稱必須將圖檔儲存於應用程式模組的    
+class             
+目錄中 Images 或 Preloadiamge 目錄下。<br>
+　</font></p>            
+    </li>            
+    <li>            
+<p style="margin-top: 0; margin-bottom: 0">            
+<font size="2" color="#666699">項目尺寸 (item size)：</font><font size="2">下拉式清單方塊選項的寬高。<br>
+　</font></p>           
+    </li>           
+    <li>           
+<p style="margin-top: 0; margin-bottom: 0">           
+<font color="#666699" size="2">字串陣列  
+(string aray)：</font><font size="2">使用 &quot;字串陣列&quot;    
+而不以關連資料來源為清單方塊的項目資料。&quot;關連&quot; 為資料欄位， &quot;選擇項目文字&quot;為顯示項目文字。</font></p>            
+    </li>            
+  </ul>            
+  </li>            
+</ul>            
+<p style="margin-top: 0; margin-bottom: 0">            
+<img border="0" src="images/ch10_11_grid_combobox.gif" width="420" height="480"></p>            
+  <blockquote>            
+<p style="margin-top: 0; margin-bottom: 0">            
+　</p>            
+<p style="margin-top: 0; margin-bottom: 0">            
+　</p>            
+  </blockquote>            
+<ul type="circle">            
+  <li>            
+<p style="margin-top: 0; margin-bottom: 0">            
+<font size="2" color="#000000"><b><a name="formulaprop"></a>運算式欄位屬性          
+(Formula column properties)：<br>    
+　</b></font></p>     
+<ul type="circle">     
+  <li>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<font size="2"><font color="#666699">欄位名稱 (column Name)：</font>欄位表頭說明文字    
+(column head title)。<br>
+　</font></p>          
+  </li>          
+  <li><p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">計算欄位運算式 (formula)：</font><font size="2" color="#000000">欄位值運算式。<br>
+　</font></p>        
+  </li>        
+  <li><p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">圖片檔名    
+    (image file name)：</font><font size="2" color="#000000">將運算式結果值解譯為圖檔名稱，並將欄位以圖像(image)    
+    顯示。</font><font size="2">該圖檔必須儲存於應用程式模組的    
+    class             
+目錄中 Images 或 Preloadiamge 目錄下。<br>
+　</font></p>          
+  </li>          
+  <li><p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">Render Cell As：</font><font size="2" color="#000000">運算式欄位內定以不可編輯的編輯方塊           
+(Edit) 顯示。<br>
+　</font></p>         
+  </li>         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2"><font color="#666699">雙擊 (double click event)：</font>當滑鼠在欄位上雙擊滑鼠左
+鍵時，啟動事件。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">按右鍵 (right click)：</font>當滑鼠在欄位上按滑鼠右鍵時，啟動事件。　<br>
+　</font></p>
+  </li>
+  <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">欄位提示 (column tips)：</font>當滑鼠移到欄位上時，出現的提示字串。<br>
+　</font></p>          
+  </li>          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">欄寬：</font>欄位寬度</font></p>          
+  </li>          
+</ul>          
+<blockquote>          
+      <ul type="disc">          
+        <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">大小符合寬度：</font><font size="2">不設寬度自動調整為符合資料表元件寬度。</font></p>          
+        </li>          
+        <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2"><font color="#666699">寬度：</font> 輸入寬度。</font></p>          
+        </li>          
+      </ul>          
+</blockquote>          
+<ul type="circle">         
+  <li>         
+<p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">外框顏色：</font><font size="2">選擇外框顏色。<br>
+　</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2"><font color="#666699">外框：</font>外框式樣。</font></p>        
+  </li>        
+</ul>        
+  </li>        
+</ul>        
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>        
+<p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/ch10_11_grid_formula.gif" width="420" height="480"></p>        
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>        
+<ul type="circle">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#000000"><b><a name="buttonprop"></a>按鈕元件欄位屬性 (Button          
+properties)：</b></font></p>         
+<p style="margin-top: 0; margin-bottom: 0">　</p>         
+<ul type="square">         
+  <li><p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">文字 (text)：</font><font size="2">按鈕元件的說明文字。<br>
+　</font></p>         
+  </li>         
+  <li><p style="margin-top: 0; margin-bottom: 0">         
+<font size="2" color="#666699">水平 (text horizontal position)：</font><font size="2">文字與圖示    
+(icon) 的水平相對位置。<br>
+　</font></p>           
+  </li>           
+  <li><p style="margin-top: 0; margin-bottom: 0">           
+<font size="2" color="#666699">垂直 (text vertical position)：</font><font size="2">文字與圖示    
+(icon) 的水平相對位置為中 (center) 時， 文字與圖示 (icon)            
+的垂直相對位置。<br>
+　</font></p>           
+  </li>           
+  <li><p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">顯示時    
+    (display icon)：</font><font size="2">按鈕元件的顯示圖示 (icon)。<br>
+　</font></p>          
+  </li>          
+  <li><p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">按下時    
+    (pressed icon)：</font><font size="2">按鈕元件的按下時 (pressed) 的顯示圖示    
+    (icon)。<br>
+　</font></p>          
+  </li>          
+  <li><p style="margin-top: 0; margin-bottom: 0">          
+<font size="2" color="#666699">滑鼠滑過時 (roll over icon)：</font><font size="2">當滑鼠移到按鈕元件上，按鈕元件會改變為此圖示。</font></p>          
+  </li>          
+</ul>          
+  </li>          
+</ul>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<img border="0" src="images/ch10_11_butt_face.gif" width="420" height="480"></p>          
+  </blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>          
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="advance"></a>進階 (advance)</font></b></p>          
+<ul type="square">          
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2">          
+<font color="#666699">可編輯動態限制 (dynamically editable control) ：</font>利用運算式    
+(formula) 動態控制資料表的每一個儲存格(cell)          
+，是否允許編輯。使用者以滑鼠按選或鍵盤輸入儲存格 (cell)          
+時，資料表元件會先行計算運算式 (formula)          
+的結果值，如果結果值為真 (非 0 且 非空字串)          
+才允許進入儲存格 (cell) 編輯模式。設計師可以運用資料表元件 GetProp() 的 &quot;selrow&quot; 及 &quot;selcol&quot; 
+屬性，取得目前使用者所選取的列 (row)及欄 (column) 。例如：IF GetProp(&quot;gridname&quot;, &quot;selcol&quot;) THEN 1 
+意義為如果使用者選取的欄不是第二欄，則允許編輯 (updatable) ；否則 ELSE IF (DB:CAN_UPD} = 1 THEN 1 ELSE 0 
+查驗此資料記錄 CAN_UPD 欄位值是否為 1 ；是則允許第二欄可以編輯，否則不允許編輯。<br>
+<br>
+參閱<a href="#accesscontrol">資料表的編輯、新增、刪除控制          
+(Grid update, insert and delete control)</a>。<br>
+　</font></p>        
+  </li>        
+  <li>          
+<p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2">
+<font color="#666699">動作事件 (row select changed)：</font>使用者選取不同列時引發事件。</font></p>        
+<p style="margin-top: 0; margin-bottom: 0">          
+　</p>          
+  </li>
+</ul>        
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch10_11_adv.gif" width="480" height="480"></p>        
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="accesscontrol"></a>資料表的編輯、新增、刪除控制          
+(Grid update, insert, and delete control)<br>    
+　</b></font></p>    
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">資料表元件    
+(Grid component) 連結資料來源 (data source)，對於欄位的編輯    
+(update) 及資料列的新增(insert)、刪除 (delete)，除了與資料來源的開啟屬性    
+(open) 有關外，還有優先次序性 (priority) 的許可 (permit)        
+檢核，控管使用者對資料表的編輯 (update) 新增 (insert) 與刪除    
+(delete)        
+操作。以下為資料表 (Grid) 許可 (permit)        
+檢核的程序，優先次序性 (priority) 在前的檢核為不允許 (not        
+permit) 時，該操作即為不允許狀態。</font></p>        
+<ol style="font-size: 10 pt">    
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">運算式欄位    
+    (Formula column) 不可編輯。</font></li>    
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">連結的資料來源    
+    (data source) 為唯讀狀態 (read only)，則所有欄位不可編輯    
+    (update)，資料表不可新增 (insert)、刪除 (delete) 資料列 (row)。</font></li>   
+  <li>      
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">授權式安全機制    
+    (authorized security control)，對於目前的登入使用者 (login        
+    user)&nbsp;是否授予 (grant) 資料表所在視窗 (form)        
+    的編輯、新增、刪除權限。</font></li>    
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">資料表屬性        
+    (Grid properties) 設定中，是否允許編輯、新增、刪除。</font></li>    
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">個別欄位屬性    
+    (column properties) 的<font color="#666699">可編輯屬性</font>        
+    (editable) 是否核取 (checked)。</font></li>   
+  <li>      
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#666699">可編輯動態限制    
+    (dynamically editable        
+    control) </font><font color="#000000" size="2">的運算式 (formula)        
+    結果值</font><font size="2">，</font><font color="#000000" size="2">是否允許編輯    
+    (update)        
+    所選儲存格 (selected cell) </font><font size="2">。</font></li>    
+</ol>    
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">設計師可以在靜態    
+(static) 的資料表屬性 (Grid properties) 中，設定資料表是否允許編輯    
+(update)、新增(insert)、刪除 (delete)。亦可在欄位屬性 (column        
+properties) 中設定欄位是否可以編輯 (update)，而在程式執行期    
+(run time) 時可以使用運算式的 <font color="#666699" face="Courier New"> SetProp(&quot;</font><font color="#666699">資料表元件名稱</font><font color="#666699" face="Courier New">&quot;,        
+&quot;allowupd&quot;, &quot; 1 </font><font color="#666699"> 或 </font><font color="#666699" face="Courier New"> 0&quot;)</font>、    
+<font color="#666699" size="2" face="Courier New"> SetProp(&quot;</font><font color="#666699" size="2">資料表元件名稱</font><font color="#666699" size="2" face="Courier New">&quot;,        
+&quot;allowins&quot;, &quot; 1 </font><font color="#666699" size="2"> 或 </font><font color="#666699" size="2" face="Courier New"> 0&quot;)    
+</font> 、<font color="#666699"><font face="Courier New">SetProp(&quot;</font>資料表元件名稱<font face="Courier New">&quot;,        
+&quot;allowdel&quot;, &quot; 1 </font> 或 <font face="Courier New"> 0&quot;)</font>    
+</font>       
+按事件流程，變更資料表的編輯、新增、刪除許可。<br>   
+　</font></p>    
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify">
+<font size="2" color="#000000">應用程式如果需要動態 (dynamic) 的控制每一個儲存格    
+(cell) 的編輯，設計師必須使用可編輯動態限制(dynamically        
+editable control)        
+的運算式，按在各種的條件下，回應系統目前所選的儲存格    
+(selected cell) 是否允許編輯</font><font size="2">。<br>    
+　</font></p>        
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2">應用程式系統管理者</font><font size="2" color="#000000">，</font><font size="2">在程式執行期    
+(run time) 時</font><font size="2" color="#000000">，</font><font size="2">可以以授權管理模組</font><font size="2" color="#000000">，</font><font size="2">按使用者的職    
+務權限</font><font size="2" color="#000000">，</font><font size="2">分別授予或變更使用者的編輯、新增、刪除權限。</font></p>        
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="dyncolor"></a>動態欄位顏色控制    
+(dynamically column color control)<br>    
+　</b></font></p>     
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2">資料表儲存格    
+(cell) 的前背景顏色 (foreground and background        
+color)</font><font size="2" color="#000000">，是由以下的屬性所控制</font></p>        
+<ol style="font-size: 10 pt">       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#000000">資料表元件顏色        
+    (Grid component color)。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#000000">選取列顏色    
+    (selected row color)。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#000000">奇、偶數列顏色    
+    (odd and even row color)。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#000000">欄位前背景顏色設定    
+    (column color setting)。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2" color="#000000">動態欄位顏色控制運算式    
+    (dynamical column color formula)。</font></li>       
+</ol>       
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">其中</font><font size="2" color="#000000">動態欄位顏色控制運算式    
+(dynamical column color formula)        
+的設定頁，是在資料表欄位設定的【字型】設定頁中，設計師按選    
+(clicked) </font><font size="2" color="#666699">進階</font><font size="2" color="#000000">的按鈕，動態顏色設定頁將會開啟。設計師可以設定前景與背景的顏色運算式    
+(formula)，顏色運算式 (formula)        
+與一般運算式完全相同，所須注意的是最後的回應值 (return        
+value) 必須是由 <font face="Courier New"> RGB(red, green, blue)</font>        
+所運算的結果值。動態欄位顏色控制，由於每次的重繪    
+(repaint)        
+都會重新計算運算式，所以會影響資料表元件重繪的效率。</font></p>        
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2">　</p>        
+<blockquote>    
+<p style="margin-top: 2; margin-bottom: 2">    
+<img border="0" src="images/ch10_11_butt_font.gif" width="416" height="463"></p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 2; margin-bottom: 2">    
+<img border="0" src="images/ch10_11_grid_dyncolor.gif" width="416" height="416"></p>        
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="keyboard"></a>資料表的鍵盤操作          
+(Grid keyboard function)<br>    
+　</b></font></p>      
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">資料表元件        
+(Grid component) 是繼承自 Java&trade; swing JTable，預設的鍵盤操作可以參閱        
+<a href="Key-Metal.html#JTable">Java&trade; JTable 元件的 Key-assignment </a>，由於資料表是連結資料來源運作的元件，所以屬於        
+Block 和 Extend selection        
+的操作是無效的。資料表元件是處於瀏覽模式，使用者可以滑鼠按選儲存格    
+(cell) 進入編輯模式，相對的鍵盤操作則使用 <font color="#666699">F2</font>        
+鍵 (edit cell without overriding current contents)。<br>    
+　</font></p>     
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">為便利於資料表資中操作資料來源，資料表元件加入新增資料列    
+(insert new row) ：<font color="#666699">CTRL+INS</font> 和 刪除資料列    
+(delete row)：<font color="#666699">CTRL+DEL</font>        
+的鍵盤操作。其他資料表中的欄位元件，參閱        
+<a href="Key-Metal.html#JTextField">編輯欄位(Java&trade; JTextField)</a>、<a href="Key-Metal.html#JCheckBox">核取方塊欄位        
+(Java&trade; JCheckBox)</a>、<a href="Key-Metal.html#JComboBox">下拉式清單方塊欄位        
+(Java&trade; JComboBox)</a>、<a href="Key-Metal.html#JButton">J按鈕欄位(Java&trade; JButton)</a> 文件說明。</font></p>         
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2">　</p>         
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="colhead"></a>資料表欄位表頭字型與顏色          
+(Grid head column font and color)<br>    
+　</b></font></p>     
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">資料表元件        
+(Grid component)        
+共同屬性的字型設定頁，其設定的字型與前背景顏色是使用者於欄位表頭<br>    
+，因為資料表儲存格 (cell) 的字型與顏色是由其他設定屬性所決定。參閱    
+<a href="#dyncolor">動態</a></font><a href="#dyncolor"><font size="2">欄位顏色控制    
+(dynamically column color control)</font></a><font size="2">。</font></p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="getsetrowcol"></a>讀取和設定資料表目前所選的欄列    
+(get and set selected column and row)<br>    
+　</b></font></p>    
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2">資料表(Grid    
+component)        
+是連結資料來源 (data source)        
+的元件，資料表會隨時與連結資料來源同步，亦即資料表目前所選取的資料列    
+(selected row) 正是資料來源的資料記錄 (record)，以數值來計，從        
+1 起算，資料表 (Grid)所選取資料列數 (row number)        
+等於資料來源的資料記錄 (record number)，所以設計師可以使用資料來源的運算式        
+<font color="#666699" size="2" face="Courier New">{</font><font color="#666699" size="2">資料來源名稱</font><font color="#666699" size="2" face="Courier New">:RecordNo()}</font>，讀取目前的資料表選取列值    
+(selected        
+row)。而操作導灠元件 (Navigator component)        
+時，亦會引起資料表選取資料列 (selected row) 的改變。<br>    
+　</font></p>    
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2">&nbsp;設計師可以使用運算式    
+(formula)，讀取與設定資料表目前選取的欄 (selected column) 列(selected        
+row) (從 1 起算)：<br>    
+　</font></p>    
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2"><font color="#666699"><font face="Courier New">GetProp(&quot;</font>資料表元件名稱<font face="Courier New">&quot;,     
+&quot;selcol&quot;)</font> ：</font><font color="#000000">傳回目前所選的欄數 
+(column number)</font>。</font></p>     
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2"><font face="Courier New" color="#666699">GetProp(&quot;</font><font color="#666699">資料表元件名稱</font><font face="Courier New" color="#666699">&quot;,     
+&quot;selrow&quot;)&nbsp;</font><font color="#666699">：</font><font color="#000000">傳回目前所選的列數 
+(row number)</font>。</font></p>     
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2"><font color="#666699"><font face="Courier New">SetProp(&quot;</font>資料表元件名稱<font face="Courier New">&quot;,     
+&quot;selcol&quot;, column_no)</font>：</font><font color="#000000">設定資料表選取欄     
+(column_no)</font>。</font></p>     
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2"><font color="#666699"><font face="Courier New">SetProp(&quot;</font>資料表元件名稱<font face="Courier New">&quot;,     
+&quot;selrow&quot;, row_no</font>)&nbsp;：</font><font color="#000000">設定資料表選取列    
+(row_no)</font>。<br>
+　</font></p>    
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2"><font size="2">以        
+SetProp() 改變資料表的選取欄列 (selected row and column)，如果列值改變    
+(row change) 會引發連結資料來源 (data source) 的讀取前後事件。</font></p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取  
+(formula get/set properties)</b></font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,   
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,   
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;,&nbsp; 值</font><font color="#666699">1,&nbsp; 值</font><font color="#666699">2)</font>：屬性設定。</font></p>  
+  
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,   
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;)</font>：屬性讀取。</font></p>  
+  
+<table border="1" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2" width="100%">   
+  <tr>   
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+    Properties</font></td>   
+  </tr>   
+  <tr>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2"><nobr>屬性</nobr>    
+      (Properties)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">enabled</font></td>   
+    <td><font size="2">1 致能，0 失效</font></td>   
+    <td>　</td>   
+    <td><font size="2">致能與失效。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">setfocus</font></td>   
+    <td><font size="2">1 設定 Focus</font></td>   
+    <td><font size="2">　</font></td>
+    <td><font size="2">設定 Focus。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">visible</font></td>   
+    <td><font size="2">1 顯示，0 隱藏</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件是否可視。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">repaint</font></td>   
+    <td><font size="2">1 重繪</font></td>   
+    <td>　</td>   
+    <td><font size="2">重繪。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">revalidate</font></td>   
+    <td><font size="2">1 重整資料表資料</font></td>   
+    <td>　</td>   
+    <td><font size="2">重整資料表連結資料。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">stopedit</font></td>   
+    <td><font size="2">1 停止編輯模式</font></td>   
+    <td>　</td>   
+    <td><font size="2">停止資料表的編輯模式。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">allowins</font></td>   
+    <td><font size="2">1 允許新增，0 禁止新增</font></td>   
+    <td>　</td>   
+    <td><font size="2">允許或禁止使用者新增資料記錄。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">allowupd</font></td>   
+    <td><font size="2">1 允許編輯，0 禁止編輯</font></td>   
+    <td>　</td>   
+    <td><font size="2">允許或禁止使用者編輯資料記錄。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">allowdel</font></td>   
+    <td><font size="2">1 允許刪除，0 禁止刪除</font></td>   
+    <td>　</td>   
+    <td><font size="2">允許或禁止使用者刪除資料記錄。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">promptmsg</font></td>   
+    <td><font size="2">1 出現確認訊息，0 不出現</font></td>   
+    <td>　</td>   
+    <td><font size="2">出現確認訊息後，再新增、存檔、刪除。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">msgtitle</font></td>  
+    <td><font size="2">文字串</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定確認訊息視窗的標題文字。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selrow</font></td>  
+    <td><font size="2">N 選取列</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定選取列 N，由 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selcol</font></td>  
+    <td><font size="2">N 選取欄</font></td>  
+    <td>　</td>  
+    <td><font size="2">設定選取欄 N，由 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">headertext</font></td>  
+    <td><font size="2">N 第 N 欄</font></td>  
+    <td><font size="2">文字串 表頭文字</font></td>  
+    <td><font size="2">設定第 N 欄的表頭文字。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">rowheight</font></td>  
+    <td><font size="2">N 第 N 列</font></td>  
+    <td><font size="2">M 高度</font></td>  
+    <td><font size="2">將第 N 列的高度設為 M dot 高，N   
+      由 1 起算。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">colwidth</font></td> 
+    <td><font size="2">N 第 N 欄</font></td> 
+    <td><font size="2">M 寬度</font></td> 
+    <td><font size="2">將第 N 欄的寬度設為 M dot 寬，N 由 1 起算。</font></td> 
+  </tr>
+  <tr>  
+    <td><font size="2">enteraction</font></td> 
+    <td><font size="2">0&nbsp; JAVA 預設，1 由左至右，2 由上至下。</font></td> 
+    <td>　</td> 
+    <td><font size="2">控制資料表 ENTER 鍵瀏覽次序。 </font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">freeze</font></td>   
+    <td><font size="2">N 第 N 欄</font></td>   
+    <td><font size="2">M 計 M 欄</font></td>   
+    <td><font size="2">由第 N 欄起算計 M 欄，固定不捲動，N 由 1 起算。M 值為 0&nbsp; 解除固定不捲動。 </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">allowins</font></td> 
+    <td colspan="2"><font size="2">1 允許新增，0 禁止新增</font></td>  
+    <td><font size="2">允許或禁止使用者新增資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">allowupd</font></td> 
+    <td colspan="2"><font size="2">1 允許編輯，0 禁止編輯</font></td>  
+    <td><font size="2">允許或禁止使用者編輯資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">allowdel</font></td> 
+    <td colspan="2"><font size="2">1 允許刪除，0 禁止刪除</font></td>  
+    <td><font size="2">允許或禁止使用者刪除資料記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">ispromptmsg</font></td> 
+    <td colspan="2"><font size="2">1 出現確認訊息，0 不出現</font></td>  
+    <td><font size="2">是否出現確認訊息。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">msgtitle</font></td> 
+    <td colspan="2"><font size="2">文字串</font></td> 
+    <td><font size="2">確認訊息視窗的標題文字。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">isediting</font></td> 
+    <td colspan="2"><font size="2">1 編輯狀態，0 非編輯狀態</font></td> 
+    <td><font size="2">資料表目前是否正處於編輯狀態。</font></td> 
+  </tr> 
+  <tr> 
+    <td><font size="2">selrow</font></td> 
+    <td colspan="2"><font size="2">N 第 N 列被選取</font></td> 
+    <td><font size="2">傳回被選取列 N，由 1 起算。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">selcol</font></td> 
+    <td colspan="2"><font size="2">N 第 N 欄被選取</font></td> 
+    <td><font size="2">傳回被選取欄 N，由 1 起算。</font></td> 
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table> 
+ 
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<hr align=left color="#000000">      
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">      
+<tr>      
+<td width=204 align=left valign=top>      
+<a href="ch10_10.html">      
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>      
+<td width=199 align=center valign=top><a href="index.html">      
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>      
+<td width=209 align=right valign=top>      
+<a href="ch10_12.html">      
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>      
+</tr>      
+</table>      
+      
+<hr align=left color="#000000">      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+      </body>        
+        
+</html>

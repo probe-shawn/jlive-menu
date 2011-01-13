@@ -1,0 +1,412 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Radiogroup component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>  
+<td width=205 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_06.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b>  
+<font size="4"><a name="top"></a><a name="top">ラジオグループコンポーネント</a> (Radiogroup component) </font></b><font size="4">       
+    <img border="0" src="images/ch10_radio.gif" width="30" height="30"></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<a href="ch10_21.html">共通プロパティ (common properties)</a></font></p>       
+<p style="margin-top: 2; margin-bottom: 2"><a href="#datasource">   
+<font size="2">データソース(data source)</font></a></p>       
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#create">新規ラジオボタン      
+(create new radio button)</a></font></p>       
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event">   
+<font size="2">イベント (event)</font></a></p>      
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">フォーミュラget/setプロパティ     
+(formula get/set properties)</a></font></p>     <!-- 
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">選擇鈕元件(Radiogroup      
+component) 中存在多個選擇按鈕 (radio button)，但同時只有一個選擇按鈕是在選取     
+(selected)      
+的&#29376;態。選擇鈕元件中的選擇按鈕會依序運算選取條件(selected      
+condition) 的運算公式 (formula)，當結果&#20540;為真 (0 或 空字串為偽FALSE      
+，否則為真) 時，該選擇按鈕設定為選取 (selected)      
+&#29376;態，其餘選擇按鈕 (radio button) 設定為不選取 (unselected)      
+&#29376;態。<br>  
+　</font></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">選擇鈕元件(Radiogroup     
+component)，以被選取的選取按鈕 (radio button)      
+的選取&#20540;運算式結果&#20540;為元件&#20839;含&#20540;，如果選擇鈕元件連結     
+(binding)       
+資料欄位 (data field) ，當資料來源 (data source) 編輯存&#27284; (save)       
+時，將以此&#20839;含&#20540;填入資料欄位 (data field)。設計師以運算公式     
+(formula) 取&#20540; <font color="#666699">{選擇鈕元件名稱} </font><font color="#000000">時</font>，系統亦回覆此&#20839;含&#20540;。<br>     
+　</font></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">選擇鈕元件可以不連結任何資料欄位，如果配合<font color="#666699">當任何元件&#20540;改變時重新檢&#26597; 
+</font>的屬性，可以隨時以各個選擇按鈕的選取條件運算公式     
+(formula)      
+的結果&#20540;，檢視選取&#29376;態，並根據選取&#29376;態，取得被選取(selected) 選擇按鈕的選取&#20540;。</font></p>-->     
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a name="datasource"></a><font size="2"><b>データソース      
+(data source)</b></font></p>      
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">データソース (data source)：</font>データソースの選択。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データフィールド (data field)：</font>データソース中のフィールドの選択。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699">コンポーネント値が更新すると新たに検索：</font>選択した時，他のコンポーネント値が更新されたか(changed)データソースが移動(move)、保存 (save) 
+或いは削除(delete)された時、いくつかのボタンが順序通りに選択条件      
+(selected        
+condition)の下で新たに計算されます。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">コラム (columns)：</font>ボタンをいくつかの枠に分割。</font></p>    
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">ラジオボタン (radio button)：</font>新規、削除、保存、上へ、下へボタンの選択。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<ul type="disc"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2"> 
+<img border="0" src="images/ch10_05_radiogroup_ds_button.gif" width="142" height="22"></font></p> 
+  </li> 
+</ul> 
+  </li> 
+</ul> 
+<blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/ch10_05_ds.gif" width="479" height="479"></p> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+　</p> 
+</blockquote> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<font size="2"><b><a name="create"></a>新規ラジオボタン (create Radio button)</b></font></p>       
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+<p style="margin-top: 2; margin-bottom: 2">
+<font size="2"><a href="#face">表面 (face)</a></font></p>      
+<p style="margin-top: 2; margin-bottom: 2">  
+<font size="2"><a href="#select">選択済み (selected)</a></font></p>      
+<p style="margin-top: 2; margin-bottom: 2">  
+<font size="2"><a href="#font">フォント (font)</a></font></p>      
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">  
+<font size="2">&nbsp;<i>新規         
+<img border="0" src="images/formdesign37.gif" width="24" height="24">  </i>新ラジオボタンの新規追加 (radio button)。</font></p>      
+<blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<b>  
+<font size="2" color="#000000"><a name="face"></a>表面 (face)</font></b></p>      
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><font color="#666699">テキスト (text)：</font>ボタンの表示テキスト。</font></p>     
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font color="#666699" size="2">ホットキー      
+(mnemonic)：</font><font size="2">ホットキーの作成するにおいて、選択した後、      
+&quot;ALT&quot;キーを押しながら、指定するキーを押します。</font></p>      
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">水平 (text horizontal position)：</font>テキストはマーク      
+(icon) に対する水平的な相対位置。</font></p>      
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">垂直 (text vertical position)：</font>水平的な相対位置はセンター (center) 
+の時、テキストはマーク (icon)に対する垂直的な相対位置。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">Paint アイテム：</font>以下のプロパティはコンポーネントプロパティが不透明(opaque)の時のみ有効です。</font>　 </p>
+  <ul type="circle">
+    <li>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><font color="#666699">Focus (paint focus)：</font>        
+Focus 取得した (focus owner)時、文字前に Focus 枠線が現れます。</font></p>      
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">ペイント充填 (paint fill)：</font>當選択ボタンを選択した時、コンポーネントはデフォルトペイント色を背景色にし、リリース      
+(release) した時、デフォルト背景色に戻ります。</font></p>     
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">外枠</font><font size="2"><font color="#666699"> (paint border)：</font>選択ボタンの外枠が現れます。</font></p>      
+    </li>   
+  </ul>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">選択なしアイコン (unselected icon)：</font>選択されない      
+(unselected) 状態の表示マーク (icon)。</font></p>      
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><font color="#666699">選択済みマーク (selected icon)：</font>選択した      
+(selected) 状態の表示マーク (icon)。</font></p>      
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">ロールオーバーアイコン      
+(roll over icon)：</font><font size="2">ボタン上にマウスを移動し、選択していない時      
+(unselected)の表示マーク。</font></p>      
+    </li>   
+  </ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<span lang="en"><img border="0" src="images/ch10_05_prop.gif" width="419" height="418">&nbsp;&nbsp;&nbsp;</span></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+</blockquote>
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2" color="#000000"><a name="select"></a>選択 (selected)</font></b></p>      
+<p style="margin-top: 0; margin-bottom: 0">  
+　</p>
+  <ul type="disc">
+    <li>
+<p style="margin-top: 0; margin-bottom: 0">
+<font size="2"><font color="#666699">選択条件 (selected condition)：</font>選択条件(selected)はフォーミュラかどうか 
+(formula)。</font></p>     
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0" align="justify"><font size="2"><font color="#666699">選択データ (selected data)：</font></font><font size="2">　データソースかコンポーネントからデータをクリックで選択します。</font></p>      
+    </li>   
+  </ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_05_prop_in.gif" width="418" height="419"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<b>   
+<font size="2" color="#000000"><a name="font"></a>フォント (font)</font></b></p>      
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">  
+<font color="#666699">フォント：</font>  フォントの選択。</font></p>      
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">サイズ：</font>文字サイズの選択。</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">スタイル：</font>ボールドか斜め。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">カラー：</font>カラーの選択。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<font size="2"><font color="#666699">提示：</font>マウスオーバーの時、表示するテキスト。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">不透明：</font>コンポーネント背景      
+(background) カラーの選択。</font></p>      
+    </li>   
+  </ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_05_font.gif" width="416" height="417"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+<p style="margin-top: 0; margin-bottom: 0"><a name="event"></a><b><font size="2">イベント      
+(event)</font></b></p>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2"><font color="#666699">アクションイベント (action event)：</font>ユーザはクリックした時      
+(clicked)、起動するイベント (fire event)。</font></p>       
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">Gain Focus イベント：</font>Focus 
+が選択ボタンに入る時、起動するイベント 。</font></p>       
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">Lost Focus イベント：</font> Focus が離れた時、起動するイベント 。</font></p>       
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">ダブルクリックイベント (double click event)：</font>マウスダブルクリックした時、起動するイベント。</font></p>      
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">右キーイベント (right click event)：</font>マウス右キーをクリックした時、起動するイベント。</font></p>      
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_04_event_2.gif" width="479" height="225"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>フォーミュラget/setプロパティ   
+(formula get/set properties)</b></font></p>  
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;コンポーネント名&quot;,   
+&quot;プロパティ&quot;,値) </font>：プロパティの設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font></font><font color="#666699">コンポーネント名</font><font size="2"><font color="#666699">&quot;,    
+&quot;</font><font color="#666699">プロパティ&quot;,&nbsp; 値1,&nbsp;値2)</font>：プロパティの設定。</font></p>  
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699"></font></font><font color="#666699">コンポーネント名</font><font size="2"><font color="#666699">&quot;,    
+&quot;プロパティ&quot;)</font>：プロパティの読み取り。</font></p> 
+ 
+<table border="1" width="600">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699" width="590"><font size="2" color="#FFFFFF">Set    
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050" width="128"><font color="#FFFFFF" size="2">プロパティ    
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050" width="131"><font color="#FFFFFF" size="2">値1    
+      (Value 1)</font></td>   
+    <td align="center" bgcolor="#505050" width="75"><font color="#FFFFFF" size="2">値2    
+      (Value 2)</font></td>   
+    <td align="center" bgcolor="#505050" width="238"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>   
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">enabled</font></td>  
+    <td width="131"><font size="2">1 使用可能へ，0 無効</font></td>  
+    <td width="75">　</td>  
+    <td width="238"><font size="2">有効か無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">setfocus</font></td>  
+    <td width="131"><font size="2">1&nbsp; Focusの設定</font></td>  
+    <td width="75">　</td>
+    <td width="238"><font size="2">&nbsp;Focusを設定。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">visible</font></td>  
+    <td width="131"><font size="2">1 表示，0 隠し</font></td>  
+    <td width="75">　</td>  
+    <td width="238"><font size="2">表示か隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">repaint</font></td>  
+    <td width="131"><font size="2">1 再描く，2 即時描く</font></td>  
+    <td width="75">　</td>  
+    <td width="238"><font size="2">再描く。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">revalidate</font></td>  
+    <td width="131"><font size="2">1 フォーミュラ再度計算</font></td>  
+    <td width="75">　</td>  
+    <td width="238"><font size="2">フォーミュラ再度計算を選択。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">selected</font></td>  
+    <td width="131"><font size="2">N&nbsp; N 個目のボタン選択</font></td>  
+    <td width="75">　</td>  
+    <td width="238"><font size="2">N 個目ボタンの選択，N は 1から。</font></td>  
+  </tr>  
+  <tr>  
+    <td colspan="4" bgcolor="#666699" width="590"><font size="2" color="#FFFFFF">Get    
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center" width="128"><font color="#FFFFFF" size="2">プロパティ    
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center" width="212"><font color="#FFFFFF" size="2">転送値 
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center" width="238"><font color="#FFFFFF" size="2">説明 (Descriptions)</font></td>   
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">isenabled</font></td>  
+    <td colspan="2" width="212"><font size="2">1 使用可能，0 無効</font></td>  
+    <td width="238"><font size="2">有効か無効。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">isvisible</font></td>  
+    <td colspan="2" width="212"><font size="2">1 表示，0 隠し</font></td>  
+    <td width="238"><font size="2">表示か隠し。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="128"><font size="2">selected</font></td>  
+    <td colspan="2" width="212"><font size="2">N N 個目のボタン選択</font></td>  
+    <td width="238"><font size="2"> N 個目ボタンの選択，N は 1から。</font></td>  
+  </tr>  
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_04.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=194 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=206 align=right valign=top>  
+<a href="ch10_06.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>   
+   
+</html>

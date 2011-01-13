@@ -1,0 +1,692 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Data Source</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=637 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=212 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch08_01.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=207 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch09.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 9</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch09.html" style="text-decoration: none"><font color="#000000">
+Data Source</font></a></font></b></TD>      
+<td width=218 align=right valign=top>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<a href="ch10.html">     
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>     
+</tr>     
+</table>     
+     
+<hr align=left color="#000000">     
+<p><font size="4"><b>9</b></font><b><a class="TITLE"><font size="4">.          
+&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;(data source</font></a><font size="4">)</font></b></p>                 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#dsdesignproc">&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;&#12487;&#12470;&#12452;&#12531;手順            
+(data source design procedures)</a></font></p>                 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#dstype">&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;&#12479;&#12452;&#12503;            
+(data source type)</a></font></p>                  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#資料表格 ~ 屬性">&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;&#12398;&#12486;&#12540;&#12502;&#12523;&#12522;&#12473;&#12488;            
+(database tables listing)</a></font></p>                  
+<p style="margin-top: 2; margin-bottom: 2"><a href="CH11_02.html">        
+<font size="2">&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;&#12522;&#12473;&#12488; (data source listing)</font></a></p>                  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#globeds">&#12464;&#12525;&#12540;&#12496;&#12523;&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;            
+(globe data source)</a></font></p>                 
+<p style="margin-top: 2; margin-bottom: 2">       
+<font size="2"><a href="#dbprop">&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;&#12503;&#12525;&#12497;&#12486;&#12451; (database properties)</a></font></p>                 
+<p style="margin-top: 2; margin-bottom: 2">       
+<font size="2"><a href="#sqlprop">SQL&#12503;&#12525;&#12497;&#12486;&#12451; (SQL properties)</a></font></p>                 
+<p style="margin-top: 2; margin-bottom: 2">       
+<font color="#003366" size="2"><a href="#fieldprop">&#12487;&#12540;&#12479;&#12501;&#12451;&#12540;&#12523;&#12489;&#12503;&#12525;&#12497;&#12486;&#12451; (field               
+properties)</a></font></p>      
+<p style="margin-top: 2; margin-bottom: 2">      
+<font size="2"><a href="#rowidprop">row id プロパティ (row id properties)</a></font></p>                 
+<p style="margin-top: 2; margin-bottom: 2">       
+<font size="2"><a href="#defaultprop">&#12487;&#12501;&#12457;&#12523;&#12488;&#12503;&#12525;&#12497;&#12486;&#12451; (default properties)</a></font></p>                 
+<p style="margin-top: 2; margin-bottom: 2">       
+<font size="2"><a href="#validprop">プロパティ認証 (validation properties)</a></font></p>                 
+<p style="margin-top: 2; margin-bottom: 2">       
+<font size="2"><a href="#event">イベント (event)</a></font></p>                
+<p style="margin-top: 2; margin-bottom: 2">      
+<font size="2"><a href="#errhandleprop">ErrHandle (SQL error handle)</a></font></p>      
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#internalproc">データソース読み取、追加、保存、削除システム内部プロシージャ            
+(fetch, insert, post, delete system internal procedures)</a></font></p>                
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="dsdesignproc"></a>データソースデザイン手順            
+(data source design procedures)</b></font></p>                 
+<ol style="font-size: 10 pt">       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">データソーステーブル            
+    (table                   
+data source)の選択、 SQL資料來源 (SQL data source)或いは Bufferデータソース (buffer                   
+data source)については、</font> <font size="2"><a href="#dstype">データソースのタイプ            
+    (data source type)</a>を参照。</font>    
+  </li>       
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定データソースと                  
+    jLIVE&trade; middle wareの設定は、 <a href="#rowfetch"> 行の読み取り (row fetch)                 
+    </a>を参照。</font></p>      <!--
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">讀取列是客&#25142;端     
+    (client) 與資料庫伺服器 (database server) &#27599;次需求 (request)           
+    與回應 (response) 的資料記&#37636;列 (record) &#25847;取數。</font>--></li>          
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">大型資料の設定 
+    は<a href="#blobfetch">(Blob and Clob) フィールドの読み取り方式</a>を参照。</font></li>               
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">ユーザ編集の可否か        
+    (updateable)。</font></p>      
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">&nbsp;SQLデータソース (SQL data source)        
+    の関連結果は読みオンリーかどうか (read only)。</font></li>                
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">データソースは他のフォームと共用かどうかは、<a href="#globeds">グローバルデータソース   
+    (globe data source)</a>を参照。</font></li>        
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">フォームがオープンした後データソースが即時にオープンかどうかのオートオープン            
+    (auto open)。</font></li>                
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#sqlprop">データテーブルテスト編集、SQLデータソースのSQLコマンド</a>，或いはBufferデータソースのフィールド構造定義 (field structure)。</font></li>                 
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">編集可能のデータソースにおいては，<a href="#rowidprop">データ行ID        
+    フィールドの選択</a>を参照。</font></li>         
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">フォーミュラ            
+    (formula)でデータソースを新規追加する時には，</font><font size="2"><a href="#defaultprop">フィールドデフォルト</a></font><font size="2">を参照。</font></li>           
+  <li>      
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">データソースに対する読み取            
+    (fetch) 追加 (insert) 保存 (post) 削除 (delete) は、<a href="#validprop">作業の正確さチェック</a>を参照。</font></p>    <!--         
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設計師可以根據使用者輸入的資料正確性，或應用程式的流程控管需求，限制資料來源是否執行讀取(fetch)            
+    新增 (insert) 存&#27284; (post) 刪除 (delete) 的作業。</font></li>   -->        
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">読み取、更新、追加、削除は、<a href="#event">前後イベント    
+    (event)</a>　を参照。</font></li>      
+  <li>      
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">データベースサーバー            
+    (database server)は <a href="#errhandleprop"> SQL エラーが生じた時</a></font><a href="#errhandleprop"><font size="2">，アプリリカバリのプログラミング</font></a><font size="2">を参照。</font></li>              
+</ol>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　 </p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="dstype"></a>データソースタイプ            
+(data source type)</b></font></p>                  
+<ul>        
+  <li>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">テーブルデータソース                   
+    (Table data source)：一つのテーブルにおいてセレクト－(select)     
+    を実行して得られた SQLコマンドの結果集            
+    (result set)。</font></li>                  
+  <li>        
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">SQLデータソース                   
+    (SQL data source)：</font><font size="2">多数のテーブルにおいてセレクト－ (select)     
+    を実行して得られた SQLコマンドの結果集            
+    (result set)。</font></li>                 
+  <li>       
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">Bufferデータソース                   
+    (Buffer data source)：Bufferデータソースの初期            
+    (initial) と操作 (operation) はクライアント側 (client)に限ります。</font> <br>          
+    　<table border="1" cellspacing="1">     
+      <tr>     
+        <td align="center" bgcolor="#505050" valign="middle" width="30">　</td>     
+        <td align="center" bgcolor="#505050" width="213"><font size="2" color="#FFFFFF">テーブルデータソース</font><font size="2" color="#FFFFFF">&nbsp;</font></td>     
+        <td align="center" bgcolor="#505050" width="246"><font size="2" color="#FFFFFF">SQLデータソース&nbsp;</font></td>     
+        <td align="center" bgcolor="#505050" width="131"><font size="2" color="#FFFFFF">Bufferデータソース</font></td>     
+      </tr>     
+      <tr>     
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">オプション</font></td>     
+        <td width="213"><font size="2"><a href="#tablelist">テーブルリストから選択</a></font></td>     
+        <td width="246"><font size="2"><a href="#dslist">データソースリストから追加</a></font></td>     
+        <td width="131"><font size="2"><a href="#dslist">データソースリストから追加</a></font></td>     
+      </tr>     
+      <tr>     
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">SQL</font></td>     
+        <td width="213"><font size="2">一つのテーブルにおいてセレクト－(select)     
+          を実行して得られた SQLコマンドの結果集            
+    (result set)</font></td>                 
+        <td width="246"><font size="2">多数のテーブルにおいてセレクト－(table     
+          join) を実行して得られた SQLコマンドの結果集            
+    (result set)。</font></td>                  
+        <td width="131"><font size="2">データフィールド構造 (field                  
+          structure)</font></td>       
+      </tr>       
+      <tr>       
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">保存読取</font></td>       
+        <td width="213"><font size="2">更新可能(updateable)</font></td>      
+        <td width="246"><font size="2">読取のみ (read only)</font></td>                 
+        <td width="131"><font size="2">更新可能(updateable)</font></td>      
+      </tr>      
+      <tr>      
+        <td bgcolor="#505050" valign="middle" rowspan="3" width="30"><font size="2" color="#FFFFFF">ソース</font></td>      
+        <td rowspan="3" width="213"><font size="2">データベーステーブル (tables)</font></td>                
+        <td rowspan="3" width="246"><font size="2">データベーステーブル (tables)</font></td>                
+        <td width="131"><font size="2">クライアント即時データ</font></td>      
+      </tr>      
+      <tr>      
+        <td width="131"><font size="2">文字ロード</font></td>      
+      </tr>      
+      <tr>      
+        <td width="131"><font size="2">其他のデータソースロード</font></td>      
+      </tr>      
+      <tr>      
+        <td bgcolor="#505050" valign="middle" width="30"><font size="2" color="#FFFFFF">検索</font></td>      
+        <td width="213"><font size="2">パラメーター (parameters)で SQL     
+          コマンド実行</font></td>       
+        <td width="246"><font size="2">指定パラメーター (parameters)で SQLコマンドの実行</font></td>           
+        <td width="131"><font size="2">リロードでデータ選択</font></td>       
+      </tr>       
+      <tr>       
+        <td bgcolor="#505050" valign="middle" width="30" rowspan="3"><font size="2" color="#FFFFFF">適用</font></td>       
+        <td width="213" rowspan="3"><font size="2">データベーステーブル (tables)     
+          メンテナンス</font></td>       
+        <td width="246" rowspan="3"><font size="2">データテーブルの関連統計</font></td>       
+        <td width="131"><font size="2">ユーザデータ一時保存</font></td>       
+      </tr>       
+      <tr>       
+        <td width="131"><font size="2">文字ロード</font></td>       
+      </tr>       
+      <tr>       
+        <td width="131"><font size="2">バッチ (batch)     
+          作業のデータ処理</font></td>            
+      </tr>       
+    </table>       
+  </li>       
+</ul>       
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">       
+<font color="#003366" size="2">▲Top</font></a></p>       
+<p style="margin-top: 1; margin-bottom: 1">       
+　 </p>
+<p style="margin-top: 1; margin-bottom: 1">
+　 </p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="tablelist"></a>データベースのテーブルリスト            
+(database tables listing)</b></font></p>                  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">デザインナーはアプリに設定されたデータベース(database)がツリーの形でテーブル(tables)をリスト     
+し，ダブルクリックするか右キーでクリックすると，このテーブルをデータソースとして作成できます。</font></p>             
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch09_table_list.gif" width="279" height="358"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="dslist"></a>データソースリスト            
+(data source listing)</b></font></p>                  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">データソース            
+(data source listing) リストはこのフォーム中に表示されます。デザインナーはマウス右キーで追加            
+(add)、編集 (edit properties)、削除 (remove)     
+データソースすることができます。システムはデータフィールド名及びプロパティ資料を表示できます：タイプ            
+(type)、精度 (precision)、スケール (scale)、読取のみ (read                   
+only)、検索可能 (searchable)、大文字小さい文字区別 (case                   
+sensitive)、自動累積増加 (auto                   
+increase)、書き込み可能 (writable)、デフォルト書き込み可能 (default writable)などを表示します。</font></p>                
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/ch09_ds_list.gif" width="279" height="360"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>        
+<p style="margin-top: 0; margin-bottom: 0"></p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><b><a name="globeds"></a>グローバルデータソース(globe data source)</b></font></p>                 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">jLIVE                  
+Builder&trade;     
+はデータソースをグローバルに設定し，多数のフォーム(form)     
+を一つのデータソースにアクセスすることが出来ます。多数フォームの場合，並列性 (synchronized)     
+で即時アクセス状態をされます。<br>  
+　</font></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">グローバルデータソースは一般データソースと区別し，データソース名は多数のフォームデータソースの設定中に同じ名前で，しかも，グローバルプロパティを選択すると，このデータソースがグローバルデータソースになります。最初オープンされたフォームでデータソースがオープンされ，その後のフォームで共用されます。このフォーム閉じる時に            
+(form close)，共用されているデータソースが必ずしも閉じる (close data                  
+source)のではなく，最後に閉じたフォームによってデータソースが閉じられます            
+(close data source)。<br>            
+　　</font></p>     
+<p style="margin-top: 0; margin-bottom: 0"></p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 0; margin-bottom: 0">      
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0">
+　</p> 
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+　</p>    
+<p style="margin-top: 0; margin-bottom: 0">
+<b><font size="2"><a name="dbprop"></a>データベースプロパティ (database properties)</font></b></p>                  
+<ul type="square">        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2"><font color="#666699">データベース名 (database name)：</font>                   
+ データソースのデータベース名。</font></p>                 
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">データソース (data source name)： </font>データソース名。同じフォーム中にフォーム名は修正できますが，２重できません。　</font></p>             
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><a name="rowfetch"></a>行フェッチ－            
+(row fetch)： </font>データソースとデータベースサーバの連結でデータレコードを読み取る時の行数。デフォルトは                  
+15 列，0 デフォルト表示，-1 すべての行回答 (all rows)。データ量が少ない時と関連データソース            
+(lookup data source)の時，-1に設定され (すべての行回答)，効率をアップできます。</font></p>                 
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699"><a name="blobfetch"></a>Blob 読取 (Blob fetch)：</font><font size="2">大型データ                  
+(Blob and Clob) フィールドの対処方式，データソースオープン (open)の時，大型データ                  
+(Blob and Clob) フィールドはどんな方式でデータ転送。　</font></p>             
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2"><font color="#666699">読取のみ (read only)：</font>                   
+ データソースを読み取りのみに設定。</font></p>                 
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2"><font color="#666699">グローバルデータソース (globe data source)：</font>               
+ グローバルデータソース。<a href="#globeds">グローバルデータソース (globe data source)</a>参考。</font></p>                 
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2"><font color="#666699">オートオープン (auto open)：</font>                   
+ フォームオープンした後，データソースが自動的にオープン。</font></p>                 
+  </li>        
+</ul>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch09_db.gif" width="559" height="439"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="sqlprop"></a>SQL     
+プロパティ (SQL properties)</font></b>　</p>             
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">　</font></p>            
+<ul type="square">       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">SQL&nbsp; 
+F2キーか右クリック，データフィールドで表示 ：</font>  SQLコマンドを入力し， F2     
+キーを押すと，SQL データフィールドフォームが表示され，それを活用すれば効率アップと正確性アップに繋がります。&nbsp;</font></p>            
+  </li>        
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">SQL 
+コマンドテスト</font><img border="0" src="images/formdesign16.gif" width="24" height="24"><font color="#666699">(SQL        
+test)</font> <font color="#666699">：</font>&nbsp; SQL     
+コマンドが変更されると，強制的にテストを実行しなければなりません。</font></p>        
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">        
+<font color="#666699">パラメーター (parameters)：</font> SQL     
+コマンドに ? 記号でパラメーターを導入でき，フォーミュラで値を与えます。</font></p>                 
+  </li>        
+</ul>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch09_sql.gif" width="559" height="371"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><font color="#003366" size="2"><a name="fieldprop"></a></font><b><font size="2">フィールドプロパティ            
+(field               
+properties)</font></b></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">Buffer     
+データソースフィールドのスタイル</font></p>            
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">　</p>       
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/ch09_buffer_data_field.gif" width="419" height="269"></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><b><a name="rowidprop"></a><font size="2">行ＩＤプロパティ                  
+(row Id properties)</font></b></p>                  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">プロパティが編集可能のデータソースの場合，もしデータドライブ            
+(database driver)が結果集の直接更新、新規、削除 (result set position update, insert, delete)     
+をサポートしない場合，デザインナーは必ず ID </font><font size="2">フィールド (row id fields)を適当に選択しなければなりません，jLIVE&trade;                  
+    middle ware はそれによって更新 (update)、新規 (insert)、削除            
+(delete) の SQLコマンドを組みます。データベース連結テストでドライブ(driver)が更新、新規、削除などの情報が表示されます。</font></p>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch09_row_id.gif" width="559" height="371"></p>      
+</blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"></p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="defaultprop"></a>デフォルトプロパティ     
+(default properties)</font></b></p>                 
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">　</font></p>           
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch09_default.gif" width="559" height="313"></p>      
+</blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"></p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="validprop"></a>プロパティ認証</font></b><b><font size="2">(validate properties)</font></b>　</p>             
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify">　</p>       
+<ul type="square">      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font color="#666699" size="2">フェッチ－</font><font size="2">       
+<font color="#666699"> (fetch)：</font>            
+ フォーミュラがＴＲＵＥの時，読取は可能。</font></p>              
+  </li>      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">編集 (update)：</font>              
+ フォーミュラがＴＲＵＥの時，編集保存は可能。</font></p>              
+<p style="margin-top: 0; margin-bottom: 0">　</li>      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">新規 (insert)：</font>              
+ フォーミュラがＴＲＵＥの時，新規追加は可能。</font></p>              
+  </li>      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">削除 (delete)：</font>              
+ フォーミュラがＴＲＵＥの時，削除は可能。</font></p>              
+  </li>      
+  <li>      
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699">無効イベント (invalidate event)：</font>               
+ フォーミュラがＦＡＬＳＥの時，イベントを起動。</font></p>               
+  </li>      
+</ul>      
+<blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">      
+<img border="0" src="images/ch09_validate.gif" width="559" height="439"></p>      
+</blockquote>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>      
+<p style="margin-top: 0; margin-bottom: 0"></p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">      
+<font color="#003366" size="2">▲Top</font></a></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="event"></a>イベント            
+(events)</font></b></p>       
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">データソースはデータベースにアクセスする時にイベントを起動します。</font></p>       
+<ul type="square">       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<font size="2" color="#666699">フェッチー前&nbsp; (before fetch)：</font></p>                  
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">フェッチー後&nbsp; (after fetch)：</font></p>                  
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">更新前&nbsp; (before update)： </font></p>                  
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">更新後&nbsp; (after update)：</font></p>                  
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">新規追加前&nbsp; (before insert)： </font></p>                  
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">新規追加後&nbsp; (after insert)： </font></p>                  
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">削除前&nbsp; (before delete)： </font></p>                  
+  </li>        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">削除後 (after delete)： </font></p>                  
+  </li>        
+</ul>        
+<blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<img border="0" src="images/ch09_events.gif" width="559" height="371"></p>        
+</blockquote>        
+<p style="margin-top: 0; margin-bottom: 0">        
+　</p>        
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="errhandleprop"></a>ErrHandle (SQL error handle)</font></b></p>                  
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<ul type="square">        
+  <li>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<font size="2" color="#666699">SQL オープンエラー (open)<font size="2">：</font></font><font size="2" color="#000000">データソースオープン            
+(open)、読取レコード (data source record meta-data)、クエリーデータソースイベント            
+(query data source)             
+，SQLエラー (exception) の時にイベントを起動。</font></p>                
+  </li>       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0"><font size="2" color="#666699">SQL     
+読取エラー (fetch)<font size="2">：</font></font><font size="2" color="#000000">データソースのレコードを読取する時に             
+，SQL エラー (exception) の時にイベントを起動。</font></p>                
+  </li>       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<font size="2" color="#666699">SQL 編集エラー (update)<font size="2">：</font></font><font size="2" color="#000000">データソースのレコードを編集する時に             
+，SQL エラー (exception) の時にイベントを起動。</font></p>                
+  </li>       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<font size="2" color="#666699">SQL 新規追加エラー (insert)<font size="2">：</font></font><font size="2" color="#000000">データソースのレコードを新規追加する時に             
+，SQL エラー (exception) の時にイベントを起動。</font></p>                
+  </li>       
+  <li>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<font size="2" color="#666699">SQL 削除エラー (delete)<font size="2">：</font></font><font size="2" color="#000000">データソースのレコードを削除する時に     
+，SQL エラー (exception) の時にイベントを起動。</font></p>                
+  </li>       
+</ul>       
+<blockquote>       
+<p style="margin-top: 0; margin-bottom: 0">       
+<img border="0" src="images/ch09_err_handle.gif" width="559" height="371"></p>       
+</blockquote>       
+<p style="margin-top: 0; margin-bottom: 0">       
+　</p>     
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="internalproc"></a>データソース読取、新規、保存、削除システム内部のプロシージャ     
+(fetch, insert, post, delete system internal procedures)</b></font>　</p>  
+<ul>
+  <li>
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>データソース読取プロシージャ  
+    (fetch procedures)</b></font> <br>  
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">認証フォーミュラ   
+        (fetch     
+        validation) で読取可能かどうかを検証し，ＦＡＬＳＥの場合【無効イベント 】(invalidate     
+        event) を起動。</font></li>   
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">読取行は既にクライアント   
+        (client)にあるかどうか  
+        ，ＴＲＵＥの場合ステープ５を実行。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">jLIVE&trade; middle ware  
+        に必要なデータをリクエスト</font><font size="2">(request)。</font></li> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">リクエストとリスパンス   
+        (request and respond) 作業は SQL エラーが生じるかどうか，ＴＲＵＥの場合，【読取SQL error handle  
+        イベント】を起動。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">【読取前イベント     
+        】(before fetch event)を</font><font size="2">起動。</font></li>   
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">バファーに今のレコードフィールド   
+        (current record data field)。</font></li>    
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">【読取後イベント     
+        】(after fetch event)を</font><font size="2">起動。</font></li>   
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">関連コンポーネントに含めている値の更新とフォーミュラの再度計算。</font></li>  
+    </ol>  
+  </li>  
+</ul>  
+<p style="margin-top: 2; margin-bottom: 2">　</p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>データソース新規プロシージャ  
+    (insert procedures)</b></font> <br>  
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">データソースが新規状態   
+        (insert mode)に表示。</font></li>   
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">リクエスト   
+        (request)は jLIVE&trade; middle ware に最後のレコード (last     
+        record)を転送。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">リクエストとリスパンス   
+        (request and respond) 作業は SQL エラーが生じるかどうか，ＴＲＵＥの場合，【読取SQL error handle  
+        イベント】を起動。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">【読取前イベント     
+        】(before fetch event)を起動。</font></li>   
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">データソースデフォルトフォーミュラを実行し，結果集をバファー区域の現在レコードフィールドに保存   
+        (current record data field)。</font></li>    
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">【読取後イベント     
+        】(after fetch event)。</font></li>    
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">関連コンポーネントに含めている値の更新とフォーミュラの再度計算。</font></li>  
+    </ol>  
+  </li>  
+</ul>  
+<p style="margin-top: 2; margin-bottom: 2">　</p>  
+<ul>  
+  <li>  
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>データソース保存プロシージャ 
+    (post procedures)</b></font> <br>  
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">関連コンポーネント値を現在レコードデータフィールドに保存   
+        (current record data field)。</font></li>    
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">データソース状態によって新規追加・保存或いは更新を実行。</font>   
+      </li> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">関連コンポーネントに含めている値の更新とフォーミュラの再度計算。</font></li> 
+    </ol> 
+  </li> 
+</ul> 
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<ul> 
+  <li> 
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>データソース削除プロシージャ  
+    (delete procedures)</b></font> <br>   
+    　<ol style="font-size: 10 pt"> 
+      <li> 
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">認証フォーミュラ  
+        (fetch    
+        validation) で削除可能かどうかを検証し，ＦＡＬＳＥの場合【無効イベント 】(invalidate    
+        event) を起動。　</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">【削除前イベント    
+        】を起動(before delete event)。</font></li>   
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">リクエスト  
+        (request)は jLIVE&trade; middle ware にレコード削除 (delete record)。</font></li>   
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">リクエストとリスパンス  
+        (request and respond) 作業は SQL エラーが生じるかどうか，ＴＲＵＥの場合，【削除SQL error handle 
+        イベント】を起動。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">【削除後イベント    
+        】(after delete event)を起動。</font></li>  
+      <li>  
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2"><b>データソース読取プロシージャ</b>を実行し，データレコードを次の行に移します。</font></li>  
+    </ol>  
+  </li>  
+</ul>  
+<p style="margin-top: 2; margin-bottom: 2">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">     
+<font color="#003366" size="2">▲Top</font></a></p>     
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=637 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=212 align=left valign=top>  
+<a href="ch08_02.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=206 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=219 align=right valign=top>  
+<a href="ch10.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+     
+</body>     
+     
+</html>

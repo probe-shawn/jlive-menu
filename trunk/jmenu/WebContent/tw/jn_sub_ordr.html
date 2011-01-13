@@ -1,0 +1,529 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>jLIVE Builder -- How to ....?</title>
+</head>
+
+<body>
+
+   <div align="center">
+     <center>
+     <table border="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1" cellpadding="0">
+       <tr>
+         <td width="100%">
+         <p align="center" style="margin-top: 0; margin-bottom: 0">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>      
+     
+<table width="100%" border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">     
+<tr>     
+<td width=145 align=left valign=top>     
+<p style="margin-top: 0; margin-bottom: 0">     
+<a href="jn_qury_ordr.html">     
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=471 align=center valign=top>   
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a style="text-decoration: none" href="appendix.html"><font color="#000000">Appendix</font></a></font></b></TD>  
+<td width=134 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_qury_cont.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>
+<a style="text-decoration: none" href="jn_index.html">【Northwind】-- Sample Application</a></b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+         <p style="margin-top: 0; margin-bottom: 0"><b>Sub Form for Query Orders 
+Information</b></p>
+         <p style="margin-top: 0; margin-bottom: 0">　</p>
+   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" height="2188">
+     <tr>
+       <td width="53" align="center" height="25">
+      <img border="0" src="images/form1.gif" align="absmiddle" width="24" height="24"></td>
+       <td width="744" colspan="3" height="25"><font size="2"><b>
+       <font color="#666699">視窗名稱 (Form Name)</font></b>：<b>SUB_ORDR</b></font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="24">　</td>
+       <td width="744" colspan="3" height="24">　</td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="25"><font size="2">
+       <img border="0" src="images/spec.gif" align="absmiddle" width="20" height="20"></font></td>
+       <td width="744" colspan="3" height="25"><font size="2">
+       <font color="#666699"><b>操作說明 (Specifications)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="53">　</td>
+       <td width="744" colspan="3" height="53">
+       <ul>
+         <li>
+         <p style="margin-top:2; margin-bottom:2"><font size="2">依訂單日期 (Order Date)、客戶名稱 
+         (Customer Name)、訂單編號 (Order ID)、出貨日期 (Shipped Date) 排列順序，傳回 QURY_ORDR 
+         視窗。</font></li>
+       </ul>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="29">
+       <img border="0" src="images/ds2.gif" width="20" height="20"></td>
+       <td width="743" height="28" colspan="3"><font size="2">
+       <font color="#666699"><b>資料來源 (Data Source)</b></font>： </font>
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="292"></td>
+       <td width="82" height="293" colspan="2" style="border:1px solid #C0C0C0; ">
+       <b><font size="2">BUFF_OrderBy：</font></b></td>
+       <td width="661" height="293" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2"><font size="2">Buffered 資料來源。<br>
+       【資料欄位】：<font face="Courier New"><br>
+&nbsp;&nbsp; seq_no (INT)、<br>
+&nbsp;&nbsp; orderby_name (VARCHAR) 
+       20、<br>
+&nbsp;&nbsp; orderby_no (VARCHAR) 20</font>。<br>
+       【預設】：<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       (1.) seq_no 運算式 : <font color="#666699" face="Courier New">
+       RecordData(&quot;BUFF_OrderBy&quot;,&quot;seq_no&quot;,-1)+1</font></font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ，填入資料來源 &quot;BUFF_OrderBy&quot; 的 
+       &quot;seq_no&quot; 欄位最後一筆 (-1) 內含值加 1</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       ，作用的方式類似 seq_no 的最大值加 1，但是使用 RecordData() 
+       函數的執</font><p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 行速度較快。<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       (2.) orderby_name 運算式 : <font color="#666699" face="Courier New">{list}</font>，
+       填入清單方塊的內含值，即供排序的</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 欄位名稱。<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       (3.) orderby_no 運算式 : </font>
+       <p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;<font color="#666699" face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;
+       Condition(({list}=&quot;Order Date&quot;),4,</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">
+       Condition((Find({list},&quot;Cus&quot;)&gt;0),2,</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">
+       Condition((Find({list},&quot;ID&quot;)&gt;0),3,</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font color="#666699" face="Courier New">
+       Condition((Find({list},&quot;Ship&quot;)&gt;0),5,&quot;&quot;))))</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">這個運算式的意義是，如果清單方塊的內含值等於 &quot;Order Date&quot;，則填入 
+       &quot;4&quot;</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ；否則如果清單方塊的內含值包含了 &quot;Cus&quot; 字串，則填入 &quot;2&quot;；否則如果清單</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 方塊的內含值包含了 &quot;ID&quot; 字串，則填入 
+       &quot;3&quot;；否則如果清單方塊的內含值包</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 含了 &quot;Ship&quot; 字串，則填入 &quot;5&quot;。上述的數值常數乃是 QURY_ORDR 
+       視窗中 </font>
+       <p style="margin-top:2; margin-bottom:2"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       &quot;Orders&quot; 資料來源 裡欄位的順序，目的在組合成諸如 (... order by 2,4,3,5) 的排</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 序條件。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="82" height="16" colspan="2"></td>
+       <td width="661" height="16"></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="29">
+       <img border="0" src="images/comp.gif" width="20" height="20"></td>
+       <td width="743" height="28" colspan="3"><font size="2">
+       <font color="#666699"><b>元件 (Components)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="44"></td>
+       <td width="100" height="45" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【list】</font></td>
+       <td width="643" height="45" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">清單方塊元件 (List)。<br>
+       【關連】核取&quot;字串&quot;，依序填入 &quot;Order Date&quot;、&quot;Customer Name&quot;、&quot;Order ID&quot;、&quot;Shipped 
+       Date&quot;，做為客戶端 (client) 的選項。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="50"></td>
+       <td width="100" height="51" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【listbox】</font></td>
+       <td width="643" height="51" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">清單方塊元件 (List)。<br>
+       【關連】核取&quot;被選時移至關連資料來源記錄&quot;，資料來源選 <font color="#666699">&quot;BUFF_OrderBy&quot;</font>，資料
+       欄位選 <font color="#666699">&quot;orderby_name&quot;</font>，顯示運算式為 
+       <font color="#666699" face="Courier New">{BUFF_OrderBy:orderby_name}</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="47"></td>
+       <td width="100" height="48" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_addall】</font></td>
+       <td width="643" height="48" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)，將 &quot;list&quot; 清單方塊所有選項插入 (insert) Buffered 資料來源
+       ，意即全選。<br>
+       【動作事件】選擇 <font color="#666699">reset_listno </font>，按下時執行新增四筆 &quot;BUFF_OrderBy&quot; 資料來源
+       。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="34"></td>
+       <td width="100" height="35" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_addone】</font></td>
+       <td width="643" height="35" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)，將 &quot;list&quot; 清單方塊指定選項插入 (insert) Buffered 資料來源。<br>
+       【動作事件】選擇 <font color="#666699">ins_buff </font>，按下時執行新增單筆 &quot;BUFF_OrderBy&quot; 資料來源
+       。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="34"></td>
+       <td width="100" height="35" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_delone】</font></td>
+       <td width="643" height="35" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)，刪除指定的 Buffered 資料來源記錄。<br>
+       【動作事件】選擇 <font color="#666699">del_one </font>，按下時執行刪除單筆 &quot;BUFF_OrderBy&quot; 資料來源
+       。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="34"></td>
+       <td width="100" height="35" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_delall】</font></td>
+       <td width="643" height="35" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)，刪除所有的 Buffered 資料來源記錄。<br>
+       【動作事件】選擇 <font color="#666699">del_all </font>，按下時執行刪除所有的 &quot;BUFF_OrderBy&quot; 資料來源
+       。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="34"></td>
+       <td width="100" height="35" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_up】</font></td>
+       <td width="643" height="35" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">ev-up </font>，按下時將 &quot;listbox&quot; 選項上移一格。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="36"></td>
+       <td width="100" height="37" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_down】</font></td>
+       <td width="643" height="37" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">ev-up </font>，按下時將 &quot;listbox&quot; 選項下移一格。 </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="50"></td>
+       <td width="100" height="51" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_ok】</font></td>
+       <td width="643" height="51" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">ev_ok </font>，按下時會組成查詢訂單資料的排序條件 ，並關閉 SUB_ORDR 
+       視窗。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="45"></td>
+       <td width="100" height="46" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【btn_cancel】</font></td>
+       <td width="643" height="46" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">按鈕元件 (button)。<br>
+       【動作事件】選擇 <font color="#666699">ev_cancel </font>，按下時將查詢訂單資料的排序條件清除 ，並關閉 SUB_ORDR 
+       視窗。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="100" height="16">
+       </td>
+       <td width="643" height="16" colspan="2">
+       </td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="27">
+       <img border="0" src="images/evevt.gif" width="20" height="20"></td>
+       <td width="743" height="26" colspan="3"><font size="2">
+       <font color="#666699"><b>事件與事件表 (event 
+       schema)</b></font>： </font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="61"></td>
+       <td width="19" height="62" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【reset_listno】</font></td>
+       <td width="906" height="62" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式內容為<font color="#666699"> <font face="Courier New">LocalHashPut(&quot;listno&quot;,0)</font></font>。將區域變數 &quot;listno&quot; 
+       的內含值變為 0。<br>
+       【後續事件】選<font color="#666699"> add_buff</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="180"></td>
+       <td width="19" height="181" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【add_buff】</font></td>
+       <td width="906" height="181" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">LocalHashPut(&quot;listno&quot;,LocalHashGet(&quot;listno&quot; )+1)&lt;=4</font>，將目前區域變數 &quot;listno&quot; 的內含值加 1 
+       再存回 &quot;listno&quot; ，此函數執行後會傳回新的 &quot;listno&quot; 的內含值，當&quot;listno&quot; &lt;= 4 
+       時才會執行此事件。4 的意義是，預設的排序欄位只有4個，因此控制此事件只執行4次。<br>
+       【執行】運算式內容有兩項：<br>
+       <font color="#666699">(1).&nbsp; <font face="Courier New">SetProp(&quot;list&quot;,&quot;selected&quot;,LocalHashGet(&quot;listno&quot;))</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">將清單方塊元件 (list) 移到第 n 個選項，n 等於區域變數 &quot;listno&quot; 
+       的內含值。<br>
+       <font color="#666699">(2).&nbsp; <font face="Courier New">DoEvent(&quot;ins_buff&quot;)</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">執行 &quot;ins_buff&quot; 
+       事件，即新增單筆 &quot;BUFF_OrderBy&quot; 資料來源。<br>
+       【後續事件】選<font color="#666699"> add_buff</font>，重覆執行自身事件直到條件運算式不成立為止，總共會執行4次。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="173"></td>
+       <td width="19" height="174" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ins_buff】</font></td>
+       <td width="906" height="174" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">Seek(&quot;BUFF_OrderBy&quot;,&quot;orderby_name&quot;,{list},0,0)=0 and {list}&gt;0</font>，在資料來源 &quot;BUFF_OrderBy&quot; 的欄位 &quot;orderby_name&quot; 
+       中，尋找元件 {list} 的內含值，找不到時才會執行此事件。其意義在於避免重覆資料。seek() 函數第4個參數表從頭找起，
+       第5個參數表傳回記錄編號 (record number) 即可，不需移動到該筆記錄。<br>
+       【執行】運算式內容有兩項：<br>
+       <font color="#666699">(1).&nbsp; <font face="Courier New">DsNavigator(&quot;BUFF_OrderBy&quot;,&quot;Insert&quot;)</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">新增一筆 
+       &quot;BUFF_OrderBy&quot; 資料來源的記錄，新增動作一執行完，接著會把</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;欄位預設值&quot;運算式的結果填入各相對欄位。<br>
+       <font color="#666699">(2).&nbsp; <font face="Courier New">DsNavigator(&quot;BUFF_OrderBy&quot;,&quot;Post&quot;)</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">執行 
+       &quot;BUFF_OrderBy&quot; 資料來源的&quot;存檔&quot;。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="65"></td>
+       <td width="19" height="66" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【del_one】</font></td>
+       <td width="906" height="66" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699"> &quot;BUFF_OrderBy&quot;</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">刪除</font>，
+       刪除單筆 &quot;BUFF_OrderBy&quot; 資料。<br>
+       【後續事件】選<font color="#666699"> reopen_buff</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="44"></td>
+       <td width="19" height="45" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【reopen_buff】</font></td>
+       <td width="906" height="45" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699"> &quot;BUFF_OrderBy&quot;</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">重開</font>，
+       剛被刪除的資料將會消失。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="62"></td>
+       <td width="19" height="63" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【del_all】</font></td>
+       <td width="906" height="63" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699"> &quot;BUFF_OrderBy&quot;</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">全刪</font>，
+       刪除全部 &quot;BUFF_OrderBy&quot; 資料。<br>
+       【後續事件】選<font color="#666699"> reopen_buff</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="117"></td>
+       <td width="19" height="118" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ev_up】</font></td>
+       <td width="906" height="118" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {BUFF_OrderBy:Bof()} and not {BUFF_OrderBy:IsEmpty()}</font>，&quot;BUFF_OrderBy&quot; 
+       不是空的資料來源，而且不在首筆記錄時才會執行此事件。<br>
+       【執行】運算式為</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;<font color="#666699">&nbsp;&nbsp;&nbsp;&nbsp; <font face="Courier New">SwapRecord(&quot;BUFF_OrderBy&quot;,{BUFF_OrderBy:RecordNo()},</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp; </font>
+       <font size="2"> <font face="Courier New" color="#666699">{BUFF_OrderBy:RecordNo()}-1)</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp; </font>
+       <font size="2">將目前 &quot;BUFF_OrderBy&quot; 資料來源的記錄與上一筆記錄對調。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="121"></td>
+       <td width="19" height="122" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ev_down】</font></td>
+       <td width="906" height="122" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">not {BUFF_OrderBy:Eof()} and not {BUFF_OrderBy:IsEmpty()}</font>，&quot;BUFF_OrderBy&quot; 
+       不是空的資料來源，而且不在尾筆記錄時才會執行此事件。<br>
+       【執行】運算式為<font color="#666699"> </font></font>
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">SwapRecord(&quot;BUFF_OrderBy&quot;,{BUFF_OrderBy:RecordNo()},</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp; </font>
+       <font size="2"> <font face="Courier New" color="#666699">{BUFF_OrderBy:RecordNo()}+1)</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp; </font>
+       <font size="2">將目前 &quot;BUFF_OrderBy&quot; 資料來源的記錄與下一筆記錄對調。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="83"></td>
+       <td width="19" height="84" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ev_ok】</font></td>
+       <td width="906" height="84" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式內容有兩項：<br>
+       <font color="#666699">(1).&nbsp; <font face="Courier New">DsNavigator(&quot;BUFF_OrderBy&quot;,&quot;First&quot;)</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">&nbsp;移動到 
+       &quot;BUFF_OrderBy&quot; 資料來源的首筆記錄。<br>
+       <font color="#666699">(2).&nbsp; <font face="Courier New">LocalHashPut(&quot;seq&quot;,&quot;&quot;) and LocalHashPut(&quot;desc&quot;,&quot;&quot;)</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">將區域變數 &quot;seq&quot;、&quot;desc&quot; 的內含值都變成空字串。<br>
+       【後續事件】選<font color="#666699"> set_hash</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="271"></td>
+       <td width="19" height="272" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【set_hash】</font></td>
+       <td width="906" height="272" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式內容有兩項：<br>
+       <font color="#666699">(1).&nbsp; <font face="Courier New">Condition((LocalHashGet(&quot;seq&quot;)=&quot;&quot;),</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">LocalHashPut(&quot;seq&quot;,{BUFF_OrderBy:orderby_no}),</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2"> <font face="Courier New" color="#666699">&nbsp;LocalHashPut(&quot;seq&quot;,LocalHashGet(&quot;seq&quot;)$&quot;,&quot;$</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2"> <font face="Courier New" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {BUFF_OrderBy:orderby_no}))</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font>
+       <font size="2">如果區域變數 &quot;seq&quot;為空字串，則把 &quot;BUFF_OrderBy&quot; 資料來源的 
+       &quot;orderby_no&quot;</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 欄位內含值回填入&quot;seq&quot;中；否則將目前&quot;seq&quot;的值，加上一個逗號 &quot;,&quot;，再加上</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;orderby_no&quot; 
+       欄位內含值之後，回填入&quot;seq&quot; 中。這個運算式會組成類似 &quot;...order</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; by 2,3,5,4&quot; 的字串。<br>
+       <font color="#666699">(2).&nbsp; <font face="Courier New">Condition((LocalHashGet(&quot;desc&quot; )=&quot;&quot;),</font></font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font face="Courier New" color="#666699">&nbsp;LocalHashPut(&quot;desc&quot;,{BUFF_OrderBy:orderby_name}),</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font face="Courier New" color="#666699">&nbsp;LocalHashPut(&quot;desc&quot;,LocalHashGet(&quot;desc&quot;)$&quot;+&quot;$</font></font><p style="margin-top:2; margin-bottom:2">
+       <font face="Courier New" size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2"> <font face="Courier New" color="#666699">{BUFF_OrderBy:orderby_name}))</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       </font><font size="2">如果區域變數 
+       &quot;desc&quot;為空字串，則把 &quot;BUFF_OrderBy&quot; 資料來源的</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;orderby_name&quot; 欄位內含值回填入&quot;desc&quot; 
+       中；否則將目前 &quot;desc&quot; 的值，加上一</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 個加號 &quot;+&quot;，再加上 &quot;orderby_name&quot; 欄位內含值之後，回填入&quot;desc&quot; 
+       中。這個</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 運算式會組成類似&quot;Order ID+Order Date+Customer Name+Shipped Date&quot;的字串。<br>
+       【後續事件】選<font color="#666699"> next_buff</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="93"></td>
+       <td width="19" height="94" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【next_buff】</font></td>
+       <td width="906" height="94" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">資料來源之導覽元件事件。<br>
+       【條件】運算式為 <font color="#666699"><font face="Courier New">not {BUFF_OrderBy:Eof()}</font>  </font>，&quot;BUFF_OrderBy&quot; 
+        
+       不在尾筆記錄時才會執行此事件。<br>
+       【否則】事件選<font color="#666699"> exit</font>。，&quot;BUFF_OrderBy&quot; 到尾筆記錄時
+       則執行 &quot;exit&quot; 事件。<br>
+       【執行】</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp; 【資料來源】選<font color="#666699"> &quot;BUFF_OrderBy&quot;</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp; </font><font size="2">【操作】選<font color="#666699">下筆</font>，
+       移到下一筆 &quot;BUFF_OrderBy&quot; 資料。<br>
+       【後續事件】選<font color="#666699"> set_hash</font>。與上一個事件組成迴圈 (loop) ，將&quot;BUFF_OrderBy&quot; 
+       的資料寫到區域變數 &quot;seq&quot;以及&quot;desc&quot; 裡面。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="4"></td>
+       <td width="19" height="5" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【exit】</font></td>
+       <td width="906" height="5" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">離開視窗事件。<br>
+       【條件】運算式為 <font color="#666699" face="Courier New">1 or (StackPush(LocalHashGet(&quot;desc&quot;)) 
+       and StackPush(LocalHashGet(&quot;seq&quot;))) </font>，&quot;1 or ...&quot; 
+       保證此事件一定會執行，後面的運算式目的為在全域性容器 Stack 裡，先壓入區域變數 &quot;desc&quot; ，再壓入區域變數 &quot;seq&quot; ，此時 &quot;seq&quot; 
+       在 &quot;desc&quot; 之上，取用時會先被取出。<br>
+       【執行】離開視窗，返回 QURY_ORDR 視窗，之後的行為請參考該視窗說明。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="1"></td>
+       <td width="19" height="1" colspan="2" style="border: 1px solid #C0C0C0; ">
+       <font size="2">【ev_cancel】</font></td>
+       <td width="906" height="1" style="border: 1px solid #C0C0C0; ">
+       <p style="margin-top:2; margin-bottom:2">
+       <font size="2">執行運算式事件。<br>
+       【執行】運算式</font><p style="margin-top:2; margin-bottom:2">
+       <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <font color="#666699" face="Courier New">LocalHashPut(&quot;seq&quot;,&quot;&quot;) and LocalHashPut(&quot;desc&quot;,&quot;&quot;)</font></font><p style="margin-top:2; margin-bottom:2">
+       <font size="2" color="#666699">&nbsp;&nbsp;&nbsp;&nbsp; </font>
+       <font size="2">將區域變數 &quot;seq&quot;、&quot;desc&quot; 的內含值都變成空字串。<br>
+       【後續事件】選<font color="#666699"> exit</font>。</font></td>
+     </tr>
+     <tr>
+       <td width="53" align="center" height="16"></td>
+       <td width="19" height="16" colspan="2"></td>
+       <td width="906" height="16"></td>
+     </tr>
+     </table>
+     
+<hr noshade color="#000000" align="left">   
+  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=116 align=left valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_qury_ordr.html">  
+<img border="0" src="images/jlogo_previous.gif" align="absmiddle" width="70" height="18"></a></td>  
+<td width=386 align=center valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=98 align=right valign=middle>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="jn_qury_cont.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr noshade color="#000000" align="left">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~        
+2004 Probe Technology Inc . All Rights Reserved.</font></p>       
+       
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,        
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>       
+  
+         </td>
+       </tr>
+     </table>
+     </center>
+   </div>
+  
+</body>   
+   
+</html>

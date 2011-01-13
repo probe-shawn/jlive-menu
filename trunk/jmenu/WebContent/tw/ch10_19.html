@@ -1,0 +1,431 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Timer component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 height="31" style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top height="31">
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_18.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=195 align=center valign=top height="31">
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>  
+<td width=205 align=right valign=top height="31">  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_20.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b>  
+<font size="4"><a name="top"></a> </font></b>     
+    <font size="4"><b>計時器</b> </font><b>     
+<font size="4">(Timer component) </font></b><font size="4">    
+    <img border="0" src="images/dbttimer.gif" width="25" height="25"></font></p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#face">    
+<font size="2">版面 (face)</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1"><a href="#timerprop">   
+<font size="2">計時器屬性 (Timer properties)</font></a></p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#event">    
+<font size="2">事件 (event)</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#change">動態更改每隔幾毫秒啟動   
+(dynamically change 'Every milli-second' trigger)</a></font></p>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a href="#getsetprop">運算式屬性存取  
+(formula get/set properties)</a></font></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">計時器元件    
+(Timer component) 是多執行緒的元件 (multi-thread component)，除了顯示目前日期時間外，依設計師啟動事件時機   
+(trigger) 的規劃，以獨立的背景執行緒 (background tread)    
+執行事件流程。啟動事件的時機 (trigger) 可以規劃為每隔幾毫秒   
+(every milli-second)、每天的 (every day at)、每月的 (every month at)、當條件為真   
+(when condition is    
+true) 。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<b><font size="2"><a name="face"></a>版面 (Face)</font> </b></p>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">Date Time 樣板 (display pattern)：</font>計時器顯示的日期時間格式。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">水平 (horizontal position)：</font>顯示的日期時間水平位置。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">頭 (leading)：</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">左 (left)：</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">中 (center)：</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">右 (right)：</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">尾 (trailing)：</font></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+    </li>   
+  </ul>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">垂直 (vertical position)：</font>顯示的日期時間垂直位置。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<font color="#666699" size="2">上 (top)：</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">中 (center)：</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font color="#666699" size="2">下 (bottom)：</font></p>   
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_19_face.gif" width="475" height="477"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="timerprop"></a>計時器屬性    
+(Timer properties)</font></b></p>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">觸發事件 (fire event)：</font>啟動動作事件   
+(action event) 的時機。</font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<ul type="disc">    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">關閉 (none)：</font>不啟動任何事件。</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">   
+<font color="#666699">每隔幾毫秒 (every milli-second)：</font>每隔幾毫秒啟動事件一次，以毫秒為單位。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">  
+<font color="#666699">每天的 (every day at)：</font>每日何時啟動事件一次。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">每月的 (every month at)：</font>每月何時啟動事件一次。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">    
+<font color="#666699">當條件為真 (when condition is true)：</font>依運算式結果為真時，啟動事件。</font></p>    
+  </li>    
+</ul>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_19_timer.gif" width="475" height="478"></p>    
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="event"></a>事件   
+(event)</b></font></p>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><font color="#666699">動作事件 (action event)：</font>當計時器    
+(Timer) 設定的條件成立時，即引發事件。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">雙擊事件 (double click event)：</font>當在元件內雙擊滑鼠的左鍵時，即引發事件。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">按右鍵事件 (right click event)：</font>當在元件內按下滑鼠右鍵時，即引發事件。</font></p>    
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">初始觸發 (initial firing)：</font><font size="2">當設定觸發時機為【</font><font color="#666699" size="2">每隔幾毫秒   
+(every milli-second)</font><font size="2">】啟動事件的屬性，計時器初始化時是否隨即觸發事件，之後再每隔幾毫秒   
+(every milli-second) 啟動事件。</font></p>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">    
+<img border="0" src="images/ch10_19_event.gif" width="475" height="476"></p>    
+</blockquote>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><a name="change"></a>動態更改每隔幾毫秒啟動   
+(dynamically change 'Every milli-second' trigger)</b></font></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">應用程式執行期   
+(runtime)，設計師可以用運算式事件 (formula)    
+，動態設定每隔幾毫秒啟動事件，亦可暫停或重啟事件的啟動。</font></p>    
+<ul>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><font face="Courier New">SetProp(&quot;</font>計時器元件名稱<font face="Courier New">&quot;,    
+    &quot;delay&quot;, </font> 毫秒數<font face="Courier New">)</font>：</font> 重設每隔幾毫秒啟動。</font></li>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699"><font face="Courier New">SetProp(&quot;</font>計時器元件名稱<font face="Courier New">&quot;,    
+    &quot;enabled&quot;, 0)</font>：</font> 暫停事件啟動。</font></li>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2"><font color="#666699" size="2" face="Courier New">SetProp(&quot;</font><font color="#666699" size="2">計時器元件名稱</font><font color="#666699" size="2" face="Courier New">&quot;,    
+    &quot;enabled&quot;, 1)</font>： 重啟事件啟動。</font></li>   
+</ul>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取 
+(formula get/set properties)</b></font></p>
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;,&nbsp; 值</font><font color="#666699">1,&nbsp; 值</font><font color="#666699">2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;</font><font color="#666699">元件名稱</font><font color="#666699">&quot;,  
+&quot;</font><font color="#666699">屬性</font><font color="#666699">&quot;)</font>：屬性讀取。</font></p> 
+ 
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#111111"> 
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set  
+      Properties</font></td> 
+  </tr> 
+  <tr> 
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性   
+      (Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1   
+      (Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td>
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1&nbsp;</font></td> 
+    <td>　</td>
+    <td><font size="2">元件重整。</font></td>
+  </tr>
+  <tr>
+    <td><font size="2">delay</font></td>
+    <td><font size="2">N 每隔幾 N 毫秒</font></td> 
+    <td>　</td> 
+    <td><font size="2" color="#000000">重設</font><font size="2">每隔幾 N  
+      毫秒啟動事件。</font></td> 
+  </tr> 
+  <tr>
+    <td><font size="2">time</font></td>   
+    <td><font size="2">yyyyMMddHHmmss</font></td>   
+    <td>　</td>   
+    <td><font size="2" color="#000000">重設時間</font><font size="2">。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td>　</td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性   
+      (Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">time</font></td>   
+    <td colspan="2"><font size="2">yyyyMMddHHmmss</font></td>   
+    <td><font size="2">讀</font><font size="2" color="#000000">取時間</font><font size="2">。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch10_18.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=193 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=207 align=right valign=top>   
+<a href="ch10_20.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+      </body>    
+    
+</html>

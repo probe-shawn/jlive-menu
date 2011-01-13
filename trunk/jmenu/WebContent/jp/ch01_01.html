@@ -1,0 +1,1021 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Technical overview</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="346" height="60"></a></p>
+
+<table width=670 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=238 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+&nbsp;&nbsp;&nbsp; 
+<a href="ch01.html">
+<img border="0" src="images/jlogo_previous.gif" width="71" height="18"></a></td>
+<td width=203 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="新細明體" size="-1">Chapter 1</font></b><p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">Installation    
+&amp; Start Up</font></b></TD>        
+<td width=229 align=right valign=top>        
+<p style="margin-top: 0; margin-bottom: 0">        
+<a href="CH02.html">       
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>       
+</tr>       
+</table>       
+       
+<hr align=right color="#000000" width="97%"> 
+
+<h1 style='margin-left:18.0pt;mso-para-margin-left:1.5gd'><span lang=EN-US
+style='font-size:13.5pt'>1.1インストールとスタートアップ</span></h1>
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'><a name=top></a><font size="2"><b>内容</b></p>
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><br>
+<a href="#111">インストール</a></span></p>
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a
+href="#112">サンプル</a></span></p>
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a
+href="#113">Tomcat 4.0.x スタートアップ</a></span></p>      
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a
+href="#114">JDBC ドライバー(Drivers)</a></span></p>      
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a
+href="#115">環境リクエスト (Minimum system requirements)</a></span></font></p>      
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><a name=111></a><b><span lang=EN-US>1.1.1      
+jLIVE Builderのインストール (Installation Notes)</span></b></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:15.0pt'><span lang=EN-US
+style='color:blue'><br>
+</span><span lang=EN-US style='font-size:10.0pt'>jLIVE Builderは最新バージョンのJava&#8482; 2 開發環境であるJava&#8482;      
+2 SDKをサポートします， Java&#8482;2 SDK は Sun Microsystems(TM), Inc. 社の商品です。関連情報は Sun      
+Microsystems(TM), Inc. 社のホームページで説明されています 。<br>      
+<br>
+インストールパスには空白スペースの使用は不可で，例えば : C:\Program Files\ ，JDK 中の一部分のツール(Tools)作業環境指数(environment      
+variables) がそれによって予想つかない問題が生じるかもしれません。<br>      
+<br>
+jLIVE Builderのインストールが完成された後，ディレクトリーは以下のようです:</span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span style='font-size:10.0pt'>【】<span
+lang=EN-US> -- インストールの時に選択したディレクトリー名</span></span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span style='font-size:10.0pt'>【<span
+lang=EN-US>jLIVE】</span></span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span style='font-size:10.0pt'>【<span
+lang=EN-US>doc】<br>
+【images】<br>
+【jar】<br>
+【james】<br>
+【mysql】<br>
+【preloadimage】<br>
+【programs】<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+【jNorth】<br>
+【tomcat】<br>
+【xml】</span></span></p>
+
+</blockquote>
+
+</blockquote>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><br>
+</span><span lang=EN-US style='font-size:10.0pt'>jLIVE Builderを起動する前に 以下の環境設定確認を行わなければなりません:</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l7 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>Java&#8482;      
+1.4.x SDK インストール済み，JAVA_HOME 環境変数が正確に設定されたかどうか。</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l7 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>データベーススタートアップ。</span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l7 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>サンプルをテストするなら，先に<span
+lang=EN-US> mySQL データベースをスタートアップします。</span></span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l7 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>jLIVE&#8482;      
+middlewareミドルウェアをスタートアップします。デフォルトの middle wareはTomcat 4.0の配下で動作します。 Tomcat 4.0をスタートアップする為に，jLIVE\tomcat\bin\startup.batをクリックします。その前，      
+JAVA_HOME と CATALINA_HOMEの<a href="#env_variable">環境変数</a>が正確に設定されたかどうかを確認します。 </span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l7 level1 lfo1;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>初めて<span
+lang=EN-US> jLIVE Builderを実行する時，システムはサンプルパスとインストールパスを取得します。</span></span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><b>インストールの手順<span lang=EN-US> :</span></b></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>1.インストールＣＤのSetup.batを実行すると　，以下のフォームが示されます。</span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=475
+height=342 id="_x0000_i1029" src="images/setup-2.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p class=MsoNormal style='margin-left:18.0pt;mso-para-margin-left:1.5gd'><span
+lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span style='font-size:10.0pt'>インストール初画面。</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;mso-para-margin-left:1.5gd'><span
+lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=564
+height=570 id="_x0000_i1030" src="images/setup-3.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>2. ユーザー名とＩＤの入力画面</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=564
+height=570 id="_x0000_i1031" src="images/setup-4.gif"></span></p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>3. ライセンス説明画面</span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=564
+height=570 id="_x0000_i1032" src="images/setup-5.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>4. インストールパス      
+( デフォルトパス C:\jLIVE&nbsp; )入力画面</span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=563
+height=570 id="_x0000_i1033" src="images/setup-6.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>5. インストール設定確認画面</span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=563
+height=570 id="_x0000_i1034" src="images/setup-7.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>6. インストール進行状態表示画面      
+</span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=563
+height=570 id="_x0000_i1035" src="images/setup-8.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>7. インストール完了画面</span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=565
+height=571 id="_x0000_i1036" src="images/setup-9.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>8.注意事項説明画面</span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=562
+height=570 id="_x0000_i1037" src="images/setup-10.gif"></span></p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a href="#top"><span
+style='font-size:10.0pt;color:#003366'>▲Top</span></a></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><a name=112></a><b><span lang=EN-US>1.1.2. サンプル実行</span></b></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><br>
+</span><span lang=EN-US style='font-size:10.0pt'>jLIVE Builder&#8482; </span><span      
+style='font-size:10.0pt;font-family:SimSun;mso-bidi-font-family:SimSun'>&#20839;</span><span
+style='font-size:10.0pt'>のアプリケーションサンプルが、使用しているデータベースは<span lang=EN-US> mySQL　です。このアプリケーションはテストとデモ用に使用を限定します。      
+サンプルを起動するには、Java&#8482; と jLIVE Builder&#8482; を起動する前に mySQL　データベースを起動します 。</span></span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l2 level1 lfo2;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>mySQLスタート      
+: jLIVE\mysql\bin\winmysqladmin.exe。</span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l2 level1 lfo2;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>Tomcatスタート      
+:&nbsp; jLIVE\tomcat\startup.bat。</span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l2 level1 lfo2;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>直接に<span
+lang=EN-US>(jar file) jnorth.jarを実行することができ，操作方法は一般なWindows 方式と同じです。或いはHTML file      
+(jnorth.html) をブラウザで実行します (Browser)。</span></span> </p>      
+
+<p style='margin-left:18.0pt;mso-para-margin-left:1.5gd'>注）ｍｙＳＱＬは、使用される方が、ｍｙＳＱＬのライセンスルールに従い使用して下さい。<u1:p>
+<span lang=EN-US></u1:p></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a href="#top"><span
+style='font-size:10.0pt;color:#003366'>▲Top</span></a><br>
+　</span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><a name=113></a><b><span lang=EN-US>1.1.3      
+Tomcat 4.0.x </span></b><b><span style='font-family:SimSun;mso-bidi-font-family:      
+SimSun'>&#21855;</span>スタートアップ</b></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>Tomcat      
+バージョン : jakarta-tomcat-4.0.1 , <a      
+href="http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v4.0.1/bin/">http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v4.0.1/bin/</a></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>jLIVE      
+Builder&#8482; Tomcat パス : jLIVE\tomcat。</span><span lang=EN-US><o:p></o:p></span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'><!--<p style="text-indent: 0; margin-top:1; margin-bottom:1">     
+<img border="0" src="images/tomcat_mysql.gif" width="591" height="443"></p> -->
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span style='font-size:10.0pt'>最初に<span
+lang=EN-US> Tomcatを起動する前に必ず <b><span style='color:purple'>JAVA_HOME</span></b><span      
+style='color:purple'> と</span> <b><span style='color:purple'>CATALINA_HOME</span></b>      
+の環境変数を設定してください。</span></span></p>      
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><a name="env_variable"></a><b>環境変数<span
+lang=EN-US>&nbsp;</span></b><span lang=EN-US style='font-size:10.0pt'>( <b><span      
+style='color:purple'>JAVA_HOME</span></b><span style='color:purple'> と</span> <b><span      
+style='color:purple'>CATALINA_HOME</span></b> )</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level1 lfo3;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b><span lang=EN-US style='font-size:10.0pt'>Windows      
+NT/2000/XP</span></b></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level2 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>【パネル】<span
+lang=EN-US>-&gt;【システム】-&gt;【詳細】-&gt; 環境変数。</span></span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level2 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>新規<span
+style='color:#666699'>システム変数</span>，<span style='color:#666699'>変数名称</span><span
+style='color:#9966FF'> </span><span lang=EN-US>: <span style='color:purple'>JAVA_HOME</span>      
+，<span style='color:#666699'>変数</span> : <span style='color:purple'>c:\j2sdk1.4.0</span>。</span></span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level2 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>新規<span
+style='color:#666699'>システム変数</span>，<span style='color:#666699'>変数名称</span><span
+style='color:#9966FF'> </span><span lang=EN-US>: <span style='color:purple'>CATALINA_HOME</span>      
+，<span style='color:#666699'>変数</span> :<span style='color:purple'>      
+c:\jLIVE\tomcat</span>。</span></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span style='font-size:10.0pt'>　</span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=419
+height=458 id="_x0000_i1038" src="images/sysvalue1.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=380
+height=397 id="_x0000_i1039" src="images/sysvalue2.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=347
+height=139 id="_x0000_i1040" src="images/sysvalue3.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><img border=0 width=344
+height=135 id="_x0000_i1041" src="images/sysvalue4.gif"></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level1 lfo3;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b><span lang=EN-US style='font-size:10.0pt'>Windows      
+95/98/me</span></b><span lang=EN-US> </span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　 </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level2 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>編集 <span      
+lang=EN-US style='color:#666699'>C:\autoexec.bat</span>。</span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level2 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>新規 <span      
+lang=EN-US style='color:purple'>SET CATALINA_HOME=C:\jLIVE\tomcat</span><span      
+lang=EN-US>&nbsp; と&nbsp; <span style='color:purple'>SET      
+JAVA_HOME=C:\j2sdk1.4.0</span>。</span></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l0 level2 lfo3;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>リスタート。</span><span
+lang=EN-US><o:p></o:p></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l8 level1 lfo4;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b><span style='font-size:10.0pt'><!--<p style="text-indent: 0; margin-top:1; margin-bottom:1">       
+          　<p style="text-indent: 0; margin-top:1; margin-bottom:1">      
+          <img border="0" src="images/sysvalue5.gif" width="558" height="131">-->スタートアップとシャットダウン<span
+lang=EN-US> Tomcat (Start up and shut down the Tomcat)</span></span></b><span      
+lang=EN-US> </span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　 </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l8 level2 lfo4;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>c:\jLIVE\tomcat\bin\startup.bat。</span>
+</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l8 level2 lfo4;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>c:\jLIVE\tomcat\bin\shutdown.bat。</span>
+</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　 </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l8 level1 lfo4;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b><span lang=EN-US style='font-size:10.0pt'>Tomcat      
+Troubleshooting</span></b><span lang=EN-US><br>
+<br>
+</span><span lang=EN-US style='font-size:10.0pt'>Windows上Tomcat 4.0の設定に関する諸問題      
+:&nbsp;<br>
+<br>
+1) 一番発生しやすい問題は， Tomcat HTTP のデフォルトポートPort 8080が既に他の Web server に使用されている，例えば      
+Oracle&nbsp; 9i の application server。ポートを換えるには :&nbsp;&nbsp;<br>      
+<br>
+$CATALINA_HOME/conf/server.xml<br>
+<br>
+を開き，8080を見つけ，使用されていないポートに換えます。1024より大きいのを進めます，1024より小さかったら作業システム説明をさんしょうして 請參照各作業システム説明を参照してください。<br>      
+<br>
+再度Tomcatを起動すれば正常に作業が行われます。Port 8080 を換えた場合，Tomcat のURLも同じく直さなければなりません。例えば      
+:&nbsp; Port を 1977にされた場合， URL は http://localhost:1977/ 。<br>      
+<br>
+2)&nbsp; Windows 9X/ME のバッチファイルを実行する時に &quot;<span style='color:maroon'>out of      
+environment space</span>&quot; のエラーが出ます。&nbsp;<br>      
+<br>
+<!--右クリック STARTUP.BAT と SHUTDOWN.BAT，選擇<font color="#666699">&#20839;容</font><font color="#000000">選單項目</font>的【記憶體】設定頁，在傳統記憶體的<font color="#666699">起始環境</font>選取                                                     
+  <font color="#212163">4096</font>。      
+  <br>       
+  確定或套用後，Windows                                                      
+  將會建立捷徑，&#24744;可以此捷徑&#21855;動或關閉 Tomcat 。<br>                                                      
+       -->3) localhost が存在しない ('localhost' machine isn't found)， Proxyが原因です。この場合，Proxy      
+ホストにアクセスしないように， ブラウザの Proxy設定を換えます 。<br>      
+<br>
+Netscapeの場合， Edit/preferences -&gt; Advanced/proxies。 Internet Explorerの場合，Tools      
+-&gt; Internet Options -&gt; Connections -&gt; LAN Settings。</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a href="#top"><span
+style='font-size:10.0pt;color:#003366'>▲Top</span></a></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><a name=114></a><b><span lang=EN-US>1.1.4      
+JDBC ドライバ (Drivers)</span></b></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>jLIVE      
+Builder&#8482; はJDBC バージョン 2.0 API　をサポートします。ドライバのプロバイタと対応データベースシステムにつき，http://industry.java.sun.com/products/jdbc/drivers　を参考してください。      
+jLIVE Builder&#8482; は JDBC TYPE 1, 2, 3, 4 ドライブ方式をサポートします。 TYPE 1をサポートしますので ，JDBC-ODBC      
+bridgeを利用でき，ODBCを経由でデータベースにアクセスします。しかし，JDBC-ODBC bridge の接続方式は効率が非常によくない為，Java&#8482;      
+はデータベース接続テストにしか推薦できません。JDBC-ODBC bridgeを使わざる得ない時に ， http://www.merant.comを参考してください，      
+Merant 社が提供した MERANT ODBC Driver Packを使用すれば，JDBC-ODBC bridge の效率が大幅にアップできます。</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'><br>
+MSSQL Server の場合， http://www.inetsoftware.de/&nbsp;(i-NET Software company)を参考してください，試用バージョン      
+MSSQL Server　ドライブ (TYPE 4)をダウンロードして使えば，JDBC-ODBC bridge よりかなりよい。</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>ORACLE
+の場合， JDBC Driver (classes12.jar) を Tomcat\libの中に置いておき， システムがドライバを利用できるようにClassPath
+を設定します。関連JDBC Driverの設定及び実装につき，Oracleマニュアルを参考してください。Oracle 8i (8.16) JDBC
+Driver として Database </span>の<span lang=EN-US style='font-size:10.0pt'>Metadata　を使わないよう，      
+8.17バージョンを使ってください。Oracle 9i JDBC Driver の場合，必ず unpack した後， JDBC Driver 部分だけを使うように，他の      
+Java class部分につき， Java バージョンが相違するか，交換性がないかの為，ドライバ (Driver)が導入できない場合もあります。</span></p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US style='font-size:10.0pt'>jLIVE      
+Builder&#8482; にドライバを実装する時に，必ず詳しくプロバイター資料を読んでください，正確にインストールするようにデータベース接続用の Database      
+URL format String も正しく設定されなければなりません。<br>      
+<br>
+ドライバ使用例 : '*' は説明で入力する必要がありません。<br>      
+</span>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l5 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;JDBC-ODBC      
+bridgeでMS ACCESS　の接続&nbsp;。</span> </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span style='font-size:10.0pt'>　</span> </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l5 level2 lfo5;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;ODBCAD32.EXE      
+(%SystemRoot%\system32\odbcad32.exe)　を実行し， ODBC DSN　を作成します 。例えば      
+&quot;MYODBC&quot;。</span> </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l5 level2 lfo5;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;jLIVE      
+middle ware を起動します(&nbsp; jLIVE\tomcat\startup.batをクリック)。</span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l5 level2 lfo5;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;jLIVE      
+Builder&#8482; を起動し，新規アプリをした後に，データベース新規を選択し，プロパティを設定します :&nbsp;<br>      
+<span style='color:#666699'>データベース名</span> (DB Alias)</span><span lang=EN-US> </span><span      
+lang=EN-US style='font-size:10.0pt'>:&nbsp;<span style='color:#212163'> </span><span
+style='color:#505050'>MYODBCALIAS</span><span style='color:#212163'> </span>**<br>
+<span style='color:#666699'>ドライバ</span> (Driver) : <span style='color:#212163'>sun.jdbc.odbc.JdbcOdbcDriver</span><br>      
+<span style='color:#666699'>URL</span> : <span style='color:#505050'>jdbc:odbc:MYODBC</span><br>      
+<br>
+*大小文字に区別あります。<br>
+**どんな別名でもよい (DB Alias)，システムはこれでデータベース式を識別します。</span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l5 level2 lfo5;
+tab-stops:list 72.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>保存した後，<i>テスト </i><span
+lang=EN-US>(データベース接続テスト)，システムはデータベースの接続状態をテストします。<br>
+</span></span>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l5 level1 lfo5;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;mySQL      
+の接続&nbsp;</span><span lang=EN-US> </span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l1 level1 lfo6;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;mySQLを起動      
+: jLIVE\mysql\bin\winmysqladmin.exe。</span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l1 level1 lfo6;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;jLIVE      
+middle ware を起動(&nbsp; jLIVE\tomcat\startup.batをクリック)。</span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l1 level1 lfo6;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;jLIVE      
+Builder&#8482; を起動し，新規アプリをした後に，データベース新規を選択し，プロパティを設定します :&nbsp;<br>      
+<span style='color:#666699'>データベース名</span> (DB Alias) : <span style='color:      
+#505050'>MySQL_DB </span>**<br>
+<span style='color:#666699'>ドライバ </span><span style='color:black'>(Driver)</span><span
+style='color:#666699'> </span>: <span style='color:#212163'>org.gjt.mm.mysql.Driver</span><br>      
+<span style='color:#666699'>URL</span> : <span style='color:#505050'>jdbc:mysql://HostName:3306/DatabaseName</span><br>      
+<br>
+*大小文字に区別あります。<br>
+**どんな別名でもよい (DB Alias)，システムはこれでデータベース式を識別します。<br>      
+*** HostName : データベースのインストール先ホスト名。<br>      
+**** DatabaseName : データベース名。<br>      
+　</span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l1 level1 lfo6;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>保存した後，<i>テスト </i><span
+lang=EN-US>(データベース接続テスト)，システムはデータベースの接続状態をテストします。<br>
+</span></span>　</p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l4 level1 lfo7;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>ORACLE      
+の接続&nbsp;</span><span lang=EN-US> </span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l9 level1 lfo8;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;Oracle      
+を起動します。</span> </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l9 level1 lfo8;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;jLIVE      
+middle ware　を起動します (&nbsp; jLIVE\tomcat\startup.bat　をクリック)。</span> </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l9 level1 lfo8;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>jLIVE      
+Builder&#8482; を起動し，新規アプリをした後に，データベース新規を選択し，プロパティを設定します :&nbsp;<br>      
+<span style='color:#666699'>データベース名 </span>(DB Alias) : <span style='color:      
+#505050'>ORACLE_DB</span> **<br>      
+<span style='color:#666699'>ドライバ </span>(Driver) : <span style='color:#212163'>oracle.jdbc.driver.OracleDriver</span><br>      
+<span style='color:#666699'>URL</span> : <span style='color:#505050'>jdbc:oracle:thin:@HostName:1521:DatabaseName</span><br>      
+<br>
+*大小文字に区別あります。<br>
+**どんな別名でもよい (DB Alias)，システムはこれでデータベース式を識別します。<br>      
+*** HostName : データベースのインストール先ホスト名。<br>      
+**** DatabaseName : データベース名。<br>      
+　</span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l9 level1 lfo8;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>保存した後，<i>テスト </i><span
+lang=EN-US>(データベース接続テスト)，システムはデータベースの接続状態をテストします。 </span></span><span
+lang=EN-US><br>
+　</span></p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l6 level1 lfo9;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>&middot;<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;inet      
+JDBC Driver の接続&nbsp;</span><span lang=EN-US> </span></p>      
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l3 level1 lfo10;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>inet の指示通りに      
+i-netSPRINTAをインストールします。</span> </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l3 level1 lfo10;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;jLIVE      
+middle ware (執行&nbsp; jLIVE\tomcat\startup.bat)。</span> </p>      
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l3 level1 lfo10;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span lang=EN-US style='font-size:10.0pt'>&nbsp;jLIVE      
+Builder&#8482; を起動し，新規アプリをした後に，データベース新規を選択し，プロパティを設定します :&nbsp;<br>      
+<span style='color:#666699'>データベース名&nbsp; (</span>DB Alias) : <span      
+style='color:#505050'>MSINET</span> **<br>      
+<span style='color:#666699'>ドライバ </span>(Driver) :<span style='color:#212163'> com.inet.tds.TdsDriver</span><br>      
+<span style='color:#666699'>URL </span>: <span style='color:purple'>j</span><span      
+style='color:#505050'>dbc:inetdae7:HostName:1433?database=DatabaseName&amp;charset=Cp950</span><br>
+<br>
+*大小文字に区別あります。<br>
+**どんな別名でもよい (DB Alias)，システムはこれでデータベース式を識別します。<br>      
+*** HostName : データベースのホスト名。<br>      
+**** DatabaseName : データベース名。<br>      
+*****日本語(MS932)。</span> </p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd;text-indent:0mm;mso-list:l3 level1 lfo10;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-US><span
+style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+</span></span></span><![endif]><span style='font-size:10.0pt'>保存した後，<i>テスト </i><span
+lang=EN-US>(データベース接続テスト)，システムはデータベースの接続状態をテストします。</span></span></p>
+
+</blockquote>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a href="#top"><span
+style='font-size:10.0pt;color:#003366'>▲Top</span></a></span></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><a name=115></a><b><span lang=EN-US>1.1.5.　環境リクエスト（Minimum
+System Requirements）</span></b></p>
+
+<p style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;margin-left:
+18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;mso-para-margin-bottom:
+.75pt;mso-para-margin-left:1.5gd'><b><span lang=EN-US style='font-size:13.5pt;
+color:#9966FF'><br>
+</span></b><span lang=EN-US>Intel Pentium/166Mhz or Compatible<br>
+Microsoft Windows 95/98 or NT 4 (SP3) or 2000/XP<br>
+64MB RAM, 256MB RAM Recommended<br>
+150MB Hard Disk space<br>
+CD-ROM Drive<br>
+SVGA or higher resolution (800x600, 256 Color)<br>
+Mouse or other pointing device<br>
+　</span></p>
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'><span lang=EN-US><a
+href="#top"><span style='font-size:10.0pt;color:#003366'>▲Top</span></a></span></p>
+
+<p class=chapter style='margin-top:.75pt;margin-right:0mm;margin-bottom:.75pt;
+margin-left:18.0pt;mso-para-margin-top:.75pt;mso-para-margin-right:0mm;
+mso-para-margin-bottom:.75pt;mso-para-margin-left:1.5gd'>　</p>
+
+<div class=MsoNormal style='margin-left:18.0pt;mso-para-margin-left:1.5gd'><span
+lang=EN-US>
+
+<hr align=left color="#000000">           
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">           
+<tr>           
+<td width=200 align=left valign=top>           
+<a href="ch01.html">           
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>           
+<td width=218 align=center valign=top><a href="index.html">           
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>           
+<td width=182 align=right valign=top>           
+<a href="CH02.html">         
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>         
+</tr>         
+</table>         
+         
+<hr align=left color="#000000">         
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~             
+2004 Probe Technology . All Rights Reserved.</font></p>            
+           
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,            
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>           
+           
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+           
+</body>           
+           
+</html>
+

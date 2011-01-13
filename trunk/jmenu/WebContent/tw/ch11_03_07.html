@@ -1,0 +1,215 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Transaction Isolation Level</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_03_06.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=211 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=189 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_03_08.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>設定資料庫 Transaction Isolation Level</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#event_status">事件執行狀態與訊息 (event runtime status and message)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">
+設定資料庫的 transaction isolation level。資料庫是否支援，請參閱所使用的資料庫系統說明。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"> 
+<font size="2"><a href="transaction.html">參閱 Transaction 說明</a>。</font></p>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">資料庫 (database) ： </font>選擇資料庫。<br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">Transaction Isolation ： </font>   
+<font size="2">層級高的也具備低層級的功能。<br>
+　</font></p>  
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">Transaction none   
+：</font><font size="2">不做任何控制。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">Transaction read   
+uncommitted ：</font><font size="2">允許一個交易讀取另一個尚未完成的交易所異動的資料，可能造成讀取到尚未   
+Commit 的資料，這個層級對資料存取的限制最少，雖然讓最多人可以同時使用，但無法確保資料的一致性及完整性。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">Transaction read   
+committed ：</font></p>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2">  
+不允許讀取正在異動的資料，所以當資料正被一筆交易異動時，另一筆交易是不可以去讀取的，但是此層級對於一個進行中的交易，允許其他交易更改相關資料，如，新增、修改、刪除等，可能造成錯誤。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">Transaction repeatable   
+read ：</font><font size="2">當一筆資料被讀取後，其他的交易就不被允許修改或刪除這筆資料，如此一來就降低了資料同時使用的機會。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">  
+<font size="2" color="#666699">Transaction serializable   
+：</font><font size="2">當一筆資料被讀取後，其他的交易就不被允許新增、修改或刪除這筆資料，不會因為被另一個交易新增了一筆符合選取範圍的資料，造成兩次查詢結果的不同。</font></p>  
+    </li>  
+  </ul>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_03_perform_8.gif" width="415" height="417"></p>  
+</blockquote>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"> 
+<font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="event_status"></a><b>事件執行狀態與訊息 (event runtime status and message)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱&quot;) ：</font><font size="2">取得事件執行狀態。<br>
+　</font></p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">狀態</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">空字串</font></td>
+    <td width="84%" height="16"><font size="2">事件未被引發。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">-1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，依條件判斷後執行否則事件。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">0</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行過程有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.error&quot;) ：</font><font size="2">取得事件執行錯誤代碼。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">空字串 或 0</font></td>
+    <td width="84%"><font size="2">沒有錯誤訊息或無法取得錯誤訊息。</font></td>
+  </tr>
+  <tr>
+    <td width="16%"><font size="2">1</font></td>
+    <td width="84%"><font size="2">設定 transaction isolation level 錯誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.INFO_STRING&quot;) ：</font><font size="2">取得事件執行 
+INFO_STRING 的訊息。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">INFO_STRING</font></td>
+    <td width="28%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="140%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">name</font></td>
+    <td width="28%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    資料庫別名</font></td>
+    <td width="140%" align="left" bgcolor="#FFFFFF" height="13"><font size="2">
+    資料庫別名。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch11_03_06.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=196 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=204 align=right valign=top>  
+<a href="ch11_03_08.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+</body>  
+  
+</html>

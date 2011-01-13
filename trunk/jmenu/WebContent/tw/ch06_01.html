@@ -1,0 +1,526 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Form properties</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch06.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=191 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch06.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 6</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch06.html" style="text-decoration: none"><font color="#000000">
+Form</font></a></font></b></TD> 
+<td width=209 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch06_02.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><font size="5"><a name="top"></a></font><font size="4"><b>6</b></font><b><a class="TITLE"><font size="4">.2       
+視窗屬性</font></a><font size="4">  (form properties)</font></b></p>     
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><a href="#form_prop">視窗屬性 (form properties)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2"><a href="#create_menu_bar">建立選單 (create menu bar)</a></font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+視窗屬性 (form properties)</b></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">
+請先選擇視窗，然後按下 <i>進入</i>      
+<img border="0" src="images/design20.gif" width="20" height="20">  ( 進入設計模式 )       
+。</font></p>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p>      
+<blockquote>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<img border="0" src="images/ch06_01_before.gif" width="363" height="267"></p>      
+</blockquote>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">      
+<font size="2">接下來可以由【視窗畫面】【視窗屬性】進入視窗屬性設定頁，或是按下功能鍵 <i>設定</i>      
+<img border="0" src="images/formproperties20.gif" width="24" height="24">  ( 設定視窗屬性 )。</font></p>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">      
+　</p>      
+<blockquote>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<img border="0" src="images/ch06_01_form_prop.gif" width="481" height="211"></p>      
+</blockquote>      
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">      
+<font size="2">視窗屬性設定可分為四大類：格式 (format)、字型   
+(font)、選單 (menu)、事件 (event)。</font></p>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">格式 (format)</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p> 
+  <ul type="disc"> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font color="#666699" size="2">Class 名稱 (class name)：</font><font size="2">目前正在設計的視窗的名稱，也是這個視窗 class 檔案的檔名。<br>
+　</font></p>      
+    </li>      
+    <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font color="#666699" size="2">視窗標題 (form title)：</font><font size="2">視窗的標題   
+(form title)，可以使用運算式 <font color="#666699" face="Courier New"> SetTitle(&quot;title&quot;)</font> 動態變化。<br>
+　</font></p>      
+    </li>      
+    <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2" color="#666699">Panel 位置 (panel position)：</font><font size="2">位置與視窗的類別有關，類別是主視窗   
+(main) 與內部視窗 (internal frame) 時，以 HTML 中 Applet       
+    所在的區域左上角為原點。類別是對話方塊 (dialog)       
+    時，以螢幕的左上角為原點。類別是隱藏程序 (process)       
+    時，因為執行 (runtime) 時不顯現 (invisible)       
+    所以無所謂位置以何為原點。執行期 (runtime)    
+，可以使用運算式 <font color="#666699" face="Courier New">FormPos(left, top)</font>及<font color="#666699" face="Courier New">FormSize(width,    
+height) </font> 動態改變視窗位置及大小。</font><font size="2">視窗</font><font size="2">開啟的位置，使用【視窗開啟】事件    
+，視窗顯示於屬性設定的位置；使用運算式<font color="#666699"> </font><font color="#666699" face="Courier New">OpenForm(&quot;formname&quot;,    
+&quot;pos&quot;)</font>，視窗可以開啟在相對於啟動事件的元件位置或螢幕中央。參閱    
+<a href="ch12_11.html#OpenForm(formname,pos)">OpenForm 運算式</a>。&nbsp;&nbsp;</font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>  
+    <ul type="circle">  
+      <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">左 (left)：</font><font size="2">由零開始。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">上 (top)：</font><font size="2">由零開始。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">寬 (width)：</font><font size="2">視窗寬度。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">高 (height)：</font><font size="2">視窗高度。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+      </li>    
+    </ul>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">視窗附捲軸 (frame with scrollbar)：</font><font size="2">當視窗中所需佈建   
+(layout) 的元件超過工作區域時，可選擇以較小的視窗 (panel)   
+附捲軸 (scroll      
+bar)呈現。<font color="#666699">Panel 位置</font>所設定的尺寸為設計的大小範圍，而</font><font color="#666699" size="2">視窗寬度</font><font color="#000000" size="2">與</font><font color="#666699" size="2">視窗高度</font><font color="#000000" size="2">所設定的大小是執行時實際呈現的視窗尺寸</font><font size="2">。由於      
+Java&trade; applet 不是一個 Container 所以類別為主視窗 (main) 的視窗，</font><font size="2" color="#666699">視窗附捲軸</font><font size="2" color="#000000">不能使用</font><font size="2">，必須按   
+applet 大小呈現而由瀏覽器提供</font><font color="#000000" size="2">捲軸</font><font size="2"><font color="#000000">      
+ (scroll Bar) </font>功能。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+    <ul type="circle">     
+      <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699" size="2">捲軸 (scrollbar)：</font><font size="2">在視窗上產生捲軸。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">視窗寬度 (frame width)：</font><font size="2">寬度，以點數計算。</font></p>   
+      </li>   
+      <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">視窗高度 (frame height)：</font><font size="2">高度，以點數計算。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+      </li>   
+    </ul>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">視窗類別 (frame type)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+    <ul type="circle">    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">主視窗 (main)：</font><font size="2">以瀏覽器   
+(browser) 執行的應用程式，此類別的視窗將貼嵌於瀏    
+覽器 (browser) 頁面中；以獨立執行(stand alone)      
+的應用程式執行時，將貼嵌於主視窗框架 (main frame)      
+中。選擇此類別後視窗的</font><font color="#666699" size="2">視窗標題</font><font color="#000000" size="2">、</font><font color="#666699" size="2">可調大小</font><font color="#000000" size="2">、</font><font color="#666699" size="2">最大化 </font><font color="#000000" size="2">、</font><font color="#666699" size="2">最小化</font><font color="#000000" size="2">、</font><font color="#666699" size="2">可關閉</font><font color="#000000" size="2">、</font><font size="2" color="#666699"> Modal 視窗</font><font size="2" color="#000000">等屬性將失效</font><font size="2">。通常在程式的第一個啟動畫面或各個主功能畫面使用。</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699" size="2">對話方塊 (dialog) ：</font><font size="2">此類別的視窗，將會以獨立的視窗   
+(window) 呈現於瀏覽器 (browser)或主視窗框架 (main frame)      
+外，如果設定<font color="#666699">Modal 視窗屬性</font>，則視窗顯示後，會暫時凍結使用者操作其他視窗，直到此視窗關閉，系統程序才會回到呼叫開啟此視窗的作業程序。</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699" size="2">內部視窗 (internal frame)：</font><font size="2">將此視窗以所謂的      
+MDI (Multi-Document Interface) 呈現，其可出現的範圍會侷限於瀏覽器   
+(browser) 的 Applet 大小或主視窗框架 (main      
+frame) 的區域範圍中。所有</font><font color="#666699" size="2">內部視窗</font><font color="#000000" size="2">屬性</font><font size="2"><font color="#000000">的視窗</font>，可以以滑鼠切換為作業視窗   
+(active window)，</font><font color="#666699" size="2">內部視窗</font><font color="#000000" size="2">屬性</font><font size="2"><font color="#000000">的視窗會互相</font>覆蓋，但不影響其運作。</font></p>     
+      </li>     
+      <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font size="2" color="#666699">隱藏程序 (process) ：</font><font size="2" color="#000000">開啟此類別的視窗時</font><font size="2">，主要是運用其視窗內部的作業程序   
+(process)      
+，並不需要使用者參與運作，所以開啟後並不出現視窗，而是循著系統程序執行：開啟資料來源前事件   
+(before data source open event) 、開啟資料來源 (open data source)、開啟資料來源後事件   
+(after data source event)、關閉視窗前事件 (before close event)      
+，之後這個不可視 (invisible)&nbsp; 的視窗隨即結束，系統程序回到呼叫開啟此視窗的作業程序。</font> <br>
+　</p>    
+      </li>    
+    </ul>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">視窗屬性 (frame properties)：</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+    <ul type="circle">   
+      <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699" size="2">可調大小 (resizable)：</font><font size="2">     
+ 允許使用者拖拉視窗大小。反之則否。</font></p>   
+      </li>   
+      <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">最大化 (maximize)：</font><font size="2">視窗開啟時最大化。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">最小化 (iconify) ：</font><font size="2">視窗開啟時縮小為圖示   
+(icon)。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">可關閉 (closable)：</font><font size="2">視窗右上方，顯示關閉視窗的按鈕。<br>
+　</font></p>    
+      </li>    
+    </ul>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">Modal 視窗 (modal frame)：</font><font size="2">當這個屬性的視窗顯示後，會暫時凍結使用者操作其他視窗，直到此視窗關閉，系統程序才會回到呼叫開啟此視窗的作業程序。具有      
+<font color="#666699">Modal </font>屬性的<font color="#666699">對話方塊   
+(dialog) </font>類別視窗，會暫停使用者對其他視窗的所有的操作行為，直到這個視窗結束；具有      
+<font color="#666699">Modal </font>屬性的<font color="#666699">內部視窗   
+(internal frame) </font>類別視窗，會維持此視窗出現在所有內部視窗的最上方，但允許使用者操作其他視窗。不具有此屬性的視窗，當被開啟後，系統程序隨即返回呼叫開啟此視窗的程序。<br>
+　</font></p>    
+    </li>    
+  </ul>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">加入使用     
+Enter 為移動 Focus 鍵 (add     
+Enter key for focus traversal)：</font><font size="2">一般的視窗及     
+Java&trade; 預設以 TAB 鍵為移動 Focus 至下一個元件的按鍵，勾選這個選項，Enter 鍵將具有移動 Focus     
+至下一個元件的功能，但在某些元件 (例如</font><font size="2" color="#666699">：</font><font size="2">備忘錄元件)     
+需要 Enter 鍵參與作業時， Enter 換行功能將失效。</font></p>     
+    </li>     
+  </ul>     
+<p style="margin-top: 1; margin-bottom: 1">　</p>     
+  <ul type="disc">     
+    <li>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<font color="#666699" size="2">標題 (caption)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+  <ul type="circle">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">小標題列 (tiny)：</font><font size="2">標題列將被最小化，且不出現標題文字。 </font></p>   
+    </li>   
+  </ul>   
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+  <ul>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">背景 (background)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+    <ul>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">背景 (background)：</font><font size="2">設定背景色。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">不透明 (opaque)：</font><font size="2">背景不透明。</font></p>   
+      </li>   
+    </ul>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+    </li>   
+  </ul>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch06_01_main.gif" width="476" height="485"></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+</blockquote>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">字型 (font)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">字型 (font)：</font><font size="2">選擇選單   
+(menu) 的字型。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">大小 (size)：</font><font size="2">字型大小。</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">樣式 (style)：</font> <br>
+　</p>    
+    <ul type="circle">    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">粗體 (bold)</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">斜體 (italic)</font>　<br>
+　</p>  
+      </li> 
+    </ul> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2" color="#666699">顏色 (color)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+    <ul type="circle">    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">前景 (foreground)：</font><font size="2">點下色塊，選取前景顏色。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">背景 (background)：</font><font size="2">點下色塊，選取背景顏色。</font></p>   
+      </li>   
+    </ul>   
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch06_01_font.gif" width="476" height="476"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+</blockquote>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">選單 (menu)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">選單文字 (menu text)：</font><font size="2">選單上所顯示的文字。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699" size="2">選單提示 (menu tips)：</font><font size="2">滑鼠移到選單上時，所顯示的提示文字。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699" size="2">顯示時圖示 (display icon)：</font><font size="2">選單文字前顯示的圖示。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699" size="2">開啟視窗 (invoke form)：</font><font size="2">當按下此選單項目(menu   
+item) 時，所要開啟的視窗。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">執行事件 (execute event)：</font><font size="2">如果選單項目(menu   
+item) 所要執行的並不是開啟視窗，而是執行該視窗的事件。則先將開啟視窗  
+(invoke form) 的選項選擇該視窗名稱，在執行事件的選取方塊中將會列示所有已存在於該視窗的事件，選取欲執行的事件即可。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699" size="2">快速鍵 (mnemonic)：</font><font size="2">( ALT +  
+key )   
+，上層的選單  (menu bar) 使用。<br>
+　</font></p>      
+    </li>      
+    <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font color="#666699" size="2">鍵值 (key stroke)：</font><font size="2">( ALT +  
+key )   
+，內層的選單項目 <font color="#000000">(menu   
+item)</font> 使用。</font></p>   
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch06_01_menu.gif" width="476" height="476"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  <ul>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">選單類型 (menu type)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+    <ul>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">選單 (menu)：</font><font size="2">增加子目錄選單  
+(sub menu) ，是樹狀結構，用於選單分類。</font></p>   
+      </li>   
+      <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699" size="2">選單項目 (menu item)：</font><font size="2">     
+為目錄最後一層的子節點，用於啟動事件或開啟視窗。</font></p>    
+      </li>    
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">分隔線 (separator)：</font><font size="2">     
+ 分隔不同類型的選單文字。<br>
+　</font></p>   
+      </li>   
+    </ul>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">刪除 (delete)：</font><font size="2">將標示的選單、選單項目或分隔線刪除。<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699" size="2">上移 (move up)：</font><font size="2">向上移動標示的選單項目。變換選單的排列順序。　<br>
+　</font></p>   
+    </li>   
+    <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">下移 (move down)：</font><font size="2">向下移動標示的選單項目。變換選單的排列順序。　</font></p>   
+    </li>   
+  </ul>   
+  <blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch06_01_menu_sub.gif" width="231" height="122"></p>   
+  </blockquote>   
+</blockquote>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">事件 (event)：</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2" color="#666699">開啟前 (before data source open)：</font><font size="2">在資料來源開啟之前執行事件。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">開啟後 (after data source open)：</font><font size="2">在資料來源開啟之後執行事件。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">關閉視窗前 (final)：</font><font size="2">在視窗關閉之前執行事件。<br>
+　</font></p>    
+    </li>    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">視窗未關閉被重複開啟 (existed 
+and reopen)：</font>視窗未關閉被重複開啟時，開啟前後事件 
+(Before and after data source open) 
+不會再次執行，系統將會在每次被重複呼叫開啟時，執行【<font color="#666699">視窗未關閉被重複開啟</font><font color="#000000">】事件。</font></font></p>   
+    </li>   
+  </ul>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch06_01_event.gif" width="481" height="489"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p class="chapter" style="margin-top: 1; margin-bottom: 1">　</p>   
+</blockquote>   
+<p style="margin-top: 1; margin-bottom: 1"><b>   
+<a name="create_menu_bar"></a>建立選單 (create menu bar)</b></p>     
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">     
+開始建立選單時，先按 <i>建立選單</i>      
+<img border="0" src="images/new20.gif" width="24" height="24">，輸入選單文字，選單下方可以建立選單項目   
+(menu item)，而選單 (menu)   
+本身不可以開啟視窗或執行事件，選單用於選單項目的分類。<br>  
+　</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">建立選單時，請先以滑鼠按選標示   
+(mark) 選單，再按新增按鍵。在選單下，可以新增選單 (menu)、選單項目  
+(menu item) 及分隔線 (separator)；而在選單項目及分隔線之下，不可再新增任何選單。<br>  
+　</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">如果要建立和選單同一層的選單時，   
+請以滑鼠按選標示 (mark)  
+上層選單，再按新增按鍵，即可新增一個同一階層的選單；例如：標示選單後，新增       
+Demonstration 選單。如果要在選單下建立可以開啟視窗的選單項目時，先標示該選單後，在新增按鍵的選項中選擇選單項目。當然也可以新增選單下的選單，請標示該選單再按新增按鍵，選擇選單即可。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">    
+<font color="#003366" size="2">▲Top</font></a></p>    
+<p class="para" style="margin-top: 0; margin-bottom: 0">　</p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch06.html">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>   
+<td width=193 align=center valign=top><a href="index.html">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>   
+<td width=207 align=right valign=top>   
+<a href="ch06_02.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,       
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>      
+      
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+</div>   
+      
+</body>     
+     
+</html>

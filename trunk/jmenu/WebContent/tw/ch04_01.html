@@ -1,0 +1,167 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Application Work Group</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch04.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=194 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch04.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 4</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch04.html" style="text-decoration: none"><font color="#000000">
+Application</font></a></font></b></TD>  
+<td width=206 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch04_02.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<h1 class="chapter"><font size="4"><a name="top"></a>4<a class="TITLE">.2 </a>
+共同開發群組  
+(work group)</font></h1>   
+<p class="chapter" style="margin-top: 2; margin-bottom: 2"> 
+<font size="2"><a href="#rescan">重新掃描群組 (rescan workgroup)</a></font></p> 
+<p class="chapter" style="margin-top: 2; margin-bottom: 2"> 
+<font size="2"><a href="#batch">整批複製到本機 (batch remote to local)</a></font></p>  
+<p class="chapter" style="margin-top: 2; margin-bottom: 2">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">
+<font size="2">jLIVE Builder&trade; 採取對等式的工作群組 (workgroup)    
+專案協同開發模式。以相同的專案名稱即時共享視窗模組的方式<span style="font-weight: 400">，在程式規格擬定(specification)、設計(design)、除錯(debug)、測試(testing)    
+等各階段，皆能統合各相關協同開發的工作群組的最新程式模組，即時佈建執行(deploy    
+and execution)</span>。專案的管理人可依系統需求<span style="font-weight: 400">，</span>細分各工作群組之系統範圍<span style="font-weight: 400">，授</span>予相關參照電腦之存取鍵值  
+(access key)；<span style="font-weight: 400">各工作群組電腦 (workgroup)    
+隨時掃描相關群組之最新參照模組 (reference)</span>；專案管理人可以隨時監視  
+(monitoring) 開發進度及測試 (testing)    
+整體應用程式執行的協同作業狀況<span style="font-weight: 400">，在程式開發階段即可修正實際執行的缺失</span>。</font></p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">  
+　</p>   
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+<font size="2">使用工作群組 (workgroup) 需要<font color="#666699">分享jLIVE    
+Builder&trade; 安裝目錄</font>及<font color="#666699">應用程式所在的目錄</font>，例如：當應用程式位於  
+<font color="#666699" face="Courier New">&quot; C:\jLIVE\programs\jNorth\      
+&quot;</font> <font color="#808080"> </font>則必須分享 jNorth 目錄和 jLIVE 安裝目錄給工作群組成員。</font></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>     
+<blockquote>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<img border="0" src="images/ch04_01_workgroup.gif" width="439" height="92"></p>     
+<p style="margin-top: 1; margin-bottom: 1">     
+　</p>     
+</blockquote>     
+<p style="margin-top: 1; margin-bottom: 1">     
+<b><a name="rescan"></a>重新掃描群組 (rescan workgroup)</b></p>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"> 
+<font size="2">請先標示該應用程式節點，然後按滑鼠右鍵。這時會出現三個選項，請點選【重新掃描群組】，在此之前必須已經輸入群組成員的  
+<code>IP/HostName</code> 和存取鍵 (access key)，否則無法掃描。
+開始掃描群組時，系統會詢問是否詳列掃瞄結果，如果系統&#40846;大且非第一次掃瞄，建議不要核選詳列掃瞄結果，否則結果報告會很&#40846;大。由於視窗節點是樹狀結構，系統會先行比對結構，其他所有工作組員的視窗節點樹狀結構，會以聯集 
+(union) 的型式建立在本機視窗節點。同樣的視窗名稱，位於不同節點目錄，系統會視為不合法，並記錄於結果報告中。</font></p>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch04_01_scan_2.gif" width="285" height="140"></p>   
+</blockquote>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">掃描結束後，如果有任何異常狀況，將會出現結果報告(scan workgroup report)  
+，例如：已存在本機或重覆出現在其他工作群組的視窗模組，以及無法連結的工作群組。</font></p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch04_01_scan.gif" width="323" height="219"></p>   
+</blockquote>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify">   
+<font size="2">掃描結束後，在【視窗】節點內，會出現粉紅色的視窗名稱節點，表示這些視窗是參照其他的群組，而本機並沒有相同的視窗。屬於粉紅色的視窗節點，設計師可以在視窗設計時，參照引用這些視窗，就像這些視窗是本機上所開發的一樣；也可以開啟這些視窗，進入設計模式，檢視所有的設計細節；亦可以改變設計設定，做測試執行，只是在無法儲存所做的改變。如果想將這些視窗，納入本機應用程式之內或做永久的修改，必須先將它複製搬移至本機 (move to local)。</font></p>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch04_01_scan_ok.gif" width="368" height="621"></p>    
+<p class="para" style="margin-top: 1; margin-bottom: 1">    
+　</p>   
+</blockquote>   
+<ul type="square">   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">如果要將遠端的模組複製到本機，須先標示此視窗節點，然後按下滑鼠右鍵，選擇【複製到本機】就可以將它複製到本機的應用系統中。
+如果視窗模組的 XML 檔，已自行複製至本機或希望引用已存在本機的 XML ，使用者按選【參照本機 XML】後，系統將會於預設 XML 
+目錄搜尋，如果存在則引用本機的 XML 且將節點文字顏色改為黑色，標示為本機節點。</font></p>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch04_01_scan_moveto.gif" width="290" height="219"></p>   
+</blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<b><a name="batch"></a>整批複製 (batch remote to local)</b></p>    
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">整批複製精靈，可以選擇所要複製的模組，或是全選所有的模組，複製到本機。</font></p>    
+  </li>    
+</ul>    
+<blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<img border="0" src="images/ch04_01_move_local.gif" width="480" height="400"></p>    
+</blockquote>    
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<hr align=left color="#000000">    
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">    
+<tr>    
+<td width=200 align=left valign=top>    
+<a href="ch04.html">    
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>    
+<td width=200 align=center valign=top>    
+<a href="index.html">    
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>    
+<td width=200 align=right valign=top>    
+<a href="ch04_02.html">    
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>    
+</tr>    
+</table>    
+    
+<hr align=left color="#000000">    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+     
+</body>     
+     
+</html>

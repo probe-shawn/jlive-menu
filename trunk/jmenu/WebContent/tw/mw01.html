@@ -1,0 +1,223 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Label Component</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></td>
+<td width=190 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter&nbsp;</font></b></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" face="新細明體" size="-1"><a style="text-decoration: none">WebLogic</a></font></b></TD> 
+<td width=210 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><b> 
+<font size="4">BEA WebLogic&trade; 安裝 jLIVE&trade; middle ware </font></b><font size="4"><b>(setup  
+jLIVE&trade; middle ware)</b> &nbsp; </font></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟一 (Step 1)：安裝  
+BEA WebLogic platform。</font></p> 
+<ol> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">測試版的網址：http://commerce.bea.com/downloads/products.jsp。</font></li> 
+</ol> 
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟二 (Step 2)：建立一個新的  
+WebLogic Domain。</font></p> 
+<ol> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">選擇執行選單【開始】【程式集】【BEA  
+    WebLogic Platform7.0】【Domain Configuration Wizard】進入精靈視窗。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Choose Domain Type  
+    And Name：選擇建立 WLS Domain 的 template，並命名為&nbsp;  
+    jlive_domain。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Choose Sever Type：選擇  
+    Single Server (Standalone Server)</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Choose Domain  
+    Location：以預設路徑即可。</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Configure  
+    Standalone/Administrator Server：<br> 
+    Server Name：jlive_server<br> 
+    Server Listen Address：<br> 
+    Server Listen Port：80 (或 8080)<br> 
+    Server&nbsp; SSL Listen Port：8081&nbsp;</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Create  
+    Administrative User：<br> 
+    User Name：probe_admin<br> 
+    Password：probe_admin<br> 
+    Verify Password：probe_admin</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Install Server as  
+    Windows Service：No</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Create Start Menu  
+    Entry For Server：Yes</font></li> 
+  <li> 
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Configiguration  
+    Summary：按 Create 鍵，建立 Domain。</font></li> 
+</ol> 
+<p><font size="2">步驟三 (Step 3)：修改 web.xml。</font></p> 
+<ol> 
+  <li><font size="2">建立 Domain 後，在 bea\user_projects\  
+    目錄下會新增一 jlive_domain 目錄。</font></li> 
+  <li><font size="2">以 Notepad 開啟 bea\user_projects\jlive_domain\applications\DefaultWebApp\WEB-INF\web.xml。</font></li> 
+  <li><font size="2">將 web.xml 修改為以下：<br> 
+    </font> 
+    <table border="1" cellspacing="1"> 
+      <tr> 
+        <td><font SIZE="2"><font face="Courier New">&lt;?xml  
+          version=&quot;1.0&quot; ?&gt;<br> 
+          &lt;!DOCTYPE web-app PUBLIC &quot;-//Sun Microsystems, Inc.//DTD Web  
+          Application 2.3//EN&quot; &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot;&gt;</font> 
+          <p><font face="Courier New">&lt;web-app&gt;<br> 
+          &nbsp;&nbsp;&nbsp; &lt;servlet&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;servlet-name&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          ProbeServlet<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/servlet-name&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;servlet-class&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          com.probe.jslive.ProbeServlet<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/servlet-class&gt;<br> 
+          &nbsp;&nbsp;&nbsp; &lt;/servlet&gt;<br> 
+          &nbsp;&nbsp;&nbsp; &lt;servlet-mapping&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;servlet-name&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          ProbeServlet<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/servlet-name&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;url-pattern&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /servlet/*<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/url-pattern&gt;<br> 
+          &nbsp;&nbsp;&nbsp; &lt;/servlet-mapping&gt;<br> 
+          &nbsp;&nbsp;&nbsp; &lt;servlet-mapping&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;servlet-name&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+          ProbeServlet<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/servlet-name&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;url-pattern&gt;<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /servlet/com.probe.jslive.ProbeServlet/*<br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/url-pattern&gt;<br> 
+          &nbsp;&nbsp;&nbsp; &lt;/servlet-mapping&gt;<br> 
+          &lt;/web-app&gt;</font></font></td> 
+      </tr> 
+    </table> 
+  </li> 
+</ol> 
+<p><font size="2">步驟四(Step 4)：建立 jLIVE Builder middle ware。</font></p> 
+<ol> 
+  <li><font size="2">在上述 WEB-INF 目錄下新增兩個目錄 \lib\ 及\classes\。</font></li> 
+  <li><font size="2">將 下列 jar file 複製到 \lib\ 目錄中</font> 
+    <ul> 
+      <li><font size="2">jslive.jar (jLIVE middle ware)</font></li> 
+      <li><font size="2">mailapi.jar (SMTP mail api)</font></li> 
+      <li><font size="2">mysql-connector-java-2.0.14-bin.jar(MySQl driver)&nbsp;</font></li> 
+      <li><font size="2">Sprinta2000.jar (MSSQL Driver)</font></li> 
+    </ul> 
+  </li> 
+  <li><font size="2">將以 class 存在的 library 檔複製到 \classes\  
+    目錄中，例如 oracle driver。</font></li> 
+</ol> 
+<p><font size="2">步驟五(Step 5)：建立 httpd 的應用程式模組。</font></p> 
+<ol> 
+  <li><font size="2">將由 jLIVE Builder&trade;  
+    所產生的應用程式的目錄下，啟動程式的 *.html 及class  
+    目錄下所有檔案，複製到 bea\user_projects\jlive_domain\applications\DefaultWebApp\下  
+    。</font></li> 
+  <li><font size="2">以 jLIVE Builder Sample 為例：將 jLIVE\programs\jNorth\jNorth.html  
+    及jLIVE\prograqms\jNorth\class\ 目錄及以下所有檔案複製到 bea\user_projects\jlive_domain\applications\DefaultWebApp\下  
+    。</font></li> 
+</ol> 
+<p><font size="2">步驟六(Step 6)： Java&trade; 版本 ，jLIVE Builder&trade;  
+middle ware 需要 j2sdk 1.4.0 以上版本。</font></p> 
+<ol> 
+  <li><font size="2">修改 bea\weblogic700\server\bin\startWLS.cmd，將 set  
+    JAVA_HOME=c:\bea\jdk131_03 改為 set JAVA_HOME=c:\j2sdk1.4.1_01(安裝的  
+    1.4.0 版本以上的 Java 目錄) 。</font></li> 
+  <li><font size="2">將修改完成的檔案另存成 bea\weblogic700\server\bin\startWLS_jlive.cmd。</font></li> 
+  <li><font size="2">修改 bea\user_projects\jlive_domain\startWebLogic.cmd，將檔案最後段的  
+    call &quot;c:\bea\weblogic700\server\bin\startWLS.cmd&quot; 改為 &quot;c:\bea\weblogic700\server\bin\startWLS_jlive.cmd&quot;。</font></li> 
+</ol> 
+<p><font size="2">步驟七(Step 7)： Security Policy 。</font></p>
+<ol>
+  <li><font size="2">修改 Security Policy file&nbsp;</font></li>
+</ol>
+<p>　</p>
+<p><font size="2">步驟八(Step 8)： 啟動 WebLogic Server 。</font></p> 
+<ol> 
+  <li><font size="2">選擇執行選單【開始】【程式集】【BEA  
+    WebLogic Platform7.0】【User Projects】【jlive_domain】【Start Server】</font></li> 
+  <li><font size="2">在啟動的 DOS BOX 中輸入 username ：probe_admin 及  
+    password：probe_admin。</font></li> 
+  <li><font size="2">在 DOS BOX 中，WebLogic 會出現 &lt;Server started in  
+    RUNNING mode&gt; 表示 WebLogic 以啟動。</font></li> 
+</ol> 
+<p><font size="2">步驟九(Step 9)： 測試 jLIVE Builder middle 及  
+應用程式 。</font></p> 
+<ol> 
+  <li><font size="2">開啟 Browser， 輸入URL ：http//localhost (或  
+    :8080)/servlet/com.probe.jslive.ProbeServlet/，Browser 將顯示 Probe  
+    Application Server Administrator 的登入畫面，表示 jLIVE middle ware  
+    以正常啟動。</font></li> 
+  <li><font size="2">開啟 Browser， 輸入URL ：http//localhost (或 :8080)/jNorth.html  
+    ，Browser 將啟動 jNorth 應用程式。</font></li> 
+</ol> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></td> 
+<td width=196 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=204 align=right valign=top> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~       
+2004 Probe Technology . All Rights Reserved.</font></p>      
+      
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,       
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>      
+      
+      </td>   
+    </tr>   
+  </table>   
+  </center>   
+      
+      </body>    
+    
+</html>

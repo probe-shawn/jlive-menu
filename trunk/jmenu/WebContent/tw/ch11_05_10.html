@@ -1,0 +1,364 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Execute play audio</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_05_09.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=197 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=203 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch12.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="top"></a>
+&nbsp;SOAP (execute soap communication)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#soap_develop">開發程序(develop procedures)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#soap_io_message">SOAP執行期訊息存取 (soap input and output message)</a></font></font></p>
+<p style="margin-top: 1; margin-bottom: 1"></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#event_status">事件執行狀態與訊息 (event runtime status and message)</a></font></font></p>
+</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<blockquote>
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">簡單物件存取協定 
+（SOAP，全寫為Simple Object Access Protocol）是一種標準化的通訊規範，主要用於Web服務（web 
+service）中。以XML格式互相交換彼此的資料，讓不同應用程式之間透過HTTP通訊協定，使其與程式語言、平台和硬體無關。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; ">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">jLIVE Builder SOAP 
+事件，是一個 SOAP client 的介面模組，程式設計師不必撰寫底層的 SOAP 封裝(soap envelope)，即可精準且快速的與 Web 
+service server 交換資料。SOAP 事件提供 WSDL (Web Services Description Language) 解析模組，直接以 
+Web Service server 中的 wsdl 線上文件構築Soap client 程式，設計師只要輸入相關的資料連結即可完成資料存取的 Web 服務。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; ">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">Java version 
+message：</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">Soap API (SAAJ) 在 
+Java 1.6 為標準內含(Standard lib)，Java 1.5 須外部 include saaj-api.jar 及saaj-impl.jar。Java 
+1.4 jLIVE 不支援。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; ">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; "><font size="2">&nbsp;</font></p> 
+</blockquote>
+
+<a name="soap_develop"></a><p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2"><b>開發程序(develop procedures)：</b><br>
+<ul> 
+  	<br>
+	<li><font color="#666699" size="2">STEP 1 ： 新增 SOAP 事件。</font><br>
+    <br><img border="0" src="images/ch11_05_10_soap.bmp" width="420" height="420">
+    <br>
+　 </li>
+	<li><font color="#666699" size="2">STEP 2 ： 查詢及解析 WSDL</font><br>
+	<br>
+	<img border="0" src="images/ch11_05_10_invokewsdl.bmp" width="397" height="27">
+	   <font color="#000000" size="2"><br>按選 wsdlURL 的 
+    <img border="0" src="images/coreicon.gif" width="24" height="24"> 開啟查詢解析 wsdl 作業。</font>
+	   <br>
+　  </li>
+	<li><font color="#666699" size="2">STEP 3 ： 查詢解析線上 wsdl<br>
+	<br>
+	<img border="0" src="images/ch11_05_10_wsdl.bmp" width="420" height="420">
+	<br>
+	 <font color="#000000" size="2">
+	<br>在 wsdl 選單中選取或輸入 wsdl URL，系統將讀取解析相關的 wsdl 及 xsd 檔案。並將 wsdl 其中所列示的服務顯示。設計師必須選取要在事件中執行的服務(service)及操作(operation)。請注意所輸入或選取的 wsdl 其中相關於 wsdl 檔案中 include 或 import 的 xsd 檔案須存在，否則相關的 soap input message 及 soap output 
+    meesage 無法得到正確的資料。 <br>
+    <br>
+    wsdl URL&nbsp; combobox 中參照的 URL 存放於 jlive/xml/wsdl.properties 
+    檔案中，設計師可以自行增減，檔案只是提供方便選取輸入。<br>
+	<br>按指示的各步驟執行，並按下確定鍵後，返回 soap 設定頁。
+	</font>
+	<br><br>
+	</li>
+	<li><font color="#666699" size="2">STEP 4 ： 輸入服務(web service)的位址(end point) 及 input message 資料。</font><br>
+	<br>
+		<img border="0" src="images/ch11_05_10_soap2.bmp" width="421" height="420">
+		 <font color="#000000" size="2">
+		<br>
+		<br>在設定頁中將會列示所參照的 wsdl 及所選取的服務 service 及操作 operation。
+		<br>
+		<br>設計師必須正確的輸入 位址(end point) 及 input message 資料。<br>
+		<br>
+		    位址(end point) 及 input message 資料以 運算公式(formula) 的方式輸入，提供設計師以相同的 soap 規劃，存取不同的 位址(end point)。並以動態的方式連結輸入資料(input message)。
+		</font>
+		<br><br>
+		  <ul>
+		     <li>
+             <img border="0" src="images/ch11_05_10_advance.bmp" width="307" height="26"><br>
+             <img border="0" src="images/ch11_05_10_advpane.bmp" width="419" height="242"><br>
+             <font color="#000000" size="2">
+             <br>按下 advance data 設計師可以參閱 wsdl 所設定的相關資料，除非有任何需要，不須做任何的更動。<br>
+              設計師可以使用右方按鍵，將詳細的 soap 資訊輸出成文字檔。因為所有 soap 輸入及回應資料皆是以 XML 方式運作，為正確的使用 wsdl 所規定的格式，設計師並須
+             精確的輸入相關參數格式及大小寫。設計師可以輸入的文件複製在完整的貼上運算公式(formula)中。
+             <br><br>
+             </font>
+		     </li>
+		     <li>
+             <img border="0" src="images/ch11_05_10_endpoint.bmp" width="393" height="72"><br>
+             <font color="#000000" size="2">
+				<br>
+		         以運算公式輸入服務位址(end point)。</font>
+
+				<br><br>
+		     </li>
+		     <li>
+             <img border="0" src="images/ch11_05_10_header.bmp" width="400" height="65"><br>
+             <font color="#000000" size="2"><br>
+		         如果 wsdl 中有需要輸入 soap header 資料，以運算公式輸入 soap header input message。
+		         soap header output message，如有列式的話，表示服務將會傳回相關訊息，設計師可以鍵值(key)，讀取資料。
+		     </font>
+				<br><br>
+		     </li>
+		     <li>
+             <img border="0" src="images/ch11_05_10_body.bmp" width="396" height="63"><br>
+             <font color="#000000" size="2"><br>
+		         輸入 soap input 資料，以運算公式輸入 soap input message。
+		         soap output message，如有列式的話，表示服務將會傳回相關訊息，設計師可以鍵值(key)，讀取資料。
+		     </font>
+				<br><br>
+		     </li>
+		     <li>
+             <img border="0" src="images/ch11_05_10_fault.bmp"" width="401" height="22"><br>
+             <font color="#000000" size="2"><br>
+		         soap fault message，如有列式的話，表示服務有錯誤訊息時將會傳回相關訊息，設計師可以鍵值(key)，讀取資料。
+		     </font>
+				<br><br>
+		     </li>
+		      <li>
+		          輸入訊息 input message 視窗。除非必要否則不要任意更動其項目及次序。
+		     </font>
+				<br><br>
+             <img border="0" src="images/ch11_05_10_input.bmp" width="420" height="419"><br>
+		     </li>
+		     <br>
+		      <li>
+		          輸出訊息 output message 視窗。參照存取回應參數的鍵值(key)。
+				<br><br>
+             <img border="0" src="images/ch11_05_10_output.bmp" width="422" height="420"><br>
+		     </li>
+		     <br>
+		     <li>
+             <img border="0" src="images/ch11_05_10_dispfault.bmp" width="138" height="34"><br>
+             <font color="#000000" size="2"><br>
+                 在要求服務後 (request service) ，如果服務主機送回任何錯誤訊習(fault part)時，核取(check) displayFaultPart，系統會自動顯示錯誤內容。設計師亦可自行以運算公式取得錯誤代碼及訊息。
+		     </font>
+				<br><br>
+		     </li>
+		  </ul>
+	</li>
+	<li><font color="#666699" size="2">STEP 5 ： 確定完成設定。
+	</li>
+</ul>
+<br>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top"><font color="#003366" size="2">▲Top</font></a></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="soap_io_message"></a><b>SOAP執行期訊息存取 (soap input and output message)<br>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+</b> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font color="#000000" size="2"> 
+設計師以 wsdl 參照設定 soap client 作業時，以 jLIVE Builder 運算公式(formula) 設定 服務位址(web service 
+endpoint) 及 輸入資料(input message)。</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　</font></font></font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font size="2"><font color="#000000">在要求服務(request service)返回後，如果</font></font><font color="#666699" size="2"><font color="#000000" size="2">有任何系統問題</font><font color="#000000" size="2">，例如：endpoint 
+輸入錯誤、網路不通，系統會以訊息視窗顯示</font><font color="#000000" size="2">。順利執行後，如果服務主機(web 
+service server)送回任何錯誤訊息</font><font color="#000000" size="2">，系統會根據 事件設定中是否有核取 
+displayFaultPart，顯示錯誤訊息</font><font color="#000000" size="2">。設計師可以根據 faultPart 
+message 上所列示的鍵值(key) ，讀取特定錯誤訊息，如果 faultPart&nbsp; message 上未規定，一般錯誤的鍵值(key)：fault.faultCode 
+及 fault.faultString</font><font color="#666699" size="2"><font color="#000000" size="2">。</font></font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font size="2"><font color="#000000">jLIVE Builder 在 要求服務(request service)返回後</font></font><font color="#666699" size="2"><font color="#000000" size="2">，會以
+		     </font>
+             <font color="#666699" size="2">事件名稱</font><font color="#000000" size="2"> 
+將返回的</font><font color="#666699" size="2"> XML 資料</font><font color="#000000" size="2">存放至系統中，jLIVE 
+Builder 提供運算公式(formula) ，
+		     </font>
+             <font color="#666699" size="2">XML(soapEventName, xpath)
+		     </font>
+             <font color="#000000" size="2">，讀取資料。其中 soapEventName 
+為執行soap事件名稱，xpath 為 message 中的鍵值(key)，設計師只要將 wsdl 所分析的輸出訊息(output message) 
+相關鍵值(key)填入即可取值。xpath 鍵值(key) 為 case sensitive ，每個節點(node)以 &quot;.&quot; 分隔(亦可以 
+&quot;/&quot; 分隔)。設計師必須完整及正確輸入</font><font color="#000000" size="2">。</font></font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font color="#666699" size="2"><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+相關 XML 運算公式(formula)<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<br>
+             <img border="0" src="images/ch11_05_10_xmlformula.bmp" width="285" height="60"><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+Xml(soapEventName, xpath)
+
+             
+             
+             <p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font size="2"><font color="#000000">讀取 xpath 節點資料(text)。例如：xml("soap_event","GetPrimeNumbersResponse.GetPrimeNumbersResult")</font></font><font color="#666699" size="2"><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<br>
+
+             
+             
+             <p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+Xml(soapEventname,xpath,value)<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font color="#000000" size="2">讀取 xpath 節點，設定其 text 值為 value</font><font color="#000000" size="2">。</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　</font><font size="2"><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font color="#666699">XmlUtil(utilName, soapEventName, param)</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+jLIVE Builder 對 xml 資料的操作<font color="#000000" size="2">。</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font color="#666699">utilName：remove</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+由 soap event 所取回的 xml 資料以 globe hash 方式存放<font color="#000000" size="2">，相同事件再次執行時，前次事件取回的 
+xml 資料將會被覆蓋，不需使用該 xml&nbsp; 時，可以 XmlUtil(&quot;remove&quot;, soapEventName)，移除 xml。param 
+不須給值。</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font color="#666699">utilName ：toString</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+將 soapEventName 的 XML 以 字串 (String) 方式傳回<font color="#000000" size="2">。param 
+不須給值。</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font color="#666699">utilName：stringtoxml</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+將 param 的 XML字串 (String) 讀入為以 soapEventName 命名的&nbsp; XML node 形式<font color="#000000" size="2">資料，以便以 
+xpath 存取。此為往後 jLIVE Builder 對 xml 存取的 utility，在 soap event 中不需使用。</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　<p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+　</font><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+<font size="2"><p style="margin-top: 1; margin-bottom: 1; text-indent:20">   
+</font><b><font color="#666699" size="2"><p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a name="event_status"></a><b>事件執行狀態與訊息 (event runtime status and message)</b></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱&quot;) ：</font><font size="2">取得事件執行狀態。<br>
+　</font></p>    
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="14">
+    <font size="2" color="#FFFFFF">狀態</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">空字串</font></td>
+    <td width="84%" height="16"><font size="2">事件未被引發。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">-1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，依條件判斷後執行否則事件。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">1</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行成功。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="16"><font size="2">0</font></td>
+    <td width="84%" height="16"><font size="2">事件啟動後，執行過程有誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+<font color="#666699" size="2">EvStatus(&quot;事件名稱.error&quot;) ：</font><font size="2">取得事件執行錯誤代碼。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4" height="48">
+  <tr>
+    <td width="16%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">回傳值</font></td>
+    <td width="84%" align="center" bgcolor="#666699" height="13">
+    <font size="2" color="#FFFFFF">說明</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="14"><font size="2">空字串 或 0</font></td>
+    <td width="84%" height="14"><font size="2">沒有錯誤訊息或無法取得錯誤訊息。</font></td>
+  </tr>
+  <tr>
+    <td width="16%" height="13"><font size="2">1</font></td>
+    <td width="84%" height="13"><font size="2">執行錯誤。</font></td>
+  </tr>
+</table>
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch11_05_08.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=188 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=212 align=right valign=top>  
+<a href="ch12.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~ 
+2004 Probe Technology Inc. . All Rights Reserved. 
+</font></p> 
+ 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments, 
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p> 
+ 
+      </td>
+    </tr>
+    <tr>
+      <td width="100%">
+
+　</td>
+    </tr>
+  </table>
+  </center>
+</div>
+ 
+</body> 
+ 
+</html>

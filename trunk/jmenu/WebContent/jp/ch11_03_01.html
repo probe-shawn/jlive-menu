@@ -1,0 +1,157 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>DataSource Navigator</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch11_03.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=211 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2"><a href="ch11.html" style="text-decoration: none">
+<font color="#000000">Chapter 11</font></a></font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">
+<a href="ch11.html" style="text-decoration: none"><font color="#000000">Event</font></a></font></b></TD> 
+<td width=189 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch11_03_02.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">データソースナビゲーター (data source navigator)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1; margin-left:20">
+<font size="2">イベント実行ー一例えば：ナビゲーターコンポーネント (Navigator   
+component)。</font></p> 
+<p style="margin-top: 1; margin-bottom: 1; margin-left:20"> 
+<font size="2">或いはイベントの変わりに同じ効果のフォーミュラを起動：<font color="#666699" face="Courier New">DsNavigator(ds,op_str)</font>。</font></p> 
+<ul type="square"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">データソース (data source)：</font>  
+データソースの選択。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">ナビゲーターオペレーション (navigator operation)：</font>  
+データソースナビゲーターコンポーネント。</font></p>  
+  <ul type="disc">  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">&nbsp;(first)：</font>  
+一つ目のレコードへ。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">&nbsp;(prior)</font><font size="2"><font color="#666699">：</font>  
+ 一つ前のレコードへ。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">次 (next)</font><font size="2"><font color="#666699">：</font>   
+ 次のレコードへ。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">最後 (last)：</font>  
+最後のレコード。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">新規 (insert)：</font>   
+新規レコード。</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">削除 (delete)：</font>   
+ レコード削除，デフォルト削除操作に警告音なし。</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">エディット (edit)：</font>   
+データレコード編集。</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+<font color="#666699">保存(post)：</font>   レコード保存。</font></p> 
+    </li> 
+    <li> 
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">取り消し (cancel)：</font>  
+編集取り消し。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">更新 (refresh)：</font>   
+再度バッファー (buffer) レコード (record) から読み取り，連結のコンポーネントに表現します。</font></p>
+    </li>
+    <li>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<font color="#666699">リオープン (reopen)：</font>  
+データソースのリオープン。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">全部削除 (delete all)：</font>  
+データソースにある資料をすべて削除します（ Buffer 
+データソースに限ります），実際に存在するデータソース資料をすべて削除する場合，NON_SELECT SQL Commands 
+を使います。</font></p>  
+    </li>  
+    <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">  
+<font color="#666699">クエリー (query)：</font>  
+システムのクエリーモードを使ってデータソースにクエリーします。</font></p>  
+    </li>  
+  </ul>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<img border="0" src="images/ch11_03_perform_2.gif" width="419" height="316"></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+</blockquote>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch11_03.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=196 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=204 align=right valign=top>  
+<a href="ch11_03_02.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~  
+2004 Probe Technology Inc. . All Rights Reserved.  
+</font></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,  
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>  
+  
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+  
+      </body>  
+  
+</html>

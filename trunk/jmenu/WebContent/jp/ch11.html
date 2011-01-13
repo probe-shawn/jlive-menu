@@ -1,0 +1,349 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<title>Event</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<font size="2">
+<a href="index.html"> 
+<img border="0" src="images/jlogo.GIF" width="345" height="60"></a></font></p> 
+ 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<a href="ch10_20.html"> 
+<font size="2">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></font></a></td>
+<td width=216 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font size="2">Chapter 11</font></b><p style="margin-top: 0; margin-bottom: 0"><b><font size="2">Event</font></b></TD>   
+<td width=184 align=right valign=top>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<font size="2">   
+<a href="ch11_01.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></font></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><b><font size="2"><a name="top"></a></font><font size="4">1<a class="TITLE">1.     
+イベント (event</a>)</font></b></p>         
+<p style="margin-top: 1; margin-bottom: 1"></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#eventtype">イベント分類 (event type)</a></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><a href="#eventtable">イベントテーブル (event table)</a></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><a href="ch11_01.html">イベントフローのスキーマ</a><a href="ch11_01.html"> (event flow         
+schema)&nbsp;</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">
+<img border="0" src="images/ch11_event_object.gif" width="320" height="198"></p> <!--
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">事件物件   
+(event object) 是由&#21855;動條件 (fire condition)、否則事件 (otherwise      
+event)、執行運算程序 (perform computing process) 及後續事件 (next      
+event)所組成。&#21855;動條件 (fire condition) 是一個運算式 (formula)，當結果&#20540;為真 (非 0 且非空字串)，則執行運算程序   
+(perform computing process)，之後接續執行後續事件 (next event)      
+；運算式 (formula) 結果&#20540;為偽，則執行否則事件 (otherwise event)。設計師可以&#21855;動條件   
+(fire condition) 根據應用程式流程需求，連結否則事件 (otherwise      
+event) 及後續事件 (next event) ，達成具有流程分支 (branch)、控管   
+(control) 的事件流程 (event flow)。<br>   -->
+　<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"><font size="2">処理プロセスは</font><font size="2">    
+(computing process)４つの部分(<a href="ch11_02.html">コンポーネント</a>、<a href="ch11_03.html">データソース</a>、<a href="ch11_04.html">モジュール</a>、<a href="ch11_05.html">進階</a>)に分けてランタイム       
+(runtime)の段階で実行・コントロールを行います：</font></p>   
+<ul>  
+  <li>  
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">コンポーネントプロパティの変更          
+    (ファイル、位置、サイズ、フォント、カラー、表示、フォーカス)。</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">データソース操作(一覧、フィールド、トリガー、検索)。</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">SQLコマンドの実行(SQL、ストアドプロシージャ)。</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">データベース設定(Isolation          
+    level、Transaction)</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">アプリーシステム(オープンフォーム、レポート作業、外部プログラミング、メッセージ)。</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">ファイル資料(アップロード、ダウンロード、Buffer    
+    データソース)</font></li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">WEBファンクション(メール、スーパーリンク、音声、ビデオ、Servlet          
+    Call)。</font></li>   
+</ul>   <!--
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">運用這些事件的運算程序，串連    
+(link)以&#21855;動條件分支執行的否則事件及後續事件，設計師可以完整的將程式流程，以完全視覺化的<a href="ch11_01.html">事件流程綱要 
+(event flow schema) </a>予以展現，不論在流程分析 (analysis)、更動(alter)、維護       
+(maintain) 與除錯 (debug)，皆能快速且正確的因應。<br>   
+　</font></p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">事件流程    
+(event flow) 是由使用者或系統程序 (system flow)       
+所&#21855;動，在元件及資料來源設計時，設計師根據使用者操作的行為性，分別連結    
+(link) &#21855;動的事件流程 (event flow)，完成回應 (respond)       
+使用者操作的作業需求；系統程序所&#21855;動的事件，例如：視窗開&#21855;程序中，會依序&#21855;動資料來源開&#21855;前事件    
+(before data source open event)及資料來源開&#21855;前事件(after data source       
+open event)，視窗關閉前，會&#21855;動關閉事件(final       
+event)。設計師只要在系統程序中連結所需的作業事件即可。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>    -->
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="2">    
+<a name="eventtype"></a>イベント分類 (event type)</font></b></p>          
+<ul>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1">    
+    <font size="2" color="#000000"><a href="ch11_02.html">コンポーネントイベント       
+    (component event)</a></font></li>         
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"><a href="ch11_03.html">データソースイベント       
+    (data source event)</a></font></li>         
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"><a href="ch11_04.html">    
+    モジュールイベント (module event)</a></font></li>         
+  <li>    
+    <font size="2" color="#000000"><a href="ch11_05.html">昇進イベント (advance          
+    event)</a></font></li>   
+</ul>   
+<p style="margin-top: 1; margin-bottom: 1">　</p> 
+<table border="1" cellspacing="1" width="607"> 
+  <tr> 
+    <td align="center" bgcolor="#505050" width="95"> 
+    <font color="#000000"> 
+    <font size="2">コンポーネント</font>　<font size="2" color="#FFFFFF">イベント</font></font></td> 
+    <td align="center" bgcolor="#505050" width="231"> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000">データソースイベント</font></td> 
+    <td align="center" bgcolor="#505050" width="81"> 
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#000000"> 
+    　モジュール　　イベント</font></td> 
+    <td align="center" bgcolor="#505050" width="177"> 
+    <font size="2" color="#000000">昇進イベント</font></td> 
+  </tr> 
+  <tr> 
+    <td align="left" width="95"> 
+<font size="2"><a style="text-decoration: none" href="ch11_02_01.html"><font color="#000000">ファイルコンポーネント設定</font></a></font></td> 
+    <td align="left" width="231"> 
+<a style="text-decoration: none" href="ch11_03_01.html"><font size="2" color="#000000">データソース一覧</font></a></td> 
+    <td align="left" width="81"> 
+<font size="2" color="#000000">オープンフォーム</font></td> 
+    <td align="left" width="177"><a href="ch11_05_01.html" style="text-decoration: none"><font size="2" color="#000000">Buffer 
+      データソースへデータソースをコピー</font></a></td>          
+  </tr>     
+  <tr>     
+    <td align="left" width="95">     
+<font color="#000000" size="2"><a style="text-decoration: none">コンポーネント位置及びサイズ</a></font></td>     
+    <td align="left" width="231">     
+<font size="2"><a href="ch11_03_02.html" style="text-decoration: none"><font color="#000000">データソースと必要なフィールド設定</font></a></font></td>     
+    <td align="left" width="81">     
+<font size="2"><a href="ch11_04_02.html" style="text-decoration: none"><font color="#000000">メッセージボックス</font></a></font></td>     
+    <td align="left" width="177">     
+<font size="2"><a href="ch11_05_02.html" style="text-decoration: none"> 
+<font color="#000000">Buffer データソース順序並べ</font></a></font></td>     
+  </tr>     
+  <tr>     
+    <td align="left" width="95">     
+<font color="#000000" size="2"><a style="text-decoration: none">コンポーネントフォント</a></font></td>     
+    <td align="left" width="231">     
+<font color="#000000" size="2"><a style="text-decoration: none">トリガーデータソース</a></font></td>     
+    <td align="left" width="81">     
+<font size="2"><a href="ch11_04_03.html" style="text-decoration: none"><font color="#000000">レポート作業実行</font></a></font></td>     
+    <td align="left" width="177">     
+<font size="2"><a href="ch11_05_03.html" style="text-decoration: none"> 
+<font color="#000000">Buffer データソースに文字載せ</font></a></font></td>          
+  </tr>     
+  <tr>     
+    <td align="left" width="95">     
+<font size="2"><a href="ch11_02_04.html" style="text-decoration: none"><font color="#000000">コンポーネントカラー</font></a></font></td>     
+    <td align="left" width="231">     
+<a style="text-decoration: none" href="ch11_03_04.html"><font size="2" color="#000000">データソース検索</font></a></td>     
+    <td align="left" width="81">     
+<font size="2"><a href="ch11_04_04.html" style="text-decoration: none"><font color="#000000">フォーミュラ実行</font></a></font></td>     
+    <td align="left" width="177">     
+<a style="text-decoration: none" href="ch11_05_04.html"><font size="2" color="#000000">アップロードファイル</font></a></td>     
+  </tr>     
+  <tr>     
+    <td align="left" width="95">     
+<font color="#000000" size="2"><a style="text-decoration: none">コンポーネント機能</a></font></td>     
+    <td align="left" width="231">     
+<font size="2"><a href="ch11_03_05.html" style="text-decoration: none"><font color="#000000">NON_SELECT SQL 
+コマンド実行</font></a></font></td>         
+    <td align="left" width="81">    
+<font color="#000000" size="2"><a style="text-decoration: none">外部プログラミング連結</a></font></td>    
+    <td align="left" width="177">    
+<a style="text-decoration: none" href="ch11_05_05.html"><font size="2" color="#000000">メール送り</font></a></td>    
+  </tr>    
+  <tr>    
+    <td align="left" width="95">    
+<font size="2"><a href="ch11_04_06.html" style="text-decoration: none"><font color="#000000">コンポーネント表示</font></a></font></td>    
+    <td align="left" width="231">    
+<font size="2"><a href="ch11_03_06.html" style="text-decoration: none"><font color="#000000">Stored          
+Procedure</font></a><font color="#000000"><a style="text-decoration: none">実行</a></font></font></td>    
+    <td align="left" width="81">    
+<font size="2"><a href="ch11_04_06.html" style="text-decoration: none"> 
+<font color="#000000">フォーム離れ</font></a></font></td>    
+    <td align="left" width="177">    
+<font size="2"><a href="ch11_05_06.html" style="text-decoration: none"> 
+<font color="#000000">Servlet Call</font></a></font></td>           
+  </tr>     
+  <tr>     
+    <td align="left" width="95">     
+<font size="2"><a href="ch11_02_07.html" style="text-decoration: none"> 
+<font color="#000000">コンポーネント Focus</font></a></font></td>           
+    <td align="left" width="231">     
+<font size="2"><a href="ch11_03_07.html" style="text-decoration: none"> 
+<font color="#000000">データベース            
+    Transaction Isolation Level</font></a></font></td>           
+    <td align="left" width="81">     
+<a style="text-decoration: none" href="ch11_04_07.html"><font size="2" color="#000000">システム離れ</font></a></td>     
+    <td align="left" width="177">     
+<a style="text-decoration: none" href="ch11_05_07.html"><font size="2" color="#000000">ハイパーリンク</font></a></td>     
+  </tr>     
+  <tr>     
+    <td align="left" width="95"><font size="2" color="#000000">&nbsp;</font></td>    
+    <td align="left" width="231"><a style="text-decoration: none" href="ch11_03_08.html"><font size="2" color="#000000">    
+データベース</font></a>    
+<a href="ch11_03_08.html" style="text-decoration: none"><font size="2" color="#000000">    
+ Transaction AutoCommit</font></a></td>           
+    <td align="left" width="81"><font size="2" color="#000000">&nbsp;</font> </td>    
+    <td align="left" width="177">    
+<a style="text-decoration: none" href="ch11_05_08.html"><font size="2" color="#000000">音声再生</font></a></td>    
+  </tr>    
+  <tr>    
+    <td align="left" width="95"><font size="2">&nbsp;</font></td>    
+    <td align="left" width="231">    
+<font size="2"><a href="ch11_03_09.html" style="text-decoration: none"><font color="#000000">データベース            
+    Transaction Commit or Rollback</font></a></font></td>           
+    <td align="left" width="81"><font size="2">&nbsp;</font> </td>    
+    <td align="left" width="177"><font size="2">&nbsp;</font></td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>
+<p style="text-indent: 0px; line-height: 100%; margin-top: 1; margin-bottom: 1">
+　</p> 
+<p style="text-indent: 0px; line-height: 100%; margin-top: 1; margin-bottom: 1">
+　</p> 
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="text-indent: 0px; line-height: 100%; margin-top: 1; margin-bottom: 1">
+</p> 
+<p style="text-indent: 0px; line-height: 100%; margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>
+<p style="text-indent: 0px; line-height: 100%; margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2"><b><a name="eventtable"></a>イベントテーブル (event table)</b></font></p>          
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>  
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">イベントテーブル   
+(event      
+table) はデザインフォーム (form design framework) の右下にあり，デザインされた全てのイベントをリスティングしています，デザインナーには削除   
+(delete) 更新 (update) イベントプロパティ設定 (properties)を行うことが可能です。</p> 
+<!--<p>
+也可以標示  
+(mark)     
+事件後，以滑鼠&#25302;曳至工作視窗，系統會新增一個按鈕元件  
+(button component)，並將其動作事件 (action event)     
+設定為所標示之事件。按下新增事件 (create new event)     
+的按鈕後，系統將會開&#21855;事件流程綱要 (event flow schema)     
+的作業環境 (framework)，設計師可以在<a href="ch11_01.html">事件流程綱要  
+(event flow schema</a>) 中，規劃、新增、編輯、除錯事件流程  
+(event flow)。</font></p>     -->
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">イベント名 (event name)：</font>イベント名。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">イベント類別 (event type)： </font>イベント類別。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">条件 (condition)：</font>起動条件。</font></p>   
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699">otherwiseイベント</font><font size="2"><font color="#666699"> (otherwise event) ：</font>不条件に満たせない場合に起動イベント。</font></p>     
+  </li>    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2">   
+<font color="#666699">次のイベント (next event)：</font>次のイベント。</font></p>    
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">再進入 (reentry)：</font><font size="2" color="#000000">イベント実行回数</font><font size="2"><font color="#000000">    
+ (loop back constraint)</font>。</font></p>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font color="#666699"><font size="2">0 </font><font size="2" color="#666699">：</font></font><font size="2" color="#000000">再進入できません。</font></p>    
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2" color="#666699">N：</font><font size="2" color="#000000">再進入      
+N 回。</font></p>    
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">-1：</font><font size="2" color="#000000">下限回数，再進入できます。</font></p>   
+</blockquote>   
+  </li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<img border="0" src="images/ch11_event_table.gif" width="458" height="170"></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+</blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>   
+<hr align=left color="#000000">   
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">   
+<tr>   
+<td width=200 align=left valign=top>   
+<a href="ch10_20.html">   
+<font size="2">   
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></font></a></td>   
+<td width=195 align=center valign=top><a href="index.html">   
+<font size="2">   
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></font></a></TD>   
+<td width=205 align=right valign=top>   
+<font size="2">   
+<a href="ch11_01.html">   
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></font></td>   
+</tr>   
+</table>   
+   
+<hr align=left color="#000000">   
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+</font>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>     
+     
+</html>

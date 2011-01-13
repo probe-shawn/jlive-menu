@@ -1,0 +1,736 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Authorized security control</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=195 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch08_02.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=204 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch08.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 8</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch08.html" style="text-decoration: none"><font color="#000000">
+Make executable program</font></a></font></b></TD>            
+<td width=201 align=right valign=top>            
+<p style="margin-top: 0; margin-bottom: 0">            
+<a href="ch09.html">            
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>            
+</tr>            
+</table>            
+            
+<hr align=left color="#000000">            
+<p><font size="4"><a name="top"></a><b>8<a class="TITLE">.4</a> </b>             
+ </font><font size="3"><b>授權式安全控管 (authorized security              
+control)</b></font></p>             
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#adopt">啟動            
+jLIVE Builde&trade;&nbsp; 的授權式安全控管機制 (start authorized            
+security control)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#flow">授權式安全控管系統內部作業流程  
+(security internal system flow)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#autdata">jLIVE&trade;            
+middle ware</a></font><a href="#autdata"><font size="2">            
+回覆之授權資料資料(authorized data)</font></a></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#autitem">視窗授權項目(authorized            
+item)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#authorizedcomp">授權項目對元件的控制  
+(authorized item and components)</a></font></p>           
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#change">視窗授權項目之動態變更(authorized            
+item dynamic change)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#tips">授權</a></font><a href="#tips"><font size="2">程式設計建議  
+(tips of authorized programming)</font></a></p>          
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#setting">授權式安全控管設定作業  
+(authorized security control setting)</a></font></p>            
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#config">內嵌組態設定檔        
+(securitysql.xml)&nbsp;</a></font></p>           
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1"> 
+</p>       
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"> 
+<font size="2">jLIVE Builder&trade; 授權式安全控管機制 (authorized             
+security control)，是個選擇性 (option)             
+的系統功能，應用程式系統規劃師可以決定是否採取 jLIVE Builder&trade;            
+的機制，或自行建立安全控管模組。自行管理的方式，只要將應用程式屬性設定頁的【<font color="#666699">使用             
+jLIVE 登入機制】</font><font color="#000000">取消</font>，應用程式執行時，系統的使用者登入對話視窗就不會出現，設計師必須提供登入對話視窗，並對登入的使用者作檢核及授權使用視窗功能。</font></p>            
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">   
+　</p>            
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify">           
+<font size="2">使用 jLIVE Builder&trade;&nbsp; 的授權式安全控管機制，必須將應用程式屬性設定頁的【<font color="#666699">使用             
+jLIVE 登入機制】</font><font color="#000000">核選 (checked)</font>，並在製作應用程式時，執行授權式安全控管設定。完成上述動作後，系統會自動新增八個資料表 
+(tables)，加入四個控制視窗 (forms)，並將控管(security control)            
+設定的 XML 檔傳送至 jLIVE&trade; middle ware。其中八個資料表 
+(tables) 記錄使用者登入名稱 (name)、密碼 (password)、任務角色 
+(roles) 及視窗授權項目 (authorized items)，四個控制視窗 (form)        
+提供執行期的應用程式授權，設計師可以直接引用或按需求進一步的更改。</font></p>            
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1">           
+　</p>            
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">使用 jLIVE Builder&trade;&nbsp;            
+的授權式安全控管機制，資料庫的登入連結資料 (database login 
+id、password)            
+是儲存於資料庫相關的資料表中，經由使用者登入 jLIVE&trade;            
+middle ware 驗證許可後，再取得相對的資料庫登入資料(login)。應用程式系統規劃師，可以針對不同作業使用者，給予特定的登入連結資料 
+(id、password) 及資料庫存取權限，加強資料庫存取連結的安全性。</font></p>            
+<p style="margin-top: 1; margin-bottom: 1">            
+　</p>            
+<p style="margin-top: 1; margin-bottom: 1">            
+　</p>            
+<p style="margin-top: 1; margin-bottom: 1">            
+　</p>            
+<p style="margin-top: 1; margin-bottom: 1">            
+　</p>            
+<p style="margin-top: 1; margin-bottom: 1">            
+<font size="2"><b><a name="adopt"></a>啟動 jLIVE Builde&trade;&nbsp; 的授權式安全控管機制 
+(start            
+authorized security control)</b></font>　</p>        
+<ol style="font-size: 10 pt">
+  <li>
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">核選 (checked)            
+    應用程式屬性設定頁的【<font color="#666699">使用             
+jLIVE 登入機制】</font>。</font></li>     
+  <li>           
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">展開 (expand)            
+    控制面版應用程式節點，選擇 Applet 或 JarRun 屬性設定頁，按下圖示 <i>安全 </i>              
+<img border="0" src="images/security.gif" width="24" height="24">               
+    按鍵，開啟安全控管設定 (security setting) 作業。</font></li>          
+  <li>          
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">設定應用程式管理者資料。</font></li>          
+  <li>          
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">依資料庫系統 
+    (database system)，建立相關控制資料表 (tables)。</font></li>          
+  <li>          
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">建立管理授權的相關模組視窗 
+    (forms)。</font></li>          
+  <li>          
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">同步應用程式視窗至管理資料表。</font></li>          
+  <li>          
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2">傳送管理者及相關資料庫連結資料的            
+    XML 檔至 jLIVE&trade; middle ware。</font></li>           
+</ol>           
+<p style="margin-top: 1; margin-bottom: 1; text-indent:20"><font size="2">當應用程式佈建執行後，應用程式視窗有所新增或刪除時，必須再次執行應用程式視窗至管理資料表的同步作業。如此授權管理作業中的視窗列示，才能顯示正確的資訊。而相關視窗的程式碼更新，請執行應用程式線上更新 
+(application online            
+update) 作業。</font></p>             
+<p style="margin-top: 1; margin-bottom: 1">             
+　</p>             
+<p style="margin-top: 0; margin-bottom: 0">　</p>            
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">            
+<font color="#003366" size="2">▲Top</font></a></p>            
+<p style="margin-top: 1; margin-bottom: 1">             
+　</p>         
+<p>　</p>        
+<p><font size="2"><b><a name="flow"></a>授權式安全控管系統內部作業流程 
+(internal system flow)</b></font></p>            
+<ol style="font-size: 10 pt">           
+  <li><font size="2">客戶端 (client) 以瀏覽器登入應用程式，系統出現輸入使用者名稱、密碼的對話視窗。</font></li>           
+  <li><font size="2">使用者輸入的名稱 (name) 、密碼 (password) 傳送至 jLIVE &trade;middle            
+    ware 驗證。</font>           
+    <ul>           
+      <li><font size="2">jLIVE&trade;            
+        middle ware 根據名稱、密碼，查詢是否存在於使用者資料表            
+        (CMM_BASC_USER)中。</font></li>           
+      <li><font size="2">如果不存在，            
+        jLIVE&trade; middle ware            
+        傳回使用者名稱、密碼錯誤訊息。</font></li>           
+      <li>  
+      <p align="justify"><font size="2">根據使用者資料表 (CMM_BASC_USER)            
+        的 USER_EXCL 及已登入的使用者列表，檢查該名稱、密碼是否允許同時多人登入及是否已有該名稱、密碼登入之使用者，如果該使用者已存在且不允許同時多人登入，則            
+        jLIVE&trade; middle ware            
+        傳回使用者名稱、密碼已登入訊息。</font></li>           
+      <li>  
+      <p align="justify"><font size="2">合格使用者，根據使用者資料表            
+        (CMM_BASC_USER) 的 USER_KEY 與授權角色連結表 (CMM_BASC_LNK) 、角色授權表            
+        (CMM_BASC_AUT) ，查詢使用者授權資料</font> <font size="2">(authorized            
+        data)。</font></li>           
+      <li><font size="2">根據使用者資料表 (CMM_BASC_USER) 的 DB_NAME            
+        及 DB_PASS 建立資料庫連結 (database connection)。</font></li>          
+    </ul>          
+  </li>          
+  <li><font size="2">傳回驗證成功及使用者授權資料 (authorized            
+    data)。</font></li>           
+  <li><font size="2">客戶端 (client) 系統將根據授權資料(authorized            
+    data)，將未授權的操作項目、選單、按鍵使之失效 (disabled)。</font></li>          
+</ol>          
+<p style="margin-top: 0; margin-bottom: 0">　</p>           
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">           
+<font color="#003366" size="2">▲Top</font></a></p>           
+<p>　</p>    
+<p>　</p>        
+<p><b><font size="2"><a name="autdata"></a>jLIVE&trade; middle ware            
+回覆之授權資料資料 (authorized data)</font></b></p>            
+<ol style="font-size: 10 pt">           
+  <li><font size="2">使用者資料表 (CMM_BASC_USER) 的欄位(data field) 內含值：</font>          
+    <ul style="font-size: 10 pt">          
+      <li><font size="2">欄位 COMP_CODE 內含值儲存於 <font color="#666699">SysHash</font>，鍵值 
+        (key) 為 compcode。</font></li>           
+      <li><font size="2">欄位 USER_NAME 內含值儲存於 <font color="#666699">SysHash</font>，鍵值 
+        (key) 為 username。</font></li>           
+      <li><font size="2">欄位 USER_CODE 內含值儲存於 <font color="#666699">SysHash</font>，鍵值 
+        (key) 為 usercode。</font></li>           
+      <li><font size="2">欄位 USER_DUTY 內含值儲存於 <font color="#666699">SysHash</font>，鍵值 
+        (key) 為 userduty。</font></li>           
+    </ul>           
+  </li>           
+  <li><font size="2">jLIVE&trade; middle ware Session ID ：儲存於 <font color="#666699">SysHash</font>，鍵值 
+    (key) 為 sessionid。</font></li>          
+  <li><font size="2">使用者登入的使用者名稱：儲存於 <font color="#666699">SysHash</font>，鍵值 
+    (key) 為 userid。</font></li>         
+  <li><font size="2">使用者登入的使用者密碼：儲存於 <font color="#666699">SysHash</font>，鍵值 
+    (key) 為 userpass。</font></li>         
+  <li>  
+  <p align="justify"><font size="2">視窗及視窗授權項目(authorized item) 列表：jLIVE&trade;&nbsp;            
+    middle ware 以下列 SQL 
+  擷取使用者的視窗及視窗授權項目，再經聯集 (union) 
+  視窗授權項目後傳回，回傳視窗及視窗授權項目儲存於            
+    <font color="#666699">SysHash</font>，鍵值 (key) 為視窗名稱 (form 
+  name)，值 (value) 為授權項目(authorized item)。</font></li>           
+</ol>           
+<blockquote>           
+  <blockquote>           
+    <p><font face="Courier New"><font color="#505050" size="2">Select B.FORM_NAME, B.FORM_SPC, B.AUT_TYPE&nbsp;      
+    <br>  
+    From&nbsp;&nbsp; CMM_BASC_LNK A , CMM_BASC_AUT B <br>  
+    Where&nbsp; A.USER_KEY = [</font><font color="#000000" size="2">CMM_BASC_USER.USER_KEY]      
+    </font>          
+    <font size="2" color="#505050"><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; And A.ROL_KEY = B.ROL_KEY</font><font color="#000000" size="2"><br>          
+    </font></font></p>           
+  </blockquote>          
+</blockquote>          
+<p>　</p>      
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">        
+<font color="#003366" size="2">▲Top</font></a></p>        
+<p>　</p>        
+<p><font size="2"><b><a name="autitem"></a>視窗授權項目 (authorized item)</b></font></p>            
+<ul>           
+  <li><font size="2">I ：允許使用者在該視窗中，操作屬於新增 
+    (insert) 檔案記錄的功能。</font></li>           
+  <li><font size="2">U：允許使用者在該視窗中，操作屬於修改 
+    (update) 檔案記錄的功能。</font></li>           
+  <li><font size="2">D：允許使用者在該視窗中，操作屬於刪除 
+    (delete) 檔案記錄的功能。</font></li>           
+  <li><font size="2">Q：允許使用者在該視窗中，操作屬於查詢 
+    (query) 檔案記錄的功能。</font></li>           
+  <li><font size="2">P：允許使用者在該視窗中，操作屬於列印作業 
+    (print) 的功能。</font></li>          
+  <li><font size="2">X：設計師自行定義項目(custom            
+    item) 。</font></li>           
+  <li><font size="2">Y：設計師自行定義項目(custom            
+    item) 。</font></li>           
+  <li><font size="2">Z：設計師自行定義項目(custom            
+    item) 。</font></li>           
+</ul>           
+<p style="margin-top: 0; margin-bottom: 0">　</p>            
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">            
+<font color="#003366" size="2">▲Top</font></a></p>            
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="authorizedcomp"></a>授權項目對元件的控制 
+(authorized item and components control)</b></font></p>          
+<p style="margin-top: 2; margin-bottom: 2">　</p>      
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">jLIVE      
+Builder&trade; 應用程式執行時，相關的元件 (components) 及事件 
+(events) 會自行反應使用者是否被授權，沒有相對的授權項目 
+(authorized item) 時，視窗開啟後，元件會自行失效 (disabled)   
+，功能選單及項目(menu and menu item) 會移除 (removed)。</font></p>         
+<ul>   
+  <li>   
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">事件 (event)&nbsp;</font>    
+    <ul>    
+      <li>    
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">開啟視窗 
+        (open form) ：授權資料中，須含有該視窗名稱 (form name)。</font></li>     
+      <li>     
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">資料來源瀏灠事件 
+        (data source navigator)&nbsp;</font>     
+        <ul>     
+          <li>     
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2">新增 
+            (insert)：具有 I 授權項目。</font></li>     
+          <li>     
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2">編輯 
+            (update)：具有 U 授權項目。</font></li>     
+          <li>     
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2">刪除 
+            (delete)：具有 D 授權項目。</font></li>     
+        </ul>     
+      </li>     
+      <li>     
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">查詢資料來源 
+        (query data source) ：具有 Q 授權項目。</font></li>     
+      <li>     
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">執行印表作業 
+        (open report) ：具有 P 授權項目。</font></li>     
+    </ul>     
+  </li>     
+  <li>     
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">元件 (component)</font>    
+    <ul>    
+      <li>    
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">功能選單 
+        (menu item) ：連結的啟動事件具有相關授權項目。</font></li>     
+      <li>     
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">導覽元件 
+        (Navigator component)</font>    
+        <ul>    
+          <li>    
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2">新增按鈕 
+            (insert)：具有 I 授權項目。</font></li>     
+          <li>     
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2">編輯按鈕 
+            (update)：具有 U 授權項目。</font></li>     
+          <li>     
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2">刪除按鈕 
+            (delete)：具有 D 授權項目。</font></li>     
+          <li>     
+            <p style="margin-top: 2; margin-bottom: 2"><font size="2">查詢按鈕 
+            (query)：具有 Q 授權項目。</font></li>     
+        </ul>     
+      </li>     
+      <li>     
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">按鈕元件 
+        (Button component)：連結的啟動事件具有相關授權項目。</font></li>    
+      <li>    
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">資料表元件      
+        (Grid component)：I、U、D      
+        授權項目，各會影響資料表的新增 (insert) 編輯 (update) 刪除 
+        (delete) 的操作許可。</font></li>     
+      <li>     
+        <p style="margin-top: 2; margin-bottom: 2"><font size="2">圖片引發器 
+        (image invoker)：連結的啟動事件具有相關授權項目。</font></li>     
+    </ul>     
+  </li>     
+</ul>     
+<p style="margin-top: 2; margin-bottom: 2">　</p>           
+<p style="margin-top: 0; margin-bottom: 0">　</p>            
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">            
+<font color="#003366" size="2">▲Top</font></a></p>            
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a name="change"></a><b>視窗授權項目之動態變更 
+(authorized            
+item dynamic change)</b></font></p>            
+<p style="margin-top: 2; margin-bottom: 2">　</p> 
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2" align="justify"><font size="2">jLIVE&trade;            
+Builder 視窗授權項目，是以鍵值 -- 視窗名稱 (key -- form name) 與值 -- 授權項目字串 
+(value&nbsp; -- authorized item            
+string) 的型式存在於 <font color="#666699"> SysHash</font> 中，設計師可以用運算公式 
+(formula) 的 <font color="#666699" face="Courier New">SysHashGet(FormName())</font>            
+查詢授權項目字串，如果授權項目字串中含有該授權項目即是允許該授權操作；設計師亦可根據需要，利用運算公式 
+(formula) 的 <font color="#666699" size="2" face="Courier New"> SysHashPut(FormName(),&quot;IUDPQ&quot;)</font>，更動預設的授權項目        
+(&quot;IUDPQXYZ&quot;)。</font></p>           
+<p style="text-indent: 20; margin-top: 2; margin-bottom: 2">　</p>           
+<p style="margin-top: 2; margin-bottom: 2">　</p>           
+<p style="margin-top: 0; margin-bottom: 0">　</p>            
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">            
+<font color="#003366" size="2">▲Top</font></a></p>            
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="tips"></a>授權程式設計建議 
+(tips of authorized programming)</b></font></p>           
+<ul>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2" align="justify"><font size="2">jLIVE&trade;            
+Builder 內建的八個資料表 (tables)，其中資料表名稱及已存在的欄位名稱不可更改，但可以加入其它欄位。建議應用程式規劃時，能以這些資料表 
+    (tables) 涵蓋或擴充為，人員、公司、部門等基本資料檔。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2" align="justify"><font size="2">設計師在應用系統流程中，可以利用運算公式 
+    (formula) 的 <font face="Courier New"> SysHashGet()</font>，取得由 jLIVE&trade; middle ware        
+    所傳回的使用者資料：公司代碼 (compcode)、使用者名稱(username)、使用者代碼(usercode)、使用者職責 (userduty) 以及由客戶端登入時的 
+    ID (userid)、密碼 (userpass) 和由 jLIVE&trade; middle ware 所建立的 
+    Session ID (sessionid)。其中可以公司代碼        
+    (compcode)        
+    關連隸屬的公司資料，運用於多公司系統；使用者代碼 (usercode) 可以關連使用者的基本資料；使用者職責 (userduty)        
+    則應用於使用層級的流程規畫。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">由於各個資料庫系統的資料欄位型別與索引不儘相同，設計師可以按存取需求，自行加入所需的索引，以加快查詢效率。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2" align="justify"><font size="2">jLIVE&trade;            
+Builder 內建的四個視窗，設計師在了解設計內容後，可以自行修改或重新設計。jLIVE&trade;            
+    在內嵌視窗時，會按內嵌組態設定檔 (securitysql.xml)        
+    的指示，選擇不同組的作業視窗，其中的差異在於資料庫系統是否有提供        
+    AUTOINCREASE 的資料欄位型別。</font></li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">使用者資料表       
+    (CMM_BASC_USER)，中的 USER_EXCL 欄位，其值為 1 時，一個 USER_ID、USER_PASS 線上 
+    (on line)       
+    只允許登入一個使用者，第二個以相同 USER_ID、USER_PASS&nbsp;       
+    登入時將無法進入。</font></li>      
+  <li>      
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">使用者資料表       
+    (CMM_BASC_USER)，中的 DB_NAME 和 DB_PASS       
+    欄位，為該使用者登入資料庫所使用的 ID 和 密碼 (password)。</font></li>     
+  <li>     
+    <p style="margin-top: 2; margin-bottom: 2" align="justify"><font size="2">視窗資料表 (CMM_BASC_FORM)，中的       
+    FORM_NAME 欄位，是視窗 class 的名稱； FORM_DIR 欄位，是jLIVE       
+    Builder&trade; 視窗節點的<font color="#666699">分類 </font>(catalog)       
+    屬性值；FORM_DESC 欄位，是視窗節點的註解值。</font></li>      
+  <li>      
+    <p style="margin-top: 2; margin-bottom: 2" align="justify"><font size="2" color="#000000">使用者登入記錄資料表       
+    (CMM_BASC_LOG)</font><font size="2">，LOG_STAT 欄位，其值 i       
+    表示在線上 (on line) ；o&nbsp; 表示已離線 ；k       
+    表示不正常離線。設計師可查詢使用者登入記錄資料表       
+    (CMM_BASC_LOG)，顯示線上狀態。</font></li>      
+</ul>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>            
+<p style="margin-top: 0; margin-bottom: 0">　</p>            
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">            
+<font color="#003366" size="2">▲Top</font></a></p>            
+<p style="margin-top: 2; margin-bottom: 2">　</p>      
+<p style="margin-top: 2; margin-bottom: 2">　</p>      
+<p style="margin-top: 2; margin-bottom: 2">　</p>        
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="setting"></a>授權式安全控管設定作業 
+(authorized security control setting)</b></font></p>            
+<p style="margin-top: 1; margin-bottom: 1">             
+　</p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">按下圖示 <i>安全 </i>   
+<img border="0" src="images/security.gif" width="24" height="24">    
+，開啟作業視窗。</font></p>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">應用程式系統管理者： </font> </p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p> 
+<ul type="disc"> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font color="#666699" size="2">管理者 ID：</font><font size="2" color="#000000">應用程式系統管理者            
+ID</font><font size="2">，應用系統線上更新需要此 ID            
+及密碼。</font></p>             
+  </li>             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font color="#666699" size="2">密碼：</font><font size="2" color="#000000">應用程式</font><font size="2">系統管理者密碼。</font></p>             
+  </li>             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font color="#666699" size="2">使用者名稱：</font><font size="2"><font color="#000000">管理者名稱</font>。以</font><font size="2" color="#000000">應用程式</font><font size="2">系統管理者登入時            
+<font color="#666699">SysHash </font><font color="#000000">中</font>，            
+username 的值。</font></p>             
+  </li>             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font color="#666699" size="2">公司代碼：</font><font size="2">所屬公司代碼。以</font><font size="2" color="#000000">應用程式</font><font size="2">系統管理者登入時            
+<font color="#666699">SysHash </font><font color="#000000">中</font>，            
+compcode&nbsp; 的值。</font></p>             
+  </li>             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font color="#666699" size="2">使用者代碼：</font><font size="2">使用者代碼。以</font><font size="2" color="#000000">應用程式</font><font size="2">系統管理者登入時            
+<font color="#666699">SysHash </font><font color="#000000">中</font>，            
+usercode 的值。</font></p>             
+  </li>             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font color="#666699" size="2">使用者類別：</font><font size="2">使用者類別。以</font><font size="2" color="#000000">應用程式</font><font size="2">系統管理者登入時            
+<font color="#666699">SysHash </font><font color="#000000">中</font>，            
+userduty 的值。</font></p>             
+  </li>             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font color="#666699" size="2">資料庫 ID：</font><font size="2" color="#000000">應用程式系統管理者</font><font size="2"><font color="#000000">登入</font>資料庫的 ID。</font></p>              
+  </li>              
+  <li>              
+<p style="margin-top: 1; margin-bottom: 1">              
+<font color="#666699" size="2">資料庫密碼：</font><font size="2" color="#000000">應用程式系統管理者登入</font><font size="2">資料庫的密碼。</font></p>             
+  </li>             
+</ul>             
+  </li>             
+</ul>             
+<blockquote>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font size="2">             
+<img border="0" src="images/ch08_03_admin.gif" width="516" height="537"></font></p>             
+<p style="margin-top: 1; margin-bottom: 1">             
+　</p>             
+</blockquote>             
+<ul type="square">             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1" align="justify">             
+<font color="#666699" size="2">資料表 (tables)：</font><font size="2">建立授權管理資料庫資料表 
+(database            
+tables)。在第一次建立授權管理時，系統會檢查相關的資料表是否存在，但並不做資料表結構 
+(data structure)            
+檢查，所以如果有同名稱的資料表存在，將會產生系統授權錯誤。所有資料表必須全部存在才可進行下一步的作業。</font></p>             
+<p style="margin-top: 1; margin-bottom: 1">             
+　</p>             
+<ul type="disc">             
+  <li>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font size="2" color="#666699">CMM_BASC_USER：</font><font size="2">使用者資料表。</font></p>            
+<p style="margin-top: 1; margin-bottom: 1">            
+　</p>            
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">CREATE TABLE CMM_BASC_USER ( </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">USER_KEY int IDENTITY (1, 1) NOT NULL,</font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">USER_ID varchar (12) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">USER_PASS varchar (12) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">USER_CODE varchar (10) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">USER_NAME varchar (32) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">DB_NAME varchar (20) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">DB_PASS varchar (20) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">COMP_CODE varchar (4) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">DEP_CODE varchar (10) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">USER_DUTY varchar (4) NULL, </font></span></pre>          
+<pre style="margin-top: 1; margin-bottom: 1"><span class="b"><font size="2" color="#505050" face="Courier New">USER_EXCL varchar(1) NULL)&nbsp;</font></span></pre>          
+<p style="margin-top: 1; margin-bottom: 1">　  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_LNK：</font><font size="2">使用者角色連結表。</font></p>  
+  </li>  
+</ul>  
+<span class="db" id style="DISPLAY: block">  
+  </li>  
+</ul>  
+  <blockquote>
+    <blockquote>
+      <pre><font color="#505050" size="2" face="Courier New">CREATE TABLE CMM_BASC_LNK (
+USER_KEY int NOT NULL,
+ROL_KEY int NOT NULL) 
+</font></pre>
+    </blockquote>
+  </span>  
+<ul type="disc">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_ROL：</font><font size="2">角色資料表。</font></p> 
+<span class="db" id style="DISPLAY: block">
+<pre><font size="2" color="#505050" face="Courier New">CREATE TABLE CMM_BASC_ROL (
+ROL_KEY int IDENTITY (1, 1) NOT NULL,
+ROL_NAME varchar (32)  NULL,
+ROL_DESC varchar (254) NULL)
+</font></pre>
+</span> 
+  </li> 
+  <li> 
+<p style="margin-top: 1; margin-bottom: 1"> 
+<font size="2" color="#666699">CMM_BASC_AUT：</font><font size="2">角色視窗授權表。</font></p>  
+<span class="db" id style="DISPLAY: block">
+<pre><font size="2" color="#505050" face="Courier New">CREATE TABLE CMM_BASC_AUT (   
+ROL_KEY int NOT NULL,
+FORM_NAME varchar (64) NOT NULL,
+FORM_SPC varchar (10) NULL,
+AUT_TYPE varchar (1) NULL)
+</font></pre>
+</span> 
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2" color="#666699">CMM_BASC_FORM：</font><font size="2">視窗資料表 。</font></p>   
+<span class="db" id style="DISPLAY: block">
+<pre><font color="#505050" size="2" face="Courier New">CREATE TABLE CMM_BASC_FORM (
+FORM_NAME varchar (64)   NOT NULL,
+FORM_DIR varchar (32)    NULL,
+FORM_DESC varchar (254)  NULL)
+</font>	</pre>
+</span>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_COMP：</font><font size="2">公司代碼資料表。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<pre style="margin-top: 1; margin-bottom: 1"><span class="db" id style="DISPLAY: block"><font color="#505050" size="2" face="Courier New">CREATE TABLE  CMM_BASC_COMP (
+COMP_CODE  varchar (4)   NOT NULL,
+COMP_NAME  varchar (32)  NULL,
+COMP_DESC  varchar (254) NULL,
+COMP_ID  varchar (10)    NULL,
+COMP_TYPE  varchar (4)   NULL)</font></span></pre>  
+<pre style="margin-top: 1; margin-bottom: 1">　</pre>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_DEP：</font><font size="2">部門代碼資料表。</font></p>  
+<span class="db" id style="DISPLAY: block">
+<pre><font size="2" color="#505050" face="Courier New">CREATE TABLE CMM_BASC_DEP (
+COMP_CODE varchar (4)  NOT NULL,
+DEP_CODE varchar (10)  NOT NULL,
+DEP_NAME varchar (32)  NULL,
+LOCA_CODE varchar (6)  NULL) 
+</font>	</span></pre>
+  </li>  
+  <li><font size="2" color="#666699">CMM_BASC_LOG：</font><font size="2" color="#000000">使用者登入記錄資料表。</font></li>
+</ul>  
+  <blockquote>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">CREATE TABLE CMM_BASC_LOG( </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">SESSION_ID varchar(20) NOT NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">USER_KEY int NOT NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">AP_NAME varchar(32) NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">LOG_IN datetime NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">LOG_OUT datetime NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">LOG_STAT varchar(1) NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">REM_HOST varchar(32) NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">REM_IP varchar(32) NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">REM_NAME varchar(32) NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">LOCA_HOST varchar(32) NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">LOCA_IP varchar(32) NULL, </font></pre>
+    <pre style="margin-top: 2; margin-bottom: 2"><font size="2" color="#505050" face="Courier New">LOCA_NAME varchar(32) NULL)</font></pre>
+  </blockquote>
+</blockquote>
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">  
+<br>  
+</font></p>  
+<blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">  
+<img border="0" src="images/ch08_03_table.gif" width="516" height="536"></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+</blockquote>  
+<ul type="square">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">視窗 (form)：</font><font size="2">建立授權管理視窗模組</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
+<ul type="disc">  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_USERCreate：</font><font size="2">使用者管理視窗。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_ROLCreate：</font><font size="2">角色管理視窗。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_FORMCreate：</font><font size="2">應用程式視窗管理。</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">CMM_BASC_COMPCreate：</font><font size="2">公司代碼管理視窗。<br>  
+<br>  
+若視窗已存在, 則新增按鈕將失效。</font></p>              
+  </li>              
+</ul>              
+  </li>              
+</ul>              
+<blockquote>              
+<p style="margin-top: 1; margin-bottom: 1">              
+<font size="2">              
+<img border="0" src="images/ch08_03_form.gif" width="516" height="536"></font></p>              
+<p style="margin-top: 1; margin-bottom: 1">              
+　</p>              
+</blockquote>              
+<ul type="square">              
+  <li>              
+<p style="margin-top: 1; margin-bottom: 1">              
+<font color="#666699" size="2">程式：</font><font size="2">將            
+jLIVE Builder&trade; 控制面版的應用程式視窗同步更新到 CMM_BASC_FORM            
+資料表中。</font></p>             
+<p style="margin-top: 1; margin-bottom: 1">             
+　</p>             
+  </li>             
+</ul>             
+<blockquote>             
+<p style="margin-top: 1; margin-bottom: 1">             
+<font size="2">             
+<img border="0" src="images/ch08_03_program.gif" width="516" height="537"></font></p>             
+<p style="margin-top: 1; margin-bottom: 1">             
+　</p>             
+</blockquote>             
+<p style="margin-top: 2; margin-bottom: 2">　</p>           
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">            
+<font color="#003366" size="2">▲Top</font></a></p>            
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2">　</p>       
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><b><a name="config"></a>內嵌組態設定檔        
+(securitysql.xml)&nbsp;<br>  
+　</b></font></p>         
+<p style="margin-top: 2; margin-bottom: 2; text-indent:20" align="justify"><font size="2">securitysql.xml 位於        
+jLIVE Builder&trade; 安裝目錄下的 XML 目錄中，是內嵌 (plug in) 資料表 
+(tables) 及視窗(forms) 的設定檔。設計師必須完全了解        
+XML 修改方式，及對要修正或新增的 SQL        
+，已在資料庫中測試無誤，才可進行更動。通常只有在下列情況下才需做更動。</font></p>           
+<ul>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">所使用的資料庫不在選項中：</font></p>       
+    <p style="margin-top: 2; margin-bottom: 2" align="justify"><font size="2">在 &lt;config&gt;&lt;sql&gt;        
+    標籤 (Tag) 下新增一整組的建立資料表 (tables) 標籤 (tag)，可以複製已存在的        
+    MSSQL 或ORACLE 再進行修改。設計師必須對每一個資料表 
+    (table)        
+    的 SQL 命令按所使用的資料庫 (database system)        
+    正確的定義。而在資料庫標籤 (tag) 中有一<font color="#666699">        
+    </font><font color="#000000">特別的</font>屬性 --&nbsp;<font color="#666699">        
+    specform</font> ，若使用的資料庫具有 AUTOINCREASE        
+    欄位型別，則設定為空字串，否則設定為 oracle，這是因為        
+    jLIVE Builder&trade; 根據 AUTOINCREASE        
+    欄位型別的有無，提供二種不同的操作視窗。</font></p>       
+    <p style="margin-top: 2; margin-bottom: 2">　</li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">更改內嵌資料表的        
+    SQL 命令：</font></p>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">對要修正或新增的        
+    SQL ，必須先在資料庫中測試無誤，才可進行更動。</font></p>       
+    <p style="margin-top: 2; margin-bottom: 2">　</li>       
+  <li>       
+    <p style="margin-top: 2; margin-bottom: 2"><font size="2">以自行修改或開發的視窗取代原有模組：</font></p>       
+    <p style="margin-top: 2; margin-bottom: 2" align="justify"><font size="2">jLIVE Builder&trade;        
+    在內嵌四個視窗 (forms) 時，是根據四個視窗名稱(CMM_BASC_USERCreate.xml+&quot;.&quot;+<font color="#666699"><br>  
+    specform</font>、        
+    CMM_BASC_ROLCreate.xml+&quot;.&quot;+<font color="#666699">specform</font>、CMM_BASC_FORMCreate.xml+&quot;.&quot;+<font color="#666699">specform</font>、CMM_BASC_COMPCreate.xml+&quot;.&quot;+<font color="#666699">specform</font>)，如果        
+    <font color="#666699">specform </font><font color="#000000">屬性是空字串則前面不加        
+    &quot;.&quot;</font>。如果設計師要以自行開發的視窗取代，必須先更名為上述的視窗名稱，再加上        
+    &quot;.&quot; 與一個特殊字串，並把此字串填入 specform        
+    的屬性中，請參考 Oracle 的作法。</font></li>       
+</ul>       
+<p>　</p>            
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">            
+<font color="#003366" size="2">▲Top</font></a></p>            
+<p style="margin-top: 0; margin-bottom: 0">　</p> 
+<hr align=left color="#000000"> 
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111"> 
+<tr> 
+<td width=200 align=left valign=top> 
+<a href="ch08_02.html"> 
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td> 
+<td width=192 align=center valign=top><a href="index.html"> 
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD> 
+<td width=208 align=right valign=top> 
+<a href="ch09.html"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~      
+2004 Probe Technology . All Rights Reserved.</font></p>     
+     
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,      
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>     
+     
+      </td>  
+    </tr>  
+  </table>  
+  </center>  
+</div>  
+             
+</body>             
+             
+</html>

@@ -1,0 +1,584 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Label Component</title>
+</head>
+
+<body>
+
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td><font SIZE="2"></font></td>
+    </tr>
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></td>
+<td width=190 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter&nbsp;</font></b></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font color="#000000" face="新細明體" size="-1"><a style="text-decoration: none">Interstage</a></font></b></TD> 
+<td width=210 align=right valign=top> 
+<p style="margin-top: 0; margin-bottom: 0"> 
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td> 
+</tr> 
+</table> 
+ 
+<hr align=left color="#000000"> 
+<p><b><font size="4">Interstage&trade; 安裝 jLIVE&trade; middle ware </font></b><font size="4"><b>(setup      
+jLIVE&trade; middle ware)</b> &nbsp; </font></p>      
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">安裝前 (Before   
+setup Interstage)：請先按</font><font size="2"> [jslive 授權光碟]\jslive\   
+Middleware 快速安裝.doc ，安裝 middle ware keypro   
+所需程式模組，否則 jLIVE middle ware 將會自行調整為 light   
+version for development only，屆時只能服務一個線上使用者。</font></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟一 (Step 1)：安裝  
+Fujitsu Interstage &trade;。 &nbsp;</font></p>   
+<ol>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">以 Easy  
+    installation 或 Custom installation 安裝後所預設的 Web server  
+    並不相同。</font></li>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">以下步驟係以  
+    Easy installation 安裝為示範，Custom installation 若使用不同的  
+    Web server 請查閱 Interstage  
+    文件，以相對應所應設定值輸入。</font></li>   
+</ol>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">步驟二 (Step 2)：  
+設定 <b>Web Servlet Gateway</b>。</font></p>   
+<ol>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">Setting <b>httpd.conf</b></font> 
+    <ol> 
+      <li type="i"> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">[Windows] ：<br>
+        使用  
+        Interstage HTTP Server<br> 
+        編輯 [c:\INTERSTAGE]\F3FMihs\conf\httpd.conf<br> 
+        在 httpd.conf 最後加入以下兩行字串<br> 
+        <br> 
+        <font face="Arial">LoadModule jsvlt_module C:/INTERSTAGE/F3FMjs2/gateway/jsgw_apapi_is.dll<br> 
+        include C:/INTERSTAGE/F3FMjs2/conf/jsgw_apapi.conf<br>
+        <br>
+        [</font>Solaris] ：<br>
+        使用 Interstage HTTP Server<br>
+        編輯 /opt/FJSVihs/conf/httpd.conf<br>
+        在 httpd.conf 最後加入以下兩行字串<br>
+        <br>
+        LoadModule jsvlt_module /opt/FJSVjs2/gateway/jsgw_apapi.so<br> 
+        include /opt/FJSVjs2/conf/jsgw_apapi.conf&nbsp;<br>
+        <br>
+        <br>
+        </font></li>
+      <li type="i">
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">使用  
+        InfoProvider Pro<br> 
+        參閱 j2ee.pdf -- Chapter 9 (9-6)。</font></li> 
+      <li type="i"> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">使用  
+        Internet Information Server<br> 
+        參閱 j2ee.pdf -- Chapter 9 (9-8)。</font></li> 
+      <li type="i"> 
+        <p style="margin-top: 0; margin-bottom: 0"><font size="2">使用 iPlanet  
+        Web Server<br> 
+        參閱 j2ee.pdf -- Chapter 9 (9-8)。</font></li> 
+    </ol> 
+  </li>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">如果 Servlet  
+    Container 與 Web Server 不在同一主機，其設定請參閱 j2ee.pdf --  
+    Chapter 9 (9-10)。</font></li>  
+</ol>  
+<p>　</p>  
+<p><font size="2">步驟三 (Step 3)：設定 Servlet Gateway Definition。</font></p>  
+<ol>  
+  <li><font size="2">Setting <b>jsgw_apapi.conf<br> 
+    <br> 
+    </b>[Windows]： <b><br>
+    </b>編輯 C:/INTERSTAGE/F3FMjs2/conf/jsgw_apapi.conf<br> 
+    加入以下字串<br> 
+    <br> 
+    <font face="Arial">ApJServMount /servlet ajpv12://localhost:8010/<br> 
+    <br> 
+    [</font>Solaris]：<br>
+    編輯 /opt/FJSVjs2/conf/jsgw_apapi.conf<br>
+    加入以下字串<br>
+    <br>
+    ApJServMount /servlet ajpv12://localhost:8010/<br> 
+    <br> 
+    <br> 
+    </font></li>  
+  <li><font size="2">Setting <b>jsgw.conf </b>(Web Server IIS only)<br>
+    <br>
+    [Windows]：<br>
+    編輯 C:/INTERSTAGE/F3FMjs2/conf/jsgw.conf<br> 
+    加入以下字串<br> 
+    <br> 
+    Mount /servlet ID2<br> 
+    Container ID2 ajpv12://localhost:8010/<br> 
+    <br> 
+    </font><br> 
+  </li>  
+  <li><font size="2">新增 <b>Servlet Container XML</b>。<br> 
+    <br> 
+    [Windows]：<br>
+    複製 C:/INTERSTAGE/F3FMjs2/conf/sample_jscontainer.xml 並命名為  
+    probe.xml。<br> 
+    編輯 probe.xml 並更改<font color="#FF0000">紅色</font>標示值<br> 
+    <br> 
+    </font> 
+    <table border="1"> 
+      <tr> 
+        <td><font SIZE="2">&lt;?xml version=&quot;1.0&quot;  
+          encoding=&quot;ISO-8859-1&quot;?&gt;<br> 
+          &lt;Server&gt;<br> 
+          &lt;Logger name=&quot;std_log&quot; path=&quot;log\sample-std.log&quot;  
+          backup=&quot;true&quot; timestamp=&quot;true&quot; /&gt;<br> 
+          &lt;Logger name=&quot;tc_log&quot; path=&quot;log\sample-container.log&quot;  
+          backup=&quot;true&quot; timestamp=&quot;true&quot; /&gt;<br> 
+          &lt;Logger name=&quot;servlet_log&quot; path=&quot;log\sample-servlet.log&quot;  
+          backup=&quot;true&quot; timestamp=&quot;true&quot; /&gt;<br> 
+          &lt;ContextManager workDir=&quot;<font color="#FF0000">work\servlet</font>&quot;  
+          clientSession=&quot;permanent&quot; version=&quot;5.0&quot; &gt;<br> 
+          &lt;!-- Don't change the following descriptions. --&gt;<br> 
+          &lt;ContextInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.context.DefaultCMSetter&quot;  
+          /&gt;<br> 
+          &lt;ContextInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.context.WorkDirInterceptor&quot;  
+          /&gt;<br> 
+          &lt;ContextInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.context.WebXmlReader&quot;  
+          /&gt;<br> 
+          &lt;ContextInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.context.LoadOnStartupInterceptor&quot;  
+          /&gt;<br> 
+          &lt;RequestInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.request.SimpleMapper&quot;  
+          /&gt;<br> 
+          &lt;RequestInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.request.SessionInterceptor&quot;  
+          /&gt;<br> 
+          &lt;RequestInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.request.SecurityCheck&quot;  
+          /&gt;<br> 
+          &lt;RequestInterceptor className=&quot;com.fujitsu.interstage.jservlet.tomcat.request.FixHeaders&quot;  
+          /&gt;<br> 
+          &lt;!-- Don't change the above-mentioned descriptions. --&gt;<br> 
+          &lt;!-- Don't change the following descriptions. --&gt;<br> 
+          &lt;Connector className=&quot;com.fujitsu.interstage.jservlet.tomcat.service.PoolTcpConnector&quot;&gt;<br> 
+          &lt;Parameter name=&quot;handler&quot;  
+          value=&quot;com.fujitsu.interstage.jservlet.tomcat.service.connector.Ajp12ConnectionHandler&quot;  
+          /&gt;<br> 
+          &lt;!-- Don't change the above-mentioned descriptions. --&gt;<br> 
+          &lt;Parameter name=&quot;ipaddress&quot; value=&quot;localhost&quot;/&gt;<br> 
+          &lt;Parameter name=&quot;port&quot; value=&quot;<font color="#FF0000">8010</font>&quot;/&gt;<br> 
+          &lt;/Connector&gt;<br> 
+          &lt;!-- Don't change the following descriptions. --&gt;<br> 
+          &lt;Context path=&quot;&quot; docBase=&quot;C:\INTERSTAGE\F3FMjs2\webapps_sys\ROOT&quot;  
+          /&gt;<br> 
+          &lt;!-- Don't change the above-mentioned descriptions. --&gt;<br> 
+          &lt;TagPooling updateInterval=&quot;1800&quot; idle=&quot;3600&quot;  
+          /&gt;<br> 
+          &lt;!-- Add the definition of Web Application under this. --&gt;<br> 
+          &lt;Context path=&quot;<font color="#FF0000">/servlet</font>&quot;  
+          docBase=&quot;<font color="#FF0000">C:\INTERSTAGE\F3FMjs2\webapps\servlet</font>&quot;  
+          dirList=&quot;false&quot; tagPooling=&quot;true&quot; /&gt;<br> 
+          &lt;/ContextManager&gt;<br> 
+          &lt;!--APITracer stTrace=&quot;false&quot; valueLevel=&quot;none&quot;  
+          /--&gt;<br> 
+          &lt;/Server&gt;</font></td> 
+      </tr> 
+    </table> 
+    <p><br> 
+    <font size="2">[Solaris]：<br>
+    複製 /opt/FJSVjs2/conf/sample_jscontainer.xml 並命名為  
+    probe.xml。<br> 
+    編輯 probe.xml 並更改<font color="#FF0000">紅色</font>標示值<br> 
+    </font> 
+    <table border="1" width="589">
+      <tr>
+        <td><font size="2">&lt;?xml version="1.0" encoding="ISO-8859-1"?><br> 
+          <br> 
+          &lt;Server><br> 
+          <br> 
+    &lt;Logger name="std_log" path="log/sample-std.log" backup="true" timestamp="true" /><br> 
+    &lt;Logger name="tc_log" path="log/sample-container.log" backup="true" timestamp="true" /><br> 
+    &lt;Logger name="servlet_log" path="log/sample-servlet.log" backup="true" timestamp="true" /><br> 
+          <br> 
+    &lt;ContextManager workDir=&quot;<font color="#FF0000">work/servlet</font>&quot; clientSession="permanent" version="5.0"<br> 
+        sessionRecovery="false" name="xxx.xxx.xxx.xxx:xxxxx" ><br> 
+          <br> 
+        &lt;!-- Don't change the following descriptions. --><br> 
+        &lt;ContextInterceptor className="com.fujitsu.interstage.jservlet.tomcat.context.DefaultCMSetter" /><br> 
+        &lt;ContextInterceptor className="com.fujitsu.interstage.jservlet.tomcat.context.WorkDirInterceptor" /><br> 
+        &lt;ContextInterceptor className="com.fujitsu.interstage.jservlet.tomcat.context.WebXmlReader" /><br> 
+        &lt;ContextInterceptor className="com.fujitsu.interstage.jservlet.tomcat.context.LoadOnStartupInterceptor" /><br> 
+        &lt;RequestInterceptor className="com.fujitsu.interstage.jservlet.tomcat.request.SimpleMapper" /><br> 
+        &lt;RequestInterceptor className="com.fujitsu.interstage.jservlet.tomcat.request.SessionInterceptor" /><br> 
+        &lt;RequestInterceptor className="com.fujitsu.interstage.jservlet.tomcat.request.SecurityCheck" /><br> 
+        &lt;RequestInterceptor className="com.fujitsu.interstage.jservlet.tomcat.request.FixHeaders" /><br> 
+        &lt;!-- Don't change the above-mentioned descriptions. --><br> 
+          <br> 
+        &lt;!-- Don't change the following descriptions. --><br> 
+        &lt;Connector className="com.fujitsu.interstage.jservlet.tomcat.service.PoolTcpConnector"><br> 
+            &lt;Parameter name="handler" value="com.fujitsu.interstage.jservlet.tomcat.service.connector.Ajp12ConnectionHandler" /><br> 
+        &lt;!-- Don't change the above-mentioned descriptions. --><br> 
+            &lt;Parameter name="ipaddress" value="localhost"/><br> 
+            &lt;Parameter name="port" value=&quot;<font color="#FF0000">8010</font>&quot;/&gt;<br>
+        &lt;/Connector><br>
+          <br>
+        &lt;!-- Don't change the following descriptions. --><br> 
+        &lt;Context path="" docBase="/opt/FJSVjs2/webapps_sys/ROOT" /><br> 
+        &lt;!-- Don't change the above-mentioned descriptions. --><br> 
+          <br> 
+        &lt;TagPooling updateInterval="1800" idle="3600" /><br> 
+        &lt;!-- Add the definition of Web Application under this. --><br> 
+        &lt;Context path=&quot;<font color="#FF0000">/servlet</font>&quot; 
+          docBase=&quot;<font color="#FF0000">/opt/FJSVjs2/webapps/servlet</font>&quot; dirList="false" tagPooling="true" /><br> 
+    &lt;/ContextManager><br> 
+          <br> 
+    &lt;!--APITracer stTrace="false" valueLevel="none" /--><br> 
+          <br> 
+          &lt;/Server></font><br> 
+        </td> 
+      </tr> 
+    </table> 
+    <p><br> 
+    <br> 
+    　</li> 
+  <li><font size="2">Setting<b> jswatch.conf </b>-- JServlet environment  
+    definition file<br> 
+    <br> 
+    [Windows]：<br>
+    編輯 C:/INTERSTAGE\F3FMjs2/conf/jswatch.conf<br> 
+    加入以下設定 (可以複製已存在的設定並更改標示<font color="#0000FF">藍色</font>值)<br> 
+    <br> 
+    </font> 
+    <table border="1"> 
+      <tr> 
+        <td><font SIZE="2">servlet.ipaddress=localhost<br> 
+          servlet.port=<font color="#0000FF">8010</font><br> 
+          servlet.log=true<br> 
+          servlet.containerconf=<font color="#0000FF">C:\INTERSTAGE\F3FMjs2\conf\probe.xml</font><br> 
+          servlet.bin=<font color="#0000FF">C:\j2sdk1.4.1_01\bin\java.exe</font><br> 
+          servlet.env=CLASSPATH=<font color="#0000FF">C:\j2sdk1.4.1_01\lib\tools.jar</font><br> 
+          servlet.env=CLASSPATH=C:\INTERSTAGE\F3FMjs2\classes\jsboot.jar<br> 
+          servlet.env=CLASSPATH=C:\INTERSTAGE\F3FMjs2\classes\servlet.jar<br> 
+          servlet.env=CLASSPATH=.\<br> 
+          servlet.env=CLASSPATH=<font color="#0000FF">C:\INTERSTAGE\F3FMjs2\webapps\servlet\WEB-INF\classes</font><br> 
+          servlet.env=CLASSPATH=<font color="#0000FF">C:\INTERSTAGE\ODWIN\etc\class\ODjava4.jar</font><br> 
+          servlet.env=CLASSPATH=C:\INTERSTAGE\ejb\lib\fjcontainer32.jar<br> 
+          servlet.env=CLASSPATH=C:\INTERSTAGE\j2ee\lib\isj2ee.jar<br> 
+          servlet.env=PATH=C:\INTERSTAGE\j2ee\bin<br> 
+          servlet.env=SystemRoot=C:\WINNT\<br> 
+          servlet.bin.parameters=-Xrs  
+          -Dcom.fujitsu.interstage.jservlet.j2ee=true<br> 
+          -Dorg.omg.CORBA.ORBClass=com.fujitsu.ObjectDirector.CORBA.ORB<br> 
+          -Dorg.omg.CORBA.ORBSingletonClass=com.fujitsu.ObjectDirector.CORBA.SingletonORB<br> 
+          -Djavax.rmi.CORBA.StubClass=com.fujitsu.ObjectDirector.rmi.CORBA.StubDelegateImpl<br> 
+          -Djavax.rmi.CORBA.UtilClass=com.fujitsu.ObjectDirector.rmi.CORBA.UtilDelegateImpl<br> 
+          -Djavax.rmi.CORBA.PortableRemoteObjectClass=com.fujitsu.ObjectDirector.rmi.CORBA.PortableRemoteObjectDelegateImpl<br> 
+          </font></td> 
+      </tr> 
+    </table> 
+    <p><font size="2"><br> 
+    [Solaris]：<br>
+    編輯 /opt/FJSVjs2/conf/jswatch.conf<br>
+    加入以下設定 (可以複製已存在的設定並更改標示<font color="#0000FF">藍色</font>值)<br> 
+    <br> 
+    </font>  
+    <table border="1" width="621">
+      <tr>
+        <td width="611"><font size="2">servlet.ipaddress=localhost<br>
+          servlet.port=<font color="#0000FF">8010</font><br>
+          servlet.log=true<br>
+          servlet.containerconf=<font color="#0000FF">/opt/FJSVjs2/conf/probe.xml</font><br>
+          servlet.bin=<font color="#0000FF">/usr/j2sdk1.4.1_02/bin/java</font><br>
+          servlet.bin.parameters=-Dcom.fujitsu.interstage.jservlet.j2ee=true<br>
+          servlet.env=CLASSPATH=<font color="#0000FF">/usr/j2sdk1.4.1_02/lib/tools.jar</font><br>
+          servlet.env=CLASSPATH=/opt/FJSVjs2/classes/jsboot.jar<br>
+          servlet.env=CLASSPATH=/opt/FJSVjs2/classes/servlet.jar<br>
+          servlet.env=CLASSPATH=/opt/FJSVjs2</font><br>
+        </td>
+      </tr>
+    </table>
+    <p><font size="2">
+    <br>
+    </font> 
+  </li> 
+</ol>
+<p>　</p>
+<p><font size="2">步驟四(Step 4)：安裝 jLIVE middle ware service。jLIVE middle ware 是 Sun Java 1.41  
+版本。</font></p> 
+<ol> 
+  <li><font size="2">安裝 Java 1.41_x 版本。</font></li>  
+  <li><font size="2">加入 WEB APPLICATION。<br> 
+    <br> 
+    [Windows]：<br>
+    在 C:\INTERSTAGE\F3FMjs2\webapps\ 目錄下新增以下目錄<br> 
+    <br> 
+    [Solaris]：<br>
+    在 opt/FJSVjs2/webapps/ 目錄下新增以下目錄<br>
+    <br>
+    <b>servlet<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; └ WEB-INF<br> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├classes<br> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └lib</b><br> 
+    <br> 
+ </font></li> 
+  <li><font size="2">加入 <b>web.xml</b>。<br> 
+    <br> 
+    [Windows]：<br>
+    在C:\INTERSTAGE\F3FMjs2\webapps\servlet\WEB-INF\  
+    下，以文字檔輸入以下內容，並命名為 web.xml<br> 
+    <br> 
+    [Solaris]：<br>
+    在 opt/FJSVjs2/webapps/servlet/WEB-INF/ 
+    下，以文字檔輸入以下內容，並命名為 web.xml<br>
+    <br>
+    </font>
+    <table border="1">
+      <tr>
+        <td><font SIZE="2">&lt;?xml version=&quot;1.0&quot; 
+          encoding=&quot;UTF-8&quot;?&gt;<br>
+          &lt;!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web 
+          Application 2.2//EN' 'http:<br>
+          /java.sun.com/j2ee/dtds/web-app_2_2.dtd'&gt;<br>
+          &lt;web-app&gt;<br>
+          &lt;display-name&gt;ProbeServlet&lt;/display-name&gt;<br>
+          &lt;distributable /&gt;<br>
+          &lt;servlet&gt;<br>
+          &lt;servlet-name&gt;ProbeServlet&lt;/servlet-name&gt;<br>
+          &lt;display-name&gt;ProbeServlet&lt;/display-name&gt;<br>
+          &lt;servlet-class&gt;com.probe.jslive.ProbeServlet&lt;/servlet-class&gt;<br>
+          &lt;/servlet&gt;<br>
+          &lt;servlet-mapping&gt;<br>
+          &lt;servlet-name&gt;ProbeServlet&lt;/servlet-name&gt;<br>
+          &lt;url-pattern&gt;/*&lt;/url-pattern&gt;<br>
+          &lt;/servlet-mapping&gt;<br>
+          &lt;servlet-mapping&gt;<br>
+          &lt;servlet-name&gt;ProbeServlet&lt;/servlet-name&gt;<br>
+          &lt;url-pattern&gt;/com.probe.jslive.ProbeServlet/*&lt;/url-pattern&gt;<br>
+          &lt;/servlet-mapping&gt;<br>
+          &lt;session-config&gt;<br>
+          &lt;session-timeout&gt;30&lt;/session-timeout&gt;<br>
+          &lt;/session-config&gt;<br>
+          &lt;/web-app&gt;</font></td>
+      </tr>
+    </table>
+    <p><font size="2">亦可將【jslive 授權光碟】\jslive\patch\interstage\web.xml  
+    直接置入。</font></p> 
+    <p>　</li> 
+  <li><font size="2">加入 <b>lib</b><br> 
+    將【jslive 授權光碟】\jslive\jre141\lib\  
+    目錄下所有檔案複製至&nbsp;<br> 
+    <br> 
+    [Windows]：<br>
+    C:\INTERSTAGE\F3FMjs2\webapps\servlet\ WEB-INF\lib\&nbsp;<br> 
+    <br> 
+    [Solaris]：<br>
+    /opt/FJSVjs2/webapps/servlet/WEB-INF/lib/<br>
+    <br>
+    <br>
+    加入檔案如下<br>
+    </font>
+    <table border="1">
+      <tr>
+        <td>
+          <ul>
+            <li><font size="2">jslive.jar</font></li>
+            <li><font size="2">mail.jar</font></li>
+            <li><font size="2">mailapi.jar</font></li>
+            <li><font size="2">imap.jar</font></li>
+            <li><font size="2">pop3.jar</font></li>
+            <li><font size="2">smtp.jar</font></li>
+            <li><font size="2">mysql-connector-java-2.0.14-bin.jar</font></li>
+            <li><font size="2">Sprinta2000.jar</font></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <p>　</li>
+  <li><font size="2">加入<b> classes</b><br>
+    將【jslive 授權光碟】\jslive\jre141\classes\  
+    目錄下所有檔案複製至&nbsp;<br> 
+    <br> 
+    [Windows]：<br>
+    C:\INTERSTAGE\F3FMjs2\webapps\servlet\ WEB-INF\classes\&nbsp;<br> 
+    <br> 
+    [Solaris]：<br>
+    opt/FJSVjs2/webapps/servlet/WEB-INF/classes/<br>
+    <br>
+    <br>
+    </font></li>
+  <li><font size="2">加入 <b>SymfoWARE JDBC driver<br> 
+    </b>將 解壓後的 symfoWARE driver 複製至&nbsp;<br> 
+    <br> 
+    [Windows]：<br>
+    C:\INTERSTAGE\F3FMjs2\webapps\servlet\ WEB-INF\classes\&nbsp;<br> 
+    <br> 
+    [Solaris]：<br>
+    /opt/FJSVjs2/webapps/servlet/WEB-INF/classes/<br>
+    <b><br>
+    </b></font></li>
+  <li><font size="2">加入 <b>Oracle JDBC driver<br> 
+    </b>將 解壓後 Oracle driver 複製至&nbsp;<br> 
+    <br> 
+    [Windows]：<br>
+    C:\INTERSTAGE\F3FMjs2\webapps\servlet\ WEB-INF\classes\&nbsp;<br> 
+    <br> 
+    [Solaris]：<br>
+    /opt/FJSVjs2/webapps/servlet/WEB-INF/classes/</font></li>
+</ol>
+<p>　</p>
+<p>　</p> 
+<p><font size="2">步驟五(Step 5)：重新啟動 Servlet Service 及 Web  
+Server。<br> 
+</font></p>  
+<blockquote> 
+<p><font size="2">[Windows]：</font></p> 
+</blockquote>
+<ol> 
+  <li><font size="2">停止 Web Server。<br> 
+    <br> 
+    在 NT 服務 視窗中停止 <b>FJapache </b>服務。<br> 
+    <br> 
+    </font></li>  
+  <li><font size="2">停止 Servlet Service</font><font size="2">。<br> 
+    <br> 
+    在 DOS BOX 下切換目錄至 C:\INTERSTAGE\F3FMjs2\bin\<br> 
+    執行<b> jssvstop </b>。<br> 
+    <br> 
+    </font></li>  
+  <li><font size="2">啟動 Servlet Service。<br> 
+    <br> 
+    在 DOS BOX 下切換目錄至 C:\INTERSTAGE\F3FMjs2\bin\<br> 
+    執行<b> jssvstart </b>。<br> 
+    <br> 
+    </font></li> 
+  <li><font size="2">啟動 Web Server。<br> 
+    <br> 
+    在 NT 服務 視窗中啟動 <b>FJapache </b>服務。<br> 
+    </font></li>  
+</ol>  
+<blockquote> 
+  <p><font size="2">[Solaris]：</font></p> 
+  <ol>
+    <li><font size="2">重新啟動 Solaris。<br>
+      </font></li>
+    <li><font size="2">啟動 Servlet Service。<br>
+      <br>
+      執行 /opt/FJSVjs2/bin/jssvstart<br>
+      </font></li>
+    <li><font size="2">啟動 Web Server。<br>
+      <br>
+      執行 /opt/FJSVihs/bin/httpd<br>
+      <br>
+      </font></li>
+  </ol>
+</blockquote>
+<p><font size="2">步驟六(Step 6)：測試 jLIVE&trade; middle ware。</font></p>   
+<ol>   
+  <li><font size="2">開啟 IE ，在 URL 中輸入<br>   
+    HTTP://localhost<br>   
+    IE 將會出現 Interstage 範例程式畫面，表示 HTTP Server    
+    服務正常     
+    。</font></li>    
+  <li><font size="2">在 URL 中輸入<br>   
+    HTTP://localhost/servlet/com.probe.jslive.ProbeServlet/<br>   
+    IE 將會出現 jLIVE&trade; middle ware 的管理模組，輸入 ID    
+    Password 後，按選Server Configuration 。</font></li>   
+  <li><font size="2">檢視 Authorized ID 及 Authorized concurrent users    
+    是否為所購買的授權數。</font></li>   
+  <li><font size="2">如果出現任何無法啟動或非預期的狀況，請將</font><font size="2">【Interstage 安裝路徑】【F3FMjs2】【log】目錄下的記錄檔傳至   
+    service@probe.com.tw。</font></li>  
+</ol>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>    
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>關於應用程式    
+deployment&nbsp;</b></font></p>    
+<ol>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">由 jLIVE Builder&trade;    
+    所產生的執行模組包括 *.html 及以下 class    
+    的所有檔案，可安置於 HTTP Server。<br>   
+    複製至何目錄，須查詢 HTTP SERVER conf 檔。<br> 
+    <br> 
+    [Windows]：<br>
+    <b>C:\INTERSTAGE\F3FMihs\conf\httpd.conf</b>。<br>
+    <br>
+    [Solaris]：<br>
+    <b>/opt/FJSVihs/conf/httpd.conf。<br>
+    </b><br>
+    開啟並尋找 DocumnetRoot 其後所記載的目錄即為 Web Server root  
+    directory。</font></li>  
+  <li>  
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">HTTP server   
+    及Interstage 預設是運作於 port 80，所以請檢查應用程式開發時的   
+    middle ware HTTP 是否已改為 80 port。</font></li>  
+</ol>  
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><b>關於 JDBC    
+driver&nbsp;</b></font></p>   
+<ol>   
+  <li>   
+    <p style="margin-top: 0; margin-bottom: 0"><font size="2">若只使用於    
+    jLIVE&trade; 系統，可以直接將 JDBC jar 檔，複製於[Interstage    
+    安裝路徑]\F3FMjs2\webapps\servlet\WEB-INF\lib    
+    中，若是 class 檔則複製至[Interstage 安裝路徑]\F3FMjs2\webapps\servlet\WEB-INF\classes    
+    中。<br>   
+    例如：<br>  
+    安置 middle ware 中的 oracle driver ：將 </font><font size="2">   
+    [jslive 授權光碟]\jslive\jre141\oracle_driver   
+    目錄下的所有檔案複製至 </font><font size="2">【Interstage&nbsp; 安裝路徑】【F3FMjs2】【webapps】【servlet】【WEB-INF】【classes】目錄下。</font></li> 
+</ol> 
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></td>  
+<td width=196 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=204 align=right valign=top>  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~          
+2004 Probe Technology . All Rights Reserved.</font></p>         
+         
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,          
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>         
+         
+      </td>      
+    </tr>      
+    <tr>  
+      <td width="100%">  
+  
+      </td>      
+    </tr>      
+  </table>      
+  </center>      
+         
+      </body>       
+       
+</html>

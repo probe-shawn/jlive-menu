@@ -1,0 +1,642 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Combotree Component</title>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="index.html">
+<img border="0" src="images/jlogo.gif" width="345" height="60"></a></p>
+
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">
+<tr>
+<td width=200 align=left valign=top>
+<p style="margin-top: 0; margin-bottom: 0">
+<a href="ch10_08.html">
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>
+<td width=193 align=center valign=top>
+<p style="margin-top: 0; margin-bottom: 0"><a href="ch10.html" style="text-decoration: none"><b>
+<font color="#000000" face="新細明體" size="-1">Chapter 10</font></b><font color="#000000" face="新細明體">
+</font></a>       
+<p style="margin-top: 0; margin-bottom: 0"><b><font face="新細明體" size="-1">
+<a href="ch10.html" style="text-decoration: none"><font color="#000000">
+Components</font></a></font></b></TD>  
+<td width=207 align=right valign=top>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<a href="ch10_10.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p><font size="4"><b> 
+<a name="top"></a>下拉式樹狀元件 (Combotree component) </b>  
+<img border="0" src="images/dbtcombotree.gif" width="25" height="25"></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2">  
+<a href="ch10_00.html">共同屬性 (common properties)</a></font></p>   
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="ch10_08.html#dotcode">Dot   
+code 節點結構 (dot code structure)</a></font></p>  
+<p style="margin-top: 2; margin-bottom: 2"><a href="#datasource"><font size="2">資料來源  
+(data source)</font></a></p>   
+<p style="margin-top: 2; margin-bottom: 2"><a href="#lookup"><font size="2">關連資料來源  
+(lookup data source)</font></a></p>   
+<p style="margin-top: 2; margin-bottom: 2"><a href="#event"><font size="2">事件  
+(event)</font></a></p>  
+<p style="margin-top: 2; margin-bottom: 2"><font size="2"><a href="#getsetprop">運算式屬性存取 
+(formula get/set properties)</a></font></p> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="text-indent: 20; margin-top: 1; margin-bottom: 1" align="justify"><font size="2">下拉式樹狀元件   
+(Combotree component) 具有樹狀元件 (Tree) 和下拉式清單方塊 (Combobox)   
+的特性，下拉式樹狀元件以下拉式清單方塊的樣式呈現，當使用者下拉選項時 ，選取區域則以樹狀元件為操作介面。<br>  
+　</font></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">下拉式樹狀元件   
+(Combotree) 是以關連資料來源 (lookup data source) 組成樹狀的節點  
+(node)，當下拉式樹狀元件連結 (binding) 資料來源欄位 (data field) 時 ，下拉式樹狀元件會以資料來源的資料欄位值  
+(data field)，搜尋關連資料來源 (lookup data source) 的資料欄位值(data field)   
+，當其值相等時就標示該節點為選取節點 (selected node)。<br>  
+　</font></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">下拉式樹狀元件列示的節點</font> 
+<font size="2">(node)   
+說明文字   
+是以運算公式 (formula) 的結果值顯示。而下拉式樹狀元件的節點結構則由   
+<font color="#666699">dotcode 欄位</font><font color="#000000">控</font>制，同一層級  
+(level)   
+的節點 (node) 次序則根據 <font color="#666699">Sequence 欄位</font>屬性排序。<br>  
+　</font></p>
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">在可編輯的模式  
+(editable) 下，可以直接輸入節點值或拉選後編輯選取節點  
+(node)。下拉式樹狀元件的編輯方塊 (edit    
+box) 所顯示的資料值，是關連資料來源 (lookup data source)    
+的資料欄位值 (data field)，因為只能編輯實際連結 (binding)    
+的資料欄位 (data field)，存檔的資料才有意義。<br>  
+　</font></p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0" align="justify"><font size="2">下拉式樹狀元件可以只選用關連資料來源  
+(lookup data source)，而不連結 (binding) 資料來源 (data source)，如果設定   
+</font><font SIZE="2" color="#666699">被選時移至關連資料來源記錄&nbsp;</font><font size="2">的屬性，可以將下拉式樹狀元件當成是關連資料來源  
+(lookup data source) 的檔案記錄 (record)   
+移動選擇器，使用者按選節點 (node)，關連資料來源 (lookup data  
+source) 即將目前檔案記錄 (current record) 移至 (move to)    
+該項目的檔案記錄，並引發關連資料來源的讀取前後事件  
+(before and after fetch event)，連結 (binding)    
+此關連資料來源的其他元件都會自動更新內含值。<br>  
+　</font></p> 
+<p style="text-indent: 20; margin-top: 0; margin-bottom: 0"><font size="2">下拉式樹狀元件是並不是虛擬模式  
+(virtual mode) 的元件，所以關連資料來源 (lookup data source)   
+的擷取記錄數 (row fetch) 應設為 -1 (全部擷取) 以加快初始的檔案記錄  
+(record)   
+讀取效率。</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a name="datasource"></a><b><font size="2">  
+資料來源 (data source)</font></b></p>  
+<ul>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">資料來源  
+(data source)：</font>選取資料來源。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">資料欄位  
+(data field)：</font>選取資料欄位。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2" color="#666699">可</font><font size="2"><font color="#666699">編輯  
+(editable)：</font>可以直接輸入節點值或拉選後編輯選取節點  
+(node)。在可編輯的模式下，下拉式樹狀元件的編輯方塊 (Edit    
+box) 所顯示的資料值，是關連資料來源 (lookup data source)    
+的資料欄位值 (data field)，因為只能編輯實際連結 (binding)    
+的資料欄位 (data field)，存檔的資料才有意義。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>   
+<ul>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">不可編輯 (read  
+only)：</font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">  
+<img border="0" src="images/ch10_09_combotree_1.gif" width="206" height="238"></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">可編輯 (editable)：</font></p>  
+  </li>  
+</ul>  
+  </li>  
+</ul>  
+<blockquote>  
+  <blockquote>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font size="2">  
+<img border="0" src="images/ch10_09_combotree_2.gif" width="203" height="238"></font></p>  
+  </blockquote>  
+</blockquote>  
+<ul>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">自動切換輸入法  
+(enable input method)：</font><font size="2">屬性為可編輯時，當Focus    
+移至編輯方塊 (Edit box)時，元件自動顯示切換為，使用者作業系統目前所使用的輸入法  
+(input method)。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Root：</font>根  
+(root) 節點的說明文字。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Root Icon：</font>根  
+(root) 節點的圖示。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Show Root：</font><font color="#000000">顯示根節點  
+(root)。</font></font></p>  
+  </li>  
+</ul>  
+<blockquote>  
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2"> 
+  <img border="0" src="images/ch10_08_tree_root.gif" width="117" height="95"></font></p>  
+  <p style="margin-top: 1; margin-bottom: 1">　</p>  
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2">不顯示 Root 。</font></p>   
+  <p style="margin-top: 1; margin-bottom: 1">　</p>   
+  <p style="margin-top: 1; margin-bottom: 1"><font size="2">   
+<img border="0" src="images/ch10_08_tree_noroot.gif" width="90" height="76"></font></p>   
+</blockquote>   
+<ul>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">Show Root handle：</font><font color="#000000">顯示根節點  
+(root) 的 Handle。</font></font></p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">　</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch10_08_tree_root.gif" width="117" height="95"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">不顯示 Root Handle。</font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch10_08_tree_no_handle.gif" width="98" height="94"></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  </li>   
+  <li>   
+    <p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699"> 只允許點選終端節點：</font><font size="2"><font color="#000000">使用者點選非終端節點時無效亦不引發任何事件</font>。</font></li>   
+</ul>   
+<blockquote>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2">   
+<img border="0" src="images/ch10_09_ds.gif" width="476" height="475"></font></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 0; margin-bottom: 0">   
+　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="lookup"></a>  
+</font></b><font color="#000000"><b><font size="2"> 關連資料來源 (lookup  
+data source)</font></b></font></p>   
+<ul>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font SIZE="2" color="#666699">被選時移至關連資料來源記錄：</font><font size="2">使用者選取下拉式樹狀元件  
+(Tree component) 的節點 (node) 時，關連資料來源將目前的資料記錄  
+(current record) 移至 (move to) 該節點的資料記錄 (record)     
+，並引發關連資料來源的讀取前後事件(before and after fetch  
+event)。而連結 (binding) 此關連資料來源的其他元件都會自動更新內含值。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">關連資料來源  
+(lookup data source)：</font><font size="2">選取資料來源。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">關連資料欄位  
+(lookup data field)：</font><font size="2">選取資料欄位。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2" color="#666699">Dot    
+code 欄位 (dot code field)：</font><font size="2">描述資料記錄 (record) 在樹狀節點位置的欄位。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font color="#666699" size="2">顯示運算式  
+(display formula)：</font><font size="2">以運算式顯示節點資料 (node)。<br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify">
+<font color="#666699">I</font><font color="#666699" size="2">con資料欄位：</font><font size="2">在每個節點  
+(node) 前顯示圖示，選擇性 (option) 屬性。選用時系統以欄位型別  
+(field type) 判斷是 LONGVARBINARY 的圖檔資料或是 VARCHAR     
+的圖檔名稱，若是圖檔名稱必須將圖檔儲存於應用程式模組的  
+class    
+目錄中 Images 或 Preloadiamge 目錄下。<br>
+　</font></p>   
+  </li>   
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1"><font size="2"><font color="#666699">順序欄位  
+(sequence field)：</font>同一個階層 (level) 中的節點 (node)，以順序欄位排序。欄位為數值欄位以數值排序否則以文字排序。<br>
+　</font></p>  
+  </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font color="#666699" size="2">初選項  
+(initial selection)：</font><font SIZE="2">關連資料來源初始化時清除選取。如果下拉式樹狀元件沒有連結  
+(binding) 資料來源 (data source)，核選此屬性時，樹狀元件初始為沒有任何選取節點的狀態，否則第一個節點為初始選取項。如果下拉式樹狀元件連結  
+(binding) 資料來源 (data source)，此項屬性無作用，其初始選取節點  
+(selected node) 為資料來源欄位 (data source field) 與關連資料來源欄位  
+(lookup data source field)    
+相等的節點 (node)。</font></p>  
+  </li>  
+</ul>  
+<blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">  
+<img border="0" src="images/ch10_09_lookup.gif" width="476" height="475"></p>  
+</blockquote>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+<p style="margin-top: 0; margin-bottom: 0"><b><font size="2"><a name="event"></a>事件  
+(event)</font></b></p>   
+<ul type="square">    
+  <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font size="2"><font color="#666699">動作事件 (action event)：</font>使用者按選  
+(clicked)    
+改變選取節點時，即引發事件 (fire event)。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><font color="#666699">Gain Focus 事件：</font>當 Focus    
+移入下拉式樹狀元件時，即引發事件 。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><font color="#666699">Lost Focus 事件：</font>當 Focus    
+移出下拉式樹狀元件時，即引發事件 。<br>
+　</font></p>      
+  </li>      
+  <li>      
+<p style="margin-top: 1; margin-bottom: 1">      
+<font size="2"><font color="#666699">編輯動作事件 (edit action event)：</font><font color="#000000">具有可編輯屬性時</font></font><font size="2" color="#000000">，使用者在編輯方塊    
+(Edit box) 中按下 Enter 鍵時，即引發事件 (fire event)。<br>
+　</font></p>      
+  </li>      
+  <li>   
+<p style="margin-top: 1; margin-bottom: 1" align="justify"><font size="2"><font color="#666699">編輯值變事件  
+(edit changed event)：</font><font color="#000000">具有可編輯屬性時</font>，<font color="#000000">當每次</font></font><font size="2" color="#000000">編輯方塊    
+(Edit box) 輸入值改變時，即引發事件 (fire event)，每一個按鍵輸入包括刪除鍵  
+(delete)    
+但不包括方向鍵，都會引發值變事件。</font></p>   
+  </li>   
+</ul>      
+<blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">   
+<img border="0" src="images/ch10_09_event.gif" width="476" height="476"></p>   
+</blockquote>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><a href="#top">   
+<font color="#003366" size="2">▲Top</font></a><font color="#003366" size="2"> </font></p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0"><font size="2"><a name="getsetprop"></a><b>運算式屬性存取 
+(formula get/set properties)</b></font></p>
+
+<p style="margin-top: 0; margin-bottom: 0">　</p>
+
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;,&nbsp; 值) </font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">SetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;,&nbsp; 值1,&nbsp; 值2)</font>：屬性設定。</font></p> 
+ 
+<p style="text-indent: 20"><font size="2"><font color="#666699">GetProp(&quot;元件名稱&quot;,  
+&quot;屬性&quot;)</font>：屬性讀取。</font></p> 
+ 
+<table border="1" style="border-collapse: collapse" bordercolor="#111111" cellspacing="1" cellpadding="2" width="100%">  
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Set   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">屬性<br> 
+&nbsp;(Properties)&nbsp;</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值1<br> 
+&nbsp;(Value 1)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">值2   
+      <br> 
+    (Value 2)</font></td>  
+    <td align="center" bgcolor="#505050"><font color="#FFFFFF" size="2">說明<br> 
+&nbsp;(Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">enabled</font></td>  
+    <td><font size="2">1 致能，0 失效</font></td>  
+    <td>　</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">setfocus</font></td>  
+    <td><font size="2">1 設定 Focus</font></td>  
+    <td>　</td> 
+    <td><font size="2">設定 Focus。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">visible</font></td>  
+    <td><font size="2">1 顯示，0 隱藏</font></td>  
+    <td>　</td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">repaint</font></td>  
+    <td><font size="2">1 重繪，2   
+      立即重繪</font></td>  
+    <td>　</td>  
+    <td><font size="2">重繪。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">revalidate</font></td>  
+    <td><font size="2">1 重建樹狀元件</font></td>  
+    <td>　</td>  
+    <td><font size="2">重建樹狀元件，重整資料來源連結至樹狀節點的資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">reload</font></td>  
+    <td><font size="2">1 重整樹狀元件</font></td>  
+    <td>　</td>  
+    <td><font size="2">重整樹狀元件，由目前選取節點，重整以下的所有子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">leafonly</font></td>  
+    <td><font size="2">1 只能選取末端節點，0 不限末端節點</font></td>  
+    <td>　</td>  
+    <td><font size="2">限制使用者只能選取末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td><font size="2">RecordNo 選取資料記錄編號為 RecordNo的節點</font></td>  
+    <td><font size="2">1： 引發事件<br>
+    0 ：不引發事件</font></td>  
+    <td><font size="2">選取資料記錄編號為 RecordNo 的節點。<br>  
+      RecordNo = 0 ，清除選取。<br>  
+      如果設定</font><font SIZE="2" color="#666699">被選時移至關連資料來源記錄</font><font size="2">，連結的資料來源，會移至 RecordNo 資料記錄。<br>
+    節點將會捲動至可視區域。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">expand</font></td>   
+    <td><font size="2">RecordNo</font></td>   
+    <td><font size="2">1：展開<br>
+    0：隱藏</font></td>   
+    <td><font size="2">資料記錄編號為 RecordNo 的節點。原選取節點不會改變。展開或隱藏的節點將會捲動至可視區域。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">shownode</font></td>   
+    <td><font size="2">RecordNo</font></td>   
+    <td>　</td>   
+    <td><font size="2">原選取節點不會改變。 節點將會捲動至可視區域。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">bg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">背景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">fg</font></td>   
+    <td><font size="2">RGB(red, green, blue)</font></td>   
+    <td>　</td>   
+    <td><font size="2">前景顏色。值1 必須以Formula 的 RGB() 運算式給值。&nbsp; 
+    </font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">y</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">w</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">h</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td></td>   
+    <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">xy</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">左(Value1) 上(Value2) 座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">wh</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">正整數值</font></td>   
+    <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>
+  <tr>  
+    <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get   
+      Properties</font></td>  
+  </tr>  
+  <tr>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">屬性(Properties)</font></td>  
+    <td bgcolor="#505050" colspan="2" align="center"><font color="#FFFFFF" size="2">傳回值   
+      (Return value)</font></td>  
+    <td bgcolor="#505050" align="center"><font color="#FFFFFF" size="2">說明 (Descriptions)</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isenabled</font></td>  
+    <td colspan="2"><font size="2">1 致能，0 失效</font></td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isvisible</font></td>  
+    <td colspan="2"><font size="2">1 顯示，0 隱藏</font></td>  
+    <td><font size="2">顯示與隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">leafonly</font></td>  
+    <td colspan="2"><font size="2">1 只能選取末端節點，0   
+      不限末端節點</font></td>  
+    <td><font size="2">讀取是否限制使用者只能選取末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selected</font></td>  
+    <td colspan="2"><font size="2">RecordNo 被選取節點的資料記錄編號</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isexpand</font></td>  
+    <td colspan="2"><font size="2">1 展開 ，0 隱藏</font></td>  
+    <td><font size="2">被選取節點展開或隱藏。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">first</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      樹狀元件第一個節點的資料記錄編號</font></td>  
+    <td><font size="2">讀取樹狀元件第一個節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">isleaf</font></td>  
+    <td colspan="2"><font size="2">1 末端節點，0 不是末端節點</font></td>  
+    <td><font size="2">被選取的節點是否為末端節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">childcount</font></td>  
+    <td colspan="2"><font size="2">N 子節點數</font></td>  
+    <td><font size="2">被選取的節點擁有 N 個子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">dotcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的   
+      DotCode 資料</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄的 DotCode 資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">code</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的   
+      Code 資料</font></td>  
+    <td><font size="2">讀取被選取節點的資料記錄的 Code 資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">level</font></td>  
+    <td colspan="2"><font size="2">N 被選取節點位於樹狀結構的 N   
+      階層</font></td>  
+    <td><font size="2">被選取節點位於樹狀結構的 N 階層。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">firstchild</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的第一個子節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的第一個子節點的記錄編號。<br>  
+      RecordNo = 0 ，沒有子節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">dottext</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的資料記錄的顯示資料</font></td>  
+    <td><font size="2">被選取節點的資料記錄的顯示 (Display)   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">siblingcount</font></td>  
+    <td colspan="2"><font size="2">N 旁系節點數</font></td>  
+    <td><font size="2">被選取的節點擁有 N   
+      個同一階層的旁系節點。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parent</font></td>  
+    <td colspan="2"><font size="2">RecordNo 父節點的資料記錄編號</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄編號。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parentdotcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的父節點的資料記錄的   
+      DotCode 資料</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄的 DotCode   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">parentcode</font></td>  
+    <td colspan="2"><font size="2">文字串，被選取節點的父節點的資料記錄的   
+      Code 資料</font></td>  
+    <td><font size="2">被選取節點的父節點的資料記錄的 Code   
+      資料。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">prevsibling</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的前一個旁系節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的前一個旁系節點的記錄編號。</font></td>  
+  </tr>  
+  <tr>
+    <td><font size="2">nextsibling</font></td>  
+    <td colspan="2"><font size="2">RecordNo   
+      被選取節點的下一個旁系節點的記錄編號</font></td>  
+    <td><font size="2">被選取節點的下一個旁系節點的記錄編號。</font></td>  
+  </tr>
+  <tr>
+    <td><font size="2">x</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">左座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">y</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">上座標位置。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">w</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">元件寬度。</font></td>   
+  </tr>
+  <tr>
+    <td width="87" height="13"><font size="2">h</font></td>   
+    <td colspan="2" width="180" height="13"><font size="2">整數值</font></td>   
+    <td width="320" height="13"><font size="2">元件高度。</font></td>   
+  </tr>
+</table>  
+  
+<p><a href="#top"><font color="#003366" size="2">▲Top</font></a></p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+  
+<p style="margin-top: 0; margin-bottom: 0">　</p>   
+<p style="margin-top: 0; margin-bottom: 0">　</p>  
+<hr align=left color="#000000">  
+<table width=600 border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse" bordercolor="#111111">  
+<tr>  
+<td width=200 align=left valign=top>  
+<a href="ch10_08.html">  
+<img border="0" src="images/jlogo_previous.gif" width="70" height="18"></a></td>  
+<td width=195 align=center valign=top><a href="index.html">  
+<img border="0" src="images/jlogo_small.gif" width="144" height="25"></a></TD>  
+<td width=205 align=right valign=top>  
+<a href="ch10_10.html">  
+<img border="0" src="images/jlogo_next.gif" width="70" height="18"></a></td>  
+</tr>  
+</table>  
+  
+<hr align=left color="#000000">  
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Copyright &copy; 2001~     
+2004 Probe Technology . All Rights Reserved.</font></p>    
+    
+<p style="margin-top: 0; margin-bottom: 0"><font size="-1">Questions, comments,     
+and suggestions to <a href="mailto:Service@probe.com.tw">Service@probe.com.tw</a></font></p>    
+    
+      </td> 
+    </tr> 
+  </table> 
+  </center> 
+</div> 
+    
+      </body>   
+   
+</html>
