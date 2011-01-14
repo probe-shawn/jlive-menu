@@ -51,6 +51,8 @@
 <p style="margin-top: 1; margin-bottom: 1">
 <a href="#GetGridData(gridname,row,col)"><font size="2">GetGridData(gridname,row,col)</font></a></p>
 <p style="margin-top: 1; margin-bottom: 1">
+<a href="#GetGridData(gridname,row,col)"><font size="2">GetGridData(gridname,row,col,bmasktext)</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
 <a href="#GetProp(compname,property)"><font size="2">GetProp(compname,property)</font></a></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <a href="#SetProp(compname,property,value)"><font size="2">SetProp(compname,property,value)</font></a></p>
@@ -79,7 +81,7 @@ Grid2File(gridname, filename, bmasktext, bheader, sep1, sep2)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <blockquote>
 <p style="margin-top: 1; margin-bottom: 1">
-<img border="0" src="images/ch12_07_components.gif" width="448" height="304"></p>
+<img border="0" src="images/ch12_07_components.gif" width="459" height="370" ></p>
 </blockquote>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
@@ -168,6 +170,8 @@ SetData(&quot;Subtotal&quot;,{SQL_Subtot:Subtotal})<br>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
 <a name="GetGridData(gridname,row,col)">GetGridData(gridname,row,col)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="GetGridData(gridname,row,col)">GetGridData(gridname,row,col</a><a name="Grid2File(gridname, filename, bmasktext)">, bmasktext</a><a name="GetGridData(gridname,row,col)">)</a></font></b></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
   <tr>
@@ -184,7 +188,8 @@ SetData(&quot;Subtotal&quot;,{SQL_Subtot:Subtotal})<br>
     參數：</font></td>  
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
     <font size="2">&quot;gridname&quot; 為資料表元件名稱，需用引號括起來， &quot;row&quot; 為列數，&quot;col&quot; 為欄數，&quot;row&quot; 與 &quot;col&quot;   
-    均可為常數值或運算式。row 和 col 皆由 1 起算。</font></td> 
+    均可為常數值或運算式。row 和 col 皆由 1 起算。<br>
+    bmasktext：0&nbsp; -- 原資料表內含值；1 -- 格式化或下拉式選單 Lookup 顯示值。預設值為 1。</font></td> 
   </tr> 
   <tr> 
     <td width="21" height="16"></td> 

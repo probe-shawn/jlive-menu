@@ -40,8 +40,9 @@
  
 <hr align=left color="#000000"> 
 <p style="margin-top: 1; margin-bottom: 1">　</p>
-<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>12.12 特殊  
-(special)</font></b></p> 
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>12.12 
+<font>特殊  
+(special)</font></font></b></p> 
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><a href="#FormName()">
 <font size="2">FormName()</font></a></p>
@@ -53,6 +54,10 @@
 <font size="2"><a href="#FormPos(left,top)">FormPos(left,top)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#FormSize(width,height)">FormSize(width,height)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormBgColor(RGB)">FormBgColor(RGB)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2"><a href="#FormBgColor(RGB,option)">FormBgColor(RGB,option)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#FormX()">FormX()</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
@@ -80,8 +85,8 @@
 <p style="margin-top: 1; margin-bottom: 1"><font size="2">
 <a href="#HttpCodeBase()">HttpCodeBase()</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1"><font size="2">
-<a href="#UncCodePath()">UncCodePath()</a></font></p>
-<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#UncCodePath()">UncCodePath()</a></font><br>
+<font size="2">
 <a href="#SetLang(lang)">SetLang(lang)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#SetLang(lang, globe)">SetLang(lang, font)</a></font></p>
@@ -131,10 +136,16 @@ MWHTTP()</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1"><font size="2">
 <a href="#IsGrantOpen(formname)">IsGrantOpen(formname)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1"><font size="2">
-<a href="#IsAuthItem(item)">IsAuthItem(item)</a></font></p>
+<a href="#IsAuthItem(item)">IsAuthItem(item)</a></font><br>
+<font size="2">
+<a href="#Xml(soapEventName,xpath)"><font>Xml(soapEventName,xpath)</font></a></font><font><br>
+</font><font size="2">
+<a href="#Xml(soapEventName,xpath,value)"><font>Xml(soapEventName,xpath,value)</font></a></font><font><br>
+</font><font size="2">
+<a href="#XmlUtil(UtilName,soapEventName,param)"><font>XmlUtil(UtilName,soapEventName,param)</font></a></font></p>
 <blockquote>
 <p style="margin-top: 1; margin-bottom: 1">
-<img border="0" src="images/ch12_12_special_new.gif" width="384" height="530"></p>
+<img border="0" src="images/ch12_12_special_new.gif" width="414" height="1149"></p>
 <p style="margin-top: 1; margin-bottom: 1">
 　</p>
 </blockquote>
@@ -344,6 +355,90 @@ SetTitle({Customers:CustomerName})</font></p>
     </td>  
   </tr>  
 </table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormBgColor(RGB)">FormBgColor(RGB)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+動態改變視窗的背景顏色。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;RGB&quot;：使用RGB(red,green,blue)函式，表示視窗顏色。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">成功執行傳回 1 ，否則傳回 0。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormBgColor( RGB( 0 , 0 , 255 ) )將視窗背景顏色改為藍色。</font></p> 
+    </td> 
+  </tr> 
+</table> 
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="FormBgColor(RGB,option)">FormBgColor(RGB,option)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+動態改變視窗的背景顏色。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;RGB&quot;：使用RGB(red,green,blue)函式，表示視窗顏色。<br>&quot;option&quot;：<br>1 改變目前視窗之背景顏色<br>2 改變畫面上所有視窗之背景顏色<br>3 將畫面上所有視窗以及之後開啟之視窗，背景顏色均套用目前設定<br>0 之後開啟之視窗，背景顏色回復原本設定<br>(0 跟 3在設計模式不會改變顏色，在執行模式才會改變顏色)</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">成功執行傳回 1 ，否則傳回 0。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2">&nbsp;FormBgColor( RGB( 0 , 0 , 255 ) , 2 )將畫面上所有視窗之背景顏色改為藍色。</font></p> 
+    </td> 
+  </tr> 
+</table> 
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><a href="#top">
 <font color="#003366" size="2">▲Top</font></a></p>
@@ -1855,7 +1950,7 @@ MWHTTP(&quot;mw_usa&quot;)，傳回別名為 mw_usa 的 jLIVE&#8482; middle ware 的 URL
 <font color="#003366" size="2">▲Top</font></a></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><a name="IsAuthItem(item)">
-<font size="4"><b>IsAuthItem</b></font><font size="4"><b>(item)</b></font></a></p>
+<font size="4"><b>IsAuthItem(item)</b></font></a></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2">&nbsp;</font></p>
 <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
@@ -1896,13 +1991,114 @@ MWHTTP(&quot;mw_usa&quot;)，傳回別名為 mw_usa 的 jLIVE&#8482; middle ware 的 URL
     範例：</font></td>
     <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
 <p style="margin-top: 1; margin-bottom: 1; ">
-<font size="2">IsAuthItem(&quot;I&quot;) 在此視窗中是否允許新增作業。</font></p>  
+<font size="2">IsAuthItem(&quot;I&quot;) 在此視窗中是否允許新增作業。<br>IsAuthItem(&quot;&quot;) 傳回此視窗所允許執行之作業。</font></p>  
     </td>  
   </tr>  
 </table>  
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><a href="#top">
 <font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+
+<a name="Xml(soapEventName,xpath)">
+<font>Xml(soapEventName,xpath)</font></a></font><font color="#FF0000" size="4"><br>
+</font><font size="4">
+<a name="Xml(soapEventName,xpath,value)">
+<font>Xml(soapEventName,xpath,value)</font></a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0">
+    <font size="2">說明：</font>
+    </td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+	<font size="2">
+	Java 1.6 (required)<br/>
+	以 soap event 名稱及 XPath, 存取 soap 中 XML 值, 讀取 xpath 節點，設定其 text 值為 value。
+	<a href="ch11_05_10.html#xmlformula">請參照 SOAP 章節</a>。
+	</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2"><font>&quot;</font><font>soapEventName</font><font>&quot;：jLIVE 中執行 SOAP 的事件名稱。
+    。<br>
+    &quot;</font><font>xpath</font><font>&quot;： 參照 xpath 手冊。
+    。<br>
+    &quot;</font><font>value</font><font>&quot;： 設定值。
+    。</font></font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">以 XPATH 取得的值。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; "><a href="ch11_05_10.html#xmlformula">請參照 SOAP 章節</a>
+</p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="XmlUtil(UtilName,soapEventName,param)">
+<font>XmlUtil(UtilName,soapEventName,param)</font></a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="2">&nbsp;</font></p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">jLIVE Builder 對 xml 資料的操作。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2"><font>&quot;UtilName&quot;：utility 名稱(remove,toString,stringtoxml)。<br>
+    &quot;</font><font>soapEventName</font><font>&quot;：執行此SOAP的事件名稱 <br>
+    &quot;</font><font>param</font><font>&quot;： 相關參數。</font></font></td>
+  </tr>
+  <tr>
+    <td width="21" height="12"></td>
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    傳回值：</font></td>
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">0 ：失敗。<br>
+1 ：成功。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="1"></td>
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    範例：</font></td>
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<p style="margin-top: 1; margin-bottom: 1; "><a href="ch11_05_10.html#xmlformula">請參照 SOAP 章節</a>
+</p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <hr align=left color="#000000">

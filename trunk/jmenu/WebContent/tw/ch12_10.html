@@ -49,7 +49,9 @@
 <font size="2"><a href="#FileChooser(title, isfile, filter, startpath)">
 FileChooser(title, isfile, filter, startpath)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
-<a href="#CopyTo(source,target)"><font size="2">CopyTo(source,target)</font></a></p>
+<font size="2">
+<a href="#CopyTo(source,target)">CopyTo(source,target)</a></font><br>
+<a href="#CopyTo(source,target)"><font size="2">CopyTo(source,target,append)</font></a></p>
 <p style="margin-top: 1; margin-bottom: 1"><font size="2">
 <a href="#Load(source)">Load(source)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1"><font size="2"><a href="#Load(source, charset)">Load(source, 
@@ -68,7 +70,7 @@ port(21), id, pass, CMD, workdir, remote, local)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <blockquote>
 <p style="margin-top: 1; margin-bottom: 1">
-<img border="0" src="images/ch12_10_file.gif" width="407" height="265"></p>
+<img border="0" src="images/ch12_10_file.gif" ></p>
 </blockquote>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><b>
@@ -162,6 +164,7 @@ startpath)</a></b></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><b> <a name="CopyTo(source,target)">CopyTo(source,target)</a></b></p>
+<p style="margin-top: 1; margin-bottom: 1"><b> <a name="CopyTo(source,target)">CopyTo(source,target,append)</a></b></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
   <tr>
@@ -170,6 +173,7 @@ startpath)</a></b></p>
     說明：</font></td>
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
 <font size="2">
+以附加或覆蓋原資料的方式，
 將檔案複製到所指定的位置，指定方式是以UNC路徑加上檔名。<br>
 ps: UNC 為 <b>U</b>niversal <b>N</b>aming <b>C</b>onvention 的縮寫。</font></td>   
   </tr>   
@@ -179,7 +183,8 @@ ps: UNC 為 <b>U</b>niversal <b>N</b>aming <b>C</b>onvention 的縮寫。</font></td>
     參數：</font></td>   
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
     <font size="2">&quot;source&quot; ：檔案來源路徑檔名。( \\server\path\檔案名稱 )<br>   
-    &quot;target&quot; ：目標路徑檔名。( \\server\path\檔案名稱 )</font></td>   
+    &quot;target&quot; ：目標路徑檔名。( <a href="file://server/path/檔案名稱">\\server\path\檔案名稱</a> )<br>
+    &quot;append&quot; ：1 表附加，0&nbsp; 表覆蓋原資料。</font></td>   
   </tr>   
   <tr>   
     <td width="21" height="12"></td>   

@@ -51,13 +51,23 @@
 <font size="2"><a href="#x[y to z]">x[y to    
 z]</a></font></p>   
 <p style="margin-top: 1; margin-bottom: 1">   
-<font size="2"><a href="#LTrim(x)">LTrim(x)</a></font></p>   
+<font size="2"><a href="#LTrim2(x)">LTrim(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#LTrim2(x)">LTrim2(x)</a></font></p>   
 <p style="margin-top: 1; margin-bottom: 1">   
 <font size="2"><a href="#RTrim(x)">RTrim(x)</a></font></p>   
 <p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#RTrim(x)">RTrim2(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
 <font size="2"><a href="#LRTrim(x)">LRTrim(x)</a></font></p>   
 <p style="margin-top: 1; margin-bottom: 1">   
-<font size="2"><a href="#TrimAll(x)">TrimAll(x)</a></font></p>   
+<font size="2"><a href="#LRTrim(x)">LRTrim2(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#TrimAll2(x)">TrimAll(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#TrimAll2(x)">TrimAll2(x)</a></font></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<font size="2"><a href="#TrimAll2(x)">Trim2Bytes(x,maxbytes)</a></font></p>   
 <p style="margin-top: 1; margin-bottom: 1">   
 <font size="2"><a href="#Find(x,y)">Find(x,y)</a></font></p>   
 <p style="margin-top: 1; margin-bottom: 1">   
@@ -100,7 +110,9 @@ z]</a></font></p>
 　</p>  
 <blockquote>  
 <p style="margin-top: 1; margin-bottom: 1">  
-<img border="0" src="images/ch12_04_string.gif" width="339" height="430"></p>  
+<img border="0" src="images/ch12_04_string.gif" ></p>  
+<p style="margin-top: 1; margin-bottom: 1">  
+　</p>  
 </blockquote>  
 <p style="margin-top: 1; margin-bottom: 1"><b><font size="4">  
 <a name="x $ y">x $ y</a></font></b></p>   
@@ -160,8 +172,8 @@ z]</a></font></p>
     <td width="112" align="right" valign="top" style="border-bottom:1px solid #C0C0C0; border-left-width:1; border-right-width:1; border-top-width:1"> 
 <p style="margin-top: 0; margin-bottom: 0">　</p>
 <p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABCDEF&quot;</font></p>
-<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABDE&quot;</font></p>
-<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABC123&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot; ABDE&quot;</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABC 123&quot;</font></p>
 <p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot; ABC 123&quot;</font></p>
 <p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot;ABC-123&quot;</font></p>
 <p style="margin-top: 0; margin-bottom: 0"><font size="2">&quot; -123 20001110&quot;</font></td> 
@@ -603,6 +615,56 @@ LTrim(&quot;A&nbsp; BC&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 <p style="margin-top: 1; margin-bottom: 1">   
 <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
 <p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="LTrim2(x)">LTrim2(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去左邊空白，包括全型空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">去左空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">LTrim2(&quot;　中華民國　&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;中華民國　&quot;&nbsp; <br>   
+LTrim2(&quot;中華　民國 &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;中華　民國 &quot;。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">   
 　</p>
 <p style="margin-top: 1; margin-bottom: 1">
 　</p>
@@ -650,6 +712,54 @@ LTrim(&quot;A&nbsp; BC&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 　</p>
 <p style="margin-top: 1; margin-bottom: 1">
 <a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="RTrim2(x)">RTrim2(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去右邊空白，包括全型空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">去右空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">RTrim2(&quot;　中華民國　&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;　中華民國&quot;&nbsp; <br>   
+RTrim2(&quot;中華　民國 &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;中華　民國 &quot;。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
 <p style="margin-top: 1; margin-bottom: 1">
 　</p>
 <p style="margin-top: 1; margin-bottom: 1">
@@ -702,6 +812,53 @@ LTrim(&quot;A&nbsp; BC&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 　</p>
 <p style="margin-top: 1; margin-bottom: 1">
 　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="4"><b>LR</b></font><b><font size="4"><a name="LRTrim2(x)">Trim2(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去左右空白，包括全型空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">去左右空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">LRTrim2(&quot;　中華民國　&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;中華民國&quot;&nbsp; <br>   
+LRTrim2(&quot;中華　民國 &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;中華　民國&quot;。</font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>   
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
 <p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
 <a name="TrimAll(x)">TrimAll(x)</a></font></b></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
@@ -734,9 +891,103 @@ LTrim(&quot;A&nbsp; BC&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
     範例：</font></td>   
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
 <p style="margin-top: 1; margin-bottom: 1; ">   
-<font size="2">LRTrim(&quot;&nbsp;&nbsp; A&nbsp; B&nbsp; C&nbsp;&nbsp; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+<font size="2">TrimAll(&quot;&nbsp;&nbsp; A&nbsp; B&nbsp; C&nbsp;&nbsp; &quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
     傳回<span style="font-family: 新細明體"> </span></font>   
     <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;ABC&quot;&nbsp; </font></p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="TrimAll2(x)">TrimAll2(x)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">將 x 去所有空白，包括全型空白。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+    <font size="2">去所有空白後的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">TrimAll2(&quot;　中華　民國　&quot; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;   
+    傳回<span style="font-family: 新細明體"> </span></font>   
+    <span style="font-family: Times New Roman"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span><font size="2">&nbsp;&quot;中華民國&quot;&nbsp; </font>   
+    </p>   
+    </td>   
+  </tr>   
+</table>   
+<p style="margin-top: 1; margin-bottom: 1">   
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+<a href="#top"><font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1">
+　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="Trim2Byte(x)">Trim2Byte(x,maxbytes)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="64">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2"> 將 x 的 1~maxbytes切下傳回，若尾端為&quot;半個&quot;全型字，則被遺棄。<br/>(Java 中 String 以character 計 length並非byte 數, 此function是以 byte 計數, 以因應存入資料庫的長度) </font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    參數：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">   
+    &quot;x&quot;、&quot;<a name="TrimAll(x)">maxbytes</a>&quot;，可為常數值或運算式。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">x 的 1 到
+<a name="TrimAll(x)">maxbytes</a> 的字串。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="16"></td>   
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    範例：</font></td>   
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<p style="margin-top: 1; margin-bottom: 1; ">   
+<font size="2">Trim2Byte(&quot;中華民國100年的慶祝活動&quot; )&nbsp;&nbsp;   
+    傳回</font><span style="font-family: Times New Roman"><font size="2">&nbsp; </font></span><font size="2">&nbsp;&quot;中華民國100年的慶祝&quot;&nbsp; </font>   
+    </p>   
     </td>   
   </tr>   
 </table>   

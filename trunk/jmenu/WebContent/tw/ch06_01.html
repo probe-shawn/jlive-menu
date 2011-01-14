@@ -42,7 +42,7 @@ Form</font></a></font></b></TD>
  
 <hr align=left color="#000000"> 
 <p><font size="5"><a name="top"></a></font><font size="4"><b>6</b></font><b><a class="TITLE"><font size="4">.2       
-視窗屬性</font></a><font size="4">  (form properties)</font></b></p>     
+<font>視窗屬性</font></font></a><font size="4">  (form properties)</font></b></p>     
 <p style="margin-top: 1; margin-bottom: 1">    
 <font size="2"><a href="#form_prop">視窗屬性 (form properties)</a></font></p>     
 <p style="margin-top: 1; margin-bottom: 1">     
@@ -249,6 +249,15 @@ Java&trade; 預設以 TAB 鍵為移動 Focus 至下一個元件的按鍵，勾選這個選項，Enter 鍵
 <p style="margin-top: 1; margin-bottom: 1">    
 <font color="#666699" size="2">小標題列 (tiny)：</font><font size="2">標題列將被最小化，且不出現標題文字。 </font></p>   
     </li>   
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">NoTitle：</font><font size="2" >不顯示標題列。 </font></p>   
+    </li>   
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">Normal：</font><font size="2">標題列
+與標題文字正常顯示。 </font></p>   
+    </li>   
   </ul>   
     </li>   
   </ul>   
@@ -269,6 +278,14 @@ Java&trade; 預設以 TAB 鍵為移動 Focus 至下一個元件的按鍵，勾選這個選項，Enter 鍵
       <li>    
 <p style="margin-top: 1; margin-bottom: 1">    
 <font color="#666699" size="2">不透明 (opaque)：</font><font size="2">背景不透明。</font></p>   
+      </li>   
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">Border：</font><font size="2" >視窗加邊線。</font></p>   
+      </li>   
+      <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">DropShadow：</font><font size="2">視窗顯示半透明陰影(只有內部視窗有此功能)。</font></p>   
       </li>   
     </ul>   
 <p style="margin-top: 1; margin-bottom: 1">　</p>   
@@ -450,7 +467,15 @@ item)</font> 使用。</font></p>
     </li>    
     <li>    
 <p style="margin-top: 1; margin-bottom: 1">    
-<font color="#666699" size="2">開啟後 (after data source open)：</font><font size="2">在資料來源開啟之後執行事件。<br>
+<font color="#666699" size="2">開啟後 (after data source open)：</font><font size="2">在資料來源開啟之後執行事件。</font></p>    
+    </li>    
+  </ul>   
+<p style="margin-top: 1; margin-bottom: 1">    
+　</p>    
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">InitializedEvent：</font><font size="2"><font>視窗開啟, 資料來源開啟後,以另一或同一 (由以下 open thread 的設定決定) 執行緒(Thread), 執行之事件, 在執行 InitializedEvent 後會再次通知(notify)元件(componenet) 值變 (value changed)以利更新</font>。<br>
 　</font></p>    
     </li>    
     <li>    
@@ -464,6 +489,13 @@ and reopen)：</font>視窗未關閉被重複開啟時，開啟前後事件
 (Before and after data source open) 
 不會再次執行，系統將會在每次被重複呼叫開啟時，執行【<font color="#666699">視窗未關閉被重複開啟</font><font color="#000000">】事件。</font></font></p>   
     </li>   
+  </ul>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>   
+  <ul type="disc">    
+    <li>    
+<p style="margin-top: 1; margin-bottom: 1">    
+<font color="#666699" size="2">Open Thread：</font><font size="2">勾選此設定 (single thread) 則視窗開啟後, 資料來源的開啟前後及InitializedEvent, 強制以同一單執行緒(Singe Thread)執行, 若否則以另一執行緒啟動執行。一般來說, 除非資料來源與視窗程序上有不可分割的程序外, 設計師應不要選用單一執行緒。</font></p>   
+    </li>
   </ul>   
   </li>   
 </ul>   

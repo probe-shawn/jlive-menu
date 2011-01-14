@@ -232,9 +232,17 @@ field)。設計師以運算公式 (formula) 取值 <font color="#666699">{核取元件名稱}
   <li>  
     <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px"><font size="2"><font color="#666699">按右鍵事件  
     (right clicked event)：</font>當按下滑鼠右鍵時，即引發事件。</font></p>  
-<p style="margin-top: 1; margin-bottom: 1">  
-　</p>   
+    <p style="MARGIN-BOTTOM: 1px; MARGIN-TOP: 1px">　</p>  
   </li>  
+  <li>  
+<p style="margin-top: 1; margin-bottom: 1">  
+<font color="#666699" size="2">Lost focus 驗正 (lost focus verify)：</font><font size="2">設計師控制使用者輸入後，能否離開元件，focus 
+移往下一元件。不需額外控制使用者輸入值時無須設定此運算式。Lost focus 驗正的原則是每次  Lost foucs 
+時系統會計算運算式結果值，結果值非 0&nbsp; 且非空字串為真(true) 否則為偽 (fales)。根據結果值的真偽，決定是否可以 Lost focus 並 
+Focus 下一元件。Lost focus 驗正運算式中不可含有Lost Focus 的函式 (例如：以 DoEvent 開啟訊息視窗；或 SetFocus 
+至其他元件)，否則系統會進入無窮迴路導致 Stack overflow 的系統錯誤。<br>
+<br>
+</li>
 </ul>  
 <blockquote>  
 <p style="margin-top: 0; margin-bottom: 0">  
