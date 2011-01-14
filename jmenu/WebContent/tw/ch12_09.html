@@ -42,7 +42,7 @@
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><b>
 <a name="top"></a><font size="4">
-12.9 資料來源運作 (dsoperation)</font></b></p>  
+12.9 <font>資料來源運作 (dsoperation)</font></font></b></p>  
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#DsNavigator(ds,op_str)">DsNavigator(ds,op_str)</a></font></p>
@@ -102,10 +102,22 @@ field, value)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1"><font size="2">
 <a href="#UpdBufdsFld(bufds, field, value, all)">UpdBufdsFld(bufds, 
 field, value, all)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="2">
+<a href="#InsBufds(bufds, rec_data, fld_sep)"><font>InsBufds(bufds, 
+rec_data, fld_sep)</font></a></font><font><br>
+</font><font size="2">
+<a href="#InsBufds(bufds, rec_data, fld_sep, rec_no)"><font>InsBufds(bufds, 
+rec_data, fld_sep,rec_no)</font></a></font><font><br>
+</font><font size="2">
+<a href="#InsBufds(bufds, rec_data, fld_sep, rec_no, moveto)"><font>InsBufds(bufds, 
+rec_data, fld_sep,rec_no,moveto)</font></a></font><font><br>
+</font><font size="2">
+<a href="#BulkInsBufds(bufds, rec_data, fld_sep, rec_sep)"><font>BulkInsBufds(bufds</font><font>, 
+rec_data, fld_sep,rec_sep)</font></a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <blockquote>
 <p style="margin-top: 1; margin-bottom: 1">
-<img border="0" src="images/ch12_09_ds_operation.gif" width="390" height="585"></p>
+<img border="0" src="images/ch12_09_ds_operation.gif" width="416" height="686" ></p>
 </blockquote>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
@@ -1194,14 +1206,14 @@ field, value, all)</a></font></p>
     <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
     說明：</font></td>
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
-<font size="2">在 Buffer 資料來源 (&quot;ds&quot;) 目前資料記錄的 (&quot;field&quot;) 欄位，填入 value 值。</font></td>  
+<font size="2">在 Buffer 資料來源 (&quot;bufds&quot;) 目前資料記錄的 (&quot;field&quot;) 欄位，填入 value 值。</font></td>  
   </tr>  
   <tr>  
     <td width="21" height="16"></td>  
     <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
     參數：</font></td>  
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
-    <font size="2">ds：資料來源名稱。<br>
+    <font size="2">bufds：資料來源名稱。<br>
     field：欄位名稱。<br>
     value：填入值可為常數值或運算式。</font></td>  
   </tr>  
@@ -1237,7 +1249,7 @@ all)</a></font></b></p>
     <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
     說明：</font></td>
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
-<font size="2">在 Buffer 資料來源 (&quot;ds&quot;) 資料記錄的 (&quot;field&quot;) 欄位，全部或目前資料記錄填入 
+<font size="2">在 Buffer 資料來源 (&quot;bufds&quot;) 資料記錄的 (&quot;field&quot;) 欄位，全部或目前資料記錄填入 
 value 值。</font></td>  
   </tr>  
   <tr>  
@@ -1245,7 +1257,7 @@ value 值。</font></td>
     <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
     參數：</font></td>  
     <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
-    <font size="2">ds：資料來源名稱。<br>
+    <font size="2">bufds：資料來源名稱。<br>
     field：欄位名稱。<br>
     value：填入值可為常數值或運算式。<br>
     all：1 -- 全部資料記錄； 0 -- 目前資料記錄。</font></td>  
@@ -1265,6 +1277,117 @@ value 值。</font></td>
 <p style="margin-top: 1; margin-bottom: 1; "> 
     <font size="2">將資料來源 (&quot;BUFF_TBL&quot;) 全部資料記錄的 (&quot;FLAG&quot;) 欄位，填入 0 值。<br>
     UpdBufdsFld(&quot;BUFF_TBL&quot; , &quot;FLAG&quot;&nbsp; , &quot;0&quot;,&nbsp; 1)。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font color="#003366" size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><b>
+<font size="4"><a name="InsBufds(bufds, rec_data, fld_sep)">InsBufdsd(bufds, 
+rec_data, fld_sep)</a><br>
+<a name="InsBufds(bufds, rec_data, fld_sep, rec_no)">InsBufdsd(bufds, 
+rec_data, fld_sep,rec_no)</a><br>
+<a name="InsBufds(bufds, rec_data, fld_sep, rec_no, moveto)">InsBufdsd(bufds, 
+rec_data, fld_sep,rec_no,moveto)</a></font></b></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0">
+    <font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">
+    在 Buffer 資料來源 (&quot;bufds&quot;)的 (rec_no) 處, 插入 rec_data, 其中 rec_data 資料中的欄位以 fld_sep 分隔。
+	</font>
+	</td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top">
+    <font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+    <font size="2">bufds：資料來源名稱。<br>
+    rec_data：資料記錄。<br>
+    fld_sep：rec_data 中欄位 (field) 的分隔字串。<br>
+    rec_no：記錄編號，可為常數值或運算式。0及大於目前記錄數將會插入(insert) 至最後<br>
+    moveto：在插入資料後, 將目前記錄指標移至該記錄。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top">
+    <font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功，0 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top">
+    <font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    
+    <font size="2">將資料記錄 &quot;abcd\t1234\tdefg&quot; 加為資料來源 (&quot;BUFF_TBL&quot;)最後一筆, 並將記錄指標移至該筆。<br>
+    InsBufdsFld(&quot;BUFF_TBL&quot; ,&quot;abcd\t1234\tdefg&quot; , Char(9),&nbsp; 0 , 1)。</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">  
+<font size="2">▲Top</font></a></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>  
+<p style="margin-top: 1; margin-bottom: 1">
+<font size="4">
+<a name="BulkInsBufds(bufds, rec_data, fld_sep, rec_sep)">BulkInsBufds(bufds, 
+rec_data, fld_sep,rec_sep)</a></font></p>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0">
+    <font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+
+<font size="2">將大量多筆資料紀錄 (rec_data) 加到Buffer 資料來源 (&quot;bufds&quot;)的最後(append), rec_data 資料中以 rec_sep 分隔每筆記錄, 每筆記錄中以fld_sep 分隔欄位值。
+</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="16"></td>  
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top">
+    <font size="2">  
+    參數：</font></td>  
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+     <font size="2">bufds：資料來源名稱。<br>
+    rec_data：多筆資料紀錄值。<br>
+    fld_sep：欄位 (field) 的分隔字串。<br>
+    rec_sep：記錄 (record) 的分隔字串。<br>
+    </td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="12"></td>  
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top">
+    <font size="2">  
+    傳回值：</font></td>  
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<font size="2">1 表執行成功，0 表失敗。</font></td> 
+  </tr> 
+  <tr> 
+    <td width="21" height="1"></td> 
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top">
+    <font size="2"> 
+    範例：</font></td> 
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0"> 
+<p style="margin-top: 1; margin-bottom: 1; "> 
+    <font size="2">
+   將 3 筆資料記錄 &quot;aaaa\t1111\t2222\nbbbb\t3333\t4444\ncccc\t5555\t6666&quot; 附加到資料來源 (&quot;BUFF_TBL&quot;)。
+    <br>
+    BulkInsBufds(&quot;BUFF_TBL&quot; , &quot;aaaa\t1111\t2222\nbbbb\t3333\t4444\ncccc\t5555\t6666&quot; , Char(9), Char(13)$char(10))。</font></p>  
     </td>  
   </tr>  
 </table>  

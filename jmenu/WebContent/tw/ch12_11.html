@@ -41,12 +41,12 @@
 <hr align=left color="#000000"> 
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><b><font size="4"><a name="top"></a>
-12.11 流程 (flow)</font></b></p>   
+12.11 <font>流程 (flow)</font></font></b></p>   
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#Condition(cond,true,false)">Condition(cond,true,false)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
-<font size="2"><a href="#OpenForm(formname)">OpenForm(formname)</a></font></p>
+<font size="2"><a href="#OpenForm()">OpenForm(formname)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#OpenForm(formname,pos)">OpenForm(formname,pos)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
@@ -54,7 +54,10 @@
 modal)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#OpenForm(formname,pos,type,modal)">OpenForm(formname,pos,type, 
-modal)</a></font></p>
+modal)</a></font><br>
+<font size="2"><a href="#CloseForm()">CloseForm(formname)</a></font><font><br>
+</font>
+<font size="2"><a href="#RepaintForm()"><font>RepaintForm()</font></a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#OpenReport(rptname)">OpenReport(rptname)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
@@ -83,9 +86,10 @@ Report2Pdf(rptname, filename, font, encoding)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#Formula()">Formula(fmla)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
-<font size="2"><a href="#DoEvent(evname)">DoEvent(evname)</a></font></p>
+<font size="2"><a href="#DoEventThread(evname)">DoEvent(evname)</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
-<font size="2"><a href="#DoEvent(evname,retvalue)">DoEvent(evname,retvalue)</a></font></p>
+<font size="2"><a href="#DoEvent(evname,retvalue)">DoEvent(evname,retvalue)</a></font><br>
+<font size="2"><a href="#DoEventThread(evname)"><font>DoEventThread(evname)</font></a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
 <font size="2"><a href="#Evlnvoker()">Evlnvoker()</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">
@@ -106,7 +110,7 @@ Then y Else z</a></font></p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <blockquote>
 <p style="margin-top: 1; margin-bottom: 1">
-<img border="0" src="images/ch12_11_flow_new.gif" width="376" height="564"></p>
+<img border="0" src="images/ch12_11_flow_new.gif" width="414" height="672" ></p>
 </blockquote>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1">　</p>
@@ -344,6 +348,88 @@ Then y Else z</a></font></p>
     </td>   
   </tr>   
 </table>   
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><b><font size="4">
+<a name="CloseForm(formname)">CloseForm(formname)</a></font></b></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+關閉另一個視窗。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;formname&quot; ：視窗名稱， 區分大小寫。</font></td>     
+  </tr>     
+  <tr>     
+    <td width="21" height="12"></td>     
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">     
+    傳回值：</font></td>     
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">     
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">CloseForm(&quot;BASC_CUST&quot;)</font></p>    
+    </td>    
+  </tr>    
+</table>    
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="4">
+<a name="RepaintForm()">RepaintForm()</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+重繪視窗，呼叫 Java container method repaint()。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">無</font></td>     
+  </tr>     
+  <tr>     
+    <td width="21" height="12"></td>     
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">     
+    傳回值：</font></td>     
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">     
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>    
+  </tr>    
+  <tr>    
+    <td width="21" height="1"></td>    
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">    
+    範例：</font></td>    
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">    
+<p style="margin-top: 1; margin-bottom: 1; ">    
+<font size="2">RepaintForm(&quot;BASC_CUST&quot;)</font></p>    
+    </td>    
+  </tr>    
+</table>    
 <p style="margin-top: 1; margin-bottom: 1">　</p>
 <p style="margin-top: 1; margin-bottom: 1"><a href="#top">
 <font color="#003366" size="2">▲Top</font></a></p>
@@ -1015,6 +1101,47 @@ Report2File(&quot;order_list&quot;, &quot;c:\order_report&quot;, &quot;arialuni.
     <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
 <p style="margin-top: 1; margin-bottom: 1; ">  
 <font size="2">DoEvent(&quot;calc_event&quot;, LocalHashGet(&quot;calc_ret&quot;))</font></p>  
+    </td>  
+  </tr>  
+</table>  
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><a href="#top">
+<font color="#003366" size="2">▲Top</font></a></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<p style="margin-top: 1; margin-bottom: 1"><font size="4">
+<a name="DoEventThread(evname)">DoEventThread(evname)</a></font></p>
+<p style="margin-top: 1; margin-bottom: 1">　</p>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="600" height="45">
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" valign="top" height="16" style="border: 1px solid #C0C0C0"><font size="2">
+    說明：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+<font size="2">
+啟動另一個Thread，執行同一視窗的任何事件。</font></td>
+  </tr>
+  <tr>
+    <td width="21" height="16"></td>
+    <td width="57" align="right" height="16" style="border: 1px solid #C0C0C0" valign="top"><font size="2">
+    參數：</font></td>
+    <td width="522" height="16" align="left" valign="top" style="border: 1px solid #C0C0C0">
+    <font size="2">&quot;evname&quot; ：事件名稱， 區分大小寫。</font></td>   
+  </tr>   
+  <tr>   
+    <td width="21" height="12"></td>   
+    <td width="57" align="right" height="12" style="border: 1px solid #C0C0C0" valign="top"><font size="2">   
+    傳回值：</font></td>   
+    <td width="522" height="12" align="left" valign="top" style="border: 1px solid #C0C0C0">   
+<font size="2">1 表執行成功，0&nbsp; 表示失敗。</font></td>  
+  </tr>  
+  <tr>  
+    <td width="21" height="1"></td>  
+    <td width="57" align="right" height="1" style="border: 1px solid #C0C0C0" valign="top"><font size="2">  
+    範例：</font></td>  
+    <td width="522" height="1" align="left" valign="top" style="border: 1px solid #C0C0C0">  
+<p style="margin-top: 1; margin-bottom: 1; ">  
+<font size="2" >DoEventThread(&quot;order_event&quot;)</font></p>  
     </td>  
   </tr>  
 </table>  
