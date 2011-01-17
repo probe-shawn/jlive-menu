@@ -465,6 +465,17 @@ Get/Set Properties)</b></span></b></font></p>
     <td colspan="2"><font size="2">文字串</font></td>   
     <td><font size="2">編輯方塊中加上格式樣式的內含值文字串。</font></td>   
   </tr>
+   <tr>
+    <td><font size="2">edittext</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">編輯方塊中顯示的文字串。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">caretpos</font></td>   
+    <td colspan="2"><font size="2">整數值</font></td>   
+    <td><font size="2">游標位置，位置由  1 起算。</font></td>   
+  </tr>
+  
   <tr>
     <td><font size="2">length</font></td>   
     <td colspan="2"><font size="2">整數值</font></td>   
@@ -839,6 +850,12 @@ Get/Set Properties)</b></span></b></font></p>
     <td><font size="2">致能與失效。</font></td>  
   </tr>  
   <tr>  
+    <td><font size="2">enabledat</font></td>  
+    <td><font size="2">N, 第N個選擇按鈕, 由  1 起算。</font></td>  
+    <td>1 致能，0 失效</td>  
+    <td><font size="2">致能與失效。</font></td>  
+  </tr>  
+  <tr>  
     <td><font size="2">setfocus</font></td>  
     <td><font size="2">1 設定 Focus</font></td>  
     <td>　</td>
@@ -1184,6 +1201,12 @@ Get/Set Properties)</b></span></b></font></p>
     <td><font size="2">N 選取第 N 個選擇項目</font></td>  
     <td>　</td>  
     <td><font size="2">選取第 N 個選擇項目，N 由 1 起算。</font></td>  
+  </tr>  
+  <tr>  
+    <td><font size="2">selectedcode</font></td>  
+    <td><font size="2">文字串,欲選取的關連資料值。</font></td>  
+    <td>　</td>  
+    <td><font size="2">選取選擇項目, 內含值為值 1關連資料值。</font></td>  
   </tr>  
   <tr>
     <td><font size="2">bg</font></td>   
@@ -2248,6 +2271,11 @@ Get/Set Properties)</b></span></b></font></p>
     <td><font size="2">h</font></td>   
     <td colspan="2"><font size="2">整數值</font></td>   
     <td><font size="2">元件高度。</font></td>   
+  </tr>
+  <tr>
+    <td><font size="2">headertext</font></td>   
+    <td colspan="2"><font size="2">文字串</font></td>   
+    <td><font size="2">目前被選取欄的表頭文字。。</font></td>   
   </tr>
 </table> 
  
@@ -3839,6 +3867,18 @@ Get/Set Properties)</b></span></b></font></p>
     <td><font size="2">正整數值</font></td>   
     <td><font size="2">正整數值</font></td>   
     <td><font size="2">元件寬(Value1) 高(value2)度。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">horz</font></td>   
+    <td><font size="2">正整數值(0, 1, 2)</font></td>   
+    <td><font size="2"></font></td>   
+    <td><font size="2">設定水平捲軸 0 -- 需要時出現, 1 -- 永遠不出現, 2 -- 始終出現。</font></td>   
+  </tr>   
+  <tr>   
+    <td><font size="2">vert</font></td>   
+    <td><font size="2">正整數值(0, 1, 2)</font></td>   
+    <td><font size="2"></font></td>   
+    <td><font size="2">設定垂直捲軸 0 -- 需要時出現, 1 -- 永遠不出現, 2 -- 始終出現。</font></td>   
   </tr>   
   <tr>   
     <td colspan="4" bgcolor="#666699"><font size="2" color="#FFFFFF">Get    
